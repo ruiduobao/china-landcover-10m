@@ -14,3 +14,4 @@
 - 依赖外部件：geefast-download 技能（`C:/Users/Administrator/.agents/skills/geefast-download/`，xcomp/dl_tool.py 为带补丁副本）
 - GEE 数据资产：`COPERNICUS/S2_SR_HARMONIZED`、`UMD/hansen/global_forest_change_2025_v1_13`、`LARSE/GEDI/GEDI02_A_002_MONTHLY`(rh98)
 - 账号映射：`F:/lc_work/v31_exp/config/m5_pids.json`（63 账号，由 gee_accounts/*/_任务登记.md 挖取）
+| m3c_analyze.py（含 --form-file，2026-10-08） | `7a76c9ba841a3cf12dbf62e1448f9579` | 14923 |
