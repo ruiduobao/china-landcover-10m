@@ -310,3 +310,4 @@
 
 **产物**
 - `技术文档/46_D0材料生成与体检报告.md`；`F:/lc_work/v31_exp/{data/m3,reports,code/m5*.py}`；`F:/lc_work/prod5p_2023/xcomp/x9–x10`（E14 修订）
+- **版本管理（2026-10-07 建立）**：本仓库此前非 git；现新增 git 版本管理（.gitignore 排除 数据/ 与 试点成果*/ 等大数据目录），**基线提交 `533ce5d`**（v3.1-R1 + 五省交付 + E14 修订 + D0），后续变更沿用 VERSION.md 记录并配 git 提交；D0 代码清单（MD5）见 `实验_2026-09_生产前验证/code_m5/MANIFEST.md`
