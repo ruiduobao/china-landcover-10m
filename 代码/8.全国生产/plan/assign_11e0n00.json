@@ -1,0 +1,63 @@
+{
+ "acct": "11e0n00",
+ "proj": "rock-sentinel-508409-s9",
+ "folder": "lcf_c01",
+ "prefix": "lcm00",
+ "n_tiles": 29,
+ "tiles": [
+  "T2814",
+  "T1903",
+  "T2003",
+  "T1303",
+  "T2412",
+  "T2209",
+  "T1708",
+  "T2009",
+  "T2313",
+  "T1206",
+  "T1009",
+  "T0309",
+  "T0412",
+  "T1010",
+  "T0708",
+  "T1011",
+  "T0612",
+  "T0613",
+  "T1302",
+  "T2113",
+  "T2309",
+  "T3014",
+  "T2611",
+  "T0904",
+  "T0312",
+  "T3015",
+  "T2716",
+  "T0009",
+  "T1900"
+ ],
+ "differentiation": {
+  "alias": "alder_hub",
+  "prefix": "lcm00",
+  "tile_scale": 2,
+  "max_px": 1000000000000,
+  "sleep": [
+   2,
+   6
+  ],
+  "seed": 4000,
+  "fn_names": {
+   "emit": "say",
+   "boot": "bring_up",
+   "ledger": "write_rows",
+   "loadplan": "open_plan",
+   "loadmodel": "fetch_model",
+   "done": "completed_set",
+   "ensure_folder": "mkdir_asset",
+   "submit": "dispatch",
+   "refresh": "poll_ops",
+   "roll": "run",
+   "mkclf": "fit_local"
+  },
+  "ts_fmt": "[%H:%M:%S] "
+ }
+}

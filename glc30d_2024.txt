@@ -1,0 +1,2030 @@
+Earth Syst. Sci. Data, 16, 1353–1381, 2024
+https://doi.org/10.5194/essd-16-1353-2024
+© Author(s) 2024. This work is distributed under
+the Creative Commons Attribution 4.0 License.
+GLC_FCS30D: the ﬁrst global 30 m land-cover dynamics
+monitoring product with a ﬁne classiﬁcation system for
+the period from 1985 to 2022 generated using
+dense-time-series Landsat imagery and the continuous
+change-detection method
+Xiao Zhang1,2, Tingting Zhao1,4, Hong Xu 5, Wendi Liu1,2,3, Jinqing Wang1,2,3, Xidong Chen 6, and
+Liangyun Liu1,2,3
+1International Research Center of Big Data for Sustainable Development Goals, Beijing 100094, China
+2Key Laboratory of Digital Earth Science, Aerospace Information Research Institute,
+Chinese Academy of Sciences, Beijing 100094, China
+3School of Electronic, Electrical and Communication Engineering,
+University of Chinese Academy of Sciences, Beijing 100049, China
+4College of Geomatics, Xi’an University of Science and Technology, Xi’an 710054, China
+5The High-Tech Research & Development Center (HTRDC) of the National Natural Science Foundation of
+China, Beijing 100044, China
+6Future Urbanity & Sustainable Environment (FUSE) Lab, The University of Hong Kong,
+Hong Kong SAR, 999007, China
+Correspondence: Liangyun Liu (liuly@radi.ac.cn)
+Received: 7 August 2023 – Discussion started: 31 August 2023
+Revised: 15 January 2024 – Accepted: 31 January 2024 – Published: 15 March 2024
+Abstract. Land-cover change has been identiﬁed as an important cause or driving force of global climate change
+and is a signiﬁcant research topic. Over the past few decades, global land-cover mapping has progressed; how-
+ever, long-time-series global land-cover-change monitoring data are still sparse, especially those at 30 m reso-
+lution. In this study, we describe GLC_FCS30D, a novel global 30 m land-cover dynamics monitoring dataset
+containing 35 land-cover subcategories and covering the period 1985–2022 in 26 time steps (maps were updated
+every 5 years before 2000 and annually after 2000). GLC_FCS30D has been developed using continuous change
+detection and all available Landsat imagery based on the Google Earth Engine platform. Speciﬁcally, we ﬁrst
+take advantage of the continuous change-detection model and the full time series of Landsat observations to cap-
+ture the time points of changed pixels and identify the temporally stable areas. Then, we apply a spatiotemporal
+reﬁnement method to derive the globally distributed and high-conﬁdence training samples from these tempo-
+rally stable areas. Next, local adaptive classiﬁcation models are used to update the land-cover information for
+the changed pixels, and a temporal-consistency optimization algorithm is adopted to improve their temporal sta-
+bility and suppress some false changes. Further, the GLC_FCS30D product is validated using 84 526 globally
+distributed validation samples from 2020. It achieves an overall accuracy of 80.88 % (±0.27 %) for the basic clas-
+siﬁcation system (10 major land-cover types) and 73.04 % (±0.30 %) for the LCCS (Land Cover Classiﬁcation
+System) level-1 validation system (17 LCCS land-cover types). Meanwhile, two third-party time-series datasets
+used for validation from the United States and Europe Union are also collected for analyzing accuracy variations,
+and the results show that GLC_FCS30D offers signiﬁcant stability in terms of variation across the accuracy time
+series and achieves mean accuracies of 79.50 % (±0.50 %) and 81.91 % (±0.09 %) over the two regions. Lastly,
+we draw conclusions about the global land-cover-change information from the GLC_FCS30D dataset; namely,
+Published by Copernicus Publications.
+1354 X. Zhang et al.: GLC_FCS30D
+that forest and cropland variations have dominated global land-cover change over past 37 years, the net loss of
+forests reached about 2.5 million km2, and the net gain in cropland area is approximately 1.3 million km2. There-
+fore, the novel dataset GLC_FCS30D is an accurate land-cover-dynamics time-series monitoring product that
+beneﬁts from its diverse classiﬁcation system, high spatial resolution, and long time span (1985–2022); thus,
+it will effectively support global climate change research and promote sustainable development analysis. The
+GLC_FCS30D dataset is available via https://doi.org/10.5281/zenodo.8239305 (Liu et al., 2023).
+1 Introduction
+Land-cover data are important and necessary for supporting
+sustainable development goals, maintaining biodiversity, and
+monitoring natural resources (L. Liu et al., 2021; Potapov et
+al., 2022). Land-cover changes directly or indirectly inﬂu-
+ence global climate patterns and the speed and magnitude of
+climate change (Song et al., 2018), and they increasingly af-
+fect biogeochemical cycles, the carbon cycle, and the Earth’s
+energy balance (Foley et al., 2005; Hong et al., 2021; Winkler
+et al., 2021). Since the Industrial Revolution, under the dual
+pressure from global climate change and human activities,
+global land cover has undergone drastic changes. According
+to a Global Carbon Project report in 2020, since the industri-
+alization period, land-cover and land-use changes have con-
+tributed to approximately 25 % of all global greenhouse gas
+emissions (Friedlingstein et al., 2020), and this trend is exac-
+erbated by the ongoing increase in population and per capita
+energy consumption (Xian et al., 2022). Therefore, under-
+standing and studying land-cover changes is of vital signiﬁ-
+cance for addressing global environmental changes, promot-
+ing sustainable development, and safeguarding the Earth’s
+ecological environment.
+Remote-sensing techniques, with their periodic Earth ob-
+servation capability and archived massive long-term ob-
+servation data since 1972, provide the most cost-effective
+and practical solutions for long-time-series, large-area land-
+cover-change monitoring. In the past few decades, with
+the continuous improvement of remote sensing technology
+and storage and computing capabilities, global land-cover-
+change monitoring (GLCCM) has transitioned from 1 km
+spatial resolution to ﬁne resolutions of 30 or 10 m and from
+single-phase mapping to long-term monitoring (Ban et al.,
+2015; Friedl et al., 2010, 2022; Giri et al., 2013). In its early
+stages, GLCCM mainly relied on time series of MODIS,
+A VHRR, and Project for Onboard Autonomy (PROBA)-V
+imagery (Buchhorn et al., 2020; Friedl et al., 2010); for
+example, Sulla-Menashe et al. (2019) generated a global
+500 m annual land-cover product (MCD12Q1) covering the
+period from 2001 to the present using MODIS time-series
+imagery with an overall accuracy of 73.6 %. Defourny et
+al. (2018) integrated PROBA-V and Medium Resolution
+Imaging Spectrometer (MERIS) time-series observations to
+develop a global 300 m annual land-cover dynamics dataset
+(CCI_LC: Climate Change Initiative Global Land Cover) for
+the period from 1992 to 2020 with an overall accuracy of
+71.5 %. These coarse land-cover-change products compre-
+hensively captured the spatial patterns of various land-cover
+types and quantiﬁed the global land-cover changes caused
+by human and natural activities. However, they still had ma-
+jor limitations, especially in regions with intense human ac-
+tivity and high spatial heterogeneity, because these broken
+and heterogeneous land-cover changes cannot be captured by
+coarse-resolution satellite observations (Hansen et al., 2013;
+Herold et al., 2008; L. Liu et al., 2021; Y . Zhang et al., 2021).
+Recently, beneﬁting from the free access to ﬁne-resolution
+satellite imagery and powerful computing and storage capa-
+bilities and the rise of cloud computing (such as the Google
+Earth Engine (Gorelick et al., 2017) and Microsoft Planetary
+Computer) in particular, ﬁne-resolution land-cover dynam-
+ics monitoring has been experiencing rapid development.
+Correspondingly, numerous national and global 30 m land-
+cover dynamics products have been developed (Chen et al.,
+2015; Homer et al., 2020; H. Liu et al., 2021; Potapov et al.,
+2022; Yang and Huang, 2021; Zhang et al., 2022). For ex-
+ample, Yang and Huang (2021) used China’s land-use/cover
+datasets (CLUDs) as the prior dataset and then combined
+multitemporal classiﬁcation and spatiotemporal consistency
+post-processing methods to develop an annual 30 m land-
+cover dataset (CLCD) for China from 1990 to 2019. Simi-
+larly, H. Liu et al. (2021) combined pixel-based classiﬁcation
+and spatiotemporal consistency post-processing methods to
+generate the ﬁrst global 30 m land-cover change products.
+However, many studies have demonstrated that multiperiod
+independent classiﬁcations lead to signiﬁcant classiﬁcation
+error accumulation in land-cover-change time-series moni-
+toring (Sulla-Menashe et al., 2019; Zhu, 2017). For example,
+Xian et al. (2022) stated that the independent classiﬁcation
+strategy suffered from the constraints of the post-processing
+requirements that ensure the temporal consistency of land-
+cover change maps. Therefore, although GLCCM has pro-
+gressed signiﬁcantly over the past few decades, an accurate
+global 30 m land-cover change-detection product generated
+by an efﬁcient land-cover change method is still urgently re-
+quired.
+One of the greatest challenges in large-area land-cover
+change detection is to select the optimal algorithm to cap-
+ture the land-cover changes from time-series observations
+(Healey et al., 2018; Zhu, 2017). Over the past few decades,
+a series of change-detection algorithms have been proposed
+Earth Syst. Sci. Data, 16, 1353–1381, 2024 https://doi.org/10.5194/essd-16-1353-2024
+X. Zhang et al.: GLC_FCS30D 1355
+for monitoring forest disturbance (Huang et al., 2009; Jin
+et al., 2023; Kennedy et al., 2007, 2010; Qin et al., 2021),
+urban expansion (Liu et al., 2019; X. Zhang et al., 2021a),
+cropland dynamics (Dong et al., 2015; Potapov et al., 2021),
+and land-cover changes (Bullock et al., 2019; Jin et al., 2017;
+Verbesselt et al., 2010; Zhu et al., 2019). However, most of
+them are only suitable for regional land-cover change mon-
+itoring, and some of the algorithms need prior knowledge
+(such as that for urban expansion). Zhu (2017) systematically
+reviewed the performance and limitations of various change-
+detection methods based on multitemporal satellite data and
+further explained that the high-temporal-frequency and mul-
+tivariate change-detection algorithms are more suitable for a
+long time series of land-cover changes in a large area, pro-
+vided that the problem of the huge amount of computation
+involved can be solved. Similarly, Xian et al. (2022) and Liu
+et al. (2019) concluded that dense and continuous change-
+detection methods provided higher accuracy and more ro-
+bustness than traditional change-detection methods for cap-
+turing multiple, complicated changes.
+The continuous change-detection and classiﬁcation
+(CCDC) algorithm, a classical change-detection method
+based on dense time-series observations proposed by Zhu
+and Woodcock (2014b), is widely used for regional and
+national land-cover monitoring (Xian et al., 2022; Xie et
+al., 2022). It uses all available Landsat observations to
+build time-series regression models and then captures the
+outliers by analyzing the differences between the actual
+observations and model estimations. Zhu and Woodcock
+(2014b) demonstrated that the CCDC algorithm attained a
+general accuracy of 90 % and temporal accuracy of 80 % for
+capturing land-cover changes. Thus, it has been adopted by
+the United States Geological Survey (USGS) as the ofﬁcial
+algorithm for monitoring land-cover changes over the United
+States (Pengra et al., 2016). For example, Xian et al. (2022)
+implemented the CCDC algorithm and all available Landsat
+data to develop annual land-cover-change products that
+cover the contiguous United States (CONUS) for 1985–2017
+with an overall accuracy of 82.5 %.
+In summary, in recent decades, land-cover mapping and
+monitoring has made signiﬁcant progress; however, global
+30 m land-cover-dynamics time-series products derived from
+change-detection algorithms are still lacking. In this study,
+we had three aims: (1) to use the continuous change-
+detection algorithm and the full time series of Landsat ob-
+servations to generate the ﬁrst global 30 m land-cover dy-
+namics product that covers the period from 1985 to 2022 and
+uses a ﬁne classiﬁcation system that contains 35 ﬁne land-
+cover subcategories with 26 time steps (the maps are updated
+every 5 years before 2000 and annually after 2000), known
+as GLC_FCS30D (it should be noted that GLC_FCS30D is
+updated every 5 years before 2000 due to the sparse avail-
+ability of Landsat 5 imagery; thus, we combine the satel-
+lite observations from 2 years before and after the nominal
+center year from 1985 to 1995 to ensure the mapping ac-
+curacy of GLC_FCS30D before 2000); (2) to quantify the
+land-cover changes and analyze the spatiotemporal change
+patterns of various land-cover types based on the devel-
+oped GLC_FCS30D dataset; and (3) to quantitatively ana-
+lyze the performance of the GLC_FCS30D product using
+multisourced validation datasets.
+2 Datasets
+2.1 Continuous Landsat imagery from 1984 to 2022
+All available Landsat imagery from 1984 to 2022 – covering
+the Landsat 5 Thematic Mapper (TM), Landsat 7 Enhanced
+Thematic Mapper Plus (ETM+), Landsat 8 Operational Land
+Imager (OLI), and Landsat 9 OLI missions – were collected
+via the Google Earth Engine (GEE) cloud-computing plat-
+form. Speciﬁc measures were taken to build a high-quality,
+continuous Landsat time-series collection. First, all Landsat
+images underwent atmospheric correction to convert them to
+surface reﬂectance using the Landsat Ecosystem Disturbance
+Adaptive Processing System (LEDAPS) and Land Surface
+Reﬂectance Code (LaSRC) methods (Vermote, 2007; Ver-
+mote and Kotchenova, 2008). Then, although the Landsat 5,
+7, 8, and 9 missions share similar spectral bands, the wave-
+length differences between the TM, ETM+, and OLI cannot
+be ignored. Relative radiometric normalization was applied
+to the TM and ETM+ imagery using the transformation co-
+efﬁcients suggested by Roy et al. (2016).
+2.2 Global land-cover dataset at 30 m for the year 2020
+The global 30 m land-cover product with a ﬁne classiﬁca-
+tion system for the year 2020 (GLC_FCS30-2020) is the
+baseline for generating training samples and identifying
+land-cover information in the temporally stable regions in
+Sect. 3. The GLC_FCS30 dataset was developed using lo-
+cal adaptive classiﬁcations and conﬁdent and globally dis-
+tributed training samples, and then validated to reach an
+overall accuracy of 82.5 % with the basic validation system
+(X. Zhang et al., 2021b). Cross-comparisons with other land-
+cover products showed obvious advantages for GLC_FCS30
+in terms of mapping accuracy and diversity of land-cover
+types. The GLC_FCS30-2020 dataset is freely available at
+https://doi.org/10.5281/zenodo.4280923 (Liu et al., 2020).
+2.3 Global impervious surface dynamics dataset at 30 m
+from 1985 to 2022
+Many studies found that high spatiotemporal heterogeneity
+of impervious surfaces and broken impervious surface con-
+structions caused high uncertainty and difﬁculty when mon-
+itoring the dynamics of such surfaces (Gong et al., 2019a;
+Zhang et al., 2022), and issues with both missed detec-
+tions and false alarms are encountered when change de-
+tection methods are applied to the dynamic monitoring of
+https://doi.org/10.5194/essd-16-1353-2024 Earth Syst. Sci. Data, 16, 1353–1381, 2024
+1356 X. Zhang et al.: GLC_FCS30D
+heterogeneous impervious surfaces. Thus, we independently
+produced a global impervious-surface-dynamics time-series
+dataset at 30 m (GISD30) for 1985–2022 and then overlaid
+this thematic dataset on the GLC_FCS30D dataset to en-
+sure high conﬁdence in the impervious surface dynamics.
+The GISD30 dataset was developed by combining the sample
+migration, spectral generalization, and local adaptive mod-
+eling methods and then optimized by the spatiotemporal-
+consistency correction method (Zhang et al., 2022). It was
+validated and found to attain a mean overall accuracy of
+90.1 % around the globe and to perform better than other sim-
+ilar products in capturing the changes in impervious surfaces
+over time and across different types of landscapes. At the
+same time, third-party validation also indicated that GISD30
+exhibited superior performance to similar global 30 m imper-
+vious surface products (Wang et al., 2022).
+2.4 Global 30 m wetland datasets from 1985 to 2022
+Like the impervious surface dataset, the global wetland dy-
+namics dataset is independently produced because the re-
+ﬂectance spectra of the wetlands and phenological variations
+changed daily with the water levels. The continuous change-
+detection method would suffer from serious commission
+and omission errors if used for wetland dynamics monitor-
+ing (Gallant, 2015). In this study, the GWL_FCS30 (global
+30 m wetland map with a ﬁne classiﬁcation system) wetland
+dataset from 1985 to 2022 – developed by integrating the au-
+tomatic sample extraction method, a stratiﬁed classiﬁcation
+strategy, and the time series of Landsat observations (Zhang
+et al., 2023) – is superimposed on the GLC_FCS30D land-
+cover dynamics dataset. GWL_FCS30 was quantitatively as-
+sessed as having a mean overall accuracy of 86.44 % us-
+ing 25 708 validation points, and it demonstrated a higher
+level of performance than other wetland products when it
+came to capturing the spatial patterns of wetlands during
+cross-comparisons (Zhang et al., 2023). GWL_FCS30 fur-
+ther splits wetlands into seven wetland subcategories (four
+inland and three coastal subcategories) and is overlaid di-
+rectly onto the GLC_FCS30D dataset to not only improve the
+monitoring accuracy for wetlands but also enrich the number
+of land-cover types (see Table 1).
+2.5 Validation datasets
+To comprehensively analyze the accuracy metrics for the
+GLC_FCS30D dataset, two types of validation datasets were
+collected: an independent global validation dataset from
+2020 and two third-party time-series datasets used for vali-
+dation for the United States and the European Union.
+2.5.1 Global validation dataset
+A total of 84 526 globally distributed validation sam-
+ples are collected to analyze the accuracy metrics for the
+GLC_FCS30D dataset for 2020, and their spatial distribu-
+tion is illustrated in Fig. 1. Intuitively, the spatial patterns
+of the global validation dataset are consistent with the ac-
+tual global land-cover situation. Speciﬁcally, to ensure con-
+ﬁdence in and the rationality of the validation datasets, sev-
+eral measures are taken, which were explained in detail in
+our previous work (Zhao et al., 2023). First, a stratiﬁed ran-
+dom sampling method is applied by combining the landscape
+heterogeneity, population density data, and Köppen climate
+groups, which effectively increases the sample size in the het-
+erogeneous landscapes and for some rare land-cover types
+(such as impervious surfaces, permanent ice, and snow). Sec-
+ond, for each validation sample, the land-cover type is de-
+termined through independent interpretation by trained in-
+terpreters after combining high-resolution aerial photogra-
+phy, multitemporal Landsat images, and other relevant ancil-
+lary datasets (such as vegetation coverage, tree height, phe-
+nological curves, and terrain characteristics). Independent
+interpretation software based on the GEE platform (https:
+//eliza-ting.users.earthengine.app/view/crd-vit, last access:
+12 March 2024) for efﬁciently recognizing the land-cover
+types of each sample was also developed. Third, a quality-
+control operation based on duplicate interpretations is used to
+ensure the conﬁdence level of each validation sample. Each
+sample is independently labeled by three junior interpreters
+and then double-checked by the senior experts, and valida-
+tion samples with huge disparities are discarded. In addition,
+because the impervious-surface and wetland datasets were
+produced independently and were validated in our previous
+works (Zhang et al., 2023, 2022), the corresponding high-
+quality validation samples of these two thematic types are
+also imported into the global validation datasets.
+2.5.2 Third-party regional time-series datasets used for
+validation
+Due to the great difﬁculty in collecting global long time-
+series datasets used for validation, we used two third-party
+regional datasets for the CONUS and the European Union.
+The ﬁrst time-series validation dataset assessed the perfor-
+mance of the Land Cover Monitoring, Assessment, and Pro-
+jection (LCMAP) Collection 1.0 annual land-cover prod-
+ucts (Stehman et al., 2021) (called LCMAP_Val, https://
+www.usgs.gov/special-topics/lcmap/validation-data, last ac-
+cess: 12 March 2024). LCMAP_Val consisted of 24 971 val-
+idation samples with 30 m spatial resolution and covered the
+time period of 1985 to 2017. It was developed by combin-
+ing a simple random sampling method and visual interpre-
+tation from high-resolution aerial photography, multitempo-
+ral Landsat images, and other auxiliary datasets. Meanwhile,
+to guarantee the reliability of each validation sample, the
+TimeSync auxiliary tool was also adopted to capture the
+land-cover changes (Stehman et al., 2021). Quality control
+was implemented through duplicate interpretations (Xian et
+al., 2022).
+Earth Syst. Sci. Data, 16, 1353–1381, 2024 https://doi.org/10.5194/essd-16-1353-2024
+X. Zhang et al.: GLC_FCS30D 1357
+Figure 1. Spatial distribution of 84 526 global validation points relating to 17 ﬁne land-cover types in the normal year of 2020.
+The second regional validation dataset was the Land Use/-
+Cover Area frame Survey (LUCAS), which is the most com-
+prehensive and largest land-cover validation dataset for the
+European Union and is freely available at https://esdac.jrc.
+ec.europa.eu/projects/lucas (last access: 12 March 2024). It
+contains 1 090 863 validation points based on a systematic
+2 km× 2 km grid and covers the period from 2006 to 2018
+in intervals of 3 years (d’Andrimont et al., 2020). Five LU-
+CAS surveys in 2006, 2009, 2012, 2015, and 2018 assessed
+the accuracies of the time series of GLC_FCS30D. LUCAS
+was developed from a combination of ﬁeld observations and
+photo interpretation (Ballin et al., 2018); thus, it can be used
+with high conﬁdence and also attracts widespread attention
+for land-cover validations (Gao et al., 2020; Venter et al.,
+2022).
+3 Methods
+Figure 2 presents a detailed ﬂowchart for monitoring
+land-cover changes by combining the continuous change-
+detection (CCD) algorithm proposed by Zhu and Woodcock
+(2014b) with the local adaptive updating method. Speciﬁ-
+cally, the ﬂowchart contains four main procedures: (1) de-
+tecting the temporally stable pixels and the time points of
+abrupt changes in the other land-cover pixels using the con-
+tinuous change-detection model; (2) deriving the spatiotem-
+porally stable training samples by using the spatiotemporal
+reﬁnement method from the GLC_FCS30 land-cover product
+and temporally stable masks; (3) building the local adaptive
+classiﬁcation models for each local region and then updating
+the land-cover information in the changed pixels; and (4) us-
+ing the spatiotemporal consistency optimization method to
+improve the quality of land-cover change maps and suppress
+false changes.
+Before detecting the changed land-cover pixels, all
+poor-quality pixels (cloud, shadow, and saturated pixels as
+well as the “scan line corrector off” pixels in Landsat 7)
+in the continuous-time-series Landsat imagery were ﬁrst
+masked using the CFmask algorithm, which has been
+demonstrated to achieve an overall accuracy of 96.4 %
+and was adopted by the USGS as its ofﬁcial cloud and
+shadow detection algorithm (Zhu et al., 2015; Zhu and
+Woodcock, 2012). Then, in terms of these residual cloud
+pixels (i.e., those contaminated with light cloud and haze),
+the Tmask (multiTemporal mask) algorithm, which uses the
+temporal information from the clear-sky pixels to improve
+the cloud-detection capability (Zhu and Woodcock, 2014a),
+was used to mask the residual cloud pixels (note that Tmask
+https://doi.org/10.5194/essd-16-1353-2024 Earth Syst. Sci. Data, 16, 1353–1381, 2024
+1358 X. Zhang et al.: GLC_FCS30D
+is integrated into the CCD algorithm on the GEE platform as
+ee.Algorithms.TemporalSegmentation.Ccdc()).
+In other words, the effect of poor-quality pixels was mini-
+mized.
+3.1 The ﬁne classiﬁcation system used in
+GLC_FCS30D
+Determining the classiﬁcation system is usually a prerequi-
+site for land-cover mapping and monitoring. In this study, as
+we used GLC_FCS30-2020 as the baseline land-cover prod-
+uct and overlaid the GWL_FCS30 dataset on GLC_FCS30D
+to ensure high accuracy in the wetland areas, the ﬁne clas-
+siﬁcation system used in this study is inherited from those
+of GLC_FCS30-2020 and GWL_FCS30. Table 1 lists the
+details of the ﬁne classiﬁcation system. It contains 35 ﬁne
+land-cover types and has obvious advantages when identify-
+ing forest and wetland subcategories.
+3.2 Detecting changes using the CCD algorithm and
+continuous Landsat imagery
+In general, land-cover changes can be grouped into three cat-
+egories: periodic changes caused by phenological variabil-
+ity, trend changes driven by natural behavior (such as veg-
+etation growth), and abrupt changes caused by natural or
+human disturbances (such as deforestation or urban expan-
+sion). Thus, capturing these abrupt changes and simultane-
+ously suppressing the periodic and trend changes is the key
+to land-cover monitoring. In this study, the CCD algorithm
+(Zhu and Woodcock, 2014b) was used to capture these abrupt
+changes. This algorithm uses Fourier transformation to ﬁt the
+time-series observations with the trend term (estimating the
+trend changes) and harmonic terms (describing the periodic
+changes) in Eq. (1):
+ˆρ (i,t )=a0,i+c1,i×t+
+∑n
+k=1
+(
+ak,i× cos
+(2kπ
+T t
+)
++bk,i× sin
+(2kπ
+T t
+))
+, (1)
+whereˆρ (i,t ) represents the predicted value of theith band on
+thetth Julian day; c1,i anda0,i are the regression slope and
+intercept of theith band, respectively;ak,i andbk,i represent
+the coefﬁcients of the kth-order harmonic term for the ith
+band;n denotes the number of harmonic terms; and T is the
+day number of the year (usually deﬁned as 365). In relation
+to determining the value of n, Zhu and Woodcock (2014b)
+explained that higher-order harmonic terms provided bet-
+ter performance when capturing the periodic variability but
+caused overﬁtting in the time-series model and needed more
+clear-sky observations to initialize the coefﬁcients ak,i and
+bk,i . After balancing the advantages and disadvantages of the
+higher-order harmonic terms, we ﬁnally setn to be 3, as sug-
+gested by other studies (Xian et al., 2022; Xie et al., 2022).
+Then, as the CCD is a multivariate change-detection al-
+gorithm for capturing the changes in various land-cover
+types Zhu (2017), ﬁve Landsat spectral bands (excluding the
+blue band for minimizing the effects of the atmosphere and
+clouds) and three spectral indexes (NDVI (normalized differ-
+ence vegetation index), NDWI (normalized difference water
+index), and NBR (normalized burn ratio), as given in Eq. 2)
+were combined to detect many kinds of changes in the Land-
+sat time series.
+NDVI=ρnir−ρr
+ρnir+ρr
+, NDWI=ρgreen−ρswir1
+ρgreen+ρswir1
+,
+NBR=ρnir−ρswir1
+ρnir+ρswir1
+, (2)
+whereρgreen,ρr,ρnir, and ρswir1 are the surface reﬂectance
+of green, red, NIR (near infrared) and SWIR1 (short-wave
+infrared 1) spectral bands in the Landsat imagery, respec-
+tively. Next, to determine the ﬁtted coefﬁcients of the kth-
+order harmonic term in Eq. (1), the least absolute shrinkage
+and selection operator (LASSO) regression algorithm was
+applied, which demonstrated better performance than the tra-
+ditional ordinary least squares method in reducing the over-
+ﬁtting problem and dealing with unevenly distributed and
+sparse Landsat observations (Zhu and Woodcock (2014b).
+Next, the CCD model is a multiparameter change
+detection model and has been demonstrated to be
+sensitive to the parameter settings (Xiao et al.,
+2023; Zhu and Woodcock, 2014b). The CCDC al-
+gorithm on the Google Earth Engine platform
+(ee.Algorithms.TemporalSegmentation.Ccdc)
+contains three key adjustable parameters: minObservations,
+chiSquareProbability, and minNumOfYearScaler. Zhu et
+al. (2019) analyzed the relationships of the omission error
+and commission error of land-cover changes with the vari-
+abilities of three parameters in the United States, and they
+found that the values of the three parameters affected the
+change detection accuracy. In this study, we also investigated
+the sensitivity of the change detection accuracy to the
+parameter settings in Fig. S1 (in the Supplement) using
+the time-series points from the LCMAP_Val and LUCAS
+datasets after partly sampling. Notably, the sensitivity
+analysis was implemented in two large areas to ensure the
+feasibility of using the optimized parameters for other areas
+in land-cover change detection. The results also showed that
+CCD is a parameter-sensitive algorithm and that the optimal
+parameter values were 5, 0.95, and 2 years for minObser-
+vations, chiSquareProbability, and minNumOfYearScaler,
+respectively.
+After modeling the time-series observations using the
+CCD algorithm, we analyzed the land-cover changes based
+on the differences between the actual observations and the
+predicted values from the time-series ﬁtting models. Figure 3
+shows three typical scenarios in which the land-cover dynam-
+ics were modeled by the CCD algorithm. Speciﬁcally, Fig. 3a
+illustrates that there was no abrupt break during the whole pe-
+Earth Syst. Sci. Data, 16, 1353–1381, 2024 https://doi.org/10.5194/essd-16-1353-2024
+X. Zhang et al.: GLC_FCS30D 1359
+Figure 2. The ﬂowchart of the proposed method combining the continuous change-detection (CCD) algorithm and a local adaptive updating
+algorithm.
+riod, and thus only a single time-series model was built and
+the pixel was usually labeled as temporally stable. Figure 3b
+indicates that the pixel underwent an abrupt change and the
+time-series observations were split into two segments. The
+time point of the abrupt change occurred around 1996. Fig-
+ure 3c gives a complicated time-series disturbance example
+in which multiple abrupt changes were detected and the time-
+series observations were split into four segments. The time-
+series models for segments 1, 2, and 4 showed obvious trend
+changes.
+3.3 Updating changed areas using local adaptive
+classiﬁcations
+Using the CCD algorithm and continuous Landsat imagery,
+we identiﬁed the temporally stable pixels and the time points
+of abrupt changes for the land-cover change pixels. Ac-
+curately determining the land-cover labels of the changed
+pixels (or understanding the “from–to” change process) is
+another key procedure for land-cover time-series monitor-
+ing. To achieve this goal, we derived spatiotemporally sta-
+ble training samples (see Sect. 3.3.1), updated the changed
+pixels using multitemporal classiﬁcations, and ﬁnally mini-
+mized the cumulative error caused by independent classiﬁca-
+tions.
+3.3.1 Deriving spatiotemporally stable training samples
+Numerous studies have demonstrated that the accuracy of the
+training samples plays a critical role in accurate mapping
+(Foody and Arora, 2010; Zhang et al., 2020). Visual inter-
+pretation can ensure high-conﬁdence samples, but it requires
+a lot of manual participation, so it is not suitable for col-
+lecting large-area training samples. An alternative option in-
+volves generating training samples by reﬁning existing land-
+cover products through a series of improvement measures
+(X. Zhang et al., 2021b; Zhang et al., 2023). Inspired by
+the latter option, we combined the GLC_FCS30-2020 prior
+dataset and the change-detection mask (derived using the
+CCD algorithm described in Sect. 3.2) to obtain the spa-
+tiotemporally stable training samples. Speciﬁcally, tempo-
+rally stable areas are known to have higher mapping accu-
+racy (Yang and Huang, 2021; Zhang and Roy, 2017; Zhang et
+al., 2023); thus, we ﬁrst used the aforementioned CCD mask
+to retain the areas that were temporally stable during 1985–
+2022, and then we overlapped them with the GLC_FCS30-
+2020 maps to determine their land-cover labels. Next, be-
+cause Radoux et al. (2014) emphasized that land-cover tran-
+sition areas are usually subject to more serious misclassiﬁca-
+tion problems and that pixels with homogeneous land cover
+have a higher probability of achieving acceptable accuracy,
+we used a morphological erosion ﬁlter of 3 pixels× 3 pixels
+to reﬁne these temporally stable areas into spatiotemporally
+homogeneous areas.
+The spatiotemporally stable areas identiﬁed using the
+check for temporal stability during 1985–2022, spatial ho-
+mogeneity analysis, and the GLC_FCS30-2020 product
+(which have an overall accuracy of 82.5 %) were retained to
+generate the training samples. It should be noted that these
+spatiotemporally stable areas are not guaranteed to be com-
+pletely accurate; that is, a small number of the derived train-
+ing samples may have been mislabeled. Fortunately, previ-
+ous studies of large-area land-cover mapping demonstrated
+https://doi.org/10.5194/essd-16-1353-2024 Earth Syst. Sci. Data, 16, 1353–1381, 2024
+1360 X. Zhang et al.: GLC_FCS30D
+Table 1. The details of the ﬁne classiﬁcation system used in the GLC_FCS30D land-cover dynamics dataset.
+Basic classiﬁcation system Level-1 validation system Fine classiﬁcation system ID
+Cropland CRP Rainfed cropland RCP Rainfed cropland 10
+Herbaceous cover cropland 11
+Tree or shrub cover cropland 12
+Irrigated cropland ICP Irrigated cropland 20
+Forest FST Evergreen broadleaved forest EBF Closed evergreen broadleaved forest 51
+Open evergreen broadleaved forest 52
+Deciduous broadleaved forest BDF Closed deciduous broadleaved forest 61
+Open deciduous broadleaved forest 62
+Evergreen needleleaved forest ENF Closed evergreen needleleaved forest 71
+Open evergreen needleleaved forest 72
+Deciduous needleleaved forest DNF Closed deciduous needleleaved forest 81
+Open deciduous needleleaved forest 82
+Mixed-leaf forest MFT Closed mixed-leaf forest 91
+Open mixed-leaf forest 92
+Shrubland SHR Shrubland SHR Shrubland 120
+Evergreen shrubland 121
+Deciduous shrubland 122
+Grassland GRS Grassland GRS Grassland 130
+Tundra TUD Lichens and mosses LMS Lichens and mosses 140
+Wetland WET Inland wetland IWL Swamp 181
+Marsh 182
+Flooded ﬂat 183
+Saline 184
+Coastal wetland CWL Mangrove 185
+Salt marsh 186
+Tidal ﬂat 187
+Impervious surface IMP Impervious surface IMP Impervious surface 190
+Bare areas BAL Sparse vegetation SVG Sparse vegetation 150
+Sparse shrubland 152
+Sparse herbaceous cover 153
+Bare areas BAL Bare areas 200
+Consolidated bare areas 201
+Unconsolidated bare areas 202
+Water body WTR Water body WTR Water body 210
+Permanent snow and ice PSI Permanent snow and ice PSI Permanent snow and ice 220
+that the random forest classiﬁcation model (adopted in this
+study; see Sect. 3.3.2) is highly robust to erroneous training
+samples (Gong et al., 2019b; Mellor et al., 2015; X. Zhang et
+al., 2021b). For example, Gong et al. (2019b) found that the
+overall accuracy remained relatively stable provided the pro-
+portion of erroneous training samples was within 20 %. This
+provides support for the use of the spatiotemporally stable ar-
+eas to derive conﬁdent training samples and further ensures
+the quality of land-cover dynamics monitoring.
+Numerous studies have highlighted the importance of the
+training sample balance and distribution, as they signiﬁcantly
+inﬂuence the mapping performance (Foody, 2009; Jin et al.,
+2014; Millard and Richardson, 2015). First, there are two op-
+tions for the training sample distribution: areal-proportional
+or equal allocation. The former was shown to achieve higher
+accuracy than the latter option in land-cover mapping, espe-
+cially in complicated land-cover conditions (Jin et al., 2014).
+However, when using the areal-proportional sampling strat-
+Earth Syst. Sci. Data, 16, 1353–1381, 2024 https://doi.org/10.5194/essd-16-1353-2024
+X. Zhang et al.: GLC_FCS30D 1361
+Figure 3. Three typical land-cover changes identiﬁed using the continuous change-detection (CCD) algorithm and continuous Landsat
+observations. The times series show (a) a stable land-cover condition, (b) a single abrupt change, and (c) multiple abrupt changes.
+egy, the rare land-cover types usually had small sample sizes
+and were sacriﬁced because the aim of land-cover mapping
+was to achieve a global optimum rather than a local optimum.
+Thus, the study of Zhu et al. (2016) suggested maximum
+and minimum sample sizes for abundant and rare land-cover
+types of 8000 and 600, respectively, to avoid the use of ex-
+tremely large or small sample sizes. Thus, the GLC_FCS30-
+2020 product was then split into 961 5° × 5° geographical
+tiles, and we used the areal-proportional sampling strategy
+and two sample balancing thresholds to allocate the train-
+ing samples from the spatiotemporally stable areas in each
+5°× 5° geographical tile. Lastly, the impervious surface and
+wetland samples were excluded because both were indepen-
+dently developed as thematic datasets in Sects. 2.3 and 2.4.
+3.3.2 Updating changed areas using local adaptive
+classiﬁcations
+Before building the local adaptive classiﬁcation models,
+we had to extract useful spectral features from the Land-
+sat time-series observations. In this study, we used multi-
+temporal phenological, texture, and topographical features.
+Speciﬁcally, the multitemporal phenological features were
+extracted by using the percentile-compositing method, which
+has fewer constraints than other compositing algorithms
+(such as the season-based compositing method) but achieves
+similar mapping accuracy (Azzari and Lobell, 2017). The
+spectral bands for the Landsat time series (ﬁve optical bands
+after excluding the atmospherically sensitive blue band) and
+the corresponding spectral indexes (NDVI, NDWI, and NBR
+in Eq. 2) were composited into ﬁve percentiles (10th, 25th,
+50th, 75th, and 90th). Next, our previous study explained
+that the texture features made a positive contribution to
+land-cover mapping (X. Zhang et al., 2021b), so the gray-
+https://doi.org/10.5194/essd-16-1353-2024 Earth Syst. Sci. Data, 16, 1353–1381, 2024
+1362 X. Zhang et al.: GLC_FCS30D
+level co-occurrence matrix method was used for the 50th-
+percentile-composited NIR band to extract the homogene-
+ity, entropy, dissimilarity, variance, contrast, and correlation.
+Lastly, since the land-cover distribution is usually related to
+the topographical environment (for example, croplands and
+water bodies are mainly distributed in ﬂat areas), three topo-
+graphical variables (elevation, slope, and aspect) calculated
+from a global 30 m DEM dataset named ASTER_GDEM
+(Tachikawa et al., 2011) were also imported. In addition,
+due to the limited storage capacity and satellite–ground data-
+transmission capacity of early satellites, the density of Land-
+sat imagery is sparse before 2000 (only a single satellite,
+Landsat 5, acquired data) (Roy et al., 2014b). Thus, we chose
+a coarse temporal cycle of 5 years to ensure the mapping ac-
+curacy before 2000; that is, the satellite observations from
+2 years before and after were used for the nominal cen-
+ter year. For example, we updated the land-cover maps in
+1995 using all available imagery from 1993 to 1997. In total,
+there were 49 multisource features, including 40 phenolog-
+ical spectra features, 6 texture features, and 3 topographical
+variables.
+There are two options for global land-cover mapping and
+updating: global modeling and local adaptive modeling, and
+our previous studies have found that local adaptive modeling
+yields superior results compared to global modeling. This
+is primarily due to the former’s capability to take regional
+characteristics into account more effectively, leading to in-
+creased sensitivity in training samples and higher accuracy
+in land-cover classiﬁcation (X. Zhang et al., 2021b, 2023,
+2022). Thus, we ﬁrst inherited the regional gridding style
+used in the GLC_FCS30 (X. Zhang et al., 2021b); namely,
+the global land was divided into 961 5° × 5° geographical
+tiles. Afterward, the local classiﬁcation models were inde-
+pendently built to update the land cover in each tile using the
+corresponding training samples in the neighboring eight sur-
+rounding tiles in a 3× 3 window. The adjacent training sam-
+ples were imported to increase the continuity of the adjacent
+land-cover maps.
+Lastly, in relation to the selection of the most suit-
+able classiﬁcation algorithm, the random forest (RF) clas-
+siﬁer has signiﬁcant advantages, including its capacity
+to accommodate high-dimensional training features and
+its better ability to deal with the overﬁtting problem
+and higher classiﬁcation accuracy than other widely used
+classiﬁers (Belgiu and Drãguþ, 2016; Gislason et al.,
+2006). The RF algorithm was also integrated into the
+internal function library of the GEE cloud platform as
+ee.Classifier.smileRandomForest(). Thus, the
+RF algorithm was used to combine the training samples and
+multisourced features to update the changed pixels. The RF
+algorithm allows for the adjustment of two key parameters
+(the number of decision trees (Ntree) and the number of pre-
+dicted variables (Mtry), and previous studies have quantita-
+tively analyzed the relationships between classiﬁcation accu-
+racy and the values of these two parameters. Both theoret-
+ical and experimental results indicated that the selection of
+Mtry and Ntree had little inﬂuence on the classiﬁcation accu-
+racy (Belgiu and Drãguþ, 2016; Du et al., 2015). Thus, based
+on previous studies (Belgiu and Drãguþ, 2016; Zhang et al.,
+2019), the default recommended values of 500 for Ntree and
+the square of the total number of input features for Mtry were
+used.
+3.3.3 Temporal-consistency optimization
+To ensure the rationality and consistency of land-cover
+changes for long time series, the CCD algorithm was applied
+to capture the time points of land-cover changes, and then the
+changed pixels were updated using the local adaptive classi-
+ﬁcations. In this study, despite our best efforts, it was difﬁ-
+cult to completely eliminate classiﬁcation errors, particularly
+when dealing with changes over time. To address this issue
+and enhance accuracy in areas with temporal variations, we
+employed the temporal consistency optimization method de-
+scribed in Eq. (3). This approach incorporates both temporal
+and spatial neighboring information to assess homogeneity,
+thereby reducing potential misclassiﬁcations of changed ar-
+eas in the time series.
+Px,y,t= 1
+N
+[∑x′=x+1
+x′=x−1
+∑y′=y+1
+y′=y−1
+∑t′=t+1
+t′=t−1
+·I
+(
+Lx′,y′,t′=Lx,y,t
+)]
+(3)
+Here, Px,y,t is the homogeneity probability of the pixel at
+spatial location (xy) and time point t; usually, the higher
+the value of Px,y,t , the weaker the classiﬁcation error ef-
+fect.Lx,y,t andLx′,y′,t′ are, respectively, the land-cover la-
+bels of the central pixel and the corresponding spatiotempo-
+rally neighboring pixels in a local window of 3× 3× 3, and
+I() denotes the indicator function for the equation of the sta-
+tus between two pixels. Namely, ifLx′,y′,t′ is equal toLx,y,t ,
+then the value of the indicator function is 1; otherwise, it
+is equal to 0 (Kenny, 2003). In this study, the homogene-
+ity probability was calculated for each changed pixel, and a
+threshold of 0.5 (as suggested by and used in the studies of
+Li et al., 2015 and Zhang et al., 2022) was used to judge the
+rationality of land-cover changes; namely, when Px,y,t was
+less than the threshold,Lx,y,t was modiﬁed according to the
+spatiotemporal pixels.
+3.4 Accuracy assessment
+The validation process for the GLC_FCS30D dataset fol-
+lowed the recommended guidelines proposed by Pontus
+Olofsson (2014). These guidelines encompass two key com-
+ponents: area estimation (non-site-speciﬁc accuracy) and ac-
+curacy assessment (site-speciﬁc accuracy). The site-speciﬁc
+accuracy assessment mainly focuses on estimating the con-
+fusion matrix and calculating some accuracy metrics, includ-
+ing overall accuracy (O.A.), producer’s accuracy (P.A.), and
+user’s accuracy (U.A.); and a poststratiﬁed estimator is used
+Earth Syst. Sci. Data, 16, 1353–1381, 2024 https://doi.org/10.5194/essd-16-1353-2024
+X. Zhang et al.: GLC_FCS30D 1363
+to calculate the corresponding standard errors (Pontus Olof-
+sson, 2014).
+P.A.k= pkk∑pk.
+U.A.k= pkk∑p.k
+O.A.=
+∑m
+k=1pkk (4)
+Here,pkk is the proportion of the area mapped as classk that
+had a reference class of k;∑pk. and∑p.k are the propor-
+tion of the area mapped as class k and the proportion of the
+reference area mapped as classk, respectively; andm denotes
+the number of land-cover types. Afterwards, because there
+is currently no global long-time-series validation dataset, we
+used 84 526 global validation points to assess the accuracy
+metrics of the GLC_FCS30D dataset in 2020 and used two
+third-party datasets to analyze the variation across the accu-
+racy time series. GLC_FCS30D adopts a ﬁne classiﬁcation
+system containing 35 subcategories, for which we applied
+an analysis protocol to the basic classiﬁcation system and
+the LCCS level-1 validation system, whose details are ex-
+plained in the Table 1 and contained 10 major land-cover
+types and 17 ﬁne land-cover types. Lastly, to quantify the
+performance of land-cover changed pixels, we followed the
+proposal of Stehman et al. (2021) for assessing the LCMAP
+annual land-cover products for 1985–2017; that is, the vali-
+dation pixels were grouped into “changed” and “unchanged”
+categories and the corresponding confusion matrix was cal-
+culated. Meanwhile, to minimize the imbalance in sample
+size between the “change” and “no-change” samples, the F1
+metric score was calculated as
+F1= P.A.× U.A.
+P.A.+ U.A.× 2× 100 %. (5)
+4 Results and discussion
+4.1 Overview of the GLC_FCS30D maps and their
+changes
+Figure 4 provides an overview of the GLC_FCS30D dataset
+for 2022 (an overview of GLC_FCS30D for 1985 is given
+in Fig. S3); overall, it aligns with the real-world land-cover
+patterns on a global scale. Forest, cropland, barren land,
+and grassland are the dominant land-cover types, and each
+of them is distributed in the corresponding ecology subre-
+gions. For example, needle-leaved forest is mainly concen-
+trated in the high-latitude cold regions, while broad-leaved
+forests are mainly distributed in tropical regions; perma-
+nent ice and snow are mainly located in Greenland and
+high-altitude mountains. GLC_FCS30D has signiﬁcant ad-
+vantages over other global land-cover datasets in terms of
+land-cover type diversity: it contains 35 discrete land-cover
+types, among which forests and wetlands are subdivided into
+10 and 7 land-cover subcategories, respectively.
+Figure 5a illustrates the spatial distribution of land-cover
+change intensity (measuring the proportions of changed pix-
+els in the 0.05° grid) in GLC_FCS30D from 1985 to 2022
+after upscaling to a resolution of 0.05°. Obviously, global
+land cover has experienced signiﬁcant changes over the past
+37 years, mainly in three areas: (1) areas on the periphery
+of tropical rainforests in South America and Southeast Asia,
+with deforestation the dominant cause; (2) areas where wet-
+lands and water bodies intermingle (i.e., water bodies and
+wetlands transform into one another due to different annual
+water levels; note that the water body land-cover type in
+GLC_FCS30D represents permanent water during the year
+of interest, although the same area may be a wetland in
+other years), such as those in North America and northern
+Asia; and (3) semi-arid areas in Australia, Central Asia, and
+western Africa, where land cover (such as sparse vegetation
+or bare land) is directly affected by precipitation and tem-
+perature (for example, if there is sufﬁcient precipitation in
+the year, the sparsely vegetated land and some of the bare
+land would be covered by grass in semi-arid areas; simi-
+larly, the work of Winkler et al., 2021 revealed that these
+semi-arid areas experienced serious and frequent land-cover
+changes). Figure 5b quantiﬁes the changed area for 10 ma-
+jor land-cover types from 1985 to 2022. Forest and crop-
+land variations dominated the global land-cover change. The
+net loss of forests over the past 37 years reached approxi-
+mately 2.5 million km2, and the decline has been steady over
+time. Conversely, cropland showed a stable increase, and the
+net gain in cropland area is approximately 1.3 million km 2.
+Shrubland, wetland, and impervious surface increased in area
+by 0.45 million, 0.40 million, and 0.37 million km 2, respec-
+tively. The increased shrubland resulted from the recovery of
+deforested land, and the wetland gains are due to increases in
+seasonal water bodies. The work of Pekel et al. (2016) em-
+phasized that global seasonal water bodies (labeled “inland
+wetlands” in GLC_FCS30D) showed an overall increase.
+Figure 6 further analyzes the net area variations of 10 ma-
+jor land-cover types on six continents. The six continents
+exhibit various land-cover change characteristics; for exam-
+ple, steady forest loss and cropland gain dominate land-
+cover change in South America, while the net area varia-
+tions of most land-cover types ﬂuctuate in Australia. North
+America has experienced obvious deforestation, and the area
+of forest loss reaches approximately 4.5× 105 km2. In con-
+trast, the shrubland, grassland, and impervious surface land-
+cover types show increasing trends overall, with increases of
+1.4× 105 km2, 0.8× 105 km2, and 0.72× 105 km2, respec-
+tively. Similarly, Xian et al. (2022) reported that forest losses
+and shrubland, grassland, and impervious surface gains were
+the dominant characteristics of the CONUS from 1985 to
+2017. In Europe, the forest area continuously decreased, and
+the cropland area ﬁrst decreased and then increased because
+of the collapse of the Soviet Union in 1990s. Abandoned
+croplands were transformed into pasture (which also belongs
+to the cropland land-cover type in GLC_FCS30D). Among
+https://doi.org/10.5194/essd-16-1353-2024 Earth Syst. Sci. Data, 16, 1353–1381, 2024
+1364 X. Zhang et al.: GLC_FCS30D
+Figure 4. Overview of GLC_FCS30D for 2022; the color-coded legend is derived from the European Space Agency (ESA) Climate Change
+Initiative land-cover dataset (Defourny et al., 2018).
+the six continents, the increase in impervious surface is the
+most signiﬁcant in Asia, with a net increase of 1.9×105 km2;
+wetland also shows a large increase of 1 .1× 105 km2. The
+increased wetland coverage comes from the increase in sea-
+sonal water bodies. South America and Africa have experi-
+enced similar land-cover change characteristics: they show
+the most intense deforestation rates and the most signiﬁcant
+increases in cropland. According to our statistics, the for-
+est loss on these two continents amounts to 16.9× 105 km2,
+and the corresponding increase in cropland is approximately
+11.1× 105 km2. Lastly, Oceania is more sensitive to climate
+change, especially in terms of precipitation, so ﬂuctuations
+in shrubland, grassland, and bare land are evident there be-
+cause the conversion relationship between the three land-
+cover types is related to annual precipitation.
+Figure 7 displays the land-cover transformation relation-
+ships from 1985 to 2022 in the GLC_FCS30D dataset using
+Sankey diagrams. Global cropland and forest show obvious
+area changes, with area proportions changing from 12.08 %
+and 38.26 %, respectively, in 1985 to 12.86 % and 36.48 %,
+respectively, in 2022. Shrubland changed from 8.70 % in
+1985 to 9.03 % in 2022. We mainly focus on forest, cropland,
+shrubland, and impervious surface changes, which domi-
+nate the land-cover changes in Fig. 5. There are three main
+causes of forest loss over the past 37 years: (1) 37.58 % of
+the deforested land was converted to cropland (this trans-
+formation was more signiﬁcant in tropical rainforest areas;
+Fig. 8a); (2) 26.92 % of the lost forest was regrown as
+shrubland, which is more common in mountainous areas af-
+fected by wildﬁres; and (3) 13.49 % of the deforested land
+was converted to grassland. Cropland is converted to for-
+est, grassland, and impervious surfaces. A total of 26.29 %
+of the lost cropland is converted to grassland due to aban-
+donment, 25.88 % of the lost cropland is covered by forests,
+and 21.01 % of the lost cropland resulted from urbanization.
+Lastly, regarding impervious surfaces, our primary focus was
+on identifying the sources contributing to their expansion.
+Our ﬁndings indicate that approximately 36.24 % of the im-
+pervious surface increase can be attributed to the conversion
+of cropland, while 13.49 % of the increase is a result of de-
+forestation.
+To visually understand the land-cover change process cap-
+tured by the GLC_FCS30D dataset over the past 37 years,
+Fig. 8 displays three typical enlargements (the spatial loca-
+Earth Syst. Sci. Data, 16, 1353–1381, 2024 https://doi.org/10.5194/essd-16-1353-2024
+X. Zhang et al.: GLC_FCS30D 1365
+Figure 5. (a) The spatial distribution of global land-cover-change intensity from 1985 to 2022 after aggregation to a resolution of 0.05°.
+(b) The net changed area of 10 major land-cover types in GLC_FCS30D from 1985 to 2022.
+tions of the enlarged areas are illustrated as two black rectan-
+gles in Fig. 5a) of the Amazon rainforest (which experienced
+signiﬁcant deforestation) and China’s Yangtze River Delta
+(which underwent rapid urbanization) and Yellow River delta
+(which showed evident land-cover changes over coastal re-
+gions). These three typical areas experienced drastic land-
+cover changes, and GLC_FCS30D accurately captures those
+spatiotemporal changes. Speciﬁcally, the deforestation in
+South America is widely recognized, and GLC_FCS30D
+clearly reﬂects this trend. Namely, the early deforesta-
+tion showed a grid distribution, and then each grid gradu-
+ally extended outward and ﬁnally connected into patches.
+GLC_FCS30D also shows that deforestation has not stopped
+in the region in terms of the rate of forest loss, and these ﬁnd-
+ings are in line with the results of earlier research (Harris et
+al., 2021; Potapov et al., 2022). In the Yangtze River Delta,
+GLC_FCS30D depicts that the dominant land-cover change
+over the enlargement is urbanization, and a large quantity of
+irrigated cropland has been converted to impervious surfaces.
+Meanwhile, urban expansion was signiﬁcantly faster before
+2010 than after 2010 according to GLC_FCS30D. Lastly, the
+Yellow River delta, a typical coastal region, was selected to
+assess the ability of GLC_FCS30D to capture these coastal
+land-cover changes. Obviously, the land-cover changes in
+https://doi.org/10.5194/essd-16-1353-2024 Earth Syst. Sci. Data, 16, 1353–1381, 2024
+1366 X. Zhang et al.: GLC_FCS30D
+Figure 6. The net area variations of 10 major land-cover types on six continents from 1985 to 2022.
+Figure 7. Sankey diagrams of the global land-cover changes during 1985–2022 in the GLC_FCS30D dataset.
+GLC_FCS30D can be summarized as three aspects: (1) a
+large number of ﬂooded ﬂats and tidal ﬂats were reclaimed
+as aquaculture ponds, especially after 2000; (2) the mouth
+of the Yellow River changed from a southerly orientation
+to a northerly one (black rectangle), i.e., there were large
+land-cover changes between tidal/ﬂooded ﬂats, water bod-
+ies, and salt marshes; and (3) a lot of impervious surfaces
+encroached on the coastal water bodies and ﬂats. In short,
+by combining real remote-sensing observation time series
+data, GLC_FCS30D effectively captures the spatiotemporal
+changes of the land surface.
+4.2 Accuracy assessment of GLC_FCS30D for 2020
+Table 2 provides the error matrix and accuracy metrics for the
+GLC_FCS30D dataset in the basic classiﬁcation system con-
+taining 10 major land-cover types. The novel GLC_FCS30D
+dataset attained an O.A. of 80.88 % ( ±0.27 %). Cropland,
+forest, impervious surface, water body, and permanent snow
+and ice perform better in terms of the P.A. and U.A. than
+the remaining land-cover types, with the corresponding ac-
+curacies exceeding 85 %. The impervious surface and wet-
+land datasets are independently generated and then over-
+laid on GLC_FCS30D, helping these complicated land-cover
+types to achieve high accuracy metrics. Conversely, grass-
+land, shrubland, and tundra have lower accuracies; for exam-
+ple, grassland had the lowest P.A. of 54.41 % and shrubland
+had the lowest U.A. of 57.63 %. The two reasons that they
+performed poorly were as follows: (1) these land-cover types
+usually reﬂected heterogeneous and varied spectral and spa-
+tial characteristics, e.g., the grassland showed similar spectra
+to cropland and sparse shrubland in the growing season but
+Earth Syst. Sci. Data, 16, 1353–1381, 2024 https://doi.org/10.5194/essd-16-1353-2024
+X. Zhang et al.: GLC_FCS30D 1367
+Figure 8. Three typical enlargements showing the land-cover changes according to GLC_FCS30D from 1985 to 2022 in (a) the Amazon
+rainforest, (b) the Yangtze River Delta in China, and (c) the Yellow River delta in China. The color coding is the same as that used for the
+global map in Fig. 4. In each case, the natural-color imagery from 1985 to 2022 are composites taken from Landsat imagery.
+mimicked bare-land features in harvest season, and (2) all of
+them were distributed in climate-transition areas with com-
+plicated climate variations and landscapes.
+Table 3 provides the error matrix of GLC_FCS30D for
+2020 in the LCCS level-1 validation system with 17 land-
+cover types. The GLC_FCS30D-2020 dataset achieves an
+O.A. of 73.04 % ( ±0.30 %), which is lower than that
+achieved with the basic classiﬁcation system because these
+similar land-cover subcategories suffer more easily from
+misclassiﬁcation. For example, forest has a P.A. of 92.83 %
+(±0.31 %), but the P.A. rapidly decreases to the range of
+58.29 % (±1.53 %) to 82.39 % (±0.98 %) when forest is
+split into ﬁve ﬁne subcategories. Cropland, forest, and bare
+land, which are further divided into multiple subcategories,
+show obvious decreases in accuracy for their subcategories
+in terms of P.A. and U.A. Taking cropland and forest as ex-
+amples, approximately 31.7 % of the irrigated cropland (ICP)
+is misclassiﬁed as rainfed cropland (RCP), and so the U.A. of
+ICP is only 59.92 %. More than 53.8 % of the mixed-leaf
+forests (MFT) are wrongly labeled as the other four forest
+subcategories, and so the ‘mixed-leaf forests have the lowest
+U.A. of 39.34 % (±1.38 %). Meanwhile, sparse vegetation
+https://doi.org/10.5194/essd-16-1353-2024 Earth Syst. Sci. Data, 16, 1353–1381, 2024
+1368 X. Zhang et al.: GLC_FCS30D
+Table 2.Error matrix of the GLC_FCS30D dataset for 2020 based on the basic classiﬁcation system. The reported producer’s accuracy (P.A.) and user’s accuracy (U.A.) come with
+corresponding standard errors (SE) shown in parentheses.
+Map O.A.=80.88 % (±0.27 %)
+Reference CRP FST GRS SHR WET WTR TUD IMP BAL PSI Total P.A. (SE)
+CRP 15.442 0.792 0.679 0.388 0.086 0.027 0 0.174 0.117 0 17.704 87.22 (0.54)
+FST 0.513 28.712 0.315 0.811 0.371 0.021 0.008 0.063 0.113 0.002 30.93 92.83 (0.31)
+GRS 1.035 1.166 5.906 1.181 0.231 0.011 0.084 0.051 1.181 0.01 10.855 54.41 (1.02)
+SHR 0.555 1.798 0.863 5.392 0.161 0.013 0.019 0.05 0.502 0.002 9.356 57.63 (1.09)
+WET 0.068 0.465 0.156 0.157 4.047 0.347 0.031 0.021 0.222 0.001 5.516 73.37 (1.27)
+WTR 0.04 0.086 0.019 0.017 0.302 3.305 0.008 0.012 0.039 0.002 3.831 86.28 (1.12)
+TUD 0.01 0.123 0.168 0.167 0.018 0.03 2.444 0.002 0.473 0.02 3.454 70.76 (1.65)
+IMP 0.084 0.058 0.024 0.04 0.001 0.006 0.002 5.043 0.024 0 5.283 95.45 (0.61)
+BAL 0.13 0.049 0.783 0.585 0.043 0.045 0.577 0.048 9.239 0.131 11.628 79.45 (0.8)
+PSI 0 0.004 0.03 0.005 0 0.023 0.001 0 0.03 1.351 1.443 93.63 (1.38)
+Total 17.877 33.251 8.943 8.743 5.259 3.828 3.176 5.464 11.94 1.52
+U.A. (SE) 86.38 (0.55) 86.35 (0.4) 66.05 (1.07) 61.68 (1.11) 76.96 (1.2) 86.33 (1.35) 76.97 (1.6) 92.29 (0.77) 77.38 (0.82) 88.89 (1.72)
+Note: the abbreviations correspond to the 10 categories of the basic classiﬁcation system in Table 1.
+Figure 9. Time series of the overall accuracy of the GLC_FCS30D
+dataset using the LCMAP_Val annual reference dataset across the
+contiguous United States (CONUS) from 1985 to 2018. The error
+bars on the graph show the uncertainty of the data points.
+has the second lowest U.A. of 50.63 % ( ±1.47 %) because
+of the confusion between sparse vegetation, grassland, and
+bare land. In the basic classiﬁcation system (Table 1), sparse
+vegetation is grouped with bare land. A previous study in the
+European Union proposed grouping it with grassland (Gao
+et al., 2020). Wetland is further divided into coastal wetland
+(CWL) and inland wetland (IWL) in Table 3, and CWL has
+a higher U.A. than that of wetland in Table 2, which is pri-
+marily attributable to the signiﬁcantly more accurate classi-
+ﬁcation of wetland in the CWL subcategory (Zhang et al.,
+2023).
+4.3 Accuracy assessment based on two third-party
+regional validation datasets
+4.3.1 Time series of accuracy metrics of GLC_FCS30D
+from the LCMAP_Val dataset
+Figure 9 displays a time series of the overall accuracy of
+the GLC_FCS30D dataset using the LCMAP_Val annual
+validation dataset from 1985 to 2018 over the CONUS.
+GLC_FCS30D achieves a mean O.A. of 79.50 % (±0.50 %)
+and the O.A. varies from a high value of 80.04 % (±0.49 %)
+in 2015 to a low value of 78.91 % (±0.51 %) in 2000. The
+overall accuracy of GLC_FCS30D is slightly lower at the
+early stage, which might be related to the density of Land-
+sat observations. The early Landsat missions had weaker
+satellite-to-ground transmission and onboard recording ca-
+pabilities (Roy et al., 2014a), so the phenological variability
+and land-cover changes were more difﬁcult to capture at the
+early stage.
+Figure 10 shows time series of the P.A. and U.A. for the
+GLC_FCS30D dataset in the CONUS. Visually, the P.A. and
+U.A. values of the 10 major land-cover types range from
+45 % to 100 % and from 35 % to 100 %, respectively, and
+Earth Syst. Sci. Data, 16, 1353–1381, 2024 https://doi.org/10.5194/essd-16-1353-2024
+X. Zhang et al.: GLC_FCS30D 1369
+Table 3. Error matrix of the GLC_FCS30D dataset for 2020 based on the LCCS level-1 validation system. The reported producer’s accuracy (P.A.) and user’s accuracy (U.A.) come
+with corresponding standard errors (SE) shown in parentheses.
+Reference RCP ICP EBF DBF ENF DNF MFT SHR GRS LMS SVG IWL CWL IMP BAL WTR PSI Total P.A. (SE)
+RCP 12.225 1.023 0.239 0.358 0.102 0.016 0.009 0.382 0.66 0 0.078 0.056 0.005 0.124 0.028 0.001 0 15.332 79.7 (0.7)
+ICP 0.397 1.932 0.026 0.016 0.005 0 0 0.01 0.025 0 0.012 0.029 0.005 0.052 0 0.018 0 2.527 76.45 (1.81)
+EBF 0.2 0.048 9.091 1.098 0.262 0.103 0.151 0.371 0.084 0 0.012 0.136 0.028 0.029 0.001 0.004 0 11.514 78.96 (0.82)
+DBF 0.187 0.016 0.632 6.838 0.537 0.294 0.396 0.235 0.144 0.002 0.019 0.077 0.002 0.025 0.005 0.004 0.002 9.054 75.53 (0.97)
+ENF 0.046 0.004 0.174 0.316 5.681 0.328 0.439 0.128 0.034 0.006 0.043 0.094 0 0.008 0.01 0.01 0 6.895 82.39 (0.98)
+DNF 0.008 0 0.002 0.13 0.245 1.854 0.073 0.071 0.053 0 0.011 0.025 0 0.001 0.007 0.002 0 2.414 76.79 (1.85)
+MFT 0.004 0 0.019 0.176 0.234 0.013 0.828 0.014 0.004 0 0 0.010 0.05 0 0.001 0 0 1.308 58.29 (1.53)
+SHR 0.518 0.042 0.299 0.9 0.328 0.131 0.034 5.44 0.871 0.019 0.441 0.157 0.005 0.05 0.065 0.013 0.002 9.438 57.63 (1.09)
+GRS 0.947 0.097 0.167 0.582 0.209 0.154 0.024 1.191 5.958 0.085 0.974 0.229 0.006 0.052 0.217 0.008 0.01 10.95 54.41 (1.02)
+LMS 0.006 0.004 0.001 0.022 0.044 0.053 0.001 0.168 0.169 2.465 0.379 0.02 0.001 0.002 0.098 0.026 0.02 3.484 70.76 (1.65)
+SVG 0.064 0.01 0.008 0.006 0.007 0.01 0.001 0.397 0.462 0.025 2.71 0.012 0 0.013 0.643 0.002 0.024 4.399 61.6 (1.57)
+IWL 0.01 0.002 0.044 0.029 0.103 0.022 0.002 0.048 0.017 0.008 0.042 2.673 0.024 0.001 0.012 0.224 0 3.263 81.91 (1.45)
+CWL 0.004 0.002 0.008 0.002 0.004 0.002 0.004 0.008 0.006 0 0.008 0.188 1.476 0.007 0.007 0.059 0 1.783 82.77 (1.92)
+IMP 0.074 0.011 0.008 0.008 0.037 0.002 0 0.041 0.024 0.002 0.014 0.004 0 5.087 0.01 0.004 0 5.329 95.45 (0.61)
+BAL 0.048 0.01 0.002 0.004 0.002 0.001 0 0.193 0.328 0.557 0.582 0.043 0.002 0.035 5.384 0.029 0.108 7.33 73.45 (1.11)
+WTR 0.014 0.024 0.014 0.014 0.019 0.008 0.006 0.011 0.016 0.007 0.011 0.168 0.114 0.011 0.019 3.054 0.002 3.509 87.04 (1.22)
+PSI 0 0 0 0.001 0.002 0 0 0.005 0.03 0.001 0.011 0 0 0 0.019 0.023 1.363 1.455 93.65 (1.37)
+Total 14.757 3.224 10.753 10.56 7.833 3.724 1.97 8.711 8.883 3.179 5.353 3.927 1.668 5.497 6.526 3.482 1.532
+U.A. 82.85 59.92 84.55 64.76 72.52 49.77 39.34 62.44 67.07 77.55 50.63 68.07 88.49 92.54 82.5 87.73 88.96
+(SE) (0.67) (1.85) (1.75) (1) (1.08) (1.76) (1.38) (1.11) (1.07) (1.59) (1.47) (1.6) (1.68) (0.76) (1.01) (1.19) (1.72)
+O.A. 73.04 % (±0.30 %)
+Note: the abbreviations correspond to the 17 categories of the LCCS validation system in Table 1.
+https://doi.org/10.5194/essd-16-1353-2024 Earth Syst. Sci. Data, 16, 1353–1381, 2024
+1370 X. Zhang et al.: GLC_FCS30D
+the time-series variations are stable. Among them, the wa-
+ter body land-cover type has the highest accuracy metrics,
+achieving mean P.A. and U.A. values of 95.31 % (±1.14 %)
+and 98.53 % (±0.66 %), respectively, which beneﬁt from the
+unique spectral characteristics of this land-cover type. Crop-
+land follows, with mean P.A. and U.A. values of 93.37 %
+(±0.74 %) and 87.70 % (±0.94 %), respectively. Forest ranks
+third, with a high P.A. of 97.75 % (±0.35 %) but a relatively
+low U.A. of 82.42 % (±0.82 %); the unbalanced metrics oc-
+cur because GLC_FCS30D and LCMAP_Val have different
+deﬁnitions for forest. GLC_FCS30D deﬁnes a forest as hav-
+ing a tree cover greater than 15 %, while the threshold set-
+ting of LCMAP_Val is 10 %, so many of the shrublands in
+GLC_FCS30D are labeled as forests in LCMAP_Val. Wet-
+land has a U.A. value of 90.47 % (±2.05 %) but a P.A. value
+of 57.07 % (±2.75 %), which is also caused by a discrep-
+ancy in the deﬁnition of wetland. GLC_FCS30D identi-
+ﬁes seasonal water bodies as wetlands while LCMAP_Val
+classiﬁes them as water bodies. Impervious surface has a
+P.A. lower than 60 %, mainly because the GLC_FCS30D
+and LCMAP_Val datasets have different deﬁnitions of im-
+pervious surface. LCMAP_Val deﬁnes buildings and the sur-
+rounding green areas as developed, while GLC_FCS30D
+only includes the artiﬁcial buildings (houses, roads, squares,
+and so on). Bare land and shrubland have the lowest U.A. val-
+ues of 35.58 % (±4.39 %) and 47.29 % (±1.56 %), respec-
+tively, mainly because both of them are easily confused with
+grassland due to their complicated spectral characteristics
+and because they coexist in climate-sensitive semi-arid re-
+gions (e.g., the Midwestern United States). Xian et al. (2022)
+emphasized that long-term monitoring of shrubs and grass-
+lands presents signiﬁcant challenges in the CONUS. Per-
+manent snow and ice, which is sparsely distributed in high-
+elevation mountainous areas of the United States, has unique
+and speciﬁc spectral characteristics, so it achieves a P.A. of
+100 % in GLC_FCS30D. The large ﬂuctuations in U.A. for
+ice and snow are attributed to (1) the small sample size for
+ice and snow in the LCMAP_Val dataset and (2) a few mis-
+classiﬁed grass/bare land pixels that are correctly identiﬁed
+as snow and ice during 2005–2014.
+Figure 11 shows the area-bias percentages of eight land-
+cover types estimated by GLC_FCS30D and LCMAP_Val
+across the CONUS. Intuitively, GLC_FCS30D and
+LCMAP_Val share similar total areas for estimations
+of cropland, bare land, and water bodies but evident area de-
+viations for estimations of forest, shrubland, and grassland.
+The deviations in shrubland and grassland occur mainly be-
+cause these land-cover types coexist in the semi-arid regions
+of the central United States and share similar spectral char-
+acteristics and temporal variability; thus, some grasslands in
+LCMAP_Val are considered shrublands in GLC_FCS30D.
+Xian et al. (2022) also failed to distinguish grassland from
+shrubland and combined them into a group when generating
+LCMAP annual maps. LCMAP_Val has a broader deﬁnition
+of impervious surface, which results in negative bias, so the
+impervious surface area estimated in LCMAP_Val is larger
+than the assessment in the GLC_FCS30D dataset.
+Table 4 analyzes the confusion matrix of changed and
+unchanged land-cover pixels in GLC_FCS30D using the
+LCMAP_Val dataset. It should be noted that the changed
+land-cover samples in LCMAP_Val were still sparse; that
+is, the size of the changed samples cannot support the anal-
+ysis of speciﬁc land-cover changes. Similarly, Stehman et
+al. (2021) grouped the land-cover types into “no change”
+and “change” types for analyzing the land-cover changes. In
+this study, when using the “changed” and “unchanged” val-
+idation points in LCMAP_Val, the O.A. of GLC_FCS30D
+reached 90.49± 0.45 %. In particular, the unchanged land-
+cover pixels played a dominant role and reached a high
+P.A. of 92.84 % and a high U.A. of 96.28 %. In contrast,
+the P.A. and U.A. of the changed land-cover pixels were
+72.26± 2.04 % and 56.62± 2.00 %, and the F1 score was
+63.49 %.
+4.3.2 Time series of accuracy metrics of GLC_FCS30D
+from the LUCAS dataset
+Table 5 lists the time series of accuracy metrics of the
+GLC_FCS30D dataset across the European Union (EU) from
+2006 to 2018 using the LUCAS dataset. The GLC_FCS30D
+dataset has a mean O.A. of 81.91 % (±0.09 %) and an O.A.
+range of 81.64 % (0.09 %) to 82.11 % (0.09 %) in the EU.
+The two dominant land-cover types (cropland and forest),
+which cover almost 70 % of the entire EU area (Gao et
+al., 2020), have higher P.A. and U.A. values than the other
+land-cover types. The P.A. and U.A. of cropland exceed
+85 % and 93 %, respectively. Forest has unbalanced P.A. (ap-
+proximately 95 %) and U.A. (approximately 76 %) values
+because the LUCAS dataset deﬁnes forest more broadly
+than the GLC_FCS30D dataset does. In particular, sparse
+vegetation associated with forest is grouped with forest
+in LUCAS but with bare land in GLC_FCS30D. Gao et
+al. (2020) explained the discrepancy in the deﬁnition of for-
+est between LUCAS and GLC_FCS30. Shrubland, grass-
+land, and bare land showed inferior performance in terms
+of both P.A. and U.A. because of their complicated spec-
+tral variability and spatial heterogeneity. Gao et al. (2020)
+also found that three global 30 m land-cover products (Glo-
+beLand30, FROM_GLC, and GLC_FCS30) exhibited poor
+performance for these three land-cover types. Urban green
+space and discontinuous urban fabric, which are excluded
+from GLC_FCS30D, are grouped with impervious surface
+in LUCAS. Thus, impervious surface also has a low P.A. of
+approximately 59 %. Lastly, upon investigating the temporal
+variability of P.A. and U.A. we ﬁnd that permanent ice and
+snow and wetland show greater variability and that both are
+closely related to annual temperature and precipitation; i.e.,
+their spatial distributions are affected by the natural environ-
+ment.
+Earth Syst. Sci. Data, 16, 1353–1381, 2024 https://doi.org/10.5194/essd-16-1353-2024
+X. Zhang et al.: GLC_FCS30D 1371
+Figure 10. Time series of the producer’s accuracy and user’s accuracy of GLC_FCS30D based on the LCMAP_Val dataset from 1985 to
+2018 in the contiguous United States (CONUS). The error bands represent±1 standard error.
+Figure 11. The area-bias percentages of eight land-cover types in the GLC_FCS30D and LCMAP_Val datasets from 1985 to 2017 in the
+contiguous United States (CONUS).
+Table 6 shows the area proportions of 10 major land-
+cover types from both the GLC_FCS30D dataset (“Map”)
+and the LUCAS validation dataset (“Ref”). The area bias
+(“AB”) measures the area deviations between the two
+different datasets for the same land-cover type. Overall,
+GLC_FCS30D overestimates the total area assessments of
+forest, bare land, and ice and snow and underestimates the re-
+maining land-cover types in comparison to the LUCAS esti-
+mations. In particular, according to its AB of+7.356 %, for-
+est shows the most signiﬁcant overestimation, while cropland
+shows the most underestimation (AB of −4.086 %). Crop-
+land and forest cover together account for approximately
+70 % of the total EU area (Gao et al., 2020)); as a result,
+the area bias (AB) values for these two land-cover types are
+https://doi.org/10.5194/essd-16-1353-2024 Earth Syst. Sci. Data, 16, 1353–1381, 2024
+1372 X. Zhang et al.: GLC_FCS30D
+Table 4. The confusion matrix of changed and unchanged pixels in GLC_FCS30D when using the LCMAP_Val datasets.
+Unchanged Changed Total P.A. (SE) F1
+Unchanged 82.21 6.34 88.55 92.84 (0.42) 94.53
+Changed 3.18 8.27 11.45 72.26 (2.04) 63.49
+Total 85.39 14.61
+U.A. (SE) 96.28 (0.32) 56.62 (2.00)
+O.A. (SE) 90.49 (0.45)
+Table 5. Time series of accuracy metrics of the GLC_FCS30D dataset using the LUCAS validation dataset across the European Union.
+2006 2009 2012 2015 2018
+P.A. (SE) U.A. (SE) P.A. (SE) U.A. (SE) P.A. (SE) U.A. (SE) P.A. (SE) U.A. (SE) P.A. (SE) U.A. (SE)
+CRP 85.49 (0.11) 93.37 (0.08) 85.40 (0.11) 93.31 (0.08) 85.50 (0.11) 93.17 (0.08) 85.47 (0.11) 93.05 (0.08) 85.52 (0.11) 92.82 (0.08)
+FST 95.22 (0.08) 76.71 (0.15) 94.97 (0.08) 76.71 (0.15) 94.79 (0.09) 76.82 (0.15) 94.36 (0.09) 76.82 (0.15) 93.71 (0.09) 76.85 (0.15)
+GRS 6.13 (0.26) 21.31 (0.83) 6.10 (0.26) 21.13 (0.83) 6.05 (0.26) 20.98 (0.83) 6.08 (0.26) 20.71 (0.82) 5.99 (0.26) 20.74 (0.82)
+SHR 8.13 (0.42) 8.93 (0.46) 8.25 (0.43) 8.92 (0.46) 8.02 (0.42) 8.77 (0.46) 7.84 (0.42) 8.60 (0.45) 8.35 (0.43) 8.96 (0.46)
+WET 63.10 (0.81) 66.55 (0.81) 61.40 (0.81) 65.55 (0.82) 61.86 (0.81) 66.21 (0.82) 62.64 (0.81) 66.60 (0.81) 62.94 (0.81) 65.34 (0.81)
+WTR 89.73 (0.40) 92.44 (0.36) 90.09 (0.40) 92.53 (0.35) 90.28 (0.39) 92.36 (0.36) 90.83 (0.38) 91.63 (0.37) 90.10 (0.40) 91.56 (0.37)
+IMP 58.55 (0.56) 72.69 (0.56) 59.21 (0.55) 72.06 (0.56) 59.06 (0.55) 71.72 (0.56) 58.65 (0.55) 70.85 (0.56) 59.01 (0.55) 70.29 (0.56)
+BAL 52.77 (1.12) 39.62 (0.95) 52.90 (1.12) 38.44 (0.93) 52.19 (1.13) 37.70 (0.93) 52.07 (1.13) 36.16 (0.90) 52.33 (1.13) 34.69 (0.87)
+PSI 86.02 (5.00) 35.01 (4.38) 91.40 (4.04) 36.56 (4.38) 89.25 (4.46) 31.86 (4.00) 96.24 (2.74) 31.40 (3.81) 96.24 (2.74) 31.35 (3.81)
+O.A. (SE) 82.11 (0.09) 81.99 (0.09) 81.97 (0.09) 81.82 (0.09) 81.64 (0.09)
+more noticeable or pronounced compared to the AB values
+of the other land-cover types.
+Table 7 presents the confusion matrix of changed and
+unchanged pixels obtained using the LUCAS validation
+datasets. The O.A. of GLC_FCS30D reached 90.36±0.38 %;
+the P.A. and U.A. of the changed pixels were 52.86± 1.93 %
+and 73.31± 1.74 %, respectively; and the corresponding F1
+score was 61.43 %. In contrast, the unchanged land-cover
+pixels reached high P.A. and U.A. values, with both metrics
+exceeding 90 %. Thus, the changed land-cover pixels were
+more difﬁcult to capture compared with these unchanged
+pixels. Similarly, Stehman et al. (2021) also found that the
+accuracy metrics of the changed pixels were far lower than
+those of the unchanged pixels: the producer’s accuracy of the
+changed pixels and unchanged pixels was 16 % and 99 %,
+respectively.
+4.4 Comparisons with other global land-cover dynamics
+products
+Figure 12 gives qualitative comparisons between our
+GLC_FCS30D and two widely used land-cover dynamics
+datasets (CCI_LC and MCD12Q1) for 2001–2020 in the
+Indo-China Peninsula, which experienced evident land-cover
+changes in terms of forest deforestation and urban expan-
+sion during that period. In terms of urban expansion, the
+three datasets revealed rapid urbanization in the megacity
+of Bangkok, while CCI_LC underestimated the impervious
+surface area in 2001 compared with the other two datasets.
+Meanwhile, GLC_FCS30D also captured more spatial detail
+(such as rural buildings and road networks) than CCI_LC and
+MCD12Q1 because of its high spatial resolution of 30 m.
+In terms of the most signiﬁcant deforestation, CCI_LC
+showed the worst performance because (1) it underestimated
+the forest cover in 2001 (rectangular region 1: R1), i.e., some
+forests were wrongly labeled croplands; (2) some deforested
+areas were not captured during the period 2001–2020 in
+rectangular region 2 (R2), so its deforested forest area was
+less than in GLC_FCS30D and MCD12Q1; and (3) there
+was an obvious problem with the misclassiﬁcation of forest
+as wetland in 2001 (rectangular region 3: R3). MCD12Q1
+also suffered from a forest omission error in R1; namely,
+the captured forest area in 2001 was lower than the actual
+forest area based on natural-color imagery. As for the evi-
+dent deforestation in R2, we ﬁnd that almost all forest pixels
+changed to the other land-cover types (savanna and grass-
+land) in MCD12Q1, which obviously deviated from the ac-
+tual situation; thus, MCD12Q1 overestimated the forest de-
+forestation. Meanwhile, the MCD12Q1 time series showed
+various land-cover distributions in R3, which indicated that
+MCD12Q1 has lower mapping accuracy and temporal sta-
+bility for these wetland areas. In comparison, GLC_FCS30D
+achieved the best performance in capturing the spatial dis-
+tribution of forest in 2001, deforestation during 2001–2020,
+and wetland stability.
+Figure 13 shows another comparison example for these
+three datasets, focusing instead on Paraguay, South Amer-
+ica. The most evident land-cover changes were deforesta-
+tion and increased cropland according to the time seri-
+ies of Landsat natural-color imagery. In terms of the spa-
+Earth Syst. Sci. Data, 16, 1353–1381, 2024 https://doi.org/10.5194/essd-16-1353-2024
+X. Zhang et al.: GLC_FCS30D 1373
+Table 6.The area proportions and area bias (AB) values of 10 major land-cover types from the GLC_FCS30D dataset (Map) and the LUCAS
+validation dataset (Ref).
+2006 2009 2012 2015 2018
+Map Ref AB Map Ref AB Map Ref AB Map Ref AB Map Ref AB
+CRP 46.48 50.62 −4.14 46.46 50.64 −4.18 46.59 50.67 −4.08 46.63 50.69 −4.06 46.77 50.74 −3.97
+FST 41.39 33.76 7.63 41.28 33.75 7.53 41.14 33.73 7.41 40.96 33.73 7.23 40.66 33.68 6.98
+GRS 1.21 4.15 −2.94 1.21 4.15 −2.94 1.21 4.15 −2.94 1.23 4.15 −2.92 1.21 4.15 −2.94
+SHR 1.91 2.08 −0.17 1.94 2.08 −0.14 1.92 2.08 −0.16 1.91 2.07 −0.16 1.95 2.06 −0.11
+WET 1.70 1.75 −0.05 1.68 1.74 −0.06 1.68 1.73 −0.05 1.69 1.71 −0.02 1.73 1.72 0.01
+WTR 2.75 2.85 −0.1 2.76 2.85 −0.09 2.77 2.85 −0.08 2.81 2.85 −0.04 2.79 2.86 −0.07
+IMP 3.18 3.82 −0.64 3.25 3.83 −0.58 3.25 3.82 −0.57 3.27 3.82 −0.55 3.32 3.82 −0.5
+BAL 1.32 0.95 0.37 1.36 0.95 0.41 1.37 0.95 0.42 1.42 0.95 0.47 1.49 0.95 0.54
+PSI 0.06 0.02 0.04 0.06 0.02 0.04 0.07 0.02 0.05 0.07 0.02 0.05 0.07 0.02 0.05
+Table 7. The confusion matrix of changed and unchanged pixels in GLC_FCS30D when using LUCAS time-series datasets across the
+Europe Union.
+Unchanged Changed Total P.A. (SE) F1
+Unchanged 82.69 2.79 85.48 96.73 94.49
+Changed 6.84 7.68 14.52 52.86 61.43
+Total 89.53 10.47
+U.A. (SE) 92.36(0.36) 73.31(1.74)
+O.A. (SE) 90.36(0.38)
+tial distribution, the consistency between GLC_FCS30D and
+CCI_LC was higher, while MCD12Q1 was obviously differ-
+ent from the other two datasets. A large number of deciduous
+broadleaved forests were labeled as savanna and woody sa-
+vanna, and most croplands were identiﬁed as grasslands in
+MCD12Q1, mainly because of the difference in classiﬁca-
+tion system. In terms of the changed-land-cover areas, the
+GLC_FCS30D showed the highest accuracy and captured
+richer spatial detail. For example, the deforestation intensity
+during 2010–2020 was signiﬁcantly greater than that during
+2001–2010, and GLC_FCS30D also revealed the regular de-
+forestation caused by human factors. In contrast, CCI_LC
+and MCD12Q1 captured neither the deforestation during
+2010–2020 nor the small and fragmented changes (caused
+by human activities).
+4.5 Limitations of and perspectives on the
+GLC_FCS30D dataset
+To achieve the goal of accurate and robust monitoring of
+global land-cover change, four steps are adopted: (1) the
+advantages of the CCD model and the full time series of
+Landsat observations are combined to capture the land-cover
+change time points for any changed pixels; (2) the temporally
+stable areas are used as prior knowledge to ensure the quality
+of training samples and local adaptive modeling is adopted
+to update the land-cover transitions of these changed pixels;
+(3) global thematic products for two complicated land-cover
+types (impervious surface and wetland) are independently
+developed to improve the reliability of GLC_FCS30D; and
+(4) the “spatiotemporal consistency checking” optimization
+in Sect. 3.3.3 is applied to further guarantee the stability and
+accuracy of GLC_FCS30D. The accuracy assessments per-
+formed using the developed global validation dataset and two
+third-party datasets demonstrate that GLC_FCS30D fulﬁlls
+the accuracy requirements for a baseline year and for time-
+series variability at a global or national scale. Comparisons
+with other land-cover products also highlight the superiority
+of GLC_FCS30D in terms of classiﬁcation system diversity
+and the monitoring accuracy of these changed areas. How-
+ever, monitoring global land-cover change across a long time
+series is an extremely complex and difﬁcult task (Hansen and
+Loveland, 2012; Song et al., 2018; Winkler et al., 2021; Xian
+et al., 2022). Although this study uses a series of measure-
+ments and methods to achieve global 30 m land-cover change
+monitoring for the past 37 years, there are still some uncer-
+tainties and limitations that need to be resolved in further
+work.
+The CCD algorithm makes full use of dense satellite ob-
+servations to capture land-cover changes robustly and accu-
+rately (Zhu and Woodcock, 2014b; Zhu et al., 2012). How-
+ever, previous studies have demonstrated that their reliability
+is highly correlated to the density of valid satellite observa-
+tions (Bullock et al., 2022; Ye et al., 2021; Zhu et al., 2019).
+Cloudy and snowy areas lead to greater uncertainty when
+https://doi.org/10.5194/essd-16-1353-2024 Earth Syst. Sci. Data, 16, 1353–1381, 2024
+1374 X. Zhang et al.: GLC_FCS30D
+Figure 12. Comparisons of GLC_FCS30D with the CCI_LC and MCD12Q1 land-cover dynamics products for the Indo-China Peninsula
+during 2001–2020. The natural-color imagery were composited from the time-series Landsat imagery.
+capturing the time points of land-cover change (DeVries et
+al., 2015; Xian et al., 2022). Additionally, due to the lim-
+ited storage capacity and satellite–ground data-transmission
+capacity of early satellites, the density of Landsat imagery
+is sparse before 2000 (only a single satellite, Landsat 5, ac-
+quired data) (Roy et al., 2014b). In this study, we combine the
+satellite observations from 2 years before and after the nom-
+inal center year from 1985 to 1995; for example, we update
+the land-cover maps in 1995 using all available imagery from
+1993 to 1997. However, a previous study found that north-
+eastern Asia did not have any valid Landsat observations be-
+fore 2000 (Zhang et al., 2022), which means that some land-
+cover changes could not be captured in these areas before
+2000 in GLC_FCS30D. To solve the problem of missing and
+sparse observations, a useful solution is to fuse multisourced
+remote-sensing imagery. For example, Y . Zhang et al. (2021)
+combined Landsat and Sentinel-2 imagery to track tropical
+forest disturbances with an overall accuracy of more than
+87 %. Therefore, further work will investigate the feasibil-
+ity of integrating Sentinel-1/2, SPOT, MODIS, and A VHRR
+imagery as auxiliary datasets to achieve annual land-cover
+Earth Syst. Sci. Data, 16, 1353–1381, 2024 https://doi.org/10.5194/essd-16-1353-2024
+X. Zhang et al.: GLC_FCS30D 1375
+Figure 13. Comparisons of GLC_FCS30D with two land-cover-dynamics time-series datasets for Paraguay, South America, during 2001–
+2020. The natural-color imagery were composited from the time-series Landsat imagery.
+monitoring before 2000 and further ensure land-cover moni-
+toring quality.
+To ensure the stability of GLC_FCS30D, a spatiotempo-
+ral consistency optimization algorithm that has been widely
+used in impervious surface change optimizations (Li et al.,
+2015; Zhang et al., 2022) was applied. This makes full use
+of spatiotemporally neighboring pixels to calculate the land-
+cover homogeneity and then remove the “salt and pepper”
+noise caused by the pixel-based classiﬁcations. Qualitative
+comparisons for deforested areas of the Amazon and ar-
+eas of China that have undergone urban expansion (Fig. S2
+in the Supplement) also showed that the spatiotemporal
+consistency optimization can improve the data quality of
+GLC_FCS30D by suppressing salt and pepper noise and
+optimizing the temporal consistency. Similarly, Yang and
+Huang (2021) used this algorithm to optimize China’s annual
+land-cover products during 1990–2019, and found that it im-
+proved the mapping accuracy of the land-cover time-series
+dataset.
+GLC_FCS30D reveals a large number of land-cover
+changes in the semi-arid regions illustrated in Fig. 5a; these
+land-cover changes are more inﬂuenced by climate factors.
+https://doi.org/10.5194/essd-16-1353-2024 Earth Syst. Sci. Data, 16, 1353–1381, 2024
+1376 X. Zhang et al.: GLC_FCS30D
+For example, the central region of Australia is a typical semi-
+arid region, and the dominant land-cover types are grass-
+land, sparse vegetation, shrubland, and bare land. In gen-
+eral, if there is sufﬁcient annual precipitation, the distribu-
+tions of shrubland and grassland in the area will be more ex-
+tensive; otherwise, the area will be dominated by bare land
+and sparse vegetation (Dong et al., 2020; Ge et al., 2022).
+Recently, some studies suggested suppressing these changes;
+for example, Bastos et al. (2022) chose to suppress these
+land-cover changes by fusing these four land-cover types
+into a single grassland land-cover type for Australia, and
+Xian et al. (2022) combined grassland and shrubland in the
+CONUS. Whether these frequent and climate-sensitive land-
+cover changes should be suppressed will be considered in our
+further work.
+Although we used a global validation dataset to assess
+the capability of GLC_FCS30D in the baseline year of
+2020 and two third-party regional datasets to assess its vari-
+ability of the accuracy across the time series in the Eu-
+ropean Union and the CONUS, the accuracy assessment
+work should be strengthened. In particular, the classiﬁca-
+tion system differences between GLC_FCS30D, LUCAS,
+and LCMAP_Val cannot be ignored. For example, the imper-
+vious surface land-cover type in LUCAS and LCMAP_Val
+contains artiﬁcial surfaces and their surroundings (such as
+city greenery) (Stehman et al., 2021; Xian et al., 2022), while
+GLC_FCS30D only includes artiﬁcial structures (Zhang et
+al., 2022), so the impervious surface in GLC_FCS30D had
+low P.A. when validated with the LUCAS and LCMAP_Val
+datasets in Sect. 4.3. The time-series accuracy variability was
+only analyzed in two regions, so its performance in more
+complex areas (such as Africa and Asia) needs to be fur-
+ther investigated. Thus, our future work will focus on cre-
+ating long-term time-series datasets used for validation for
+more regions and on building a long-time-series global vali-
+dation dataset based on the existing works in Sect. 2.5.1, after
+which the accuracy metrics of the pixels with changed land
+cover and their intra-annual variability will be analyzed for
+all land-cover types.
+5 Data availability
+The developed GLC_FCS30D dataset can be freely ac-
+cessed via https://doi.org/10.5281/zenodo.8239305 (Liu et
+al., 2023). To help users to navigate this dataset, it
+is saved as 961 5° × 5° independent tiles. Each tile
+is named “GLC_FCS30D_yyyyYYYY_E/W**N/S**.tif”,
+where “E/W**N/S**” represents the longitude and latitude
+coordinates of the top-left corner and yyyy and YYYY are
+the start and end years of the land-cover change monitoring.
+GLC_FCS30D contains 26 maps for time steps from 1985
+to 2022, updated every 5 years before 2000 and annually
+from 2000 to 2022. It should be noted that GLC_FCS30D
+adopted a 5-year cycle before 2000 because of the sparse
+availability of Landsat 5 imagery at this early stage; thus, we
+increased the temporal cycle length to guarantee land-cover
+mapping accuracy. The ﬁrst three time steps are saved to-
+gether and the following 23 time steps are saved separately.
+For example, GLC_FCS30D_ 19851995_E115N15.tif and
+GLC_FCS30D_20002022_E115N15.tif are, respectively,
+the data for the ﬁrst three time steps and the data for the fol-
+lowing 23 annual time steps from 1985 to 2022 for the region
+corresponding to 115–120° E, 10–15° N.
+6 Conclusion
+Land-cover change is the main cause or driving force of
+global climate change and has attracted increasing attention
+in recent decades. Long-time-series global land-cover dy-
+namics monitoring is still a challenging task. In this study,
+the ﬁrst global 30 m land-cover dynamics dataset that has a
+ﬁne classiﬁcation system (GLC_FCS30D) containing 35 ﬁne
+land-cover subcategories and which covers the period from
+1985 to 2022 in 26 time steps was generated on the GEE plat-
+form. Speciﬁcally, we took advantage of the full time series
+of Landsat observations and the CCD algorithm to capture
+the time points of changed areas, and then we updated and
+optimized the changed-land-cover areas based on the local
+adaptive modeling strategy and a temporal-consistency algo-
+rithm. The accuracy assessments indicate that the proposed
+method can achieve accurate and spatiotemporally consis-
+tent land-cover change monitoring and that GLC_FCS30D
+achieved an overall accuracy for 2020 of 80.88 % (±0.27 %)
+for the basic classiﬁcation system’s 10 major land-cover
+types and 73.04 % (±0.30 %) for the LCCS level-1 validation
+system’s 17 land-cover types. Therefore, GLC_FCS30D is
+the ﬁrst global land-cover dynamics monitoring product with
+a 37-year time span, and it has the most diverse classiﬁca-
+tion system. It will be essential for sustainable development,
+environmental protection, and informed decision-making to
+address the challenges of a rapidly changing world.
+Supplement. The supplement related to this article is available
+online at: https://doi.org/10.5194/essd-16-1353-2024-supplement.
+Author contributions. LL and XZ conceptualized and investi-
+gated the project. XZ, TZ, and XC designed the methodology; TZ,
+WL, HX, and JW performed the validation. XZ prepared the origi-
+nal draft of the paper; LL and HX reviewed and edited the paper.
+Competing interests. The contact author has declared that none
+of the authors has any competing interests.
+Disclaimer. Publisher’s note: Copernicus Publications remains
+neutral with regard to jurisdictional claims made in the text, pub-
+Earth Syst. Sci. Data, 16, 1353–1381, 2024 https://doi.org/10.5194/essd-16-1353-2024
+X. Zhang et al.: GLC_FCS30D 1377
+lished maps, institutional afﬁliations, or any other geographical rep-
+resentation in this paper. While Copernicus Publications makes ev-
+ery effort to include appropriate place names, the ﬁnal responsibility
+lies with the authors.
+Acknowledgements. We gratefully acknowledge all data
+providers whose data have been used in this study and greatly thank
+the topical editor and the three anonymous referees for their useful
+and constructive comments.
+Financial support. This research has been supported by the Na-
+tional Natural Science Foundation of China (grant nos. 41825002
+and 42201499) and the Open Research Program of the International
+Research Center of Big Data for Sustainable Development Goals
+(grant no. CBAS2022ORP03).
+Review statement. This paper was edited by Yuanzhi Yao and
+reviewed by three anonymous referees.
+References
+Azzari, G. and Lobell, D. B.: Landsat-based classiﬁcation
+in the cloud: An opportunity for a paradigm shift in
+land cover monitoring, Remote Sens. Environ., 202, 64–74,
+https://doi.org/10.1016/j.rse.2017.05.025, 2017.
+Ballin, M., Barcaroli, G., Masselli, M., and Scarnò, M.: Redesign
+sample for land use/cover area frame survey (LUCAS) 2018, Eu-
+rostat: statistical working papers, 10, 132365, 2018.
+Ban, Y ., Gong, P., and Giri, C.: Global land cover map-
+ping using Earth observation satellite data: Recent progresses
+and challenges, ISPRS J. Photogramm. Remote, 103, 1–6,
+https://doi.org/10.1016/j.isprsjprs.2015.01.001, 2015.
+Bastos, A., Ciais, P., Sitch, S., Aragao, L., Chevallier, F., Fawcett,
+D., Rosan, T. M., Saunois, M., Gunther, D., Perugini, L., Robert,
+C., Deng, Z., Pongratz, J., Ganzenmuller, R., Fuchs, R., Win-
+kler, K., Zaehle, S., and Albergel, C.: On the use of Earth Ob-
+servation to support estimates of national greenhouse gas emis-
+sions and sinks for the Global stocktake process: lessons learned
+from ESA-CCI RECCAP2, Carbon Balance Manag., 17, 15,
+https://doi.org/10.1186/s13021-022-00214-w, 2022.
+Belgiu, M. and Drãguþ, L.: Random forest in remote
+sensing: A review of applications and future direc-
+tions, ISPRS J. Photogramm. Remote, 114, 24–31,
+https://doi.org/10.1016/j.isprsjprs.2016.01.011, 2016.
+Buchhorn, M., Lesiv, M., Tsendbazar, N.-E., Herold, M.,
+Bertels, L., and Smets, B.: Copernicus Global Land
+Cover Layers – Collection 2, Remote Sens., 12, 1044,
+https://doi.org/10.3390/rs12061044, 2020.
+Bullock, E. L., Woodcock, C. E., and Holden, C. E.: Im-
+proved change monitoring using an ensemble of time
+series algorithms, Remote Sens. Environ., 111165,
+https://doi.org/10.1016/j.rse.2019.04.018, 2019.
+Bullock, E. L., Healey, S. P., Yang, Z., Houborg, R., Gore-
+lick, N., Tang, X., and Andrianirina, C.: Timeliness in
+forest change monitoring: A new assessment framework
+demonstrated using Sentinel-1 and a continuous change de-
+tection algorithm, Remote Sens. Environ., 276, 113043,
+https://doi.org/10.1016/j.rse.2022.113043, 2022.
+Chen, J., Chen, J., Liao, A., Cao, X., Chen, L., Chen, X., He, C.,
+Han, G., Peng, S., Lu, M., Zhang, W., Tong, X., and Mills, J.:
+Global land cover mapping at 30m resolution: A POK-based op-
+erational approach, ISPRS J. Photogramm. Remote, 103, 7–27,
+https://doi.org/10.1016/j.isprsjprs.2014.09.002, 2015.
+d’Andrimont, R., Yordanov, M., Martinez-Sanchez, L., Eiselt, B.,
+Palmieri, A., Dominici, P., Gallego, J., Reuter, H. I., Joebges,
+C., and Lemoine, G.: Harmonised LUCAS in-situ land cover and
+use database for ﬁeld surveys from 2006 to 2018 in the Euro-
+pean Union, Sci. Data, 7, 352, https://doi.org/10.1038/s41597-
+020-00675-z, 2020.
+Defourny, P., Kirches, G., Brockmann, C., Boettcher, M., Peters,
+M., Bontemps, S., Lamarche, C., Schlerf, M., and M., S.: Land
+Cover CCI: Product User Guide Version 2, 2018, 2018.
+DeVries, B., Verbesselt, J., Kooistra, L., and Herold, M.: Robust
+monitoring of small-scale forest disturbances in a tropical mon-
+tane forest using Landsat time series, Remote Sens. Environ.,
+161, 107–121, https://doi.org/10.1016/j.rse.2015.02.012, 2015.
+Dong, J., Xiao, X., Kou, W., Qin, Y ., Zhang, G., Li, L.,
+Jin, C., Zhou, Y ., Wang, J., Biradar, C., Liu, J., and
+Moore, B.: Tracking the dynamics of paddy rice planting
+area in 1986–2010 through time series Landsat images and
+phenology-based algorithms, Remote Sens. Environ., 160, 99–
+113, https://doi.org/10.1016/j.rse.2015.01.004, 2015.
+Dong, S., Shang, Z., Gao, J., and Boone, R. B.: Enhancing sus-
+tainability of grassland ecosystems through ecological restora-
+tion and grazing management in an era of climate change on
+Qinghai-Tibetan Plateau, Agric. Ecosyst. Environ., 287, 106684,
+https://doi.org/10.1016/j.agee.2019.106684, 2020.
+Du, P., Samat, A., Waske, B., Liu, S., and Li, Z.: Ran-
+dom Forest and Rotation Forest for fully polarized
+SAR image classiﬁcation using polarimetric and spa-
+tial features, ISPRS J. Photogramm. Remote, 105, 38–53,
+https://doi.org/10.1016/j.isprsjprs.2015.03.002, 2015.
+Foley, J. A., Defries, R., Asner, G. P., Barford, C., Bonan, G., Car-
+penter, S. R., Chapin, F. S., Coe, M. T., Daily, G. C., Gibbs, H.
+K., Helkowski, J. H., Holloway, T., Howard, E. A., Kucharik, C.
+J., Monfreda, C., Patz, J. A., Prentice, I. C., Ramankutty, N., and
+Snyder, P. K.: Global consequences of land use, Science, 309,
+570–574, https://doi.org/10.1126/science.1111772, 2005.
+Foody, G. M.: Sample size determination for image classiﬁcation
+accuracy assessment and comparison, Int. J. Remote, 30, 5273–
+5291, https://doi.org/10.1080/01431160903130937, 2009.
+Foody, G. M. and Arora, M. K.: An evaluation of some
+factors affecting the accuracy of classiﬁcation by an ar-
+tiﬁcial neural network, Int. J. Remote, 18, 799–810,
+https://doi.org/10.1080/014311697218764, 2010.
+Friedl, M. A., Sulla-Menashe, D., Tan, B., Schneider, A., Ra-
+mankutty, N., Sibley, A., and Huang, X.: MODIS Collection
+5 global land cover: Algorithm reﬁnements and characteriza-
+tion of new datasets, Remote Sens. Environ., 114, 168–182,
+https://doi.org/10.1016/j.rse.2009.08.016, 2010.
+Friedl, M. A., Woodcock, C. E., Olofsson, P., Zhu, Z., Loveland,
+T., Stanimirova, R., Arevalo, P., Bullock, E., Hu, K.-T., Zhang,
+Y ., Turlej, K., Tarrio, K., McAvoy, K., Gorelick, N., Wang, J. A.,
+Barber, C. P., and Souza, C.: Medium Spatial Resolution Map-
+https://doi.org/10.5194/essd-16-1353-2024 Earth Syst. Sci. Data, 16, 1353–1381, 2024
+1378 X. Zhang et al.: GLC_FCS30D
+ping of Global Land Cover and Land Cover Change Across Mul-
+tiple Decades From Landsat, Front. Remote Sens., 3, 894571,
+https://doi.org/10.3389/frsen.2022.894571, 2022.
+Friedlingstein, P., O’Sullivan, M., Jones, M. W., Andrew, R. M.,
+Hauck, J., Olsen, A., Peters, G. P., Peters, W., Pongratz, J., Sitch,
+S., Le Quéré, C., Canadell, J. G., Ciais, P., Jackson, R. B., Alin,
+S., Aragão, L. E. O. C., Arneth, A., Arora, V ., Bates, N. R.,
+Becker, M., Benoit-Cattin, A., Bittig, H. C., Bopp, L., Bultan,
+S., Chandra, N., Chevallier, F., Chini, L. P., Evans, W., Florentie,
+L., Forster, P. M., Gasser, T., Gehlen, M., Gilﬁllan, D., Gkritza-
+lis, T., Gregor, L., Gruber, N., Harris, I., Hartung, K., Haverd, V .,
+Houghton, R. A., Ilyina, T., Jain, A. K., Joetzjer, E., Kadono, K.,
+Kato, E., Kitidis, V ., Korsbakken, J. I., Landschützer, P., Lefèvre,
+N., Lenton, A., Lienert, S., Liu, Z., Lombardozzi, D., Marland,
+G., Metzl, N., Munro, D. R., Nabel, J. E. M. S., Nakaoka, S.-I.,
+Niwa, Y ., O’Brien, K., Ono, T., Palmer, P. I., Pierrot, D., Poul-
+ter, B., Resplandy, L., Robertson, E., Rödenbeck, C., Schwinger,
+J., Séférian, R., Skjelvan, I., Smith, A. J. P., Sutton, A. J., Tan-
+hua, T., Tans, P. P., Tian, H., Tilbrook, B., van der Werf, G.,
+Vuichard, N., Walker, A. P., Wanninkhof, R., Watson, A. J.,
+Willis, D., Wiltshire, A. J., Yuan, W., Yue, X., and Zaehle, S.:
+Global Carbon Budget 2020, Earth Syst. Sci. Data, 12, 3269–
+3340, https://doi.org/10.5194/essd-12-3269-2020, 2020.
+Gallant, A.: The Challenges of Remote Monitor-
+ing of Wetlands, Remote Sens., 7, 10938–10950,
+https://doi.org/10.3390/rs70810938, 2015.
+Gao, Y ., Liu, L., Zhang, X., Chen, X., Mi, J., and Xie, S.:
+Consistency Analysis and Accuracy Assessment of Three
+Global 30-m Land-Cover Products over the European
+Union using the LUCAS Dataset, Remote Sens., 12, 3479,
+https://doi.org/10.3390/rs12213479, 2020.
+Ge, F., Xu, M., Gong, C., Zhang, Z., Tan, Q., and Pan,
+X.: Land cover changes the soil moisture response to rain-
+fall on the Loess Plateau, Hydrol. Process., 36, e14714,
+https://doi.org/10.1002/hyp.14714, 2022.
+Giri, C., Pengra, B., Long, J., and Loveland, T. R.: Next
+generation of global land cover characterization, mapping,
+and monitoring, Int. J. Appl. Earth Obs., 25, 30–37,
+https://doi.org/10.1016/j.jag.2013.03.005, 2013.
+Gislason, P. O., Benediktsson, J. A., and Sveinsson, J. R.: Random
+Forests for land cover classiﬁcation, Pattern Recogn. Lett., 27,
+294–300, https://doi.org/10.1016/j.patrec.2005.08.011, 2006.
+Gong, P., Li, X., and Zhang, W.: 40-Year (1978–2017) hu-
+man settlement changes in China reﬂected by impervious sur-
+faces from satellite remote sensing, Sci. Bull., 64, 756–763,
+https://doi.org/10.1016/j.scib.2019.04.024, 2019a.
+Gong, P., Liu, H., Zhang, M., Li, C., Wang, J., Huang, H., Clinton,
+N., Ji, L., Li, W., Bai, Y ., Chen, B., Xu, B., Zhu, Z., Yuan, C.,
+Ping Suen, H., Guo, J., Xu, N., Li, W., Zhao, Y ., Yang, J., Yu, C.,
+Wang, X., Fu, H., Yu, L., Dronova, I., Hui, F., Cheng, X., Shi, X.,
+Xiao, F., Liu, Q., and Song, L.: Stable classiﬁcation with limited
+sample: transferring a 30-m resolution sample set collected in
+2015 to mapping 10-m resolution global land cover in 2017, Sci.
+Bull., 64, 370–373, https://doi.org/10.1016/j.scib.2019.03.002,
+2019b.
+Gorelick, N., Hancher, M., Dixon, M., Ilyushchenko, S., Thau, D.,
+and Moore, R.: Google Earth Engine: Planetary-scale geospa-
+tial analysis for everyone, Remote Sens. Environ., 202, 18–27,
+https://doi.org/10.1016/j.rse.2017.06.031, 2017.
+Hansen, M. C. and Loveland, T. R.: A review of large area mon-
+itoring of land cover change using Landsat data, Remote Sens.
+Environ., 122, 66–74, https://doi.org/10.1016/j.rse.2011.08.024,
+2012.
+Hansen, M. C., Potapov, P. V ., Moore, R., Hancher, M., Turubanova,
+S. A., Tyukavina, A., Thau, D., Stehman, S. V ., Goetz, S. J.,
+Loveland, T. R., Kommareddy, A., Egorov, A., Chini, L., Jus-
+tice, C. O., and Townshend, J. R.: High-resolution global maps
+of 21st-century forest cover change, Science, 342, 850–853,
+https://doi.org/10.1126/science.1244693, 2013.
+Harris, N. L., Gibbs, D. A., Baccini, A., Birdsey, R. A., de Bruin, S.,
+Farina, M., Fatoyinbo, L., Hansen, M. C., Herold, M., Houghton,
+R. A., Potapov, P. V ., Suarez, D. R., Roman-Cuesta, R. M.,
+Saatchi, S. S., Slay, C. M., Turubanova, S. A., and Tyukavina,
+A.: Global maps of twenty-ﬁrst century forest carbon ﬂuxes, Nat.
+Clim. Change, 11, 234–240, https://doi.org/10.1038/s41558-
+020-00976-6, 2021.
+Healey, S. P., Cohen, W. B., Yang, Z., Kenneth Brewer, C., Brooks,
+E. B., Gorelick, N., Hernandez, A. J., Huang, C., Joseph Hughes,
+M., Kennedy, R. E., Loveland, T. R., Moisen, G. G., Schroeder,
+T. A., Stehman, S. V ., V ogelmann, J. E., Woodcock, C. E., Yang,
+L., and Zhu, Z.: Mapping forest change using stacked generaliza-
+tion: An ensemble approach, Remote Sens. Environ., 204, 717–
+728, https://doi.org/10.1016/j.rse.2017.09.029, 2018.
+Herold, M., Mayaux, P., Woodcock, C. E., Baccini, A., and
+Schmullius, C.: Some challenges in global land cover map-
+ping: An assessment of agreement and accuracy in exist-
+ing 1 km datasets, Remote Sens. Environ., 112, 2538–2556,
+https://doi.org/10.1016/j.rse.2007.11.013, 2008.
+Homer, C., Dewitz, J., Jin, S., Xian, G., Costello, C., Daniel-
+son, P., Gass, L., Funk, M., Wickham, J., Stehman, S., Auch,
+R., and Riitters, K.: Conterminous United States land cover
+change patterns 2001–2016 from the 2016 National Land
+Cover Database, ISPRS J. Photogramm. Remote, 162, 184–199,
+https://doi.org/10.1016/j.isprsjprs.2020.02.019, 2020.
+Hong, C., Burney, J. A., Pongratz, J., Nabel, J., Mueller, N. D.,
+Jackson, R. B., and Davis, S. J.: Global and regional drivers
+of land-use emissions in 1961–2017, Nature, 589, 554–561,
+https://doi.org/10.1038/s41586-020-03138-y, 2021.
+Huang, C., Goward, S. N., Schleeweis, K., Thomas, N.,
+Masek, J. G., and Zhu, Z.: Dynamics of national forests
+assessed using the Landsat record: Case studies in east-
+ern United States, Remote Sens. Environ., 113, 1430–1442,
+https://doi.org/10.1016/j.rse.2008.06.016, 2009.
+Jin, H., Stehman, S. V ., and Mountrakis, G.: Assessing the impact of
+training sample selection on accuracy of an urban classiﬁcation:
+a case study in Denver, Colorado, Int. J. Remote Sens., 35, 2067–
+2081, https://doi.org/10.1080/01431161.2014.885152, 2014.
+Jin, S., Yang, L., Zhu, Z., and Homer, C.: A land cover
+change detection and classiﬁcation protocol for updating Alaska
+NLCD 2001 to 2011, Remote Sens. Environ., 195, 44–55,
+https://doi.org/10.1016/j.rse.2017.04.021, 2017.
+Jin, S., Dewitz, J., Li, C., Sorenson, D., Zhu, Z., Shogib,
+M. R. I., Danielson, P., Granneman, B., Costello, C.,
+Case, A., and Gass, L.: National Land Cover Database
+2019: A Comprehensive Strategy for Creating the 1986–
+2019 Forest Disturbance Product, J. Remote Sens., 3, 0021,
+https://doi.org/10.34133/remotesensing.0021, 2023.
+Earth Syst. Sci. Data, 16, 1353–1381, 2024 https://doi.org/10.5194/essd-16-1353-2024
+X. Zhang et al.: GLC_FCS30D 1379
+Kennedy, R. E., Cohen, W. B., and Schroeder, T. A.: Trajectory-
+based change detection for automated characterization of for-
+est disturbance dynamics, Remote Sens. Environ., 110, 370–386,
+https://doi.org/10.1016/j.rse.2007.03.010, 2007.
+Kennedy, R. E., Yang, Z., and Cohen, W. B.: Detect-
+ing trends in forest disturbance and recovery using yearly
+Landsat time series: 1. LandTrendr – Temporal segmenta-
+tion algorithms, Remote Sens. Environ., 114, 2897–2910,
+https://doi.org/10.1016/j.rse.2010.07.008, 2010.
+Kenny, Q. Y .: Indicator function and its application in
+two-level factorial designs, Ann. Stat., 31, 984–994,
+https://doi.org/10.1214/aos/1056562470, 2003.
+Li, X., Gong, P., and Liang, L.: A 30-year (1984–2013)
+record of annual urban dynamics of Beijing City derived
+from Landsat data, Remote Sens. Environ., 166, 78–90,
+https://doi.org/10.1016/j.rse.2015.06.007, 2015.
+Liu, C., Zhang, Q., Luo, H., Qi, S., Tao, S., Xu, H., and Yao,
+Y .: An efﬁcient approach to capture continuous impervious sur-
+face dynamics using spatial-temporal rules and dense Land-
+sat time series stacks, Remote Sens. Environ., 229, 114–132,
+https://doi.org/10.1016/j.rse.2019.04.025, 2019.
+Liu, H., Gong, P., Wang, J., Wang, X., Ning, G., and Xu, B.:
+Production of global daily seamless data cubes and quan-
+tiﬁcation of global land cover change from 1985 to 2020
+– iMap World 1.0, Remote Sens. Environ., 258, 112364,
+https://doi.org/10.1016/j.rse.2021.112364, 2021.
+Liu, L., Zhang, X., Chen, X., Gao, Y ., and Mi, J.:
+GLC_FCS30-2020:Global Land Cover with Fine Classiﬁ-
+cation System at 30 m in 2020 (v1.2), Zenodo [data set],
+https://doi.org/10.5281/zenodo.4280923, 2020.
+Liu, L., Zhang, X., Gao, Y ., Chen, X., Shuai, X., and Mi, J.: Finer-
+Resolution Mapping of Global Land Cover: Recent Develop-
+ments, Consistency Analysis, and Prospects, J. Remote Sens.,
+2021, 5289697, https://doi.org/10.34133/2021/5289697, 2021.
+Liu, L., Zhang, X., and Zhao, T.: GLC_FCS30D: the ﬁrst
+global 30-m land-cover dynamic monitoring product with ﬁne
+classiﬁcation system from 1985 to 2022, Zenodo [data set],
+https://doi.org/10.5281/zenodo.8239305, 2023.
+Mellor, A., Boukir, S., Haywood, A., and Jones, S.: Exploring is-
+sues of training data imbalance and mislabelling on random for-
+est performance for large area land cover classiﬁcation using the
+ensemble margin, ISPRS J. Photogramm. Remote, 105, 155–168,
+https://doi.org/10.1016/j.isprsjprs.2015.03.014, 2015.
+Millard, K. and Richardson, M.: On the Importance of Training
+Data Sample Selection in Random Forest Image Classiﬁcation:
+A Case Study in Peatland Ecosystem Mapping, Remote Sens., 7,
+8489–8515, https://doi.org/10.3390/rs70708489, 2015.
+Pekel, J. F., Cottam, A., Gorelick, N., and Belward, A.
+S.: High-resolution mapping of global surface wa-
+ter and its long-term changes, Nature, 540, 418–422,
+https://doi.org/10.1038/nature20584, 2016.
+Pengra, B., Gallant, A., Zhu, Z., and Dahal, D.: Evaluation of the
+Initial Thematic Output from a Continuous Change-Detection
+Algorithm for Use in Automated Operational Land-Change
+Mapping by the U.S. Geological Survey, Remote Sens., 8, 811,
+https://doi.org/10.3390/rs8100811, 2016.
+Pontus Olofsson, G. M. F.: Good practices for estimating area and
+assessing accuracy of land change, Remote Sens. Environ., 148,
+42–57, https://doi.org/10.1016/j.rse.2014.02.015, 2014.
+Potapov, P., Turubanova, S., Hansen, M. C., Tyukavina, A., Zalles,
+V ., Khan, A., Song, X.-P., Pickens, A., Shen, Q., and Cortez, J.:
+Global maps of cropland extent and change show accelerated
+cropland expansion in the twenty-ﬁrst century, Nature Food, 3,
+19–28, https://doi.org/10.1038/s43016-021-00429-z, 2021.
+Potapov, P., Hansen, M. C., Pickens, A., Hernandez-Serna, A.,
+Tyukavina, A., Turubanova, S., Zalles, V ., Li, X., Khan,
+A., Stolle, F., Harris, N., Song, X.-P., Baggett, A., Kom-
+mareddy, I., and Kommareddy, A.: The Global 2000-2020 Land
+Cover and Land Use Change Dataset Derived From the Land-
+sat Archive: First Results, Front. Remote Sens., 3, 856903,
+https://doi.org/10.3389/frsen.2022.856903, 2022.
+Qin, Y ., Xiao, X., Wigneron, J.-P., Ciais, P., Canadell, J. G.,
+Brandt, M., Li, X., Fan, L., Wu, X., Tang, H., Dubayah,
+R., Doughty, R., Chang, Q., Crowell, S., Zheng, B., Neal,
+K., Celis, J. A., and Moore, B.: Annual Maps of Forests in
+Australia from Analyses of Microwave and Optical Images
+with FAO Forest Deﬁnition, J. Remote Sens., 2021, 9784657,
+https://doi.org/10.34133/2021/9784657, 2021.
+Radoux, J., Lamarche, C., Van Bogaert, E., Bontemps, S., Brock-
+mann, C., and Defourny, P.: Automated Training Sample Extrac-
+tion for Global Land Cover Mapping, Remote Sens., 6, 3965–
+3987, https://doi.org/10.3390/rs6053965, 2014.
+Roy, D. P., Qin, Y ., Kovalskyy, V ., Vermote, E. F., Ju, J., Egorov,
+A., Hansen, M. C., Kommareddy, I., and Yan, L.: Conterminous
+United States demonstration and characterization of MODIS-
+based Landsat ETM+ atmospheric correction, Remote Sens. En-
+viron., 140, 433–449, https://doi.org/10.1016/j.rse.2013.09.012,
+2014a.
+Roy, D. P., Wulder, M. A., Loveland, T. R., C.E, W., Allen, R.
+G., Anderson, M. C., Helder, D., Irons, J. R., Johnson, D. M.,
+Kennedy, R., Scambos, T. A., Schaaf, C. B., Schott, J. R., Sheng,
+Y ., Vermote, E. F., Belward, A. S., Bindschadler, R., Cohen, W.
+B., Gao, F., Hipple, J. D., Hostert, P., Huntington, J., Justice, C.
+O., Kilic, A., Kovalskyy, V ., Lee, Z. P., Lymburner, L., Masek, J.
+G., McCorkel, J., Shuai, Y ., Trezza, R., V ogelmann, J., Wynne,
+R. H., and Zhu, Z.: Landsat-8: Science and product vision for
+terrestrial global change research, Remote Sens. Environ., 145,
+154–172, https://doi.org/10.1016/j.rse.2014.02.001, 2014b.
+Roy, D. P., Kovalskyy, V ., Zhang, H. K., Vermote, E. F., Yan, L.,
+Kumar, S. S., and Egorov, A.: Characterization of Landsat-7 to
+Landsat-8 reﬂective wavelength and normalized difference veg-
+etation index continuity, Remote Sens. Environ., 185, 57–70,
+https://doi.org/10.1016/j.rse.2015.12.024, 2016.
+Song, X. P., Hansen, M. C., Stehman, S. V ., Potapov, P. V .,
+Tyukavina, A., Vermote, E. F., and Townshend, J. R.: Global
+land change from 1982 to 2016, Nature, 560, 639–643,
+https://doi.org/10.1038/s41586-018-0411-9, 2018.
+Stehman, S. V ., Pengra, B. W., Horton, J. A., and Wellington, D. F.:
+Validation of the U.S. Geological Survey’s Land Change Moni-
+toring, Assessment and Projection (LCMAP) Collection 1.0 an-
+nual land cover products 1985–2017, Remote Sens. Environ.,
+265, 112646, https://doi.org/10.1016/j.rse.2021.112646, 2021.
+Sulla-Menashe, D., Gray, J. M., Abercrombie, S. P., and
+Friedl, M. A.: Hierarchical mapping of annual global
+land cover 2001 to present: The MODIS Collection 6
+Land Cover product, Remote Sens. Environ., 222, 183–194,
+https://doi.org/10.1016/j.rse.2018.12.013, 2019.
+https://doi.org/10.5194/essd-16-1353-2024 Earth Syst. Sci. Data, 16, 1353–1381, 2024
+1380 X. Zhang et al.: GLC_FCS30D
+Tachikawa, T., Hato, M., Kaku, M., and Iwasaki, A.: Char-
+acteristics of ASTER GDEM Version 2, Geoscience
+and Remote Sensing Symposium (IGARSS), 3657–3660,
+https://doi.org/10.1109/IGARSS.2011.6050017, 2011.
+Venter, Z. S., Barton, D. N., Chakraborty, T., Simensen, T., and
+Singh, G.: Global 10 m Land Use Land Cover Datasets: A Com-
+parison of Dynamic World, World Cover and Esri Land Cover,
+Remote Sens., 14, 4101, https://doi.org/10.3390/rs14164101,
+2022.
+Verbesselt, J., Hyndman, R., Newnham, G., and Culvenor, D.: De-
+tecting trend and seasonal changes in satellite image time series,
+Remote Sens. Environ., 114, 106–115, 2010.
+Vermote, E.: LEDAPS surface reﬂectance prod-
+uct description, https://www.usgs.gov/media/ﬁles/
+landsat-4-7-collection-1-surface-reﬂectance-code-ledaps-product-guide
+(last access: 12 March 2024), 2007.
+Vermote, E. F. and Kotchenova, S.: Atmospheric correction for the
+monitoring of land surfaces, J. Geophys. Res., 113, D23S90,
+https://doi.org/10.1029/2007jd009662, 2008.
+Wang, N., Zhang, X., Yao, S., Wu, J., and Xia, H.: How Good Are
+Global Layers for Mapping Rural Settlements? Evidence from
+China, Land, 11, 1308, https://doi.org/10.3390/land11081308,
+2022.
+Winkler, K., Fuchs, R., Rounsevell, M., and Herold, M.: Global
+land use changes are four times greater than previously esti-
+mated, Nat. Commun., 12, 2501, https://doi.org/10.1038/s41467-
+021-22702-2, 2021.
+Xian, G. Z., Smith, K., Wellington, D., Horton, J., Zhou, Q., Li, C.,
+Auch, R., Brown, J. F., Zhu, Z., and Reker, R. R.: Implementation
+of the CCDC algorithm to produce the LCMAP Collection 1.0
+annual land surface change product, Earth Syst. Sci. Data, 14,
+143–162, https://doi.org/10.5194/essd-14-143-2022, 2022.
+Xiao, Y ., Wang, Q., Tong, X., and Atkinson, P. M.: Thirty-meter
+map of young forest age in China, Earth Syst. Sci. Data, 15,
+3365–3386, https://doi.org/10.5194/essd-15-3365-2023, 2023.
+Xie, S., Liu, L., Zhang, X., and Yang, J.: Mapping the annual dy-
+namics of land cover in Beijing from 2001 to 2020 using Land-
+sat dense time series stack, ISPRS J. Photogramm. Remote, 185,
+201–218, https://doi.org/10.1016/j.isprsjprs.2022.01.014, 2022.
+Yang, J. and Huang, X.: The 30 m annual land cover dataset and its
+dynamics in China from 1990 to 2019, Earth Syst. Sci. Data, 13,
+3907–3925, https://doi.org/10.5194/essd-13-3907-2021, 2021.
+Ye, S., Rogan, J., Zhu, Z., and Eastman, J. R.: A near-real-time ap-
+proach for monitoring forest disturbance using Landsat time se-
+ries: stochastic continuous change detection, Remote Sens. En-
+viron., 252, 112167, https://doi.org/10.1016/j.rse.2020.112167,
+2021.
+Zhang, H. K. and Roy, D. P.: Using the 500 m MODIS land cover
+product to derive a consistent continental scale 30 m Landsat
+land cover classiﬁcation, Remote Sens. Environ., 197, 15–34,
+https://doi.org/10.1016/j.rse.2017.05.024, 2017.
+Zhang, X., Liu, L., Chen, X., Xie, S., and Gao, Y .: Fine Land-
+Cover Mapping in China Using Landsat Datacube and an Op-
+erational SPECLib-Based Approach, Remote Sens., 11, 1056,
+https://doi.org/10.3390/rs11091056, 2019.
+Zhang, X., Liu, L., Wu, C., Chen, X., Gao, Y ., Xie, S., and Zhang,
+B.: Development of a global 30 m impervious surface map using
+multisource and multitemporal remote sensing datasets with the
+Google Earth Engine platform, Earth Syst. Sci. Data, 12, 1625–
+1648, https://doi.org/10.5194/essd-12-1625-2020, 2020.
+Zhang, X., Liu, L., Chen, X., Gao, Y ., and Jiang, M.: Auto-
+matically Monitoring Impervious Surfaces Using Spectral Gen-
+eralization and Time Series Landsat Imagery from 1985 to
+2020 in the Yangtze River Delta, J. Remote Sens., 2021, 1–16,
+https://doi.org/10.34133/2021/9873816, 2021a.
+Zhang, X., Liu, L., Chen, X., Gao, Y ., Xie, S., and Mi, J.:
+GLC_FCS30: global land-cover product with ﬁne classiﬁcation
+system at 30 m using time-series Landsat imagery, Earth Syst.
+Sci. Data, 13, 2753–2776, https://doi.org/10.5194/essd-13-2753-
+2021, 2021b.
+Zhang, X., Liu, L., Zhao, T., Gao, Y ., Chen, X., and Mi, J.:
+GISD30: global 30 m impervious-surface dynamic dataset from
+1985 to 2020 using time-series Landsat imagery on the Google
+Earth Engine platform, Earth Syst. Sci. Data, 14, 1831–1856,
+https://doi.org/10.5194/essd-14-1831-2022, 2022.
+Zhang, X., Liu, L., Zhao, T., Chen, X., Lin, S., Wang, J., Mi, J.,
+and Liu, W.: GWL_FCS30: a global 30 m wetland map with a
+ﬁne classiﬁcation system using multi-sourced and time-series re-
+mote sensing imagery in 2020, Earth Syst. Sci. Data, 15, 265–
+293, https://doi.org/10.5194/essd-15-265-2023, 2023.
+Zhang, Y ., Ling, F., Wang, X., Foody, G. M., Boyd, D.
+S., Li, X., Du, Y ., and Atkinson, P. M.: Tracking small-
+scale tropical forest disturbances: Fusing the Landsat and
+Sentinel-2 data record, Remote Sens. Environ., 261, 112470,
+https://doi.org/10.1016/j.rse.2021.112470, 2021c.
+Zhao, T., Zhang, X., Gao, Y ., Mi, J., Liu, W., Wang, J., Jiang, M.,
+and Liu, L.: Assessing the Accuracy and Consistency of Six Fine-
+Resolution Global Land Cover Products Using a Novel Stratiﬁed
+Random Sampling Validation Dataset, Remote Sens., 15, 2285,
+https://doi.org/10.3390/rs15092285, 2023.
+Zhu, Z., Wang, S. X., and Woodcock, C. E.: Improve-
+ment and expansion of the Fmask algorithm: cloud, cloud
+shadow, and snow detection for Landsats 4–7, 8, and
+Sentinel 2 images, Remote Sens. Environ., 159, 269–277,
+https://doi.org/10.1016/j.rse.2014.12.014, 2015.
+Zhu, Z., Gallant, A. L., Woodcock, C. E., Pengra, B., Olof-
+sson, P., Loveland, T. R., Jin, S., Dahal, D., Yang, L.,
+and Auch, R. F.: Optimizing selection of training and aux-
+iliary data for operational land cover classiﬁcation for the
+LCMAP initiative, ISPRS J. Photogramm. Remote, 122, 206–
+221, https://doi.org/10.1016/j.isprsjprs.2016.11.004, 2016.
+Zhu, Z.: Change detection using landsat time series: A re-
+view of frequencies, preprocessing, algorithms, and appli-
+cations, ISPRS J. Photogramm. Remote, 130, 370–384,
+https://doi.org/10.1016/j.isprsjprs.2017.06.013, 2017.
+Zhu, Z. and Woodcock, C. E.: Object-based cloud and cloud shadow
+detection in Landsat imagery, Remote Sens. Environ., 118, 83–
+94, https://doi.org/10.1016/j.rse.2011.10.028, 2012.
+Zhu, Z. and Woodcock, C. E.: Automated cloud, cloud
+shadow, and snow detection in multitemporal Landsat
+data: An algorithm designed speciﬁcally for monitoring
+land cover change, Remote Sens. Environ., 152, 217–234,
+https://doi.org/10.1016/j.rse.2014.06.012, 2014a.
+Zhu, Z. and Woodcock, C. E.: Continuous change detec-
+tion and classiﬁcation of land cover using all available
+Landsat data, Remote Sens. Environ., 144, 152–171,
+https://doi.org/10.1016/j.rse.2014.01.011, 2014b.
+Earth Syst. Sci. Data, 16, 1353–1381, 2024 https://doi.org/10.5194/essd-16-1353-2024
+X. Zhang et al.: GLC_FCS30D 1381
+Zhu, Z., Woodcock, C. E., and Olofsson, P.: Continu-
+ous monitoring of forest disturbance using all available
+Landsat imagery, Remote Sens. Environ., 122, 75–91,
+https://doi.org/10.1016/j.rse.2011.10.030, 2012.
+Zhu, Z., Zhang, J., Yang, Z., Aljaddani, A. H., Cohen, W. B.,
+Qiu, S., and Zhou, C.: Continuous monitoring of land distur-
+bance based on Landsat time series, Remote Sens. Environ., 238,
+111116, https://doi.org/10.1016/j.rse.2019.03.009, 2019.
+https://doi.org/10.5194/essd-16-1353-2024 Earth Syst. Sci. Data, 16, 1353–1381, 2024

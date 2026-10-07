@@ -1,0 +1,25 @@
+{
+  "frozen_at": "2026-09-25",
+  "source": "doc37 §六.1（技术文档/37_v3p1_24类体系技术方案.md）",
+  "year": 2023,
+  "n_trees": 100,
+  "min_leaf": 2,
+  "max_nodes": 5000,
+  "train_per_model": 20000,
+  "local_margin_deg": 2.0,
+  "class_weight": "FORBIDDEN——GEE smileRandomForest 无类别权重（doc37 §四.2）",
+  "eval_mode": "clf.classify(留出点FC)→表格导出（全程不导分类图，评估样本量=全部留出点）",
+  "seeds": {
+    "A": [7, 11, 23],
+    "B": [7, 11, 23],
+    "D_groups_base": [7, 11, 23],
+    "D_member_offsets": [0, 50, 100, 150, 200],
+    "note": "D_g{i} 与 B_s{base[i]} 同族配对（多种子配对 n=3）；成员 i 的 randomColumn 种子=base+i*131、RF 种子=base+i*17（沿用 Exp2 套路）"
+  },
+  "preregistered_criteria": {
+    "B_vs_A": "大类(macro9) OA 不降、森林组成类(04-08) F1 不降、且 24 类 macro-F1 提升 → 类别调整成立",
+    "C_vs_B": "目标瓶颈类 F1 提升 ≥3pp 且不损害其他类 → 该特征进入生产",
+    "D_vs_B": "增益 ≥1pp（同族多种子配对，n=3）→ 才讨论成本是否可接受"
+  },
+  "merge_map": "撤销（doc37 §九）：121→130、92→61 训练端合并不再使用；v31 映射仅用于森林五对疏/郁闭与城乡合并"
+}

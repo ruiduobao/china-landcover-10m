@@ -1,0 +1,10 @@
+{
+  "comment": "验证窗口。w1-w4 复用 geetest 已上传窗样本与留出切分；w5=湿地窗（doc37 §6.1 候选三江平原），由 s6 从 F:/lc_work/年度子集_含稀有类/r7_train_2023.parquet 新建。",
+  "windows": {
+    "w1": {"tag": "songnen_nonglin", "bbox": [122.0, 43.0, 126.5, 47.5], "note": "农林交错（松嫩）"},
+    "w2": {"tag": "qinling_forest", "bbox": [105.5, 31.6, 110.0, 36.1], "note": "森林（秦岭）"},
+    "w3": {"tag": "nanfang_qiuling", "bbox": [108.0, 23.0, 114.0, 29.0], "note": "南方丘陵"},
+    "w4": {"tag": "xibei_ganhan", "bbox": [101.0, 36.0, 107.0, 42.0], "note": "干旱过渡（西北甘旱）"},
+    "w5": {"tag": "sanjiang_wetland", "bbox": [133.0, 47.0, 135.0, 49.0], "note": "湿地（三江平原，doc37 §6.1 新增候选）"}
+  }
+}

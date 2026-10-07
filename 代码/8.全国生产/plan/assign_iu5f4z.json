@@ -1,0 +1,63 @@
+{
+ "acct": "iu5f4z",
+ "proj": "ringed-sentinel-508412-d8",
+ "folder": "lcf_a07",
+ "prefix": "lcs11",
+ "n_tiles": 29,
+ "tiles": [
+  "T2205",
+  "T2306",
+  "T1902",
+  "T1906",
+  "T2211",
+  "T1908",
+  "T2109",
+  "T1909",
+  "T1809",
+  "T1407",
+  "T1811",
+  "T0606",
+  "T0609",
+  "T0409",
+  "T0809",
+  "T0710",
+  "T1411",
+  "T1105",
+  "T2311",
+  "T0814",
+  "T2812",
+  "T2013",
+  "T2115",
+  "T1004",
+  "T1901",
+  "T1700",
+  "T0414",
+  "T1113",
+  "T1512"
+ ],
+ "differentiation": {
+  "alias": "larch_box",
+  "prefix": "lcs11",
+  "tile_scale": 4,
+  "max_px": 5000000000000,
+  "sleep": [
+   1,
+   5
+  ],
+  "seed": 5507,
+  "fn_names": {
+   "emit": "note",
+   "boot": "startup",
+   "ledger": "write_rows",
+   "loadplan": "fetch_plan",
+   "loadmodel": "open_model",
+   "done": "completed_set",
+   "ensure_folder": "make_folder",
+   "submit": "send_task",
+   "refresh": "pull_status",
+   "roll": "execute",
+   "mkclf": "compose_clf"
+  },
+  "ts_fmt": "%H:%M:%S | "
+ }
+}

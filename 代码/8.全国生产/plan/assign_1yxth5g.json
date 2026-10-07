@@ -1,0 +1,63 @@
+{
+ "acct": "1yxth5g",
+ "proj": "round-concept-508309-h8",
+ "folder": "lcf_a08",
+ "prefix": "lct01",
+ "n_tiles": 29,
+ "tiles": [
+  "T2813",
+  "T2005",
+  "T2513",
+  "T2006",
+  "T1808",
+  "T2208",
+  "T2615",
+  "T1305",
+  "T1006",
+  "T2011",
+  "T1309",
+  "T0706",
+  "T1107",
+  "T1208",
+  "T0607",
+  "T0707",
+  "T0510",
+  "T0811",
+  "T1205",
+  "T2002",
+  "T2417",
+  "T1602",
+  "T0505",
+  "T2214",
+  "T1712",
+  "T2402",
+  "T2912",
+  "T0405",
+  "T2915"
+ ],
+ "differentiation": {
+  "alias": "birch_tool",
+  "prefix": "lct01",
+  "tile_scale": 3,
+  "max_px": 10000000000000,
+  "sleep": [
+   3,
+   8
+  ],
+  "seed": 4137,
+  "fn_names": {
+   "emit": "tell",
+   "boot": "ignite",
+   "ledger": "log_rows",
+   "loadplan": "take_plan",
+   "loadmodel": "open_model",
+   "done": "completed_set",
+   "ensure_folder": "create_folder_if",
+   "submit": "push_task",
+   "refresh": "pull_status",
+   "roll": "run",
+   "mkclf": "fit_local"
+  },
+  "ts_fmt": "%H:%M:%S | "
+ }
+}

@@ -1,0 +1,154 @@
+合并文件数 152
+
+WRITE only             代码/0.本地流水线/d1_download_sources.py
+WRITE only             代码/0.本地流水线/d2_glc_fcs10_china.py
+WRITE only             代码/0.本地流水线/lc01_样本统计.py
+WRITE only             代码/0.本地流水线/lc02_网格与任务清单.py
+WRITE only             代码/0.本地流水线/lc03_分类体系与cfg.py
+WRITE only             代码/0.本地流水线/lc04_样本平衡计划.py
+WRITE only             代码/0.本地流水线/lc05_train_rf.py
+WRITE only             代码/0.本地流水线/lc06_convert_gee.py
+WRITE only             代码/0.本地流水线/lc07_verify.py
+WRITE only             代码/0.本地流水线/lc09_地理实证.py
+WRITE only             代码/0.本地流水线/lc10_全量边界内统计.py
+WRITE only             代码/0.本地流水线/lc10b_瓦片级边界统计.py
+WRITE only             代码/0.本地流水线/lc10c_粗框统计.py
+WRITE only             代码/0.本地流水线/lc11_中国样本全量统计_v2.py
+WRITE only             代码/0.本地流水线/lc12_国界内分布_合并多边形.py
+WRITE (W=5819 R=5820)  代码/0.本地流水线/lc13_城乡分割与样本底座.py
+WRITE (W=19171 R=19172) 代码/0.本地流水线/lc14_sample_products.py
+WRITE (W=4888 R=4889)  代码/0.本地流水线/lc15_aggregate_v2.py
+WRITE (W=5240 R=5241)  代码/0.本地流水线/lc_conf.py
+WRITE (W=2936 R=2937)  代码/0.本地流水线/n12_export_gpkg.py
+WRITE (W=2744 R=2886)  代码/0.本地流水线/n13_by_class.py
+WRITE only             代码/0.本地流水线/n17_export_v5.py
+READ only              代码/1.样本制作/2.0数据生成代码.js
+WRITE only             代码/2.北京试点/p1_check.py
+WRITE (W=3306 R=2327)  代码/2.北京试点/p2_sample_embeddings.py
+WRITE (W=7345 R=6705)  代码/2.北京试点/p3_train.py
+WRITE only             代码/2.北京试点/p3b_g2_report.md
+WRITE (W=2860 R=3035)  代码/2.北京试点/p5_submit.py
+WRITE only             代码/2.北京试点/p5b_monitor.py
+WRITE only             代码/2.北京试点/p5c_poll.py
+WRITE only             代码/2.北京试点/p5d_interactive.py
+WRITE (W=2709 R=2730)  代码/2.北京试点/p6_download.py
+WRITE (W=3626 R=3625)  代码/2.北京试点/p7_postprocess.py
+WRITE (W=4024 R=3613)  代码/2.北京试点/p8_validate.py
+WRITE only             代码/2.北京试点/p9_cd_download.py
+WRITE only             代码/2.北京试点/p9b_cd_analysis.py
+WRITE (W=4851 R=3399)  代码/2.北京试点/pilot_common.py
+WRITE (W=3795 R=3933)  代码/3.样本扩展/n10_validation_pools.py
+WRITE (W=4126 R=4127)  代码/3.样本扩展/n11_merge_v4.py
+WRITE (W=2374 R=2375)  代码/3.样本扩展/n14_china_clip.py
+WRITE only             代码/3.样本扩展/n15_fix_v4.py
+READ+ (W=7044 R=8717)  代码/3.样本扩展/n18_glc_fcs10_resample.py
+READ+ (W=4696 R=6901)  代码/3.样本扩展/n1_thematic_samples.py
+WRITE only             代码/3.样本扩展/n2_orchard_samples.py
+WRITE only             代码/3.样本扩展/n3_external_merge.py
+READ+ (W=4694 R=5652)  代码/3.样本扩展/n4_merge_v3.py
+WRITE (W=2548 R=2521)  代码/3.样本扩展/n5_ne_crops.py
+WRITE (W=4075 R=4074)  代码/3.样本扩展/n6_n7_external_round2.py
+WRITE only             代码/3.样本扩展/n7_merge_v31.py
+WRITE (W=4252 R=4342)  代码/3.样本扩展/n8_glc_fcs10_sample.py
+WRITE only             代码/3.样本扩展/n9_esri_national.py
+WRITE only             代码/4.全国清洗训练/_append_doc_updates.py
+WRITE only             代码/4.全国清洗训练/_patch_docs_correction.py
+WRITE only             代码/4.全国清洗训练/_scan_class_province.py
+WRITE only             代码/4.全国清洗训练/_write_readmes.py
+WRITE only             代码/4.全国清洗训练/e0_sample_diagnostic.py
+WRITE only             代码/4.全国清洗训练/e0b_label_validity.py
+WRITE (W=10432 R=10447) 代码/4.全国清洗训练/e0c_validation_redesign.py
+WRITE only             代码/4.全国清洗训练/e0d_class_balance.py
+WRITE only             代码/4.全国清洗训练/e1_extract_embeddings.py
+WRITE (W=3617 R=3717)  代码/4.全国清洗训练/e1_worker.py
+WRITE (W=1962 R=1789)  代码/4.全国清洗训练/e1b_prep_chunks.py
+WRITE (W=6539 R=2528)  代码/4.全国清洗训练/e1b_worker_r7.py
+WRITE only             代码/4.全国清洗训练/e1c_worker_generic.py
+WRITE (W=6097 R=6098)  代码/4.全国清洗训练/e2_clean.py
+WRITE (W=10575 R=3080) 代码/4.全国清洗训练/e2b_yearly_qc.py
+WRITE (W=4834 R=4835)  代码/4.全国清洗训练/e3_train_zones.py
+WRITE only             代码/4.全国清洗训练/e4_pipeline_chain.py
+WRITE (W=7111 R=2404)  代码/4.全国清洗训练/e5_patrol.py
+WRITE only             代码/4.全国清洗训练/e6_spatial_eval.py
+WRITE only             代码/4.全国清洗训练/e7_merge_rare.py
+WRITE only             代码/4.全国清洗训练/e8_export_gpkg.py
+WRITE only             代码/4.全国清洗训练/e9_class_maps.py
+WRITE (W=6714 R=6728)  代码/4.全国清洗训练/n16_unified_clean.py
+WRITE (W=5186 R=5187)  代码/4.全国清洗训练/n18_final_clean.py
+WRITE only             代码/4.全国清洗训练/supervisor.cmd
+WRITE only             代码/5.样本重建/b1_beijing_subset.py
+WRITE (W=5022 R=250)   代码/5.样本重建/monitor_progress.py
+WRITE only             代码/5.样本重建/r10_purge_misplaced.py
+WRITE only             代码/5.样本重建/r11_fix_motherlib.py
+WRITE only             代码/5.样本重建/r2_fast.py
+WRITE only             代码/5.样本重建/r2_upgrade.py
+WRITE only             代码/5.样本重建/r3_clean.py
+WRITE only             代码/5.样本重建/r4_clean.py
+WRITE (W=6473 R=6617)  代码/5.样本重建/r4_fcs10_shrub.py
+WRITE only             代码/5.样本重建/r4_fcs10_xcheck.py
+WRITE only             代码/5.样本重建/r5_band_fix.py
+WRITE only             代码/5.样本重建/r5_clean.py
+READ only              代码/5.样本重建/r7_clean.py
+WRITE only             代码/5.样本重建/r8_rare_topup.py
+WRITE only             代码/5.样本重建/r8b_rare_boundary.py
+WRITE only             代码/5.样本重建/r9_rare_index.py
+WRITE only             代码/5.样本重建/run_all.py
+WRITE (W=10090 R=8089) 代码/5.样本重建/s0_conf.py
+WRITE (W=4381 R=3671)  代码/5.样本重建/s1_geom.py
+WRITE (W=6890 R=6891)  代码/5.样本重建/s2_ingest_base.py
+WRITE (W=9179 R=9180)  代码/5.样本重建/s3_external.py
+WRITE only             代码/5.样本重建/s3b_more_sources.py
+WRITE (W=9311 R=9312)  代码/5.样本重建/s4_fcs10.py
+WRITE only             代码/5.样本重建/s4b_thematic.py
+WRITE (W=15690 R=15691) 代码/5.样本重建/s5_sample_products.py
+WRITE only             代码/5.样本重建/s5_votes_pool.py
+WRITE (W=6577 R=6578)  代码/5.样本重建/s6_clean_train.py
+WRITE (W=4841 R=4842)  代码/5.样本重建/s7_validation.py
+READ+ (W=12427 R=13938) 代码/5.样本重建/s8_export.py
+WRITE only             技术文档/01_已有数据与资产盘点.md
+WRITE only             技术文档/02_主技术方案_中国区AlphaEarth_10m精细土地覆盖_2017-2025.md
+WRITE only             技术文档/03_高精度样本构建方法论.md
+WRITE only             技术文档/04_时序变化检测与只重分类变化区.md
+WRITE only             技术文档/05_计算资源优化与本地GEE分工.md
+WRITE only             技术文档/06_模型训练与GEE迁移部署.md
+WRITE only             技术文档/07_试点实验设计_全流程小规模验证.md
+WRITE (W=22868 R=3198) 技术文档/08_多账号生产执行方案_CNLC10_2017-2025.md
+WRITE only             技术文档/09_北京试点执行报告与完整流程.md
+WRITE (W=9574 R=9575)  技术文档/10_全国生产Runbook_按试点实测定型.md
+WRITE only             技术文档/11_样本数据源扩展与现成样本库清单.md
+READ+ (W=9660 R=14430) 技术文档/12_全国样本从零重建r1.md
+WRITE only             技术文档/13_生产流水线参数化与降耗分析.md
+WRITE only             技术文档/14_完整技术流程总集.md
+WRITE (W=8614 R=527)   技术文档/15_Agent复现手册.md
+WRITE only             技术文档/16_样本库r2提质变更记录.md
+WRITE only             技术文档/17_样本年度适用性改造方案.md
+WRITE only             技术文档/18_审稿意见落实与提升报告.md
+WRITE only             技术文档/19_样本交付与文档升级记录.md
+WRITE only             数据/README.md
+WRITE only             数据/外部样本源/rare_class/AppleOrchard_China_AOMC/_AOMC_苹果园_说明.md
+WRITE only             数据/外部样本源/rare_class/ChinaWetlands/_中国海岸湿地年度制图_说明.md
+WRITE only             数据/外部样本源/rare_class/Citrus_China_2020/_柑橘园图_说明.md
+WRITE only             数据/外部样本源/rare_class/GWL_FCS30_2020/_GWL_FCS30_2020_说明.md
+WRITE only             数据/外部样本源/rare_class/GlobalMangroveWatch_v3/_GMW_v3_说明.md
+WRITE only             数据/外部样本源/rare_class/Rubber_Danzhou_Hainan/_儋州橡胶林_说明.md
+WRITE only             数据/外部样本源/rare_class/Rubber_SEA_2020/_橡胶_SEA_2020_说明.md
+WRITE only             数据/外部样本源/rare_class/Saltmarsh_WCMC027/_WCMC027_全球盐沼_说明.md
+WRITE only             数据/外部样本源/rare_class/Saltmarsh_WCMC027/_中国盐沼2022_说明.md
+WRITE only             数据/外部样本源/rare_class/Teamap_China_2022/_TeaMap_2022_说明.md
+WRITE only             数据/外部样本源/rare_class/TidalFlat_Murray2019/_Murray_GlobalIntertidal_说明.md
+WRITE only             数据/外部样本源/rare_class/_SOURCES.md
+WRITE (W=4906 R=4907)  数据/本地处理/README与记录.md
+READ only              数据/本地处理/分类体系/classification_system.csv
+WRITE (W=6321 R=6322)  数据/本地处理/数据核查结论_缺类修正.md
+WRITE (W=4540 R=4541)  数据/本地处理/样本提纯v2_运行记录.md
+READ only              数据/本地处理/样本重建/r7_audit.json
+READ+ (W=4750 R=5565)  数据/样本交付/README_字段与取值说明.md
+READ only              数据/样本交付/r7_delivery_summary.json
+WRITE only             数据/样本交付/分布图/README.md
+READ only              数据/样本交付/分布图/各类点数统计.csv
+WRITE only             生产_F盘自包含/README_现场说明.md
+WRITE only             生产_F盘自包含/e1b_worker_f.py
+WRITE only             生产_F盘自包含/e2b_yearly_qc_f.py
+WRITE only             生产_F盘自包含/launch_workers.bat
+WRITE only             生产_F盘自包含/rescue_copy.py
+WRITE only             生产_F盘自包含/resume_production.bat

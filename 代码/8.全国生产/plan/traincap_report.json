@@ -1,0 +1,27 @@
+{
+ "acct": "11e0n00",
+ "proj": "rock-sentinel-508409-s9",
+ "exp": "E4",
+ "runs": [
+  {
+   "exp": "E4",
+   "n": 40000,
+   "k": 16,
+   "values": 640000,
+   "ok": false,
+   "n_class": 0,
+   "sec": 20.4,
+   "err": "Computed value is too large."
+  },
+  {
+   "exp": "E4",
+   "n": 80000,
+   "k": 16,
+   "values": 1280000,
+   "ok": false,
+   "n_class": 0,
+   "sec": 24.6,
+   "err": "Computed value is too large."
+  }
+ ]
+}

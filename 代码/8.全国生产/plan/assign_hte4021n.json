@@ -1,0 +1,63 @@
+{
+ "acct": "hte4021n",
+ "proj": "turnkey-skill-508412-s8",
+ "folder": "lcf_a09",
+ "prefix": "lcs09",
+ "n_tiles": 29,
+ "tiles": [
+  "T2105",
+  "T2106",
+  "T1702",
+  "T1404",
+  "T2514",
+  "T2207",
+  "T1603",
+  "T2108",
+  "T1910",
+  "T1911",
+  "T1410",
+  "T0806",
+  "T1207",
+  "T1111",
+  "T0907",
+  "T1311",
+  "T0407",
+  "T0713",
+  "T0605",
+  "T2203",
+  "T1800",
+  "T2102",
+  "T0010",
+  "T0715",
+  "T1204",
+  "T1401",
+  "T2407",
+  "T1104",
+  "T0815"
+ ],
+ "differentiation": {
+  "alias": "juniper_net",
+  "prefix": "lcs09",
+  "tile_scale": 2,
+  "max_px": 1000000000000,
+  "sleep": [
+   3,
+   8
+  ],
+  "seed": 5233,
+  "fn_names": {
+   "emit": "log",
+   "boot": "bring_up",
+   "ledger": "append_rows",
+   "loadplan": "fetch_plan",
+   "loadmodel": "get_model",
+   "done": "done_set",
+   "ensure_folder": "ensure_asset_root",
+   "submit": "enqueue",
+   "refresh": "sync_status",
+   "roll": "drive",
+   "mkclf": "build_clf"
+  },
+  "ts_fmt": ""
+ }
+}

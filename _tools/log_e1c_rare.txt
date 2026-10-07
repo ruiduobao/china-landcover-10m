@@ -1,0 +1,33 @@
+F:\anaconda\Lib\site-packages\ee\data.py:335: UserWarning: Your project has exceeded its noncommercial compute quota and is now in restricted mode. Visit https://developers.google.com/earth-engine/guides/noncommercial_tiers#restricted_mode to learn more.
+  warnings.warn(
+[ee] berk95733 @ vocal-byte-507310-e0 OK
+[berk95733] IDX=数据/本地处理/全国清洗训练/chunks_index_rare.parquet OUT=数据/本地处理/全国清洗训练/emb_parts_rare | 分配 9 块, 已完成 0, 待跑 9
+F:\anaconda\Lib\site-packages\ee\data.py:335: UserWarning: Your project has exceeded its noncommercial compute quota and is now in restricted mode. Visit https://developers.google.com/earth-engine/guides/noncommercial_tiers#restricted_mode to learn more.
+  warnings.warn(
+[berk95733] chunk0000 y[2019]: 861 行 (1/9, 0.0h)
+F:\anaconda\Lib\site-packages\ee\data.py:335: UserWarning: Your project has exceeded its noncommercial compute quota and is now in restricted mode. Visit https://developers.google.com/earth-engine/guides/noncommercial_tiers#restricted_mode to learn more.
+  warnings.warn(
+[berk95733] chunk0001 y[2020]: 861 行 (2/9, 0.0h)
+F:\anaconda\Lib\site-packages\ee\data.py:335: UserWarning: Your project has exceeded its noncommercial compute quota and is now in restricted mode. Visit https://developers.google.com/earth-engine/guides/noncommercial_tiers#restricted_mode to learn more.
+  warnings.warn(
+[berk95733] chunk0002 y[2021]: 861 行 (3/9, 0.0h)
+F:\anaconda\Lib\site-packages\ee\data.py:335: UserWarning: Your project has exceeded its noncommercial compute quota and is now in restricted mode. Visit https://developers.google.com/earth-engine/guides/noncommercial_tiers#restricted_mode to learn more.
+  warnings.warn(
+[berk95733] chunk0003 y[2022]: 3000 行 (4/9, 0.0h)
+F:\anaconda\Lib\site-packages\ee\data.py:335: UserWarning: Your project has exceeded its noncommercial compute quota and is now in restricted mode. Visit https://developers.google.com/earth-engine/guides/noncommercial_tiers#restricted_mode to learn more.
+  warnings.warn(
+[berk95733] chunk0004 y[2022]: 970 行 (5/9, 0.1h)
+F:\anaconda\Lib\site-packages\ee\data.py:335: UserWarning: Your project has exceeded its noncommercial compute quota and is now in restricted mode. Visit https://developers.google.com/earth-engine/guides/noncommercial_tiers#restricted_mode to learn more.
+  warnings.warn(
+[berk95733] chunk0005 y[2023]: 3000 行 (6/9, 0.1h)
+F:\anaconda\Lib\site-packages\ee\data.py:335: UserWarning: Your project has exceeded its noncommercial compute quota and is now in restricted mode. Visit https://developers.google.com/earth-engine/guides/noncommercial_tiers#restricted_mode to learn more.
+  warnings.warn(
+[berk95733] chunk6 y2023 dl-retry1 ERR: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly c
+[berk95733] chunk0006 y[2023]: 970 行 (7/9, 0.1h)
+F:\anaconda\Lib\site-packages\ee\data.py:335: UserWarning: Your project has exceeded its noncommercial compute quota and is now in restricted mode. Visit https://developers.google.com/earth-engine/guides/noncommercial_tiers#restricted_mode to learn more.
+  warnings.warn(
+[berk95733] chunk0007 y[2024]: 3000 行 (8/9, 0.1h)
+F:\anaconda\Lib\site-packages\ee\data.py:335: UserWarning: Your project has exceeded its noncommercial compute quota and is now in restricted mode. Visit https://developers.google.com/earth-engine/guides/noncommercial_tiers#restricted_mode to learn more.
+  warnings.warn(
+[berk95733] chunk0008 y[2024]: 970 行 (9/9, 0.1h)
+[berk95733] 全部完成: 成功 9, 失败 0, 用时 0.1h

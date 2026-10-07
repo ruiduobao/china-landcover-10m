@@ -1,0 +1,28 @@
+# 大数据与生成物不入库（权威副本在目录本体 / Z / K；F 盘目录为准）
+数据/
+试点成果_2023瓦片/
+试点成果_2023瓦片_R4复测/
+
+# 二进制与归档
+*.tif
+*.tiff
+*.img
+*.zip
+*.parquet
+*.pbf
+glc30d_2024.pdf
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# 日志与临时
+*.log
+*.tmp
+~$*
+
+# 工具/会话产物
+.omx/
+.licenses/
+.zcode/

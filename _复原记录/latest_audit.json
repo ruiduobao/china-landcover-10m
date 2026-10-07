@@ -1,0 +1,1370 @@
+[
+ {
+  "rel": "代码/0.本地流水线/d1_download_sources.py",
+  "status": "OK",
+  "mod_time": 1788627686976,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3223,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/0.本地流水线/d2_glc_fcs10_china.py",
+  "status": "OK",
+  "mod_time": 1788658769940,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 1823,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/0.本地流水线/lc01_样本统计.py",
+  "status": "OK",
+  "mod_time": 1788361814137,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3871,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/0.本地流水线/lc02_网格与任务清单.py",
+  "status": "OK",
+  "mod_time": 1788361933897,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 1979,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/0.本地流水线/lc03_分类体系与cfg.py",
+  "status": "OK",
+  "mod_time": 1788361957952,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 1770,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/0.本地流水线/lc04_样本平衡计划.py",
+  "status": "OK",
+  "mod_time": 1788361969725,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 2158,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/0.本地流水线/lc05_train_rf.py",
+  "status": "OK",
+  "mod_time": 1788362055041,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 2996,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/0.本地流水线/lc06_convert_gee.py",
+  "status": "OK",
+  "mod_time": 1788362003090,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 2187,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/0.本地流水线/lc07_verify.py",
+  "status": "OK",
+  "mod_time": 1788362082164,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 2618,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/0.本地流水线/lc09_地理实证.py",
+  "status": "OK",
+  "mod_time": 1788416513277,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3648,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/0.本地流水线/lc10_全量边界内统计.py",
+  "status": "OK",
+  "mod_time": 1788416814660,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3134,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/0.本地流水线/lc10b_瓦片级边界统计.py",
+  "status": "OK",
+  "mod_time": 1788417984414,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3615,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/0.本地流水线/lc10c_粗框统计.py",
+  "status": "OK",
+  "mod_time": 1788418554766,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 1872,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/0.本地流水线/lc11_中国样本全量统计_v2.py",
+  "status": "OK",
+  "mod_time": 1788418575620,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3728,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/0.本地流水线/lc12_国界内分布_合并多边形.py",
+  "status": "OK",
+  "mod_time": 1788419467697,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3134,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/0.本地流水线/lc13_城乡分割与样本底座.py",
+  "status": "OK",
+  "mod_time": 1788420222248,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 5285,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/0.本地流水线/lc14_sample_products.py",
+  "status": "STALE",
+  "mod_time": 1788552888451,
+  "n_full_reads": 1,
+  "newest_read_time": 1788697737871,
+  "have_len": 18330,
+  "new_len": 18331
+ },
+ {
+  "rel": "代码/0.本地流水线/lc15_aggregate_v2.py",
+  "status": "OK",
+  "mod_time": 1788553503802,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 4263,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/0.本地流水线/lc_conf.py",
+  "status": "STALE",
+  "mod_time": 1788416499719,
+  "n_full_reads": 4,
+  "newest_read_time": 1788938483107,
+  "have_len": 4159,
+  "new_len": 4174
+ },
+ {
+  "rel": "代码/0.本地流水线/n12_export_gpkg.py",
+  "status": "OK",
+  "mod_time": 1788674271900,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 2568,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/0.本地流水线/n13_by_class.py",
+  "status": "STALE",
+  "mod_time": 1788677227409,
+  "n_full_reads": 1,
+  "newest_read_time": 1788696103392,
+  "have_len": 2453,
+  "new_len": 2595
+ },
+ {
+  "rel": "代码/0.本地流水线/n17_export_v5.py",
+  "status": "OK",
+  "mod_time": 1788686021554,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 4537,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/1.样本制作/2.0数据生成代码.js",
+  "status": "OK",
+  "mod_time": 0,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 7132,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/2.北京试点/p1_check.py",
+  "status": "OK",
+  "mod_time": 1788604271203,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 2484,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/2.北京试点/p2_sample_embeddings.py",
+  "status": "OK",
+  "mod_time": 1788774687567,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 3004,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/2.北京试点/p3_train.py",
+  "status": "OK",
+  "mod_time": 1788777707203,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 6861,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/2.北京试点/p3b_g2_report.md",
+  "status": "OK",
+  "mod_time": 1788607938675,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 805,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/2.北京试点/p5_submit.py",
+  "status": "OK",
+  "mod_time": 1788774731074,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 2597,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/2.北京试点/p5b_monitor.py",
+  "status": "OK",
+  "mod_time": 1788608327301,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3689,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/2.北京试点/p5c_poll.py",
+  "status": "OK",
+  "mod_time": 1788778057492,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 1649,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/2.北京试点/p5d_interactive.py",
+  "status": "OK",
+  "mod_time": 1788781797179,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 2743,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/2.北京试点/p6_download.py",
+  "status": "OK",
+  "mod_time": 1788777610554,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 2482,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/2.北京试点/p7_postprocess.py",
+  "status": "OK",
+  "mod_time": 1788777610560,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 3290,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/2.北京试点/p8_validate.py",
+  "status": "OK",
+  "mod_time": 1788777679105,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 3677,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/2.北京试点/p9_cd_download.py",
+  "status": "OK",
+  "mod_time": 1788796685566,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3368,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/2.北京试点/p9b_cd_analysis.py",
+  "status": "OK",
+  "mod_time": 1788803795094,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 7677,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/2.北京试点/pilot_common.py",
+  "status": "OK",
+  "mod_time": 1788774585740,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 4459,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/3.样本扩展/n10_validation_pools.py",
+  "status": "STALE",
+  "mod_time": 1788663285000,
+  "n_full_reads": 1,
+  "newest_read_time": 1788699597449,
+  "have_len": 3513,
+  "new_len": 3651
+ },
+ {
+  "rel": "代码/3.样本扩展/n11_merge_v4.py",
+  "status": "OK",
+  "mod_time": 1788663421052,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 3888,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/3.样本扩展/n14_china_clip.py",
+  "status": "OK",
+  "mod_time": 1788678228780,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 2062,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/3.样本扩展/n15_fix_v4.py",
+  "status": "OK",
+  "mod_time": 1788683636543,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3111,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/3.样本扩展/n18_glc_fcs10_resample.py",
+  "status": "OK",
+  "mod_time": 1788687068680,
+  "n_full_reads": 2,
+  "newest_read_time": null,
+  "have_len": 7960,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/3.样本扩展/n1_thematic_samples.py",
+  "status": "OK",
+  "mod_time": 1788627878982,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 6544,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/3.样本扩展/n2_orchard_samples.py",
+  "status": "OK",
+  "mod_time": 1788628036585,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3850,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/3.样本扩展/n3_external_merge.py",
+  "status": "OK",
+  "mod_time": 1788628675696,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 5227,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/3.样本扩展/n4_merge_v3.py",
+  "status": "OK",
+  "mod_time": 1788629437824,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 5206,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/3.样本扩展/n5_ne_crops.py",
+  "status": "STALE",
+  "mod_time": 1788640079462,
+  "n_full_reads": 1,
+  "newest_read_time": 1788697947336,
+  "have_len": 2378,
+  "new_len": 2351
+ },
+ {
+  "rel": "代码/3.样本扩展/n6_n7_external_round2.py",
+  "status": "STALE",
+  "mod_time": 1788640471906,
+  "n_full_reads": 1,
+  "newest_read_time": 1788697926791,
+  "have_len": 3801,
+  "new_len": 3800
+ },
+ {
+  "rel": "代码/3.样本扩展/n7_merge_v31.py",
+  "status": "OK",
+  "mod_time": 1788640667654,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 2956,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/3.样本扩展/n8_glc_fcs10_sample.py",
+  "status": "STALE",
+  "mod_time": 1788661618522,
+  "n_full_reads": 2,
+  "newest_read_time": 1788696102689,
+  "have_len": 3929,
+  "new_len": 3985
+ },
+ {
+  "rel": "代码/3.样本扩展/n9_esri_national.py",
+  "status": "OK",
+  "mod_time": 1788661676476,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 4681,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/_append_doc_updates.py",
+  "status": "OK",
+  "mod_time": 1788956861163,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 2691,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/_patch_docs_correction.py",
+  "status": "OK",
+  "mod_time": 1788963604855,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3567,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/_scan_class_province.py",
+  "status": "OK",
+  "mod_time": 1788959283891,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 2779,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/_write_readmes.py",
+  "status": "OK",
+  "mod_time": 1788966721327,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 6151,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/e0_sample_diagnostic.py",
+  "status": "OK",
+  "mod_time": 1788888407291,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 10980,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/e0b_label_validity.py",
+  "status": "OK",
+  "mod_time": 1788889216555,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 4543,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/e0c_validation_redesign.py",
+  "status": "STALE",
+  "mod_time": 1788889105297,
+  "n_full_reads": 1,
+  "newest_read_time": 1788938720333,
+  "have_len": 8993,
+  "new_len": 9008
+ },
+ {
+  "rel": "代码/4.全国清洗训练/e0d_class_balance.py",
+  "status": "OK",
+  "mod_time": 1788889309530,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3358,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/e1_extract_embeddings.py",
+  "status": "OK",
+  "mod_time": 1788669191725,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 4287,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/e1_worker.py",
+  "status": "STALE",
+  "mod_time": 1788669679335,
+  "n_full_reads": 1,
+  "newest_read_time": 1788750347140,
+  "have_len": 3367,
+  "new_len": 3467
+ },
+ {
+  "rel": "代码/4.全国清洗训练/e1b_prep_chunks.py",
+  "status": "OK",
+  "mod_time": 1788973877328,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 1622,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/e1b_worker_r7.py",
+  "status": "OK",
+  "mod_time": 1788940830366,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 6122,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/e1c_worker_generic.py",
+  "status": "OK",
+  "mod_time": 1788940835240,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 6059,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/e2_clean.py",
+  "status": "OK",
+  "mod_time": 1788678746184,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 5521,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/e2b_yearly_qc.py",
+  "status": "OK",
+  "mod_time": 1788973869251,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 9902,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/e3_train_zones.py",
+  "status": "OK",
+  "mod_time": 1788670531347,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 4547,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/e4_pipeline_chain.py",
+  "status": "OK",
+  "mod_time": 1788670625064,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 1953,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/e5_patrol.py",
+  "status": "OK",
+  "mod_time": 1788673521838,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 6665,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/e6_spatial_eval.py",
+  "status": "OK",
+  "mod_time": 1788973851917,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 10592,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/e7_merge_rare.py",
+  "status": "OK",
+  "mod_time": 1788941275874,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3381,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/e8_export_gpkg.py",
+  "status": "OK",
+  "mod_time": 1788956544189,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3930,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/e9_class_maps.py",
+  "status": "OK",
+  "mod_time": 1789031974690,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 5910,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/n16_unified_clean.py",
+  "status": "STALE",
+  "mod_time": 1788685366797,
+  "n_full_reads": 2,
+  "newest_read_time": 1788697738304,
+  "have_len": 5854,
+  "new_len": 5868
+ },
+ {
+  "rel": "代码/4.全国清洗训练/n18_final_clean.py",
+  "status": "OK",
+  "mod_time": 1788693421726,
+  "n_full_reads": 2,
+  "newest_read_time": null,
+  "have_len": 4661,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/4.全国清洗训练/supervisor.cmd",
+  "status": "OK",
+  "mod_time": 1788680382866,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 1030,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/b1_beijing_subset.py",
+  "status": "OK",
+  "mod_time": 1788777744386,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 2202,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/monitor_progress.py",
+  "status": "OK",
+  "mod_time": 1788709891704,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 4346,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/r10_purge_misplaced.py",
+  "status": "OK",
+  "mod_time": 1788973891982,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3928,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/r11_fix_motherlib.py",
+  "status": "OK",
+  "mod_time": 1788973817637,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 1939,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/r2_fast.py",
+  "status": "OK",
+  "mod_time": 1788850159422,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 5301,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/r2_upgrade.py",
+  "status": "OK",
+  "mod_time": 1788805991316,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 18678,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/r3_clean.py",
+  "status": "OK",
+  "mod_time": 1788859015018,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 6255,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/r4_clean.py",
+  "status": "OK",
+  "mod_time": 1788864467246,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 8556,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/r4_fcs10_shrub.py",
+  "status": "STALE",
+  "mod_time": 1788862331982,
+  "n_full_reads": 1,
+  "newest_read_time": 1788938476114,
+  "have_len": 6057,
+  "new_len": 6201
+ },
+ {
+  "rel": "代码/5.样本重建/r4_fcs10_xcheck.py",
+  "status": "OK",
+  "mod_time": 1788861995478,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 4521,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/r5_band_fix.py",
+  "status": "OK",
+  "mod_time": 1788871979407,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 4457,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/r5_clean.py",
+  "status": "OK",
+  "mod_time": 1788874171080,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 7568,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/r7_clean.py",
+  "status": "OK",
+  "mod_time": 0,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 8199,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/r8_rare_topup.py",
+  "status": "OK",
+  "mod_time": 1788938579842,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 7481,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/r8b_rare_boundary.py",
+  "status": "OK",
+  "mod_time": 1788939569488,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 9456,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/r9_rare_index.py",
+  "status": "OK",
+  "mod_time": 1788940839116,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 4906,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/run_all.py",
+  "status": "OK",
+  "mod_time": 1788726293019,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3975,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/s0_conf.py",
+  "status": "OK",
+  "mod_time": 1788960817831,
+  "n_full_reads": 3,
+  "newest_read_time": null,
+  "have_len": 7397,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/s1_geom.py",
+  "status": "OK",
+  "mod_time": 1788960835398,
+  "n_full_reads": 2,
+  "newest_read_time": null,
+  "have_len": 3882,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/s2_ingest_base.py",
+  "status": "OK",
+  "mod_time": 1788698652663,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 6356,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/s3_external.py",
+  "status": "OK",
+  "mod_time": 1788699582257,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 8429,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/s3b_more_sources.py",
+  "status": "OK",
+  "mod_time": 1788708671511,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 9328,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/s4_fcs10.py",
+  "status": "OK",
+  "mod_time": 1788700202638,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 8720,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/s4b_thematic.py",
+  "status": "OK",
+  "mod_time": 1788707168261,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 12945,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/s5_sample_products.py",
+  "status": "OK",
+  "mod_time": 1788709628112,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 15309,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/s5_votes_pool.py",
+  "status": "OK",
+  "mod_time": 1788718768297,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 7932,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/s6_clean_train.py",
+  "status": "OK",
+  "mod_time": 1788725209546,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 5797,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/s7_validation.py",
+  "status": "OK",
+  "mod_time": 1788699726552,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 4449,
+  "new_len": -1
+ },
+ {
+  "rel": "代码/5.样本重建/s8_export.py",
+  "status": "STALE",
+  "mod_time": 1788857122443,
+  "n_full_reads": 3,
+  "newest_read_time": 1788887082447,
+  "have_len": 12067,
+  "new_len": 12085
+ },
+ {
+  "rel": "技术文档/01_已有数据与资产盘点.md",
+  "status": "OK",
+  "mod_time": 1787389273888,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3779,
+  "new_len": -1
+ },
+ {
+  "rel": "技术文档/02_主技术方案_中国区AlphaEarth_10m精细土地覆盖_2017-2025.md",
+  "status": "OK",
+  "mod_time": 1787577502421,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 21305,
+  "new_len": -1
+ },
+ {
+  "rel": "技术文档/03_高精度样本构建方法论.md",
+  "status": "OK",
+  "mod_time": 1787543576798,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 11726,
+  "new_len": -1
+ },
+ {
+  "rel": "技术文档/04_时序变化检测与只重分类变化区.md",
+  "status": "OK",
+  "mod_time": 1788621008748,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 8993,
+  "new_len": -1
+ },
+ {
+  "rel": "技术文档/05_计算资源优化与本地GEE分工.md",
+  "status": "OK",
+  "mod_time": 1787564232657,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 6656,
+  "new_len": -1
+ },
+ {
+  "rel": "技术文档/06_模型训练与GEE迁移部署.md",
+  "status": "OK",
+  "mod_time": 1787566468425,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 9993,
+  "new_len": -1
+ },
+ {
+  "rel": "技术文档/07_试点实验设计_全流程小规模验证.md",
+  "status": "OK",
+  "mod_time": 1787577386880,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 6291,
+  "new_len": -1
+ },
+ {
+  "rel": "技术文档/08_多账号生产执行方案_CNLC10_2017-2025.md",
+  "status": "OK",
+  "mod_time": 1788620953837,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 12481,
+  "new_len": -1
+ },
+ {
+  "rel": "技术文档/09_北京试点执行报告与完整流程.md",
+  "status": "OK",
+  "mod_time": 1788614317160,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3136,
+  "new_len": -1
+ },
+ {
+  "rel": "技术文档/10_全国生产Runbook_按试点实测定型.md",
+  "status": "OK",
+  "mod_time": 1788620873376,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 5782,
+  "new_len": -1
+ },
+ {
+  "rel": "技术文档/11_样本数据源扩展与现成样本库清单.md",
+  "status": "OK",
+  "mod_time": 1788623463482,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 4722,
+  "new_len": -1
+ },
+ {
+  "rel": "技术文档/12_全国样本从零重建r1.md",
+  "status": "OK",
+  "mod_time": 1788709998995,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 8270,
+  "new_len": -1
+ },
+ {
+  "rel": "技术文档/13_生产流水线参数化与降耗分析.md",
+  "status": "OK",
+  "mod_time": 1788774899760,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3504,
+  "new_len": -1
+ },
+ {
+  "rel": "技术文档/14_完整技术流程总集.md",
+  "status": "OK",
+  "mod_time": 1788785427505,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 4909,
+  "new_len": -1
+ },
+ {
+  "rel": "技术文档/15_Agent复现手册.md",
+  "status": "OK",
+  "mod_time": 1788785554788,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 5550,
+  "new_len": -1
+ },
+ {
+  "rel": "技术文档/16_样本库r2提质变更记录.md",
+  "status": "OK",
+  "mod_time": 1788810779577,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3008,
+  "new_len": -1
+ },
+ {
+  "rel": "技术文档/17_样本年度适用性改造方案.md",
+  "status": "OK",
+  "mod_time": 1788894572856,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 7985,
+  "new_len": -1
+ },
+ {
+  "rel": "技术文档/18_审稿意见落实与提升报告.md",
+  "status": "OK",
+  "mod_time": 1788955701395,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 7547,
+  "new_len": -1
+ },
+ {
+  "rel": "技术文档/19_样本交付与文档升级记录.md",
+  "status": "OK",
+  "mod_time": 1788957993321,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3641,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/README.md",
+  "status": "OK",
+  "mod_time": 1788966660052,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 2648,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/外部样本源/rare_class/AppleOrchard_China_AOMC/_AOMC_苹果园_说明.md",
+  "status": "OK",
+  "mod_time": 1788700942039,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 1234,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/外部样本源/rare_class/ChinaWetlands/_中国海岸湿地年度制图_说明.md",
+  "status": "OK",
+  "mod_time": 1788700942033,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 1353,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/外部样本源/rare_class/Citrus_China_2020/_柑橘园图_说明.md",
+  "status": "OK",
+  "mod_time": 1788701697580,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 913,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/外部样本源/rare_class/GWL_FCS30_2020/_GWL_FCS30_2020_说明.md",
+  "status": "OK",
+  "mod_time": 1788700942027,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 1255,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/外部样本源/rare_class/GlobalMangroveWatch_v3/_GMW_v3_说明.md",
+  "status": "OK",
+  "mod_time": 1788700607616,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 1290,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/外部样本源/rare_class/Rubber_Danzhou_Hainan/_儋州橡胶林_说明.md",
+  "status": "OK",
+  "mod_time": 1788701976223,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 1102,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/外部样本源/rare_class/Rubber_SEA_2020/_橡胶_SEA_2020_说明.md",
+  "status": "OK",
+  "mod_time": 1788701976229,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 993,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/外部样本源/rare_class/Saltmarsh_WCMC027/_WCMC027_全球盐沼_说明.md",
+  "status": "OK",
+  "mod_time": 1788700607635,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 1233,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/外部样本源/rare_class/Saltmarsh_WCMC027/_中国盐沼2022_说明.md",
+  "status": "OK",
+  "mod_time": 1788700607641,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 868,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/外部样本源/rare_class/Teamap_China_2022/_TeaMap_2022_说明.md",
+  "status": "OK",
+  "mod_time": 1788700607648,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 950,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/外部样本源/rare_class/TidalFlat_Murray2019/_Murray_GlobalIntertidal_说明.md",
+  "status": "OK",
+  "mod_time": 1788700942045,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 1602,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/外部样本源/rare_class/_SOURCES.md",
+  "status": "OK",
+  "mod_time": 1788702058431,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 3397,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/本地处理/README与记录.md",
+  "status": "OK",
+  "mod_time": 1788362126155,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 2902,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/本地处理/分类体系/classification_system.csv",
+  "status": "OK",
+  "mod_time": 0,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 1536,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/本地处理/数据核查结论_缺类修正.md",
+  "status": "OK",
+  "mod_time": 1788423796551,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 3540,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/本地处理/样本提纯v2_运行记录.md",
+  "status": "OK",
+  "mod_time": 1788553870169,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 2906,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/本地处理/样本重建/r7_audit.json",
+  "status": "OK",
+  "mod_time": 0,
+  "n_full_reads": 2,
+  "newest_read_time": null,
+  "have_len": 1008,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/样本交付/README_字段与取值说明.md",
+  "status": "STALE",
+  "mod_time": 1788676120545,
+  "n_full_reads": 3,
+  "newest_read_time": 1788696359860,
+  "have_len": 3847,
+  "new_len": 3353
+ },
+ {
+  "rel": "数据/样本交付/r7_delivery_summary.json",
+  "status": "OK",
+  "mod_time": 0,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 1296,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/样本交付/分布图/README.md",
+  "status": "OK",
+  "mod_time": 1789032480991,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 1110,
+  "new_len": -1
+ },
+ {
+  "rel": "数据/样本交付/分布图/各类点数统计.csv",
+  "status": "OK",
+  "mod_time": 0,
+  "n_full_reads": 1,
+  "newest_read_time": null,
+  "have_len": 124,
+  "new_len": -1
+ },
+ {
+  "rel": "生产_F盘自包含/README_现场说明.md",
+  "status": "OK",
+  "mod_time": 1788935564435,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 1236,
+  "new_len": -1
+ },
+ {
+  "rel": "生产_F盘自包含/e1b_worker_f.py",
+  "status": "OK",
+  "mod_time": 1788935212925,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 6185,
+  "new_len": -1
+ },
+ {
+  "rel": "生产_F盘自包含/e2b_yearly_qc_f.py",
+  "status": "OK",
+  "mod_time": 1788935269029,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 7863,
+  "new_len": -1
+ },
+ {
+  "rel": "生产_F盘自包含/launch_workers.bat",
+  "status": "OK",
+  "mod_time": 1788935269035,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 470,
+  "new_len": -1
+ },
+ {
+  "rel": "生产_F盘自包含/rescue_copy.py",
+  "status": "OK",
+  "mod_time": 1788936791612,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 1178,
+  "new_len": -1
+ },
+ {
+  "rel": "生产_F盘自包含/resume_production.bat",
+  "status": "OK",
+  "mod_time": 1788936994025,
+  "n_full_reads": 0,
+  "newest_read_time": null,
+  "have_len": 988,
+  "new_len": -1
+ }
+]

@@ -1,0 +1,62 @@
+{
+ "acct": "y30b63ye",
+ "proj": "quick-cache-508211-s9",
+ "folder": "lcf_a02",
+ "prefix": "lcn17",
+ "n_tiles": 28,
+ "tiles": [
+  "T2612",
+  "T2204",
+  "T1703",
+  "T1807",
+  "T1604",
+  "T2007",
+  "T2010",
+  "T1608",
+  "T2416",
+  "T1710",
+  "T1209",
+  "T0210",
+  "T0909",
+  "T2213",
+  "T0714",
+  "T0411",
+  "T2012",
+  "T0805",
+  "T2215",
+  "T0109",
+  "T2304",
+  "T1203",
+  "T2406",
+  "T2409",
+  "T1412",
+  "T3013",
+  "T0206",
+  "T0604"
+ ],
+ "differentiation": {
+  "alias": "rowan_net",
+  "prefix": "lcn17",
+  "tile_scale": 4,
+  "max_px": 5000000000000,
+  "sleep": [
+   3,
+   8
+  ],
+  "seed": 6329,
+  "fn_names": {
+   "emit": "say",
+   "boot": "ignite",
+   "ledger": "append_rows",
+   "loadplan": "read_plan",
+   "loadmodel": "get_model",
+   "done": "solved_set",
+   "ensure_folder": "make_folder",
+   "submit": "send_task",
+   "refresh": "poll_ops",
+   "roll": "go",
+   "mkclf": "fit_local"
+  },
+  "ts_fmt": "[%Y-%m-%d %H:%M:%S] "
+ }
+}

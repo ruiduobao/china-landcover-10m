@@ -1,0 +1,19 @@
+{"n": 2241626, "usable_any_year": 2238488, "unusable": 3138, "yearly_qc_points": 637504}
+  v2_glc_fcs30d2020_7yr_stable     1,507,627  window 2017-2024
+  glc_fcs10_2023                     623,993  window 2022-2024
+  gisa_gisd                           17,913  window 2017-2024
+  gwl_fcs30_2020_raster               16,960  window 2019-2021
+  gwl_fcs30_stable                     4,811  window 2017-2022
+  worldcereal                         12,705  window 2017-2019
+  teamap                               3,207  window 2021-2023
+  citrus                               2,817  window 2019-2021
+  esri_nat                             2,647  window 2019-2021
+  ne_crops                            45,343  window 2019-2019
+  aomc                                 2,120  window 2019-2021
+  eglc                                   947  window 2017-2019
+  galf                                   230  window 2019-2021
+  gpw_grass                              217  window 2023-2024
+  glc12                                   65  window 2019-2021
+  rubber                                  15  window 2019-2021
+  china_saltmarsh                          9  window 2021-2023
+输出: F:/地理所/论文/中国土地覆盖数据_2017-2024\数据/本地处理/样本重建\r7_train_validity.parquet

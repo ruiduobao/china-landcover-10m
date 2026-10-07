@@ -1,0 +1,62 @@
+{
+ "acct": "zitwwufh",
+ "proj": "fast-drake-508210-f7",
+ "folder": "lcf_a03",
+ "prefix": "lcn18",
+ "n_tiles": 28,
+ "tiles": [
+  "T2104",
+  "T1503",
+  "T1802",
+  "T1707",
+  "T1507",
+  "T2712",
+  "T2515",
+  "T2212",
+  "T1709",
+  "T1408",
+  "T0506",
+  "T0906",
+  "T0608",
+  "T1108",
+  "T0611",
+  "T0610",
+  "T0908",
+  "T0307",
+  "T1912",
+  "T0413",
+  "T1502",
+  "T0208",
+  "T1212",
+  "T0111",
+  "T2711",
+  "T2510",
+  "T1612",
+  "T0914"
+ ],
+ "differentiation": {
+  "alias": "spruce_net",
+  "prefix": "lcn18",
+  "tile_scale": 2,
+  "max_px": 1000000000000,
+  "sleep": [
+   5,
+   12
+  ],
+  "seed": 6466,
+  "fn_names": {
+   "emit": "log",
+   "boot": "launch_",
+   "ledger": "record_rows",
+   "loadplan": "open_plan",
+   "loadmodel": "open_model",
+   "done": "solved_set",
+   "ensure_folder": "prepare_folder",
+   "submit": "file_task",
+   "refresh": "sync_status",
+   "roll": "drive",
+   "mkclf": "compose_clf"
+  },
+  "ts_fmt": "[%m-%d %H:%M] "
+ }
+}

@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "F:\地理所\论文\中国土地覆盖数据_2017-2024\_tools\e2b_ab.py", line 233, in <module>
+    main()
+  File "F:\地理所\论文\中国土地覆盖数据_2017-2024\_tools\e2b_ab.py", line 62, in main
+    val = pd.read_parquet(os.path.join(WORKR, 'r7_train_validity.parquet'))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\anaconda\Lib\site-packages\pandas\io\parquet.py", line 669, in read_parquet
+    return impl.read(
+           ^^^^^^^^^^
+  File "F:\anaconda\Lib\site-packages\pandas\io\parquet.py", line 258, in read
+    path_or_handle, handles, filesystem = _get_path_or_handle(
+                                          ^^^^^^^^^^^^^^^^^^^^
+  File "F:\anaconda\Lib\site-packages\pandas\io\parquet.py", line 141, in _get_path_or_handle
+    handles = get_handle(
+              ^^^^^^^^^^^
+  File "F:\anaconda\Lib\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'K:/地理所/论文/中国土地覆盖数据_2017-2024/AB实验_FCS10限单年\\r7_train_validity.parquet'

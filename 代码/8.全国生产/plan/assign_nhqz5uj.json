@@ -1,0 +1,62 @@
+{
+ "acct": "nhqz5uj",
+ "proj": "sunlit-center-508411-g3",
+ "folder": "lcf_a04",
+ "prefix": "lcm12",
+ "n_tiles": 28,
+ "tiles": [
+  "T2004",
+  "T2206",
+  "T1805",
+  "T1705",
+  "T1406",
+  "T2414",
+  "T2008",
+  "T2111",
+  "T1810",
+  "T1109",
+  "T1210",
+  "T1012",
+  "T0110",
+  "T0509",
+  "T0910",
+  "T0808",
+  "T0410",
+  "T2511",
+  "T2307",
+  "T1402",
+  "T2316",
+  "T1801",
+  "T2308",
+  "T1312",
+  "T1701",
+  "T1301",
+  "T0108",
+  "T2001"
+ ],
+ "differentiation": {
+  "alias": "maple_hub",
+  "prefix": "lcm12",
+  "tile_scale": 2,
+  "max_px": 1000000000000,
+  "sleep": [
+   2,
+   6
+  ],
+  "seed": 5644,
+  "fn_names": {
+   "emit": "tell",
+   "boot": "bring_up",
+   "ledger": "write_rows",
+   "loadplan": "open_plan",
+   "loadmodel": "read_model",
+   "done": "done_set",
+   "ensure_folder": "make_folder",
+   "submit": "push_task",
+   "refresh": "read_ops",
+   "roll": "run",
+   "mkclf": "build_clf"
+  },
+  "ts_fmt": "[%Y-%m-%d %H:%M:%S] "
+ }
+}

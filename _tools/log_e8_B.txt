@@ -1,0 +1,22 @@
+[yearly_rare_2017] 1,526,813 点 × 74 属性 → K:/地理所/论文/中国土地覆盖数据_2017-2024/数据/样本交付/gpkg\r7_train_yearly_with_rare_2017.gpkg (1.34 GB, 62s)
+[yearly_2017] 1,526,813 点 × 74 属性 → K:/地理所/论文/中国土地覆盖数据_2017-2024/数据/样本交付/gpkg\r7_train_yearly_2017.gpkg (1.34 GB, 58s)
+[yearly_rare_2018] 1,517,634 点 × 74 属性 → K:/地理所/论文/中国土地覆盖数据_2017-2024/数据/样本交付/gpkg\r7_train_yearly_with_rare_2018.gpkg (1.33 GB, 56s)
+[yearly_2018] 1,517,634 点 × 74 属性 → K:/地理所/论文/中国土地覆盖数据_2017-2024/数据/样本交付/gpkg\r7_train_yearly_2018.gpkg (1.33 GB, 66s)
+[yearly_rare_2019] 1,543,199 点 × 74 属性 → K:/地理所/论文/中国土地覆盖数据_2017-2024/数据/样本交付/gpkg\r7_train_yearly_with_rare_2019.gpkg (1.36 GB, 65s)
+[yearly_2019] 1,542,338 点 × 74 属性 → K:/地理所/论文/中国土地覆盖数据_2017-2024/数据/样本交付/gpkg\r7_train_yearly_2019.gpkg (1.36 GB, 58s)
+[yearly_rare_2020] 1,525,191 点 × 74 属性 → K:/地理所/论文/中国土地覆盖数据_2017-2024/数据/样本交付/gpkg\r7_train_yearly_with_rare_2020.gpkg (1.34 GB, 65s)
+[yearly_2020] 1,524,330 点 × 74 属性 → K:/地理所/论文/中国土地覆盖数据_2017-2024/数据/样本交付/gpkg\r7_train_yearly_2020.gpkg (1.34 GB, 49s)
+[yearly_rare_2021] 1,529,652 点 × 74 属性 → K:/地理所/论文/中国土地覆盖数据_2017-2024/数据/样本交付/gpkg\r7_train_yearly_with_rare_2021.gpkg (1.34 GB, 40s)
+[yearly_2021] 1,528,791 点 × 74 属性 → K:/地理所/论文/中国土地覆盖数据_2017-2024/数据/样本交付/gpkg\r7_train_yearly_2021.gpkg (1.34 GB, 39s)
+[yearly_rare_2022] 2,121,573 点 × 74 属性 → K:/地理所/论文/中国土地覆盖数据_2017-2024/数据/样本交付/gpkg\r7_train_yearly_with_rare_2022.gpkg (1.86 GB, 52s)
+[yearly_2022] 2,119,527 点 × 74 属性 → K:/地理所/论文/中国土地覆盖数据_2017-2024/数据/样本交付/gpkg\r7_train_yearly_2022.gpkg (1.86 GB, 52s)
+[yearly_rare_2023] 2,118,721 点 × 74 属性 → K:/地理所/论文/中国土地覆盖数据_2017-2024/数据/样本交付/gpkg\r7_train_yearly_with_rare_2023.gpkg (1.86 GB, 51s)
+[yearly_2023] 2,116,675 点 × 74 属性 → K:/地理所/论文/中国土地覆盖数据_2017-2024/数据/样本交付/gpkg\r7_train_yearly_2023.gpkg (1.86 GB, 59s)
+[yearly_rare_2024] 2,111,462 点 × 74 属性 → K:/地理所/论文/中国土地覆盖数据_2017-2024/数据/样本交付/gpkg\r7_train_yearly_with_rare_2024.gpkg (1.85 GB, 94s)
+[yearly_2024] 2,109,416 点 × 74 属性 → K:/地理所/论文/中国土地覆盖数据_2017-2024/数据/样本交付/gpkg\r7_train_yearly_2024.gpkg (1.85 GB, 71s)
+[sample_year_qc] 14,195,920 点 × 19 属性 → K:/地理所/论文/中国土地覆盖数据_2017-2024/数据/样本交付/gpkg\sample_year_qc.gpkg (3.44 GB, 171s)
+[rare_samples] 已存在且行数一致（2,907），跳过
+[train] 已存在且行数一致（2,232,633），跳过
+[train_validity] 已存在且行数一致（2,232,633），跳过
+[pool] 已存在且行数一致（9,646,715），跳过
+[validation_v2] 已存在且行数一致（5,186），跳过

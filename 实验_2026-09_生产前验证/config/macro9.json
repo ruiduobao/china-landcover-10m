@@ -1,0 +1,18 @@
+{
+  "comment": "大类归并规则（doc37 §三 大类归并图，实验口径明文）：9 大类。地衣苔藓/稀疏植被归入低密度植被(草地)大类——实验固定口径，正式产品发布前另议。",
+  "macros": {
+    "cropland": [1, 2, 3],
+    "forest": [4, 5, 6, 7, 8],
+    "shrubland": [9, 10],
+    "grass_lowveg": [11, 12, 13],
+    "wetland": [14, 15, 16, 17, 18, 19, 20],
+    "impervious": [21],
+    "bare": [22],
+    "water": [23],
+    "ice_snow": [24]
+  },
+  "macro_names": {
+    "cropland": "耕地", "forest": "森林", "shrubland": "灌丛", "grass_lowveg": "草地(低密植被)",
+    "wetland": "湿地", "impervious": "不透水", "bare": "裸地", "water": "水体", "ice_snow": "冰雪"
+  }
+}

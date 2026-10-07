@@ -1,0 +1,62 @@
+{
+ "acct": "seqsiu",
+ "proj": "electric-orbit-508407-g4",
+ "folder": "lcf_a06",
+ "prefix": "lcf16",
+ "n_tiles": 28,
+ "tiles": [
+  "T2613",
+  "T2512",
+  "T1704",
+  "T1607",
+  "T1505",
+  "T1706",
+  "T2107",
+  "T1409",
+  "T2315",
+  "T1711",
+  "T1110",
+  "T1308",
+  "T0408",
+  "T1211",
+  "T0912",
+  "T0310",
+  "T0712",
+  "T0311",
+  "T2914",
+  "T2411",
+  "T1112",
+  "T2913",
+  "T1812",
+  "T2617",
+  "T0313",
+  "T2114",
+  "T0804",
+  "T2301"
+ ],
+ "differentiation": {
+  "alias": "quince_kit",
+  "prefix": "lcf16",
+  "tile_scale": 3,
+  "max_px": 10000000000000,
+  "sleep": [
+   2,
+   6
+  ],
+  "seed": 6192,
+  "fn_names": {
+   "emit": "tell_out",
+   "boot": "ignite",
+   "ledger": "log_rows",
+   "loadplan": "fetch_plan",
+   "loadmodel": "fetch_model",
+   "done": "closed_set",
+   "ensure_folder": "mkdir_asset",
+   "submit": "dispatch",
+   "refresh": "poll_ops",
+   "roll": "go",
+   "mkclf": "compose_clf"
+  },
+  "ts_fmt": "%H:%M:%S | "
+ }
+}

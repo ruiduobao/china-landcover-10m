@@ -1,0 +1,62 @@
+{
+ "acct": "r45smj3u",
+ "proj": "grounded-apogee-508406-r1",
+ "folder": "lcf_a05",
+ "prefix": "lcv15",
+ "n_tiles": 28,
+ "tiles": [
+  "T2305",
+  "T2103",
+  "T2713",
+  "T1806",
+  "T1405",
+  "T2110",
+  "T2413",
+  "T2312",
+  "T1106",
+  "T1509",
+  "T1610",
+  "T0508",
+  "T0709",
+  "T1008",
+  "T0512",
+  "T0513",
+  "T0807",
+  "T2616",
+  "T1511",
+  "T2314",
+  "T0306",
+  "T0913",
+  "T2302",
+  "T2410",
+  "T0615",
+  "T0704",
+  "T0011",
+  "T1601"
+ ],
+ "differentiation": {
+  "alias": "pine_tool",
+  "prefix": "lcv15",
+  "tile_scale": 2,
+  "max_px": 1000000000000,
+  "sleep": [
+   1,
+   5
+  ],
+  "seed": 6055,
+  "fn_names": {
+   "emit": "say",
+   "boot": "ignite",
+   "ledger": "record_rows",
+   "loadplan": "get_plan",
+   "loadmodel": "read_model",
+   "done": "completed_set",
+   "ensure_folder": "ensure_asset_root",
+   "submit": "send_task",
+   "refresh": "pull_status",
+   "roll": "run",
+   "mkclf": "build_clf"
+  },
+  "ts_fmt": "[%H:%M:%S] "
+ }
+}

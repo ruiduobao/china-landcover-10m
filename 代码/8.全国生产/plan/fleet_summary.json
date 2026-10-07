@@ -1,0 +1,84 @@
+{
+ "time": "2026-09-16 21:45:37",
+ "n_accounts": 11,
+ "n_tiles": 313,
+ "accounts": {
+  "11e0n00": {
+   "prefix": "lcm00",
+   "alias": "alder_hub",
+   "tile_scale": 2,
+   "n_tiles": 29,
+   "n_exports": 232
+  },
+  "1yxth5g": {
+   "prefix": "lct01",
+   "alias": "birch_tool",
+   "tile_scale": 3,
+   "n_tiles": 29,
+   "n_exports": 232
+  },
+  "hte4021n": {
+   "prefix": "lcs09",
+   "alias": "juniper_net",
+   "tile_scale": 2,
+   "n_tiles": 29,
+   "n_exports": 232
+  },
+  "ief3nj": {
+   "prefix": "lct10",
+   "alias": "kudzu_kit",
+   "tile_scale": 3,
+   "n_tiles": 29,
+   "n_exports": 232
+  },
+  "iu5f4z": {
+   "prefix": "lcs11",
+   "alias": "larch_box",
+   "tile_scale": 4,
+   "n_tiles": 29,
+   "n_exports": 232
+  },
+  "nhqz5uj": {
+   "prefix": "lcm12",
+   "alias": "maple_hub",
+   "tile_scale": 2,
+   "n_tiles": 28,
+   "n_exports": 224
+  },
+  "r45smj3u": {
+   "prefix": "lcv15",
+   "alias": "pine_tool",
+   "tile_scale": 2,
+   "n_tiles": 28,
+   "n_exports": 224
+  },
+  "seqsiu": {
+   "prefix": "lcf16",
+   "alias": "quince_kit",
+   "tile_scale": 3,
+   "n_tiles": 28,
+   "n_exports": 224
+  },
+  "y30b63ye": {
+   "prefix": "lcn17",
+   "alias": "rowan_net",
+   "tile_scale": 4,
+   "n_tiles": 28,
+   "n_exports": 224
+  },
+  "zitwwufh": {
+   "prefix": "lcn18",
+   "alias": "spruce_net",
+   "tile_scale": 2,
+   "n_tiles": 28,
+   "n_exports": 224
+  },
+  "zixen8v8": {
+   "prefix": "lcf19",
+   "alias": "teak_tool",
+   "tile_scale": 3,
+   "n_tiles": 28,
+   "n_exports": 224
+  }
+ }
+}

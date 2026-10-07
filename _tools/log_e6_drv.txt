@@ -1,0 +1,4 @@
+✅ y2020 OA=0.8563
+✅ y2021 OA=0.8423
+✅ y2023 OA=0.7389
+合并完成: {"n": 31468, "OA": 0.7996, "macro_F1": 0.6187, "balanced_accuracy": 0.6101, "macro_UA": 0.7376, "n_classes_scored": 30}

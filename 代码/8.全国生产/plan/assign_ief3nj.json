@@ -1,0 +1,63 @@
+{
+ "acct": "ief3nj",
+ "proj": "cellular-client-508410-t6",
+ "folder": "lcf_c02",
+ "prefix": "lct10",
+ "n_tiles": 29,
+ "tiles": [
+  "T1904",
+  "T1403",
+  "T1804",
+  "T1506",
+  "T1005",
+  "T1304",
+  "T1606",
+  "T2415",
+  "T2516",
+  "T1310",
+  "T0905",
+  "T0705",
+  "T1007",
+  "T1510",
+  "T0308",
+  "T0507",
+  "T0711",
+  "T1611",
+  "T0406",
+  "T2715",
+  "T2517",
+  "T0514",
+  "T2405",
+  "T1913",
+  "T2303",
+  "T0207",
+  "T2310",
+  "T2404",
+  "T2503"
+ ],
+ "differentiation": {
+  "alias": "kudzu_kit",
+  "prefix": "lct10",
+  "tile_scale": 3,
+  "max_px": 10000000000000,
+  "sleep": [
+   5,
+   12
+  ],
+  "seed": 5370,
+  "fn_names": {
+   "emit": "tell",
+   "boot": "bring_up",
+   "ledger": "append_rows",
+   "loadplan": "open_plan",
+   "loadmodel": "read_model",
+   "done": "completed_set",
+   "ensure_folder": "mkdir_asset",
+   "submit": "send_task",
+   "refresh": "fetch_ops",
+   "roll": "main_flow",
+   "mkclf": "compose_clf"
+  },
+  "ts_fmt": "[%H:%M:%S] "
+ }
+}

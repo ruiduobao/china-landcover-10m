@@ -1,0 +1,62 @@
+{
+ "acct": "zixen8v8",
+ "proj": "braided-horizon-508210-a5",
+ "folder": "lcf_a01",
+ "prefix": "lcf19",
+ "n_tiles": 28,
+ "tiles": [
+  "T1905",
+  "T2714",
+  "T1803",
+  "T2614",
+  "T1907",
+  "T1504",
+  "T1605",
+  "T1508",
+  "T1306",
+  "T1609",
+  "T0209",
+  "T1307",
+  "T2112",
+  "T0810",
+  "T0812",
+  "T0911",
+  "T0511",
+  "T0813",
+  "T0614",
+  "T2210",
+  "T0211",
+  "T2815",
+  "T1013",
+  "T2403",
+  "T2317",
+  "T2202",
+  "T1202",
+  "T1600"
+ ],
+ "differentiation": {
+  "alias": "teak_tool",
+  "prefix": "lcf19",
+  "tile_scale": 3,
+  "max_px": 10000000000000,
+  "sleep": [
+   1,
+   5
+  ],
+  "seed": 6603,
+  "fn_names": {
+   "emit": "log",
+   "boot": "bring_up",
+   "ledger": "dump_rows",
+   "loadplan": "open_plan",
+   "loadmodel": "get_model",
+   "done": "solved_set",
+   "ensure_folder": "ensure_asset_root",
+   "submit": "push_task",
+   "refresh": "poll_ops",
+   "roll": "go",
+   "mkclf": "compose_clf"
+  },
+  "ts_fmt": ""
+ }
+}

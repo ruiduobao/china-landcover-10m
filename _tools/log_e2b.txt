@@ -1,0 +1,27 @@
+索引 point-years: 14,273,023
+y2017: 1,555,211 行, 有效 1,555,211
+y2018: 1,550,634 行, 有效 1,550,634
+y2019: 1,572,000 行, 有效 1,572,000
+y2020: 1,557,825 行, 有效 1,557,825
+y2021: 1,563,000 行, 有效 1,563,000
+y2022: 2,159,942 行, 有效 2,159,942
+y2023: 2,156,980 行, 有效 2,156,980
+y2024: 2,152,770 行, 有效 2,152,770
+delta 2017→2018: 1,543,641 对
+delta 2018→2019: 1,541,993 对
+delta 2019→2020: 1,554,029 对
+delta 2020→2021: 1,554,815 对
+delta 2021→2022: 1,530,958 对
+delta 2022→2023: 2,150,594 对
+delta 2023→2024: 2,149,511 对
+F:\地理所\论文\中国土地覆盖数据_2017-2024\代码\4.全国清洗训练\e2b_yearly_qc.py:186: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  qc = pd.concat(qc_frames, ignore_index=True)
+年度子集 y2017: 1,535,143
+年度子集 y2018: 1,526,001
+年度子集 y2019: 1,550,676
+年度子集 y2020: 1,532,731
+年度子集 y2021: 1,536,887
+年度子集 y2022: 2,127,820
+年度子集 y2023: 2,125,049
+年度子集 y2024: 2,117,829
+{"point_years": 14268362, "status_counts": {"keep": 13471241, "downweight": 570719, "exclude_year": 216226, "persistent_change": 10176}, "weighted_points": 10685044.0}

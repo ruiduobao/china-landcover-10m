@@ -1,0 +1,8 @@
+索引 point-years: 14,273,023
+Traceback (most recent call last):
+  File "F:\地理所\论文\中国土地覆盖数据_2017-2024\_tools\e2b_ab.py", line 239, in <module>
+    main()
+  File "F:\地理所\论文\中国土地覆盖数据_2017-2024\_tools\e2b_ab.py", line 67, in main
+    valid_ids = {y: set(v.loc[(v.valid_from <= y) & (v.valid_to >= y), 'row_id'].astype(np.int64))
+                        ^
+UnboundLocalError: cannot access local variable 'v' where it is not associated with a value

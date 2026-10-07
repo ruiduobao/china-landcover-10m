@@ -1,0 +1,23 @@
+⚠️ 验证池 28 点未匹配到 row_id（跳过）
+验证池 row_id 恢复 5,158，生态区: {'西北': 1198, '西南': 792, '青藏': 722, '东北': 722, '华北': 620, '长江中下游': 577, '华南': 527}
+holdout 块键 396
+y2022: 年度子集 2,121,573，留出块内 72,353，训练 2,049,220
+  训练完成 151s，树 150
+  y2022: OA=0.7375 macro-F1=0.6073 bal-acc=0.6084 n=4835
+y2024: 年度子集 2,111,462，留出块内 71,857，训练 2,039,605
+  训练完成 166s，树 150
+  y2024: OA=0.7250 macro-F1=0.5661 bal-acc=0.5684 n=4804
+Traceback (most recent call last):
+  File "F:\地理所\论文\中国土地覆盖数据_2017-2024\代码\4.全国清洗训练\e6_spatial_eval.py", line 274, in <module>
+    main()
+  File "F:\地理所\论文\中国土地覆盖数据_2017-2024\代码\4.全国清洗训练\e6_spatial_eval.py", line 238, in main
+    P[['row_id', 'year', 'class_new', 'pred', 'src', 'zone']].to_parquet(
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\anaconda\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\anaconda\Lib\site-packages\pandas\core\indexes\base.py", line 6212, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "F:\anaconda\Lib\site-packages\pandas\core\indexes\base.py", line 6264, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['year', 'src'] not in index"

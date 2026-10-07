@@ -1,0 +1,13 @@
+{
+ "mode": "asset",
+ "assets": [
+  "projects/braided-horizon-508210-a5/assets/lcf_a01/samples_5000_000"
+ ],
+ "n_trees": 150,
+ "min_leaf": 2,
+ "max_nodes": 200000,
+ "label_col": "cl",
+ "seed": 42,
+ "owner": "zixen8v8",
+ "tag": "walkthrough"
+}
