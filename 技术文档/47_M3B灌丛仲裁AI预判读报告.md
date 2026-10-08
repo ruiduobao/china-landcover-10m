@@ -57,3 +57,7 @@ M3-B 是 D2 灌丛口径之争的**决定性小样本**（doc41 §三设计，86
 - 官方口径报告：`reports/M3B精度报告_20261008.md`（`python m3c_analyze.py --form B --form-file data/m3/m3b_判读表单_AI.csv`）
 - 盲判原始输出：`data/m3/ai_batches/out_00..17.csv` + `out_reliab_0/1.csv`；批次：`batch_00..17.csv`、`reliab_0/1.csv`
 - 代码：`m3c_analyze.py` 新增 `--form-file`（默认路径不变，兼容原流程）
+- **最小复核清单（2026-10-08 生成，可直接判读）**：`data/m3/m3b_最小复核清单.csv` — 210 点 = G1 不确定 33（复判不一致 6 ∪ 无法判读 28）+ G2 低置信"是" 58（A48+B11）+ G3 干旱 A 臂随机 49 + G4 每窗随机"否" 70（w1–w4 各 20、去重后）；列与材料版同构（含 chip/指标/AI 参考），组间去重按 G1>G2>G3>G4。生成与判后合并用 `m5g_review_min.py`（`make` / `merge`；种子 20261008 可复现）。判完后：
+  1. 填清单 `Q1_是否灌丛(是/否/无法判读)`（Q2 填"否"的主要地物）；
+  2. `python m5g_review_min.py merge` → `data/m3/m3b_判读表单_人工复核合并.csv`（863 行 = 人工覆盖点 + AI 其余）；
+  3. `python m3c_analyze.py --form B --form-file data/m3/m3b_判读表单_人工复核合并.csv` 出裁决报告。
