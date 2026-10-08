@@ -332,14 +332,15 @@ def main():
         done.append(export(it, maps, outdir, a.force))
     led = read_ledger(outdir)
     led.update({x['name']: x for x in done if x.get('rows')})
-    json.dump(sorted(led.values(), key=lambda x: x['name']), open(os.path.join(outdir, LEDGER), 'w', encoding='utf-8'),
+    entries = sorted(led.values(), key=lambda x: x['name'])
+    ok = verify(entries, outdir)
+    json.dump(entries, open(os.path.join(outdir, LEDGER), 'w', encoding='utf-8'),
               ensure_ascii=False, indent=1)
-    ok = verify([x for x in done if x.get('rows')], outdir)
-    open(os.path.join(outdir, README), 'w', encoding='utf-8').write(readme_text(sorted(led.values(), key=lambda x: x['name']), outdir))
-    tot = sum(x['rows'] for x in led.values() if x.get('rows'))
+    open(os.path.join(outdir, README), 'w', encoding='utf-8').write(readme_text(entries, outdir))
+    tot = sum(x['rows'] for x in entries if x.get('rows'))
     emit('完成：%d 份 / %s 点 / %.2f GB；回读抽验 %s' % (
-        len([x for x in led.values() if x.get('rows')]), format(tot, ','),
-        sum(x.get('bytes', 0) for x in led.values()) / 2 ** 30, '全过' if ok else '有失败项'))
+        len([x for x in entries if x.get('rows')]), format(tot, ','),
+        sum(x.get('bytes', 0) for x in entries) / 2 ** 30, '全过' if ok else '有失败项'))
 
 
 if __name__ == '__main__':

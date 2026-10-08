@@ -83,6 +83,13 @@
 - 项目根已 `git init`（main 分支；`.gitignore` 排除 `数据/`、`试点成果*/` 等大数据）；**公开仓库 https://github.com/ruiduobao/china-landcover-10m**（README 为公开版）。
 - 推送需令牌 + 代理：`git -c http.proxy=socks5h://127.0.0.1:7890 push origin main`（**端口 7890/7897 会漂移，先探测**）；**令牌/密钥不入库**（`.git/config` 为纯净 URL）。
 
+### 2.6 样本 Shapefile 导出（2026-10-08）
+
+- 由 `代码/5.样本重建/s4_export_shp.py` 生成，输出 `Z:\地理所\论文\中国土地覆盖数据_2017-2024\样本_Shp\`（16 份 / 30,284,965 点 / 7.74 GB / 回读抽验全过）。
+- 内容：母库 `r7_train`、`r7_train_validity`、候选池 `r7_pool`（分 2 卷，2.6GB→2×1.33GB）、稀有类 `r8/r8b`、验证池 `validation_pool_v2`、年度子集 2017–2024、生产池 `train2023_clean`；点层 WGS84(EPSG:4326)，dbf 为 GBK + .cpg（中文 Windows ArcGIS 直读）。
+- 字段：`row_id`（回连 parquet/AEF 的键，候选池无）、`cls30/cls30nm`（30 类细类）、`cls24/cls24nm`（24 类主产品）、`grp10/grp10nm`（10 大类）+ 来源/年份/质量/QC 等原始列；**A00–A63 不入 shp**（dbf 定宽文本会让单年膨胀到 1.4–3GB 超 2GB 硬限；需要时按 row_id 回连 parquet）。同目录 `_导出说明.md` 为字段字典。
+- 重跑：`python 代码/5.样本重建/s4_export_shp.py [--only 名称] [--force] [--verify-only]`（幂等，已存在跳过）。
+
 ---
 
 ## 3. 磁盘与目录地图
@@ -101,6 +108,7 @@
 | `F:\lc_work\prod5p_2023\` | 五省逐瓦工作区：`pilot/b1_batch.py`（批次驱动）、`ledger/`、`qa/`、`reports/`（batch_summary.md 等）、`rasters_batch/`（76 瓦成品 tif） |
 | `F:\lc_work\prod5p_2023\xcomp\` | **E14 对比工具链**（x0–x10 + xw.py + out/ 全部表格 + prev/ 差异图 + ext_tiles/ 外部栅格） |
 | `F:\lc_work\v31_exp\data\m3\` | **M3 判读材料与 AI 预判读**：`m3{a,b,cd}_判读表单_材料版.csv`、切片 `m5_geemat/m3chip2/chips/`、指标、`m3b_ai_labels.csv`、`ai_batches/`（20 批盲判原始输出） |
+| `Z:\...\样本_Shp\` | **样本 Shapefile 导出**（16 份 / 3,028 万点 / 7.74GB，WGS84+GBK，`_导出说明.md` 为字段字典；生成脚本 `代码/5.样本重建/s4_export_shp.py`） |
 | `F:\lc_work\v31_exp\` | 实验包：code/、results/metrics/、reports/（指标必须出自这里或五省 reports，不手写估值） |
 | `F:\lc_work\prod5p_2023\xcomp\fcs10_unzip\` | FCS10 从残缺 zip 抢救出的 17 瓦（E130N35–N55 全部所需） |
 | `E:\data\...\` | FCS10 本地块（E 盘）、ESA WorldCover 中国全幅 tif |
