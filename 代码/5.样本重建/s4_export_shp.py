@@ -167,8 +167,10 @@ def readme_text(items, outdir):
          '## 文件清单', '', '| 文件 | 点数 | 源 | 说明 |', '|---|---|---|---|']
     for it in items:
         if it.get('rows'):
+            rel = os.path.relpath(it['path'], PROJ).replace('\\', '/')
+            src = rel if not rel.startswith('..') else it['path'].replace('\\', '/')
             L.append('| `%s.shp` | %s | `%s` | %s |' % (
-                it['name'], format(it['rows'], ','), os.path.relpath(it['path'], PROJ).replace('\\', '/'), it['note']))
+                it['name'], format(it['rows'], ','), src, it['note']))
     L += ['', '## 字段说明', '',
           '| 字段 | 含义 |', '|---|---|',
           '| row_id | 母库行号（**回连 parquet / AEF 嵌入的键**；候选池无此列） |',
