@@ -61,3 +61,4 @@ M3-B 是 D2 灌丛口径之争的**决定性小样本**（doc41 §三设计，86
   1. 填清单 `Q1_是否灌丛(是/否/无法判读)`（Q2 填"否"的主要地物）；
   2. `python m5g_review_min.py merge` → `data/m3/m3b_判读表单_人工复核合并.csv`（863 行 = 人工覆盖点 + AI 其余）；
   3. `python m3c_analyze.py --form B --form-file data/m3/m3b_判读表单_人工复核合并.csv` 出裁决报告。
+- **点位 shp（2026-10-08 生成，供 GIS 查看）**：`data/m3/m3b_shp/m3b_复核点_WGS84.shp` 与 `_GCJ02.shp`（各 210 点，字段名转 ASCII ≤10 字符、随附 `字段对照.txt`）。**WGS84 版对齐 S2/Esri 影像底图；GCJ02 版对齐项目 DataV 省界与高德底图**，两者实测偏移中位 462 m（157–673 m）——叠加底图时按用途选版本，勿混用。生成脚本 `m5i_m3b_shp.py`（对重复列容错）。

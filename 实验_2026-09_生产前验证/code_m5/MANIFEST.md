@@ -16,3 +16,4 @@
 - 账号映射：`F:/lc_work/v31_exp/config/m5_pids.json`（63 账号，由 gee_accounts/*/_任务登记.md 挖取）
 | m3c_analyze.py（含 --form-file，2026-10-08） | `7a76c9ba841a3cf12dbf62e1448f9579` | 14923 |
 | m5g_review_min.py（最小复核清单生成+判后合并，2026-10-08） | `10b3e89d86d826d949f43134f9eb36ef` | 8533 |
+| m5i_m3b_shp.py（复核点转 shp：WGS84 + GCJ-02 双版，2026-10-08） | `6853b75b4e1ba84bcff8fc971fe8c237` | 8096 |
