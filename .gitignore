@@ -26,3 +26,6 @@ __pycache__/
 .omx/
 .licenses/
 .zcode/
+
+# 本地备份
+README.md.bak.*
