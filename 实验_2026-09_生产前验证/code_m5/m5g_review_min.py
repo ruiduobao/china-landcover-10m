@@ -93,15 +93,15 @@ def make(force=False):
     rnd = random.Random(SEED)
     groups = {}
 
-    # G1：复判不一致 + 无法判读
-    g1 = set()
+    # G1：复判不一致 + 无法判读（dict 保序：同一占两因者固定记"复判不一致"，避免理由随集合序漂移）
+    g1 = {}
     for pid, rr in rel.items():
         if any(x['label'] != ai[pid]['label'] for x in rr):
-            g1.add((pid, '复判不一致：主判=%s/置信%s，复判=%s' % (
-                ai[pid]['label'], ai[pid]['conf'], '/'.join(x['label'] for x in rr))))
+            g1[pid] = '复判不一致：主判=%s/置信%s，复判=%s' % (
+                ai[pid]['label'], ai[pid]['conf'], '/'.join(x['label'] for x in rr))
     for pid, r in ai.items():
         if r['label'] == '无法判读':
-            g1.add((pid, 'AI 无法判读'))
+            g1.setdefault(pid, 'AI 无法判读')
     # G2：低置信"是"
     g2 = [(pid, '低置信"是"（决定分母）') for pid, r in ai.items()
           if r['label'] == '是' and r['conf'] == '低']
@@ -116,12 +116,13 @@ def make(force=False):
         g4 += [(pid, '每窗随机"否"审计（%s）' % w) for pid in rnd.sample(pool, min(20, len(pool)))]
 
     for tag, lst in (('G1_不确定', g1), ('G2_低置信是', g2), ('G3_干旱A', g3), ('G4_随机否', g4)):
-        for pid, why in lst:
+        for pid, why in (lst.items() if isinstance(lst, dict) else lst):
             groups.setdefault(pid, (tag, why))
 
     cols_in = list(mat[0].keys())
+    tail = [] if 'dry' in cols_in else ['dry']      # tag_dry 已把 dry 写进行字典，勿重复追加
     cols_out = (['point_id', '组别', '复核理由', 'AI判读', 'AI置信', 'AI备注']
-                + [c for c in cols_in if c != 'point_id'] + ['dry'])
+                + [c for c in cols_in if c != 'point_id'] + tail)
     rows = []
     for r in mat:
         pid = r['point_id']
