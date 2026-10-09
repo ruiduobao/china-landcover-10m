@@ -1,0 +1,218 @@
+{
+ "NEM001": {
+  "id": "NEM001",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.395,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:11",
+  "retries": 0
+ },
+ "NEM002": {
+  "id": "NEM002",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.405,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:13",
+  "retries": 0
+ },
+ "NEM003": {
+  "id": "NEM003",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.413,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:12",
+  "retries": 0
+ },
+ "NEM004": {
+  "id": "NEM004",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.397,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:11",
+  "retries": 0
+ },
+ "NEM005": {
+  "id": "NEM005",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.413,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:12",
+  "retries": 0
+ },
+ "NEM006": {
+  "id": "NEM006",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.406,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:12",
+  "retries": 0
+ },
+ "NEM007": {
+  "id": "NEM007",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.404,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:12",
+  "retries": 0
+ },
+ "NEM008": {
+  "id": "NEM008",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.419,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:12",
+  "retries": 0
+ },
+ "NER001": {
+  "id": "NER001",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.405,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:22",
+  "retries": 0
+ },
+ "NER002": {
+  "id": "NER002",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.412,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:24",
+  "retries": 0
+ },
+ "NER003": {
+  "id": "NER003",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.408,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:23",
+  "retries": 0
+ },
+ "NER004": {
+  "id": "NER004",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.403,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:23",
+  "retries": 0
+ },
+ "NER005": {
+  "id": "NER005",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.404,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:22",
+  "retries": 0
+ },
+ "NER006": {
+  "id": "NER006",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.4,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:25",
+  "retries": 0
+ },
+ "NER007": {
+  "id": "NER007",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.401,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:25",
+  "retries": 1
+ },
+ "NER008": {
+  "id": "NER008",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.415,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:26",
+  "retries": 1
+ },
+ "NES001": {
+  "id": "NES001",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.402,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:30",
+  "retries": 0
+ },
+ "NES002": {
+  "id": "NES002",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.404,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:30",
+  "retries": 0
+ },
+ "NES003": {
+  "id": "NES003",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.407,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:29",
+  "retries": 0
+ },
+ "NES004": {
+  "id": "NES004",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.408,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:30",
+  "retries": 0
+ },
+ "NES005": {
+  "id": "NES005",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.419,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:31",
+  "retries": 0
+ },
+ "NES006": {
+  "id": "NES006",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.413,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:44",
+  "retries": 1
+ },
+ "NES007": {
+  "id": "NES007",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.398,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:32",
+  "retries": 0
+ },
+ "NES008": {
+  "id": "NES008",
+  "source": "auto",
+  "zoom": 18,
+  "mpp": 0.408,
+  "box_m": 10.0,
+  "time": "2026-10-09 13:16:44",
+  "retries": 0
+ }
+}
