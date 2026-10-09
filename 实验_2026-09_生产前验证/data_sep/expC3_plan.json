@@ -1,0 +1,7 @@
+{
+ "n_grid": 11750,
+ "n_hit": 11696,
+ "n_tree": 5886,
+ "n_sel": 40,
+ "note": "WorldCover v200 tree 类仅用于选点分层；真值由 z18 影像判读"
+}

@@ -1,0 +1,101 @@
+{
+ "seed": 20261009,
+ "min_km": 3.0,
+ "quota": {
+  "needle": {
+   "w1": 40,
+   "w2": 20,
+   "w3": 20
+  },
+  "decid_broad": {
+   "w1": 30,
+   "w2": 20,
+   "w3": 10
+  },
+  "ever_broad": {
+   "w1": 5,
+   "w2": 15,
+   "w3": 20
+  },
+  "mixed": {
+   "w1": 10,
+   "w2": 10,
+   "w3": 0
+  }
+ },
+ "plan": {
+  "needle/w1": {
+   "want": 40,
+   "avail": 2746,
+   "got": 40
+  },
+  "needle/w2": {
+   "want": 20,
+   "avail": 9953,
+   "got": 20
+  },
+  "needle/w3": {
+   "want": 20,
+   "avail": 18058,
+   "got": 20
+  },
+  "decid_broad/w1": {
+   "want": 30,
+   "avail": 3782,
+   "got": 30
+  },
+  "decid_broad/w2": {
+   "want": 20,
+   "avail": 13495,
+   "got": 20
+  },
+  "decid_broad/w3": {
+   "want": 10,
+   "avail": 6633,
+   "got": 10
+  },
+  "ever_broad/w1": {
+   "want": 5,
+   "avail": 0,
+   "got": 0
+  },
+  "ever_broad/w2": {
+   "want": 15,
+   "avail": 9033,
+   "got": 15
+  },
+  "ever_broad/w3": {
+   "want": 20,
+   "avail": 29801,
+   "got": 20
+  },
+  "mixed/w1": {
+   "want": 10,
+   "avail": 95,
+   "got": 10
+  },
+  "mixed/w2": {
+   "want": 10,
+   "avail": 3,
+   "got": 3
+  },
+  "mixed/w3": {
+   "want": 0,
+   "avail": 0,
+   "got": 0
+  }
+ },
+ "n_total": 188,
+ "by_stratum": {
+  "needle": 80,
+  "decid_broad": 60,
+  "ever_broad": 35,
+  "mixed": 13
+ },
+ "by_region": {
+  "w1": 80,
+  "w2": 58,
+  "w3": 50
+ },
+ "note": "FCS10 码仅用于选点分层；真值由 z18 影像判读出（见 judge_rubric_A2.md）"
+}
