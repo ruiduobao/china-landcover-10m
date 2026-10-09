@@ -1,70 +1,79 @@
 ---
 name: rs-sample-labeling
-description: 用高分影像（Esri/Google）加哨兵时序，对遥感样本点做视觉核验与详细地类标记（水稻/玉米/大豆/小麦/棉花/茶园/大棚等），含盲判、复判审计与统计报告。当用户拿一份点位表要"验证标签对不对/重新标类/审读判读结果"时使用；不用于自动分类建模或地图生产。
+description: Verify remote-sensing sample points with high-resolution imagery (Esri/Google) plus Sentinel-2 time series, and label detailed land-cover classes (paddy rice, maize, soybean, wheat, cotton, tea, greenhouse, and more), with blind review, double-pass audit, and QC reports. Use when a user hands you a point table and asks to "check whether the labels are right / relabel / review interpretations". Not for automated classification modeling or map production.
 ---
 
-# 遥感样本点验证与地物类型标记
+# Remote-Sensing Sample Verification & Land-Cover Labeling
 
-给一份点位表（`point_id, lon, lat`），产出**逐点判读结论**（正确/错误/无法判读 + 实际类别 + 置信 + 证据），并给出可复核的质控统计与 GIS 成果。
+Given a point table (`point_id, lon, lat`), produce **per-point interpretations** — correct / wrong / unreadable, actual class, confidence, evidence — plus reviewable QC statistics and GIS deliverables.
 
-**方法一句话**：高分影像判结构与边界，哨兵时序判日期与物候，辅助指标（冠高/树覆盖/淹水）只作旁证；盲判防锚定，复判与审计证可靠。
+**Method in one sentence**: high-resolution imagery judges structure and boundaries, Sentinel-2 time series judges dates and phenology, auxiliary indicators (canopy height/tree cover/flooding) are supporting evidence only; blind review prevents anchoring, double-pass and audit prove reliability.
 
-## 必须遵守的四条硬规则
+> **中文用户**：完整中文图文手册见 [`README.zh-CN.md`](README.zh-CN.md)。
 
-1. **盲判**：判读批次（联系表、清单）只给 `point_id`，**不得出现先验标签、分层、臂别**——先盲判再对照。违反会系统性高估一致率（实测：被告知"这批是某类"时判读率从 12% 虚高到 100%）。
-2. **三件套**：每条结论必须带 **置信 + 证据（含影像源与日期/季节 + 辅助指标数值）**；缺一不算完成。
-3. **"无法判读"单列**：不并入"错误"，不参与确认率分母；云/阴影/影像不可用要写明原因。
-4. **没有日期就没有作物**：作物细类（水稻/玉米/大豆/小麦…）的结论必须由**有日期的时序**支撑，高分底图只用来判结构。
+## Four hard rules
 
-## 标准流程（命令级）
+1. **Blind review**: review batches (contact sheets, lists) contain **only `point_id`** — no prior labels, strata, or arm info. Label first, then compare. Showing the answer inflates agreement (measured: 12% to 100% on the same points).
+2. **Evidence triple**: every conclusion must carry **confidence + evidence (imagery source with date/season + auxiliary indicator values)**; either missing means incomplete.
+3. **"Unreadable" is its own column**: never merged into "wrong", never in the confirmation-rate denominator; clouds/shadows/unusable imagery need a stated reason.
+4. **No date, no crop**: crop-level conclusions (paddy/maize/soybean/wheat/...) require **dated time-series** support; basemaps only judge structure.
+
+## Standard pipeline
 
 ```bash
 S=<skill>/scripts
-python $S/prep_points.py     --points points.csv --outdir run1 --prior-col 先验类 --strata-col 区
-python $S/fetch_chips.py     --points run1/points_clean.csv --outdir run1          # z18≈0.5m 结构
-python $S/s2_timeseries.py   --points run1/points_clean.csv --outdir run1                              --year 2023 --start 05-01 --end 09-30                # 物候（作物细类必做）
-python $S/build_sheets.py    --chips run1/chips --outdir run1                      # 2×2 盲判联系表
-#   可选：把物候指标并进表单提示列（判读时交叉验证）
+python $S/prep_points.py     --points points.csv --outdir run1 --prior-col prior_class --strata-col region
+python $S/fetch_chips.py     --points run1/points_clean.csv --outdir run1          # z18, ~0.5 m structure
+python $S/s2_timeseries.py   --points run1/points_clean.csv --outdir run1                              --year 2023 --start 05-01 --end 09-30                # phenology (required for crops)
+python $S/build_sheets.py    --chips run1/chips --outdir run1                      # 2x2 blind contact sheets
+#   optional: merge phenology hints into the form (cross-check during interpretation)
 python $S/prep_points.py     --points run1/points_clean.csv --outdir run1 --metrics run1/s2_metrics.csv
-#   → 判读：逐表读，把结果填成 run1/form_filled.csv（列见下）
-python $S/qc_protocol.py   sample --labels run1/form_filled.csv --outdir run1/qc --strata-col 区
-#   → 用 qc/复判_blind.csv、qc/审计_blind.csv 再走一遍 fetch/sheet/判读，得复判填表
-python $S/qc_protocol.py   review --labels run1/form_filled.csv --recheck run1/复判填表.csv --outdir run1/qc
-python $S/merge_stats.py   --base run1/points_clean.csv --labels run1/form_filled.csv run1/复判填表.csv \
-                           --outdir run1 --prior-col 先验类 --strata-col 区 --threshold 0.40
-python $S/points_to_shp.py --csv run1/merged_labels.csv --outdir run1/shp --gcj02
+#   -> interpret: read each sheet, fill run1/form_filled.csv (columns below)
+python $S/qc_protocol.py     sample --labels run1/form_filled.csv --outdir run1/qc --strata-col region
+#   -> take qc/*_blind.csv lists through fetch, sheet, interpret again; fill a second-pass form
+python $S/qc_protocol.py     review --labels run1/form_filled.csv --recheck run1/second_pass.csv --outdir run1/qc
+python $S/merge_stats.py     --base run1/points_clean.csv --labels run1/form_filled.csv run1/second_pass.csv                              --outdir run1 --prior-col prior_class --strata-col region --threshold 0.40
+python $S/points_to_shp.py   --csv run1/merged_labels.csv --outdir run1/shp --gcj02
 ```
 
-判读表单列（`prep_points.py` 生成的骨架即为标准列）：
-`point_id, 结论（正确/错误/无法判读）, 实际类别, 置信（高/中/低）, 证据（影像特征+日期+辅助指标）`
+Interpretation form columns (`prep_points.py` skeleton is the standard):
+`point_id, verdict (correct/wrong/unreadable), actual_class, confidence (high/medium/low), evidence (imagery features + date + auxiliary indicators)`
 
-## 判读时的技术要点
+## Key technical points
 
-- **切片自带十字丝与目标框**：十字丝中心留空（不遮靶心），青色框是目标像元大小（默认 10 m，Landsat 场景用 `--box-m 30`）。判的永远是**框内主导地物**；边界混合像元要在证据里说明。
-- **联系表用 2×2（4 点/张，512 原生）**：单边 >1568 px 会被视觉模型缩水丢细节；3×3 只在快速粗判时用。
-- **源选择**：Esri 主源（国内直连 0.5–0.7 s/片）、Google 备源（Esri 缺块/云糊时换日期）；并发 8–10 为甜点。
-- **影像糊/旧/云盖**：回退哨兵生长季合成（有日期、能看物候）；仍不可用 → 记"无法判读（原因）"。
-- **作物判别**：先查区域农时窗口，再按"高分结构 + 时序物候 + 管理特征（淹水/地膜/垄行/茬高）"三项合判。逐作物判据见 `references/地类判读图谱.md`（含水稻淹水格田、玉米宽行高茬、大豆封行、棉花地膜条带、茶园等高绿篱、大棚成排拱顶等）。
-  判读时把 `s2_metrics.csv` 的 `ndvi_amp / ndvi_peak_date / flood_evidence` 与该点高分结构一起看：淹水证据 + 格田 → 水稻；振幅大且峰值晚 → 玉米；峰值略早、回落快 → 大豆/小麦。
-  东北实测（2023，5 期时序）：**水稻峰值最早（7 月中）、玉米居中（7 月末）、大豆最晚（8 月上旬）且 9 月中旬叶片先黄**；配合高分图茬高/行距即可定案。
-- **速度预期（实测）**：高分切片约 1.6 s/点（并发 8）；哨兵 STAC 免密钥路径受跨境带宽限制约 **1.5–3 min/点**（单文件 open 4–5 s）。>30 点建议分批过夜跑，或改用 GEE 批量取数（同一项目内已有 GEE 账号时优先）。
-- **辅助指标**：`ch_mean`（冠高）1.5–5 m 提示灌丛/幼林、>5 m 乔木；`ndvi_amp` >0.4 提示一年生作物；淹水信号提示水稻/湿地。**指标与影像冲突时以影像为准**，并在证据里写明。
+- **Chips carry their own reticle**: the crosshair leaves the target pixel visible; the cyan box marks the target pixel size (default 10 m; use `--box-m 30` for Landsat scenes). Always judge the **dominant land cover inside the box**; note boundary mixing in the evidence column.
+- **Contact sheets are 2x2 (4 points, 512 px native)**: a side longer than ~1568 px gets downscaled by vision models and loses detail; 3x3 is only for rough triage.
+- **Source choice**: Esri as primary (fast, stable), Google satellite as backup (when Esri tiles are missing/cloudy — i.e. to get a different date); 8-10 workers is the throughput sweet spot.
+- **Blurry/stale/cloudy basemaps**: fall back to Sentinel-2 growing-season composites (dated, shows phenology); still unusable -> record "unreadable (reason)".
+- **Crop discrimination**: check the regional crop-calendar window first, then combine "high-resolution structure + time-series phenology + management features (flooding/mulch/row spacing/stubble height)". Per-crop criteria: paddy flooding grids, maize wide rows + tall stubble, soybean early canopy closure, cotton mulched strips, contoured tea hedges, lined greenhouse arches. (Measured Chinese criteria live in `docs/`: start from [`README.zh-CN.md`](README.zh-CN.md).)
+- **Auxiliary indicators**: `ch_mean` (canopy height) 1.5-5 m hints shrub/young forest, >5 m trees; `ndvi_amp` >0.4 hints annual crops; flooding signal hints paddy/wetland. **Imagery wins on conflict** — say so in the evidence column.
 
-## 质控与报告口径
+## QC and reporting language
 
-- 复判自一致率 ≥0.90、"否定"审计准确率 ≥0.90（`qc_protocol.py` 默认抽 10% + 全部低置信/无法判读；审计按分层各抽 N）；不达标就扩大复核。
-- `merge_stats.py` 报告含：确认率（总/分组）、先验×判读混淆、敏感性（推翻结论所需错判率）、复判一致率。
-- 措辞纪律："确认率/一致率"是**判读结果不是精度**；AI 判读须标注"AI 预判读，是否经人工复核"；从训练池抽取的点只评标签质量，不评成品精度。
-- 决策类任务**先预注册判据**（阈值、样本量、种子）再判读，判完不改判据。
+- Double-pass self-agreement >=0.90, "wrong"-audit accuracy >=0.90 (`qc_protocol.py` defaults: 10% random plus all low-confidence/unreadable; per-stratum audit of N). Below threshold -> expand review.
+- `merge_stats.py` reports: confirmation rate (total/grouped), prior-by-interpretation confusion, sensitivity (misjudgment rate needed to overturn), double-pass agreement.
+- Wording discipline: "confirmation rate / agreement" is an **interpretation result, not accuracy**; AI interpretations must say "AI pre-interpretation, human-reviewed or not"; points sampled from a training pool rate **label quality**, not product accuracy.
+- For decision tasks, **pre-register criteria** (thresholds, sample size, seed) before interpreting; do not change them afterwards.
 
-## 参考文档（按需读）
+## References (read as needed)
 
-- `references/地类判读图谱.md` — 详细地类判据与作物决策树（玉米/水稻/大豆/小麦/棉花/油菜/甘蔗/果园/茶园/大棚/蔬菜/地膜/养殖塘…）、区域农时表、时序指标速查、混淆速查、证据写法。
-- `references/影像源与瓦片手册.md` — 瓦片数学、源清单与优先级、并发/代理、格式与坐标坑（DBF 10 字节、GCJ-02 偏移、缩水阈值）。
-- `references/判读协议.md` — 三态操作定义、盲判纪律、质控三率算法与门槛、表单字段、争议处置。
+- `docs/` — full Chinese documentation: illustrated manual, field interpretation atlas (crop decision trees, regional crop calendars), imagery/tile handbook (tile math, sources, pitfalls), interpretation protocol (QC, blind review, reporting language). Start from [`README.zh-CN.md`](README.zh-CN.md).
+- Chinese `references/` were moved here as `docs/` (same content); if a copy named `references/` exists in an old install, treat it as identical.
 
-## 边界
+## Install (npx / from source)
 
-- 不训练/生产分类模型；只做**点位级判读与核验**。
-- AI 判读不能替代正式的双人人工盲判；涉及论文/交付结论时必须声明复核状态。
-- 影像版权：Esri/Google 为商业底图，仅用于解译判读；对外成果按源站条款标注。
+```bash
+# recommended: one command
+npx rs-sample-labeling install
+
+# or from this repo
+git clone https://github.com/ruiduobao/china-landcover-10m
+cd china-landcover-10m/AI判定遥感样本点SKILL
+node scripts/install.cjs install
+```
+
+## Boundaries
+
+- Point-level interpretation and verification only; no classification modeling, no map production.
+- AI interpretation cannot replace a formal two-person blind review; published/delivered conclusions must state their review status.
+- Imagery rights: Esri/Google are commercial basemaps — interpretation use only; follow each source's terms when publishing results.

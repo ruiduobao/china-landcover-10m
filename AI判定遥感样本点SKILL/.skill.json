@@ -1,0 +1,10 @@
+{
+  "name": "rs-sample-labeling",
+  "version": "1.0.0",
+  "entry": "SKILL.md",
+  "entry_zh": "README.zh-CN.md",
+  "description_en": "Verify remote-sensing sample points with high-resolution imagery (Esri/Google) plus Sentinel-2 time series, and label detailed land-cover classes (paddy rice, maize, soybean, wheat, cotton, tea, greenhouse, and more), with blind review, double-pass audit, and QC reports.",
+  "scripts": ["prep_points.py", "fetch_chips.py", "s2_timeseries.py", "build_sheets.py", "qc_protocol.py", "merge_stats.py", "points_to_shp.py"],
+  "installer": "node scripts/install.cjs install",
+  "docs_zh": ["README.zh-CN.md", "docs/地类判读图谱.md", "docs/影像源与瓦片手册.md", "docs/判读协议.md"]
+}

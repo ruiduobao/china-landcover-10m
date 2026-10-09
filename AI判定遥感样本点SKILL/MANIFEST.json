@@ -1,0 +1,21 @@
+{
+  "skill": "rs-sample-labeling",
+  "version": "1.0.0",
+  "entry_en": "SKILL.md",
+  "entry_zh": "README.zh-CN.md",
+  "install": "npx rs-sample-labeling install  （npm 发布后）/  node scripts/install.cjs install  （源码）",
+  "scripts": {
+    "prep_points.py": "scripts/prep_points.py",
+    "fetch_chips.py": "scripts/fetch_chips.py",
+    "s2_timeseries.py": "scripts/s2_timeseries.py",
+    "build_sheets.py": "scripts/build_sheets.py",
+    "qc_protocol.py": "scripts/qc_protocol.py",
+    "merge_stats.py": "scripts/merge_stats.py",
+    "points_to_shp.py": "scripts/points_to_shp.py"
+  },
+  "references_zh": [
+    "docs/地类判读图谱.md",
+    "docs/影像源与瓦片手册.md",
+    "docs/判读协议.md"
+  ]
+}
