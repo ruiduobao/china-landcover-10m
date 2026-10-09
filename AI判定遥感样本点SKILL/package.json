@@ -2,7 +2,17 @@
   "name": "rs-sample-labeling",
   "version": "1.0.0",
   "description": "Verify remote-sensing sample points with high-res imagery (Esri/Google) + Sentinel-2 time series, and label detailed land-cover classes (paddy rice, maize, soybean, wheat, cotton, tea, greenhouse...), with blind review, double-pass audit and QC reports. 中文图文手册见 README.zh-CN.md.",
-  "keywords": ["remote-sensing", "sample-labeling", "land-cover", "sentinel-2", "gee", "gis", "phenology", "crop", "skill"],
+  "keywords": [
+    "remote-sensing",
+    "sample-labeling",
+    "land-cover",
+    "sentinel-2",
+    "gee",
+    "gis",
+    "phenology",
+    "crop",
+    "skill"
+  ],
   "license": "MIT",
   "bin": {
     "rs-sample-labeling": "./bin/rs-sample-labeling.js"
@@ -13,13 +23,15 @@
     ".skill.json",
     "scripts/",
     "docs/",
-    "assets/fig1_pipeline.png",
-    "assets/fig2_chip_anatomy.png",
-    "assets/fig3_pheno_rice_maize_soybean.png",
-    "assets/fig4_qc_protocol.png",
-    "bin/"
+    "bin/",
+    "assets/fig1_pipeline_en.png",
+    "assets/fig2_chip_anatomy_en.png",
+    "assets/fig3_pheno_rice_maize_soybean_en.png",
+    "assets/fig4_qc_protocol_en.png"
   ],
-  "engines": { "node": ">=18" },
+  "engines": {
+    "node": ">=18"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ruiduobao/china-landcover-10m",

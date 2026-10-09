@@ -5,7 +5,7 @@
 
 Verify **remote-sensing sample points** with high-resolution imagery (**Esri / Google**) plus **Sentinel-2 time series**, and label **detailed land-cover classes** — paddy rice, maize, soybean, wheat, cotton, rapeseed, sugarcane, orchard, tea, greenhouse, vegetables, aquaculture ponds — with **blind review, double-pass audit, and QC reports**.
 
-![Pipeline](assets/fig1_pipeline.png)
+![Pipeline](assets/fig1_pipeline_en.png)
 
 **Method in one sentence**: high-resolution imagery judges structure and boundaries, Sentinel-2 time series judges dates and phenology, auxiliary indicators (canopy height / tree cover / flooding) are supporting evidence only; blind review prevents anchoring, double-pass and audit prove reliability.
 
@@ -21,7 +21,7 @@ Shared need: **batch-able, reproducible, evidence-backed, and fine-grained to cr
 
 ## What an interpretation looks like
 
-![Chip anatomy](assets/fig2_chip_anatomy.png)
+![Chip anatomy](assets/fig2_chip_anatomy_en.png)
 
 Each point gets a **z18 (~0.5 m) chip** centered on it, with a **crosshair (target left visible) + target box (10 m, latitude-scaled) + ID**; review uses 2×2 contact sheets (512 px native), batches contain **IDs only** (no prior labels — anti-anchoring).
 
@@ -29,7 +29,7 @@ Each point gets a **z18 (~0.5 m) chip** centered on it, with a **crosshair (targ
 
 Single-date basemaps cannot separate maize from soybean (same uniform green canopy) — a gap found by real testing. **Dated Sentinel-2 time series** makes the three NE-China crops separable:
 
-![Rice–maize–soybean phenology](assets/fig3_pheno_rice_maize_soybean.png)
+![Rice–maize–soybean phenology](assets/fig3_pheno_rice_maize_soybean_en.png)
 
 | Crop | NDVI peak | Key side evidence | High-res structure |
 |---|---|---|---|
@@ -41,7 +41,7 @@ Full criteria (wheat / cotton / rapeseed / sugarcane / orchard / tea / greenhous
 
 ## QC protocol
 
-![QC protocol](assets/fig4_qc_protocol.png)
+![QC protocol](assets/fig4_qc_protocol_en.png)
 
 - **Double-pass sampling**: ≥10% random + all low-confidence + all unreadable; self-agreement bar ≥0.90;
 - **"Wrong"-audit**: re-judge random negatives, measure the "actually correct" share (bar ≥0.90);

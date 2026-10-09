@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
-"""make_figures.py — 生成 README 配图（全部由 _试跑 真实影像拼合，可复现）
+"""make_figures.py — README 配图，中英双语生成（全部由 _试跑 真实影像拼合，可复现）
 
-* 输入：_试跑/轮1_东北作物/（chips、sheets、s2 时序图）
-* 输出：assets/fig1_流程.png、fig2_切片解剖.png、fig3_三作物物候.png、fig4_质控协议.png
-* 说明：所有文本走 wrap()/fit() 自适应（按像素宽换行与缩字号），避免溢出——首版曾出现卡片文字被裁。
-* 用法：python assets/make_figures.py   （在 skill 根目录执行）
+* 输入：_试跑/轮1_东北作物/（chips、s2 时序图）
+* 输出：assets/fig{1..4}.png（中文，README.zh-CN.md 用）+ assets/fig{1..4}_en.png（英文，README.md 用）
+* 说明：所有文本走 wrap() 自适应（按像素宽换行），避免溢出。
+  LANG=zh 用黑体系（msyh/黑体），LANG=en 用 Arial 系；英文文本更长，卡片/画布按需加宽。
+* 用法：python assets/make_figures.py   （在 skill 根目录执行，一次生成 8 张）
 """
 import os
 import sys
@@ -15,12 +16,16 @@ from PIL import Image, ImageDraw, ImageFont
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 RUN = os.path.join(ROOT, '_试跑', '轮1_东北作物')
-FONT = None
+
+ZH_FONT = None
 for c in ('C:/Windows/Fonts/msyh.ttc', 'C:/Windows/Fonts/simhei.ttf'):
     if os.path.exists(c):
-        FONT = c
+        ZH_FONT = c
         break
-FONTB = 'C:/Windows/Fonts/msyhbd.ttc' if os.path.exists('C:/Windows/Fonts/msyhbd.ttc') else FONT
+ZH_FONTB = 'C:/Windows/Fonts/msyhbd.ttc' if os.path.exists('C:/Windows/Fonts/msyhbd.ttc') else ZH_FONT
+EN_FONT = 'C:/Windows/Fonts/arial.ttf'
+EN_FONTB = 'C:/Windows/Fonts/arialbd.ttf'
+
 BG = (255, 255, 255)
 INK = (32, 38, 46)
 ACC = (31, 111, 235)
@@ -28,26 +33,35 @@ ACC2 = (16, 133, 90)
 AMBER = (150, 96, 20)
 RED = (178, 34, 34)
 GREY = (110, 120, 130)
+PURPLE = (120, 60, 160)
+
+LANG = 'zh'   # 生成循环中切换
 
 
 def f(sz, bold=False):
-    return ImageFont.truetype(FONTB if bold else FONT, sz)
+    if LANG == 'en':
+        return ImageFont.truetype(EN_FONTB if bold else EN_FONT, sz)
+    return ImageFont.truetype(ZH_FONTB if bold else ZH_FONT, sz)
 
 
 def tw(d, s, font):
     return d.textbbox((0, 0), s, font=font)[2]
 
 
-def fit(d, s, font, maxw):
-    """字号自适应：从给定字号开始，逐级缩小直到文本宽度 ≤ maxw。"""
-    sz = font.size
-    while sz > 10 and tw(d, s, f(sz, True)) > maxw:
-        sz -= 1
-    return s, f(sz, True)
-
-
 def wrap(d, s, font, maxw):
-    """按像素宽换行（中文逐字，西文按空格）；返回行列表。"""
+    """按像素宽换行；英文按词边界优先，中文逐字。返回行列表。"""
+    if LANG == 'en':
+        words, lines, cur = s.split(' '), [], ''
+        for w_ in words:
+            t = (cur + ' ' + w_).strip()
+            if tw(d, t, font) > maxw and cur:
+                lines.append(cur)
+                cur = w_
+            else:
+                cur = t
+        if cur:
+            lines.append(cur)
+        return lines
     lines, cur = [], ''
     for ch in s:
         if ch == '\n':
@@ -64,27 +78,13 @@ def wrap(d, s, font, maxw):
     return lines
 
 
-def wrap_all(d, rows, maxw, fontmaker):
-    kept = [r for r in rows if os.path.exists(r[0])]
-    wmax = max([Image.open(r[0]).width for r in kept] + [900]) + 40
-    H = 96
-    plan = []
-    for p, title, sub, col in kept:
-        t = Image.open(p)
-        tl = wrap(d, title, f(20, True), wmax - 60)
-        sl = wrap(d, sub, f(17), wmax - 60)
-        h = t.height + 16 + 28 * len(tl) + 24 * len(sl) + 18
-        plan.append((t, tl, sl, col, h))
-        H += h
-    H += 60
-    im = Image.new('RGB', (wmax, H), BG)
-    d = ImageDraw.Draw(im)
-    return im, d, plan, wmax, H
-
-
-def fig1():
-    W = 1440
-    steps = [
+# ---------------------------------------------------------------- 双语文本
+T = {
+    'fig1_title': {'zh': '遥感样本点验证与地物类型标记 · 全流程',
+                   'en': 'Sample Verification & Land-Cover Labeling · Pipeline'},
+    'fig1_sub': {'zh': 'rs-sample-labeling skill：从点位表到可复核判读结论',
+                 'en': 'rs-sample-labeling skill: from point tables to reviewable labels'},
+    'steps': {'zh': [
         ('① 输入与质检', 'prep_points.py', ['点位表 CSV/SHP/XLSX', '坐标系检查·去重·分层', '→ 表单骨架 + 盲判清单']),
         ('② 高分切片', 'fetch_chips.py', ['Esri 主源 / Google 备源', 'z18≈0.5 m，3×3 拼图', '十字丝 + 10m 目标框']),
         ('③ 时序物候', 's2_timeseries.py', ['哨兵-2 生长季 N 期', '逐窗云掩膜 → NDVI/NDWI', '振幅·峰值日·淹水证据']),
@@ -92,17 +92,116 @@ def fig1():
         ('⑤ 质控协议', 'qc_protocol.py', ['复判 ≥10% + 低置信全查', '随机"否定"审计', '→ 最小复核清单']),
         ('⑥ 统计报告', 'merge_stats.py', ['确认率（总/分组）', '先验×判读混淆·敏感性', '复判一致率']),
         ('⑦ GIS 交付', 'points_to_shp.py', ['SHP：WGS84 + GCJ-02', 'ASCII 字段名 + 对照表', 'UTF-8(.cpg) 可直接打开']),
-    ]
-    bw, bh, gap = 330, 168, 18
+    ], 'en': [
+        ('1 Input & QC', 'prep_points.py', ['Point tables CSV/SHP/XLSX', 'CRS check · dedup · strata', '→ form skeleton + blind list']),
+        ('2 HR chips', 'fetch_chips.py', ['Esri primary / Google backup', 'z18 ≈ 0.5 m, 3×3 mosaic', 'Crosshair + 10 m target box']),
+        ('3 Phenology', 's2_timeseries.py', ['Sentinel-2, N growing-season dates', 'Per-window cloud mask → NDVI/NDWI', 'Amplitude · peak date · flooding']),
+        ('4 Blind review', 'build_sheets.py', ['2×2 contact sheets (512 px native)', 'IDs only (anti-anchoring)', 'Per point: class + conf. + evidence']),
+        ('5 QC protocol', 'qc_protocol.py', ['Double-pass ≥10% + all low-conf.', 'Random "wrong" audit', '→ minimal review list']),
+        ('6 Statistics', 'merge_stats.py', ['Confirmation rate (all/grouped)', 'Prior × label confusion · sensitivity', 'Double-pass agreement']),
+        ('7 GIS delivery', 'points_to_shp.py', ['SHP: WGS84 + GCJ-02', 'ASCII field names + lookup table', 'UTF-8 (.cpg), opens directly']),
+    ]},
+    'fig1_notes': {'zh': [
+        '硬规则：① 盲判（批次不含先验标签） ② 每条结论必带证据+置信 ③ "无法判读"单列，不并入分母 ④ 没有日期就没有作物',
+        '实测速度：高分切片 ≈1.6 s/点（并发 8）   ｜   哨兵时序 1.5–3 min/点（免密钥跨境 S3，>30 点建议分批或走 GEE）',
+        '真数据试跑：东北 24 点（玉米/水稻/大豆）——切片 39 s 全出；三作物物候可分（fig3）；质控链路全通（fig4）'],
+        'en': [
+        'Hard rules: (1) blind review — batches carry no prior labels; (2) every label needs evidence + confidence; (3) "unreadable" is its own column, never in the denominator; (4) no date, no crop.',
+        'Measured speed: HR chips ≈1.6 s/point (8 workers)  |  Sentinel-2 series 1.5–3 min/point (keyless cross-border S3; batch overnight or use GEE beyond ~30 points)',
+        'Real-data trial: 24 NE-China points (maize / rice / soybean) — all chips in 39 s; three-crop phenology separable (fig3); QC chain verified (fig4)']},
+    'fig2_title': {'zh': '切片长什么样：十字丝不遮靶心，青框 = 目标像元（10 m）',
+                   'en': 'Chip anatomy: crosshair leaves the target visible; cyan box = target pixel (10 m)'},
+    'fig2_ann': {'zh': [
+        (['十字丝：中心留空 48 px，', '不遮挡被判的那个像元']),
+        (['青色框 = 目标像元尺寸', '（10 m，按纬度换算像素）']),
+        (['左上角编号：', '盲判只给编号']),
+        (['格田 + 红褐田埂 + 防护林', '= 水稻的教科书形态'])],
+        'en': [
+        (['Crosshair: 48 px gap at center,', 'never covers the judged pixel']),
+        (['Cyan box = target pixel size', '(10 m, latitude-scaled)']),
+        (['Top-left ID:', 'blind review sees IDs only']),
+        (['Grid paddies + brown bunds + shelterbelt', '= textbook paddy rice'])]},
+    'fig2_caps': {'zh': [
+        ('NEM003.png', ['收获后：割茬 + 车辙', '（无日期底图会误判成裸地）']),
+        ('NEM004.png', ['条带田 + 防护林', '（作物种植结构）']),
+        ('NER003.png', ['均质绿冠层：只能到"耕地"', '作物种级必须看时序'])],
+        'en': [
+        ('NEM003.png', ['Post-harvest: stubble + wheel tracks', '(dateless basemaps read as bare land)']),
+        ('NEM004.png', ['Strip fields + shelterbelt', '(cropping structure)']),
+        ('NER003.png', ['Uniform green canopy: "cropland" at most', 'species needs the time series'])]},
+    'fig2_note1': {'zh': '结论：高分图判"结构与边界"，作物种级判"日期与物候"——缺一不可。',
+                   'en': 'Takeaway: basemaps judge structure and boundaries; species needs dates and phenology.'},
+    'fig2_note2': {'zh': ['R1 实测：24 点里水稻格田一眼可判（NER004），而玉米/大豆的',
+                          '同季均匀冠层无法区分——这条缺口直接催生了第 ③ 步哨兵时序模块。'],
+                   'en': ['R1 trial: gridded paddies read at a glance (NER004), but uniform',
+                          'in-season maize/soybean canopies do not separate — this gap motivated step 3 (S2 series).']},
+    'fig3_head': {'zh': '三作物物候可分：峰值日期 + 成熟期颜色（东北 2023 实测）',
+                  'en': 'Three-crop phenology separates: peak date + maturity color (NE China 2023, measured)'},
+    'fig3_rows': {'zh': [
+        ('NEM003_时序.png', '玉米（先验 ne_crops_maize_2023_HLJ）',
+         'NDVI 峰值 07-31（居中）｜振幅 0.71｜9 月底收割回落，留高茬'),
+        ('NER006_时序.png', '水稻（先验 ne_crops_rice_2023_HLJ）',
+         'NDVI 峰值 07-13（最早）｜振幅 0.71｜NDWI 前期高＝泡田—封行节律'),
+        ('NES001_时序.png', '大豆（先验 ne_crops_soybean_2023_HLJ）',
+         'NDVI 峰值 08-07（最晚）｜振幅 0.71｜9 月中旬叶片先黄（油料作物早衰）')],
+        'en': [
+        ('NEM003_时序.png', 'Maize (prior: ne_crops_maize_2023_HLJ)',
+         'NDVI peak 07-31 (middle) | amplitude 0.71 | late-Sep harvest dip, tall stubble left'),
+        ('NER006_时序.png', 'Paddy rice (prior: ne_crops_rice_2023_HLJ)',
+         'NDVI peak 07-13 (earliest) | amplitude 0.71 | early high NDWI = flood–transplant rhythm'),
+        ('NES001_时序.png', 'Soybean (prior: ne_crops_soybean_2023_HLJ)',
+         'NDVI peak 08-07 (latest) | amplitude 0.71 | leaves yellow first in mid-Sep (oil-crop senescence)')]},
+    'fig3_note': {'zh': '判读链：峰值最早→水稻；居中＋留高茬→玉米；最晚＋先黄→大豆。与高分图结构（格田/行距/茬高）互证后定案。',
+                  'en': 'Reading chain: earliest peak → rice; middle peak + tall stubble → maize; latest + first-yellow → soybean. Confirm against basemap structure (grids / row spacing / stubble).'},
+    'fig4_title': {'zh': '质控协议：让"判读结论"变成"可复核证据"',
+                   'en': 'QC protocol: turning labels into reviewable evidence'},
+    'fig4_boxes': {'zh': [
+        ('盲判批次', ['联系表只给编号', '不含先验类/分层', '先判后对照']),
+        ('复判抽样', ['随机 ≥10%', '+ 全部低置信', '+ 全部无法判读', '门槛：一致率 ≥0.90']),
+        ('否定审计', ['随机"否定"点重判', '算"其实是对的"比例', '门槛：准确率 ≥0.90']),
+        ('最小复核清单', ['分歧+无法+低置信', '人工只核这些', '其余按判读结论'])],
+        'en': [
+        ('Blind batches', ['Contact sheets show IDs only', 'No priors / strata', 'Label first, compare after']),
+        ('Double-pass', ['Random ≥10%', '+ all low-confidence', '+ all unreadable', 'Bar: agreement ≥0.90']),
+        ('"Wrong" audit', ['Re-judge random negatives', 'Measure "actually correct" share', 'Bar: accuracy ≥0.90']),
+        ('Minimal review list', ['Disagreements + unreadable + low-conf.', 'Humans review only these', 'Rest follows the labels'])]},
+    'fig4_sub': {'zh': '真数据试跑结果（24 点干跑）',
+                 'en': 'Real-data trial results (24-point dry run)'},
+    'fig4_stats': {'zh': [
+        ('确认率 0.909', '分母 = 可判读点；无法判读 8.3% 单列'),
+        ('复判一致率 0.889', '9 点复判（含 2 点故意不一致，检出 1 点）'),
+        ('最小复核清单 8 点', '分歧 1 + 无法判读 2 + 低置信是 5，去重'),
+        ('敏感性', '推翻"≤0.40"判定需 36.3% 的"否"错判（实测 7.1%）')],
+        'en': [
+        ('Confirmation rate 0.909', 'Denominator = readable points; 8.3% unreadable listed separately'),
+        ('Double-pass agreement 0.889', '9-point re-judge (2 planted disagreements, 1 caught)'),
+        ('Minimal review list: 8 points', '1 disagreement + 2 unreadable + 5 low-conf. positives, deduped'),
+        ('Sensitivity', 'Overturning the "≤0.40" call needs 36.3% wrong negatives (measured 7.1%)')]},
+    'fig4_note': {'zh': '报告口径强制声明：确认率/一致率是判读结果≠精度；AI 判读须标注是否经人工复核；训练池抽点只评标签质量。',
+                  'en': 'Mandatory reporting note: confirmation/agreement is an interpretation result, not accuracy; AI labels must state human-review status; training-pool samples rate label quality only.'},
+}
+
+
+def suffix():
+    return '_en' if LANG == 'en' else ''
+
+
+def fig1():
+    steps = T['steps'][LANG]
+    notes = T['fig1_notes'][LANG]
+    W = 1440 if LANG == 'zh' else 1620
+    bw, bh, gap = (330, 168, 18) if LANG == 'zh' else (378, 190, 16)
     rows = [steps[:4], steps[4:]]
-    notes = ['硬规则：① 盲判（批次不含先验标签） ② 每条结论必带证据+置信 ③ "无法判读"单列，不并入分母 ④ 没有日期就没有作物',
-             '实测速度：高分切片 ≈1.6 s/点（并发 8）   ｜   哨兵时序 1.5–3 min/点（免密钥跨境 S3，>30 点建议分批或走 GEE）',
-             '真数据试跑：东北 24 点（玉米/水稻/大豆）——切片 39 s 全出；三作物物候可分（fig3）；质控链路全通（fig4）']
-    H = 150 + 2 * (bh + 40) + 120
+    im_probe = ImageDraw.Draw(Image.new('RGB', (10, 10)))
+    note_lines = []
+    for i, n in enumerate(notes):
+        note_lines += wrap(im_probe, n, f(19 if i == 0 else 17, i == 0), W - 96)
+    H = 150 + 2 * (bh + 40) + 28 * len(note_lines) + 40
     im = Image.new('RGB', (W, H), BG)
     d = ImageDraw.Draw(im)
-    d.text((48, 34), '遥感样本点验证与地物类型标记 · 全流程', font=f(38, True), fill=INK)
-    d.text((48, 88), 'rs-sample-labeling skill：从点位表到可复核判读结论', font=f(21), fill=GREY)
+    for line in wrap(d, T['fig1_title'][LANG], f(38, True), W - 96):
+        d.text((48, 34), line, font=f(38, True), fill=INK)
+    d.text((48, 88), T['fig1_sub'][LANG], font=f(21), fill=GREY)
     y = 140
     for ri, row in enumerate(rows):
         for ci, (t, s, bull) in enumerate(row):
@@ -114,80 +213,103 @@ def fig1():
             d.text((x + 14, y + 8), t, font=f(21, True), fill=(255, 255, 255))
             d.text((x + 14, y + 50), s, font=f(15), fill=col)
             for k, line in enumerate(bull):
-                d.text((x + 14, y + 78 + k * 26), line, font=f(15), fill=INK)
+                for kk, wl in enumerate(wrap(d, line, f(15), bw - 28)):
+                    d.text((x + 14, y + 78 + k * 26 + kk * 20), wl, font=f(15), fill=INK)
             if ci < len(row) - 1:
                 ax = x + bw + 3
                 d.polygon([(ax, y + bh / 2 - 8), (ax + 11, y + bh / 2), (ax, y + bh / 2 + 8)], fill=GREY)
         y += bh + 40
     yy = y + 6
     for i, n in enumerate(notes):
-        for k, line in enumerate(wrap(d, n, f(19 if i == 0 else 17, i == 0), W - 96)):
+        for line in wrap(d, n, f(19 if i == 0 else 17, i == 0), W - 96):
             d.text((48, yy), line, font=f(19 if i == 0 else 17, i == 0), fill=RED if i == 0 else GREY)
             yy += 28
         yy += 6
     im = im.crop((0, 0, W, yy + 20))
-    im.save(os.path.join(HERE, 'fig1_流程.png'))
-    print('fig1_流程.png', im.size)
+    fn = 'fig1_pipeline%s.png' % suffix()
+    im.save(os.path.join(HERE, fn))
+    print(fn, im.size)
 
 
 def fig2():
-    W, H = 1440, 700
-    im = Image.new('RGB', (W, H), BG)
+    W = 1440 if LANG == 'zh' else 1560
+    single = 420 if LANG == 'zh' else 400
+    small = 230 if LANG == 'zh' else 200
+    im = Image.new('RGB', (W, 900), BG)
     d = ImageDraw.Draw(im)
-    d.text((48, 30), '切片长什么样：十字丝不遮靶心，青框 = 目标像元（10 m）', font=f(32, True), fill=INK)
-    chip = Image.open(os.path.join(RUN, 'chips', 'NER004.png')).resize((420, 420))
-    im.paste(chip, (48, 100))
-    d.rectangle((48, 100, 468, 520), outline=(200, 200, 200), width=2)
-    cx, cy = 48 + 210, 100 + 210
-    ann = [((cx + 100, cy - 100), (474, 132), ['十字丝：中心留空 48 px，', '不遮挡被判的那个像元']),
-           ((cx + 24, cy + 24), (474, 190), ['青色框 = 目标像元尺寸', '（10 m，按纬度换算像素）']),
-           ((66, 118), (48, 536), ['左上角编号：', '盲判只给编号']),
-           ((300, 470), (300, 536), ['格田 + 红褐田埂 + 防护林', '= 水稻的教科书形态'])]
-    for (px, py), (tx, ty), lines in ann:
-        d.line((px, py, tx, ty), fill=RED, width=2)
-        for k, line in enumerate(lines):
-            d.text((tx, ty + k * 22), line, font=f(15), fill=RED)
-    caps = [('NEM003.png', ['收获后：割茬 + 车辙', '（无日期底图会误判成裸地）']),
-            ('NEM004.png', ['条带田 + 防护林', '（作物种植结构）']),
-            ('NER003.png', ['均质绿冠层：只能到"耕地"', '作物种级必须看时序'])]
-    x = 700
+    title_lines = wrap(d, T['fig2_title'][LANG], f(32, True), W - 96)
+    for k, line in enumerate(title_lines):
+        d.text((48, 30 + k * 44), line, font=f(32, True), fill=INK)
+    top = 30 + 44 * len(title_lines) + 20
+    chip = Image.open(os.path.join(RUN, 'chips', 'NER004.png')).resize((single, single))
+    im.paste(chip, (48, top))
+    d.rectangle((48, top, 48 + single, top + single), outline=(200, 200, 200), width=2)
+    cx, cy = 48 + single // 2, top + single // 2
+    # 右侧注释区起点：大图右侧留 30px
+    ax0 = 48 + single + 30
+    a1y = top + 20
+    a2y = top + 20 + 2 * 24 + 18
+    ann_xy = [((cx + 100, cy - 100), (ax0, a1y)),
+              ((cx + 24, cy + 24), (ax0, a2y)),
+              ((66, top + 18), (ax0, a2y + 2 * 24 + 18)),
+              ((cx - 60, top + single - 30), (ax0, a2y + 4 * 24 + 36))]
+    for ((px, py), (tx, ty)), lines in zip(ann_xy, T['fig2_ann'][LANG]):
+        wl = []
+        for line in lines:
+            wl += wrap(d, line, f(15), W - tx - 48)
+        d.line((px, py, tx, ty + 8), fill=RED, width=2)
+        for k, wline in enumerate(wl):
+            d.text((tx, ty + k * 22), wline, font=f(15), fill=RED)
+    # 下方三小图：从大图底部开始
+    sy = top + single + 30
+    d.text((48, sy), '↓' if False else '', font=f(15), fill=GREY)
+    caps = T['fig2_caps'][LANG]
+    x = 48
+    cap_bottom = sy
     for name, cap in caps:
         p = os.path.join(RUN, 'chips', name)
         if os.path.exists(p):
-            t = Image.open(p).resize((230, 230))
-            im.paste(t, (x, 130))
-            d.rectangle((x, 130, x + 230, 360), outline=(200, 200, 200), width=2)
-            for k, line in enumerate(cap):
-                d.text((x, 374 + k * 24), line, font=f(15), fill=INK)
-            x += 246
-    d.text((700, 460), '结论：高分图判"结构与边界"，作物种级判"日期与物候"——缺一不可。', font=f(19, True), fill=ACC2)
-    d.text((700, 500), 'R1 实测：24 点里水稻格田一眼可判（NER004），而玉米/大豆的', font=f(16), fill=GREY)
-    d.text((700, 526), '同季均匀冠层无法区分——这条缺口直接催生了第 ③ 步哨兵时序模块。', font=f(16), fill=GREY)
-    im.save(os.path.join(HERE, 'fig2_切片解剖.png'))
-    print('fig2_切片解剖.png', im.size)
+            t = Image.open(p).resize((small, small))
+            im.paste(t, (x, sy + 6))
+            d.rectangle((x, sy + 6, x + small, sy + 6 + small), outline=(200, 200, 200), width=2)
+            cy0 = sy + 12 + small
+            for line in cap:
+                for wl in wrap(d, line, f(15), small):
+                    d.text((x, cy0), wl, font=f(15), fill=INK)
+                    cy0 += 22
+            cap_bottom = max(cap_bottom, cy0)
+            x += small + 24
+    ny = max(cap_bottom + 18, sy + small + 60)
+    for line in wrap(d, T['fig2_note1'][LANG], f(19, True), W - 96):
+        d.text((48, ny), line, font=f(19, True), fill=ACC2)
+        ny += 26
+    ny += 8
+    for n2 in T['fig2_note2'][LANG]:
+        for line in wrap(d, n2, f(16), W - 96):
+            d.text((48, ny), line, font=f(16), fill=GREY)
+            ny += 24
+    im = im.crop((0, 0, W, ny + 20))
+    fn = 'fig2_chip_anatomy%s.png' % suffix()
+    im.save(os.path.join(HERE, fn))
+    print(fn, im.size)
 
 
 def fig3():
-    rows = [(os.path.join(RUN, 's2', 'NEM003_时序.png'), '玉米（先验 ne_crops_maize_2023_HLJ）',
-             'NDVI 峰值 07-31（居中）｜振幅 0.71｜9 月底收割回落，留高茬', AMBER),
-            (os.path.join(RUN, 's2', 'NER006_时序.png'), '水稻（先验 ne_crops_rice_2023_HLJ）',
-             'NDVI 峰值 07-13（最早）｜振幅 0.67｜NDWI 前期高＝泡田—封行节律', ACC2),
-            (os.path.join(RUN, 's2', 'NES001_时序.png'), '大豆（先验 ne_crops_soybean_2023_HLJ）',
-             'NDVI 峰值 08-07（最晚）｜振幅 0.71｜9 月中旬叶片先黄（油料作物早衰）', ACC)]
+    rows = T['fig3_rows'][LANG]
     probe = ImageDraw.Draw(Image.new('RGB', (10, 10)))
-    W = max(Image.open(r[0]).width for r in rows) + 80
-    W = max(W, 1040)
-    inner = W - 84                       # 卡片内文字可用宽度
-    head = wrap(probe, '三作物物候可分：峰值日期 + 成熟期颜色（东北 2023 实测）', f(28, True), W - 60)
+    W = max(Image.open(os.path.join(RUN, 's2', r[0])).width for r in rows) + 80
+    W = max(W, 1040 if LANG == 'zh' else 1120)
+    inner = W - 84
+    head = wrap(probe, T['fig3_head'][LANG], f(28, True), W - 60)
     plan = []
-    for p, title, sub, col in rows:
-        t = Image.open(p)
+    for p, title, sub in ((r[0], r[1], r[2]) for r in rows):
+        t = Image.open(os.path.join(RUN, 's2', p))
         tl = wrap(probe, title, f(20, True), inner)
         sl = wrap(probe, sub, f(17), inner)
-        h = 12 + t.height + 8 + 26 * len(tl) + 22 * len(sl) + 12
-        plan.append((t, tl, sl, col, h))
-    note = wrap(probe, '判读链：峰值最早→水稻；居中＋留高茬→玉米；最晚＋先黄→大豆。与高分图结构（格田/行距/茬高）互证后定案。',
-                f(18, True), W - 60)
+        h = 12 + t.height + 14 + 26 * len(tl) + 24 * len(sl) + 16
+        plan.append((t, tl, sl, h))
+    cols = [AMBER, ACC2, ACC]
+    note = wrap(probe, T['fig3_note'][LANG], f(18, True), W - 60)
     H = 24 + 40 * len(head) + 16 + sum(h + 16 for *_, h in plan) + 28 * len(note) + 30
     im = Image.new('RGB', (W, H), BG)
     d = ImageDraw.Draw(im)
@@ -196,63 +318,102 @@ def fig3():
         d.text((30, y), line, font=f(28, True), fill=INK)
         y += 40
     y += 16
-    for (t, tl, sl, col, h) in plan:
+    for (t, tl, sl, h), col in zip(plan, cols):
         d.rounded_rectangle((24, y, 24 + t.width + 24, y + h), 10, fill=(248, 250, 252), outline=col, width=2)
         im.paste(t, (36, y + 12))
-        yy = y + 12 + t.height + 8
+        yy = y + 12 + t.height + 14
         for line in tl:
             d.text((36, yy), line, font=f(20, True), fill=col)
             yy += 26
+        yy += 2
         for line in sl:
             d.text((36, yy), line, font=f(17), fill=INK)
-            yy += 22
+            yy += 24
         y += h + 16
     y += 12
     for line in note:
         d.text((30, y), line, font=f(18, True), fill=RED)
         y += 28
-    im.save(os.path.join(HERE, 'fig3_三作物物候.png'))
-    print('fig3_三作物物候.png', im.size)
+    fn = 'fig3_pheno_rice_maize_soybean%s.png' % suffix()
+    im.save(os.path.join(HERE, fn))
+    print(fn, im.size)
 
 
 def fig4():
-    W = 1400
-    boxes = [
-        (60, '盲判批次', ['联系表只给编号', '不含先验类/分层', '先判后对照'], ACC),
-        (420, '复判抽样', ['随机 ≥10%', '+ 全部低置信', '+ 全部无法判读', '门槛：一致率 ≥0.90'], ACC2),
-        (780, '否定审计', ['随机"否定"点重判', '算"其实是对的"比例', '门槛：准确率 ≥0.90'], AMBER),
-        (1120, '最小复核清单', ['分歧+无法+低置信', '人工只核这些', '其余按判读结论'], (120, 60, 160)),
-    ]
-    stats = [('确认率 0.909', '分母 = 可判读点；无法判读 8.3% 单列'),
-             ('复判一致率 0.889', '9 点复判（含 2 点故意不一致，检出 1 点）'),
-             ('最小复核清单 8 点', '分歧 1 + 无法判读 2 + 低置信是 5，去重'),
-             ('敏感性', '推翻"≤0.40"判定需 36.3% 的"否"错判（实测 7.1%）')]
-    y0, bh = 128, 190
-    H = y0 + bh + 84 + 2 * 78 + 60
+    W = 1400 if LANG == 'zh' else 1520
+    boxes = T['fig4_boxes'][LANG]
+    stats = T['fig4_stats'][LANG]
+    y0, bh = 128, 200 if LANG == 'en' else 190
+    step = 360 if LANG == 'en' else 360
+    xs = [60, 420, 780, 1140] if LANG == 'zh' else [40, 410, 780, 1150]
+    bw = 250 if LANG == 'zh' else 330
+    n_stat_rows = 2
+    probe = ImageDraw.Draw(Image.new('RGB', (10, 10)))
+    cw0 = 620 if LANG == 'zh' else 700
+    ch0 = 62 if LANG == 'zh' else 70
+    _hs = [max(ch0, 12 + 24 * len(wrap(probe, k, f(20, True), cw0 - 32)) + 4
+               + 20 * len(wrap(probe, v, f(15), cw0 - 32)) + 10) for k, v in stats]
+    _rows = [max(_hs[0], _hs[1]), max(_hs[2], _hs[3])]
+    _sub = len(wrap(probe, T['fig4_sub'][LANG], f(22, True), W - 120))
+    _note = len(wrap(probe, T['fig4_note'][LANG], f(18, True), W - 120))
+    H = y0 + bh + 44 + 30 * _sub + 16 + sum(_rows) + 16 + 28 * _note + 40
     im = Image.new('RGB', (W, H), BG)
     d = ImageDraw.Draw(im)
-    d.text((48, 30), '质控协议：让"判读结论"变成"可复核证据"', font=f(34, True), fill=INK)
-    for x, t, items, col in boxes:
-        d.rounded_rectangle((x, y0, x + 250, y0 + bh), 14, fill=(248, 250, 252), outline=col, width=3)
-        d.rounded_rectangle((x, y0, x + 250, y0 + 42), 14, fill=col)
-        d.rectangle((x, y0 + 28, x + 250, y0 + 42), fill=col)
-        d.text((x + 14, y0 + 8), t, font=f(20, True), fill=(255, 255, 255))
-        for k, s in enumerate(items):
-            d.text((x + 14, y0 + 58 + k * 28), '· ' + s, font=f(16), fill=INK)
-    d.text((60, y0 + bh + 36), '真数据试跑结果（24 点干跑）', font=f(22, True), fill=INK)
-    y = y0 + bh + 80
+    for k, line in enumerate(wrap(d, T['fig4_title'][LANG], f(34, True), W - 96)):
+        d.text((48, 30 + k * 46), line, font=f(34, True), fill=INK)
+    for x, (t, items, ) in [(xs[i], (b[0], b[1])) for i, b in enumerate(boxes)]:
+        pass
+    cols = [ACC, ACC2, AMBER, PURPLE]
+    for x, (t, items), col in zip(xs, [(b[0], b[1]) for b in boxes], cols):
+        d.rounded_rectangle((x, y0, x + bw, y0 + bh), 14, fill=(248, 250, 252), outline=col, width=3)
+        d.rounded_rectangle((x, y0, x + bw, y0 + 42), 14, fill=col)
+        d.rectangle((x, y0 + 28, x + bw, y0 + 42), fill=col)
+        for kk, tl in enumerate(wrap(d, t, f(20, True), bw - 28)):
+            d.text((x + 14, y0 + 8 + kk * 24), tl, font=f(20, True), fill=(255, 255, 255))
+        yy = y0 + 58
+        for s in items:
+            for line in wrap(d, '· ' + s, f(16), bw - 28):
+                d.text((x + 14, yy), line, font=f(16), fill=INK)
+                yy += 24
+    for k, line in enumerate(wrap(d, T['fig4_sub'][LANG], f(22, True), W - 120)):
+        d.text((60, y0 + bh + 30 + k * 30), line, font=f(22, True), fill=INK)
+    y = y0 + bh + 80 + (30 if LANG == 'en' else 0)
+    cw = 620 if LANG == 'zh' else 700
+    ch = 62 if LANG == 'zh' else 70
+    row_h = []
+    pre = []
     for i, (k, v) in enumerate(stats):
-        x = 60 + (i % 2) * 660
-        yy = y + (i // 2) * 78
-        d.rounded_rectangle((x, yy, x + 620, yy + 62), 10, fill=(240, 246, 255), outline=(190, 210, 235))
-        d.text((x + 16, yy + 8), k, font=f(20, True), fill=ACC)
-        d.text((x + 16, yy + 34), v, font=f(15), fill=INK)
-    note = '报告口径强制声明：确认率/一致率是判读结果≠精度；AI 判读须标注是否经人工复核；训练池抽点只评标签质量。'
-    for line in wrap(d, note, f(18, True), W - 120):
-        d.text((60, H - 46), line, font=f(18, True), fill=RED)
-    im.save(os.path.join(HERE, 'fig4_质控协议.png'))
-    print('fig4_质控协议.png', im.size)
+        klines = wrap(d, k, f(20, True), cw - 32)
+        vlines = wrap(d, v, f(15), cw - 32)
+        pre.append((klines, vlines, max(ch, 12 + 24 * len(klines) + 4 + 20 * len(vlines) + 10)))
+    for r in range(2):
+        row_h.append(max(pre[r * 2][2], pre[r * 2 + 1][2]))
+    for i, ((klines, vlines, _), (k, v)) in enumerate(zip(pre, stats)):
+        x = 60 + (i % 2) * (660 if LANG == 'zh' else 740)
+        r = i // 2
+        yy = y + sum(row_h[:r]) + r * 16
+        box_h = row_h[r]
+        d.rounded_rectangle((x, yy, x + cw, yy + box_h), 10, fill=(240, 246, 255), outline=(190, 210, 235))
+        ty = yy + 8
+        for kl in klines:
+            d.text((x + 16, ty), kl, font=f(20, True), fill=ACC)
+            ty += 24
+        ty += 4
+        for vl in vlines:
+            d.text((x + 16, ty), vl, font=f(15), fill=INK)
+            ty += 20
+    note = wrap(d, T['fig4_note'][LANG], f(18, True), W - 120)
+    ny = y + sum(row_h) + 16 + 16
+    for line in note:
+        d.text((60, ny), line, font=f(18, True), fill=RED)
+        ny += 28
+    fn = 'fig4_qc_protocol%s.png' % suffix()
+    im.save(os.path.join(HERE, fn))
+    print(fn, im.size)
 
 
 if __name__ == '__main__':
-    fig1(); fig2(); fig3(); fig4()
+    for lang in ('zh', 'en'):
+        LANG = lang
+        print('== LANG=%s ==' % lang)
+        fig1(); fig2(); fig3(); fig4()
