@@ -751,3 +751,23 @@ C 区域断言入 k32：**华南湿度块（粤桂闽琼台港澳）不产落叶
 **产物**：`F:/lc_work/v31_exp/data/forest_qc/out/`（forest_samples_v1[+_clean/_strict].{parquet,csv}、quarantine.csv、
 mixed_forest_9162_excluded.csv、report.md、stats.json、calibration.json、per_year_counts.json、chips/）；
 代码 `w1_forest_fetch.py`/`w2_forest_qc.py`/`w3_verify_fetch.py`/`w4_forest_chips.py`/`w5_forest_assemble.py`；文档 `技术文档/65`。
+
+---
+
+## 2026-10-13 追加 · 湿地样本（木本沼泽/草本沼泽）质检与扩展（用户要求"排除防护林"）
+
+**背景**：doc 56 实测木本沼泽层判读精度 6.7%（v2 已废弃）、草本沼泽 0.571；用户要求木本沼泽样本不得来自河道防护林/自然岸林。
+
+**方法**：三层证据（JRC GSW 点+邻域+12 月水历史+**8 方位水**、DW/WC/MODIS、SRTM relief/slope、S1/S2 植被）+ 预注册判据 + 分离度报告后**冻结**：
+`swamp_core = 点级淹水≥1月 或 (8方位≥3见水 且 relief2000≤15m 且 slope≤3°)`。
+
+**结果**：**最终 48,314 点（木本 10,612 / 草本 37,702）**；背景特异性森林 **0.06%**、草地 0.35%、耕地 2.1% → 防护林/岸林结构性排除；
+**现有木本沼泽 54%（2,687/4,968）被隔离**（NO_WET 2,237 + LEVEE_LIKE 450）；扩展两路（遥感候选 29,474→21,159 通过；湿地复合体加密 9,584→2,765）。
+
+**两个数据级修复（子代理抓取核验时发现）**：① `sampleRegions` 联合掩膜陷阱——GSW 对"从未有水"像元整体掩膜 → 44 波段栈 **71.6% 整行丢失** → 逐源 `unmask(-1)` 修复（非空率 28.41%→100%）；② 邻域 focal 的哨兵污染（(-1,0) 混合 5.5% 行）→ 邻域改用 `unmask(0)`。
+**一个负结果（重要）**：木本沼泽的水"在邻域不在点级"（树冠遮挡）→ "水优先"遥感掩膜抽不出木本沼泽（WC树×GSW季节性水×平坦 全国采样仅 1 点，邻域膨胀版亦近空）；扩展只能靠"证据候选 + 湿地复合体加密"。
+**一个否证**：294 个 M3 缺口判读的沼泽锚点自身无水证据且坡度 6.7°（坡地）→ 不可作真值（与 doc56 一致）。
+
+**产物**：`F:/lc_work/v31_exp/data/swamp_qc/`（out/swamp_samples_v1.parquet/.csv、qc/quarantine_swamp_full.csv、out/{stats_final,calibration_swamp,separation_report}.json、lists/*、feats/{hydro,vege,hydro_cand,vege_candL,aef}）；
+代码 `v1_swamp_fetch.py`/`v2_swamp_candidates.py`/`v3_swamp_qc.py`/`v4_swamp_expand.py`/`v5_swamp_assemble.py`/`v6_swamp_aef.py`；文档 `技术文档/66`。
+**局限**：木本/草本分型弱（dw_trees 0.08 vs 0.10）→ 建议按 doc 54 的"湿地合并 1 类"口径使用或合并报告；候选点 D 条件用 relief500≤8 替代（relief2000 在交互式 API 下超时）。
