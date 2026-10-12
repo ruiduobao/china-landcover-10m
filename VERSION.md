@@ -727,3 +727,27 @@ C 区域断言入 k32：**华南湿度块（粤桂闽琼台港澳）不产落叶
 **产物**：`data/shrub_nat/south_decid/`（南方落叶核查与修复报告.md、隔离 CSV、21+ 张切片与联系表、points_table/points_wc、fix_stats.json）；
 修复前锚备份 `_pre_decidfix/`；脚本 `z1_south_decid_imagery.py`、`z2_south_decid_fix.py`（可重跑、可恢复）。
 **说明**：常绿子集的"是否真灌丛"属同一框级精度问题（doc 54 湿润区 16.5%），未在本次范围，建议 M3/影像专项复核。
+
+---
+
+## 2026-10-13 · 林地样本全面质检（4 类林；用户要求"不要针阔混交"）
+
+**对象**：最后一版全国样本（8 年子集并集）4 类林 **466,135 点**（常绿阔叶 125,499 / 落叶阔叶 138,649 / 常绿针叶 141,937 / 落叶针叶 60,050）。
+**方法**（预注册判据先行，文件 `forest_qc/预注册判据.md`）：三层证据——物候（S2 双窗 NDVI，**2019+2023 两年**，与 k17/k31 同口径）、
+生态气候（SRTM + WorldClim bio01/bio06/bio11/bio12）、独立产品（ESA WorldCover v200 / Dynamic World 2023 / **MODIS MCD12Q1 LC_Type1**）；
+另用 AEF64 LDA 做 E/D 轴独立判别。**针/阔轴不做自动改判**（doc 54 实测 AUC 0.724 不可分），仅区域规则 R1–R4 与提示。
+
+**结果**：**隔离 35,246（7.6%）**（E/D 矛盾 34,205 + R1 冷区常绿阔叶不可能 1,679）；
+**推荐层 strict 159,347**、**可用层 clean 430,889**；**混交 91/92（6,864 点）按用户指令本版弃用**（另存）。
+分省隔离：云南 8,070/四川 5,527/陕西 4,223/湖北 4,006…；建议改判（同类叶型内翻转 E/D）合计 34,205。
+**修订 1（首轮 9.9% 隔离解剖后、重跑前写死，首轮数字作废）**：① bio06 气候带校准（阈值 z2 186→z5 327 随冷单调↑）；
+② 雪窗守门（DJF<150 非决断）；③ 极端冷区（bio06≤−100）物候层整体停用。修复前类6 常绿针叶隔离率 13.35% → 5.09%。
+
+**验证**：逐月 NDVI（2023）抽查——隔离·滇类5 冬均 537–724（仍绿，支持"应常绿"）、隔离·陕类4 冬均 293–580 vs 夏 860–879（大幅落叶，支持"应落叶"）、
+对照组教科书式（滇类4 冬≈夏；黑类5 夏−冬 +759~+784）；MODIS 明确 E/D 的点 32.9%（同向 85.0%）；AEF LDA 训练集内误分 0.89%。
+**抓取核验**：4 个抓取子代理产物独立核验（块 119×4=476 全绿、466,135 行唯一、GEE 抽查 s2/env/xs **max|Δ|=0.0**；XS 首轮 DW 列全空 bug 由核验拦下并重抓）。
+**母库与 8 年子集只读**（MD5 前后一致，`subset_md5_before.json`）。
+
+**产物**：`F:/lc_work/v31_exp/data/forest_qc/out/`（forest_samples_v1[+_clean/_strict].{parquet,csv}、quarantine.csv、
+mixed_forest_9162_excluded.csv、report.md、stats.json、calibration.json、per_year_counts.json、chips/）；
+代码 `w1_forest_fetch.py`/`w2_forest_qc.py`/`w3_verify_fetch.py`/`w4_forest_chips.py`/`w5_forest_assemble.py`；文档 `技术文档/65`。
