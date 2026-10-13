@@ -1,0 +1,16 @@
+[
+ {
+  "group": "swamp",
+  "shp": "木本沼泽\\2023\\木本沼泽_2023_WGS84.shp",
+  "n": 10656,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "swamp",
+  "shp": "草本沼泽\\2023\\草本沼泽_2023_WGS84.shp",
+  "n": 38360,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ }
+]

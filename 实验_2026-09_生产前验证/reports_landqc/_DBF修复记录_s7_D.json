@@ -1,0 +1,394 @@
+[
+ {
+  "group": "land",
+  "shp": "草本旱地\\2017\\草本旱地_2017_WGS84.shp",
+  "n": 195413,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "草本旱地\\2018\\草本旱地_2018_WGS84.shp",
+  "n": 195065,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "草本旱地\\2019\\草本旱地_2019_WGS84.shp",
+  "n": 194288,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "草本旱地\\2020\\草本旱地_2020_WGS84.shp",
+  "n": 195891,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "草本旱地\\2021\\草本旱地_2021_WGS84.shp",
+  "n": 195682,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "草本旱地\\2022\\草本旱地_2022_WGS84.shp",
+  "n": 197882,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "草本旱地\\2023\\草本旱地_2023_WGS84.shp",
+  "n": 203096,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "草本旱地\\2024\\草本旱地_2024_WGS84.shp",
+  "n": 199628,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "灌溉耕地\\2017\\灌溉耕地_2017_WGS84.shp",
+  "n": 119402,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "灌溉耕地\\2018\\灌溉耕地_2018_WGS84.shp",
+  "n": 119200,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "灌溉耕地\\2019\\灌溉耕地_2019_WGS84.shp",
+  "n": 119672,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "灌溉耕地\\2020\\灌溉耕地_2020_WGS84.shp",
+  "n": 119530,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "灌溉耕地\\2021\\灌溉耕地_2021_WGS84.shp",
+  "n": 119512,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "灌溉耕地\\2022\\灌溉耕地_2022_WGS84.shp",
+  "n": 122509,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "灌溉耕地\\2023\\灌溉耕地_2023_WGS84.shp",
+  "n": 124533,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "灌溉耕地\\2024\\灌溉耕地_2024_WGS84.shp",
+  "n": 122394,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "草地\\2017\\草地_2017_WGS84.shp",
+  "n": 163113,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "草地\\2018\\草地_2018_WGS84.shp",
+  "n": 161422,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "草地\\2019\\草地_2019_WGS84.shp",
+  "n": 162564,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "草地\\2020\\草地_2020_WGS84.shp",
+  "n": 160820,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "草地\\2021\\草地_2021_WGS84.shp",
+  "n": 163391,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "草地\\2022\\草地_2022_WGS84.shp",
+  "n": 169328,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "草地\\2023\\草地_2023_WGS84.shp",
+  "n": 170653,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "草地\\2024\\草地_2024_WGS84.shp",
+  "n": 169155,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "地衣苔藓\\2017\\地衣苔藓_2017_WGS84.shp",
+  "n": 102,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "地衣苔藓\\2018\\地衣苔藓_2018_WGS84.shp",
+  "n": 101,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "地衣苔藓\\2019\\地衣苔藓_2019_WGS84.shp",
+  "n": 102,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "地衣苔藓\\2020\\地衣苔藓_2020_WGS84.shp",
+  "n": 85,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "地衣苔藓\\2021\\地衣苔藓_2021_WGS84.shp",
+  "n": 85,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "地衣苔藓\\2022\\地衣苔藓_2022_WGS84.shp",
+  "n": 170,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "地衣苔藓\\2023\\地衣苔藓_2023_WGS84.shp",
+  "n": 171,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "地衣苔藓\\2024\\地衣苔藓_2024_WGS84.shp",
+  "n": 170,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "稀疏植被\\2017\\稀疏植被_2017_WGS84.shp",
+  "n": 46923,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "稀疏植被\\2018\\稀疏植被_2018_WGS84.shp",
+  "n": 46760,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "稀疏植被\\2019\\稀疏植被_2019_WGS84.shp",
+  "n": 46602,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "稀疏植被\\2020\\稀疏植被_2020_WGS84.shp",
+  "n": 46563,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "稀疏植被\\2021\\稀疏植被_2021_WGS84.shp",
+  "n": 44985,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "稀疏植被\\2022\\稀疏植被_2022_WGS84.shp",
+  "n": 45934,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "稀疏植被\\2023\\稀疏植被_2023_WGS84.shp",
+  "n": 47177,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "稀疏植被\\2024\\稀疏植被_2024_WGS84.shp",
+  "n": 46993,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "裸地\\2017\\裸地_2017_WGS84.shp",
+  "n": 215076,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "裸地\\2018\\裸地_2018_WGS84.shp",
+  "n": 214127,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "裸地\\2019\\裸地_2019_WGS84.shp",
+  "n": 213479,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "裸地\\2020\\裸地_2020_WGS84.shp",
+  "n": 213597,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "裸地\\2021\\裸地_2021_WGS84.shp",
+  "n": 211330,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "裸地\\2022\\裸地_2022_WGS84.shp",
+  "n": 219372,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "裸地\\2023\\裸地_2023_WGS84.shp",
+  "n": 222514,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "裸地\\2024\\裸地_2024_WGS84.shp",
+  "n": 221540,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "湖河滩地\\2017\\湖河滩地_2017_WGS84.shp",
+  "n": 23882,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "湖河滩地\\2018\\湖河滩地_2018_WGS84.shp",
+  "n": 23941,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "湖河滩地\\2019\\湖河滩地_2019_WGS84.shp",
+  "n": 24047,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "湖河滩地\\2020\\湖河滩地_2020_WGS84.shp",
+  "n": 24035,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "湖河滩地\\2021\\湖河滩地_2021_WGS84.shp",
+  "n": 24048,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "湖河滩地\\2022\\湖河滩地_2022_WGS84.shp",
+  "n": 26406,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "湖河滩地\\2023\\湖河滩地_2023_WGS84.shp",
+  "n": 26507,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "湖河滩地\\2024\\湖河滩地_2024_WGS84.shp",
+  "n": 26361,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ }
+]

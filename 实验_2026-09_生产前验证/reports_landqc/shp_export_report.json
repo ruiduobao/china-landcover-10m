@@ -1,0 +1,257 @@
+{
+ "files": {
+  "灌木/2017/灌木_2017_WGS84.shp": {
+   "n": 175512,
+   "PASS": true
+  },
+  "灌木/2018/灌木_2018_WGS84.shp": {
+   "n": 175512,
+   "PASS": true
+  },
+  "灌木/2019/灌木_2019_WGS84.shp": {
+   "n": 175512,
+   "PASS": true
+  },
+  "灌木/2020/灌木_2020_WGS84.shp": {
+   "n": 175512,
+   "PASS": true
+  },
+  "灌木/2021/灌木_2021_WGS84.shp": {
+   "n": 175512,
+   "PASS": true
+  },
+  "灌木/2022/灌木_2022_WGS84.shp": {
+   "n": 175512,
+   "PASS": true
+  },
+  "灌木/2023/灌木_2023_WGS84.shp": {
+   "n": 175512,
+   "PASS": true
+  },
+  "灌木/2024/灌木_2024_WGS84.shp": {
+   "n": 175512,
+   "PASS": true
+  },
+  "乔灌园地\\2017\\乔灌园地_2017_WGS84.shp": {
+   "n": 11431,
+   "shp": 11431,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 4
+  },
+  "乔灌园地\\2018\\乔灌园地_2018_WGS84.shp": {
+   "n": 11431,
+   "shp": 11431,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 4
+  },
+  "乔灌园地\\2019\\乔灌园地_2019_WGS84.shp": {
+   "n": 11431,
+   "shp": 11431,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 4
+  },
+  "乔灌园地\\2020\\乔灌园地_2020_WGS84.shp": {
+   "n": 11431,
+   "shp": 11431,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 4
+  },
+  "乔灌园地\\2021\\乔灌园地_2021_WGS84.shp": {
+   "n": 11431,
+   "shp": 11431,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 4
+  },
+  "乔灌园地\\2022\\乔灌园地_2022_WGS84.shp": {
+   "n": 11431,
+   "shp": 11431,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 4
+  },
+  "乔灌园地\\2023\\乔灌园地_2023_WGS84.shp": {
+   "n": 11431,
+   "shp": 11431,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 4
+  },
+  "乔灌园地\\2024\\乔灌园地_2024_WGS84.shp": {
+   "n": 11431,
+   "shp": 11431,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 4
+  },
+  "乔灌园地\\2023\\乔灌园地v6_推荐训练集_2023_WGS84.shp": {
+   "n": 82564,
+   "shp": 82564,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 4
+  },
+  "林地_常绿阔叶林\\2023\\林地_常绿阔叶林_2023_WGS84.shp": {
+   "n": 112083,
+   "shp": 112083,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 5
+  },
+  "林地_落叶阔叶林\\2023\\林地_落叶阔叶林_2023_WGS84.shp": {
+   "n": 124304,
+   "shp": 124304,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 5
+  },
+  "林地_常绿针叶林\\2023\\林地_常绿针叶林_2023_WGS84.shp": {
+   "n": 134717,
+   "shp": 134717,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 5
+  },
+  "林地_落叶针叶林\\2023\\林地_落叶针叶林_2023_WGS84.shp": {
+   "n": 59785,
+   "shp": 59785,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 5
+  },
+  "木本沼泽\\2023\\木本沼泽_2023_WGS84.shp": {
+   "n": 10656,
+   "shp": 10656,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 4
+  },
+  "草本沼泽\\2023\\草本沼泽_2023_WGS84.shp": {
+   "n": 38360,
+   "shp": 38360,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 4
+  },
+  "草本旱地\\2023\\草本旱地_2023_WGS84.shp": {
+   "n": 203096,
+   "shp": 203096,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 5
+  },
+  "灌溉耕地\\2023\\灌溉耕地_2023_WGS84.shp": {
+   "n": 124533,
+   "shp": 124533,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 5
+  },
+  "草地\\2023\\草地_2023_WGS84.shp": {
+   "n": 170653,
+   "shp": 170653,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 5
+  },
+  "地衣苔藓\\2023\\地衣苔藓_2023_WGS84.shp": {
+   "n": 171,
+   "shp": 171,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 5
+  },
+  "稀疏植被\\2023\\稀疏植被_2023_WGS84.shp": {
+   "n": 47177,
+   "shp": 47177,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 5
+  },
+  "裸地\\2023\\裸地_2023_WGS84.shp": {
+   "n": 222514,
+   "shp": 222514,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 5
+  },
+  "湖河滩地\\2023\\湖河滩地_2023_WGS84.shp": {
+   "n": 26507,
+   "shp": 26507,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 5
+  },
+  "盐渍湿地\\2023\\盐渍湿地_2023_WGS84.shp": {
+   "n": 1269,
+   "shp": 1269,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 5
+  },
+  "红树林\\2023\\红树林_2023_WGS84.shp": {
+   "n": 652,
+   "shp": 652,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 5
+  },
+  "海岸盐沼\\2023\\海岸盐沼_2023_WGS84.shp": {
+   "n": 3890,
+   "shp": 3890,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 5
+  },
+  "潮滩\\2023\\潮滩_2023_WGS84.shp": {
+   "n": 3215,
+   "shp": 3215,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 5
+  },
+  "水体\\2023\\水体_2023_WGS84.shp": {
+   "n": 67879,
+   "shp": 67879,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 5
+  },
+  "不透水面\\2023\\不透水面_2023_WGS84.shp": {
+   "n": 150941,
+   "shp": 150941,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 5
+  },
+  "永久冰雪\\2023\\永久冰雪_2023_WGS84.shp": {
+   "n": 17956,
+   "shp": 17956,
+   "roundtrip_maxdiff": 0.0,
+   "PASS": true,
+   "sidecar_actions": 5
+  }
+ },
+ "elapsed_s": 80.7,
+ "time": "2026-10-13 12:26:00",
+ "PASS": true,
+ "addendum_2026-10-13": {
+  "shrub_combined_rebuilt": "灌木_2017-2024合幅_{WGS84,GCJ02}.shp 重出为 1,404,096 条（8×175,512），替代工作区 1,297,456 旧快照",
+  "swamp_qc_lists": "木本 9,920 / 草本 15,436 = 现有隔离 2,687/7,535 + 被拒候选 7,233/7,901（合计 25,356）",
+  "v6_dedup": "乔灌园地v6_推荐训练集 SHP 82,564 = CSV 82,570 − 6 组同经纬度重复",
+  "final_shp_sets": 78,
+  "final_check": "全部 .shp 附件齐全、可读"
+ },
+ "final_state_2026-10-13": {
+  "coord_system": "仅 WGS84（EPSG:4326）；GCJ-02 副本已按用户指令删除（记录见 _GCJ02_清除记录_2026-10-13.csv，338 文件/1.61 GB）",
+  "admin_source": "CTAmap 2026 省界 Y:/CTAmap/SCI论文/数据/2026CTAmap 省市县行政区划数据/province/T2026_province.shp（GCS_WGS_1984）",
+  "added_fields": "ct_prov（省全称）/ ct_code（省级码）/ ct_km（到省界距离 km，界内 0）：38 套全覆盖；**省界外点按最近省份赋值、不丢弃**（8,447 点/0.19%，最远 9.0 km；潮滩/红树林/海岸盐沼等离岸类 100% 有省份）；逐文件见 _CTAmap_字段追加记录.csv（界内/就近/最远三列）",
+  "sets": 38,
+  "points": 4502562,
+  "note": "原 addendum_2026-10-13 的 gcj02_notes 条目作废（GCJ-02 套件已删除）"
+ }
+}

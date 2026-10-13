@@ -1,15 +1,37 @@
-# 其余 14 类样本质检 — 代码与报告存档（2026-10-13）
+# 单类样本 SHP 交付 — 代码与报告存档（2026-10-13 终版；含灌木拆分）
 
 | 文件 | MD5 | 字节 |
 |---|---|---|
+| MANIFEST.md | 32ca3405423d5e68b47dcf1da38ad164 | 3706 |
 | a1_land_assemble.py | 61c539017dcea456f9e83d158fd9297e | 3489 |
 | a2_land_report.py | abb6bda74684585bfbd29d8fbe0efee4 | 3847 |
 | k30c_subset_health.py | 03dfacfbc3acd9068795253326bb43ea | 2488 |
 | landqc_run.sh | 589e86de92c4ee05c4d32c66d5ffa8d1 | 951 |
 | landqc_status.sh | f0739e449e3e6a6ec301e262b32ac053 | 1032 |
+| s1_samples_to_shp.py | 38558efc586c7d1231d14f2cf7c7e74a | 16867 |
+| s2_class_readmes.py | 065ae218aeac219ba456138722773667 | 9177 |
+| s3_add_ctamap_prov.py | 3e4bb64278c70c026059e15b4a4e1a2e | 5037 |
+| s4_ctamap_nearest.py | 0c517019ce1078a395046c274e4516ad | 5165 |
+| s5_forest_yearly.py | 016251c9e68208781e0802edf02a4b7a | 6996 |
+| s6_land_yearly.py | c220870c317f5c38ffc70a4bcddda23f | 8320 |
+| s6b_verify_yearly.py | 988be0fc64fc2e9870bff3df538f7f73 | 4213 |
+| s7_repair_dbf.py | 97b05a8cf32bece6e012e3aa764197e1 | 12038 |
+| s7b_verify_decimals.py | 6f31b6a51efeab0ed5e59d0468b1ae3a | 2093 |
+| s8_shrub_split.py | 99a3a36f5ec19fa64e969389fe1cc6d1 | 5763 |
 | v7_land_fetch.py | 5af5f78317c687b0e16517aa00f0ba21 | 7671 |
 | v8_land_qc.py | 1e35a2ae750d16bf2e16631cb80a1f36 | 5698 |
 | v9_spot_check.py | 1738b81653c9d4e39321eae3c895c183 | 5470 |
+| 00_样本制作全过程说明.md | 608084f802bad89fc45e54f719418599 | 161390 |
+| _CTAmap_字段追加记录.csv | 73315aa8f444b84e29b0acba1b99f944 | 2725 |
+| _CTAmap_省级对齐校验_2026-10-13.csv | e18533bc738d2d95fe7dbe6628f9a33f | 1618 |
+| _DBF修复记录_s7_D.json | e0b253881fe6b20ad781e66a043c0d59 | 8673 |
+| _DBF修复记录_s7_E.json | c66ded3cb0138528ed523d5944c91a14 | 9317 |
+| _DBF修复记录_s7_F.json | 5e436ac87c77f16fce2df55dd063de22 | 1923 |
+| _DBF小数位修复记录_s7.json | e6bccfc567f13649352f38bfcb364ede | 321 |
+| _GCJ02_清除记录_2026-10-13.csv | f4767175ee1015b075998cfb06ca38c3 | 47931 |
+| _灌木拆分记录_s8.json | bd1f2679faf1186ae0c989b6bce00258 | 1435 |
+| _逐年校验记录_s6b.json | 205253f3a44e0d28e368e1d004b9053c | 24085 |
+| _逐年落盘记录_s6.json | aac155d4247aa8825746cf86973950b7 | 3651 |
 | criteria_land.json | 348f17d9bb8f607cff08b93179fa4540 | 3790 |
 | grp_crop_report.md | 60bac153ba458bf37633345a66d0a640 | 8137 |
 | grp_urban_report.md | d69e05fb8a1044f31d5b3dfa96fea47d | 11675 |
@@ -18,6 +40,11 @@
 | land_qc_summary.csv | 8ada76bbdb7e3d90b72a3b533217ede2 | 1418 |
 | land_qc_summary.md | 32007f030dc0ea8ca2e586451433861c | 3039 |
 | land_qc_tables.md | 2f71b842b5dc35ca38bdfbb5e2133ff3 | 3840 |
+| sec_乔灌园地.md | 468d6a460d19de43f2531f106fb1851a | 31960 |
+| sec_总览与14类.md | 370d41ea27db18c5296a1c92b685c5d4 | 13667 |
+| sec_林地沼泽.md | 17673f462f75aac8b21ebf12acd7b184 | 65162 |
+| sec_灌木.md | 4d24f829a45767e1523998b17afde4ec | 42844 |
+| shp_export_report.json | f419b44917089816688d32865763d002 | 7014 |
 | spot_crop.json | 9eb984f8bb8ac5098bac828eb8ee579a | 747 |
 | spot_urban.json | 1813192b2ca1485d5fc542adae5f8d06 | 749 |
 | spot_veg.json | 4c334eb50d7848c171a3a5fb0cf68ed7 | 748 |
@@ -26,4 +53,6 @@
 | stats_urban.json | 2ff7f0c7a8e38dafd3c725b1c1c399ac | 476 |
 | stats_veg.json | 361c841205cbcec20b7ac5ca99493b85 | 742 |
 | stats_water.json | d2684a7a3e5432a37a73b3420a62ea80 | 976 |
+| 林地_剔除清单_逐年成员.csv | 41c562aa33b2104c5b8b70d0104cbb17 | 3371183 |
+| 林地_逐年质检统计.csv | dd1b88c9ed91e062cc42d26cde1ba858 | 1378 |
 | 预注册判据.md | 79281e51c64f59699fbb15bdeb96136c | 5740 |

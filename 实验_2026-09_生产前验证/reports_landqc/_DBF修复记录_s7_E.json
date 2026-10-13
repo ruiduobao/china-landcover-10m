@@ -1,0 +1,422 @@
+[
+ {
+  "group": "land",
+  "shp": "盐渍湿地\\2017\\盐渍湿地_2017_WGS84.shp",
+  "n": 590,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "盐渍湿地\\2018\\盐渍湿地_2018_WGS84.shp",
+  "n": 591,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "盐渍湿地\\2019\\盐渍湿地_2019_WGS84.shp",
+  "n": 593,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "盐渍湿地\\2020\\盐渍湿地_2020_WGS84.shp",
+  "n": 595,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "盐渍湿地\\2021\\盐渍湿地_2021_WGS84.shp",
+  "n": 595,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "盐渍湿地\\2022\\盐渍湿地_2022_WGS84.shp",
+  "n": 1269,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "盐渍湿地\\2023\\盐渍湿地_2023_WGS84.shp",
+  "n": 1269,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "盐渍湿地\\2024\\盐渍湿地_2024_WGS84.shp",
+  "n": 1266,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "红树林\\2017\\红树林_2017_WGS84.shp",
+  "n": 574,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "红树林\\2018\\红树林_2018_WGS84.shp",
+  "n": 573,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "红树林\\2019\\红树林_2019_WGS84.shp",
+  "n": 576,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "红树林\\2020\\红树林_2020_WGS84.shp",
+  "n": 573,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "红树林\\2021\\红树林_2021_WGS84.shp",
+  "n": 575,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "红树林\\2022\\红树林_2022_WGS84.shp",
+  "n": 649,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "红树林\\2023\\红树林_2023_WGS84.shp",
+  "n": 652,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "红树林\\2024\\红树林_2024_WGS84.shp",
+  "n": 647,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "海岸盐沼\\2017\\海岸盐沼_2017_WGS84.shp",
+  "n": 3592,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "海岸盐沼\\2018\\海岸盐沼_2018_WGS84.shp",
+  "n": 3591,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "海岸盐沼\\2019\\海岸盐沼_2019_WGS84.shp",
+  "n": 3570,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "海岸盐沼\\2020\\海岸盐沼_2020_WGS84.shp",
+  "n": 3597,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "海岸盐沼\\2021\\海岸盐沼_2021_WGS84.shp",
+  "n": 3608,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "海岸盐沼\\2022\\海岸盐沼_2022_WGS84.shp",
+  "n": 3862,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "海岸盐沼\\2023\\海岸盐沼_2023_WGS84.shp",
+  "n": 3890,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "海岸盐沼\\2024\\海岸盐沼_2024_WGS84.shp",
+  "n": 3837,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "潮滩\\2017\\潮滩_2017_WGS84.shp",
+  "n": 3152,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "潮滩\\2018\\潮滩_2018_WGS84.shp",
+  "n": 3162,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "潮滩\\2019\\潮滩_2019_WGS84.shp",
+  "n": 3175,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "潮滩\\2020\\潮滩_2020_WGS84.shp",
+  "n": 3168,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "潮滩\\2021\\潮滩_2021_WGS84.shp",
+  "n": 3169,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "潮滩\\2022\\潮滩_2022_WGS84.shp",
+  "n": 3182,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "潮滩\\2023\\潮滩_2023_WGS84.shp",
+  "n": 3215,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "潮滩\\2024\\潮滩_2024_WGS84.shp",
+  "n": 3177,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "水体\\2017\\水体_2017_WGS84.shp",
+  "n": 66029,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "水体\\2018\\水体_2018_WGS84.shp",
+  "n": 65886,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "水体\\2019\\水体_2019_WGS84.shp",
+  "n": 66353,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "水体\\2020\\水体_2020_WGS84.shp",
+  "n": 65650,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "水体\\2021\\水体_2021_WGS84.shp",
+  "n": 66516,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "水体\\2022\\水体_2022_WGS84.shp",
+  "n": 67129,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "水体\\2023\\水体_2023_WGS84.shp",
+  "n": 67879,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "水体\\2024\\水体_2024_WGS84.shp",
+  "n": 67468,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "不透水面\\2017\\不透水面_2017_WGS84.shp",
+  "n": 146615,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "不透水面\\2018\\不透水面_2018_WGS84.shp",
+  "n": 146472,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "不透水面\\2019\\不透水面_2019_WGS84.shp",
+  "n": 147080,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "不透水面\\2020\\不透水面_2020_WGS84.shp",
+  "n": 147214,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "不透水面\\2021\\不透水面_2021_WGS84.shp",
+  "n": 146574,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "不透水面\\2022\\不透水面_2022_WGS84.shp",
+  "n": 149644,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "不透水面\\2023\\不透水面_2023_WGS84.shp",
+  "n": 150941,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "不透水面\\2024\\不透水面_2024_WGS84.shp",
+  "n": 150093,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "永久冰雪\\2017\\永久冰雪_2017_WGS84.shp",
+  "n": 17760,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "永久冰雪\\2018\\永久冰雪_2018_WGS84.shp",
+  "n": 17784,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "永久冰雪\\2019\\永久冰雪_2019_WGS84.shp",
+  "n": 17797,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "永久冰雪\\2020\\永久冰雪_2020_WGS84.shp",
+  "n": 17815,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "永久冰雪\\2021\\永久冰雪_2021_WGS84.shp",
+  "n": 17793,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "永久冰雪\\2022\\永久冰雪_2022_WGS84.shp",
+  "n": 17894,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "永久冰雪\\2023\\永久冰雪_2023_WGS84.shp",
+  "n": 17956,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "land",
+  "shp": "永久冰雪\\2024\\永久冰雪_2024_WGS84.shp",
+  "n": 17915,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "forest",
+  "shp": "林地_常绿针叶林\\林地_常绿针叶林_2017-2024并集_WGS84.shp",
+  "n": 134717,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "forest",
+  "shp": "林地_常绿阔叶林\\林地_常绿阔叶林_2017-2024并集_WGS84.shp",
+  "n": 112083,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "forest",
+  "shp": "林地_落叶针叶林\\林地_落叶针叶林_2017-2024并集_WGS84.shp",
+  "n": 59785,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "forest",
+  "shp": "林地_落叶阔叶林\\林地_落叶阔叶林_2017-2024并集_WGS84.shp",
+  "n": 124304,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ }
+]

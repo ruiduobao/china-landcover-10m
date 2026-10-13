@@ -1,0 +1,86 @@
+[
+ {
+  "group": "shrub",
+  "shp": "灌木\\2023\\灌木_2023_WGS84.shp",
+  "n": 175512,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "shrub",
+  "shp": "灌木\\2024\\灌木_2024_WGS84.shp",
+  "n": 175512,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "shrub",
+  "shp": "灌木\\灌木_2017-2024合幅_WGS84.shp",
+  "n": 1404096,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "orchard",
+  "shp": "乔灌园地\\2017\\乔灌园地_2017_WGS84.shp",
+  "n": 11431,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "orchard",
+  "shp": "乔灌园地\\2018\\乔灌园地_2018_WGS84.shp",
+  "n": 11431,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "orchard",
+  "shp": "乔灌园地\\2019\\乔灌园地_2019_WGS84.shp",
+  "n": 11431,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "orchard",
+  "shp": "乔灌园地\\2020\\乔灌园地_2020_WGS84.shp",
+  "n": 11431,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "orchard",
+  "shp": "乔灌园地\\2021\\乔灌园地_2021_WGS84.shp",
+  "n": 11431,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "orchard",
+  "shp": "乔灌园地\\2022\\乔灌园地_2022_WGS84.shp",
+  "n": 11431,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "orchard",
+  "shp": "乔灌园地\\2023\\乔灌园地_2023_WGS84.shp",
+  "n": 11431,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "orchard_v6",
+  "shp": "乔灌园地\\2023\\乔灌园地v6_推荐训练集_2023_WGS84.shp",
+  "n": 82564,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ },
+ {
+  "group": "orchard",
+  "shp": "乔灌园地\\2024\\乔灌园地_2024_WGS84.shp",
+  "n": 11431,
+  "decimals_ok": true,
+  "shp_md5_unchanged": true
+ }
+]

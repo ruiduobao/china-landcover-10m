@@ -1,0 +1,1394 @@
+{
+ "草本旱地": {
+  "n_src": 203096,
+  "ok": true,
+  "years": {
+   "2017": {
+    "n": 195413,
+    "stat": 195413,
+    "pool": 195413,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2018": {
+    "n": 195065,
+    "stat": 195065,
+    "pool": 195065,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2019": {
+    "n": 194288,
+    "stat": 194288,
+    "pool": 194288,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2020": {
+    "n": 195891,
+    "stat": 195891,
+    "pool": 195891,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2021": {
+    "n": 195682,
+    "stat": 195682,
+    "pool": 195682,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2022": {
+    "n": 197882,
+    "stat": 197882,
+    "pool": 197882,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2023": {
+    "n": 203096,
+    "stat": 203096,
+    "pool": 203096,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2024": {
+    "n": 199628,
+    "stat": 199628,
+    "pool": 199628,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   }
+  },
+  "bad_notes": []
+ },
+ "灌溉耕地": {
+  "n_src": 124533,
+  "ok": true,
+  "years": {
+   "2017": {
+    "n": 119402,
+    "stat": 119402,
+    "pool": 119402,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2018": {
+    "n": 119200,
+    "stat": 119200,
+    "pool": 119200,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2019": {
+    "n": 119672,
+    "stat": 119672,
+    "pool": 119672,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2020": {
+    "n": 119530,
+    "stat": 119530,
+    "pool": 119530,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2021": {
+    "n": 119512,
+    "stat": 119512,
+    "pool": 119512,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2022": {
+    "n": 122509,
+    "stat": 122509,
+    "pool": 122509,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2023": {
+    "n": 124533,
+    "stat": 124533,
+    "pool": 124533,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2024": {
+    "n": 122394,
+    "stat": 122394,
+    "pool": 122394,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   }
+  },
+  "bad_notes": []
+ },
+ "不透水面": {
+  "n_src": 150941,
+  "ok": true,
+  "years": {
+   "2017": {
+    "n": 146615,
+    "stat": 146615,
+    "pool": 146615,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2018": {
+    "n": 146472,
+    "stat": 146472,
+    "pool": 146472,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2019": {
+    "n": 147080,
+    "stat": 147080,
+    "pool": 147080,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2020": {
+    "n": 147214,
+    "stat": 147214,
+    "pool": 147214,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2021": {
+    "n": 146574,
+    "stat": 146574,
+    "pool": 146574,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2022": {
+    "n": 149644,
+    "stat": 149644,
+    "pool": 149644,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2023": {
+    "n": 150941,
+    "stat": 150941,
+    "pool": 150941,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2024": {
+    "n": 150093,
+    "stat": 150093,
+    "pool": 150093,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   }
+  },
+  "bad_notes": []
+ },
+ "草地": {
+  "n_src": 170653,
+  "ok": true,
+  "years": {
+   "2017": {
+    "n": 163113,
+    "stat": 163113,
+    "pool": 163113,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2018": {
+    "n": 161422,
+    "stat": 161422,
+    "pool": 161422,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2019": {
+    "n": 162564,
+    "stat": 162564,
+    "pool": 162564,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2020": {
+    "n": 160820,
+    "stat": 160820,
+    "pool": 160820,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2021": {
+    "n": 163391,
+    "stat": 163391,
+    "pool": 163391,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2022": {
+    "n": 169328,
+    "stat": 169328,
+    "pool": 169328,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2023": {
+    "n": 170653,
+    "stat": 170653,
+    "pool": 170653,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2024": {
+    "n": 169155,
+    "stat": 169155,
+    "pool": 169155,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   }
+  },
+  "bad_notes": []
+ },
+ "裸地": {
+  "n_src": 222514,
+  "ok": true,
+  "years": {
+   "2017": {
+    "n": 215076,
+    "stat": 215076,
+    "pool": 215076,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2018": {
+    "n": 214127,
+    "stat": 214127,
+    "pool": 214127,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2019": {
+    "n": 213479,
+    "stat": 213479,
+    "pool": 213479,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2020": {
+    "n": 213597,
+    "stat": 213597,
+    "pool": 213597,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2021": {
+    "n": 211330,
+    "stat": 211330,
+    "pool": 211330,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2022": {
+    "n": 219372,
+    "stat": 219372,
+    "pool": 219372,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2023": {
+    "n": 222514,
+    "stat": 222514,
+    "pool": 222514,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2024": {
+    "n": 221540,
+    "stat": 221540,
+    "pool": 221540,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   }
+  },
+  "bad_notes": []
+ },
+ "水体": {
+  "n_src": 67879,
+  "ok": true,
+  "years": {
+   "2017": {
+    "n": 66029,
+    "stat": 66029,
+    "pool": 66029,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2018": {
+    "n": 65886,
+    "stat": 65886,
+    "pool": 65886,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2019": {
+    "n": 66353,
+    "stat": 66353,
+    "pool": 66353,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2020": {
+    "n": 65650,
+    "stat": 65650,
+    "pool": 65650,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2021": {
+    "n": 66516,
+    "stat": 66516,
+    "pool": 66516,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2022": {
+    "n": 67129,
+    "stat": 67129,
+    "pool": 67129,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2023": {
+    "n": 67879,
+    "stat": 67879,
+    "pool": 67879,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2024": {
+    "n": 67468,
+    "stat": 67468,
+    "pool": 67468,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   }
+  },
+  "bad_notes": []
+ },
+ "稀疏植被": {
+  "n_src": 47177,
+  "ok": true,
+  "years": {
+   "2017": {
+    "n": 46923,
+    "stat": 46923,
+    "pool": 46923,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2018": {
+    "n": 46760,
+    "stat": 46760,
+    "pool": 46760,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2019": {
+    "n": 46602,
+    "stat": 46602,
+    "pool": 46602,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2020": {
+    "n": 46563,
+    "stat": 46563,
+    "pool": 46563,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2021": {
+    "n": 44985,
+    "stat": 44985,
+    "pool": 44985,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2022": {
+    "n": 45934,
+    "stat": 45934,
+    "pool": 45934,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2023": {
+    "n": 47177,
+    "stat": 47177,
+    "pool": 47177,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2024": {
+    "n": 46993,
+    "stat": 46993,
+    "pool": 46993,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   }
+  },
+  "bad_notes": []
+ },
+ "湖河滩地": {
+  "n_src": 26507,
+  "ok": true,
+  "years": {
+   "2017": {
+    "n": 23882,
+    "stat": 23882,
+    "pool": 23882,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2018": {
+    "n": 23941,
+    "stat": 23941,
+    "pool": 23941,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2019": {
+    "n": 24047,
+    "stat": 24047,
+    "pool": 24047,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2020": {
+    "n": 24035,
+    "stat": 24035,
+    "pool": 24035,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2021": {
+    "n": 24048,
+    "stat": 24048,
+    "pool": 24048,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2022": {
+    "n": 26406,
+    "stat": 26406,
+    "pool": 26406,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2023": {
+    "n": 26507,
+    "stat": 26507,
+    "pool": 26507,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2024": {
+    "n": 26361,
+    "stat": 26361,
+    "pool": 26361,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   }
+  },
+  "bad_notes": []
+ },
+ "盐渍湿地": {
+  "n_src": 1269,
+  "ok": true,
+  "years": {
+   "2017": {
+    "n": 590,
+    "stat": 590,
+    "pool": 590,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2018": {
+    "n": 591,
+    "stat": 591,
+    "pool": 591,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2019": {
+    "n": 593,
+    "stat": 593,
+    "pool": 593,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2020": {
+    "n": 595,
+    "stat": 595,
+    "pool": 595,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2021": {
+    "n": 595,
+    "stat": 595,
+    "pool": 595,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2022": {
+    "n": 1269,
+    "stat": 1269,
+    "pool": 1269,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2023": {
+    "n": 1269,
+    "stat": 1269,
+    "pool": 1269,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2024": {
+    "n": 1266,
+    "stat": 1266,
+    "pool": 1266,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   }
+  },
+  "bad_notes": []
+ },
+ "红树林": {
+  "n_src": 652,
+  "ok": true,
+  "years": {
+   "2017": {
+    "n": 574,
+    "stat": 574,
+    "pool": 574,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2018": {
+    "n": 573,
+    "stat": 573,
+    "pool": 573,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2019": {
+    "n": 576,
+    "stat": 576,
+    "pool": 576,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2020": {
+    "n": 573,
+    "stat": 573,
+    "pool": 573,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2021": {
+    "n": 575,
+    "stat": 575,
+    "pool": 575,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2022": {
+    "n": 649,
+    "stat": 649,
+    "pool": 649,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2023": {
+    "n": 652,
+    "stat": 652,
+    "pool": 652,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2024": {
+    "n": 647,
+    "stat": 647,
+    "pool": 647,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   }
+  },
+  "bad_notes": []
+ },
+ "海岸盐沼": {
+  "n_src": 3890,
+  "ok": true,
+  "years": {
+   "2017": {
+    "n": 3592,
+    "stat": 3592,
+    "pool": 3592,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2018": {
+    "n": 3591,
+    "stat": 3591,
+    "pool": 3591,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2019": {
+    "n": 3570,
+    "stat": 3570,
+    "pool": 3570,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2020": {
+    "n": 3597,
+    "stat": 3597,
+    "pool": 3597,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2021": {
+    "n": 3608,
+    "stat": 3608,
+    "pool": 3608,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2022": {
+    "n": 3862,
+    "stat": 3862,
+    "pool": 3862,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2023": {
+    "n": 3890,
+    "stat": 3890,
+    "pool": 3890,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2024": {
+    "n": 3837,
+    "stat": 3837,
+    "pool": 3837,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   }
+  },
+  "bad_notes": []
+ },
+ "潮滩": {
+  "n_src": 3215,
+  "ok": true,
+  "years": {
+   "2017": {
+    "n": 3152,
+    "stat": 3152,
+    "pool": 3152,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2018": {
+    "n": 3162,
+    "stat": 3162,
+    "pool": 3162,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2019": {
+    "n": 3175,
+    "stat": 3175,
+    "pool": 3175,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2020": {
+    "n": 3168,
+    "stat": 3168,
+    "pool": 3168,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2021": {
+    "n": 3169,
+    "stat": 3169,
+    "pool": 3169,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2022": {
+    "n": 3182,
+    "stat": 3182,
+    "pool": 3182,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2023": {
+    "n": 3215,
+    "stat": 3215,
+    "pool": 3215,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2024": {
+    "n": 3177,
+    "stat": 3177,
+    "pool": 3177,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   }
+  },
+  "bad_notes": []
+ },
+ "永久冰雪": {
+  "n_src": 17956,
+  "ok": true,
+  "years": {
+   "2017": {
+    "n": 17760,
+    "stat": 17760,
+    "pool": 17760,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2018": {
+    "n": 17784,
+    "stat": 17784,
+    "pool": 17784,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2019": {
+    "n": 17797,
+    "stat": 17797,
+    "pool": 17797,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2020": {
+    "n": 17815,
+    "stat": 17815,
+    "pool": 17815,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2021": {
+    "n": 17793,
+    "stat": 17793,
+    "pool": 17793,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2022": {
+    "n": 17894,
+    "stat": 17894,
+    "pool": 17894,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2023": {
+    "n": 17956,
+    "stat": 17956,
+    "pool": 17956,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2024": {
+    "n": 17915,
+    "stat": 17915,
+    "pool": 17915,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   }
+  },
+  "bad_notes": []
+ },
+ "木本沼泽": {
+  "n_src": 10656,
+  "ok": true,
+  "years": {
+   "2017": {
+    "n": 515,
+    "stat": 515,
+    "pool": 515,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2018": {
+    "n": 521,
+    "stat": 521,
+    "pool": 521,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2019": {
+    "n": 1594,
+    "stat": 1594,
+    "pool": 1594,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2020": {
+    "n": 1626,
+    "stat": 1626,
+    "pool": 1626,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2021": {
+    "n": 1629,
+    "stat": 1629,
+    "pool": 1629,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2022": {
+    "n": 1198,
+    "stat": 1198,
+    "pool": 1198,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2023": {
+    "n": 10656,
+    "stat": 10656,
+    "pool": 1093,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2024": {
+    "n": 1090,
+    "stat": 1090,
+    "pool": 1090,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   }
+  },
+  "bad_notes": []
+ },
+ "草本沼泽": {
+  "n_src": 38360,
+  "ok": true,
+  "years": {
+   "2017": {
+    "n": 15695,
+    "stat": 15695,
+    "pool": 15695,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2018": {
+    "n": 15744,
+    "stat": 15744,
+    "pool": 15744,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2019": {
+    "n": 20497,
+    "stat": 20497,
+    "pool": 20497,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2020": {
+    "n": 20428,
+    "stat": 20428,
+    "pool": 20428,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2021": {
+    "n": 20396,
+    "stat": 20396,
+    "pool": 20396,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2022": {
+    "n": 17180,
+    "stat": 17180,
+    "pool": 17180,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2023": {
+    "n": 38360,
+    "stat": 38360,
+    "pool": 16163,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2024": {
+    "n": 16126,
+    "stat": 16126,
+    "pool": 16126,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   }
+  },
+  "bad_notes": []
+ },
+ "地衣苔藓": {
+  "n_src": 171,
+  "ok": true,
+  "years": {
+   "2017": {
+    "n": 102,
+    "stat": 102,
+    "pool": 102,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2018": {
+    "n": 101,
+    "stat": 101,
+    "pool": 101,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2019": {
+    "n": 102,
+    "stat": 102,
+    "pool": 102,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2020": {
+    "n": 85,
+    "stat": 85,
+    "pool": 85,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2021": {
+    "n": 85,
+    "stat": 85,
+    "pool": 85,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2022": {
+    "n": 170,
+    "stat": 170,
+    "pool": 170,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2023": {
+    "n": 171,
+    "stat": 171,
+    "pool": 171,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   },
+   "2024": {
+    "n": 170,
+    "stat": 170,
+    "pool": 170,
+    "fields_ok": true,
+    "maxdiff": 0.0,
+    "orphan": 0,
+    "wgs84": true,
+    "ok": true
+   }
+  },
+  "bad_notes": []
+ }
+}
