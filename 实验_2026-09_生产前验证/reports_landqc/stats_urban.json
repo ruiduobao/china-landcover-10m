@@ -1,0 +1,29 @@
+{
+ "group": "urban",
+ "n": 169841,
+ "by_class": {
+  "21": {
+   "n": 151885,
+   "keep": 123301,
+   "quar": 944,
+   "flag": 27640,
+   "keep_pct": 81.18,
+   "quar_pct": 0.62
+  },
+  "24": {
+   "n": 17956,
+   "keep": 17378,
+   "quar": 0,
+   "flag": 578,
+   "keep_pct": 96.78,
+   "quar_pct": 0.0
+  }
+ },
+ "totals": {
+  "keep": 140679,
+  "quarantine": 944,
+  "flag": 28218
+ },
+ "criteria_version": "v1.1-2026-10-13T10:00",
+ "time": "2026-10-13 11:07:53"
+}

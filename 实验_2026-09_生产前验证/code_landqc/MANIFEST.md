@@ -1,0 +1,29 @@
+# 其余 14 类样本质检 — 代码与报告存档（2026-10-13）
+
+| 文件 | MD5 | 字节 |
+|---|---|---|
+| a1_land_assemble.py | 61c539017dcea456f9e83d158fd9297e | 3489 |
+| a2_land_report.py | abb6bda74684585bfbd29d8fbe0efee4 | 3847 |
+| k30c_subset_health.py | 03dfacfbc3acd9068795253326bb43ea | 2488 |
+| landqc_run.sh | 589e86de92c4ee05c4d32c66d5ffa8d1 | 951 |
+| landqc_status.sh | f0739e449e3e6a6ec301e262b32ac053 | 1032 |
+| v7_land_fetch.py | 5af5f78317c687b0e16517aa00f0ba21 | 7671 |
+| v8_land_qc.py | 1e35a2ae750d16bf2e16631cb80a1f36 | 5698 |
+| v9_spot_check.py | 1738b81653c9d4e39321eae3c895c183 | 5470 |
+| criteria_land.json | 348f17d9bb8f607cff08b93179fa4540 | 3790 |
+| grp_crop_report.md | 60bac153ba458bf37633345a66d0a640 | 8137 |
+| grp_urban_report.md | d69e05fb8a1044f31d5b3dfa96fea47d | 11675 |
+| grp_veg_report.md | 19a105c57e31c28c2ef8cf626087db52 | 12112 |
+| grp_water_report.md | 5e7d37e541576eb6ac67ad08514a99be | 10979 |
+| land_qc_summary.csv | 8ada76bbdb7e3d90b72a3b533217ede2 | 1418 |
+| land_qc_summary.md | 32007f030dc0ea8ca2e586451433861c | 3039 |
+| land_qc_tables.md | 2f71b842b5dc35ca38bdfbb5e2133ff3 | 3840 |
+| spot_crop.json | 9eb984f8bb8ac5098bac828eb8ee579a | 747 |
+| spot_urban.json | 1813192b2ca1485d5fc542adae5f8d06 | 749 |
+| spot_veg.json | 4c334eb50d7848c171a3a5fb0cf68ed7 | 748 |
+| spot_water.json | dd551baead73dc6312b116106c37ed2f | 757 |
+| stats_crop.json | 6465eda4f6fe3924b948862090921fb0 | 483 |
+| stats_urban.json | 2ff7f0c7a8e38dafd3c725b1c1c399ac | 476 |
+| stats_veg.json | 361c841205cbcec20b7ac5ca99493b85 | 742 |
+| stats_water.json | d2684a7a3e5432a37a73b3420a62ea80 | 976 |
+| 预注册判据.md | 79281e51c64f59699fbb15bdeb96136c | 5740 |

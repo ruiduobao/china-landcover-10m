@@ -1,0 +1,90 @@
+{
+ "version": "v1.1-2026-10-13T10:00",
+ "note": "其余 14 类样本质检预注册判据；与 reports/land_qc_2026-10-13/预注册判据.md 同步冻结。三态：keep=正向证据 / quarantine=证据矛盾 / flag=中间态（保留标低置信）。派生列：veg=trees+grass，ndvi=s2_ndvi_xia（缺 → s2_ndvi_dong）；GSW 点级 -1=无数据→NaN（真实 max_extent∈{0,1}/occurrence∈[0,100]，2-态判据两侧均 False 故归 flag）；邻域与 DW 概率负值已归一为 0。v1.1 修正（冒烟后、全量前）：① 新增 DW shrub 波段；② 类13 阈值按实测（稀疏植被夏季 NDVI 中位 68，37–98）下调；③ 类24 补 MODIS IGBP 15=Snow/Ice。",
+ "classes": {
+  "23": {
+   "name": "水体",
+   "keep": "(max_extent == 1) | (occurrence >= 50) | (water >= 0.5)",
+   "quar": "(max_extent < 0.5) & (occurrence < 10) & (water < 0.20) & (dw_water_150 < 0.10)",
+   "reason": "NO_WATER_EVIDENCE"
+  },
+  "16": {
+   "name": "湖河滩地",
+   "keep": "(max_300 >= 0.20) & (relief500 <= 8) & (water < 0.50) & (veg < 0.65)",
+   "quar": "(max_300 < 0.05) & (dw_water_150 < 0.05)",
+   "reason": "NO_WATER_ADJACENCY"
+  },
+  "20": {
+   "name": "潮滩",
+   "keep": "(max_300 >= 0.20) & (dem <= 15) & (veg < 0.30)",
+   "quar": "(max_300 < 0.05) | (dem > 30) | (veg >= 0.60)",
+   "reason": "NOT_INTERTIDAL"
+  },
+  "19": {
+   "name": "海岸盐沼",
+   "keep": "(max_300 >= 0.20) & (dem <= 15) & (veg >= 0.15)",
+   "quar": "(max_300 < 0.05) | (dem > 30) | (veg < 0.05)",
+   "reason": "NOT_SALT_MARSH"
+  },
+  "18": {
+   "name": "红树林",
+   "keep": "((max_300 >= 0.10) & (dem <= 15) & (trees >= 0.25)) | (wc == 95)",
+   "quar": "(trees < 0.05) | (dem > 30)",
+   "reason": "NOT_MANGROVE"
+  },
+  "17": {
+   "name": "盐渍湿地",
+   "keep": "(max_300 >= 0.05) & (relief500 <= 10)",
+   "quar": "(relief500 > 30) | ((max_300 < 0.02) & (dw_water_150 < 0.05))",
+   "reason": "NOT_SALINE_WETLAND"
+  },
+  "13": {
+   "name": "稀疏植被",
+   "keep": "((ndvi >= 60) | (shrub >= 0.25)) & (ndvi < 400) & (water < 0.40) & (built < 0.30)",
+   "quar": "(ndvi >= 450) | (water >= 0.50) | (built >= 0.60) | ((ndvi < 40) & (shrub < 0.12) & (bare >= 0.45))",
+   "reason": "VEG_STRUCTURE_CONFLICT"
+  },
+  "22": {
+   "name": "裸地",
+   "keep": "(ndvi < 200) & (water < 0.30) & (built < 0.30) & (snow_and_ice < 0.30)",
+   "quar": "(ndvi >= 350) | (water >= 0.50) | (built >= 0.50) | (snow_and_ice >= 0.50)",
+   "reason": "NOT_BARE"
+  },
+  "11": {
+   "name": "草地",
+   "keep": "(ndvi >= 250) & (trees < 0.35) & (water < 0.40) & (built < 0.50)",
+   "quar": "(ndvi < 150) | (trees >= 0.50) | (water >= 0.50)",
+   "reason": "NOT_GRASS"
+  },
+  "12": {
+   "name": "地衣苔藓",
+   "keep": "(dem >= 3000) | ((dem >= 1500) & (ndvi < 350)) | (wc == 100)",
+   "quar": "(ndvi >= 450) | (water >= 0.50) | (trees >= 0.50)",
+   "reason": "NOT_LICHEN_MOSS"
+  },
+  "1": {
+   "name": "草本旱地",
+   "keep": "(crops >= 0.30) & (water < 0.40) & (built < 0.40) & (trees < 0.60)",
+   "quar": "(crops < 0.10) & ((trees >= 0.50) | (built >= 0.50) | (water >= 0.50) | (bare >= 0.60))",
+   "reason": "NOT_CROPLAND"
+  },
+  "3": {
+   "name": "灌溉耕地",
+   "keep": "(crops >= 0.25) & (water < 0.50) & (trees < 0.60)",
+   "quar": "(crops < 0.10) & ((built >= 0.40) | (water >= 0.50) | (trees >= 0.50))",
+   "reason": "NOT_IRRIGATED_CROPLAND"
+  },
+  "21": {
+   "name": "不透水面",
+   "keep": "(dw_built_150 >= 0.55) | (built >= 0.50)",
+   "quar": "(dw_built_150 < 0.15) & (built < 0.20)",
+   "reason": "NOT_IMPERVIOUS"
+  },
+  "24": {
+   "name": "永久冰雪",
+   "keep": "(snow_and_ice >= 0.30) | ((dem >= 4000) & (snow_and_ice >= 0.10)) | (wc == 70) | (modis_lc == 15)",
+   "quar": "(snow_and_ice < 0.05) & (wc != 70) & (modis_lc != 15) & (dem < 2500)",
+   "reason": "NOT_SNOW_ICE"
+  }
+ }
+}

@@ -774,3 +774,40 @@ mixed_forest_9162_excluded.csv、report.md、stats.json、calibration.json、per
 
 **2026-10-13 湿地追加**：OSM 湿地子代理交付 **56,149 要素**（way 48,017/rel 7,555/node 577），中国境内 9,622 → 目标子集 2,684 → 过冻结判据+植被守门 → 与 ≥1km 去重后**新增 702（木本 44/草本 658）**；
 **成品升级为 `swamp_samples_v2.parquet/.csv`（49,016 ＝ 木本 10,656 / 草本 38,360）**，AEF64 覆盖 100%（OSM 新增点单独 `feats/aef/aef_osm702.parquet`，命中 1.0000）。OSM 的 `wetland=swamp` 标签为木本分型提供了独立标注来源。
+
+
+---
+
+## 2026-10-13 追加 · 其余 14 类样本质检与筛选（30 类体系质检链收官）
+
+**背景**：林地（doc65）、灌木（doc63）、木本/草本沼泽（doc66）、乔灌园地（2026-10-12）已完成；
+本次对**其余 14 类 / 1,077,359 点**（源＝`r7_train_2023` 训练视图，已剔错位清单 11,076 点、命中 0）做同款生态证据质检。
+
+**方法**：`v7_land_fetch.py`（28 波段：GSW 点级 4 + 邻域 occ_300/max_300 + 7/1 月 150m 水频、Dynamic World 2023 **9 波段（含 shrub_and_scrub）**、
+ESA WorldCover v200、MODIS MCD12Q1、SRTM dem/slope/relief500、S2 2023 夏 NDVI/NDWI+冬 NDVI；逐源 unmask 后 cat）→
+`v8_land_qc.py` 三态裁决（keep=正向证据 / quarantine=证据矛盾 / flag=中间态保留标 weak）；
+**预注册判据 v1.1**（`data/land_qc/out/criteria_land.json`；v1→v1.1 三处修正：新增 shrub 波段、类 13 阈值按实测下调、
+类 24 补 MODIS=15）。**4 子代理 × 21 GEE 账号**并行抓取（分片幂等；4,000 点单请求撞 300s 交互上限 →
+`--sub 2000` 子请求粒度，修复后全程零超时）。
+
+**结果**（全 1,077,359 点）：**keep 842,379（78.19%）+ flag 198,074（18.38%）＝升级样本 1,040,453；
+quarantine 36,906（3.43%）剥出**。逐类：水体 99.95%（quar=0）、潮滩 100%、裸地 98.69%、永久冰雪 96.78%（DW nodata 66%，
+靠 WC=70/MODIS=15 兜底）、不透水面 81.18%、灌溉耕地 82.94%、草地 68.93%（剔除 20,902）、草本旱地 62.26%、
+稀疏植被 50.34%（剔除 99.3% 为 NDVI<40 且 shrub<0.12 且 bare≥0.45 硬矛盾）、湖河滩地 49.87%、盐渍湿地 49.63%（剔除 20.79%）、
+红树林 77.36%、海岸盐沼 48.91%、地衣苔藓 88.89%。
+
+**来源警告**：`fcs10_2023_rare` 剔除率 **32.09%**（主源 3.45% 的 9 倍）→ 稀有类补样源建议重建；
+`glc_fcs10_2023_band130` 不透水面 90.3% flag（主源 15.7–27.0%）→ 待单独复核。
+
+**验证**：四组覆盖 100%（84/120/27/44 块、零重复、失败块 0）；`v9_spot_check.py` 双路独立抽查
+（路 A＝v7 构建 vs 产物、路 B＝独立最小构建；逐源 unmask 再次实证"任一波段掩膜即整点丢特征"）——
+四组 40 点 max|Δ| 全 0.0，主代理对 crop/water/urban 换账号换种子复跑仍全 0.0。
+
+**工程事件**：① 11:43–11:46 SOCKS 代理（7890）瞬断 → veg 尾 6 块中断，代理恢复后原账户重跑补齐（双 owner 幂等撞车一次、文件零差异）；
+② `zsi8emo` 抓完 urban 后进入 restricted-mode → 从健康池摘除；crop 6 账户出现 restricted-mode 警告但 84/84 块完成。
+
+**产物**：`F:/lc_work/v31_exp/data/land_qc/out/clean/land_other14_v1.parquet`（1,040,453 点，tier=strong/weak）+ 逐类 14 件；
+`qc/quarantine_<group>.csv` ×4（36,906）；`stats_<group>.json`、`land_qc_summary.{csv,md}`、`land_qc_tables.md`；
+报告 `reports/land_qc_2026-10-13/`（4 组 grp_*_report.md + spot_*.json + 预注册判据.md）；
+代码 `v7_land_fetch.py`/`v8_land_qc.py`/`v9_spot_check.py`/`a1_land_assemble.py`/`a2_land_report.py`/`k30c_subset_health.py`；
+文档 `技术文档/67_其余14类样本质检与筛选.md`（索引 → 69 篇）。

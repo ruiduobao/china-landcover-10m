@@ -1,0 +1,61 @@
+{
+ "group": "water",
+ "n": 104661,
+ "by_class": {
+  "23": {
+   "n": 67879,
+   "keep": 67848,
+   "quar": 0,
+   "flag": 31,
+   "keep_pct": 99.95,
+   "quar_pct": 0.0
+  },
+  "16": {
+   "n": 27353,
+   "keep": 13640,
+   "quar": 846,
+   "flag": 12867,
+   "keep_pct": 49.87,
+   "quar_pct": 3.09
+  },
+  "20": {
+   "n": 3215,
+   "keep": 3215,
+   "quar": 0,
+   "flag": 0,
+   "keep_pct": 100.0,
+   "quar_pct": 0.0
+  },
+  "19": {
+   "n": 3954,
+   "keep": 1934,
+   "quar": 64,
+   "flag": 1956,
+   "keep_pct": 48.91,
+   "quar_pct": 1.62
+  },
+  "18": {
+   "n": 658,
+   "keep": 509,
+   "quar": 6,
+   "flag": 143,
+   "keep_pct": 77.36,
+   "quar_pct": 0.91
+  },
+  "17": {
+   "n": 1602,
+   "keep": 795,
+   "quar": 333,
+   "flag": 474,
+   "keep_pct": 49.63,
+   "quar_pct": 20.79
+  }
+ },
+ "totals": {
+  "keep": 87941,
+  "quarantine": 1249,
+  "flag": 15471
+ },
+ "criteria_version": "v1.1-2026-10-13T10:00",
+ "time": "2026-10-13 10:54:44"
+}

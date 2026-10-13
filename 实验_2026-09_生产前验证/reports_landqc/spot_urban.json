@@ -1,0 +1,32 @@
+{
+ "group": "urban",
+ "n": 60,
+ "acct": "x2zdn8",
+ "diffs": {
+  "prod_vs_A_max_extent": 0.0,
+  "prod_vs_A_occurrence": -1.0,
+  "prod_vs_A_water": 0.0,
+  "prod_vs_A_trees": 0.0,
+  "prod_vs_A_grass": 0.0,
+  "prod_vs_A_crops": 0.0,
+  "prod_vs_A_built": 0.0,
+  "prod_vs_A_bare": 0.0,
+  "prod_vs_A_snow_and_ice": 0.0,
+  "prod_vs_A_shrub": 0.0,
+  "prod_vs_A_dem": 0.0,
+  "prod_vs_A_s2_ndvi_xia": 0.0,
+  "B_vs_A_max_extent": 0.0,
+  "B_vs_A_occurrence": -1.0,
+  "B_vs_A_water": 0.0,
+  "B_vs_A_trees": 0.0,
+  "B_vs_A_grass": 0.0,
+  "B_vs_A_crops": 0.0,
+  "B_vs_A_built": 0.0,
+  "B_vs_A_bare": 0.0,
+  "B_vs_A_snow_and_ice": 0.0,
+  "B_vs_A_shrub": 0.0,
+  "B_vs_A_dem": 0.0,
+  "B_vs_A_s2_ndvi_xia": 0.0
+ },
+ "mismatch_bands": []
+}
