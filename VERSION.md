@@ -771,3 +771,6 @@ mixed_forest_9162_excluded.csv、report.md、stats.json、calibration.json、per
 **产物**：`F:/lc_work/v31_exp/data/swamp_qc/`（out/swamp_samples_v1.parquet/.csv、qc/quarantine_swamp_full.csv、out/{stats_final,calibration_swamp,separation_report}.json、lists/*、feats/{hydro,vege,hydro_cand,vege_candL,aef}）；
 代码 `v1_swamp_fetch.py`/`v2_swamp_candidates.py`/`v3_swamp_qc.py`/`v4_swamp_expand.py`/`v5_swamp_assemble.py`/`v6_swamp_aef.py`；文档 `技术文档/66`。
 **局限**：木本/草本分型弱（dw_trees 0.08 vs 0.10）→ 建议按 doc 54 的"湿地合并 1 类"口径使用或合并报告；候选点 D 条件用 relief500≤8 替代（relief2000 在交互式 API 下超时）。
+
+**2026-10-13 湿地追加**：OSM 湿地子代理交付 **56,149 要素**（way 48,017/rel 7,555/node 577），中国境内 9,622 → 目标子集 2,684 → 过冻结判据+植被守门 → 与 ≥1km 去重后**新增 702（木本 44/草本 658）**；
+**成品升级为 `swamp_samples_v2.parquet/.csv`（49,016 ＝ 木本 10,656 / 草本 38,360）**，AEF64 覆盖 100%（OSM 新增点单独 `feats/aef/aef_osm702.parquet`，命中 1.0000）。OSM 的 `wetland=swamp` 标签为木本分型提供了独立标注来源。
