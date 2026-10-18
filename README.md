@@ -4,7 +4,10 @@
 
 Annual 10 m land-cover maps of China (2017–2024), built on **Google AlphaEarth Foundations** yearly satellite embeddings (64-D, 10 m) with **server-side Random Forest on Google Earth Engine**. Main product: **24 classes** (plus a 9-macro-class version), benchmarked against GLC_FCS10 (ESSD 2025, reported OA 83.16%).
 
-All production configuration is **frozen (v3.1-R1)**; a **2023 five-province pilot** (Sichuan / Heilongjiang / Guangdong / Ningxia / Fujian, 76 tiles) has been **delivered**. Large data (sample library, rasters) are **not** included in this repository.
+All production configuration is **frozen (v3.1-R1)**; a **2023 five-province pilot** (Sichuan / Heilongjiang / Guangdong / Ningxia / Fujian, 76 tiles) has been **delivered**, followed by a **second batch of 41 tiles** (Sichuan 24 / Guangdong 10 / Ningxia 6 / Fujian 1) closed out on **2026-10-15**. Large data (sample library, rasters) are **not** included in this repository.
+
+> `[2026-10-18 correction, previous value: "a 2023 five-province pilot (Sichuan / Heilongjiang / Guangdong / Ningxia / Fujian, 76 tiles) has been delivered." — the second batch was not mentioned]`
+> The **second batch was absent from this README**. It is 41 tiles, 860.06/950.00 EECU·h, 41/41 QA_OK, closed 2026-10-15. See `文档差异对照表.md` §1 row 3.
 
 ## Companion skill: sample verification
 
@@ -20,15 +23,39 @@ Full Chinese illustrated manual: [`AI判定遥感样本点SKILL/README.zh-CN.md`
 
 ---
 
-## Status (2026-10-08)
+## Status (2026-10-18)
+
+> `[2026-10-18 correction, previous heading: "## Status (2026-10-08)"]` — the date was stale by 10 days and three deliverables/conclusions were missing.
 
 | Milestone | Status |
 |---|---|
 | Production config | **Frozen v3.1-R1**: 24 classes + local single RF (±2° neighborhood borrowing, 100 trees / minLeaf2 / maxNodes5000 / 20k points) + year-matched samples |
 | 2023 five-province pilot | ✅ **76/76 tiles delivered** (Sichuan/Heilongjiang/Guangdong/Ningxia/Fujian, 10 m, palette/pyramids/area tables/QA; 1,328.4/1,600 EECU·h) |
+| **Second batch (2023 new-sample v2)** `[2026-10-18: new row — was missing]` | ✅ **41/41 tiles delivered** (Sichuan 24 / Guangdong 10 / Ningxia 6 / **Fujian 1 = T2202, eastern-Guangdong strip top-up**), closed **2026-10-15**; **860.06 / 950.00 EECU·h (90.5%)**; 41/41 QA_OK; fidelity 41/41 = 100% (3,000 pts/tile). Sample pool `train2023_v2` = 1,764,020 pts / 23 classes; delivery pack 45 items / 1.0 GB, `md5sum -c` 44/44 OK |
 | Cross-product comparison (E14) | ✅ Pixel-wise vs GLC_FCS10 / GLC_FCS30D / ESRI LULC / ESA WorldCover (group agreement 46–85%) |
-| Independent validation | M3 design done (3,210 general + 863 shrub-arbitration + 403 Sanjiang-source points); **M3-B first-pass AI review done** (arm-A accuracy 0.107 → preregistered rule points to "filter the FCS10 shrub layer", pending human confirmation) |
-| National rollout | 313 tiles × 8 years pending (≈43k EECU·h scale) |
+| Independent validation | M3 material ready = **4,476 points** (3,210 general + 863 shrub-arbitration + 403 Sanjiang-source). **M3-B (863 pts) has TWO passes of *AI* review — 0.107 → 0.058, both ≤0.40, pointing to "filter the FCS10 shrub layer" — but this is AI, NOT human review and CANNOT be used as OA. M3-A/C/D (3,613 pts) have had NO review at all.** `[2026-10-18 correction, previous value: "M3-B first-pass AI review done (arm-A accuracy 0.107 ...)"]` |
+| **Needleleaf/broadleaf 2-class sample v1** `[2026-10-18: new row — was missing]` | 2026-10-17: main sample 55,712 pts (needle 23,700 / broad 30,184 / mixed 1,828; 76 tiles, 23 provinces); 2-class macro-F1 0.7547 (old labels) → **0.8539** (FCS10-referenced). **Pre-registered gates G1–G10: G2 / G3 / G10 = FAIL** — see Limitations |
+| National rollout | 313 tiles × 8 years: **scheduling COMPLETE, awaiting go-ahead** — `plan/fleet_summary.json` → 313 tiles / 11 accounts / **2,504 exports** (232×5 + 224×6). Budget ≈43k EECU·h **is a unit-price scale estimate, not measured**. `[2026-10-18 correction, previous value: "313 tiles × 8 years pending (≈43k EECU·h scale)"]` |
+
+## Limitations (must be stated in any publication) `[2026-10-18: new section]`
+
+**1. Full-point OA is NOT publishable.** Independent **human** validation (M3) is **not done**. M3-B's 0.107 → 0.058 are **AI review passes on 863 points**, not human labels; M3-A/C/D (**3,613 points**) have no review at all. Therefore only the following may be published: (a) dev/holdout diagnostics; (b) stratified reference-product agreement (E14); (c) M3-B results **explicitly labelled as AI pre-review**.
+
+**2. Three pre-registered gates FAIL** (needleleaf/broadleaf v1, national scope; `技术文档/77` lines 1050–1059):
+
+| Gate | Threshold | Measured | Verdict |
+|---|---|---|---|
+| **G2** aspect unbiasedness | OR ∈ [0.8, 1.25] | **2.05–2.19** (sample 2.183 / population 1.908 / MH 1.903) | **FAIL** — down 56–61% from old labels (4.918); *mitigated, not resolved*; residual OR≈2.0 not attributed |
+| **G3** national coverage | ≥90% of China land 2° tiles | **248/313 = 79.2%** (literal) ／ **≈99.8%** (China-terrestrial-forest basis) | **FAIL** on the literal reading; **nature = sampling-frame defect, not progress** |
+| **G10** southern expression | southern provinces must not disable needleleaf | **model layer returns zero needleleaf** in Guangdong/Fujian/Zhejiang (recall≈0); true needleleaf in the south is only 1.66–1.78% | **FAIL** (handed to release strategy) |
+
+**3. QA_OK / 100% fidelity ≠ no gaps.** 41/41 `QA_OK` + 3,000-point 100% fidelity **cannot** prove the tile is gap-free: the former is self-referential (expectation rebuilt from the same tiles) and the latter's sampling space does not intersect the defect space. Measured: **all 41 tiles show a wedge of nodata along the southern edge** (~42 px at 30N), hypothesis = `ee.Geometry.Rectangle` geodesic southern-edge bulge (**not settled**). Cause level = "already missing in the source tile" — **do not assert AEF data absence**.
+
+**4. Shrub D2 policy is UNDECIDED.** Production currently keeps the shrub layer (R0). Full-filter branch (server-side `src` filter of `glc_fcs10_2023_shrub`, 521,400 pts → retrain + re-produce 76 tiles ≈1,400 EECU·h) is prepared but **requires explicit human sign-off**. Shrub accuracy/area must not be published as settled before that.
+
+**5. Budget figures are scale estimates.** "≈43k EECU·h" = 16.2 EECU·h/tile × 313 × 8. Only the two pilot batches are measured (1,328.4/1,600 and 860.06/950).
+
+> Traceability for every number above: `文档差异对照表.md` (same directory).
 
 ## Method sketch
 
