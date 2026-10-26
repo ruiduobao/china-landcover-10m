@@ -1,0 +1,148 @@
+{
+  "generated_at": "2026-10-15T14:27:29",
+  "tag": "s7b",
+  "shape": [
+    93,
+    557
+  ],
+  "scope": "EVM band5 == 1 (自动识别, evm_in_tile_valid_px=40661)",
+  "file_meta": {
+    "legacy": {
+      "path": "G30N_s7b_legacy_10m.tif",
+      "size": 4634,
+      "dtype": "uint8",
+      "nodata": 0.0,
+      "crs": "EPSG:4326",
+      "transform": [
+        8.98315e-05,
+        0.0,
+        97.9750259571,
+        0.0,
+        -8.98315e-05,
+        30.006515267
+      ],
+      "has_palette": true,
+      "md5": "e6265f63c0709c7344c546890f51abb8",
+      "sha256": "18fc6821073bea41e5920ded099a656d842b1c5c4248d97a497e5cb76e1a5827"
+    },
+    "planar": {
+      "path": "G30N_s7b_planar_10m.tif",
+      "size": 6718,
+      "dtype": "uint8",
+      "nodata": 0.0,
+      "crs": "EPSG:4326",
+      "transform": [
+        8.98315e-05,
+        0.0,
+        97.9750259571,
+        0.0,
+        -8.98315e-05,
+        30.006515267
+      ],
+      "has_palette": true,
+      "md5": "e8c735d767426fc61cb68c27dfccc479",
+      "sha256": "a3a4c02b2c43ba6b4a7eba790fd9e402f87326b7d44acc8e84ed8ec63a2923f7"
+    },
+    "5band": {
+      "path": "G30N_s7b_5band.tif",
+      "size": 7056,
+      "dtype": "uint8",
+      "nodata": 0.0,
+      "crs": "EPSG:4326",
+      "transform": [
+        8.98315e-05,
+        0.0,
+        97.9750259571,
+        0.0,
+        -8.98315e-05,
+        30.006515267
+      ],
+      "has_palette": false,
+      "md5": "bede6c60a54a346c0690c7c115ff4d76",
+      "sha256": "77a30a444d190c497bdba908da3d3e66a6a9168716d38ed500b7c6f3d23c6764"
+    },
+    "band_info": [
+      {
+        "band": 1,
+        "ones": 0,
+        "zeros": 34534
+      },
+      {
+        "band": 2,
+        "ones": 0,
+        "zeros": 11140
+      },
+      {
+        "band": 3,
+        "ones": 16710,
+        "zeros": 35091
+      },
+      {
+        "band": 4,
+        "ones": 51801,
+        "zeros": 0
+      },
+      {
+        "band": 5,
+        "ones": 40661,
+        "zeros": 11140
+      }
+    ]
+  },
+  "in_region_px": 40661,
+  "n_px": 51801,
+  "legacy_nodata_px": 23394,
+  "planar_nodata_px": 0,
+  "restored_px": 23394,
+  "planar_lost_px": 0,
+  "common_valid_px": 28407,
+  "common_valid_disagree_px": 0,
+  "common_valid_agree_rate": 1.0,
+  "legacy_nodata_rows_with_gap": 42,
+  "planar_nodata_rows_with_gap": 0,
+  "legacy_max_row_nodata": 557,
+  "planar_max_row_nodata": 0,
+  "class_hist_legacy": {
+    "0": 11140,
+    "6": 1028,
+    "9": 2391,
+    "10": 767,
+    "11": 13081
+  },
+  "class_hist_planar": {
+    "0": 11140,
+    "6": 2002,
+    "9": 4997,
+    "10": 2024,
+    "11": 31638
+  },
+  "eval_json_checks": [
+    {
+      "field": "legacy_nodata_px",
+      "eval_json": 23394,
+      "independent": 23394,
+      "match": true
+    },
+    {
+      "field": "planar_nodata_px",
+      "eval_json": 0,
+      "independent": 0,
+      "match": true
+    },
+    {
+      "field": "restored_px",
+      "eval_json": 23394,
+      "independent": 23394,
+      "match": true
+    }
+  ],
+  "outside_wedge_agree_rate_eval": 1.0,
+  "gates": {
+    "restored_positive": true,
+    "legacy_had_gap": true,
+    "planar_no_gap": true,
+    "common_valid_agree_100pct": true,
+    "no_planar_loss": true
+  },
+  "verdict": "PASS"
+}

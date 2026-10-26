@@ -1,0 +1,30 @@
+{
+ "n_two_class": 6648,
+ "agreement": 0.6994584837545126,
+ "needle_precision": 0.5901257568700512,
+ "needle_recall": 0.5312368972746331,
+ "needle_f1": 0.5591350397175641,
+ "needle_share_cgls": 0.3229542719614922,
+ "needle_share_fcs10": 0.35875451263537905,
+ "crosstab": {
+  "": {
+   "B": 5195,
+   "M": 3,
+   "N": 1384,
+   "na": 4125
+  },
+  "B": {
+   "B": 3383,
+   "M": 1,
+   "N": 880,
+   "na": 1591
+  },
+  "N": {
+   "B": 1118,
+   "M": 22,
+   "N": 1267,
+   "na": 1031
+  }
+ },
+ "note": "CGLS ft 1/3->needle, 2/4->broad, 5->mixed; only points where FCS10 leaf valid"
+}

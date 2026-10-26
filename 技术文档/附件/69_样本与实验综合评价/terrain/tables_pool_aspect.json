@@ -1,0 +1,191 @@
+{
+ "dem_tiles": [
+  "T1205",
+  "T1206",
+  "T1207",
+  "T1208",
+  "T1304",
+  "T1305",
+  "T1306",
+  "T1307",
+  "T1404",
+  "T1405",
+  "T1406",
+  "T1407",
+  "T1408",
+  "T1504",
+  "T1505",
+  "T1506",
+  "T1507",
+  "T1508",
+  "T1604",
+  "T1605",
+  "T1606",
+  "T1607",
+  "T1706",
+  "T1707"
+ ],
+ "per_class_v2": [
+  {
+   "pool": "v2",
+   "class": 4,
+   "name": "常绿阔叶",
+   "n_slope5": 16754,
+   "sunny_pct": 29.7,
+   "shady_pct": 20.8,
+   "mean_slope": 27.7
+  },
+  {
+   "pool": "v2",
+   "class": 5,
+   "name": "落叶阔叶",
+   "n_slope5": 12644,
+   "sunny_pct": 36.5,
+   "shady_pct": 11.2,
+   "mean_slope": 29.0
+  },
+  {
+   "pool": "v2",
+   "class": 6,
+   "name": "常绿针叶",
+   "n_slope5": 33831,
+   "sunny_pct": 9.6,
+   "shady_pct": 35.5,
+   "mean_slope": 28.4
+  },
+  {
+   "pool": "v2",
+   "class": 1,
+   "name": "草本旱地",
+   "n_slope5": 10289,
+   "sunny_pct": 32.9,
+   "shady_pct": 14.0,
+   "mean_slope": 12.2
+  },
+  {
+   "pool": "v2",
+   "class": 9,
+   "name": "常绿灌丛",
+   "n_slope5": 15236,
+   "sunny_pct": 26.0,
+   "shady_pct": 19.2,
+   "mean_slope": 29.2
+  },
+  {
+   "pool": "v2",
+   "class": 10,
+   "name": "落叶灌丛",
+   "n_slope5": 18833,
+   "sunny_pct": 8.8,
+   "shady_pct": 47.2,
+   "mean_slope": 26.3
+  },
+  {
+   "pool": "v2",
+   "class": 11,
+   "name": "草地",
+   "n_slope5": 22956,
+   "sunny_pct": 36.2,
+   "shady_pct": 11.6,
+   "mean_slope": 21.9
+  },
+  {
+   "pool": "v2",
+   "class": 21,
+   "name": "不透水面",
+   "n_slope5": 2410,
+   "sunny_pct": 25.1,
+   "shady_pct": 20.6,
+   "mean_slope": 8.8
+  },
+  {
+   "pool": "v2",
+   "class": 22,
+   "name": "裸地",
+   "n_slope5": 982,
+   "sunny_pct": 64.4,
+   "shady_pct": 1.5,
+   "mean_slope": 29.3
+  }
+ ],
+ "OR_ENF6_vs_EBF4": {
+  "v2": 5.275,
+  "v1": 3.515
+ },
+ "OR_ENF6_vs_DBF5": {
+  "v2": 12.043,
+  "v1": 13.04
+ },
+ "v2_src_top": {
+  "林地_常绿针叶林": 38941,
+  "草地": 27027,
+  "林地_常绿阔叶林": 21601,
+  "落叶灌木": 19948,
+  "草本旱地": 17157,
+  "常绿灌木": 16573,
+  "林地_落叶阔叶林": 15563,
+  "乔灌园地": 13977,
+  "不透水面": 10393,
+  "灌溉耕地": 8725
+ },
+ "v2_by_src_forest": {
+  "林地_常绿针叶林": {
+   "n_forest": 38941,
+   "shady_pct_c6": 31.1
+  },
+  "林地_常绿阔叶林": {
+   "n_forest": 21601,
+   "shady_pct_c4": 16.3
+  },
+  "林地_落叶阔叶林": {
+   "n_forest": 15563
+  }
+ },
+ "per_class_v1": [
+  {
+   "pool": "v1",
+   "class": 4,
+   "name": "常绿阔叶",
+   "n_slope5": 22498,
+   "sunny_pct": 24.4,
+   "shady_pct": 28.1,
+   "mean_slope": 27.5
+  },
+  {
+   "pool": "v1",
+   "class": 5,
+   "name": "落叶阔叶",
+   "n_slope5": 15432,
+   "sunny_pct": 36.1,
+   "shady_pct": 11.2,
+   "mean_slope": 29.5
+  },
+  {
+   "pool": "v1",
+   "class": 6,
+   "name": "常绿针叶",
+   "n_slope5": 37269,
+   "sunny_pct": 8.9,
+   "shady_pct": 35.9,
+   "mean_slope": 28.9
+  },
+  {
+   "pool": "v1",
+   "class": 10,
+   "name": "落叶灌丛",
+   "n_slope5": 11381,
+   "sunny_pct": 32.7,
+   "shady_pct": 14.1,
+   "mean_slope": 12.3
+  },
+  {
+   "pool": "v1",
+   "class": 11,
+   "name": "草地",
+   "n_slope5": 784,
+   "sunny_pct": 15.9,
+   "shady_pct": 26.3,
+   "mean_slope": 22.4
+  }
+ ]
+}

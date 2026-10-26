@@ -1,0 +1,12 @@
+{
+ "n_in": 7466,
+ "outside_boundary": 422,
+ "dropped_over_10km": 368,
+ "kept_border_band_10km": 54,
+ "n_out": 7098,
+ "by_fam_kept": {
+  "sparse": 4202,
+  "bare": 2896
+ },
+ "max_outside_km": 592.5
+}

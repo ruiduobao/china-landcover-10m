@@ -1,0 +1,56 @@
+{
+  "record_type": "experiment_registration_audit",
+  "recorded_by": "audit_subagent (独立方法验收)",
+  "recorded_at": "2026-10-15T14:16:00+08:00",
+  "orchard": {
+    "file": "F:/lc_work/improve_2023_pilot_20261015/orchard/prereg/regions_frozen.json",
+    "size_bytes": 11016,
+    "md5": "0abb0e78cfaa064a1f643875f6b43489",
+    "sha256": "849766e4fbc9be0cb5c60bac93a7d510577b51d79815f41a44c6093c7e599cb9",
+    "generated": "2026-10-15 14:08:57",
+    "mtime": "2026-10-15 14:08:57.532542300 +0800",
+    "before_first_prediction": true,
+    "first_prediction_file": "orchard/results/SC1_baseline_pred.csv",
+    "first_prediction_mtime": "2026-10-15 14:10:41.623634500 +0800",
+    "arms": ["baseline", "OCAP"],
+    "seeds": [7, 11, 23],
+    "n_train_limit": 20000,
+    "orchard_cap": "类2 上限 200 (=1%×20000)；实测 OCAP n_class2=200/seed（baseline 2470–3186）",
+    "spatial_holdout": "训练窗剔除本区全部 0.25° 块(dev+conf)；poskey_overlap_train_ref=0（四区）",
+    "regions": {
+      "SC1": {"bbox": [106.0, 32.0, 107.0, 33.0], "tile": "T1607", "refn": 355, "refn_nonfcs10": 272, "n_conf_nonfcs10": 107, "n_conf_cl4": 38, "n_conf_blocks": 5, "window_excluded": 1157},
+      "SC2": {"bbox": [107.0, 32.0, 108.0, 33.0], "tile": "T1707", "refn": 199, "refn_nonfcs10": 149, "n_conf_nonfcs10": 47, "n_conf_cl4": 14, "n_conf_blocks": 3, "window_excluded": 766},
+      "GD":  {"bbox": [112.0, 23.0, 113.0, 24.0], "tile": "T1902", "refn": 599, "refn_nonfcs10": 401, "n_conf_nonfcs10": 162, "n_conf_cl4": 35, "n_conf_blocks": 6, "window_excluded": 2237},
+      "NX":  {"bbox": [106.0, 38.0, 107.0, 39.0], "tile": "T1610", "refn": 410, "refn_nonfcs10": 315, "n_conf_nonfcs10": 129, "n_conf_cl22": 5, "n_conf_blocks": 5, "window_excluded": 1438}
+    },
+    "small_n_note": "确认层目标类 n：SC1 cl4=38、SC2 cl4=14(<30)、GD cl4=35、NX cl22=5(<30)。n<30 判支持不足，不改主门/不看全点层。"
+  },
+  "terrain": {
+    "file": "F:/lc_work/improve_2023_pilot_20261015/terrain/out/t1_registration.json",
+    "size_bytes": 7761,
+    "md5": "2a1b7c1858c0c95112688b453f8f2dd2",
+    "sha256": "6c9886e3724f4ec1c403671020cf8970d782b1b627459278e7ebe3d9a93db5d1",
+    "generated": "2026-10-15 14:09:53",
+    "mtime": "2026-10-15 14:10:08.072696700 +0800",
+    "before_first_prediction": true,
+    "code_hash": "c71185cca6eee730daf82560f7fc51cc",
+    "arms": ["baseline", "T-STRATA", "F-VIEW"],
+    "seeds": [7, 11, 23],
+    "n_train_limit": 20000,
+    "frames": {
+      "F1": {"bbox": [105.5, 32.0, 106.5, 33.0], "tile": "T1607", "n_eval_pts": 418, "n_eval_dev": 266, "n_eval_conf": 152, "n_eval_blocks": 15, "n_train_total": 17440},
+      "F2": {"bbox": [107.0, 31.0, 108.0, 32.0], "tile": "T1706", "n_eval_pts": 206, "n_eval_dev": 121, "n_eval_conf": 85, "n_eval_blocks": 8, "n_train_total": 20000}
+    },
+    "strict_short_note": "F1 strict 可用类4=918 / 类6=1540（窗内 1869/3137）→ strict 不足；F-VIEW 建议独立 common-support pair，不混 20k 主臂，或本轮仅 T-STRATA。",
+    "no_independent_truth": "无独立针/阔真值；doc54 A/A2 仅 48 个 w2 森林视觉点(conf 低为主，AUC 0.724) → 仅开发诊断"
+  },
+  "joint_sc1_sc2": {
+    "file_where_appears": "orchard/results/summary.json",
+    "mtime": "2026-10-15 14:12:37.550366700 +0800",
+    "driver_mtime": "orchard/explore/e3_driver.py @ 2026-10-15 14:12:19",
+    "first_prediction_mtime": "2026-10-15 14:10:41",
+    "registered_before_first_prediction": false,
+    "conclusion": "联合 SC1+SC2 统计**未在首预测前登记**（prereg/ 无联合注册件；首现于 14:12:37 summary）。按协调者规则：**仅描述性，不得作新增采纳门**。summary 内该条目已自标『描述性，不用于抬高采纳门』，与规则一致。",
+    "values": {"n_unique_conf_nonfcs10": 154, "n_blocks": 7, "dm9": 0.0065, "dm9_ci": [-0.0022, 0.0181], "n_conf_cl4": 61, "verdict": "PROMISING"}
+  }
+}

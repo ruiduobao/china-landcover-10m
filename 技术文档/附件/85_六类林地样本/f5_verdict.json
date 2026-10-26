@@ -1,0 +1,20 @@
+{
+ "block10km_macroF1": 0.6238,
+ "prov_macroF1": 0.5623,
+ "eco_macroF1": 0.5264,
+ "axis_acc": {
+  "needle_vs_broad": [
+   0.9146,
+   0.9246,
+   0.8999
+  ],
+  "evergreen_vs_deciduous": [
+   0.93,
+   0.9434,
+   0.8999
+  ],
+  "pure_vs_mixed_auc": 0.8791
+ },
+ "note": "六类精确 = 三轴乘积；每轴 0.95 → 约 0.857。轴级 acc 的中位数自乘可作六类理论上限的粗估。",
+ "estimated_ceiling_from_axes": 0.7477
+}

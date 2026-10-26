@@ -1,0 +1,220 @@
+{
+ "n": 6386,
+ "by_leaf": {
+  "broad": 3167,
+  "needle": 3086,
+  "mixed": 133
+ },
+ "tiles": 18,
+ "provs": 7,
+ "per_class_cap": 200,
+ "seed": 20261017,
+ "min_dist_deg": 0.01,
+ "target_tiles": 18,
+ "per_tile": [
+  {
+   "tile": "T0414",
+   "forest_km2": 625.7,
+   "n_cand": 280,
+   "n_added": 412,
+   "by_leaf": {
+    "needle": 200,
+    "broad": 200,
+    "mixed": 12
+   }
+  },
+  {
+   "tile": "T0108",
+   "forest_km2": 1089.9,
+   "n_cand": 332,
+   "n_added": 404,
+   "by_leaf": {
+    "needle": 200,
+    "broad": 200,
+    "mixed": 4
+   }
+  },
+  {
+   "tile": "T0011",
+   "forest_km2": 5223.0,
+   "n_cand": 298,
+   "n_added": 410,
+   "by_leaf": {
+    "needle": 200,
+    "broad": 200,
+    "mixed": 10
+   }
+  },
+  {
+   "tile": "T0804",
+   "forest_km2": 27664.2,
+   "n_cand": 308,
+   "n_added": 426,
+   "by_leaf": {
+    "needle": 200,
+    "broad": 200,
+    "mixed": 26
+   }
+  },
+  {
+   "tile": "T0206",
+   "forest_km2": 25851.9,
+   "n_cand": 277,
+   "n_added": 400,
+   "by_leaf": {
+    "needle": 200,
+    "broad": 200
+   }
+  },
+  {
+   "tile": "T1202",
+   "forest_km2": 37126.4,
+   "n_cand": 482,
+   "n_added": 403,
+   "by_leaf": {
+    "needle": 200,
+    "broad": 200,
+    "mixed": 3
+   }
+  },
+  {
+   "tile": "T0009",
+   "forest_km2": 450.2,
+   "n_cand": 240,
+   "n_added": 418,
+   "by_leaf": {
+    "needle": 200,
+    "broad": 200,
+    "mixed": 18
+   }
+  },
+  {
+   "tile": "T0405",
+   "forest_km2": 25473.9,
+   "n_cand": 239,
+   "n_added": 406,
+   "by_leaf": {
+    "needle": 200,
+    "broad": 200,
+    "mixed": 6
+   }
+  },
+  {
+   "tile": "T1104",
+   "forest_km2": 42372.7,
+   "n_cand": 201,
+   "n_added": 402,
+   "by_leaf": {
+    "needle": 200,
+    "broad": 200,
+    "mixed": 2
+   }
+  },
+  {
+   "tile": "T2404",
+   "forest_km2": 62.8,
+   "n_cand": 139,
+   "n_added": 121,
+   "by_leaf": {
+    "broad": 74,
+    "needle": 47
+   }
+  },
+  {
+   "tile": "T2001",
+   "forest_km2": 101.7,
+   "n_cand": 116,
+   "n_added": 119,
+   "by_leaf": {
+    "broad": 68,
+    "needle": 51
+   }
+  },
+  {
+   "tile": "T1601",
+   "forest_km2": 23255.0,
+   "n_cand": 29,
+   "n_added": 400,
+   "by_leaf": {
+    "needle": 200,
+    "broad": 200
+   }
+  },
+  {
+   "tile": "T2301",
+   "forest_km2": 79.4,
+   "n_cand": 55,
+   "n_added": 28,
+   "by_leaf": {
+    "broad": 25,
+    "needle": 3
+   }
+  },
+  {
+   "tile": "T0604",
+   "forest_km2": 19075.7,
+   "n_cand": 66,
+   "n_added": 401,
+   "by_leaf": {
+    "needle": 200,
+    "broad": 200,
+    "mixed": 1
+   }
+  },
+  {
+   "tile": "T0914",
+   "forest_km2": 91.7,
+   "n_cand": 35,
+   "n_added": 400,
+   "by_leaf": {
+    "needle": 200,
+    "broad": 200
+   }
+  },
+  {
+   "tile": "T2915",
+   "forest_km2": 34578.8,
+   "n_cand": 15,
+   "n_added": 450,
+   "by_leaf": {
+    "needle": 200,
+    "broad": 200,
+    "mixed": 50
+   }
+  },
+  {
+   "tile": "T0815",
+   "forest_km2": 235.9,
+   "n_cand": 17,
+   "n_added": 401,
+   "by_leaf": {
+    "needle": 200,
+    "broad": 200,
+    "mixed": 1
+   }
+  },
+  {
+   "tile": "T2503",
+   "forest_km2": 475.0,
+   "n_cand": 2,
+   "n_added": 385,
+   "by_leaf": {
+    "broad": 200,
+    "needle": 185
+   }
+  }
+ ],
+ "hygiene": {
+  "dup": 0,
+  "nan": {
+   "lon": 0,
+   "lat": 0,
+   "fcs10_raw": 0,
+   "elev_m": 0,
+   "slope_deg": 0,
+   "aspect_deg": 0
+  },
+  "out_of_bounds": 0
+ },
+ "elapsed_min": 3.2
+}

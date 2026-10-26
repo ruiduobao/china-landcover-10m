@@ -1,0 +1,79 @@
+{
+ "川": {
+  "full": "四川省",
+  "run1_json": "F:/lc_work/prod5p_2023/evalprep/results\\eval_川_2023.json",
+  "run2_json": "F:/lc_work/prod2nd_2023/reports\\eval2\\eval2_川_2023.json",
+  "n_pool": [
+   1417,
+   1417
+  ],
+  "n_scored": [
+   1406,
+   1406
+  ],
+  "coverage_pct": [
+   99.2,
+   99.2
+  ],
+  "run1_pa_ua_flipped": true
+ },
+ "粤": {
+  "full": "广东省",
+  "run1_json": "F:/lc_work/prod5p_2023/evalprep/results\\eval_粤_2023.json",
+  "run2_json": "F:/lc_work/prod2nd_2023/reports\\eval2\\eval2_粤_2023.json",
+  "n_pool": [
+   2912,
+   2912
+  ],
+  "n_scored": [
+   2911,
+   2911
+  ],
+  "coverage_pct": [
+   100.0,
+   100.0
+  ],
+  "run1_pa_ua_flipped": true
+ },
+ "宁": {
+  "full": "宁夏回族自治区",
+  "run1_json": "F:/lc_work/prod5p_2023/evalprep/results\\eval_宁_2023.json",
+  "run2_json": "F:/lc_work/prod2nd_2023/reports\\eval2\\eval2_宁_2023.json",
+  "n_pool": [
+   1964,
+   1964
+  ],
+  "n_scored": [
+   1945,
+   1951
+  ],
+  "coverage_pct": [
+   99.0,
+   99.3
+  ],
+  "run1_pa_ua_flipped": true
+ },
+ "macro9_definition": {
+  "source": "F:/lc_work/v31_exp/config/macro9.json",
+  "groups": [
+   "cropland[1,2,3]",
+   "forest[4,5,6,7,8]",
+   "shrubland[9,10]",
+   "grass_lowveg[11,12,13]",
+   "wetland[14..20]",
+   "impervious[21]",
+   "bare[22]",
+   "water[23]",
+   "ice_snow[24]"
+  ],
+  "note": "评估脚本用 macro9（9 组）；AGENTS.md LEVEL1\"十组\"（含独立稀疏植被）未被两轮评估采用；两轮同用 macro9 → 组级 OA 跨轮可比。"
+ },
+ "class8": {
+  "pool1_has_class8": true,
+  "pool2_missing_codes": [
+   "8"
+  ],
+  "second_eval_per_tables_absent_8": true,
+  "detail": "第二次池 23 类缺 8（针阔混交林，91/92 弃用）；本表已断言第二次 per 表无 8；留出点真值是否含 8 由 q2_windows_check.py 独立复核。"
+ }
+}

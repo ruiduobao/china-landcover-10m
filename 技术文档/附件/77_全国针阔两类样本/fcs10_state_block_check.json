@@ -1,0 +1,514 @@
+[
+ {
+  "lon": 70,
+  "lat": 35,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E070-E075\\GLC_FCS10_2023_E070N35.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 70,
+  "lat": 40,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E070-E075\\GLC_FCS10_2023_E070N40.tif",
+  "w": 55661,
+  "h": 55660,
+  "ok": 5
+ },
+ {
+  "lon": 75,
+  "lat": 30,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E070-E075\\GLC_FCS10_2023_E075N30.tif",
+  "w": 55660,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 75,
+  "lat": 35,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E070-E075\\GLC_FCS10_2023_E075N35.tif",
+  "w": 55660,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 75,
+  "lat": 40,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E070-E075\\GLC_FCS10_2023_E075N40.tif",
+  "w": 55660,
+  "h": 55660,
+  "ok": 5
+ },
+ {
+  "lon": 75,
+  "lat": 45,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E070-E075\\GLC_FCS10_2023_E075N45.tif",
+  "w": 55660,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 80,
+  "lat": 25,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E080-E085\\GLC_FCS10_2023_E080N25.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 80,
+  "lat": 30,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E080-E085\\GLC_FCS10_2023_E080N30.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 80,
+  "lat": 35,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E080-E085\\GLC_FCS10_2023_E080N35.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 80,
+  "lat": 40,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E080-E085\\GLC_FCS10_2023_E080N40.tif",
+  "w": 55661,
+  "h": 55660,
+  "ok": 5
+ },
+ {
+  "lon": 80,
+  "lat": 45,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E080-E085\\GLC_FCS10_2023_E080N45.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 85,
+  "lat": 25,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E080-E085\\GLC_FCS10_2023_E085N25.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 85,
+  "lat": 30,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E080-E085\\GLC_FCS10_2023_E085N30.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 85,
+  "lat": 35,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E080-E085\\GLC_FCS10_2023_E085N35.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 85,
+  "lat": 40,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E080-E085\\GLC_FCS10_2023_E085N40.tif",
+  "w": 55661,
+  "h": 55660,
+  "ok": 5
+ },
+ {
+  "lon": 85,
+  "lat": 45,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E080-E085\\GLC_FCS10_2023_E085N45.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 90,
+  "lat": 25,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E090-E095\\GLC_FCS10_2023_E090N25.tif",
+  "w": 55662,
+  "h": 55662,
+  "ok": 5
+ },
+ {
+  "lon": 90,
+  "lat": 30,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E090-E095\\GLC_FCS10_2023_E090N30.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 90,
+  "lat": 35,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E090-E095\\GLC_FCS10_2023_E090N35.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 90,
+  "lat": 40,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E090-E095\\GLC_FCS10_2023_E090N40.tif",
+  "w": 55661,
+  "h": 55660,
+  "ok": 5
+ },
+ {
+  "lon": 90,
+  "lat": 45,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E090-E095\\GLC_FCS10_2023_E090N45.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 95,
+  "lat": 20,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E090-E095\\GLC_FCS10_2023_E095N20.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 95,
+  "lat": 25,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E090-E095\\GLC_FCS10_2023_E095N25.tif",
+  "w": 55660,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 95,
+  "lat": 30,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E090-E095\\GLC_FCS10_2023_E095N30.tif",
+  "w": 55660,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 95,
+  "lat": 35,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E090-E095\\GLC_FCS10_2023_E095N35.tif",
+  "w": 55660,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 95,
+  "lat": 40,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E090-E095\\GLC_FCS10_2023_E095N40.tif",
+  "w": 55660,
+  "h": 55660,
+  "ok": 5
+ },
+ {
+  "lon": 95,
+  "lat": 45,
+  "path": "E:/data/全球土地覆盖数据/数据/GLC_FCS10\\GLC_FCS10maps_2023_E090-E095\\GLC_FCS10_2023_E095N45.tif",
+  "w": 55660,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 100,
+  "lat": 20,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E100-E105\\GLC_FCS10_2023_E100N20.tif",
+  "w": 55661,
+  "h": 55660,
+  "ok": 5
+ },
+ {
+  "lon": 100,
+  "lat": 25,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E100-E105\\GLC_FCS10_2023_E100N25.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 100,
+  "lat": 30,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E100-E105\\GLC_FCS10_2023_E100N30.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 100,
+  "lat": 35,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E100-E105\\GLC_FCS10_2023_E100N35.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 100,
+  "lat": 40,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E100-E105\\GLC_FCS10_2023_E100N40.tif",
+  "w": 55661,
+  "h": 55660,
+  "ok": 5
+ },
+ {
+  "lon": 105,
+  "lat": 15,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E100-E105\\GLC_FCS10_2023_E105N15.tif",
+  "w": 55662,
+  "h": 55662,
+  "ok": 5
+ },
+ {
+  "lon": 105,
+  "lat": 20,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E100-E105\\GLC_FCS10_2023_E105N20.tif",
+  "w": 55662,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 105,
+  "lat": 25,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E100-E105\\GLC_FCS10_2023_E105N25.tif",
+  "w": 55662,
+  "h": 55662,
+  "ok": 5
+ },
+ {
+  "lon": 105,
+  "lat": 30,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E100-E105\\GLC_FCS10_2023_E105N30.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 105,
+  "lat": 35,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E100-E105\\GLC_FCS10_2023_E105N35.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 105,
+  "lat": 40,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E100-E105\\GLC_FCS10_2023_E105N40.tif",
+  "w": 55661,
+  "h": 55660,
+  "ok": 5
+ },
+ {
+  "lon": 110,
+  "lat": 15,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E110-E115\\GLC_FCS10_2023_E110N15.tif",
+  "w": 55662,
+  "h": 55662,
+  "ok": 5
+ },
+ {
+  "lon": 110,
+  "lat": 20,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E110-E115\\GLC_FCS10_2023_E110S20.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 110,
+  "lat": 25,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E110-E115\\GLC_FCS10_2023_E110S25.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 110,
+  "lat": 30,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E110-E115\\GLC_FCS10_2023_E110S30.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 110,
+  "lat": 35,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E110-E115\\GLC_FCS10_2023_E110N35.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 110,
+  "lat": 40,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E110-E115\\GLC_FCS10_2023_E110N40.tif",
+  "w": 55661,
+  "h": 55660,
+  "ok": 5
+ },
+ {
+  "lon": 110,
+  "lat": 45,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E110-E115\\GLC_FCS10_2023_E110N45.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 115,
+  "lat": 20,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E110-E115\\GLC_FCS10_2023_E115S20.tif",
+  "w": 55660,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 115,
+  "lat": 25,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E110-E115\\GLC_FCS10_2023_E115S25.tif",
+  "w": 55660,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 115,
+  "lat": 30,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E110-E115\\GLC_FCS10_2023_E115S30.tif",
+  "w": 55660,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 115,
+  "lat": 35,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E110-E115\\GLC_FCS10_2023_E115S35.tif",
+  "w": 55660,
+  "h": 55660,
+  "ok": 5
+ },
+ {
+  "lon": 115,
+  "lat": 40,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E110-E115\\GLC_FCS10_2023_E115N40.tif",
+  "w": 55660,
+  "h": 55660,
+  "ok": 5
+ },
+ {
+  "lon": 115,
+  "lat": 45,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E110-E115\\GLC_FCS10_2023_E115N45.tif",
+  "w": 55660,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 115,
+  "lat": 50,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E110-E115\\GLC_FCS10_2023_E115N50.tif",
+  "w": 55660,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 120,
+  "lat": 20,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E120-E125\\GLC_FCS10_2023_E120S20.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 120,
+  "lat": 25,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E120-E125\\GLC_FCS10_2023_E120S25.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 120,
+  "lat": 30,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E120-E125\\GLC_FCS10_2023_E120S30.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 120,
+  "lat": 35,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E120-E125\\GLC_FCS10_2023_E120N35.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 120,
+  "lat": 40,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E120-E125\\GLC_FCS10_2023_E120N40.tif",
+  "w": 55661,
+  "h": 55660,
+  "ok": 5
+ },
+ {
+  "lon": 120,
+  "lat": 45,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E120-E125\\GLC_FCS10_2023_E120N45.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 120,
+  "lat": 50,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E120-E125\\GLC_FCS10_2023_E120N50.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 125,
+  "lat": 40,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E120-E125\\GLC_FCS10_2023_E125N40.tif",
+  "w": 55661,
+  "h": 55660,
+  "ok": 5
+ },
+ {
+  "lon": 125,
+  "lat": 45,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E120-E125\\GLC_FCS10_2023_E125N45.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 125,
+  "lat": 50,
+  "path": "E:/data/河南农作物提取_2025.04/GLC_FCS10m\\GLC_FCS10maps_2023_E120-E125\\GLC_FCS10_2023_E125N50.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ },
+ {
+  "lon": 130,
+  "lat": 40,
+  "path": "F:/lc_work/prod5p_2023/xcomp/fcs10_unzip/GLC_FCS10_2023_E130N40.tif",
+  "w": 55661,
+  "h": 55660,
+  "ok": 5
+ },
+ {
+  "lon": 130,
+  "lat": 45,
+  "path": "F:/lc_work/prod5p_2023/xcomp/fcs10_unzip/GLC_FCS10_2023_E130N45.tif",
+  "w": 55661,
+  "h": 55661,
+  "ok": 5
+ }
+]

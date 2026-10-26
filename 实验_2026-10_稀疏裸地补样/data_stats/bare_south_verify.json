@@ -1,0 +1,43 @@
+{
+ "candidates": 267,
+ "year2023": {
+  "n": 208,
+  "aef_missing": 0
+ },
+ "source_shares": {
+  "clcd7_pct": 3.0,
+  "wc60_pct": 67.4,
+  "dw_bare_ge04_pct": 63.7,
+  "modis16_pct": 1.1,
+  "votes_mean": 2.34
+ },
+ "by_prov": {
+  "云南省": 90,
+  "广东省": 37,
+  "贵州省": 28,
+  "广西壮族自治区": 28,
+  "四川省": 23,
+  "江西省": 20,
+  "湖南省": 13,
+  "湖北省": 10,
+  "重庆市": 6,
+  "安徽省": 4,
+  "福建省": 4,
+  "浙江省": 2
+ },
+ "double_arm": {
+  "bare": {
+   "n": 100,
+   "max_abs_diff": 0.0
+  },
+  "water": {
+   "n": 100,
+   "max_abs_diff": 0.0
+  },
+  "s2_ndvi_xia": {
+   "n": 100,
+   "max_abs_diff": 0.0
+  }
+ },
+ "visual_sheet": "F:/lc_work/bare_sparse_v3\\reports\\visual_audit\\bare_south_2023.png"
+}

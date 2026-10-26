@@ -1,0 +1,116 @@
+{
+ "n_pool": 1964,
+ "run1_n_miss": 19,
+ "run2_n_miss": 13,
+ "n_common_valid": 1945,
+ "n_only2": 6,
+ "n_only1": 0,
+ "n_both_miss": 13,
+ "base_run1": {
+  "n": 1945,
+  "OA": 0.8062,
+  "m9": 0.8283
+ },
+ "new_run2": {
+  "n": 1951,
+  "OA": 0.654,
+  "m9": 0.6797
+ },
+ "fixed_common_set": {
+  "run1": {
+   "n": 1945,
+   "OA": 0.8062,
+   "m9": 0.8283
+  },
+  "run2": {
+   "n": 1945,
+   "OA": 0.653,
+   "m9": 0.6787
+  }
+ },
+ "delta_total_OA": -0.1522,
+ "delta_fixed_OA": -0.1532,
+ "delta_comp_OA": 0.001,
+ "delta_total_m9": -0.1486,
+ "delta_fixed_m9": -0.1496,
+ "delta_comp_m9": 0.001,
+ "fixed_nonfcs10": {
+  "run1": {
+   "n": 1308,
+   "OA": 0.8165,
+   "m9": 0.8463
+  },
+  "run2": {
+   "n": 1308,
+   "OA": 0.8716,
+   "m9": 0.9029
+  }
+ },
+ "fixed_nonfcs10_delta": {
+  "OA": 0.0551,
+  "m9": 0.0566
+ },
+ "only2_points": [
+  {
+   "lon": 106.39987584919578,
+   "lat": 38.00008399118194,
+   "truth24": 10,
+   "truth_name": "落叶灌丛",
+   "fcs10": true,
+   "pred1": "miss",
+   "pred2": 10,
+   "pred2_correct": true
+  },
+  {
+   "lon": 106.48746158939744,
+   "lat": 38.00008399118194,
+   "truth24": 10,
+   "truth_name": "落叶灌丛",
+   "fcs10": true,
+   "pred1": "miss",
+   "pred2": 10,
+   "pred2_correct": true
+  },
+  {
+   "lon": 106.5495351755301,
+   "lat": 38.00008399118194,
+   "truth24": 10,
+   "truth_name": "落叶灌丛",
+   "fcs10": true,
+   "pred1": "miss",
+   "pred2": 10,
+   "pred2_correct": true
+  },
+  {
+   "lon": 106.5615726003373,
+   "lat": 38.00008399118194,
+   "truth24": 10,
+   "truth_name": "落叶灌丛",
+   "fcs10": true,
+   "pred1": "miss",
+   "pred2": 10,
+   "pred2_correct": true
+  },
+  {
+   "lon": 106.76207657175277,
+   "lat": 38.00008399118194,
+   "truth24": 10,
+   "truth_name": "落叶灌丛",
+   "fcs10": true,
+   "pred1": "miss",
+   "pred2": 10,
+   "pred2_correct": true
+  },
+  {
+   "lon": 106.93069035058201,
+   "lat": 38.00008399118194,
+   "truth24": 10,
+   "truth_name": "落叶灌丛",
+   "fcs10": true,
+   "pred1": "miss",
+   "pred2": 10,
+   "pred2_correct": true
+  }
+ ],
+ "only1_points": []
+}

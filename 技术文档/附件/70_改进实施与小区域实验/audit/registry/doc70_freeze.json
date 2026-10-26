@@ -1,0 +1,59 @@
+{
+  "record_type": "implementation_spec_freeze",
+  "recorded_by": "audit_subagent (独立方法验收)",
+  "status": "FROZEN_V1.0_FINAL",
+  "frozen_before_any_prediction": true,
+  "recorded_at": "2026-10-15T14:06:30+08:00",
+  "artifact": {
+    "path": "F:/地理所/论文/中国土地覆盖数据_2017-2024/技术文档/70_样本与分类改进实施方案及20分钟小区域实验规范.md",
+    "size_bytes": 18429,
+    "mtime": "2026-10-15 14:05:47.965504500 +0800",
+    "md5": "749017cb73ba7e66b5816b1bbd7486bf",
+    "sha256": "8284a0569c38c84973d4ea962293353f1d999f01ccda0adf6d6463bba11fbfef",
+    "title": "70. 样本与分类改进实施方案及 20 分钟小区域实验规范",
+    "declared_version": "v1.0"
+  },
+  "superseded_fingerprints": [
+    {
+      "reason": "首实验前澄清 §7 组级非劣门主层为『非FCS10内部确认层』（数值不变，属 doc69 已有口径澄清）",
+      "md5": "9d635870f49fd99bb45a232e9b90f523",
+      "sha256": "0ea5567f6e761ae60f13a438c2e0d32309441662d0ba95f3101703dfaef640d5",
+      "size_bytes": 18312,
+      "mtime": "2026-10-15 14:02:21"
+    }
+  ],
+  "clarifications_incorporated": {
+    "primary_gate_layer": "nonfcs10 (非FCS10内部确认层) — 组级非劣门与目标类 F1 主层",
+    "all_point_and_fcs10": "完整报告，不删不利来源；不得以主层过门称地表真值提升",
+    "target_f1_primary_layer": "nonfcs10（其它层不掩盖；注册表须登记目标类各层 n）"
+  },
+  "frozen_parameters_claimed_in_doc70": {
+    "year": 2023,
+    "class_space": "24 类紧凑码空间；第二轮池实际 23 类（缺类 8）",
+    "seeds": [7, 11, 23],
+    "n_train_limit": 20000,
+    "rf_params": {"n_estimators": 100, "min_samples_leaf": 2, "max_leaf_nodes": 5000},
+    "feature": "AEF 64 维",
+    "orchard_cap": {"rule": "O-CAP", "class": 2, "cap_fraction": 0.01, "cap_points_in_20k": 200},
+    "deadline_s": 1200,
+    "eval_strata": ["all", "fcs10", "nonfcs10"],
+    "reference_split": {"method": "spatial block stable hash", "block_deg": [0.25, 0.5], "dev_frac": 0.6, "confirmation_frac": 0.4, "confirmation_single_use": true},
+    "gates": {
+      "timing": "train->eval->persist wall-clock <= 1200s with supervisor log",
+      "leakage": "ID namespace + position/pixel + reserved block exclusion",
+      "same_points": "identical reference IDs and class table across arms; miss separate",
+      "target_improvement": "target class F1 mean delta >= 0.03 AND confirmation paired CI supports positive direction (primary layer = nonfcs10)",
+      "group_non_inferiority": "PRIMARY layer nonfcs10 macro9: paired delta point estimate >= -0.01 AND block-bootstrap 95% lower bound >= -0.02; all-point and fcs10 layers reported in full",
+      "new_regression": "no confirmable F1 <= -0.05 on adequately supported classes",
+      "terrain": "condition error reduced on truth/reference; OR decrease alone not accepted",
+      "geometry_coverage": "no geometric gap in valid-input expected domain; common valid domain class codes consistent"
+    },
+    "candidate_grades": ["ACCEPT_EXPERIMENTAL", "PROMISING", "REJECT", "TIMEOUT", "BLOCKED"]
+  },
+  "notes": [
+    "doc70 已取代 q7 旧臂：O-CAP 为局部 20k 内 1%(200点) 上限的单一预注册候选，不是 q7 的全国 4854 点臂；q7 2x2 扩展臂本轮不采用。",
+    "冻结语义：结果产生后不回改原门槛；实施 bug 修复与降级实验另留版本记录。",
+    "本记录只登记 hash 与冻结值；逻辑审核见 review/70_逻辑审核_2026-10-15.md（含首实验前澄清后的复核）。",
+    "审计侧未新增 n>=100 硬门：n>=30 可报 F1，n30-99 仅线索/可 PROMISING。"
+  ]
+}

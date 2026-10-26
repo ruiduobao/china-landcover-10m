@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-10-15T14:23:04",
+  "tag": "seed7",
+  "shape": [
+    93,
+    557
+  ],
+  "n_px": 51801,
+  "legacy_nodata_px": 0,
+  "planar_nodata_px": 0,
+  "restored_px": 0,
+  "planar_lost_px": 0,
+  "common_valid_px": 51801,
+  "common_valid_disagree_px": 0,
+  "common_valid_agree_rate": 1.0,
+  "legacy_nodata_rows_with_gap": 0,
+  "planar_nodata_rows_with_gap": 0,
+  "legacy_max_row_nodata": 0,
+  "planar_max_row_nodata": 0,
+  "class_hist_legacy": {
+    "6": 2132,
+    "9": 6219,
+    "10": 4362,
+    "11": 39087,
+    "22": 1
+  },
+  "class_hist_planar": {
+    "6": 2132,
+    "9": 6219,
+    "10": 4362,
+    "11": 39087,
+    "22": 1
+  },
+  "eval_json_checks": [
+    {
+      "field": "legacy_nodata_px",
+      "eval_json": 0,
+      "independent": 0,
+      "match": true
+    },
+    {
+      "field": "planar_nodata_px",
+      "eval_json": 0,
+      "independent": 0,
+      "match": true
+    },
+    {
+      "field": "restored_px",
+      "eval_json": 0,
+      "independent": 0,
+      "match": true
+    }
+  ],
+  "outside_wedge_agree_rate_eval": 1.0,
+  "gates": {
+    "restored_positive": false,
+    "legacy_had_gap": false,
+    "planar_no_gap": true,
+    "common_valid_agree_100pct": true,
+    "no_planar_loss": true
+  },
+  "verdict": "FAIL"
+}

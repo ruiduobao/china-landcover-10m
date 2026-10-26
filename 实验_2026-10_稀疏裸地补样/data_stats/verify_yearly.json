@@ -1,0 +1,165 @@
+{
+ "years": {
+  "2017": {
+   "n": 3235,
+   "sparse": 1865,
+   "bare": 1370,
+   "aef_missing": 0,
+   "cl_ok": true,
+   "bbox": [
+    107.01,
+    30.05,
+    134.12,
+    50.37
+   ]
+  },
+  "2018": {
+   "n": 3161,
+   "sparse": 1694,
+   "bare": 1467,
+   "aef_missing": 0,
+   "cl_ok": true,
+   "bbox": [
+    107.01,
+    30.05,
+    134.12,
+    50.37
+   ]
+  },
+  "2019": {
+   "n": 3074,
+   "sparse": 1703,
+   "bare": 1371,
+   "aef_missing": 0,
+   "cl_ok": true,
+   "bbox": [
+    107.04,
+    30.07,
+    133.41,
+    50.37
+   ]
+  },
+  "2020": {
+   "n": 3438,
+   "sparse": 2283,
+   "bare": 1155,
+   "aef_missing": 0,
+   "cl_ok": true,
+   "bbox": [
+    107.01,
+    25.32,
+    134.12,
+    50.37
+   ]
+  },
+  "2021": {
+   "n": 3040,
+   "sparse": 1898,
+   "bare": 1142,
+   "aef_missing": 0,
+   "cl_ok": true,
+   "bbox": [
+    107.01,
+    25.24,
+    134.12,
+    50.24
+   ]
+  },
+  "2022": {
+   "n": 2985,
+   "sparse": 1372,
+   "bare": 1613,
+   "aef_missing": 0,
+   "cl_ok": true,
+   "bbox": [
+    107.01,
+    25.24,
+    130.81,
+    50.37
+   ]
+  },
+  "2023": {
+   "n": 4560,
+   "sparse": 2457,
+   "bare": 2103,
+   "aef_missing": 0,
+   "cl_ok": true,
+   "bbox": [
+    107.01,
+    25.24,
+    133.64,
+    50.37
+   ]
+  },
+  "2024": {
+   "n": 3444,
+   "sparse": 2074,
+   "bare": 1370,
+   "aef_missing": 0,
+   "cl_ok": true,
+   "bbox": [
+    107.01,
+    25.24,
+    131.38,
+    50.37
+   ]
+  }
+ },
+ "cross_year": {
+  "n_points": 7098,
+  "keep_all_8": 1096,
+  "keep_ge6": 2351,
+  "keep_mean": 3.7950126796280643,
+  "flip_counts": {
+   "0": 1412,
+   "1": 648,
+   "2": 683,
+   "3": 681,
+   "4": 664,
+   "5": 659,
+   "6": 624,
+   "7": 631,
+   "8": 1096
+  }
+ },
+ "region_point_years": {
+  "NE": {
+   "sparse_point_years": 14319,
+   "bare_point_years": 9240
+  },
+  "East": {
+   "sparse_point_years": 885,
+   "bare_point_years": 1446
+  }
+ },
+ "double_arm": {
+  "2018": {
+   "bare": {
+    "n": 150,
+    "max_abs_diff": 0.0
+   },
+   "water": {
+    "n": 150,
+    "max_abs_diff": 0.0
+   },
+   "s2_ndvi_xia": {
+    "n": 107,
+    "max_abs_diff": 0.0
+   }
+  },
+  "2021": {
+   "bare": {
+    "n": 150,
+    "max_abs_diff": 0.0
+   },
+   "water": {
+    "n": 150,
+    "max_abs_diff": 0.0
+   },
+   "s2_ndvi_xia": {
+    "n": 150,
+    "max_abs_diff": 0.0
+   }
+  }
+ }
+}

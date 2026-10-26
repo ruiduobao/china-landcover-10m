@@ -1,0 +1,13 @@
+{
+ "sparse_near_existing_dropped": 0,
+ "bare_near_existing_dropped": 33,
+ "sparse_min_dist_dropped": 12,
+ "bare_min_dist_dropped": 4,
+ "n_in": 7515,
+ "n_out": 7466,
+ "by_fam": {
+  "sparse": 4401,
+  "bare": 3065
+ },
+ "file": "F:/lc_work/bare_sparse_v3/data/final\\cand_qc_fixed.parquet"
+}

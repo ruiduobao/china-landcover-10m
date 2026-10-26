@@ -1,0 +1,227 @@
+{
+ "master": {
+  "path": "labels/needle_broad_national_v1.parquet",
+  "n": 55712,
+  "class2": {
+   "broad": 30184,
+   "needle": 23700,
+   "mixed": 1828
+  },
+  "tiles": 76,
+  "provs": 23,
+  "aspect_band": {
+   "other": 22998,
+   "shade": 13985,
+   "flat": 11320,
+   "sun": 7409
+  },
+  "terrain_median": {
+   "elev_m": 644.0,
+   "slope_deg": 14.510000228881836
+  }
+ },
+ "OR": {
+  "master_fcs10_nasadem": {
+   "OR": 2.1862361506334236,
+   "CI": [
+    2.060321123074871,
+    2.319846383559482
+   ],
+   "cells": {
+    "ns": 6803,
+    "nu": 2477,
+    "bs": 6177,
+    "bu": 4917
+   }
+  },
+  "master_old_nasadem": {
+   "OR": 4.74916329368177,
+   "CI": [
+    4.457188431030272,
+    5.0602644108633354
+   ],
+   "cells": {
+    "ns": 8604,
+    "nu": 1811,
+    "bs": 5270,
+    "bu": 5268
+   }
+  },
+  "master_mh_tile_elev": {
+   "fcs10": 2.3204,
+   "old": 4.7388
+  },
+  "tile76_full_FCS10": {
+   "OR": 2.046,
+   "CI": [
+    1.928,
+    2.172
+   ],
+   "cells": {
+    "ns": 5531,
+    "nu": 2282,
+    "bs": 7007,
+    "bu": 5916
+   }
+  },
+  "tile76_full_old": {
+   "OR": 4.918,
+   "CI": [
+    4.614,
+    5.243
+   ],
+   "cells": {
+    "ns": 8073,
+    "nu": 1780,
+    "bs": 5056,
+    "bu": 5483
+   }
+  },
+  "tworam_ref_OR": 2.0599815198449263,
+  "tworam_predA": 5.231347375023429,
+  "tworam_predB": 2.370577812353495,
+  "G3_void": {
+   "OR": 0.988,
+   "reason": "SRTM1km 地形错位；Chengdu 4079m vs 真实 ~500m；band agreement vs NASADEM 仅 54%",
+   "status": "作废"
+  }
+ },
+ "coverage": {
+  "cut_tiles": 114,
+  "national_points_in_cut": 131099,
+  "pct": 0.8227265025384852,
+  "tiles_of_points_in_cut": 85,
+  "tile76_of_313": 0.2428,
+  "prov_both": 22,
+  "n_prov": 23
+ },
+ "oldnew": {
+  "n": 51488,
+  "agreement": 0.7988851771286514,
+  "disagreement": 0.20111482287134863,
+  "dirs": {
+   "same": 41133,
+   "N->B": 6138,
+   "B->N": 4217
+  },
+  "old_needle_share": 0.487997203231821,
+  "fcs10_needle_share": 0.4506875388440025
+ },
+ "panel_lineage": {
+  "n_matched": 13095,
+  "panel_vs_fcs10": 0.7502100038182512,
+  "panel_vs_fcs30d": 0.9869415807560138
+ },
+ "cgls": {
+  "agreement": 0.6994584837545126,
+  "needle_P": 0.5901257568700512,
+  "needle_R": 0.5312368972746331,
+  "n": 6648
+ },
+ "annual": {
+  "2017": {
+   "usable": 152829,
+   "rate": 0.9591,
+   "s2_insufficient": 108872,
+   "needle": 59077,
+   "broad": 93752
+  },
+  "2018": {
+   "usable": 152993,
+   "rate": 0.9601,
+   "s2_insufficient": 122557,
+   "needle": 59045,
+   "broad": 93948
+  },
+  "2019": {
+   "usable": 152962,
+   "rate": 0.9599,
+   "s2_insufficient": 2231,
+   "needle": 59069,
+   "broad": 93893
+  },
+  "2020": {
+   "usable": 154179,
+   "rate": 0.9676,
+   "s2_insufficient": 2383,
+   "needle": 59035,
+   "broad": 95144
+  },
+  "2021": {
+   "usable": 154395,
+   "rate": 0.9689,
+   "s2_insufficient": 1446,
+   "needle": 59051,
+   "broad": 95344
+  },
+  "2022": {
+   "usable": 158176,
+   "rate": 0.9927,
+   "s2_insufficient": 672,
+   "needle": 59278,
+   "broad": 98898
+  },
+  "2023": {
+   "usable": 156034,
+   "rate": 0.9792,
+   "s2_insufficient": 1220,
+   "needle": 59029,
+   "broad": 97005
+  },
+  "2024": {
+   "usable": 155479,
+   "rate": 0.9757,
+   "s2_insufficient": 2342,
+   "needle": 58948,
+   "broad": 96531
+  }
+ },
+ "r2": {
+  "R0_yearly_independent": {
+   "acc": 0.9322,
+   "flip": 0.0365
+  },
+  "R1_mode": {
+   "acc": 0.939,
+   "flip": 0.0
+  },
+  "R2_evidence_gated": {
+   "acc": 0.9374,
+   "flip": 0.0054
+  },
+  "R2b_two_standard_years": {
+   "acc": 0.9375,
+   "flip": 0.0072
+  },
+  "R3_hard_inherit": {
+   "acc": 1.0,
+   "flip": 0.0
+  }
+ },
+ "two_arm": {
+  "A": {
+   "OA22": 0.5973,
+   "macroF1_2": 0.7547,
+   "N_P": 0.6767,
+   "N_R": 0.8322,
+   "N_F1": 0.7464,
+   "B_P": 0.9085,
+   "B_R": 0.6576,
+   "B_F1": 0.763,
+   "predN": 0.4837,
+   "OR": 5.231347375023429
+  },
+  "B": {
+   "OA22": 0.6472,
+   "macroF1_2": 0.8539,
+   "N_P": 0.8825,
+   "N_R": 0.8154,
+   "N_F1": 0.8476,
+   "B_P": 0.9246,
+   "B_R": 0.8042,
+   "B_F1": 0.8602,
+   "predN": 0.3687,
+   "OR": 2.370577812353495
+  }
+ }
+}

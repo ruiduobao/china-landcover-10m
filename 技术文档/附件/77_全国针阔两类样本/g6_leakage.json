@@ -1,0 +1,149 @@
+{
+ "input": "F:/lc_work/nb_national_2026/labels/_stage1_points.parquet",
+ "n": 55712,
+ "reference_sets": {
+  "validation_pool_v2": 5186,
+  "eval:eval_2017_w1.parquet": 6517,
+  "eval:eval_2017_w2.parquet": 7784,
+  "eval:eval_2017_w3.parquet": 14369,
+  "eval:eval_2017_w4.parquet": 7623,
+  "eval:eval_2017_w5.parquet": 432,
+  "eval:eval_2020_w1.parquet": 6364,
+  "eval:eval_2020_w2.parquet": 7790,
+  "eval:eval_2020_w3.parquet": 14350,
+  "eval:eval_2020_w4.parquet": 7627,
+  "eval:eval_2020_w5.parquet": 432,
+  "eval:eval_2023_w1.parquet": 9051,
+  "eval:eval_2023_w2.parquet": 10447,
+  "eval:eval_2023_w3.parquet": 22043,
+  "eval:eval_2023_w4.parquet": 10710,
+  "eval:eval_2023_w5.parquet": 1166,
+  "eval:eval_2024_w1.parquet": 8726,
+  "eval:eval_2024_w2.parquet": 10394,
+  "eval:eval_2024_w3.parquet": 21850,
+  "eval:eval_2024_w4.parquet": 10695,
+  "eval:eval_2024_w5.parquet": 1129,
+  "misaligned": 11076
+ },
+ "union_positions": 69428,
+ "sample_unique_positions": 55712,
+ "exact_key_hits": 0,
+ "exact_hits_by_set": {
+  "validation_pool_v2": {
+   "n_ref": 5186,
+   "exact_hits": 0
+  },
+  "eval:eval_2017_w1.parquet": {
+   "n_ref": 6517,
+   "exact_hits": 0
+  },
+  "eval:eval_2017_w2.parquet": {
+   "n_ref": 7784,
+   "exact_hits": 0
+  },
+  "eval:eval_2017_w3.parquet": {
+   "n_ref": 14369,
+   "exact_hits": 0
+  },
+  "eval:eval_2017_w4.parquet": {
+   "n_ref": 7623,
+   "exact_hits": 0
+  },
+  "eval:eval_2017_w5.parquet": {
+   "n_ref": 432,
+   "exact_hits": 0
+  },
+  "eval:eval_2020_w1.parquet": {
+   "n_ref": 6364,
+   "exact_hits": 0
+  },
+  "eval:eval_2020_w2.parquet": {
+   "n_ref": 7790,
+   "exact_hits": 0
+  },
+  "eval:eval_2020_w3.parquet": {
+   "n_ref": 14350,
+   "exact_hits": 0
+  },
+  "eval:eval_2020_w4.parquet": {
+   "n_ref": 7627,
+   "exact_hits": 0
+  },
+  "eval:eval_2020_w5.parquet": {
+   "n_ref": 432,
+   "exact_hits": 0
+  },
+  "eval:eval_2023_w1.parquet": {
+   "n_ref": 9051,
+   "exact_hits": 0
+  },
+  "eval:eval_2023_w2.parquet": {
+   "n_ref": 10447,
+   "exact_hits": 0
+  },
+  "eval:eval_2023_w3.parquet": {
+   "n_ref": 22043,
+   "exact_hits": 0
+  },
+  "eval:eval_2023_w4.parquet": {
+   "n_ref": 10710,
+   "exact_hits": 0
+  },
+  "eval:eval_2023_w5.parquet": {
+   "n_ref": 1166,
+   "exact_hits": 0
+  },
+  "eval:eval_2024_w1.parquet": {
+   "n_ref": 8726,
+   "exact_hits": 0
+  },
+  "eval:eval_2024_w2.parquet": {
+   "n_ref": 10394,
+   "exact_hits": 0
+  },
+  "eval:eval_2024_w3.parquet": {
+   "n_ref": 21850,
+   "exact_hits": 0
+  },
+  "eval:eval_2024_w4.parquet": {
+   "n_ref": 10695,
+   "exact_hits": 0
+  },
+  "eval:eval_2024_w5.parquet": {
+   "n_ref": 1129,
+   "exact_hits": 0
+  },
+  "misaligned": {
+   "n_ref": 10964,
+   "exact_hits": 0
+  }
+ },
+ "distance_check": {
+  "validation_pool_v2": {
+   "n_within_5m": 0,
+   "n_within_30m": 0,
+   "n_within_100m": 3,
+   "min_dist_m": 65.84348339275752,
+   "median_nearest_m": 2030.3197118866726
+  },
+  "misaligned": {
+   "n_within_5m": 0,
+   "n_within_30m": 1,
+   "n_within_100m": 5,
+   "min_dist_m": 15.345809904371995,
+   "median_nearest_m": 1635.3924113804223
+  },
+  "five_windows": {
+   "n_within_5m": 0,
+   "n_within_30m": 0,
+   "n_within_100m": 6,
+   "min_dist_m": 40.693815241755146
+  }
+ },
+ "one_position_multi_label": {
+  "n_positions": 0,
+  "max_labels": 1,
+  "examples": []
+ },
+ "verdict_G7_leakage": "PASS"
+}

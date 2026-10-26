@@ -1,0 +1,881 @@
+{
+ "meta": {
+  "generated": "2026-10-17 06:28:19",
+  "region": "W2 小兴安岭 (lon 128.79982-129.10003, lat 47.34993-47.65015)",
+  "raster": {
+   "H": 1114,
+   "W": 1114,
+   "res_deg": 0.00026949,
+   "px": 30.0
+  },
+  "seeds": [
+   7,
+   11,
+   23
+  ],
+  "arms": [
+   "BASE",
+   "TRIM"
+  ],
+  "classes": {
+   "DNF": 7,
+   "DBF": 5,
+   "ENF": 6
+  },
+  "pairs": {
+   "DNF7_vs_DBF5": {
+    "num": 7,
+    "den": 5
+   },
+   "ENF6_vs_DBF5": {
+    "num": 6,
+    "den": 5
+   },
+   "DNF7_vs_ENF6": {
+    "num": 7,
+    "den": 6
+   }
+  },
+  "aspect": {
+   "sunny": "[135,225]",
+   "shady": "[315,360)U[0,45]",
+   "slope_min": 5.0,
+   "convention": "ESRI: 0=N,90=E,180=S,270=W, 最陡下降方向"
+  },
+  "criteria_source": "判据_预注册.md §5"
+ },
+ "arms": {
+  "BASE": {
+   "seed7": {
+    "pairs": {
+     "DNF7_vs_DBF5": {
+      "nf_sh": 218530,
+      "nf_su": 62513,
+      "nb_sh": 18004,
+      "nb_su": 127225,
+      "OR": 24.702686102565938,
+      "OR_CI95": [
+       24.263,
+       25.1504
+      ],
+      "num_shady_pct": 77.76,
+      "den_shady_pct": 12.4
+     },
+     "ENF6_vs_DBF5": {
+      "nf_sh": 6172,
+      "nf_su": 1047,
+      "nb_sh": 18004,
+      "nb_su": 127225,
+      "OR": 41.656491701833424,
+      "OR_CI95": [
+       38.9436,
+       44.5584
+      ],
+      "num_shady_pct": 85.5,
+      "den_shady_pct": 12.4
+     },
+     "DNF7_vs_ENF6": {
+      "nf_sh": 218530,
+      "nf_su": 62513,
+      "nb_sh": 6172,
+      "nb_su": 1047,
+      "OR": 0.593009278826971,
+      "OR_CI95": [
+       0.5551,
+       0.6335
+      ],
+      "num_shady_pct": 77.76,
+      "den_shady_pct": 85.5
+     }
+    },
+    "needle_area_px": 818398,
+    "cohens_d_needlep_shady_vs_sunny": 1.9303,
+    "mean_pneed_shady": 0.8493,
+    "mean_pneed_sunny": 0.3827,
+    "needle_shady_pct": 92.16,
+    "needle_sunny_pct": 32.68,
+    "accuracy": {
+     "oa": 0.8576,
+     "macro_f1": 0.6522,
+     "per_class_f1": {
+      "5": 0.8341,
+      "6": 0.8023,
+      "7": 0.8833
+     },
+     "by_src": {
+      "不透水面": {
+       "n": 2214,
+       "oa": 0.9955
+      },
+      "木本沼泽": {
+       "n": 92,
+       "oa": 0.0
+      },
+      "林地_常绿针叶林": {
+       "n": 1587,
+       "oa": 0.7404
+      },
+      "林地_落叶针叶林": {
+       "n": 7843,
+       "oa": 0.8916
+      },
+      "林地_落叶阔叶林": {
+       "n": 6078,
+       "oa": 0.8646
+      },
+      "水体": {
+       "n": 633,
+       "oa": 0.9226
+      },
+      "湖河滩地": {
+       "n": 420,
+       "oa": 0.8452
+      },
+      "灌溉耕地": {
+       "n": 1252,
+       "oa": 0.7332
+      },
+      "草地": {
+       "n": 114,
+       "oa": 0.7281
+      },
+      "草本旱地": {
+       "n": 2941,
+       "oa": 0.9684
+      },
+      "草本沼泽": {
+       "n": 428,
+       "oa": 0.7617
+      },
+      "落叶灌木": {
+       "n": 1594,
+       "oa": 0.5452
+      }
+     }
+    },
+    "conditional_error": {
+     "ref_DBF5": {
+      "metric": "pred_needle_rate",
+      "shady": 18.59,
+      "sunny": 3.78,
+      "gap_pp": 14.81,
+      "n_shady": 721,
+      "n_sunny": 980
+     },
+     "ref_DNF7": {
+      "metric": "missed_needle_rate",
+      "shady": 3.69,
+      "sunny": 22.79,
+      "gap_pp": -19.1,
+      "n_shady": 2140,
+      "n_sunny": 373
+     }
+    }
+   },
+   "seed11": {
+    "pairs": {
+     "DNF7_vs_DBF5": {
+      "nf_sh": 216913,
+      "nf_su": 65904,
+      "nb_sh": 19921,
+      "nb_su": 123470,
+      "OR": 20.399715887649393,
+      "OR_CI95": [
+       20.0494,
+       20.7561
+      ],
+      "num_shady_pct": 76.7,
+      "den_shady_pct": 13.89
+     },
+     "ENF6_vs_DBF5": {
+      "nf_sh": 5864,
+      "nf_su": 1259,
+      "nb_sh": 19921,
+      "nb_su": 123470,
+      "OR": 28.868122810279313,
+      "OR_CI95": [
+       27.1139,
+       30.7359
+      ],
+      "num_shady_pct": 82.32,
+      "den_shady_pct": 13.89
+     },
+     "DNF7_vs_ENF6": {
+      "nf_sh": 216913,
+      "nf_su": 65904,
+      "nb_sh": 5864,
+      "nb_su": 1259,
+      "OR": 0.7066519711626519,
+      "OR_CI95": [
+       0.6645,
+       0.7515
+      ],
+      "num_shady_pct": 76.7,
+      "den_shady_pct": 82.32
+     }
+    },
+    "needle_area_px": 824524,
+    "cohens_d_needlep_shady_vs_sunny": 1.8218,
+    "mean_pneed_shady": 0.8389,
+    "mean_pneed_sunny": 0.4071,
+    "needle_shady_pct": 91.37,
+    "needle_sunny_pct": 34.53,
+    "accuracy": {
+     "oa": 0.8584,
+     "macro_f1": 0.6532,
+     "per_class_f1": {
+      "5": 0.8346,
+      "6": 0.8079,
+      "7": 0.8844
+     },
+     "by_src": {
+      "不透水面": {
+       "n": 2214,
+       "oa": 0.9946
+      },
+      "木本沼泽": {
+       "n": 92,
+       "oa": 0.0
+      },
+      "林地_常绿针叶林": {
+       "n": 1587,
+       "oa": 0.7486
+      },
+      "林地_落叶针叶林": {
+       "n": 7843,
+       "oa": 0.8921
+      },
+      "林地_落叶阔叶林": {
+       "n": 6078,
+       "oa": 0.8639
+      },
+      "水体": {
+       "n": 633,
+       "oa": 0.9194
+      },
+      "湖河滩地": {
+       "n": 420,
+       "oa": 0.8333
+      },
+      "灌溉耕地": {
+       "n": 1252,
+       "oa": 0.7324
+      },
+      "草地": {
+       "n": 114,
+       "oa": 0.7368
+      },
+      "草本旱地": {
+       "n": 2941,
+       "oa": 0.9674
+      },
+      "草本沼泽": {
+       "n": 428,
+       "oa": 0.7734
+      },
+      "落叶灌木": {
+       "n": 1594,
+       "oa": 0.554
+      }
+     }
+    },
+    "conditional_error": {
+     "ref_DBF5": {
+      "metric": "pred_needle_rate",
+      "shady": 17.2,
+      "sunny": 3.88,
+      "gap_pp": 13.32,
+      "n_shady": 721,
+      "n_sunny": 980
+     },
+     "ref_DNF7": {
+      "metric": "missed_needle_rate",
+      "shady": 3.74,
+      "sunny": 20.91,
+      "gap_pp": -17.17,
+      "n_shady": 2140,
+      "n_sunny": 373
+     }
+    }
+   },
+   "seed23": {
+    "pairs": {
+     "DNF7_vs_DBF5": {
+      "nf_sh": 217619,
+      "nf_su": 64620,
+      "nb_sh": 19395,
+      "nb_su": 124586,
+      "OR": 21.632629645028914,
+      "OR_CI95": [
+       21.2575,
+       22.0144
+      ],
+      "num_shady_pct": 77.1,
+      "den_shady_pct": 13.47
+     },
+     "ENF6_vs_DBF5": {
+      "nf_sh": 5699,
+      "nf_su": 982,
+      "nb_sh": 19395,
+      "nb_su": 124586,
+      "OR": 37.27920375472083,
+      "OR_CI95": [
+       34.7801,
+       39.9579
+      ],
+      "num_shady_pct": 85.3,
+      "den_shady_pct": 13.47
+     },
+     "DNF7_vs_ENF6": {
+      "nf_sh": 217619,
+      "nf_su": 64620,
+      "nb_sh": 5699,
+      "nb_su": 982,
+      "OR": 0.5802867944111997,
+      "OR_CI95": [
+       0.542,
+       0.6213
+      ],
+      "num_shady_pct": 77.1,
+      "den_shady_pct": 85.3
+     }
+    },
+    "needle_area_px": 812321,
+    "cohens_d_needlep_shady_vs_sunny": 1.9286,
+    "mean_pneed_shady": 0.8418,
+    "mean_pneed_sunny": 0.3966,
+    "needle_shady_pct": 91.6,
+    "needle_sunny_pct": 33.73,
+    "accuracy": {
+     "oa": 0.858,
+     "macro_f1": 0.6511,
+     "per_class_f1": {
+      "5": 0.834,
+      "6": 0.8047,
+      "7": 0.8838
+     },
+     "by_src": {
+      "不透水面": {
+       "n": 2214,
+       "oa": 0.9941
+      },
+      "木本沼泽": {
+       "n": 92,
+       "oa": 0.0
+      },
+      "林地_常绿针叶林": {
+       "n": 1587,
+       "oa": 0.7492
+      },
+      "林地_落叶针叶林": {
+       "n": 7843,
+       "oa": 0.8925
+      },
+      "林地_落叶阔叶林": {
+       "n": 6078,
+       "oa": 0.8618
+      },
+      "水体": {
+       "n": 633,
+       "oa": 0.9194
+      },
+      "湖河滩地": {
+       "n": 420,
+       "oa": 0.8452
+      },
+      "灌溉耕地": {
+       "n": 1252,
+       "oa": 0.7348
+      },
+      "草地": {
+       "n": 114,
+       "oa": 0.693
+      },
+      "草本旱地": {
+       "n": 2941,
+       "oa": 0.968
+      },
+      "草本沼泽": {
+       "n": 428,
+       "oa": 0.7547
+      },
+      "落叶灌木": {
+       "n": 1594,
+       "oa": 0.5552
+      }
+     }
+    },
+    "conditional_error": {
+     "ref_DBF5": {
+      "metric": "pred_needle_rate",
+      "shady": 17.61,
+      "sunny": 3.57,
+      "gap_pp": 14.04,
+      "n_shady": 721,
+      "n_sunny": 980
+     },
+     "ref_DNF7": {
+      "metric": "missed_needle_rate",
+      "shady": 3.64,
+      "sunny": 20.38,
+      "gap_pp": -16.73,
+      "n_shady": 2140,
+      "n_sunny": 373
+     }
+    }
+   }
+  },
+  "TRIM": {
+   "seed7": {
+    "pairs": {
+     "DNF7_vs_DBF5": {
+      "nf_sh": 213391,
+      "nf_su": 74040,
+      "nb_sh": 22278,
+      "nb_su": 115776,
+      "OR": 14.977938043258586,
+      "OR_CI95": [
+       14.7314,
+       15.2286
+      ],
+      "num_shady_pct": 74.24,
+      "den_shady_pct": 16.14
+     },
+     "ENF6_vs_DBF5": {
+      "nf_sh": 6978,
+      "nf_su": 869,
+      "nb_sh": 22278,
+      "nb_su": 115776,
+      "OR": 41.7304943877404,
+      "OR_CI95": [
+       38.8334,
+       44.8437
+      ],
+      "num_shady_pct": 88.93,
+      "den_shady_pct": 16.14
+     },
+     "DNF7_vs_ENF6": {
+      "nf_sh": 213391,
+      "nf_su": 74040,
+      "nb_sh": 6978,
+      "nb_su": 869,
+      "OR": 0.3589206948781994,
+      "OR_CI95": [
+       0.3343,
+       0.3853
+      ],
+      "num_shady_pct": 74.24,
+      "den_shady_pct": 88.93
+     }
+    },
+    "needle_area_px": 844533,
+    "cohens_d_needlep_shady_vs_sunny": 1.5986,
+    "mean_pneed_shady": 0.8178,
+    "mean_pneed_sunny": 0.438,
+    "needle_shady_pct": 90.39,
+    "needle_sunny_pct": 38.52,
+    "accuracy": {
+     "oa": 0.8592,
+     "macro_f1": 0.6529,
+     "per_class_f1": {
+      "5": 0.8344,
+      "6": 0.8054,
+      "7": 0.8855
+     },
+     "by_src": {
+      "不透水面": {
+       "n": 2214,
+       "oa": 0.9941
+      },
+      "木本沼泽": {
+       "n": 92,
+       "oa": 0.0
+      },
+      "林地_常绿针叶林": {
+       "n": 1587,
+       "oa": 0.7511
+      },
+      "林地_落叶针叶林": {
+       "n": 7843,
+       "oa": 0.8954
+      },
+      "林地_落叶阔叶林": {
+       "n": 6078,
+       "oa": 0.8557
+      },
+      "水体": {
+       "n": 633,
+       "oa": 0.9226
+      },
+      "湖河滩地": {
+       "n": 420,
+       "oa": 0.8405
+      },
+      "灌溉耕地": {
+       "n": 1252,
+       "oa": 0.734
+      },
+      "草地": {
+       "n": 114,
+       "oa": 0.693
+      },
+      "草本旱地": {
+       "n": 2941,
+       "oa": 0.9691
+      },
+      "草本沼泽": {
+       "n": 428,
+       "oa": 0.764
+      },
+      "落叶灌木": {
+       "n": 1594,
+       "oa": 0.5772
+      }
+     }
+    },
+    "conditional_error": {
+     "ref_DBF5": {
+      "metric": "pred_needle_rate",
+      "shady": 13.31,
+      "sunny": 5.41,
+      "gap_pp": 7.91,
+      "n_shady": 721,
+      "n_sunny": 980
+     },
+     "ref_DNF7": {
+      "metric": "missed_needle_rate",
+      "shady": 5.47,
+      "sunny": 15.28,
+      "gap_pp": -9.81,
+      "n_shady": 2140,
+      "n_sunny": 373
+     }
+    }
+   },
+   "seed11": {
+    "pairs": {
+     "DNF7_vs_DBF5": {
+      "nf_sh": 213778,
+      "nf_su": 82359,
+      "nb_sh": 22304,
+      "nb_su": 107712,
+      "OR": 12.53525804190399,
+      "OR_CI95": [
+       12.33,
+       12.7439
+      ],
+      "num_shady_pct": 72.19,
+      "den_shady_pct": 17.15
+     },
+     "ENF6_vs_DBF5": {
+      "nf_sh": 6639,
+      "nf_su": 784,
+      "nb_sh": 22304,
+      "nb_su": 107712,
+      "OR": 40.89478596316575,
+      "OR_CI95": [
+       37.9244,
+       44.0979
+      ],
+      "num_shady_pct": 89.44,
+      "den_shady_pct": 17.15
+     },
+     "DNF7_vs_ENF6": {
+      "nf_sh": 213778,
+      "nf_su": 82359,
+      "nb_sh": 6639,
+      "nb_su": 784,
+      "OR": 0.3065246032390191,
+      "OR_CI95": [
+       0.2845,
+       0.3302
+      ],
+      "num_shady_pct": 72.19,
+      "den_shady_pct": 89.44
+     }
+    },
+    "needle_area_px": 865271,
+    "cohens_d_needlep_shady_vs_sunny": 1.5056,
+    "mean_pneed_shady": 0.8168,
+    "mean_pneed_sunny": 0.4495,
+    "needle_shady_pct": 90.41,
+    "needle_sunny_pct": 42.75,
+    "accuracy": {
+     "oa": 0.8565,
+     "macro_f1": 0.6502,
+     "per_class_f1": {
+      "5": 0.8314,
+      "6": 0.7995,
+      "7": 0.8839
+     },
+     "by_src": {
+      "不透水面": {
+       "n": 2214,
+       "oa": 0.995
+      },
+      "木本沼泽": {
+       "n": 92,
+       "oa": 0.0
+      },
+      "林地_常绿针叶林": {
+       "n": 1587,
+       "oa": 0.741
+      },
+      "林地_落叶针叶林": {
+       "n": 7843,
+       "oa": 0.8948
+      },
+      "林地_落叶阔叶林": {
+       "n": 6078,
+       "oa": 0.8552
+      },
+      "水体": {
+       "n": 633,
+       "oa": 0.9258
+      },
+      "湖河滩地": {
+       "n": 420,
+       "oa": 0.8167
+      },
+      "灌溉耕地": {
+       "n": 1252,
+       "oa": 0.7324
+      },
+      "草地": {
+       "n": 114,
+       "oa": 0.7193
+      },
+      "草本旱地": {
+       "n": 2941,
+       "oa": 0.9677
+      },
+      "草本沼泽": {
+       "n": 428,
+       "oa": 0.7664
+      },
+      "落叶灌木": {
+       "n": 1594,
+       "oa": 0.5546
+      }
+     }
+    },
+    "conditional_error": {
+     "ref_DBF5": {
+      "metric": "pred_needle_rate",
+      "shady": 13.73,
+      "sunny": 4.69,
+      "gap_pp": 9.04,
+      "n_shady": 721,
+      "n_sunny": 980
+     },
+     "ref_DNF7": {
+      "metric": "missed_needle_rate",
+      "shady": 5.37,
+      "sunny": 15.55,
+      "gap_pp": -10.18,
+      "n_shady": 2140,
+      "n_sunny": 373
+     }
+    }
+   },
+   "seed23": {
+    "pairs": {
+     "DNF7_vs_DBF5": {
+      "nf_sh": 215588,
+      "nf_su": 76296,
+      "nb_sh": 21415,
+      "nb_su": 113631,
+      "OR": 14.993449592627075,
+      "OR_CI95": [
+       14.744,
+       15.2471
+      ],
+      "num_shady_pct": 73.86,
+      "den_shady_pct": 15.86
+     },
+     "ENF6_vs_DBF5": {
+      "nf_sh": 5708,
+      "nf_su": 822,
+      "nb_sh": 21415,
+      "nb_su": 113631,
+      "OR": 36.84604658376096,
+      "OR_CI95": [
+       34.1986,
+       39.6984
+      ],
+      "num_shady_pct": 87.41,
+      "den_shady_pct": 15.86
+     },
+     "DNF7_vs_ENF6": {
+      "nf_sh": 215588,
+      "nf_su": 76296,
+      "nb_sh": 5708,
+      "nb_su": 822,
+      "OR": 0.40692152843434476,
+      "OR_CI95": [
+       0.3781,
+       0.438
+      ],
+      "num_shady_pct": 73.86,
+      "den_shady_pct": 87.41
+     }
+    },
+    "needle_area_px": 852354,
+    "cohens_d_needlep_shady_vs_sunny": 1.5935,
+    "mean_pneed_shady": 0.8199,
+    "mean_pneed_sunny": 0.4414,
+    "needle_shady_pct": 90.77,
+    "needle_sunny_pct": 39.65,
+    "accuracy": {
+     "oa": 0.8576,
+     "macro_f1": 0.6526,
+     "per_class_f1": {
+      "5": 0.8314,
+      "6": 0.8026,
+      "7": 0.8838
+     },
+     "by_src": {
+      "不透水面": {
+       "n": 2214,
+       "oa": 0.995
+      },
+      "木本沼泽": {
+       "n": 92,
+       "oa": 0.0
+      },
+      "林地_常绿针叶林": {
+       "n": 1587,
+       "oa": 0.7454
+      },
+      "林地_落叶针叶林": {
+       "n": 7843,
+       "oa": 0.8937
+      },
+      "林地_落叶阔叶林": {
+       "n": 6078,
+       "oa": 0.857
+      },
+      "水体": {
+       "n": 633,
+       "oa": 0.9226
+      },
+      "湖河滩地": {
+       "n": 420,
+       "oa": 0.8452
+      },
+      "灌溉耕地": {
+       "n": 1252,
+       "oa": 0.7356
+      },
+      "草地": {
+       "n": 114,
+       "oa": 0.7105
+      },
+      "草本旱地": {
+       "n": 2941,
+       "oa": 0.9667
+      },
+      "草本沼泽": {
+       "n": 428,
+       "oa": 0.7827
+      },
+      "落叶灌木": {
+       "n": 1594,
+       "oa": 0.5565
+      }
+     }
+    },
+    "conditional_error": {
+     "ref_DBF5": {
+      "metric": "pred_needle_rate",
+      "shady": 13.59,
+      "sunny": 5.2,
+      "gap_pp": 8.39,
+      "n_shady": 721,
+      "n_sunny": 980
+     },
+     "ref_DNF7": {
+      "metric": "missed_needle_rate",
+      "shady": 5.47,
+      "sunny": 16.35,
+      "gap_pp": -10.89,
+      "n_shady": 2140,
+      "n_sunny": 373
+     }
+    }
+   }
+  }
+ },
+ "verdict": {
+  "OR_base_DNF_vs_DBF": 22.245010545081414,
+  "OR_trim_DNF_vs_DBF": 14.16888189259655,
+  "OR_ratio_trim_over_base": 0.6369,
+  "OR_reduction_pct": 36.31,
+  "delta_OA_pp": -0.02,
+  "delta_macroF1_pp": -0.03,
+  "criteria": {
+   "or_target": "OR<=1.5 或 降幅>=50%",
+   "acc_target": "OA 与 macroF1 损失各 <=1pp",
+   "fail_if": "OA 或 macroF1 损失 >2pp"
+  },
+  "or_pass": false,
+  "acc_pass": true,
+  "fail_flag": false,
+  "verdict": "未达标：OR 未显著下降"
+ },
+ "summary": {
+  "BASE": {
+   "OR": {
+    "DNF7_vs_DBF5": 22.245010545081414,
+    "ENF6_vs_DBF5": 35.93460608894452,
+    "DNF7_vs_ENF6": 0.6266493481336074
+   },
+   "oa_mean": 0.858,
+   "oa_seeds": [
+    0.8576,
+    0.8584,
+    0.858
+   ],
+   "macro_f1_mean": 0.6522,
+   "macro_f1_seeds": [
+    0.6522,
+    0.6532,
+    0.6511
+   ],
+   "cohens_d_mean": 1.8936,
+   "needle_shady_pct_mean": 91.71,
+   "needle_sunny_pct_mean": 33.65,
+   "cond_gap_ref_DBF5": 14.06
+  },
+  "TRIM": {
+   "OR": {
+    "DNF7_vs_DBF5": 14.16888189259655,
+    "ENF6_vs_DBF5": 39.82377564488903,
+    "DNF7_vs_ENF6": 0.35745560885052113
+   },
+   "oa_mean": 0.8578,
+   "oa_seeds": [
+    0.8592,
+    0.8565,
+    0.8576
+   ],
+   "macro_f1_mean": 0.6519,
+   "macro_f1_seeds": [
+    0.6529,
+    0.6502,
+    0.6526
+   ],
+   "cohens_d_mean": 1.5659,
+   "needle_shady_pct_mean": 90.52,
+   "needle_sunny_pct_mean": 40.31,
+   "cond_gap_ref_DBF5": 8.45
+  }
+ },
+ "sec": 1.3,
+ "T6_forest_vs_orchard": {
+  "status": "not_evaluable_region_has_no_orchard",
+  "reason": "W2 ±2° 窗内 cl==2(乔灌园地) 点数 = 0；东北无园地样本。按纪律不臆造数值。",
+  "checked_window": "lon 126.95-130.95 / lat 45.5-49.5",
+  "suggestion": "需在华南/四川等有园地的区域另评；四川 T1706 ±2° 窗内 cl==2 = 1340 点可评，但需先恢复 GEE 或取得当地 AEF 栅格。"
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "tile": "T2002",
+ "name": "粤 粤中",
+ "n": 8300,
+ "fcs10_cover_pct": 100.0,
+ "n_forest": 2385,
+ "n_relab": 2373,
+ "seeds": [
+  7,
+  11,
+  23
+ ],
+ "arms": {
+  "armA": {
+   "train_label_forest4_macro_f1": 0.4247,
+   "needle_precision_vs_FCS10": 0.0636,
+   "needle_recall_vs_FCS10": 0.6432,
+   "ENF_precision_vs_FCS10": 0.0636,
+   "ENF_recall_vs_FCS10": 0.6619,
+   "EBF_precision_vs_FCS10": 0.9752,
+   "EBF_recall_vs_FCS10": 0.5753,
+   "enf_share_of_forest_pred": 0.2838,
+   "n_ref_enf": 69.0,
+   "or_enf_ebf_median": 1.144
+  },
+  "armB": {
+   "train_label_forest4_macro_f1": 0.2419,
+   "needle_recall_vs_FCS10": 0.0,
+   "ENF_recall_vs_FCS10": 0.0,
+   "EBF_precision_vs_FCS10": 0.9571,
+   "EBF_recall_vs_FCS10": 0.8011,
+   "enf_share_of_forest_pred": 0.0,
+   "n_ref_enf": 69.0,
+   "or_enf_ebf_median": null
+  }
+ }
+}

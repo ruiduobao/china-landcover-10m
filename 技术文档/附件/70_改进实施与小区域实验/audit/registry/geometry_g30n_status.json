@@ -1,0 +1,103 @@
+{
+  "record_type": "geometry_validity_status",
+  "recorded_by": "audit_subagent",
+  "recorded_at": "2026-10-15T14:19:00+08:00",
+  "experiment": "G30N_seed7",
+  "registration": {
+    "file": "F:/lc_work/improve_2023_pilot_20261015/geometry/reg/g30n_seed7.json",
+    "code_hash": "4ab897bdbe6544050ea932b34f0f80aa",
+    "registered_at": "2026-10-15T14:14:27",
+    "account_id": "k3r6ncvd",
+    "region_bbox": [97.97502595708085, 29.998160934830473, 98.0250621184063, 30.006515266972787],
+    "arms": ["legacy", "planar"],
+    "deadline_s": 1200,
+    "request_timeout_s": 60
+  },
+  "run": {
+    "status": "done",
+    "wall_s": 33.3,
+    "req_s": 19.65,
+    "elapsed_s": 33.0,
+    "budget_ok": true
+  },
+  "observed_result": {
+    "legacy_gap_px": 0,
+    "planar_gap_px": 0,
+    "restored_px": 0,
+    "wedge_restore_rate": 0.0,
+    "outside_wedge_agree_rate": 1.0,
+    "outside_tile_legacy_nonzero_px": 11140,
+    "outside_tile_planar_nonzero_px": 11140,
+    "note": "legacy 与 planar 在 plane region 外均有非零预测（各 11140 px），且两臂楔形恢复率 0；与 H6 预期（planar 消除楔形 nodata、楔外一致）不符。"
+  },
+  "verdict": "VALIDITY_FAIL",
+  "reason": "legacy/planar 在平面 region 外仍返回非零预测 → 疑 computePixels 掩膜/显式填充/代码路径问题（geometry 侧正以常量 clip / updateMask(0) / 显式 unmask 探针诊断）。",
+  "audit_constraints": [
+    "当前 G30N GeoTIFF **不得计为有效覆盖修复**（既非 legacy 缺口恢复，也非 planar 成功）。",
+    "保留原件；修正实现须**新注册版本**（新 code_hash），不覆盖本次结果。",
+    "审计侧不重复云请求；后续从原 EVM / expmask 与实际 mask 的本地解析核对。",
+    "几何覆盖与标签精度分离：即便修复成功，也只声明覆盖改善，不得换算为标签精度提升。"
+  ],
+  "probe_note": "out/probe_mask.json 的本地探针显示 constant/clip_planar/updmask/clip_legacy/computePixels_keeps_mask 均 true，但真实请求在 region 外仍非零 → 说明缺口不在简单掩膜常量，而在真实请求的几何/填充路径，须以新实现复现后再判。",
+
+  "corrected_version_v2": {
+    "impl_version": "v2_unmask0",
+    "registrations": {
+      "g30n_s7b.json": {"md5": "57f9a547ad048c111dee7af5db8cae57", "code_hash": "1a67edc85cd33e5e387a7909cd796e37", "registered_at": "2026-10-15T14:21:38"},
+      "g30n_v2_s7/s11/s23.json": {"registered_at": "2026-10-15T14:25–14:26", "note": "3 seed 注册"}
+    },
+    "run_3seed": {"exp_id": "G30N_seedset7_11_23", "status": "done", "wall_s": 76.0, "deadline_s": 1200, "budget_ok": true, "started_at": "2026-10-15T14:23:21", "finished_at": "2026-10-15T14:24:37"},
+    "independent_verification": {
+      "script": "audit/scripts/a4_verify_geometry.py",
+      "scoped_by": "EVM 有效输入域（自动识别 band，ones==evm_in_tile_valid_px=40661）",
+      "results_per_seed": {
+        "v2_s7":  {"legacy_nodata_px": 23394, "planar_nodata_px": 0, "restored_px": 23394, "planar_lost_px": 0, "common_valid_agree_rate": 1.0, "verdict": "PASS"},
+        "v2_s11": {"legacy_nodata_px": 23394, "planar_nodata_px": 0, "restored_px": 23394, "planar_lost_px": 0, "common_valid_agree_rate": 1.0, "verdict": "PASS"},
+        "v2_s23": {"legacy_nodata_px": 23394, "planar_nodata_px": 0, "restored_px": 23394, "planar_lost_px": 0, "common_valid_agree_rate": 1.0, "verdict": "PASS"},
+        "s7b":    {"legacy_nodata_px": 23394, "planar_nodata_px": 0, "restored_px": 23394, "planar_lost_px": 0, "common_valid_agree_rate": 1.0, "verdict": "PASS"}
+      },
+      "eval_json_match": "逐项一致（legacy 23394 / planar 0 / restored 23394）",
+      "artifact_paths": "audit/out/geometry_verify_v2_s{7,11,23}_*.json、geometry_verify_s7b_*.json"
+    },
+    "verdict_v2": "ACCEPT_EXPERIMENTAL (engineering only)",
+    "verdict_scope": "仅覆盖/几何改善；**不得换算为标签精度提升**",
+    "open_item": "楔外理论 16710 vs 实际共同有效 17267 差一行 557 —— 已由 G30N_reconcile.json 说明为解析弧 vs 实际栅格化边界（像元中心 ~0.5px），本审计独立确认 common_valid=17267、disagree=0，视为闭合"
+  },
+  "timing_clarification_from_json": {
+    "note": "以 run_results/*.json 为准（非口头）；两个 3-seed 轮次是**两次独立运行**，不是改口：",
+    "runs": [
+      {"exp_id": "G30N_tiny", "wall_s": 9.7, "started_at": "2026-10-15T14:14:05", "finished_at": "2026-10-15T14:14:15", "limit_s": 300},
+      {"exp_id": "G30N_seed7", "wall_s": 33.3, "started_at": "2026-10-15T14:14:27", "finished_at": "2026-10-15T14:15:00", "limit_s": 1200, "note": "v1 VALIDITY_FAIL"},
+      {"exp_id": "G30N_seed7b", "wall_s": 14.2, "started_at": "2026-10-15T14:21:38", "finished_at": "2026-10-15T14:21:52", "limit_s": 1200},
+      {"exp_id": "G30N_seedset7_11_23", "wall_s": 76.0, "started_at": "2026-10-15T14:23:21", "finished_at": "2026-10-15T14:24:37", "limit_s": 1200, "outputs": "G30N_s7b_* (14:24)"},
+      {"exp_id": "G30N_seedset_v2", "wall_s": 56.2, "started_at": "2026-10-15T14:25:08", "finished_at": "2026-10-15T14:26:04", "limit_s": 1200, "outputs": "G30N_v2_s{7,11,23}_* (14:25–14:26)"}
+    ],
+    "in_process_total": "G30N_v2_summary.json total_elapsed_s=55.8（进程内）vs run_results wall_s=56.2（子进程），差 0.4s 正常",
+    "conclusion": "76.0s 与 56.2s 均为真实 JSON 记录，分属两次运行；两次均 << 1200s。多轮 GEE 历史全部保留。"
+  },
+  "account_consistency": {
+    "account_id": "k3r6ncvd（g30n_seed7 / seed7b / s7b / v2_s7 / v2_s11 / v2_s23 全部一致）",
+    "health": "geometry/reg/health_geometry.json chosen=k3r6ncvd（ok=true，池资产可读）；eib2z5bs restricted、p2vlkaia ok",
+    "code_hash_versions": {"v1": "4ab897bdbe6544050ea932b34f0f80aa", "s7b(14:21)": "1a67edc85cd33e5e387a7909cd796e37", "s7b(14:24 reg)": "302fca90fae40a48b3f86290be7068c0", "v2_3seed": "ad62033b1aa0a378808d51d767a1882e"},
+    "project_names_seen": {"probe_mask.json": "curious-helix-508400-e4", "reg input_identity pool": "projects/leafy-environs-509005-n1/assets/prod2nd/smp2023v2_merged"},
+    "open": "project 名在不同 API 响应中不一致，待 geometry agent 按真实 run_results/日志明确（不影响覆盖结论）"
+  },
+  "independent_common_valid_confirmation": {
+    "script": "audit/scripts/a4_verify_geometry.py（已修正 in-region 作用域）",
+    "per_seed_v2_and_s7b": {"in_region_px": 40661, "legacy_gap_px": 23394, "planar_gap_px": 0, "restored_px": 23394, "common_valid_px": 17267, "disagree_px": 0},
+    "matches_reconcile": "与 G30N_reconcile.json 的 common_both_positive=17267、outside_wedge_denom=16710、boundary_row_px=557、disagree_total=0 一致"
+  },
+  "palette_status_verified": {
+    "method": "tifffile 读 TIFF tag 262 PhotometricInterpretation（不依赖 GDAL colorinterp，可能误导）+ rasterio 读像元比对",
+    "original_out_single_band": "有 ColorMap 但 photometric=1(BlackIsZero) → **不是真正 palette**（此前仅凭 colorinterp='palette' 判断会误导）",
+    "new_delivery": "geometry/delivery/*_10m_palette.tif（12 件）：photometric=3(PALETTE)、colormap 存在、**像元与原件逐值 identical**",
+    "verified_samples": [
+      {"file": "G30N_v2_s7_legacy_10m_palette.tif", "new_photo": 3, "old_photo": 1, "data_equal": true},
+      {"file": "G30N_v2_s7_planar_10m_palette.tif", "new_photo": 3, "old_photo": 1, "data_equal": true},
+      {"file": "G30N_s7b_planar_10m_palette.tif", "new_photo": 3, "old_photo": 1, "data_equal": true},
+      {"file": "G30N_seed7_legacy_10m_palette.tif", "new_photo": 3, "old_photo": 1, "data_equal": true}
+    ],
+    "5band": "诊断件无 colormap（正常），不得称彩色交付图",
+    "note": "原件未改；新件为真正 palette 交付；doc71 §7.4 已更新。"
+  }
+}

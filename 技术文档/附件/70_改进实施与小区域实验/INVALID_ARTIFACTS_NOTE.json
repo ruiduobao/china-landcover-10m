@@ -1,0 +1,16 @@
+{
+  "marked_at": "2026-10-15T14:51:47",
+  "invalid_artifacts": [
+    {
+      "path": "F:/lc_work/improve_2023_pilot_20261015/terrain/out/t4_fview_arms_G2_seed{7,11,23}.npz",
+      "reason": "v1 strict arm non-forest X[pool] local-index bug (12383 rows/seed mis-aligned); must not be used for RF or treated as valid delivery",
+      "status": "INVALID_KEPT_AS_HISTORY"
+    }
+  ],
+  "superseded_numbers": {
+    "v1_registration_n_train_common": 18556,
+    "v1_npz_n_train_common": 18588,
+    "final_actual": 17697
+  },
+  "valid_artifacts": "terrain/out/fview_g2/ (t4b prep v2 + t5 runner; predictions/metrics/report)"
+}

@@ -1,0 +1,142 @@
+[
+ {
+  "prov": "川",
+  "file": "四川_2023_10m.tif",
+  "W": 124446,
+  "H": 91908,
+  "buffer_deg": -0.005,
+  "gcj": "raw",
+  "bbox_upper_bound": {
+   "px": 11976951,
+   "km2": 1028.37
+  },
+  "inprov": {
+   "px": 6954267,
+   "km2": 597.27,
+   "lens_expected_px": 7297277,
+   "fill_rate_pct": 4.7
+  },
+  "bands": [
+   {
+    "y0": 28.0,
+    "row_lo": 70151,
+    "row_hi": 70221,
+    "bbox_wedge_nodata_px": 2863843,
+    "bbox_km2": 252.858,
+    "inprov_wedge_nodata_px": 1405306,
+    "inprov_km2": 124.079,
+    "inprov_lens_expected_px": 1436441
+   },
+   {
+    "y0": 30.0,
+    "row_lo": 47887,
+    "row_hi": 47957,
+    "bbox_wedge_nodata_px": 3553216,
+    "bbox_km2": 307.711,
+    "inprov_wedge_nodata_px": 1984716,
+    "inprov_km2": 171.878,
+    "inprov_lens_expected_px": 2098187
+   },
+   {
+    "y0": 32.0,
+    "row_lo": 25623,
+    "row_hi": 25693,
+    "bbox_wedge_nodata_px": 3619605,
+    "bbox_km2": 306.953,
+    "inprov_wedge_nodata_px": 3068320,
+    "inprov_km2": 260.202,
+    "inprov_lens_expected_px": 3240969
+   },
+   {
+    "y0": 34.0,
+    "row_lo": 3359,
+    "row_hi": 3429,
+    "bbox_wedge_nodata_px": 1940287,
+    "bbox_km2": 160.853,
+    "inprov_wedge_nodata_px": 495925,
+    "inprov_km2": 41.113,
+    "inprov_lens_expected_px": 521680
+   }
+  ]
+ },
+ {
+  "prov": "粤",
+  "file": "广东_2023_10m.tif",
+  "W": 83798,
+  "H": 58898,
+  "buffer_deg": -0.005,
+  "gcj": "raw",
+  "bbox_upper_bound": {
+   "px": 3411072,
+   "km2": 314.14
+  },
+  "inprov": {
+   "px": 1969489,
+   "km2": 180.8,
+   "lens_expected_px": 2018579,
+   "fill_rate_pct": 2.43
+  },
+  "bands": [
+   {
+    "y0": 22.0,
+    "row_lo": 38996,
+    "row_hi": 39066,
+    "bbox_wedge_nodata_px": 1849346,
+    "bbox_km2": 171.466,
+    "inprov_wedge_nodata_px": 648247,
+    "inprov_km2": 60.104,
+    "inprov_lens_expected_px": 665487
+   },
+   {
+    "y0": 24.0,
+    "row_lo": 16732,
+    "row_hi": 16802,
+    "bbox_wedge_nodata_px": 1561726,
+    "bbox_km2": 142.669,
+    "inprov_wedge_nodata_px": 1321242,
+    "inprov_km2": 120.7,
+    "inprov_lens_expected_px": 1353092
+   }
+  ]
+ },
+ {
+  "prov": "宁",
+  "file": "宁夏_2023_10m.tif",
+  "W": 37399,
+  "H": 45974,
+  "buffer_deg": -0.005,
+  "gcj": "raw",
+  "bbox_upper_bound": {
+   "px": 1882264,
+   "km2": 150.49
+  },
+  "inprov": {
+   "px": 1087449,
+   "km2": 86.96,
+   "lens_expected_px": 1141530,
+   "fill_rate_pct": 4.74
+  },
+  "bands": [
+   {
+    "y0": 36.0,
+    "row_lo": 37520,
+    "row_hi": 37589,
+    "bbox_wedge_nodata_px": 1032290,
+    "bbox_km2": 83.512,
+    "inprov_wedge_nodata_px": 605414,
+    "inprov_km2": 48.978,
+    "inprov_lens_expected_px": 632524
+   },
+   {
+    "y0": 38.0,
+    "row_lo": 15256,
+    "row_hi": 15325,
+    "bbox_wedge_nodata_px": 849974,
+    "bbox_km2": 66.977,
+    "inprov_wedge_nodata_px": 482035,
+    "inprov_km2": 37.984,
+    "inprov_lens_expected_px": 509006
+   }
+  ]
+ }
+]

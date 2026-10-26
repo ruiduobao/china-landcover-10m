@@ -1,0 +1,40 @@
+{
+ "C1_closed_open_ratio": {
+  "needle": {
+   "n": 80099,
+   "closed": 76766,
+   "open": 3333,
+   "closed_pct": 95.84,
+   "open_pct": 4.16
+  },
+  "broad": {
+   "n": 137119,
+   "closed": 131406,
+   "open": 5713,
+   "closed_pct": 95.83,
+   "open_pct": 4.17
+  }
+ },
+ "C1_closed_open_OR_needle_vs_broad": 1.0013,
+ "C1_auc_closed_predicts_needle": 0.5,
+ "C1_base_rate_needle": 0.3687,
+ "C2_neighborhood": {
+  "n_tiles": 24,
+  "n_points": 70575,
+  "nbr_same_frac_needle": 0.7686,
+  "nbr_same_frac_broad": 0.8512,
+  "nbr_needle_frac_mean_needle": 0.8716,
+  "nbr_needle_frac_mean_broad": 0.1518
+ },
+ "C2_auc_nbr_same_predicts_needle": 0.4491,
+ "C2_auc_nbr_needlefrac_predicts_needle": 0.9634,
+ "C3_gedi": {
+  "status": "未测",
+  "reason": "GEE 出口被 reset（代理端口通但 Google 域连不上）；本地无 GEDI L2A 足迹数据；仅有 GEDI L4B 1km 聚合生物量单瓦（MW019MW223），不覆盖中国林区",
+  "local_l4b_zip": "E:/地理所/论文/博士论文/数据/数据/GEDI_L4B_Gridded_Biomass_V2_1_2299.zip"
+ },
+ "C3_cgls_tcd": {
+  "status": "部分（GEE 单次抽样成功 2,993 点后网络中断）",
+  "note": "已成功取到 CGLS tree-coverfraction 与 forest_type（2019 层），证明数据可用；但因网络中断未覆盖全样本"
+ }
+}

@@ -1,0 +1,135 @@
+{
+ "schema": "improve_pilot_qarm/v1",
+ "status": "BLOCKED_no_trusted_local_source",
+ "generated": "2026-10-15 14:25:40",
+ "note": "高证据园地质量臂注册准备。**未运行**；待主 agent 批准规则/新框后再跑。",
+ "spec": "doc70 v1.0 + doc69 §7.2 + 08 报告",
+ "region": {
+  "rid": "GD2",
+  "prov": "广东省",
+  "ptag": "粤",
+  "win": "w3",
+  "bbox": [
+   113.0,
+   23.0,
+   114.0,
+   24.0
+  ],
+  "tile": "T2002",
+  "training_bbox": [
+   111.0,
+   20.0,
+   117.0,
+   26.0
+  ],
+  "rationale": "原 4 区外新瓦 T2002；参考 n=592（非fcs10 409，类4 92）；窗内含柑橘（Q1 实际剔除 ~75%）——质量规则在此有作用（川新框窗内无柑橘，规则无效）。"
+ },
+ "reference": {
+  "refn": 592,
+  "refn_nonfcs10": 409,
+  "n_dev": 368,
+  "n_conf": 224,
+  "n_conf_cl4": 43,
+  "ref_by_class": {
+   "1": 68,
+   "2": 2,
+   "3": 56,
+   "4": 92,
+   "5": 3,
+   "6": 45,
+   "9": 83,
+   "10": 97,
+   "15": 2,
+   "19": 2,
+   "20": 2,
+   "21": 91,
+   "23": 49
+  },
+  "dev_blocks": [
+   "452_94",
+   "452_95",
+   "453_95",
+   "452_92",
+   "454_93",
+   "454_92",
+   "455_94",
+   "453_92",
+   "453_94",
+   "452_93"
+  ],
+  "conf_blocks": [
+   "454_95",
+   "454_94",
+   "455_93",
+   "455_92",
+   "453_93",
+   "455_95"
+  ],
+  "block_step": 0.25
+ },
+ "quality_rule": {
+  "name": "Q1_minimal",
+  "desc": "排除 grade == 'C_专题产品(存疑)'（柑橘 2020；08 报告判读真园率 13.8%，源标'存疑'）",
+  "exclude_grades": [
+   "C_专题产品(存疑)"
+  ]
+ },
+ "arms": {
+  "random_orchard": "取窗内前 K 个园地点（按 seed permutation 序）；非园地取前 (20000-K) 个，完全一致",
+  "quality_orchard": "取窗内前 K 个通过质量规则（grade∉C_专题产品(存疑)）的园地点（同 permutation 序）；非园地取前 (20000-K) 个，与 random 臂**完全相同**"
+ },
+ "K": 1473,
+ "K_basis": {
+  "base_orch_expected_in_20k": 2207,
+  "n_q1_available": 1473,
+  "shortfall": 734
+ },
+ "window": {
+  "n_window_before": 55206,
+  "n_window_after": 53121,
+  "n_orchard": 5863,
+  "n_q1": 1473,
+  "n_citrus_excluded": 4390,
+  "orchard_by_grade": {
+   "C_专题产品(存疑)": 6586,
+   "B_产品+面积校准": 1664,
+   "B(专题产品)": 1215,
+   "A_官方地块": 973,
+   "B(模型中)": 296,
+   "B(模型中+GEM)": 90,
+   "A(模型强)": 42,
+   "A(模型强+GEM)": 13,
+   "A_目视": 5
+  },
+  "poskey_overlap_train_ref": 0
+ },
+ "seeds": [
+  7,
+  11,
+  23
+ ],
+ "n_train_limit": 20000,
+ "rf_params": {
+  "n_estimators": 100,
+  "min_samples_leaf": 2,
+  "max_leaf_nodes": 5000,
+  "n_jobs": 10
+ },
+ "deadline_s": 1200,
+ "target_metrics": [
+  "class4_F1",
+  "class1_F1",
+  "OA24",
+  "macro9",
+  "source_stratified"
+ ],
+ "main_gate": "非FCS10 确认层 macro9 非劣 + 目标类 F1 改善（同首轮）",
+ "stop_rules": "TIMEOUT / 组级回归 / 目标类无改善 → 不采纳；预测类 2 归零记回归风险",
+ "not_rerun_same_confirm": true,
+ "assessment": {
+  "trusted_local_source": false,
+  "verdict": "BLOCKED_no_trusted_local_source",
+  "detail": "grade 高tier（A_官方地块 37,733 / A_三源 13,024 / B_双源 11,003）全部是**海南橡胶**，按 doc69 §7.2 不可迁移到川/粤；其余专题源（茶 6.2%、苹果 0%、柑橘 13.8%，08 报告判读）在 10 m 尺度真园率均低且未经独立核验。故 川/粤 无\"可信本地质量源\"；Q1（仅排 C_专题产品(存疑)）是弱先验干预，非真实质量提升。",
+  "recommendation": "按协调者纪律：H2 在本轮 川/粤 判 BLOCKED；不擅自排 C 全量当新臂。metadata 与 prepared 臂规格留档，待主 agent 决定是否另立新证据轮次。"
+ }
+}

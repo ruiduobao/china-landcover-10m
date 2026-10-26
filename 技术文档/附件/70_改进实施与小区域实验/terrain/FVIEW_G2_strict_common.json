@@ -1,0 +1,153 @@
+{
+  "exp_id": "FVIEW_G2_strict_common",
+  "owner": "terrain",
+  "hypothesis": "F-VIEW 森林筛选（strict 视图共同支持、非森林同点）在独立新框 G2 上是否改善目标类 4 F1",
+  "province": "四川",
+  "stage": "A",
+  "seeds": [
+    7,
+    11,
+    23
+  ],
+  "arms": [
+    "baseline_common",
+    "strict_common"
+  ],
+  "limit_s": 1200.0,
+  "prep_cap_s": 1200.0,
+  "trigger_margin_s": 10.0,
+  "n_jobs": 10,
+  "uses_rf": true,
+  "mem_cap_gb": 10.0,
+  "cpu_cap": 15,
+  "dry_run": false,
+  "started_at": "2026-10-15T14:43:56",
+  "system_mem_at_start_gb": {
+    "total": 68.46,
+    "available": 37.32
+  },
+  "stage_times_s": {
+    "prepare": 7.125,
+    "train": 5.36,
+    "infer": 1.765,
+    "eval": 4.829
+  },
+  "stage_rc": {
+    "prepare": 0,
+    "train": 0,
+    "infer": 0,
+    "eval": 0
+  },
+  "stage_timed_out": {
+    "prepare": false,
+    "train": false,
+    "infer": false,
+    "eval": false
+  },
+  "stage_mem_killed": {
+    "prepare": false,
+    "train": false,
+    "infer": false,
+    "eval": false
+  },
+  "stage_peak_rss_gb": {
+    "prepare": 1.708,
+    "train": 0.284,
+    "infer": null,
+    "eval": null
+  },
+  "killed_pids": {},
+  "deadline_window_s": 11.954,
+  "budget_ok": true,
+  "status": "done",
+  "registration": {
+    "experiment_id": "FVIEW_G2_strict_common",
+    "region_bbox": [
+      106.0,
+      31.0,
+      107.0,
+      32.0
+    ],
+    "tile_id": "T1606",
+    "training_bbox": [
+      103.0,
+      28.0,
+      109.0,
+      34.0
+    ],
+    "input_identity": "pool2=F:/lc_work/prod2nd_2023/data/train2023_v2.parquet md5 8bbed86a3b931f5519f42dcf4db75e79 | strict=forest_samples_v1_strict.parquet md5 506537148e80f21a4f572b49c50cd9dc | ref=eval_2023_w2.parquet md5 772946a6c066021b93aa60b0c87e81fa",
+    "class_map_hash": "v31 24 类码（v31_common.to_v31；与 doc37/38 一致）",
+    "candidate_rule": "F-VIEW：森林类取 min(v2池类count, strict视图类count)；非森林两臂同点；v2 修复 X[iw][pool] 索引 bug",
+    "seeds": [
+      7,
+      11,
+      23
+    ],
+    "n_train_limit": 20000,
+    "rf_params": {
+      "n_trees": 100,
+      "min_leaf": 2,
+      "max_nodes": 5000,
+      "aef_dim": 64,
+      "n_jobs": 10
+    },
+    "deadline_s": 1200,
+    "development_ids": "0.25° 块 dev（5 块）: 424,126 / 424,127 / 425,126 / 427,126 / 427,127",
+    "confirmation_ids": "0.25° 块 conf（3 块，未看过）: 425,127 / 426,126 / 426,127（75 点；audit/registry/fview_g2_unseen_check.json）",
+    "target_metrics": [
+      "class4_F1@conf∩非FCS10",
+      "OA24",
+      "macro9",
+      "全点/FCS10 完整表",
+      "块 bootstrap CI"
+    ],
+    "expected_effect": "森林训练样本只保留 strict 质检子集（共同支持）→ 目标类 4 F1 改善、组级 macro9 不劣化",
+    "stop_rules": "TIMEOUT 或 目标类 n<30 或 ΔF1<+0.03 或 macro9 点估<-0.01/CI下界<-0.02 或 n≥30 类 ΔF1≤-0.05 → REJECT（保留基线，不改判据）",
+    "code_hash": "t5_fview_g2.py+ t4b_fview_prep_g2.py（见 code_hashes）",
+    "registered_at": "2026-10-15T14:45:00"
+  },
+  "code_hash": "t5_fview_g2.py+ t4b_fview_prep_g2.py（见 code_hashes）",
+  "mem_preflight": {
+    "ok": true,
+    "available_gb": 37.28,
+    "need_gb": 12.0,
+    "mem_cap_gb": 10.0,
+    "reason": ""
+  },
+  "train_start_iso": "2026-10-15T14:44:03",
+  "finished_at": "2026-10-15T14:44:15",
+  "stage_tails": {
+    "prepare": {
+      "rc": 0,
+      "timed_out": false,
+      "mem_killed": false,
+      "peak_rss_gb": 1.708,
+      "log": "F:\\lc_work\\improve_2023_pilot_20261015\\control\\logs\\FVIEW_G2_strict_common\\prepare.log",
+      "stderr_tail": ""
+    },
+    "train": {
+      "rc": 0,
+      "timed_out": false,
+      "mem_killed": false,
+      "peak_rss_gb": 0.284,
+      "log": "F:\\lc_work\\improve_2023_pilot_20261015\\control\\logs\\FVIEW_G2_strict_common\\train.log",
+      "stderr_tail": ""
+    },
+    "infer": {
+      "rc": 0,
+      "timed_out": false,
+      "mem_killed": false,
+      "peak_rss_gb": null,
+      "log": "F:\\lc_work\\improve_2023_pilot_20261015\\control\\logs\\FVIEW_G2_strict_common\\infer.log",
+      "stderr_tail": ""
+    },
+    "eval": {
+      "rc": 0,
+      "timed_out": false,
+      "mem_killed": false,
+      "peak_rss_gb": null,
+      "log": "F:\\lc_work\\improve_2023_pilot_20261015\\control\\logs\\FVIEW_G2_strict_common\\eval.log",
+      "stderr_tail": ""
+    }
+  }
+}

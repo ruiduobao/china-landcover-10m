@@ -1,0 +1,42 @@
+{
+ "qc_gate": {
+  "conclusion": "QC_GATE_FAIL",
+  "n_planned": 149,
+  "n_completed": 149,
+  "three_state_rate": 0.4865,
+  "negation_audit_accuracy": 0.36,
+  "gate": 0.9,
+  "note": "149点全部独立复判：三态一致率0.487、否定审计0.360，双门FAIL → 判读不可复现且首判否定结论约64%不成立"
+ },
+ "product_comparison_using_blind_recheck": {
+  "n_eval": 85,
+  "v1": 0.565,
+  "v2": 0.365,
+  "prior": 0.188,
+  "v1_right_v2_wrong": 19,
+  "v2_right_v1_wrong": 2,
+  "orchard_misassignment": {
+   "crop_to_orchard": 8,
+   "forest_to_orchard": 6,
+   "built_to_orchard": 1
+  },
+  "note": "第一次用完全未接触预测的独立影像判读得到同向证据：v2 园地放大吞噬耕地/森林"
+ },
+ "final_verdict": {
+  "geometric_coverage": "ACCEPT_EXPERIMENTAL (engineering only) — 三省三窗9/9 PASS，恢复48911 px，共同有效域类码分歧0",
+  "sample_repair": "REJECT — 149点独立复判：三态一致率0.487、否定审计0.360（门均0.90）→ 判读不可复现且首判否定约64%不成立，不生成R_repair、不跑修复对照",
+  "v2_publication": "NOT_SUPPORTED_BY_THIS_ROUND — 以完全未见预测的独立复判为参照（n=85）：v1 0.565 vs v2 0.365；v1对v2错19点中16点为v2把耕地(8)/森林(6)/建成(1)误判成乔灌园地",
+  "limitations": [
+   "AI预判读/复判，非正式双人人工判读",
+   "10m 无日期影像无法判针阔与常绿落叶",
+   "复判样本85点（可判且有预测）、结构大类级，非省域精度",
+   "两版绝对一致率受判读噪声影响，但19:2的相对差异方向稳健"
+  ],
+  "not_modified": [
+   "母库",
+   "训练池",
+   "既有省域交付",
+   "代码11生产配置"
+  ]
+ }
+}

@@ -1,0 +1,278 @@
+{
+ "n_pass1": 200,
+ "n_recheck": 149,
+ "n_common": 149,
+ "three_state": {
+  "same": 54,
+  "diff": 57,
+  "unknown": 38,
+  "rate": 0.4865,
+  "gate": 0.9,
+  "pass_": false
+ },
+ "fine_agreement": {
+  "n": 14,
+  "same": 7,
+  "rate": 0.5
+ },
+ "negation_audit": {
+  "n": 75,
+  "ok": 27,
+  "rate": 0.36,
+  "gate": 0.9,
+  "pass_": false
+ },
+ "unknown_share": 0.255,
+ "disagreements": [
+  {
+   "blind_id": "B0002",
+   "pass1": "灌丛",
+   "recheck": "乔木林"
+  },
+  {
+   "blind_id": "B0006",
+   "pass1": "草地",
+   "recheck": "乔木林"
+  },
+  {
+   "blind_id": "B0008",
+   "pass1": "草本旱地",
+   "recheck": "乔木林"
+  },
+  {
+   "blind_id": "B0011",
+   "pass1": "草地",
+   "recheck": "耕地"
+  },
+  {
+   "blind_id": "B0013",
+   "pass1": "草地",
+   "recheck": "稀疏植被"
+  },
+  {
+   "blind_id": "B0020",
+   "pass1": "草本旱地",
+   "recheck": "草地"
+  },
+  {
+   "blind_id": "B0033",
+   "pass1": "草地",
+   "recheck": "灌丛"
+  },
+  {
+   "blind_id": "B0040",
+   "pass1": "裸地",
+   "recheck": "耕地"
+  },
+  {
+   "blind_id": "B0042",
+   "pass1": "乔木林",
+   "recheck": "耕地"
+  },
+  {
+   "blind_id": "B0047",
+   "pass1": "灌丛",
+   "recheck": "乔木林"
+  },
+  {
+   "blind_id": "B0050",
+   "pass1": "草本旱地",
+   "recheck": "乔木林"
+  },
+  {
+   "blind_id": "B0051",
+   "pass1": "乔木林",
+   "recheck": "灌丛"
+  },
+  {
+   "blind_id": "B0053",
+   "pass1": "草地",
+   "recheck": "乔木林"
+  },
+  {
+   "blind_id": "B0065",
+   "pass1": "乔木林",
+   "recheck": "耕地"
+  },
+  {
+   "blind_id": "B0067",
+   "pass1": "草本旱地",
+   "recheck": "稀疏植被"
+  },
+  {
+   "blind_id": "B0070",
+   "pass1": "稀疏植被",
+   "recheck": "耕地"
+  },
+  {
+   "blind_id": "B0072",
+   "pass1": "灌丛",
+   "recheck": "草地"
+  },
+  {
+   "blind_id": "B0074",
+   "pass1": "灌丛",
+   "recheck": "稀疏植被"
+  },
+  {
+   "blind_id": "B0076",
+   "pass1": "灌丛",
+   "recheck": "稀疏植被"
+  },
+  {
+   "blind_id": "B0079",
+   "pass1": "草本旱地",
+   "recheck": "稀疏植被"
+  },
+  {
+   "blind_id": "B0089",
+   "pass1": "草本旱地",
+   "recheck": "灌丛"
+  },
+  {
+   "blind_id": "B0091",
+   "pass1": "草地",
+   "recheck": "乔木林"
+  },
+  {
+   "blind_id": "B0092",
+   "pass1": "草本旱地",
+   "recheck": "灌丛"
+  },
+  {
+   "blind_id": "B0098",
+   "pass1": "草地",
+   "recheck": "耕地"
+  },
+  {
+   "blind_id": "B0103",
+   "pass1": "乔木林",
+   "recheck": "灌丛"
+  },
+  {
+   "blind_id": "B0104",
+   "pass1": "灌丛",
+   "recheck": "耕地"
+  },
+  {
+   "blind_id": "B0107",
+   "pass1": "草地",
+   "recheck": "乔木林"
+  },
+  {
+   "blind_id": "B0108",
+   "pass1": "草本旱地",
+   "recheck": "灌丛"
+  },
+  {
+   "blind_id": "B0111",
+   "pass1": "灌丛",
+   "recheck": "乔木林"
+  },
+  {
+   "blind_id": "B0112",
+   "pass1": "草地",
+   "recheck": "耕地"
+  },
+  {
+   "blind_id": "B0113",
+   "pass1": "草地",
+   "recheck": "灌丛"
+  },
+  {
+   "blind_id": "B0116",
+   "pass1": "草地",
+   "recheck": "灌丛"
+  },
+  {
+   "blind_id": "B0123",
+   "pass1": "乔木林",
+   "recheck": "灌丛"
+  },
+  {
+   "blind_id": "B0124",
+   "pass1": "乔木林",
+   "recheck": "耕地"
+  },
+  {
+   "blind_id": "B0126",
+   "pass1": "草本旱地",
+   "recheck": "草地"
+  },
+  {
+   "blind_id": "B0138",
+   "pass1": "草本旱地",
+   "recheck": "乔木林"
+  },
+  {
+   "blind_id": "B0139",
+   "pass1": "乔木林",
+   "recheck": "灌丛"
+  },
+  {
+   "blind_id": "B0141",
+   "pass1": "灌丛",
+   "recheck": "乔木林"
+  },
+  {
+   "blind_id": "B0142",
+   "pass1": "乔木林",
+   "recheck": "耕地"
+  },
+  {
+   "blind_id": "B0144",
+   "pass1": "灌丛",
+   "recheck": "草地"
+  },
+  {
+   "blind_id": "B0147",
+   "pass1": "乔木林",
+   "recheck": "灌丛"
+  },
+  {
+   "blind_id": "B0149",
+   "pass1": "草本旱地",
+   "recheck": "乔木林"
+  },
+  {
+   "blind_id": "B0151",
+   "pass1": "草地",
+   "recheck": "灌丛"
+  },
+  {
+   "blind_id": "B0157",
+   "pass1": "草地",
+   "recheck": "灌丛"
+  },
+  {
+   "blind_id": "B0158",
+   "pass1": "草本旱地",
+   "recheck": "草地"
+  },
+  {
+   "blind_id": "B0160",
+   "pass1": "草地",
+   "recheck": "灌丛"
+  },
+  {
+   "blind_id": "B0161",
+   "pass1": "草本旱地",
+   "recheck": "灌丛"
+  },
+  {
+   "blind_id": "B0167",
+   "pass1": "草本旱地",
+   "recheck": "稀疏植被"
+  },
+  {
+   "blind_id": "B0168",
+   "pass1": "乔木林",
+   "recheck": "水体"
+  },
+  {
+   "blind_id": "B0169",
+   "pass1": "乔木林",
+   "recheck": "水体"
+  }
+ ]
+}

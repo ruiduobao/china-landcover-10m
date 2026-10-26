@@ -1,0 +1,30 @@
+{
+  "arms": [
+    {
+      "arm": "R0_yearly_independent",
+      "mean_accuracy": 0.9322,
+      "mean_flip_rate": 0.0365
+    },
+    {
+      "arm": "R1_mode",
+      "mean_accuracy": 0.939,
+      "mean_flip_rate": 0.0
+    },
+    {
+      "arm": "R2_evidence_gated",
+      "mean_accuracy": 0.9374,
+      "mean_flip_rate": 0.0054
+    },
+    {
+      "arm": "R2b_two_standard_years",
+      "mean_accuracy": 0.9375,
+      "mean_flip_rate": 0.0072
+    },
+    {
+      "arm": "R3_hard_inherit",
+      "mean_accuracy": 1.0,
+      "mean_flip_rate": 0.0
+    }
+  ],
+  "note": "C1 逐年预测（2023 标签训练、各年 AEF 输入）充当逐年独立分类；准确率一律对 2023 标签计，故 R3 硬继承=1.0 是恒等式，不是成绩"
+}

@@ -1,0 +1,713 @@
+{
+ "input": "F:/lc_work/nb_national_2026/annual/年度配方_strict.parquet",
+ "n": 1274776,
+ "terrain_source": "independent Horn 3x3 on SRTM 1km",
+ "terrain_meta": {
+  "left": 73.0,
+  "top": 54.0,
+  "res": 0.01,
+  "w": 6903,
+  "h": 5880
+ },
+ "producer_vs_independent": {},
+ "OR_national": {
+  "needle_shade": 33784,
+  "needle_sun": 32960,
+  "broad_shade": 42104,
+  "broad_sun": 40600,
+  "or_": 0.9883859015770472,
+  "ci": [
+   0.9684279210400983,
+   1.0087551889118065
+  ],
+  "n_used": 149448,
+  "note": ""
+ },
+ "OR_by_slope": {
+  "5-10": {
+   "needle_shade": 24104,
+   "needle_sun": 22712,
+   "broad_shade": 28432,
+   "broad_sun": 27592,
+   "or_": 1.0299342722744123,
+   "ci": [
+    1.0049539235773581,
+    1.05553556269465
+   ],
+   "n_used": 102840,
+   "note": ""
+  },
+  "10-15": {
+   "needle_shade": 7320,
+   "needle_sun": 7560,
+   "broad_shade": 9216,
+   "broad_sun": 9144,
+   "or_": 0.9606894841269842,
+   "ci": [
+    0.9200322020784077,
+    1.0031434582694279
+   ],
+   "n_used": 33240,
+   "note": ""
+  },
+  "15-25": {
+   "needle_shade": 2208,
+   "needle_sun": 2536,
+   "broad_shade": 4168,
+   "broad_sun": 3576,
+   "or_": 0.7469983106983052,
+   "ci": [
+    0.6947844121474128,
+    0.8031361476021849
+   ],
+   "n_used": 12488,
+   "note": ""
+  },
+  "25-40": {
+   "needle_shade": 48,
+   "needle_sun": 112,
+   "broad_shade": 128,
+   "broad_sun": 112,
+   "or_": 0.375,
+   "ci": [
+    0.2457367573429549,
+    0.5722587109902371
+   ],
+   "n_used": 400,
+   "note": ""
+  },
+  "40-90": {
+   "needle_shade": 104,
+   "needle_sun": 40,
+   "broad_shade": 160,
+   "broad_sun": 176,
+   "or_": 2.8600000000000003,
+   "ci": [
+    1.8737757819248042,
+    4.365303511179787
+   ],
+   "n_used": 480,
+   "note": ""
+  }
+ },
+ "OR_by_elev": {
+  "-100-500": {
+   "needle_shade": 33784,
+   "needle_sun": 32960,
+   "broad_shade": 42104,
+   "broad_sun": 40600,
+   "or_": 0.9883859015770472,
+   "ci": [
+    0.9684279210400983,
+    1.0087551889118065
+   ],
+   "n_used": 149448,
+   "note": ""
+  },
+  "500-1000": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 0,
+   "broad_sun": 0,
+   "or_": null,
+   "ci": null,
+   "n_used": 0
+  },
+  "1000-2000": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 0,
+   "broad_sun": 0,
+   "or_": null,
+   "ci": null,
+   "n_used": 0
+  },
+  "2000-3000": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 0,
+   "broad_sun": 0,
+   "or_": null,
+   "ci": null,
+   "n_used": 0
+  },
+  "3000-6000": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 0,
+   "broad_sun": 0,
+   "or_": null,
+   "ci": null,
+   "n_used": 0
+  }
+ },
+ "OR_by_province": {
+  "上海市": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 0,
+   "broad_sun": 0,
+   "or_": null,
+   "ci": null,
+   "n_used": 0,
+   "n_total": 40
+  },
+  "云南省": {
+   "needle_shade": 13000,
+   "needle_sun": 13264,
+   "broad_shade": 8400,
+   "broad_sun": 8872,
+   "or_": 1.0351685909586994,
+   "ci": [
+    0.9961598512211061,
+    1.0757048784829757
+   ],
+   "n_used": 43536,
+   "note": "",
+   "n_total": 198744
+  },
+  "内蒙古自治区": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 0,
+   "broad_sun": 0,
+   "or_": null,
+   "ci": null,
+   "n_used": 0,
+   "n_total": 112
+  },
+  "北京市": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 0,
+   "broad_sun": 0,
+   "or_": null,
+   "ci": null,
+   "n_used": 0,
+   "n_total": 96
+  },
+  "台湾省": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 1088,
+   "broad_sun": 1184,
+   "or_": 1.088235294117647,
+   "ci": [
+    0.021573129664192704,
+    54.89495839488518
+   ],
+   "n_used": 2272,
+   "note": "haldane_added",
+   "n_total": 22840
+  },
+  "吉林省": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 288,
+   "broad_sun": 336,
+   "or_": 1.1666666666666667,
+   "ci": [
+    0.023074947588020964,
+    58.98653099510022
+   ],
+   "n_used": 624,
+   "note": "haldane_added",
+   "n_total": 7168
+  },
+  "四川省": {
+   "needle_shade": 3728,
+   "needle_sun": 2696,
+   "broad_shade": 3152,
+   "broad_sun": 2168,
+   "or_": 0.9511063579809907,
+   "ci": [
+    0.8834440466534563,
+    1.0239508745557353
+   ],
+   "n_used": 11744,
+   "note": "",
+   "n_total": 93408
+  },
+  "天津市": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 0,
+   "broad_sun": 0,
+   "or_": null,
+   "ci": null,
+   "n_used": 0,
+   "n_total": 16
+  },
+  "宁夏回族自治区": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 0,
+   "broad_sun": 0,
+   "or_": null,
+   "ci": null,
+   "n_used": 0,
+   "n_total": 72
+  },
+  "安徽省": {
+   "needle_shade": 328,
+   "needle_sun": 376,
+   "broad_shade": 1560,
+   "broad_sun": 1520,
+   "or_": 0.8499727223131478,
+   "ci": [
+    0.7213566655778186,
+    1.0015206944788209
+   ],
+   "n_used": 3784,
+   "note": "",
+   "n_total": 40096
+  },
+  "山东省": {
+   "needle_shade": 104,
+   "needle_sun": 0,
+   "broad_shade": 152,
+   "broad_sun": 0,
+   "or_": 0.6842105263157895,
+   "ci": [
+    0.01346829560821388,
+    34.75896712838881
+   ],
+   "n_used": 256,
+   "note": "haldane_added",
+   "n_total": 13784
+  },
+  "山西省": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 40,
+   "broad_sun": 112,
+   "or_": 2.8,
+   "ci": [
+    0.054641015552882935,
+    143.48195985508812
+   ],
+   "n_used": 152,
+   "note": "haldane_added",
+   "n_total": 5424
+  },
+  "广东省": {
+   "needle_shade": 4256,
+   "needle_sun": 3984,
+   "broad_shade": 8816,
+   "broad_sun": 8152,
+   "or_": 0.9878133222545353,
+   "ci": [
+    0.9371337555416079,
+    1.041233606039089
+   ],
+   "n_used": 25208,
+   "note": "",
+   "n_total": 102600
+  },
+  "广西壮族自治区": {
+   "needle_shade": 2456,
+   "needle_sun": 3032,
+   "broad_shade": 6688,
+   "broad_sun": 7104,
+   "or_": 0.8604108015300904,
+   "ci": [
+    0.8080225176235053,
+    0.9161956891584988
+   ],
+   "n_used": 19280,
+   "note": "",
+   "n_total": 102040
+  },
+  "新疆维吾尔自治区": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 0,
+   "broad_sun": 0,
+   "or_": null,
+   "ci": null,
+   "n_used": 0,
+   "n_total": 32
+  },
+  "江苏省": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 32,
+   "broad_sun": 104,
+   "or_": 3.25,
+   "ci": [
+    0.06320839473375355,
+    167.10596819443646
+   ],
+   "n_used": 136,
+   "note": "haldane_added",
+   "n_total": 3816
+  },
+  "江西省": {
+   "needle_shade": 2408,
+   "needle_sun": 2360,
+   "broad_shade": 3048,
+   "broad_sun": 2616,
+   "or_": 0.8757240090751368,
+   "ci": [
+    0.8107029278944513,
+    0.9459599980259047
+   ],
+   "n_used": 10432,
+   "note": "",
+   "n_total": 95424
+  },
+  "河北省": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 40,
+   "broad_sun": 64,
+   "or_": 1.6,
+   "ci": [
+    0.031121625971715663,
+    82.25791294859113
+   ],
+   "n_used": 104,
+   "note": "haldane_added",
+   "n_total": 584
+  },
+  "河南省": {
+   "needle_shade": 8,
+   "needle_sun": 16,
+   "broad_shade": 8,
+   "broad_sun": 96,
+   "or_": 6.0,
+   "ci": [
+    1.9698839465637397,
+    18.27518827329818
+   ],
+   "n_used": 128,
+   "note": "",
+   "n_total": 27424
+  },
+  "浙江省": {
+   "needle_shade": 176,
+   "needle_sun": 128,
+   "broad_shade": 88,
+   "broad_sun": 120,
+   "or_": 1.8750000000000002,
+   "ci": [
+    1.3119656698303268,
+    2.679662342425978
+   ],
+   "n_used": 512,
+   "note": "",
+   "n_total": 74360
+  },
+  "海南省": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 16,
+   "broad_sun": 0,
+   "or_": 0.03125,
+   "ci": [
+    0.0002505940582999555,
+    3.896989843354853
+   ],
+   "n_used": 16,
+   "note": "haldane_added",
+   "n_total": 11040
+  },
+  "湖北省": {
+   "needle_shade": 216,
+   "needle_sun": 80,
+   "broad_shade": 320,
+   "broad_sun": 384,
+   "or_": 3.24,
+   "ci": [
+    2.409064421817844,
+    4.35754224956702
+   ],
+   "n_used": 1000,
+   "note": "",
+   "n_total": 60712
+  },
+  "湖南省": {
+   "needle_shade": 2128,
+   "needle_sun": 2328,
+   "broad_shade": 2752,
+   "broad_sun": 2368,
+   "or_": 0.7865419963238233,
+   "ci": [
+    0.7257365310284766,
+    0.8524420165322925
+   ],
+   "n_used": 9576,
+   "note": "",
+   "n_total": 78232
+  },
+  "澳门特别行政区": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 0,
+   "broad_sun": 8,
+   "or_": 16.0,
+   "ci": [
+    0.12515982020547628,
+    2045.3848493847465
+   ],
+   "n_used": 8,
+   "note": "haldane_added",
+   "n_total": 8
+  },
+  "甘肃省": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 48,
+   "broad_sun": 8,
+   "or_": 0.16666666666666666,
+   "ci": [
+    0.003080762650962321,
+    9.016526401052346
+   ],
+   "n_used": 56,
+   "note": "haldane_added",
+   "n_total": 20496
+  },
+  "福建省": {
+   "needle_shade": 584,
+   "needle_sun": 424,
+   "broad_shade": 648,
+   "broad_sun": 560,
+   "or_": 1.1903098066620077,
+   "ci": [
+    1.005626732863374,
+    1.408909876333051
+   ],
+   "n_used": 2216,
+   "note": "",
+   "n_total": 106496
+  },
+  "西藏自治区": {
+   "needle_shade": 1880,
+   "needle_sun": 1568,
+   "broad_shade": 1160,
+   "broad_sun": 1048,
+   "or_": 1.0832160450387052,
+   "ci": [
+    0.9731984324387465,
+    1.2056708694946914
+   ],
+   "n_used": 5656,
+   "note": "",
+   "n_total": 76536
+  },
+  "贵州省": {
+   "needle_shade": 2400,
+   "needle_sun": 2624,
+   "broad_shade": 3448,
+   "broad_sun": 3400,
+   "or_": 0.9019014204063154,
+   "ci": [
+    0.8385248488393621,
+    0.970068058515889
+   ],
+   "n_used": 11872,
+   "note": "",
+   "n_total": 49464
+  },
+  "辽宁省": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 0,
+   "broad_sun": 16,
+   "or_": 32.0,
+   "ci": [
+    0.25660831569915427,
+    3990.5175995953678
+   ],
+   "n_used": 16,
+   "note": "haldane_added",
+   "n_total": 6712
+  },
+  "重庆市": {
+   "needle_shade": 72,
+   "needle_sun": 56,
+   "broad_shade": 64,
+   "broad_sun": 40,
+   "or_": 0.8035714285714286,
+   "ci": [
+    0.4742760482266057,
+    1.3615004241323247
+   ],
+   "n_used": 232,
+   "note": "",
+   "n_total": 13848
+  },
+  "陕西省": {
+   "needle_shade": 0,
+   "needle_sun": 8,
+   "broad_shade": 168,
+   "broad_sun": 240,
+   "or_": 0.08928571428571429,
+   "ci": [
+    0.0050930678718737405,
+    1.5652528055899098
+   ],
+   "n_used": 416,
+   "note": "haldane_added",
+   "n_total": 61400
+  },
+  "青海省": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 0,
+   "broad_sun": 0,
+   "or_": null,
+   "ci": null,
+   "n_used": 0,
+   "n_total": 88
+  },
+  "香港特别行政区": {
+   "needle_shade": 40,
+   "needle_sun": 16,
+   "broad_shade": 80,
+   "broad_sun": 80,
+   "or_": 2.5,
+   "ci": [
+    1.29548707805978,
+    4.824440247879952
+   ],
+   "n_used": 216,
+   "note": "",
+   "n_total": 1168
+  },
+  "黑龙江省": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 0,
+   "broad_sun": 0,
+   "or_": null,
+   "ci": null,
+   "n_used": 0,
+   "n_total": 496
+  }
+ },
+ "OR_by_region": {
+  "东北": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 288,
+   "broad_sun": 352,
+   "or_": 1.222222222222222,
+   "ci": [
+    0.024175355819402146,
+    61.791320535391776
+   ],
+   "n_used": 640,
+   "note": "haldane_added",
+   "n_total": 14376
+  },
+  "华东": {
+   "needle_shade": 3600,
+   "needle_sun": 3288,
+   "broad_shade": 6616,
+   "broad_sun": 6104,
+   "or_": 1.0101589599202112,
+   "ci": [
+    0.9525710264001468,
+    1.0712283872031545
+   ],
+   "n_used": 19608,
+   "note": "",
+   "n_total": 356856
+  },
+  "华中": {
+   "needle_shade": 2352,
+   "needle_sun": 2424,
+   "broad_shade": 3080,
+   "broad_sun": 2848,
+   "or_": 0.8972097209720972,
+   "ci": [
+    0.8313393490770544,
+    0.9682992682837833
+   ],
+   "n_used": 10704,
+   "note": "",
+   "n_total": 166368
+  },
+  "华北": {
+   "needle_shade": 0,
+   "needle_sun": 0,
+   "broad_shade": 80,
+   "broad_sun": 176,
+   "or_": 2.2,
+   "ci": [
+    0.04326368716087344,
+    111.87211071499178
+   ],
+   "n_used": 256,
+   "note": "haldane_added",
+   "n_total": 6232
+  },
+  "华南": {
+   "needle_shade": 6752,
+   "needle_sun": 7032,
+   "broad_shade": 15600,
+   "broad_sun": 15344,
+   "or_": 0.9444251917972055,
+   "ci": [
+    0.907259246446279,
+    0.9831136429801075
+   ],
+   "n_used": 44728,
+   "note": "",
+   "n_total": 216856
+  },
+  "西北": {
+   "needle_shade": 0,
+   "needle_sun": 8,
+   "broad_shade": 216,
+   "broad_sun": 248,
+   "or_": 0.07175925925925926,
+   "ci": [
+    0.004097320497796532,
+    1.2567704411228855
+   ],
+   "n_used": 472,
+   "note": "haldane_added",
+   "n_total": 82088
+  },
+  "西南": {
+   "needle_shade": 21080,
+   "needle_sun": 20208,
+   "broad_shade": 16224,
+   "broad_sun": 15528,
+   "or_": 0.9984006568375288,
+   "ci": [
+    0.9696044476551987,
+    1.0280520824591788
+   ],
+   "n_used": 73040,
+   "note": "",
+   "n_total": 432000
+  }
+ },
+ "MH_or_tile_elev": {
+  "mh_or": 0.9747403556957516,
+  "strata_used": 99,
+  "n": 149448
+ },
+ "MH_or_tile": {
+  "mh_or": 0.9747403556957516,
+  "strata_used": 99,
+  "n": 149448
+ },
+ "verdict_G2_national": "PASS",
+ "gate": [
+  0.8,
+  1.25
+ ],
+ "prov_out_of_gate": {
+  "山东省": 0.6842105263157895,
+  "浙江省": 1.8750000000000002,
+  "湖北省": 3.24,
+  "湖南省": 0.7865419963238233,
+  "陕西省": 0.08928571428571429,
+  "香港特别行政区": 2.5
+ }
+}

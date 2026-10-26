@@ -1,0 +1,222 @@
+{
+ "input": "F:/lc_work/nb_national_2026/labels/_stage1_points.parquet",
+ "exists": true,
+ "n_rows": 55712,
+ "columns": [
+  "point_id",
+  "row_id",
+  "lon",
+  "lat",
+  "tile",
+  "prov",
+  "fcs10_raw",
+  "fcs30d_raw",
+  "class2",
+  "leaf",
+  "grp10",
+  "elev_m",
+  "slope_deg",
+  "aspect_deg",
+  "aspect_band",
+  "dem_ok",
+  "class_new",
+  "tier",
+  "src"
+ ],
+ "columns_used": {
+  "lon": "lon",
+  "lat": "lat",
+  "fcs10": "fcs10_raw",
+  "label": "class2",
+  "tile": "tile",
+  "prov": "prov",
+  "pid": "point_id"
+ },
+ "hygiene": {
+  "n_rows": 55712,
+  "dup_positions": 0,
+  "nan_lonlat": 0,
+  "out_of_china_bbox": 0,
+  "label_counts": {
+   "broad": 30184,
+   "needle": 23700,
+   "mixed": 1828
+  },
+  "n_nan_label": 0,
+  "n_other_label": 0
+ },
+ "by_province": {
+  "云南省": {
+   "broad": 1325,
+   "mixed": 0,
+   "needle": 1134
+  },
+  "内蒙古自治区": {
+   "broad": 2229,
+   "mixed": 80,
+   "needle": 1888
+  },
+  "台湾省": {
+   "broad": 186,
+   "mixed": 0,
+   "needle": 0
+  },
+  "吉林省": {
+   "broad": 1573,
+   "mixed": 289,
+   "needle": 1340
+  },
+  "四川省": {
+   "broad": 4730,
+   "mixed": 0,
+   "needle": 5728
+  },
+  "宁夏回族自治区": {
+   "broad": 84,
+   "mixed": 0,
+   "needle": 115
+  },
+  "安徽省": {
+   "broad": 93,
+   "mixed": 0,
+   "needle": 2
+  },
+  "广东省": {
+   "broad": 2923,
+   "mixed": 0,
+   "needle": 212
+  },
+  "广西壮族自治区": {
+   "broad": 824,
+   "mixed": 0,
+   "needle": 142
+  },
+  "江西省": {
+   "broad": 1028,
+   "mixed": 0,
+   "needle": 200
+  },
+  "浙江省": {
+   "broad": 346,
+   "mixed": 0,
+   "needle": 33
+  },
+  "海南省": {
+   "broad": 17,
+   "mixed": 0,
+   "needle": 1
+  },
+  "湖北省": {
+   "broad": 43,
+   "mixed": 0,
+   "needle": 35
+  },
+  "湖南省": {
+   "broad": 319,
+   "mixed": 0,
+   "needle": 120
+  },
+  "甘肃省": {
+   "broad": 1675,
+   "mixed": 7,
+   "needle": 1502
+  },
+  "福建省": {
+   "broad": 2133,
+   "mixed": 0,
+   "needle": 95
+  },
+  "西藏自治区": {
+   "broad": 432,
+   "mixed": 0,
+   "needle": 1005
+  },
+  "贵州省": {
+   "broad": 744,
+   "mixed": 0,
+   "needle": 669
+  },
+  "重庆市": {
+   "broad": 496,
+   "mixed": 0,
+   "needle": 496
+  },
+  "陕西省": {
+   "broad": 945,
+   "mixed": 0,
+   "needle": 657
+  },
+  "青海省": {
+   "broad": 120,
+   "mixed": 0,
+   "needle": 283
+  },
+  "香港特别行政区": {
+   "broad": 42,
+   "mixed": 0,
+   "needle": 1
+  },
+  "黑龙江省": {
+   "broad": 7877,
+   "mixed": 1452,
+   "needle": 8042
+  }
+ },
+ "n_prov_both_classes": 22,
+ "n_prov": 23,
+ "prov_missing_needle": [
+  "台湾省"
+ ],
+ "prov_missing_broad": [],
+ "g1": {
+  "n_checked": 1000,
+  "covered": 1000,
+  "coverage_rate": 1.0,
+  "tags_missing": [],
+  "n_compare": 1000,
+  "agree_n": 1000,
+  "agree_rate": 1.0,
+  "mismatches_sample": [],
+  "legend_rule": {
+   "needle": [
+    71,
+    72,
+    81,
+    82
+   ],
+   "broad": [
+    51,
+    52,
+    61,
+    62
+   ],
+   "mixed": [
+    91,
+    92
+   ]
+  },
+  "code_vs_label_crosstab": {
+   "broad": {
+    "broad": 30184,
+    "mixed": 0,
+    "needle": 0
+   },
+   "mixed": {
+    "broad": 0,
+    "mixed": 1828,
+    "needle": 0
+   },
+   "needle": {
+    "broad": 0,
+    "mixed": 0,
+    "needle": 23700
+   }
+  },
+  "needle_code_labelled_broad": 0,
+  "broad_code_labelled_needle": 0,
+  "mixed_merged_into_two": 0,
+  "mixed_present": 1828
+ },
+ "verdict_G1": "PASS",
+ "verdict_G7_hygiene": "PASS"
+}

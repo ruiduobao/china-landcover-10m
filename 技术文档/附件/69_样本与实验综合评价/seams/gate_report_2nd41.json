@@ -1,0 +1,1847 @@
+[
+ {
+  "tile": "T1205",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1205_10m.tif",
+  "coverage_px_pct": 99.8793,
+  "t1d_lens_nodata_px": 575994,
+  "t1d_lens_area_px": 588596,
+  "t2d_anomaly_rows": 14,
+  "t2d_top": [
+   {
+    "row": 22225,
+    "L": 3194,
+    "median_local": 2334,
+    "start_col": 9535
+   },
+   {
+    "row": 22226,
+    "L": 4668,
+    "median_local": 4553,
+    "start_col": 8798
+   },
+   {
+    "row": 22227,
+    "L": 5912,
+    "median_local": 5732,
+    "start_col": 8176
+   },
+   {
+    "row": 22229,
+    "L": 7680,
+    "median_local": 7650,
+    "start_col": 7292
+   },
+   {
+    "row": 22230,
+    "L": 8504,
+    "median_local": 8407,
+    "start_col": 6880
+   }
+  ],
+  "t3d_hint_line": 92.15,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": false
+ },
+ {
+  "tile": "T1206",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1206_10m.tif",
+  "coverage_px_pct": 99.8743,
+  "t1d_lens_nodata_px": 623054,
+  "t1d_lens_area_px": 634819,
+  "t2d_anomaly_rows": 13,
+  "t2d_top": [
+   {
+    "row": 22223,
+    "L": 2554,
+    "median_local": 2059,
+    "start_col": 9855
+   },
+   {
+    "row": 22224,
+    "L": 4118,
+    "median_local": 4041,
+    "start_col": 9073
+   },
+   {
+    "row": 22225,
+    "L": 5528,
+    "median_local": 5254,
+    "start_col": 8368
+   },
+   {
+    "row": 22228,
+    "L": 8084,
+    "median_local": 8000,
+    "start_col": 7090
+   },
+   {
+    "row": 22229,
+    "L": 8764,
+    "median_local": 8726,
+    "start_col": 6750
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1207",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1207_10m.tif",
+  "coverage_px_pct": 99.8701,
+  "t1d_lens_nodata_px": 643683,
+  "t1d_lens_area_px": 656460,
+  "t2d_anomaly_rows": 11,
+  "t2d_top": [
+   {
+    "row": 22222,
+    "L": 3340,
+    "median_local": 2540,
+    "start_col": 9462
+   },
+   {
+    "row": 22223,
+    "L": 4700,
+    "median_local": 4601,
+    "start_col": 8782
+   },
+   {
+    "row": 22224,
+    "L": 5862,
+    "median_local": 5689,
+    "start_col": 8201
+   },
+   {
+    "row": 22227,
+    "L": 8310,
+    "median_local": 8199,
+    "start_col": 6977
+   },
+   {
+    "row": 22232,
+    "L": 11212,
+    "median_local": 11159,
+    "start_col": 5526
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1208",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1208_10m.tif",
+  "coverage_px_pct": 99.8664,
+  "t1d_lens_nodata_px": 662139,
+  "t1d_lens_area_px": 674214,
+  "t2d_anomaly_rows": 13,
+  "t2d_top": [
+   {
+    "row": 22221,
+    "L": 3660,
+    "median_local": 3221,
+    "start_col": 9302
+   },
+   {
+    "row": 22222,
+    "L": 4978,
+    "median_local": 4832,
+    "start_col": 8643
+   },
+   {
+    "row": 22223,
+    "L": 6004,
+    "median_local": 5887,
+    "start_col": 8130
+   },
+   {
+    "row": 22226,
+    "L": 8368,
+    "median_local": 8260,
+    "start_col": 6948
+   },
+   {
+    "row": 22231,
+    "L": 11180,
+    "median_local": 11124,
+    "start_col": 5542
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1304",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1304_10m.tif",
+  "coverage_px_pct": 99.8849,
+  "t1d_lens_nodata_px": 548529,
+  "t1d_lens_area_px": 561219,
+  "t2d_anomaly_rows": 16,
+  "t2d_top": [
+   {
+    "row": 22227,
+    "L": 3433,
+    "median_local": 2533,
+    "start_col": 9416
+   },
+   {
+    "row": 22228,
+    "L": 4984,
+    "median_local": 4790,
+    "start_col": 8641
+   },
+   {
+    "row": 22229,
+    "L": 6147,
+    "median_local": 6031,
+    "start_col": 8059
+   },
+   {
+    "row": 22231,
+    "L": 8008,
+    "median_local": 7924,
+    "start_col": 7129
+   },
+   {
+    "row": 22232,
+    "L": 8770,
+    "median_local": 8721,
+    "start_col": 6748
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1305",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1305_10m.tif",
+  "coverage_px_pct": 99.8793,
+  "t1d_lens_nodata_px": 575993,
+  "t1d_lens_area_px": 588594,
+  "t2d_anomaly_rows": 14,
+  "t2d_top": [
+   {
+    "row": 22225,
+    "L": 3194,
+    "median_local": 2334,
+    "start_col": 9536
+   },
+   {
+    "row": 22226,
+    "L": 4668,
+    "median_local": 4553,
+    "start_col": 8799
+   },
+   {
+    "row": 22227,
+    "L": 5912,
+    "median_local": 5732,
+    "start_col": 8177
+   },
+   {
+    "row": 22229,
+    "L": 7680,
+    "median_local": 7649,
+    "start_col": 7293
+   },
+   {
+    "row": 22230,
+    "L": 8503,
+    "median_local": 8407,
+    "start_col": 6881
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1306",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1306_10m.tif",
+  "coverage_px_pct": 99.8743,
+  "t1d_lens_nodata_px": 623055,
+  "t1d_lens_area_px": 634819,
+  "t2d_anomaly_rows": 13,
+  "t2d_top": [
+   {
+    "row": 22223,
+    "L": 2554,
+    "median_local": 2059,
+    "start_col": 9856
+   },
+   {
+    "row": 22224,
+    "L": 4118,
+    "median_local": 4041,
+    "start_col": 9074
+   },
+   {
+    "row": 22225,
+    "L": 5528,
+    "median_local": 5254,
+    "start_col": 8369
+   },
+   {
+    "row": 22228,
+    "L": 8084,
+    "median_local": 8000,
+    "start_col": 7091
+   },
+   {
+    "row": 22229,
+    "L": 8764,
+    "median_local": 8726,
+    "start_col": 6751
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1307",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1307_10m.tif",
+  "coverage_px_pct": 99.8702,
+  "t1d_lens_nodata_px": 643685,
+  "t1d_lens_area_px": 656459,
+  "t2d_anomaly_rows": 11,
+  "t2d_top": [
+   {
+    "row": 22222,
+    "L": 3341,
+    "median_local": 2540,
+    "start_col": 9462
+   },
+   {
+    "row": 22223,
+    "L": 4700,
+    "median_local": 4601,
+    "start_col": 8783
+   },
+   {
+    "row": 22224,
+    "L": 5862,
+    "median_local": 5689,
+    "start_col": 8202
+   },
+   {
+    "row": 22227,
+    "L": 8310,
+    "median_local": 8199,
+    "start_col": 6978
+   },
+   {
+    "row": 22232,
+    "L": 11212,
+    "median_local": 11158,
+    "start_col": 5527
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1404",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1404_10m.tif",
+  "coverage_px_pct": 99.8849,
+  "t1d_lens_nodata_px": 548532,
+  "t1d_lens_area_px": 561220,
+  "t2d_anomaly_rows": 16,
+  "t2d_top": [
+   {
+    "row": 22227,
+    "L": 3433,
+    "median_local": 2533,
+    "start_col": 9416
+   },
+   {
+    "row": 22228,
+    "L": 4984,
+    "median_local": 4790,
+    "start_col": 8641
+   },
+   {
+    "row": 22229,
+    "L": 6147,
+    "median_local": 6031,
+    "start_col": 8059
+   },
+   {
+    "row": 22231,
+    "L": 8008,
+    "median_local": 7924,
+    "start_col": 7129
+   },
+   {
+    "row": 22232,
+    "L": 8770,
+    "median_local": 8721,
+    "start_col": 6748
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1405",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1405_10m.tif",
+  "coverage_px_pct": 99.8793,
+  "t1d_lens_nodata_px": 575995,
+  "t1d_lens_area_px": 588598,
+  "t2d_anomaly_rows": 14,
+  "t2d_top": [
+   {
+    "row": 22225,
+    "L": 3194,
+    "median_local": 2334,
+    "start_col": 9536
+   },
+   {
+    "row": 22226,
+    "L": 4668,
+    "median_local": 4553,
+    "start_col": 8799
+   },
+   {
+    "row": 22227,
+    "L": 5912,
+    "median_local": 5732,
+    "start_col": 8177
+   },
+   {
+    "row": 22229,
+    "L": 7681,
+    "median_local": 7649,
+    "start_col": 7292
+   },
+   {
+    "row": 22230,
+    "L": 8503,
+    "median_local": 8408,
+    "start_col": 6881
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1406",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1406_10m.tif",
+  "coverage_px_pct": 99.8743,
+  "t1d_lens_nodata_px": 623056,
+  "t1d_lens_area_px": 634818,
+  "t2d_anomaly_rows": 13,
+  "t2d_top": [
+   {
+    "row": 22223,
+    "L": 2554,
+    "median_local": 2058,
+    "start_col": 9856
+   },
+   {
+    "row": 22224,
+    "L": 4117,
+    "median_local": 4041,
+    "start_col": 9074
+   },
+   {
+    "row": 22225,
+    "L": 5528,
+    "median_local": 5253,
+    "start_col": 8369
+   },
+   {
+    "row": 22228,
+    "L": 8084,
+    "median_local": 8000,
+    "start_col": 7091
+   },
+   {
+    "row": 22229,
+    "L": 8764,
+    "median_local": 8726,
+    "start_col": 6751
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1407",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1407_10m.tif",
+  "coverage_px_pct": 99.8702,
+  "t1d_lens_nodata_px": 643686,
+  "t1d_lens_area_px": 656462,
+  "t2d_anomaly_rows": 11,
+  "t2d_top": [
+   {
+    "row": 22222,
+    "L": 3341,
+    "median_local": 2540,
+    "start_col": 9462
+   },
+   {
+    "row": 22223,
+    "L": 4701,
+    "median_local": 4601,
+    "start_col": 8782
+   },
+   {
+    "row": 22224,
+    "L": 5862,
+    "median_local": 5689,
+    "start_col": 8202
+   },
+   {
+    "row": 22227,
+    "L": 8310,
+    "median_local": 8199,
+    "start_col": 6978
+   },
+   {
+    "row": 22232,
+    "L": 11212,
+    "median_local": 11158,
+    "start_col": 5527
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1408",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1408_10m.tif",
+  "coverage_px_pct": 99.8664,
+  "t1d_lens_nodata_px": 662141,
+  "t1d_lens_area_px": 674216,
+  "t2d_anomaly_rows": 13,
+  "t2d_top": [
+   {
+    "row": 22221,
+    "L": 3661,
+    "median_local": 3221,
+    "start_col": 9302
+   },
+   {
+    "row": 22222,
+    "L": 4979,
+    "median_local": 4832,
+    "start_col": 8643
+   },
+   {
+    "row": 22223,
+    "L": 6004,
+    "median_local": 5887,
+    "start_col": 8131
+   },
+   {
+    "row": 22226,
+    "L": 8369,
+    "median_local": 8260,
+    "start_col": 6948
+   },
+   {
+    "row": 22231,
+    "L": 11180,
+    "median_local": 11123,
+    "start_col": 5543
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1504",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1504_10m.tif",
+  "coverage_px_pct": 99.8849,
+  "t1d_lens_nodata_px": 548535,
+  "t1d_lens_area_px": 561215,
+  "t2d_anomaly_rows": 15,
+  "t2d_top": [
+   {
+    "row": 22227,
+    "L": 3433,
+    "median_local": 2533,
+    "start_col": 9416
+   },
+   {
+    "row": 22228,
+    "L": 4984,
+    "median_local": 4790,
+    "start_col": 8641
+   },
+   {
+    "row": 22229,
+    "L": 6147,
+    "median_local": 6030,
+    "start_col": 8059
+   },
+   {
+    "row": 22231,
+    "L": 8008,
+    "median_local": 7923,
+    "start_col": 7129
+   },
+   {
+    "row": 22232,
+    "L": 8770,
+    "median_local": 8721,
+    "start_col": 6748
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1505",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1505_10m.tif",
+  "coverage_px_pct": 99.8793,
+  "t1d_lens_nodata_px": 575992,
+  "t1d_lens_area_px": 588597,
+  "t2d_anomaly_rows": 14,
+  "t2d_top": [
+   {
+    "row": 22225,
+    "L": 3194,
+    "median_local": 2334,
+    "start_col": 9536
+   },
+   {
+    "row": 22226,
+    "L": 4668,
+    "median_local": 4552,
+    "start_col": 8799
+   },
+   {
+    "row": 22227,
+    "L": 5911,
+    "median_local": 5732,
+    "start_col": 8177
+   },
+   {
+    "row": 22229,
+    "L": 7681,
+    "median_local": 7649,
+    "start_col": 7292
+   },
+   {
+    "row": 22230,
+    "L": 8503,
+    "median_local": 8408,
+    "start_col": 6881
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1506",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1506_10m.tif",
+  "coverage_px_pct": 99.8743,
+  "t1d_lens_nodata_px": 623055,
+  "t1d_lens_area_px": 634822,
+  "t2d_anomaly_rows": 13,
+  "t2d_top": [
+   {
+    "row": 22223,
+    "L": 2554,
+    "median_local": 2058,
+    "start_col": 9856
+   },
+   {
+    "row": 22224,
+    "L": 4117,
+    "median_local": 4041,
+    "start_col": 9074
+   },
+   {
+    "row": 22225,
+    "L": 5529,
+    "median_local": 5253,
+    "start_col": 8368
+   },
+   {
+    "row": 22228,
+    "L": 8083,
+    "median_local": 8000,
+    "start_col": 7091
+   },
+   {
+    "row": 22229,
+    "L": 8764,
+    "median_local": 8726,
+    "start_col": 6751
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1507",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1507_10m.tif",
+  "coverage_px_pct": 99.8702,
+  "t1d_lens_nodata_px": 643687,
+  "t1d_lens_area_px": 656461,
+  "t2d_anomaly_rows": 11,
+  "t2d_top": [
+   {
+    "row": 22222,
+    "L": 3341,
+    "median_local": 2540,
+    "start_col": 9462
+   },
+   {
+    "row": 22223,
+    "L": 4701,
+    "median_local": 4602,
+    "start_col": 8782
+   },
+   {
+    "row": 22224,
+    "L": 5863,
+    "median_local": 5689,
+    "start_col": 8201
+   },
+   {
+    "row": 22227,
+    "L": 8310,
+    "median_local": 8199,
+    "start_col": 6978
+   },
+   {
+    "row": 22232,
+    "L": 11212,
+    "median_local": 11158,
+    "start_col": 5527
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1508",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1508_10m.tif",
+  "coverage_px_pct": 99.8664,
+  "t1d_lens_nodata_px": 662142,
+  "t1d_lens_area_px": 674212,
+  "t2d_anomaly_rows": 13,
+  "t2d_top": [
+   {
+    "row": 22221,
+    "L": 3661,
+    "median_local": 3221,
+    "start_col": 9302
+   },
+   {
+    "row": 22222,
+    "L": 4979,
+    "median_local": 4832,
+    "start_col": 8643
+   },
+   {
+    "row": 22223,
+    "L": 6004,
+    "median_local": 5887,
+    "start_col": 8131
+   },
+   {
+    "row": 22226,
+    "L": 8369,
+    "median_local": 8260,
+    "start_col": 6948
+   },
+   {
+    "row": 22231,
+    "L": 11180,
+    "median_local": 11124,
+    "start_col": 5543
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1509",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1509_10m.tif",
+  "coverage_px_pct": 99.8634,
+  "t1d_lens_nodata_px": 677052,
+  "t1d_lens_area_px": 689038,
+  "t2d_anomaly_rows": 12,
+  "t2d_top": [
+   {
+    "row": 22220,
+    "L": 3689,
+    "median_local": 3311,
+    "start_col": 9288
+   },
+   {
+    "row": 22221,
+    "L": 4974,
+    "median_local": 4835,
+    "start_col": 8646
+   },
+   {
+    "row": 22222,
+    "L": 5982,
+    "median_local": 5863,
+    "start_col": 8142
+   },
+   {
+    "row": 22225,
+    "L": 8295,
+    "median_local": 8192,
+    "start_col": 6985
+   },
+   {
+    "row": 22230,
+    "L": 11064,
+    "median_local": 11010,
+    "start_col": 5601
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1604",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1604_10m.tif",
+  "coverage_px_pct": 99.8849,
+  "t1d_lens_nodata_px": 548535,
+  "t1d_lens_area_px": 561215,
+  "t2d_anomaly_rows": 15,
+  "t2d_top": [
+   {
+    "row": 22227,
+    "L": 3433,
+    "median_local": 2533,
+    "start_col": 9416
+   },
+   {
+    "row": 22228,
+    "L": 4984,
+    "median_local": 4790,
+    "start_col": 8641
+   },
+   {
+    "row": 22229,
+    "L": 6147,
+    "median_local": 6030,
+    "start_col": 8059
+   },
+   {
+    "row": 22231,
+    "L": 8008,
+    "median_local": 7923,
+    "start_col": 7129
+   },
+   {
+    "row": 22232,
+    "L": 8770,
+    "median_local": 8721,
+    "start_col": 6748
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1605",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1605_10m.tif",
+  "coverage_px_pct": 99.8793,
+  "t1d_lens_nodata_px": 575992,
+  "t1d_lens_area_px": 588598,
+  "t2d_anomaly_rows": 14,
+  "t2d_top": [
+   {
+    "row": 22225,
+    "L": 3194,
+    "median_local": 2334,
+    "start_col": 9536
+   },
+   {
+    "row": 22226,
+    "L": 4669,
+    "median_local": 4552,
+    "start_col": 8798
+   },
+   {
+    "row": 22227,
+    "L": 5911,
+    "median_local": 5732,
+    "start_col": 8177
+   },
+   {
+    "row": 22229,
+    "L": 7681,
+    "median_local": 7649,
+    "start_col": 7292
+   },
+   {
+    "row": 22230,
+    "L": 8503,
+    "median_local": 8408,
+    "start_col": 6881
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1606",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1606_10m.tif",
+  "coverage_px_pct": 99.8743,
+  "t1d_lens_nodata_px": 623052,
+  "t1d_lens_area_px": 634824,
+  "t2d_anomaly_rows": 13,
+  "t2d_top": [
+   {
+    "row": 22223,
+    "L": 2554,
+    "median_local": 2058,
+    "start_col": 9856
+   },
+   {
+    "row": 22224,
+    "L": 4117,
+    "median_local": 4041,
+    "start_col": 9074
+   },
+   {
+    "row": 22225,
+    "L": 5529,
+    "median_local": 5253,
+    "start_col": 8368
+   },
+   {
+    "row": 22228,
+    "L": 8083,
+    "median_local": 8000,
+    "start_col": 7091
+   },
+   {
+    "row": 22229,
+    "L": 8764,
+    "median_local": 8726,
+    "start_col": 6751
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1607",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1607_10m.tif",
+  "coverage_px_pct": 99.8702,
+  "t1d_lens_nodata_px": 643689,
+  "t1d_lens_area_px": 656462,
+  "t2d_anomaly_rows": 11,
+  "t2d_top": [
+   {
+    "row": 22222,
+    "L": 3341,
+    "median_local": 2540,
+    "start_col": 9462
+   },
+   {
+    "row": 22223,
+    "L": 4701,
+    "median_local": 4602,
+    "start_col": 8782
+   },
+   {
+    "row": 22224,
+    "L": 5863,
+    "median_local": 5690,
+    "start_col": 8201
+   },
+   {
+    "row": 22227,
+    "L": 8310,
+    "median_local": 8199,
+    "start_col": 6978
+   },
+   {
+    "row": 22232,
+    "L": 11212,
+    "median_local": 11158,
+    "start_col": 5527
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1608",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1608_10m.tif",
+  "coverage_px_pct": 99.8664,
+  "t1d_lens_nodata_px": 662141,
+  "t1d_lens_area_px": 674214,
+  "t2d_anomaly_rows": 13,
+  "t2d_top": [
+   {
+    "row": 22221,
+    "L": 3661,
+    "median_local": 3221,
+    "start_col": 9302
+   },
+   {
+    "row": 22222,
+    "L": 4979,
+    "median_local": 4833,
+    "start_col": 8643
+   },
+   {
+    "row": 22223,
+    "L": 6005,
+    "median_local": 5887,
+    "start_col": 8130
+   },
+   {
+    "row": 22226,
+    "L": 8369,
+    "median_local": 8259,
+    "start_col": 6948
+   },
+   {
+    "row": 22231,
+    "L": 11179,
+    "median_local": 11124,
+    "start_col": 5543
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1609",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1609_10m.tif",
+  "coverage_px_pct": 99.8634,
+  "t1d_lens_nodata_px": 677049,
+  "t1d_lens_area_px": 689039,
+  "t2d_anomaly_rows": 12,
+  "t2d_top": [
+   {
+    "row": 22220,
+    "L": 3689,
+    "median_local": 3312,
+    "start_col": 9288
+   },
+   {
+    "row": 22221,
+    "L": 4975,
+    "median_local": 4835,
+    "start_col": 8645
+   },
+   {
+    "row": 22222,
+    "L": 5981,
+    "median_local": 5864,
+    "start_col": 8142
+   },
+   {
+    "row": 22225,
+    "L": 8295,
+    "median_local": 8192,
+    "start_col": 6985
+   },
+   {
+    "row": 22230,
+    "L": 11064,
+    "median_local": 11010,
+    "start_col": 5601
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1610",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1610_10m.tif",
+  "coverage_px_pct": 99.8611,
+  "t1d_lens_nodata_px": 688432,
+  "t1d_lens_area_px": 700953,
+  "t2d_anomaly_rows": 14,
+  "t2d_top": [
+   {
+    "row": 22218,
+    "L": 3442,
+    "median_local": 2842,
+    "start_col": 9412
+   },
+   {
+    "row": 22219,
+    "L": 4701,
+    "median_local": 4622,
+    "start_col": 8782
+   },
+   {
+    "row": 22220,
+    "L": 5803,
+    "median_local": 5630,
+    "start_col": 8231
+   },
+   {
+    "row": 22223,
+    "L": 8070,
+    "median_local": 8002,
+    "start_col": 7098
+   },
+   {
+    "row": 22224,
+    "L": 8689,
+    "median_local": 8649,
+    "start_col": 6788
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1706",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1706_10m.tif",
+  "coverage_px_pct": 99.8743,
+  "t1d_lens_nodata_px": 623050,
+  "t1d_lens_area_px": 634819,
+  "t2d_anomaly_rows": 13,
+  "t2d_top": [
+   {
+    "row": 22223,
+    "L": 2553,
+    "median_local": 2058,
+    "start_col": 9856
+   },
+   {
+    "row": 22224,
+    "L": 4117,
+    "median_local": 4041,
+    "start_col": 9074
+   },
+   {
+    "row": 22225,
+    "L": 5529,
+    "median_local": 5253,
+    "start_col": 8368
+   },
+   {
+    "row": 22228,
+    "L": 8083,
+    "median_local": 8000,
+    "start_col": 7091
+   },
+   {
+    "row": 22229,
+    "L": 8763,
+    "median_local": 8726,
+    "start_col": 6751
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1707",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1707_10m.tif",
+  "coverage_px_pct": 99.8702,
+  "t1d_lens_nodata_px": 643692,
+  "t1d_lens_area_px": 656466,
+  "t2d_anomaly_rows": 11,
+  "t2d_top": [
+   {
+    "row": 22222,
+    "L": 3341,
+    "median_local": 2540,
+    "start_col": 9462
+   },
+   {
+    "row": 22223,
+    "L": 4701,
+    "median_local": 4602,
+    "start_col": 8782
+   },
+   {
+    "row": 22224,
+    "L": 5863,
+    "median_local": 5690,
+    "start_col": 8201
+   },
+   {
+    "row": 22227,
+    "L": 8311,
+    "median_local": 8199,
+    "start_col": 6977
+   },
+   {
+    "row": 22232,
+    "L": 11211,
+    "median_local": 11159,
+    "start_col": 5527
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1709",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1709_10m.tif",
+  "coverage_px_pct": 99.8634,
+  "t1d_lens_nodata_px": 677044,
+  "t1d_lens_area_px": 689038,
+  "t2d_anomaly_rows": 12,
+  "t2d_top": [
+   {
+    "row": 22220,
+    "L": 3689,
+    "median_local": 3312,
+    "start_col": 9288
+   },
+   {
+    "row": 22221,
+    "L": 4975,
+    "median_local": 4835,
+    "start_col": 8645
+   },
+   {
+    "row": 22222,
+    "L": 5981,
+    "median_local": 5864,
+    "start_col": 8142
+   },
+   {
+    "row": 22225,
+    "L": 8295,
+    "median_local": 8192,
+    "start_col": 6985
+   },
+   {
+    "row": 22230,
+    "L": 11063,
+    "median_local": 11010,
+    "start_col": 5601
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1710",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1710_10m.tif",
+  "coverage_px_pct": 99.8611,
+  "t1d_lens_nodata_px": 688426,
+  "t1d_lens_area_px": 700953,
+  "t2d_anomaly_rows": 14,
+  "t2d_top": [
+   {
+    "row": 22218,
+    "L": 3441,
+    "median_local": 2842,
+    "start_col": 9412
+   },
+   {
+    "row": 22219,
+    "L": 4701,
+    "median_local": 4622,
+    "start_col": 8782
+   },
+   {
+    "row": 22220,
+    "L": 5803,
+    "median_local": 5630,
+    "start_col": 8231
+   },
+   {
+    "row": 22223,
+    "L": 8071,
+    "median_local": 8002,
+    "start_col": 7097
+   },
+   {
+    "row": 22224,
+    "L": 8689,
+    "median_local": 8650,
+    "start_col": 6788
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1801",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1801_10m.tif",
+  "coverage_px_pct": 90.9243,
+  "t1d_lens_nodata_px": 447986,
+  "t1d_lens_area_px": 462940,
+  "t2d_anomaly_rows": 21,
+  "t2d_top": [
+   {
+    "row": 20908,
+    "L": 1975,
+    "median_local": 1730,
+    "start_col": 7424
+   },
+   {
+    "row": 21131,
+    "L": 1094,
+    "median_local": 879,
+    "start_col": 8707
+   },
+   {
+    "row": 21230,
+    "L": 556,
+    "median_local": 539,
+    "start_col": 9628
+   },
+   {
+    "row": 21231,
+    "L": 564,
+    "median_local": 539,
+    "start_col": 9631
+   },
+   {
+    "row": 21232,
+    "L": 575,
+    "median_local": 539,
+    "start_col": 9633
+   }
+  ],
+  "t3d_hint_line": 51.55,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": false
+ },
+ {
+  "tile": "T1802",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1802_10m.tif",
+  "coverage_px_pct": 99.8973,
+  "t1d_lens_nodata_px": 486659,
+  "t1d_lens_area_px": 498358,
+  "t2d_anomaly_rows": 15,
+  "t2d_top": [
+   {
+    "row": 22231,
+    "L": 3063,
+    "median_local": 2411,
+    "start_col": 9601
+   },
+   {
+    "row": 22232,
+    "L": 4823,
+    "median_local": 4619,
+    "start_col": 8721
+   },
+   {
+    "row": 22233,
+    "L": 6175,
+    "median_local": 6027,
+    "start_col": 8045
+   },
+   {
+    "row": 22235,
+    "L": 8287,
+    "median_local": 8144,
+    "start_col": 6989
+   },
+   {
+    "row": 22238,
+    "L": 10566,
+    "median_local": 10545,
+    "start_col": 5849
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1901",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1901_10m.tif",
+  "coverage_px_pct": 32.2785,
+  "t1d_lens_nodata_px": 459890,
+  "t1d_lens_area_px": 462938,
+  "t2d_anomaly_rows": 22,
+  "t2d_top": [
+   {
+    "row": 5637,
+    "L": 72,
+    "median_local": 0,
+    "start_col": 20975
+   },
+   {
+    "row": 5837,
+    "L": 380,
+    "median_local": 198,
+    "start_col": 10544
+   },
+   {
+    "row": 6033,
+    "L": 1277,
+    "median_local": 1260,
+    "start_col": 18283
+   },
+   {
+    "row": 6034,
+    "L": 1288,
+    "median_local": 1260,
+    "start_col": 18281
+   },
+   {
+    "row": 6035,
+    "L": 1306,
+    "median_local": 1260,
+    "start_col": 18279
+   }
+  ],
+  "t3d_hint_line": 20.25,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": false
+ },
+ {
+  "tile": "T1902",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1902_10m.tif",
+  "coverage_px_pct": 99.8973,
+  "t1d_lens_nodata_px": 486657,
+  "t1d_lens_area_px": 498357,
+  "t2d_anomaly_rows": 15,
+  "t2d_top": [
+   {
+    "row": 22231,
+    "L": 3063,
+    "median_local": 2411,
+    "start_col": 9601
+   },
+   {
+    "row": 22232,
+    "L": 4822,
+    "median_local": 4619,
+    "start_col": 8721
+   },
+   {
+    "row": 22233,
+    "L": 6175,
+    "median_local": 6026,
+    "start_col": 8045
+   },
+   {
+    "row": 22235,
+    "L": 8286,
+    "median_local": 8144,
+    "start_col": 6989
+   },
+   {
+    "row": 22238,
+    "L": 10566,
+    "median_local": 10545,
+    "start_col": 5849
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T1903",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T1903_10m.tif",
+  "coverage_px_pct": 99.8909,
+  "t1d_lens_nodata_px": 518675,
+  "t1d_lens_area_px": 531189,
+  "t2d_anomaly_rows": 14,
+  "t2d_top": [
+   {
+    "row": 22229,
+    "L": 3401,
+    "median_local": 2522,
+    "start_col": 9432
+   },
+   {
+    "row": 22230,
+    "L": 5045,
+    "median_local": 4820,
+    "start_col": 8610
+   },
+   {
+    "row": 22231,
+    "L": 6240,
+    "median_local": 6136,
+    "start_col": 8012
+   },
+   {
+    "row": 22233,
+    "L": 8213,
+    "median_local": 8092,
+    "start_col": 7026
+   },
+   {
+    "row": 22234,
+    "L": 8957,
+    "median_local": 8937,
+    "start_col": 6654
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T2001",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T2001_10m.tif",
+  "coverage_px_pct": 7.9307,
+  "t1d_lens_nodata_px": 462937,
+  "t1d_lens_area_px": 462937,
+  "t2d_anomaly_rows": 11,
+  "t2d_top": [
+   {
+    "row": 1927,
+    "L": 145,
+    "median_local": 128,
+    "start_col": 6004
+   },
+   {
+    "row": 2038,
+    "L": 1785,
+    "median_local": 1338,
+    "start_col": 5809
+   },
+   {
+    "row": 2206,
+    "L": 3589,
+    "median_local": 3207,
+    "start_col": 5378
+   },
+   {
+    "row": 2538,
+    "L": 5213,
+    "median_local": 4944,
+    "start_col": 3806
+   },
+   {
+    "row": 2938,
+    "L": 6578,
+    "median_local": 6513,
+    "start_col": 2705
+   }
+  ],
+  "t3d_hint_line": -0.05,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": false
+ },
+ {
+  "tile": "T2002",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T2002_10m.tif",
+  "coverage_px_pct": 95.1616,
+  "t1d_lens_nodata_px": 489917,
+  "t1d_lens_area_px": 498360,
+  "t2d_anomaly_rows": 13,
+  "t2d_top": [
+   {
+    "row": 18402,
+    "L": 663,
+    "median_local": 506,
+    "start_col": 16717
+   },
+   {
+    "row": 18897,
+    "L": 1815,
+    "median_local": 1796,
+    "start_col": 16579
+   },
+   {
+    "row": 18898,
+    "L": 1826,
+    "median_local": 1796,
+    "start_col": 16579
+   },
+   {
+    "row": 18899,
+    "L": 1838,
+    "median_local": 1796,
+    "start_col": 16579
+   },
+   {
+    "row": 18900,
+    "L": 1861,
+    "median_local": 1796,
+    "start_col": 16579
+   }
+  ],
+  "t3d_hint_line": 84.35,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": false
+ },
+ {
+  "tile": "T2003",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T2003_10m.tif",
+  "coverage_px_pct": 99.8909,
+  "t1d_lens_nodata_px": 518678,
+  "t1d_lens_area_px": 531193,
+  "t2d_anomaly_rows": 14,
+  "t2d_top": [
+   {
+    "row": 22229,
+    "L": 3401,
+    "median_local": 2523,
+    "start_col": 9432
+   },
+   {
+    "row": 22230,
+    "L": 5046,
+    "median_local": 4820,
+    "start_col": 8609
+   },
+   {
+    "row": 22231,
+    "L": 6240,
+    "median_local": 6136,
+    "start_col": 8012
+   },
+   {
+    "row": 22233,
+    "L": 8214,
+    "median_local": 8092,
+    "start_col": 7025
+   },
+   {
+    "row": 22234,
+    "L": 8957,
+    "median_local": 8938,
+    "start_col": 6654
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T2102",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T2102_10m.tif",
+  "coverage_px_pct": 65.3695,
+  "t1d_lens_nodata_px": 498359,
+  "t1d_lens_area_px": 498359,
+  "t2d_anomaly_rows": 30,
+  "t2d_top": [
+   {
+    "row": 8676,
+    "L": 266,
+    "median_local": 246,
+    "start_col": 21995
+   },
+   {
+    "row": 8677,
+    "L": 270,
+    "median_local": 125,
+    "start_col": 21993
+   },
+   {
+    "row": 13496,
+    "L": 87,
+    "median_local": 68,
+    "start_col": 14852
+   },
+   {
+    "row": 13497,
+    "L": 99,
+    "median_local": 68,
+    "start_col": 14850
+   },
+   {
+    "row": 13498,
+    "L": 111,
+    "median_local": 68,
+    "start_col": 14848
+   }
+  ],
+  "t3d_hint_line": 53.05,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": false
+ },
+ {
+  "tile": "T2103",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T2103_10m.tif",
+  "coverage_px_pct": 99.8909,
+  "t1d_lens_nodata_px": 518675,
+  "t1d_lens_area_px": 531194,
+  "t2d_anomaly_rows": 14,
+  "t2d_top": [
+   {
+    "row": 22229,
+    "L": 3401,
+    "median_local": 2523,
+    "start_col": 9432
+   },
+   {
+    "row": 22230,
+    "L": 5046,
+    "median_local": 4820,
+    "start_col": 8609
+   },
+   {
+    "row": 22231,
+    "L": 6240,
+    "median_local": 6136,
+    "start_col": 8012
+   },
+   {
+    "row": 22233,
+    "L": 8214,
+    "median_local": 8091,
+    "start_col": 7025
+   },
+   {
+    "row": 22234,
+    "L": 8957,
+    "median_local": 8938,
+    "start_col": 6654
+   }
+  ],
+  "t3d_hint_line": 99.99,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": true
+ },
+ {
+  "tile": "T2202",
+  "fp": "F:/lc_work/prod2nd_2023/rasters_batch\\T2202_10m.tif",
+  "coverage_px_pct": 26.6236,
+  "t1d_lens_nodata_px": 498358,
+  "t1d_lens_area_px": 498358,
+  "t2d_anomaly_rows": 59,
+  "t2d_top": [
+   {
+    "row": 401,
+    "L": 503,
+    "median_local": 0,
+    "start_col": 11285
+   },
+   {
+    "row": 4158,
+    "L": 39,
+    "median_local": 0,
+    "start_col": 7539
+   },
+   {
+    "row": 5902,
+    "L": 1517,
+    "median_local": 1410,
+    "start_col": 5182
+   },
+   {
+    "row": 6239,
+    "L": 3289,
+    "median_local": 3268,
+    "start_col": 4112
+   },
+   {
+    "row": 6240,
+    "L": 3294,
+    "median_local": 3268,
+    "start_col": 4111
+   }
+  ],
+  "t3d_hint_line": 7.75,
+  "grade": "DIAGNOSTIC",
+  "blocking_gate": "NOT_EVALUATED (needs EVM = AEF valid mask)",
+  "warning": "T1d 透镜区可能天然无 AEF 数据；T3d 提示线基于 land_frac，非“应有覆盖率”",
+  "t3d_over_hint": false
+ }
+]

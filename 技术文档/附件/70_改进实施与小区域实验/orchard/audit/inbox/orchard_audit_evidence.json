@@ -1,0 +1,470 @@
+{
+ "generated": "2026-10-15 14:18:03",
+ "frozen_registry_md5": "0abb0e78cfaa064a1f643875f6b43489",
+ "feature_list": [
+  "A00",
+  "A01",
+  "A02",
+  "A03",
+  "A04",
+  "A05",
+  "A06",
+  "A07",
+  "A08",
+  "A09",
+  "A10",
+  "A11",
+  "A12",
+  "A13",
+  "A14",
+  "A15",
+  "A16",
+  "A17",
+  "A18",
+  "A19",
+  "A20",
+  "A21",
+  "A22",
+  "A23",
+  "A24",
+  "A25",
+  "A26",
+  "A27",
+  "A28",
+  "A29",
+  "A30",
+  "A31",
+  "A32",
+  "A33",
+  "A34",
+  "A35",
+  "A36",
+  "A37",
+  "A38",
+  "A39",
+  "A40",
+  "A41",
+  "A42",
+  "A43",
+  "A44",
+  "A45",
+  "A46",
+  "A47",
+  "A48",
+  "A49",
+  "A50",
+  "A51",
+  "A52",
+  "A53",
+  "A54",
+  "A55",
+  "A56",
+  "A57",
+  "A58",
+  "A59",
+  "A60",
+  "A61",
+  "A62",
+  "A63"
+ ],
+ "n_features": 64,
+ "rf_params": {
+  "n_estimators": 100,
+  "min_samples_leaf": 2,
+  "max_leaf_nodes": 5000,
+  "n_jobs": 10,
+  "note": "sklearn RF ≠ GEE smileRF（本地筛选器）"
+ },
+ "n_train_limit": 20000,
+ "seeds": [
+  7,
+  11,
+  23
+ ],
+ "n_units": 8,
+ "n_fits": 24,
+ "timing": [
+  {
+   "region": "GD",
+   "arm": "OCAP",
+   "seed": 7,
+   "n_train": 20000,
+   "n_class2": 200,
+   "n_classes_train": 17,
+   "fit_s": 0.6,
+   "predict_s": 0.0,
+   "wall_unit_s": 3.2
+  },
+  {
+   "region": "GD",
+   "arm": "OCAP",
+   "seed": 11,
+   "n_train": 20000,
+   "n_class2": 200,
+   "n_classes_train": 17,
+   "fit_s": 0.7,
+   "predict_s": 0.0,
+   "wall_unit_s": 3.2
+  },
+  {
+   "region": "GD",
+   "arm": "OCAP",
+   "seed": 23,
+   "n_train": 20000,
+   "n_class2": 200,
+   "n_classes_train": 17,
+   "fit_s": 0.8,
+   "predict_s": 0.0,
+   "wall_unit_s": 3.2
+  },
+  {
+   "region": "GD",
+   "arm": "baseline",
+   "seed": 7,
+   "n_train": 20000,
+   "n_class2": 2254,
+   "n_classes_train": 17,
+   "fit_s": 0.7,
+   "predict_s": 0.0,
+   "wall_unit_s": 3.1
+  },
+  {
+   "region": "GD",
+   "arm": "baseline",
+   "seed": 11,
+   "n_train": 20000,
+   "n_class2": 2243,
+   "n_classes_train": 17,
+   "fit_s": 0.7,
+   "predict_s": 0.0,
+   "wall_unit_s": 3.1
+  },
+  {
+   "region": "GD",
+   "arm": "baseline",
+   "seed": 23,
+   "n_train": 20000,
+   "n_class2": 2305,
+   "n_classes_train": 17,
+   "fit_s": 0.7,
+   "predict_s": 0.0,
+   "wall_unit_s": 3.1
+  },
+  {
+   "region": "NX",
+   "arm": "OCAP",
+   "seed": 7,
+   "n_train": 20000,
+   "n_class2": 200,
+   "n_classes_train": 16,
+   "fit_s": 0.6,
+   "predict_s": 0.0,
+   "wall_unit_s": 2.8
+  },
+  {
+   "region": "NX",
+   "arm": "OCAP",
+   "seed": 11,
+   "n_train": 20000,
+   "n_class2": 200,
+   "n_classes_train": 16,
+   "fit_s": 0.6,
+   "predict_s": 0.0,
+   "wall_unit_s": 2.8
+  },
+  {
+   "region": "NX",
+   "arm": "OCAP",
+   "seed": 23,
+   "n_train": 20000,
+   "n_class2": 200,
+   "n_classes_train": 16,
+   "fit_s": 0.6,
+   "predict_s": 0.0,
+   "wall_unit_s": 2.8
+  },
+  {
+   "region": "NX",
+   "arm": "baseline",
+   "seed": 7,
+   "n_train": 20000,
+   "n_class2": 368,
+   "n_classes_train": 16,
+   "fit_s": 0.7,
+   "predict_s": 0.0,
+   "wall_unit_s": 2.9
+  },
+  {
+   "region": "NX",
+   "arm": "baseline",
+   "seed": 11,
+   "n_train": 20000,
+   "n_class2": 353,
+   "n_classes_train": 16,
+   "fit_s": 0.7,
+   "predict_s": 0.0,
+   "wall_unit_s": 2.9
+  },
+  {
+   "region": "NX",
+   "arm": "baseline",
+   "seed": 23,
+   "n_train": 20000,
+   "n_class2": 370,
+   "n_classes_train": 16,
+   "fit_s": 0.6,
+   "predict_s": 0.0,
+   "wall_unit_s": 2.9
+  },
+  {
+   "region": "SC1",
+   "arm": "OCAP",
+   "seed": 7,
+   "n_train": 20000,
+   "n_class2": 200,
+   "n_classes_train": 18,
+   "fit_s": 0.8,
+   "predict_s": 0.0,
+   "wall_unit_s": 3.2
+  },
+  {
+   "region": "SC1",
+   "arm": "OCAP",
+   "seed": 11,
+   "n_train": 20000,
+   "n_class2": 200,
+   "n_classes_train": 18,
+   "fit_s": 0.7,
+   "predict_s": 0.0,
+   "wall_unit_s": 3.2
+  },
+  {
+   "region": "SC1",
+   "arm": "OCAP",
+   "seed": 23,
+   "n_train": 20000,
+   "n_class2": 200,
+   "n_classes_train": 17,
+   "fit_s": 0.7,
+   "predict_s": 0.0,
+   "wall_unit_s": 3.2
+  },
+  {
+   "region": "SC1",
+   "arm": "baseline",
+   "seed": 7,
+   "n_train": 20000,
+   "n_class2": 2470,
+   "n_classes_train": 18,
+   "fit_s": 0.8,
+   "predict_s": 0.0,
+   "wall_unit_s": 3.4
+  },
+  {
+   "region": "SC1",
+   "arm": "baseline",
+   "seed": 11,
+   "n_train": 20000,
+   "n_class2": 2533,
+   "n_classes_train": 18,
+   "fit_s": 0.8,
+   "predict_s": 0.0,
+   "wall_unit_s": 3.4
+  },
+  {
+   "region": "SC1",
+   "arm": "baseline",
+   "seed": 23,
+   "n_train": 20000,
+   "n_class2": 2511,
+   "n_classes_train": 17,
+   "fit_s": 0.8,
+   "predict_s": 0.0,
+   "wall_unit_s": 3.4
+  },
+  {
+   "region": "SC2",
+   "arm": "OCAP",
+   "seed": 7,
+   "n_train": 20000,
+   "n_class2": 200,
+   "n_classes_train": 15,
+   "fit_s": 0.7,
+   "predict_s": 0.0,
+   "wall_unit_s": 3.1
+  },
+  {
+   "region": "SC2",
+   "arm": "OCAP",
+   "seed": 11,
+   "n_train": 20000,
+   "n_class2": 200,
+   "n_classes_train": 14,
+   "fit_s": 0.7,
+   "predict_s": 0.0,
+   "wall_unit_s": 3.1
+  },
+  {
+   "region": "SC2",
+   "arm": "OCAP",
+   "seed": 23,
+   "n_train": 20000,
+   "n_class2": 200,
+   "n_classes_train": 14,
+   "fit_s": 0.7,
+   "predict_s": 0.0,
+   "wall_unit_s": 3.1
+  },
+  {
+   "region": "SC2",
+   "arm": "baseline",
+   "seed": 7,
+   "n_train": 20000,
+   "n_class2": 3082,
+   "n_classes_train": 15,
+   "fit_s": 0.7,
+   "predict_s": 0.0,
+   "wall_unit_s": 2.9
+  },
+  {
+   "region": "SC2",
+   "arm": "baseline",
+   "seed": 11,
+   "n_train": 20000,
+   "n_class2": 3186,
+   "n_classes_train": 14,
+   "fit_s": 0.7,
+   "predict_s": 0.0,
+   "wall_unit_s": 2.9
+  },
+  {
+   "region": "SC2",
+   "arm": "baseline",
+   "seed": 23,
+   "n_train": 20000,
+   "n_class2": 3180,
+   "n_classes_train": 14,
+   "fit_s": 0.7,
+   "predict_s": 0.0,
+   "wall_unit_s": 2.9
+  }
+ ],
+ "timing_summary": {
+  "fit_s_min": 0.6,
+  "fit_s_max": 0.8,
+  "fit_s_mean": 0.7,
+  "predict_s_max": 0.0,
+  "wall_unit_s_max": 3.4
+ },
+ "leakage_selfcheck": {
+  "SC1": {
+   "n_window": 72723,
+   "n_ref": 355,
+   "poskey_overlap": 0,
+   "n_blocks_excluded": 13,
+   "n_window_before": 73880,
+   "n_window_excluded": 1157
+  },
+  "SC2": {
+   "n_window": 73317,
+   "n_ref": 199,
+   "poskey_overlap": 0,
+   "n_blocks_excluded": 10,
+   "n_window_before": 74083,
+   "n_window_excluded": 766
+  },
+  "GD": {
+   "n_window": 66805,
+   "n_ref": 599,
+   "poskey_overlap": 0,
+   "n_blocks_excluded": 16,
+   "n_window_before": 69042,
+   "n_window_excluded": 2237
+  },
+  "NX": {
+   "n_window": 38991,
+   "n_ref": 410,
+   "poskey_overlap": 0,
+   "n_blocks_excluded": 14,
+   "n_window_before": 40429,
+   "n_window_excluded": 1438
+  }
+ },
+ "feature_availability": {
+  "SC1": {
+   "n_cols": 64,
+   "all_finite": true,
+   "first3": [
+    "A00",
+    "A01",
+    "A02"
+   ],
+   "last3": [
+    "A61",
+    "A62",
+    "A63"
+   ]
+  },
+  "SC2": {
+   "n_cols": 64,
+   "all_finite": true,
+   "first3": [
+    "A00",
+    "A01",
+    "A02"
+   ],
+   "last3": [
+    "A61",
+    "A62",
+    "A63"
+   ]
+  },
+  "GD": {
+   "n_cols": 64,
+   "all_finite": true,
+   "first3": [
+    "A00",
+    "A01",
+    "A02"
+   ],
+   "last3": [
+    "A61",
+    "A62",
+    "A63"
+   ]
+  },
+  "NX": {
+   "n_cols": 64,
+   "all_finite": true,
+   "first3": [
+    "A00",
+    "A01",
+    "A02"
+   ],
+   "last3": [
+    "A61",
+    "A62",
+    "A63"
+   ]
+  }
+ },
+ "prepare_stage_provenance": {
+  "note": "prepare(e1) 只写 cache/ 与 prereg/；不训练、不加载任何既有模型；e2 每 seed 用 RandomForestClassifier(random_state=seed) 从零拟合（无预训/无 warm_start）。",
+  "no_pretrained_model": true,
+  "no_warm_start": true,
+  "model_artifacts_written": [],
+  "caches": [
+   "F:\\lc_work\\improve_2023_pilot_20261015\\orchard\\cache\\SC1_train_window.parquet",
+   "F:\\lc_work\\improve_2023_pilot_20261015\\orchard\\cache\\SC2_train_window.parquet",
+   "F:\\lc_work\\improve_2023_pilot_20261015\\orchard\\cache\\GD_train_window.parquet",
+   "F:\\lc_work\\improve_2023_pilot_20261015\\orchard\\cache\\NX_train_window.parquet"
+  ]
+ },
+ "code_hash": {
+  "e0_eval_inventory.py": "750cb4b44e53574be3b03acb26849e62",
+  "e1_prep_regions.py": "28e8a055aafd11f6ff7a49ce0feef14c",
+  "e2_run_unit.py": "4f944222bc2e6effc5f11d4188d5b602",
+  "e3_driver.py": "0c71e37a60210bed9b8b22651eaed466",
+  "e4_report.py": "3d071b9cea0c06797d501853cc69a33a"
+ }
+}

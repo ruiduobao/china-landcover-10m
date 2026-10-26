@@ -1,0 +1,15 @@
+﻿grade,subtype,srcset,n
+A_官方地块,橡胶,hainan_official,37733
+B(专题产品),茶,tea,28170
+C_专题产品(存疑),柑橘,citrus,27512
+B_产品+面积校准,苹果,apple,20560
+A_三源,橡胶,rubber,13024
+B_双源,橡胶,rubber,11003
+C_单产品,橡胶,rubber,5792
+B(模型中),果园/待判,multi,1224
+B(模型中+GEM),果园/待判(热带),multi,429
+A(模型强),果园/待判,multi,265
+A(模型强+GEM),果园/待判(热带),multi,174
+A_目视,无法细分,anchor,20
+A_目视,灌木园地,anchor,13
+A_目视,乔木园地,anchor,7

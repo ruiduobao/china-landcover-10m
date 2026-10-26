@@ -1,0 +1,40 @@
+{
+ "fcs10": {
+  "OR": 2.046,
+  "CI": [
+   1.928,
+   2.172
+  ],
+  "cells": {
+   "ns": 5531,
+   "nu": 2282,
+   "bs": 7007,
+   "bu": 5916
+  }
+ },
+ "old": {
+  "OR": 4.918,
+  "CI": [
+   4.614,
+   5.243
+  ],
+  "cells": {
+   "ns": 8073,
+   "nu": 1780,
+   "bs": 5056,
+   "bu": 5483
+  }
+ },
+ "n_slope_pts": 151033,
+ "n_fcs10_valid": 38509,
+ "n_no_tile_or_fail": 112524,
+ "conclusion": {
+  "old_label_OR": 4.918,
+  "fcs10_OR": 2.046,
+  "reduction_pct": 58.4,
+  "verdict": "旧标签坡向伪影严重(4.92)；换FCS10后降至2.05（降59%），大幅缓解但未完全消除",
+  "crosscheck": "与两臂重训的 or_ref=2.06 吻合，互相验证",
+  "G3_correction": "audit/out/g3_aspect.json 的 OR=0.988 不可信（其 OR_by_elev 除-100~500带外全为0、OR_by_region 东北/华北/西北 n 极小 → 地形匹配缺陷）；应以本文件 2.05 为准",
+  "remaining": "FCS10 残留 OR≈2.0 的来源未定（真实生态 vs FCS10 自身标签偏差），需独立真值裁决"
+ }
+}

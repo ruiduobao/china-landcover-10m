@@ -1,0 +1,10 @@
+﻿group,unit,layer,n,blocks,dm9,dm9_ci,target_class,target_n,target_dF1
+orchard,SC1,conf_nonfcs10,107,5,0.0062,"[-0.0056, 0.0213]",4,37,-0.0253
+orchard,SC2,conf_nonfcs10,47,2,0.0071,"[0.0, 0.0152]",4,14,-0.015
+orchard,GD,conf_nonfcs10,162,6,0.0082,"[-0.0057, 0.0201]",4,34,-0.0175
+orchard,GD,conf_nonfcs10,162,6,0.0082,"[-0.0057, 0.0201]",5,1,0.0
+orchard,NX,conf_nonfcs10,129,5,-0.0026,"[-0.0099, 0.0061]",22,5,0.0
+orchard,NX,conf_nonfcs10,129,5,-0.0026,"[-0.0099, 0.0061]",3,15,0.1238
+terrain,F1,conf_nonfcs10,121,5,-0.0303,"[-0.0596, -0.0029]",4,27,-0.0147
+terrain,F2,conf_nonfcs10,63,3,0.0053,"[-0.0392, 0.0323]",4,29,0.0026
+geometry,G30N_v2,coverage,40661,,,,,,restored 23394px / common_valid 17267 / disagree 0

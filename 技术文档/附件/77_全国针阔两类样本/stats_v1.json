@@ -1,0 +1,206 @@
+{
+ "n": 55712,
+ "tiles": 76,
+ "provs": 23,
+ "class2": {
+  "broad": 30184,
+  "needle": 23700,
+  "mixed": 1828
+ },
+ "by_prov": {
+  "云南省": {
+   "broad": 1325,
+   "mixed": 0,
+   "needle": 1134
+  },
+  "内蒙古自治区": {
+   "broad": 2229,
+   "mixed": 80,
+   "needle": 1888
+  },
+  "台湾省": {
+   "broad": 186,
+   "mixed": 0,
+   "needle": 0
+  },
+  "吉林省": {
+   "broad": 1573,
+   "mixed": 289,
+   "needle": 1340
+  },
+  "四川省": {
+   "broad": 4730,
+   "mixed": 0,
+   "needle": 5728
+  },
+  "宁夏回族自治区": {
+   "broad": 84,
+   "mixed": 0,
+   "needle": 115
+  },
+  "安徽省": {
+   "broad": 93,
+   "mixed": 0,
+   "needle": 2
+  },
+  "广东省": {
+   "broad": 2923,
+   "mixed": 0,
+   "needle": 212
+  },
+  "广西壮族自治区": {
+   "broad": 824,
+   "mixed": 0,
+   "needle": 142
+  },
+  "江西省": {
+   "broad": 1028,
+   "mixed": 0,
+   "needle": 200
+  },
+  "浙江省": {
+   "broad": 346,
+   "mixed": 0,
+   "needle": 33
+  },
+  "海南省": {
+   "broad": 17,
+   "mixed": 0,
+   "needle": 1
+  },
+  "湖北省": {
+   "broad": 43,
+   "mixed": 0,
+   "needle": 35
+  },
+  "湖南省": {
+   "broad": 319,
+   "mixed": 0,
+   "needle": 120
+  },
+  "甘肃省": {
+   "broad": 1675,
+   "mixed": 7,
+   "needle": 1502
+  },
+  "福建省": {
+   "broad": 2133,
+   "mixed": 0,
+   "needle": 95
+  },
+  "西藏自治区": {
+   "broad": 432,
+   "mixed": 0,
+   "needle": 1005
+  },
+  "贵州省": {
+   "broad": 744,
+   "mixed": 0,
+   "needle": 669
+  },
+  "重庆市": {
+   "broad": 496,
+   "mixed": 0,
+   "needle": 496
+  },
+  "陕西省": {
+   "broad": 945,
+   "mixed": 0,
+   "needle": 657
+  },
+  "青海省": {
+   "broad": 120,
+   "mixed": 0,
+   "needle": 283
+  },
+  "香港特别行政区": {
+   "broad": 42,
+   "mixed": 0,
+   "needle": 1
+  },
+  "黑龙江省": {
+   "broad": 7877,
+   "mixed": 1452,
+   "needle": 8042
+  }
+ },
+ "dem_ok": 55712,
+ "aspect_band": {
+  "other": 22998,
+  "shade": 13985,
+  "flat": 11320,
+  "sun": 7409
+ },
+ "terrain_median": {
+  "elev_m": 644.0,
+  "slope_deg": 14.510000228881836
+ },
+ "OR_fcs10": {
+  "OR": 2.1862361506334236,
+  "CI": [
+   2.060321123074871,
+   2.319846383559482
+  ],
+  "cells": {
+   "ns": 6803,
+   "nu": 2477,
+   "bs": 6177,
+   "bu": 4917
+  }
+ },
+ "OR_old": {
+  "OR": 4.74916329368177,
+  "CI": [
+   4.457188431030272,
+   5.0602644108633354
+  ],
+  "cells": {
+   "ns": 8604,
+   "nu": 1811,
+   "bs": 5270,
+   "bu": 5268
+  }
+ },
+ "vs_old": {
+  "n_comparable": 51488,
+  "agreement": 0.7988851771286514,
+  "disagreement": 0.20111482287134866,
+  "n_fcs30d_null": 2520,
+  "crosstab": {
+   "broad": {
+    "broad": 22145,
+    "needle": 6138
+   },
+   "needle": {
+    "broad": 4217,
+    "needle": 18988
+   }
+  }
+ },
+ "tier_x_class": {
+  "broad": {
+   "bronze": 5997,
+   "external": 3373,
+   "gold": 13522,
+   "reject": 3,
+   "silver": 7287,
+   "uncovered": 2
+  },
+  "mixed": {
+   "bronze": 348,
+   "external": 1146,
+   "gold": 271,
+   "reject": 0,
+   "silver": 63,
+   "uncovered": 0
+  },
+  "needle": {
+   "bronze": 6147,
+   "external": 2413,
+   "gold": 8958,
+   "reject": 13,
+   "silver": 6146,
+   "uncovered": 23
+  }
+ }
+}

@@ -1,0 +1,131 @@
+{
+  "_comment": "针叶/阔叶两类林地类别体系 —— 冻结版 v1（2026-10-17）。先写死后跑：本文件在 t1_prep / t2_train 运行前落盘，脚本只读本文件，不改判据。原 v31_map.json 不动。",
+  "version": "v1-frozen-2026-10-17",
+  "workspace": "F:/lc_work/nb_national_2026/exp/two_class_retrain/",
+  "authority": "技术文档/76_全国针阔两类样本生产实施规范.md（用户指令：常规林地只分针叶/阔叶；常绿/落叶、郁闭/疏闭不参与分类，作后期辅助属性）",
+
+  "design": {
+    "principle": "森林只保留 2 个分类类（31 针叶 / 32 阔叶），混交单列 33；非森林类沿用 v31 24 类语义与码值。总类数 = 19 非森林 + 3 森林 = 22。",
+    "why_new_codes": "原 24 类码 4/5/6/7/8 已被生产链路、交付件与历史文档大量引用；新建独立码空间避免语义漂移，且 31/32/33 不可能与旧码混淆。",
+    "forest_axis_only_leaf": "只保留叶型轴（针/阔）。常绿/落叶与郁闭/疏闭降为『后期辅助属性』，不在本码表中作分类类。",
+    "attributes_kept": "样本表保留原始 FCS10 码与旧 24 类码，可回溯 ENF/DNF/EBF/DBF 与郁闭/疏闭，供后期物候辅助判断；分类器不使用这些细分。"
+  },
+
+  "classes": {
+    "1":  {"name_zh": "草本旱地", "en": "Herbaceous rainfed cropland", "group": "crop"},
+    "2":  {"name_zh": "乔灌园地", "en": "Tree/shrub cropland (orchard)", "group": "crop"},
+    "3":  {"name_zh": "灌溉耕地", "en": "Irrigated cropland", "group": "crop"},
+    "9":  {"name_zh": "常绿灌丛", "en": "Evergreen shrubland", "group": "shrub"},
+    "10": {"name_zh": "落叶灌丛", "en": "Deciduous shrubland", "group": "shrub"},
+    "11": {"name_zh": "草地", "en": "Grassland", "group": "grass"},
+    "12": {"name_zh": "地衣苔藓", "en": "Lichens and mosses", "group": "bare"},
+    "13": {"name_zh": "稀疏植被", "en": "Sparse vegetation", "group": "sparse"},
+    "14": {"name_zh": "木本沼泽", "en": "Woody swamp", "group": "wetland"},
+    "15": {"name_zh": "草本沼泽", "en": "Herbaceous marsh", "group": "wetland"},
+    "16": {"name_zh": "湖河滩地", "en": "Lake/river flat", "group": "wetland"},
+    "17": {"name_zh": "盐渍湿地", "en": "Saline wetland", "group": "wetland"},
+    "18": {"name_zh": "红树林", "en": "Mangrove forest", "group": "wetland"},
+    "19": {"name_zh": "海岸盐沼", "en": "Salt marsh", "group": "wetland"},
+    "20": {"name_zh": "潮滩", "en": "Tidal flat", "group": "wetland"},
+    "21": {"name_zh": "不透水面", "en": "Impervious surface", "group": "imperv"},
+    "22": {"name_zh": "裸地", "en": "Bare areas", "group": "bare"},
+    "23": {"name_zh": "水体", "en": "Water body", "group": "water"},
+    "24": {"name_zh": "永久冰雪", "en": "Permanent ice and snow", "group": "snow"},
+    "31": {"name_zh": "针叶林", "en": "Needleleaved forest", "group": "forest",
+            "definition": "以针叶树种为优势的林地；含常绿针叶与落叶针叶，不区分郁闭度"},
+    "32": {"name_zh": "阔叶林", "en": "Broadleaved forest", "group": "forest",
+            "definition": "以阔叶树种为优势的林地；含常绿阔叶与落叶阔叶，不区分郁闭度"},
+    "33": {"name_zh": "针阔混交林", "en": "Mixed needleleaved-broadleaved forest", "group": "forest",
+            "definition": "针叶与阔叶共优、无法判定优势型；可作弃权层或按 mixed_policy 归并"}
+  },
+
+  "legacy_attributes_not_classes": {
+    "_comment": "旧 24 类的森林细分码不删除，只作属性列保存，供后期常绿/落叶（doc54 物候 AUC 0.990）与郁闭/疏闭辅助判断；不参与分类。",
+    "4": {"name_zh": "常绿阔叶林", "leaf": "broad", "phenology": "evergreen", "parent_new": 32},
+    "5": {"name_zh": "落叶阔叶林", "leaf": "broad", "phenology": "deciduous", "parent_new": 32},
+    "6": {"name_zh": "常绿针叶林", "leaf": "needle", "phenology": "evergreen", "parent_new": 31},
+    "7": {"name_zh": "落叶针叶林", "leaf": "needle", "phenology": "deciduous", "parent_new": 31},
+    "8": {"name_zh": "针阔混交林", "leaf": "mixed", "phenology": null, "parent_new": 33}
+  },
+
+  "from_ours24": {
+    "_comment": "旧池 24 类码 → 新码；4/5→32，6/7→31，8→33，其余恒等（非森林语义不变）",
+    "4": 32, "5": 32, "6": 31, "7": 31, "8": 33,
+    "identity": [1, 2, 3, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+  },
+
+  "from_fcs10_raw": {
+    "_comment": "GLC_FCS10-2023 官方图例 → 新码。叶型只按图例原义合并，禁止套用 FCS30D 的奇偶交叉映射（郁闭度轴）。51/52 同为 EBF、61/62 同为 DBF、71/72 同为 ENF、81/82 同为 DNF（doc75 §3.6 实测 FCS10 97.8% 落偶数码）。",
+    "forest": {
+      "31": [71, 72, 81, 82],
+      "32": [51, 52, 61, 62],
+      "33": [91, 92]
+    },
+    "nonforest": {
+      "10": 1, "11": 2, "12": 3, "20": 3,
+      "120": 9, "121": 10, "122": 10,
+      "130": 11, "140": 12, "150": 13,
+      "180": 14, "181": 15, "182": 16, "183": 17, "184": 18, "185": 19, "186": 20,
+      "190": 21, "191": 21, "192": 21,
+      "200": 22, "201": 22, "202": 22,
+      "210": 23, "220": 24
+    },
+    "unmapped_policy": "落表外的原始码一律视为参考无效（不参与 OA/森林指标分母），并单独计数上报，不猜码",
+    "sensitivity_alt_mapping": "同时用 f0_prep.GLC_TO_24（项目既有 fcs10_24 口径）复算 OA，差异须 <1pp，否则报告冲突"
+  },
+
+  "forest_reference_derivation": {
+    "needle": "FCS10 raw ∈ {71,72,81,82}",
+    "broad": "FCS10 raw ∈ {51,52,61,62}",
+    "mixed": "FCS10 raw ∈ {91,92}",
+    "_note": "参考一律 GLC_FCS10-2023；严禁用 GLC_FCS30D 作针阔参考（doc75 §3.4：偏差源）"
+  },
+
+  "mixed_policy": {
+    "_comment": "两方案都评，报告差异；S1 为默认，S2 为候选。",
+    "S1_single_class": {
+      "desc": "混交单列 33，不并入 31/32；评估时 33 单独计类，纯林参考点上预测 33 计为错分（同时统计 mixed_leak）",
+      "status": "default"
+    },
+    "S2_dominant_type": {
+      "desc": "按『优势型』把 33 并入 31 或 32，规则见下（先冻结，跑前不改）",
+      "window_px": 51,
+      "window_note": "51×51 原生 10 m 像元 ≈ 460 m 见方，以混交点为中心",
+      "counted": "只统计窗口内的纯林像元（71/72/81/82 与 51/52/61/62），91/92 与非林不计",
+      "rule": "needle_share = n_needle/(n_needle+n_broad)；needle_share >= 0.5 → 31，< 0.5 → 32",
+      "tie_rule": "正好 0.5 判 31（与 >= 一致）",
+      "no_evidence_rule": "窗口内无任何纯林像元 → 保持 33（不猜）",
+      "status": "candidate"
+    }
+  },
+
+  "evaluation_contract": {
+    "reference": "FCS10 needle/broad（纯林）；mixed 单列或按 S2 归并后参与",
+    "metrics": ["precision", "recall", "F1", "macro_F1(2类)", "OA(22类 vs FCS10映射)", "阴阳坡OR"],
+    "cv": "10 km 空间块 5 折 OOF（先冻结块划分种子 20261017）；另有 leave-one-tile-out 稳健性复核",
+    "seeds": [7, 11, 23],
+    "rf": {"n_estimators": 100, "min_samples_leaf": 2, "max_leaf_nodes": 5000},
+    "or_def": "(needle阴/needle阳)/(broad阴/broad阳)；阴坡=[315,360)∪[0,45]，阳坡=[135,225]，slope>5°",
+    "or_gate_G2": [0.8, 1.25],
+    "or_gate_G9": "ArmB 针叶 precision 相对 ArmA 提升，且 OR 向 FCS10 参照靠拢",
+    "or_gate_G10": "粤/闽/桂 不得禁用针叶类：推荐方案南方针叶预测占比 >0 且 recall 显著 >0（实测值报告，不设人为下限）"
+  },
+
+  "southern_expression_variants": {
+    "_comment": "南方（粤/闽/桂等）针叶参考占比仅 2–3%，须实测哪种手段能保住表达。全部在同一 OOF 框架下跑。",
+    "S0_baseline": "多类 RF（22 类）默认 argmax",
+    "S1_class_weight": "多类 RF，针叶类样本权重 w ∈ {2, 5, 10}（其余类权重 1）",
+    "S2_binary_specialist": "森林点子集训练二分类 P(needle|forest)，阈值 t ∈ {0.5,0.3,0.2,0.1,0.05}，在预测为森林的点上覆盖针/阔",
+    "S3_prevalence_matched_ceiling": "诊断用（不可部署）：把 S2 阈值定到使预测针叶占比 = 参考针叶占比，测该占比下的 recall/precision，作为信息上限",
+    "report": "每方案报 南方三瓦 / 北方三瓦 / 全部 的 needle P/R/F1、预测针叶占比、阔叶 precision 损失"
+  },
+
+  "eight_year_inheritance": {
+    "_comment": "8 年继承规则（写入配方，本轮不跑 8 年栅格）",
+    "R1": "森林门前置：年度森林门判非林 / AEF 缺 → 该年不继承，输出非林或 nodata",
+    "R2": "针阔是稳定林型属性：以 2023 FCS10 为锚，逐年继承 31/32/33",
+    "R3": "证据不足年份（S2 标准窗不可用，典型 2017/2018 南方）→ 输出锚值并标 inherited_unverified，不得据单年噪声改判",
+    "R4": "变化需证据：某年独立预测 ≠ 锚 时，仅当相邻年同向才改判（沿用年度标签继承规则 R5）",
+    "R5": "不因凑样本放宽：不得把 insufficient 年份标为确定值"
+  }
+}

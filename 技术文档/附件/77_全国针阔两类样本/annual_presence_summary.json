@@ -1,0 +1,161 @@
+{
+  "points": 159347,
+  "point_years": 1274776,
+  "years": {
+    "2017": {
+      "present": 153950,
+      "in_subset": 152829,
+      "usable": 152829,
+      "usable_rate_vs_2023": 0.9591,
+      "no_aef_record": 5397,
+      "excluded_qc": 1121,
+      "aef_incomplete": 0,
+      "ok_downweight": 4478,
+      "needle_usable": 59077,
+      "broad_usable": 93752,
+      "s2_grade": {
+        "insufficient": 108872,
+        "standard": 43315,
+        "wide_only": 7149,
+        "unknown": 11
+      }
+    },
+    "2018": {
+      "present": 153950,
+      "in_subset": 152993,
+      "usable": 152993,
+      "usable_rate_vs_2023": 0.9601,
+      "no_aef_record": 5397,
+      "excluded_qc": 957,
+      "aef_incomplete": 0,
+      "ok_downweight": 4483,
+      "needle_usable": 59045,
+      "broad_usable": 93948,
+      "s2_grade": {
+        "insufficient": 122557,
+        "standard": 28859,
+        "wide_only": 7920,
+        "unknown": 11
+      }
+    },
+    "2019": {
+      "present": 153851,
+      "in_subset": 152962,
+      "usable": 152962,
+      "usable_rate_vs_2023": 0.9599,
+      "no_aef_record": 5496,
+      "excluded_qc": 889,
+      "aef_incomplete": 0,
+      "ok_downweight": 4528,
+      "needle_usable": 59069,
+      "broad_usable": 93893,
+      "s2_grade": {
+        "standard": 150090,
+        "wide_only": 7015,
+        "insufficient": 2231,
+        "unknown": 11
+      }
+    },
+    "2020": {
+      "present": 155373,
+      "in_subset": 154179,
+      "usable": 154179,
+      "usable_rate_vs_2023": 0.9676,
+      "no_aef_record": 3974,
+      "excluded_qc": 1194,
+      "aef_incomplete": 0,
+      "ok_downweight": 4404,
+      "needle_usable": 59035,
+      "broad_usable": 95144,
+      "s2_grade": {
+        "standard": 154755,
+        "insufficient": 2383,
+        "wide_only": 2198,
+        "unknown": 11
+      }
+    },
+    "2021": {
+      "present": 155370,
+      "in_subset": 154395,
+      "usable": 154395,
+      "usable_rate_vs_2023": 0.9689,
+      "no_aef_record": 3977,
+      "excluded_qc": 975,
+      "aef_incomplete": 0,
+      "ok_downweight": 3821,
+      "needle_usable": 59051,
+      "broad_usable": 95344,
+      "s2_grade": {
+        "standard": 153879,
+        "wide_only": 4011,
+        "insufficient": 1446,
+        "unknown": 11
+      }
+    },
+    "2022": {
+      "present": 159239,
+      "in_subset": 158176,
+      "usable": 158176,
+      "usable_rate_vs_2023": 0.9927,
+      "no_aef_record": 108,
+      "excluded_qc": 1063,
+      "aef_incomplete": 0,
+      "ok_downweight": 4098,
+      "needle_usable": 59278,
+      "broad_usable": 98898,
+      "s2_grade": {
+        "standard": 154072,
+        "wide_only": 4592,
+        "insufficient": 672,
+        "unknown": 11
+      }
+    },
+    "2023": {
+      "present": 157711,
+      "in_subset": 156034,
+      "usable": 156034,
+      "usable_rate_vs_2023": 0.9792,
+      "no_aef_record": 1636,
+      "excluded_qc": 1677,
+      "aef_incomplete": 0,
+      "ok_downweight": 4040,
+      "needle_usable": 59029,
+      "broad_usable": 97005,
+      "s2_grade": {
+        "standard": 151692,
+        "wide_only": 6424,
+        "insufficient": 1220,
+        "unknown": 11
+      }
+    },
+    "2024": {
+      "present": 157711,
+      "in_subset": 155479,
+      "usable": 155479,
+      "usable_rate_vs_2023": 0.9757,
+      "no_aef_record": 1636,
+      "excluded_qc": 2232,
+      "aef_incomplete": 0,
+      "ok_downweight": 4201,
+      "needle_usable": 58948,
+      "broad_usable": 96531,
+      "s2_grade": {
+        "standard": 148208,
+        "wide_only": 8786,
+        "insufficient": 2342,
+        "unknown": 11
+      }
+    }
+  },
+  "aef_incomplete_by_year": {
+    "2017": 0,
+    "2018": 0,
+    "2019": 0,
+    "2020": 0,
+    "2021": 0,
+    "2022": 0,
+    "2023": 0,
+    "2024": 0
+  },
+  "note": "class_new 跨年静态；非林判定见 a1_forest_evidence.py"
+}

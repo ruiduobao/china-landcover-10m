@@ -1,0 +1,13 @@
+草本沼泽     交付 n=38360   删 2225   (5.8%) ｜ BARE_LIKE_FLAT 601；WOODY_LIKE 1631
+木本沼泽     交付 n=10656   删 1206   (11.3%) ｜ HERB_LIKE 1206
+湖河滩地     交付 n=26507   删 1894   (7.1%) ｜ VEGETATED_LIKE 228；PERMANENT_WATER 1666
+灌木_常绿    交付 n=61751   删 12486  (20.2%) ｜ FOREST_LIKE 10632；GRASS_LIKE 1854
+灌木_落叶    交付 n=113761  删 7047   (6.2%) ｜ FOREST_LIKE 5383；GRASS_LIKE 1664
+草地       交付 n=170653  删 585    (0.3%) ｜ SHRUB_FOREST_LIKE 585；SHRUB_LIKE 0
+乔灌园地     交付 n=160931  删 15005  (9.3%) ｜ CROP_LIKE 9976；NON_TREE_BARE_LIKE 5939
+裸地       交付 n=222514  删 33     (0.0%) ｜ VEGETATED_LIKE 33
+稀疏植被     交付 n=47177   删 3456   (7.3%) ｜ BARE_LIKE 3456
+水体       交付 n=67879   删 0      (0.0%) ｜ NO_WATER_EVIDENCE 0
+灌溉耕地     交付 n=124533  删 638    (0.5%) ｜ ARID_BARE_ANOMALY 638
+草本旱地     交付 n=203096  删 5859   (2.9%) ｜ ARID_OASIS_ANOMALY 5859
+合计删除（跨类，含点重复计入）50434

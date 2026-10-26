@@ -1,0 +1,42 @@
+{
+ "generated": "2026-10-15 14:02:25",
+ "year": 2023,
+ "windows": [
+  "w2",
+  "w3",
+  "w4"
+ ],
+ "n_raw": 43200,
+ "n_keep": 43200,
+ "excl_detail": {
+  "excl_v1_rid": 0,
+  "excl_v1_pos_diag": 0,
+  "n_pool2": 1764020,
+  "excl_v2_pid": 0,
+  "n_pool2_pid_dup_rows": 121992,
+  "n_pool2_nonnum_id_rows": 186810,
+  "excl_v2_pos": 0,
+  "n_pool2_in_bbox": 484153,
+  "excl_v2_pid_only": 0,
+  "excl_v2_pos_only": 0,
+  "excl_v2_both": 0,
+  "pid_xor_pos_eval_pts": 0,
+  "pid_only_pool_rows_mean": 0.0,
+  "pid_only_min_dist_deg": null,
+  "pid_only_min_dist_max_deg": null,
+  "excl_misaligned": 0,
+  "pool2_keys_used": "both",
+  "n_keep": 43200,
+  "excl_total": 0,
+  "excl_v1_only": 0,
+  "excl_v2_only": 0,
+  "excl_v1_v2_both": 0,
+  "n_keep_pos_only": 43200
+ },
+ "n_by_win": {
+  "w2": 10447,
+  "w3": 22043,
+  "w4": 10710
+ },
+ "n_candidate_boxes": 340
+}

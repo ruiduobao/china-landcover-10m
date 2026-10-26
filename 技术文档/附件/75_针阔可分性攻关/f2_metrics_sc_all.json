@@ -1,0 +1,177 @@
+{
+ "tag": "sc_all",
+ "tile": "四川24瓦",
+ "n": 190491,
+ "seeds": [
+  7,
+  11,
+  23
+ ],
+ "nfolds": 5,
+ "block_km": 10.0,
+ "armA": {
+  "n_pred": 190491,
+  "n_pred_forest": 70195,
+  "enf_share_all": 0.20227202335018452,
+  "enf_share_forest": 0.5489137402948928,
+  "ebf_share_forest": 0.24749626041740866,
+  "needle_share_forest": 0.5489137402948928,
+  "broad_share_forest": 0.4510862597051072,
+  "enf_pa": 0.3925151176974384,
+  "enf_ua": 0.7612240789208778,
+  "n_pred_enf": 38531,
+  "n_ref_enf": 19868,
+  "ebf_pa": 0.6856040983134749,
+  "ebf_ua": 0.4477146293790407,
+  "n_pred_ebf": 17373,
+  "n_ref_ebf": 26604,
+  "needle_pa": 0.6470114972359918,
+  "needle_ua": 0.7638569721481754,
+  "broad_pa": 0.7655381505811015,
+  "broad_ua": 0.5861585336364076,
+  "ever_pa": 0.6728498855180309,
+  "ever_ua": 0.8094121191254949,
+  "or_enf_ebf": 0.9805298929502752,
+  "or_ci95": [
+   0.8767616054684041,
+   1.0965795775870404
+  ],
+  "or_cells": {
+   "enf_shady": 2339,
+   "enf_sunny": 1998,
+   "ebf_shady": 942,
+   "ebf_sunny": 789
+  },
+  "or_fcs10": 1.012663117800218,
+  "or_fcs10_cells": {
+   "enf_shady": 1285,
+   "enf_sunny": 1041,
+   "ebf_shady": 1492,
+   "ebf_sunny": 1224
+  },
+  "oa_vs_fcs10": 0.5520019786199126,
+  "n_oa": 181945,
+  "forest4_macro_f1": 0.48709029732600295,
+  "forest4_f1": {
+   "4": 0.6319,
+   "5": 0.747,
+   "6": 0.5694,
+   "7": 0.0
+  },
+  "n_forest4_eval": 63372,
+  "macro_f1_all": 0.38020464270440735,
+  "agree_with_pool_all": 0.7725299357974917,
+  "agree_with_pool_nonforest": 0.7332507998778076,
+  "n_nonforest": 124394
+ },
+ "armB": {
+  "n_pred": 190491,
+  "n_pred_forest": 67176,
+  "enf_share_all": 0.10981621178953337,
+  "enf_share_forest": 0.31140585923544123,
+  "ebf_share_forest": 0.33821602953435753,
+  "needle_share_forest": 0.4511432654519471,
+  "broad_share_forest": 0.5488567345480528,
+  "enf_pa": 0.6755103016396578,
+  "enf_ua": 0.7112442117978659,
+  "n_pred_enf": 20919,
+  "n_ref_enf": 19868,
+  "ebf_pa": 0.7362235915492957,
+  "ebf_ua": 0.6287400390918659,
+  "n_pred_ebf": 22720,
+  "n_ref_ebf": 26604,
+  "needle_pa": 0.8004355573153831,
+  "needle_ua": 0.743266844379079,
+  "broad_pa": 0.8017900732302685,
+  "broad_ua": 0.714852251293708,
+  "ever_pa": 0.8392492953550723,
+  "ever_ua": 0.7880874505078327,
+  "or_enf_ebf": 1.0281953147050522,
+  "or_ci95": [
+   0.9161276013112158,
+   1.1539720052843239
+  ],
+  "or_cells": {
+   "enf_shady": 1362,
+   "enf_sunny": 1125,
+   "ebf_shady": 1181,
+   "ebf_sunny": 1003
+  },
+  "or_fcs10": 1.012663117800218,
+  "or_fcs10_cells": {
+   "enf_shady": 1285,
+   "enf_sunny": 1041,
+   "ebf_shady": 1492,
+   "ebf_sunny": 1224
+  },
+  "oa_vs_fcs10": 0.6162961334469208,
+  "n_oa": 181945,
+  "forest4_macro_f1": 0.7483533061598019,
+  "forest4_f1": {
+   "4": 0.7807,
+   "5": 0.7875,
+   "6": 0.7331,
+   "7": 0.6921
+  },
+  "n_forest4_eval": 62288,
+  "macro_f1_all": 0.42743514884586914,
+  "agree_with_pool_all": 0.6864471287357408,
+  "agree_with_pool_nonforest": 0.7418444619515411,
+  "n_nonforest": 124394
+ },
+ "fcs10_selfcheck": {
+  "n_pred": 190491,
+  "n_pred_forest": 73991,
+  "enf_share_all": 0.10429889076124331,
+  "enf_share_forest": 0.268519144220243,
+  "ebf_share_forest": 0.3595572434485275,
+  "needle_share_forest": 0.4410941871308673,
+  "broad_share_forest": 0.5589058128691328,
+  "enf_pa": 1.0,
+  "enf_ua": 1.0,
+  "n_pred_enf": 19868,
+  "n_ref_enf": 19868,
+  "ebf_pa": 1.0,
+  "ebf_ua": 1.0,
+  "n_pred_ebf": 26604,
+  "n_ref_ebf": 26604,
+  "needle_pa": 1.0,
+  "needle_ua": 1.0,
+  "broad_pa": 1.0,
+  "broad_ua": 1.0,
+  "ever_pa": 1.0,
+  "ever_ua": 1.0,
+  "or_enf_ebf": 1.012663117800218,
+  "or_ci95": [
+   0.9059770744006683,
+   1.1319122957181327
+  ],
+  "or_cells": {
+   "enf_shady": 1285,
+   "enf_sunny": 1041,
+   "ebf_shady": 1492,
+   "ebf_sunny": 1224
+  },
+  "or_fcs10": 1.012663117800218,
+  "or_fcs10_cells": {
+   "enf_shady": 1285,
+   "enf_sunny": 1041,
+   "ebf_shady": 1492,
+   "ebf_sunny": 1224
+  },
+  "oa_vs_fcs10": 1.0,
+  "n_oa": 181945,
+  "forest4_macro_f1": 1.0,
+  "forest4_f1": {
+   "4": 1.0,
+   "5": 1.0,
+   "6": 1.0,
+   "7": 1.0
+  },
+  "n_forest4_eval": 73991,
+  "macro_f1_all": 1.0,
+  "agree_with_pool_all": 0.519441863395121,
+  "agree_with_pool_nonforest": 0.5053057221409393,
+  "n_nonforest": 124394
+ }
+}

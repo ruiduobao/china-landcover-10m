@@ -1,0 +1,180 @@
+{
+  "stage": "blind_repair_smallclass_A",
+  "spec_doc": "技术文档/72_盲判证据驱动样本修复与小分类实施协议.md（主 agent 冻结）",
+  "created": "2026-10-15",
+  "status": "DRAFT_PENDING_MAIN_AGENT_FREEZE",
+  "frozen_before_prediction": true,
+  "single_config_source": "代码/12.盲判修复与小分类/rc_conf.py",
+  "year": 2023,
+  "class_space": {"code": "v31_24", "missing_codes": [8],
+                  "note": "第二轮池 cl 已 24 码，不 remap；缺类 8 针阔混交林"},
+  "seeds": [7, 11, 23],
+  "model": {"impl": "sklearn.ensemble.RandomForestClassifier",
+            "n_estimators": 100, "min_samples_leaf": 2, "max_leaf_nodes": 5000, "n_jobs": 10,
+            "note": "本地 sklearn RF 仅作筛选器，≠ GEE smileRF（doc72 §7.1）"},
+  "n_train_limit": 20000,
+
+  "sample_roles": {
+    "R": {"quota": 120, "source": "实际训练池抽取的审计/修复点",
+          "can_train": true, "can_eval": false,
+          "note": "R 合格标签进 candidate 训练；绝不进入评价分母（doc72 §2）"},
+    "V": {"quota": 80, "source": "与 R 空间分离的独立块新评价点",
+          "can_train": false, "can_eval": true,
+          "note": "V 所在 0.25° 块全部从训练排除；实验组只拿到 V 坐标+特征，真值由 audit 控制"},
+    "Q": {"subset_of": ["R", "V"], "note": "复判审计子集，不新增分母、不改角色"}
+  },
+
+  "arms": [
+    {"id": "baseline.v2", "rule": "C ∪ R(label_before)：共享上下文 C 固定；R 用原始标签"},
+    {"id": "view-repair", "rule": "C ∪ R(label_after)：action=relabel 用新标签；action=isolate 从训练剔除，并按同窗同一预注册随机序回填以维持同 count；回填类别先验变化显式落盘"}
+  ],
+  "same_point_discipline": {
+    "non_changed_points_identical": true,
+    "assertions": [
+      "两臂 C 选中 ID 集合逐一相同、特征逐值一致",
+      "relabel/keep 的 R ID 在两臂相同（仅标签列不同）",
+      "isolate 的 R ID 不在 candidate",
+      "回填 ID 与 C∪R 不相交，且来自同窗、同一 rng 顺序",
+      "selected unique R == 全部合格 R，且 n_R_used > 0（否则 NO_REPAIR_SUPPORT）",
+      "禁止复制 R 当独立点；两臂 ID 唯一"
+    ]
+  },
+
+  "materials": {
+    "dir": "F:/lc_work/label_repair_2023_20261015/materials",
+    "private_dir": "F:/lc_work/label_repair_2023_20261015/private",
+    "read_only": true,
+    "R_columns_required": ["rid", "sample_uid", "point_id", "lon", "lat",
+                           "label_before", "label_after", "action", "review_status",
+                           "temporal_status", "scope", "rule_version", "confidence",
+                           "passes", "evidence_type", "evidence_ids", "block", "win"],
+    "V_columns_required": ["vid", "rid", "lon", "lat", "block", "win", "judge_status"],
+    "V_columns_optional": ["is_fcs10", "pair", "stratum"],
+    "V_columns_forbidden_in_experiment": ["label_after", "cl_true", "true_label", "t24"],
+    "R_fields": "doc72 §6：label_before/label_after/action/evidence_ids/review_status/temporal_status/scope/rule_version",
+    "V_note": "V 只给坐标+AEF(预测用)；真值标签由 audit 封存，实验代理预测文件写哈希前不得读取",
+    "action_allowed": ["relabel", "isolate", "keep"],
+    "confidence_allowed": ["high", "medium"],
+    "passes_required": 2,
+    "scope_required": "point",
+    "evidence_type_allowed": ["phenology_sameyear", "orchard_mgmt_timeseries",
+                              "highres_structure_recheck", "structural"]
+  },
+
+  "repair_rules": {
+    "scope": "只操作新视图，不改原池（doc72 §6）",
+    "eligibility": "dev + 置信∈{high,medium} + passes==2 + review_status 一致 + temporal_status 支持 2023 + 强结构证据",
+    "evergreen_deciduous": "必须当年(2023)独立物候证据(phenology_sameyear)，否则不改",
+    "needle_broadleaf": "针阔变更须显式高分结构复判一致（evidence_type=highres_structure_recheck）且 2023 适用（temporal_status）；不得由 S2/物候/坡向推针阔；不达则拒绝该点（保留原标签，不猜）",
+    "orchard": "园地：高分行列/管理地块特征 + 时序 → 判园地；否则 unknown，不强行贴类（按 isolate 处理）",
+    "scope_point_only": "scope 必须=point：禁止扩整地块/整坡/整山体，禁止生成成千上万伪标签",
+    "low_confidence": "低置信/日期不明且无年度旁证/阴影不可判 → 不改冻结细类标签，标待人工",
+    "frozen": true
+  },
+
+  "regions": {
+    "SC_F": {"prov": "四川省", "theme": "forest_type", "geo_only": false,
+             "bbox": [106.0, 32.0, 107.0, 33.0], "tile": "T1607",
+             "tile_box": [105.0, 32.0, 107.0, 34.0], "win": "w2",
+             "target_classes": [4, 6],
+             "note": "四川林型小区（针阔轴为主任务）；对应 doc71 O-SC1/T-F1"},
+    "SC_O": {"prov": "四川省", "theme": "orchard", "geo_only": false,
+             "bbox": [107.0, 32.0, 108.0, 33.0], "tile": "T1707",
+             "tile_box": [107.0, 32.0, 109.0, 34.0], "win": "w2",
+             "target_classes": [2, 1, 4],
+             "note": "四川园地小区（园地 vs 森林/耕地为主任务）；对应 doc71 O-SC2"},
+    "GD_geo": {"prov": "广东省", "theme": "geo_only", "geo_only": true,
+               "bbox": [112.0, 23.0, 113.0, 24.0], "tile": "T1902",
+               "tile_box": [111.0, 22.0, 113.0, 24.0], "win": "w3",
+               "target_classes": [4, 2], "note": "本轮仅几何/支持验证"},
+    "NX_geo": {"prov": "宁夏回族自治区", "theme": "geo_only", "geo_only": true,
+               "bbox": [106.0, 38.0, 107.0, 39.0], "tile": "T1610",
+               "tile_box": [105.0, 38.0, 107.0, 40.0], "win": "w4",
+               "target_classes": [22, 3], "note": "本轮仅几何/支持验证"}
+  },
+
+  "training_selection": {
+    "window": "tile ± 2°",
+    "max_points_per_window": 20000,
+    "exclude_from_train": [
+      "全部 V blocks（独立评价块，0.25°）",
+      "已使用评价保留块（reference blocks：五窗 eval 的 dev+conf 块）"
+    ],
+    "R_group_note": "R 是训练审计修复点，允许进训练：上下文 C 的候选窗剔除 V 块+已用参考块，但 **R 点即使落在已用参考块内也不剔除**（否则修复无实际作用）；R 仅不得落在 V 块（保证评价空间独立）。R 与 V 位置/块必须不相交",
+    "record_leak": 0,
+    "block_step_deg": 0.25
+  },
+
+  "evaluation": {
+    "eval_set": "V（独立块新评价点）——R 不参与评价",
+    "primary_stratum": "V 可判子集（judge_status 可判）；另报全 V、不可判单列",
+    "metrics": ["OA24", "macro9_OA", "macroF1", "per_class_f1_pa_ua"],
+    "class_min_n": 30,
+    "uncertainty": "0.25° 块配对 bootstrap（≥2000 次）；报告有效块数/点数/种子均值±离散",
+    "v_insufficient_rule": "某区域 V n<30 或目标轴可判 n<30 → 该目标记 unsupported，不宣布达标，不得改看全点或调阈值",
+    "structure_groups": {
+      "orchard": [2],
+      "woody_forest": [4, 5, 6, 7, 8],
+      "cropland": [1, 3],
+      "macro9_rest": "其余按 macro9 九大类归并（稀疏植被/地衣苔藓并入 grass_lowveg）",
+      "unknown": "无法判读/年度不可用 → unknown 单列，不进确认率分母，不并入错误"
+    },
+    "axes": {
+      "needle_broadleaf": {"needle": [6, 7, 8], "broadleaf": [4, 5],
+                           "note": "仅当独立可辨针阔证据充分时评估；否则该轴 unsupported，不得由森林大类一致率冒充"},
+      "evergreen_deciduous": {"evergreen": [4, 6, 8], "deciduous": [5, 7],
+                              "note": "仅当年物候证据充分时评估；否则 unsupported"}
+    },
+    "tasks": {
+      "SC_F": {"type": "needle_broadleaf_axis",
+               "primary_metric": "judgeable 子集上的针阔二值 macroF1（needle={6,7,8} vs broadleaf={4,5}）",
+               "fallback": "可判 n<30 或针阔轴 QC 未过 → unsupported（写 unsupported，不改口径）"},
+      "SC_O": {"type": "orchard_vs_forestcrop",
+               "primary_metric": "结构三组 macroF1（orchard/woody_forest/cropland）+ 类2 F1",
+               "fallback": "园地可判 n<30 → 类2 只作诊断"},
+      "secondary": "森林大类一致率仅作旁证，不等于针阔改善"
+    },
+    "pred_table_schema": ["region", "arm", "seed", "vid", "lon", "lat", "pred"],
+    "pred_table_forbids": ["label_after", "cl_true", "true_label", "t24"],
+    "note": "预测表不附真值，供 audit 一次解盲；解盲由 audit 侧完成"
+  },
+
+  "target_freeze": {
+    "status": "PENDING_R_QC",
+    "rule": "目标在 R 修复 QC 完成、V 标签解封前写死；不得据 V 真值结果挑目标",
+    "candidate_targets": {
+      "SC_O": "类2 园地 F1 + 结构三组 macroF1",
+      "SC_F": "针阔二值 macroF1（仅当针阔轴证据充分；否则 unsupported）"
+    },
+    "fixed_now": ["structure_groups", "axes", "tasks", "seeds", "RF", "gates", "n_total"]
+  },
+
+  "decision_rules": {
+    "group_non_inferiority": {"metric": "macro9", "point_estimate_pp": -1.0, "ci_lower_pp": -2.0},
+    "target_class_improvement": {"delta_f1": 0.03, "require_ci_supports_direction": true},
+    "new_regression": {"delta_f1": -0.05},
+    "class_level_min_n": 30,
+    "no_repair_support": "R 合格点=0 或 selected R=0 → NO_REPAIR_SUPPORT（不假造改善，允许负结果）",
+    "insufficient_support": "V/目标轴可判 n<30 或 CI 不可靠 → INSUFFICIENT_SUPPORT，不过门",
+    "no_threshold_sweep": true,
+    "two_arms_only": true
+  },
+
+  "design": {
+    "n_total_sizes": {"probe": 2000, "real20k": 20000},
+    "probe_r_share_cap": 0.10,
+    "probe_note": "probe = 固定共享上下文 C + 唯一 R；R 不重复、占比≤10%、总数≤20k；基线 R 原标签、候选合格修复。probe 明确非原生产 20k 结论",
+    "real20k_note": "20k = C + R 两臂相同上下文，研究 R 稀释；不得用'随机不含 R 的 20k'对比'强制含 R 的 candidate'（不公平）。唯一一次受控旁证",
+    "planned_fits": 24,
+    "fits_note": "2 size × 2 region × 2 arm × 3 seed = 24 fits（足够；CI 少数据仍实测）"
+  },
+
+  "resources": {"limit_s": 1200, "prep_cap_s": 1200, "trigger_margin_s": 10,
+                "n_jobs": 10, "cpu_cap": 15, "mem_cap_gb": 10,
+                "note": "每区域×方案×3seed train→infer→eval ≤1200s，父进程硬截止仅终止自身子树"},
+
+  "freeze": {"code_hash": null, "prereg_md5": null, "frozen_at": null, "frozen_by": null},
+
+  "sealed_confirm": {"managed_by": "audit", "agent_must_not_read": true,
+                     "note": "V 真值与判读者未封存确认标签本 agent 不读；解盲由 audit 一次完成"}
+}

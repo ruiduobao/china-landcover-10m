@@ -1,0 +1,408 @@
+{
+ "source_points": "labels/needle_broad_national_v2.parquet",
+ "coverage": "national_313tiles",
+ "points": 109260,
+ "points_needle": 49223,
+ "points_broad": 60037,
+ "panel_points": 109260,
+ "point_years": 874080,
+ "label_source": "2023 GLC_FCS10（针 71/72/81/82，阔 51/52/61/62）",
+ "inheritance": "针阔标签一律继承 2023 FCS10（不继承旧类码）",
+ "forest_evidence": "a1_forest_evidence.py（2023 池训练的森林/非林判别器 + 逐年 1%/0.5% 分位阈值）",
+ "type_conflict_weighting": "not_run（本版未重跑跨年类型预测；R4 未启用）",
+ "years": {
+  "2017": {
+   "points_total": 109260,
+   "usable": 96677,
+   "usable_rate_vs_2023": 0.9307,
+   "needle_usable": 45811,
+   "broad_usable": 50866,
+   "needle_rate_vs_2023": 0.9505,
+   "broad_rate_vs_2023": 0.9135,
+   "needle_share": 0.4739,
+   "unusable_nonforest": 4882,
+   "unusable_no_aef": 7058,
+   "unusable_qc": 643,
+   "inherited_unverified": 96677,
+   "observed_2023": 0,
+   "no_pheno_evidence": 87936,
+   "pheno_evidence_rate": 0.0904
+  },
+  "2018": {
+   "points_total": 109260,
+   "usable": 96541,
+   "usable_rate_vs_2023": 0.9294,
+   "needle_usable": 45744,
+   "broad_usable": 50797,
+   "needle_rate_vs_2023": 0.9491,
+   "broad_rate_vs_2023": 0.9123,
+   "needle_share": 0.4738,
+   "unusable_nonforest": 4815,
+   "unusable_no_aef": 7058,
+   "unusable_qc": 846,
+   "inherited_unverified": 96541,
+   "observed_2023": 0,
+   "no_pheno_evidence": 88976,
+   "pheno_evidence_rate": 0.0784
+  },
+  "2019": {
+   "points_total": 109260,
+   "usable": 96839,
+   "usable_rate_vs_2023": 0.9322,
+   "needle_usable": 45847,
+   "broad_usable": 50992,
+   "needle_rate_vs_2023": 0.9512,
+   "broad_rate_vs_2023": 0.9158,
+   "needle_share": 0.4734,
+   "unusable_nonforest": 4778,
+   "unusable_no_aef": 7058,
+   "unusable_qc": 585,
+   "inherited_unverified": 96839,
+   "observed_2023": 0,
+   "no_pheno_evidence": 67456,
+   "pheno_evidence_rate": 0.3034
+  },
+  "2020": {
+   "points_total": 109260,
+   "usable": 96578,
+   "usable_rate_vs_2023": 0.9297,
+   "needle_usable": 45729,
+   "broad_usable": 50849,
+   "needle_rate_vs_2023": 0.9488,
+   "broad_rate_vs_2023": 0.9132,
+   "needle_share": 0.4735,
+   "unusable_nonforest": 4727,
+   "unusable_no_aef": 7058,
+   "unusable_qc": 897,
+   "inherited_unverified": 96578,
+   "observed_2023": 0,
+   "no_pheno_evidence": 67690,
+   "pheno_evidence_rate": 0.2991
+  },
+  "2021": {
+   "points_total": 109260,
+   "usable": 97213,
+   "usable_rate_vs_2023": 0.9358,
+   "needle_usable": 45942,
+   "broad_usable": 51271,
+   "needle_rate_vs_2023": 0.9532,
+   "broad_rate_vs_2023": 0.9208,
+   "needle_share": 0.4726,
+   "unusable_nonforest": 4783,
+   "unusable_no_aef": 6681,
+   "unusable_qc": 583,
+   "inherited_unverified": 97213,
+   "observed_2023": 0,
+   "no_pheno_evidence": 67760,
+   "pheno_evidence_rate": 0.303
+  },
+  "2022": {
+   "points_total": 109260,
+   "usable": 103885,
+   "usable_rate_vs_2023": 1.0001,
+   "needle_usable": 48163,
+   "broad_usable": 55722,
+   "needle_rate_vs_2023": 0.9993,
+   "broad_rate_vs_2023": 1.0008,
+   "needle_share": 0.4636,
+   "unusable_nonforest": 4770,
+   "unusable_no_aef": 12,
+   "unusable_qc": 593,
+   "inherited_unverified": 103885,
+   "observed_2023": 0,
+   "no_pheno_evidence": 73475,
+   "pheno_evidence_rate": 0.2927
+  },
+  "2023": {
+   "points_total": 109260,
+   "usable": 103879,
+   "usable_rate_vs_2023": 1.0,
+   "needle_usable": 48199,
+   "broad_usable": 55680,
+   "needle_rate_vs_2023": 1.0,
+   "broad_rate_vs_2023": 1.0,
+   "needle_share": 0.464,
+   "unusable_nonforest": 5381,
+   "unusable_no_aef": 0,
+   "unusable_qc": 0,
+   "inherited_unverified": 0,
+   "observed_2023": 103879,
+   "no_pheno_evidence": 73394,
+   "pheno_evidence_rate": 0.2935
+  },
+  "2024": {
+   "points_total": 109260,
+   "usable": 104038,
+   "usable_rate_vs_2023": 1.0015,
+   "needle_usable": 48115,
+   "broad_usable": 55923,
+   "needle_rate_vs_2023": 0.9983,
+   "broad_rate_vs_2023": 1.0044,
+   "needle_share": 0.4625,
+   "unusable_nonforest": 4312,
+   "unusable_no_aef": 388,
+   "unusable_qc": 522,
+   "inherited_unverified": 104038,
+   "observed_2023": 0,
+   "no_pheno_evidence": 74174,
+   "pheno_evidence_rate": 0.287
+  }
+ },
+ "gates": {
+  "2017": {
+   "G5_all": true,
+   "G5_needle": true,
+   "G5_broad": true
+  },
+  "2018": {
+   "G5_all": true,
+   "G5_needle": true,
+   "G5_broad": true
+  },
+  "2019": {
+   "G5_all": true,
+   "G5_needle": true,
+   "G5_broad": true
+  },
+  "2020": {
+   "G5_all": true,
+   "G5_needle": true,
+   "G5_broad": true
+  },
+  "2021": {
+   "G5_all": true,
+   "G5_needle": true,
+   "G5_broad": true
+  },
+  "2022": {
+   "G5_all": true,
+   "G5_needle": true,
+   "G5_broad": true
+  },
+  "2023": {
+   "G5_all": true,
+   "G5_needle": true,
+   "G5_broad": true
+  },
+  "2024": {
+   "G5_all": true,
+   "G5_needle": true,
+   "G5_broad": true
+  }
+ },
+ "gate_result": {
+  "G5_all_pass": true,
+  "G5_needle_pass": true,
+  "G5_broad_pass": true,
+  "G6_panel_label_agreement": 1.0,
+  "G6_type_flip_rate": 0.0,
+  "G6_note": "跳变率为 0 是\"硬继承 2023 FCS10 标签\"的构造恒等式，不是独立验证；R2 证据门控机制见 annual/R2门控模拟.json（**旧标签面板口径**，未在本版重跑）",
+  "R2_gate_old_panel": {
+   "R0_flip": 0.0365,
+   "R2_flip": 0.0054,
+   "R2_acc": 0.9374,
+   "caveat": "旧标签面板（年度配方_strict）口径，不能直接移植到 FCS10 面板；机制本身有效"
+  }
+ },
+ "by_prov_2023": [
+  {
+   "prov": "上海市",
+   "n": 8,
+   "needle": 3,
+   "needle_share": 0.375
+  },
+  {
+   "prov": "云南省",
+   "n": 9245,
+   "needle": 4143,
+   "needle_share": 0.4481
+  },
+  {
+   "prov": "内蒙古自治区",
+   "n": 9990,
+   "needle": 4750,
+   "needle_share": 0.4755
+  },
+  {
+   "prov": "北京市",
+   "n": 318,
+   "needle": 116,
+   "needle_share": 0.3648
+  },
+  {
+   "prov": "台湾省",
+   "n": 1315,
+   "needle": 4,
+   "needle_share": 0.003
+  },
+  {
+   "prov": "吉林省",
+   "n": 4503,
+   "needle": 2120,
+   "needle_share": 0.4708
+  },
+  {
+   "prov": "四川省",
+   "n": 8286,
+   "needle": 4602,
+   "needle_share": 0.5554
+  },
+  {
+   "prov": "天津市",
+   "n": 20,
+   "needle": 4,
+   "needle_share": 0.2
+  },
+  {
+   "prov": "宁夏回族自治区",
+   "n": 178,
+   "needle": 113,
+   "needle_share": 0.6348
+  },
+  {
+   "prov": "安徽省",
+   "n": 1211,
+   "needle": 195,
+   "needle_share": 0.161
+  },
+  {
+   "prov": "山东省",
+   "n": 1872,
+   "needle": 309,
+   "needle_share": 0.1651
+  },
+  {
+   "prov": "山西省",
+   "n": 3727,
+   "needle": 1920,
+   "needle_share": 0.5152
+  },
+  {
+   "prov": "广东省",
+   "n": 2134,
+   "needle": 203,
+   "needle_share": 0.0951
+  },
+  {
+   "prov": "广西壮族自治区",
+   "n": 3629,
+   "needle": 1299,
+   "needle_share": 0.3579
+  },
+  {
+   "prov": "新疆维吾尔自治区",
+   "n": 4744,
+   "needle": 4291,
+   "needle_share": 0.9045
+  },
+  {
+   "prov": "江苏省",
+   "n": 375,
+   "needle": 22,
+   "needle_share": 0.0587
+  },
+  {
+   "prov": "江西省",
+   "n": 2011,
+   "needle": 540,
+   "needle_share": 0.2685
+  },
+  {
+   "prov": "河北省",
+   "n": 2920,
+   "needle": 1259,
+   "needle_share": 0.4312
+  },
+  {
+   "prov": "河南省",
+   "n": 1393,
+   "needle": 323,
+   "needle_share": 0.2319
+  },
+  {
+   "prov": "浙江省",
+   "n": 1454,
+   "needle": 120,
+   "needle_share": 0.0825
+  },
+  {
+   "prov": "海南省",
+   "n": 557,
+   "needle": 18,
+   "needle_share": 0.0323
+  },
+  {
+   "prov": "湖北省",
+   "n": 2585,
+   "needle": 933,
+   "needle_share": 0.3609
+  },
+  {
+   "prov": "湖南省",
+   "n": 3130,
+   "needle": 1273,
+   "needle_share": 0.4067
+  },
+  {
+   "prov": "甘肃省",
+   "n": 3341,
+   "needle": 1832,
+   "needle_share": 0.5483
+  },
+  {
+   "prov": "福建省",
+   "n": 1681,
+   "needle": 90,
+   "needle_share": 0.0535
+  },
+  {
+   "prov": "西藏自治区",
+   "n": 6338,
+   "needle": 3925,
+   "needle_share": 0.6193
+  },
+  {
+   "prov": "贵州省",
+   "n": 3279,
+   "needle": 1742,
+   "needle_share": 0.5313
+  },
+  {
+   "prov": "辽宁省",
+   "n": 4544,
+   "needle": 2272,
+   "needle_share": 0.5
+  },
+  {
+   "prov": "重庆市",
+   "n": 1452,
+   "needle": 821,
+   "needle_share": 0.5654
+  },
+  {
+   "prov": "陕西省",
+   "n": 3589,
+   "needle": 1693,
+   "needle_share": 0.4717
+  },
+  {
+   "prov": "青海省",
+   "n": 1186,
+   "needle": 786,
+   "needle_share": 0.6627
+  },
+  {
+   "prov": "香港特别行政区",
+   "n": 37,
+   "needle": 1,
+   "needle_share": 0.027
+  },
+  {
+   "prov": "黑龙江省",
+   "n": 12827,
+   "needle": 6477,
+   "needle_share": 0.505
+  }
+ ],
+ "elapsed_min": 0.0
+}

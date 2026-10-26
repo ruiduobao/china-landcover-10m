@@ -1,0 +1,14 @@
+{
+ "exp_id": "G30N_seedset7_11_23",
+ "owner": "geometry",
+ "stage": "S4",
+ "limit_s": 1200.0,
+ "status": "done",
+ "rc": 0,
+ "timed_out": false,
+ "wall_s": 76.0,
+ "started_at": "2026-10-15T14:23:21",
+ "finished_at": "2026-10-15T14:24:37",
+ "log": "F:\\lc_work\\improve_2023_pilot_20261015\\geometry\\logs\\G30N_seedset7_11_23\\run.log",
+ "budget_ok": true
+}

@@ -1,0 +1,25 @@
+{
+ "box": "O",
+ "N": 2000,
+ "seed": 7,
+ "n_window": 73801,
+ "n_iso": 25,
+ "n_V": 40,
+ "n_V_evalable": 26,
+ "base": {
+  "acc": 0.4615,
+  "macroF1": 0.1297,
+  "pred_orchard": 4,
+  "pred_forest": 1,
+  "n_train": 2000,
+  "fit_s": 0.2
+ },
+ "iso": {
+  "acc": 0.6154,
+  "macroF1": 0.1333,
+  "pred_orchard": 0,
+  "pred_forest": 1,
+  "n_train": 2000,
+  "fit_s": 0.2
+ }
+}

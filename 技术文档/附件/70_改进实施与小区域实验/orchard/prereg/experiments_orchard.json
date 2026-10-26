@@ -1,0 +1,594 @@
+{
+ "schema": "improve_pilot_registry/v1",
+ "owner": "orchard",
+ "note": "园地/森林实验组注册（独立等效 runner e3_driver.py；非 control/run_experiment.py 写）",
+ "frozen_registry": "F:/lc_work/improve_2023_pilot_20261015/orchard\\prereg\\regions_frozen.json",
+ "frozen_registry_md5": "0abb0e78cfaa064a1f643875f6b43489",
+ "main_gate": {
+  "primary_stratum": "非FCS10 内部确认层（conf blocks ∩ 非fcs10）",
+  "primary_metric": "macro9 OA（另报 OA24）",
+  "target_class_f1": "目标类 F1 亦在非fcs10 确认层判读（川=类4 常绿阔叶林；粤=类4/类5；宁=类22 裸地/类3 灌溉耕地）",
+  "full_and_fcs10": "全点与 FCS10 层完整报告，不得用以掩盖主门",
+  "insufficient_support_rule": "某小框确认层目标类 n<30 → 判\"支持不足\"，不得改看全点层或调主门/阈值来制造 cap 涨分；如实标 PROMISING/REJECT/支持不足",
+  "confirm_once": "确认层只评一次，不用于挑臂或调阈值"
+ },
+ "updated_at": "2026-10-15T14:14:39",
+ "experiments": {
+  "O-SC1_H1_baseline": {
+   "owner": "orchard",
+   "hypothesis": "H1/H2",
+   "province": "川",
+   "stage": "A",
+   "status": "done",
+   "seeds": [
+    7,
+    11,
+    23
+   ],
+   "limit_s": 1200,
+   "uses_rf": true,
+   "mem_cap_gb": 10,
+   "n_jobs": 10,
+   "registration": {
+    "experiment_id": "O-SC1_H1_baseline",
+    "region_bbox": [
+     106.0,
+     32.0,
+     107.0,
+     33.0
+    ],
+    "tile_id": "T1607",
+    "training_bbox": [
+     103.0,
+     30.0,
+     109.0,
+     36.0
+    ],
+    "input_identity": "F:/lc_work/prod2nd_2023/data/train2023_v2.parquet",
+    "class_map_hash": "ab1438e8fec4c944",
+    "candidate_rule": "池原样局部均匀随机抽样：rng(seed).permutation(窗内点) 取前 20000（复现生产 randomColumn 机制，非逐点复制）",
+    "seeds": [
+     7,
+     11,
+     23
+    ],
+    "n_train_limit": 20000,
+    "rf_params": {
+     "n_estimators": 100,
+     "min_samples_leaf": 2,
+     "max_leaf_nodes": 5000,
+     "n_jobs": 10,
+     "note": "sklearn RF ≠ GEE smileRF（本地筛选器）"
+    },
+    "deadline_s": 1200,
+    "development_ids": "0.25° dev blocks: 424_130,427_128,425_129,425_128,426_130,424_131,424_129,427_129",
+    "confirmation_ids": "0.25° conf blocks: 424_128,426_128,426_129,427_130,425_130",
+    "target_metrics": [
+     "class4_F1(SC/GD)",
+     "class22/3_F1(NX)",
+     "OA24",
+     "macro9",
+     "source_stratified"
+    ],
+    "expected_effect": "减少园地先验导致的林耕替代；可能漏园地，需回归门",
+    "stop_rules": "TIMEOUT 或 macro9 非劣门/新退化门不过则拒绝采纳，保留基线",
+    "code_hash": {
+     "e1_prep_regions.py": "f0d50a8f99ab473b",
+     "e2_run_unit.py": "271e981567014edb",
+     "e3_driver.py": "412829042f5d30b4"
+    },
+    "registered_at": "2026-10-15 14:08:57",
+    "refn": 355,
+    "n_conf_nonfcs10": 107,
+    "n_conf_cl4": 38,
+    "spatial_holdout": "训练窗内剔除本区全部 0.25° 块（dev+conf）；如剔后 <20000 用实际 N（不偷回）",
+    "n_window_after": 72723,
+    "poskey_overlap_train_ref": 0
+   }
+  },
+  "O-SC1_H1_OCAP": {
+   "owner": "orchard",
+   "hypothesis": "H1/H2",
+   "province": "川",
+   "stage": "A",
+   "status": "done",
+   "seeds": [
+    7,
+    11,
+    23
+   ],
+   "limit_s": 1200,
+   "uses_rf": true,
+   "mem_cap_gb": 10,
+   "n_jobs": 10,
+   "registration": {
+    "experiment_id": "O-SC1_H1_OCAP",
+    "region_bbox": [
+     106.0,
+     32.0,
+     107.0,
+     33.0
+    ],
+    "tile_id": "T1607",
+    "training_bbox": [
+     103.0,
+     30.0,
+     109.0,
+     36.0
+    ],
+    "input_identity": "F:/lc_work/prod2nd_2023/data/train2023_v2.parquet",
+    "class_map_hash": "ab1438e8fec4c944",
+    "candidate_rule": "同一 permutation 顺序接受：类 2 园地最多 200（=1%×20000），其余类不设限，补足至 20000；不足 200 保留全部",
+    "seeds": [
+     7,
+     11,
+     23
+    ],
+    "n_train_limit": 20000,
+    "rf_params": {
+     "n_estimators": 100,
+     "min_samples_leaf": 2,
+     "max_leaf_nodes": 5000,
+     "n_jobs": 10,
+     "note": "sklearn RF ≠ GEE smileRF（本地筛选器）"
+    },
+    "deadline_s": 1200,
+    "development_ids": "0.25° dev blocks: 424_130,427_128,425_129,425_128,426_130,424_131,424_129,427_129",
+    "confirmation_ids": "0.25° conf blocks: 424_128,426_128,426_129,427_130,425_130",
+    "target_metrics": [
+     "class4_F1(SC/GD)",
+     "class22/3_F1(NX)",
+     "OA24",
+     "macro9",
+     "source_stratified"
+    ],
+    "expected_effect": "减少园地先验导致的林耕替代；可能漏园地，需回归门",
+    "stop_rules": "TIMEOUT 或 macro9 非劣门/新退化门不过则拒绝采纳，保留基线",
+    "code_hash": {
+     "e1_prep_regions.py": "f0d50a8f99ab473b",
+     "e2_run_unit.py": "271e981567014edb",
+     "e3_driver.py": "412829042f5d30b4"
+    },
+    "registered_at": "2026-10-15 14:08:57",
+    "refn": 355,
+    "n_conf_nonfcs10": 107,
+    "n_conf_cl4": 38,
+    "spatial_holdout": "训练窗内剔除本区全部 0.25° 块（dev+conf）；如剔后 <20000 用实际 N（不偷回）",
+    "n_window_after": 72723,
+    "poskey_overlap_train_ref": 0
+   }
+  },
+  "O-SC2_H1_baseline": {
+   "owner": "orchard",
+   "hypothesis": "H1/H2",
+   "province": "川",
+   "stage": "A",
+   "status": "done",
+   "seeds": [
+    7,
+    11,
+    23
+   ],
+   "limit_s": 1200,
+   "uses_rf": true,
+   "mem_cap_gb": 10,
+   "n_jobs": 10,
+   "registration": {
+    "experiment_id": "O-SC2_H1_baseline",
+    "region_bbox": [
+     107.0,
+     32.0,
+     108.0,
+     33.0
+    ],
+    "tile_id": "T1707",
+    "training_bbox": [
+     105.0,
+     30.0,
+     111.0,
+     36.0
+    ],
+    "input_identity": "F:/lc_work/prod2nd_2023/data/train2023_v2.parquet",
+    "class_map_hash": "ab1438e8fec4c944",
+    "candidate_rule": "池原样局部均匀随机抽样：rng(seed).permutation(窗内点) 取前 20000（复现生产 randomColumn 机制，非逐点复制）",
+    "seeds": [
+     7,
+     11,
+     23
+    ],
+    "n_train_limit": 20000,
+    "rf_params": {
+     "n_estimators": 100,
+     "min_samples_leaf": 2,
+     "max_leaf_nodes": 5000,
+     "n_jobs": 10,
+     "note": "sklearn RF ≠ GEE smileRF（本地筛选器）"
+    },
+    "deadline_s": 1200,
+    "development_ids": "0.25° dev blocks: 428_129,430_129,428_130,429_130,430_128,431_128,429_128",
+    "confirmation_ids": "0.25° conf blocks: 428_128,431_129,429_129",
+    "target_metrics": [
+     "class4_F1(SC/GD)",
+     "class22/3_F1(NX)",
+     "OA24",
+     "macro9",
+     "source_stratified"
+    ],
+    "expected_effect": "减少园地先验导致的林耕替代；可能漏园地，需回归门",
+    "stop_rules": "TIMEOUT 或 macro9 非劣门/新退化门不过则拒绝采纳，保留基线",
+    "code_hash": {
+     "e1_prep_regions.py": "f0d50a8f99ab473b",
+     "e2_run_unit.py": "271e981567014edb",
+     "e3_driver.py": "412829042f5d30b4"
+    },
+    "registered_at": "2026-10-15 14:08:57",
+    "refn": 199,
+    "n_conf_nonfcs10": 47,
+    "n_conf_cl4": 14,
+    "spatial_holdout": "训练窗内剔除本区全部 0.25° 块（dev+conf）；如剔后 <20000 用实际 N（不偷回）",
+    "n_window_after": 73317,
+    "poskey_overlap_train_ref": 0
+   }
+  },
+  "O-SC2_H1_OCAP": {
+   "owner": "orchard",
+   "hypothesis": "H1/H2",
+   "province": "川",
+   "stage": "A",
+   "status": "done",
+   "seeds": [
+    7,
+    11,
+    23
+   ],
+   "limit_s": 1200,
+   "uses_rf": true,
+   "mem_cap_gb": 10,
+   "n_jobs": 10,
+   "registration": {
+    "experiment_id": "O-SC2_H1_OCAP",
+    "region_bbox": [
+     107.0,
+     32.0,
+     108.0,
+     33.0
+    ],
+    "tile_id": "T1707",
+    "training_bbox": [
+     105.0,
+     30.0,
+     111.0,
+     36.0
+    ],
+    "input_identity": "F:/lc_work/prod2nd_2023/data/train2023_v2.parquet",
+    "class_map_hash": "ab1438e8fec4c944",
+    "candidate_rule": "同一 permutation 顺序接受：类 2 园地最多 200（=1%×20000），其余类不设限，补足至 20000；不足 200 保留全部",
+    "seeds": [
+     7,
+     11,
+     23
+    ],
+    "n_train_limit": 20000,
+    "rf_params": {
+     "n_estimators": 100,
+     "min_samples_leaf": 2,
+     "max_leaf_nodes": 5000,
+     "n_jobs": 10,
+     "note": "sklearn RF ≠ GEE smileRF（本地筛选器）"
+    },
+    "deadline_s": 1200,
+    "development_ids": "0.25° dev blocks: 428_129,430_129,428_130,429_130,430_128,431_128,429_128",
+    "confirmation_ids": "0.25° conf blocks: 428_128,431_129,429_129",
+    "target_metrics": [
+     "class4_F1(SC/GD)",
+     "class22/3_F1(NX)",
+     "OA24",
+     "macro9",
+     "source_stratified"
+    ],
+    "expected_effect": "减少园地先验导致的林耕替代；可能漏园地，需回归门",
+    "stop_rules": "TIMEOUT 或 macro9 非劣门/新退化门不过则拒绝采纳，保留基线",
+    "code_hash": {
+     "e1_prep_regions.py": "f0d50a8f99ab473b",
+     "e2_run_unit.py": "271e981567014edb",
+     "e3_driver.py": "412829042f5d30b4"
+    },
+    "registered_at": "2026-10-15 14:08:57",
+    "refn": 199,
+    "n_conf_nonfcs10": 47,
+    "n_conf_cl4": 14,
+    "spatial_holdout": "训练窗内剔除本区全部 0.25° 块（dev+conf）；如剔后 <20000 用实际 N（不偷回）",
+    "n_window_after": 73317,
+    "poskey_overlap_train_ref": 0
+   }
+  },
+  "O-GD_H1_baseline": {
+   "owner": "orchard",
+   "hypothesis": "H1/H2",
+   "province": "粤",
+   "stage": "A",
+   "status": "done",
+   "seeds": [
+    7,
+    11,
+    23
+   ],
+   "limit_s": 1200,
+   "uses_rf": true,
+   "mem_cap_gb": 10,
+   "n_jobs": 10,
+   "registration": {
+    "experiment_id": "O-GD_H1_baseline",
+    "region_bbox": [
+     112.0,
+     23.0,
+     113.0,
+     24.0
+    ],
+    "tile_id": "T1902",
+    "training_bbox": [
+     109.0,
+     20.0,
+     115.0,
+     26.0
+    ],
+    "input_identity": "F:/lc_work/prod2nd_2023/data/train2023_v2.parquet",
+    "class_map_hash": "ab1438e8fec4c944",
+    "candidate_rule": "池原样局部均匀随机抽样：rng(seed).permutation(窗内点) 取前 20000（复现生产 randomColumn 机制，非逐点复制）",
+    "seeds": [
+     7,
+     11,
+     23
+    ],
+    "n_train_limit": 20000,
+    "rf_params": {
+     "n_estimators": 100,
+     "min_samples_leaf": 2,
+     "max_leaf_nodes": 5000,
+     "n_jobs": 10,
+     "note": "sklearn RF ≠ GEE smileRF（本地筛选器）"
+    },
+    "deadline_s": 1200,
+    "development_ids": "0.25° dev blocks: 451_92,450_94,451_93,448_92,448_94,450_93,450_95,449_94,449_93,448_95",
+    "confirmation_ids": "0.25° conf blocks: 448_93,451_95,451_94,450_92,449_95,449_92",
+    "target_metrics": [
+     "class4_F1(SC/GD)",
+     "class22/3_F1(NX)",
+     "OA24",
+     "macro9",
+     "source_stratified"
+    ],
+    "expected_effect": "减少园地先验导致的林耕替代；可能漏园地，需回归门",
+    "stop_rules": "TIMEOUT 或 macro9 非劣门/新退化门不过则拒绝采纳，保留基线",
+    "code_hash": {
+     "e1_prep_regions.py": "f0d50a8f99ab473b",
+     "e2_run_unit.py": "271e981567014edb",
+     "e3_driver.py": "412829042f5d30b4"
+    },
+    "registered_at": "2026-10-15 14:08:57",
+    "refn": 599,
+    "n_conf_nonfcs10": 162,
+    "n_conf_cl4": 35,
+    "spatial_holdout": "训练窗内剔除本区全部 0.25° 块（dev+conf）；如剔后 <20000 用实际 N（不偷回）",
+    "n_window_after": 66805,
+    "poskey_overlap_train_ref": 0
+   }
+  },
+  "O-GD_H1_OCAP": {
+   "owner": "orchard",
+   "hypothesis": "H1/H2",
+   "province": "粤",
+   "stage": "A",
+   "status": "done",
+   "seeds": [
+    7,
+    11,
+    23
+   ],
+   "limit_s": 1200,
+   "uses_rf": true,
+   "mem_cap_gb": 10,
+   "n_jobs": 10,
+   "registration": {
+    "experiment_id": "O-GD_H1_OCAP",
+    "region_bbox": [
+     112.0,
+     23.0,
+     113.0,
+     24.0
+    ],
+    "tile_id": "T1902",
+    "training_bbox": [
+     109.0,
+     20.0,
+     115.0,
+     26.0
+    ],
+    "input_identity": "F:/lc_work/prod2nd_2023/data/train2023_v2.parquet",
+    "class_map_hash": "ab1438e8fec4c944",
+    "candidate_rule": "同一 permutation 顺序接受：类 2 园地最多 200（=1%×20000），其余类不设限，补足至 20000；不足 200 保留全部",
+    "seeds": [
+     7,
+     11,
+     23
+    ],
+    "n_train_limit": 20000,
+    "rf_params": {
+     "n_estimators": 100,
+     "min_samples_leaf": 2,
+     "max_leaf_nodes": 5000,
+     "n_jobs": 10,
+     "note": "sklearn RF ≠ GEE smileRF（本地筛选器）"
+    },
+    "deadline_s": 1200,
+    "development_ids": "0.25° dev blocks: 451_92,450_94,451_93,448_92,448_94,450_93,450_95,449_94,449_93,448_95",
+    "confirmation_ids": "0.25° conf blocks: 448_93,451_95,451_94,450_92,449_95,449_92",
+    "target_metrics": [
+     "class4_F1(SC/GD)",
+     "class22/3_F1(NX)",
+     "OA24",
+     "macro9",
+     "source_stratified"
+    ],
+    "expected_effect": "减少园地先验导致的林耕替代；可能漏园地，需回归门",
+    "stop_rules": "TIMEOUT 或 macro9 非劣门/新退化门不过则拒绝采纳，保留基线",
+    "code_hash": {
+     "e1_prep_regions.py": "f0d50a8f99ab473b",
+     "e2_run_unit.py": "271e981567014edb",
+     "e3_driver.py": "412829042f5d30b4"
+    },
+    "registered_at": "2026-10-15 14:08:57",
+    "refn": 599,
+    "n_conf_nonfcs10": 162,
+    "n_conf_cl4": 35,
+    "spatial_holdout": "训练窗内剔除本区全部 0.25° 块（dev+conf）；如剔后 <20000 用实际 N（不偷回）",
+    "n_window_after": 66805,
+    "poskey_overlap_train_ref": 0
+   }
+  },
+  "O-NX_H1_baseline": {
+   "owner": "orchard",
+   "hypothesis": "H1/H2",
+   "province": "宁",
+   "stage": "A",
+   "status": "done",
+   "seeds": [
+    7,
+    11,
+    23
+   ],
+   "limit_s": 1200,
+   "uses_rf": true,
+   "mem_cap_gb": 10,
+   "n_jobs": 10,
+   "registration": {
+    "experiment_id": "O-NX_H1_baseline",
+    "region_bbox": [
+     106.0,
+     38.0,
+     107.0,
+     39.0
+    ],
+    "tile_id": "T1610",
+    "training_bbox": [
+     103.0,
+     36.0,
+     109.0,
+     42.0
+    ],
+    "input_identity": "F:/lc_work/prod2nd_2023/data/train2023_v2.parquet",
+    "class_map_hash": "ab1438e8fec4c944",
+    "candidate_rule": "池原样局部均匀随机抽样：rng(seed).permutation(窗内点) 取前 20000（复现生产 randomColumn 机制，非逐点复制）",
+    "seeds": [
+     7,
+     11,
+     23
+    ],
+    "n_train_limit": 20000,
+    "rf_params": {
+     "n_estimators": 100,
+     "min_samples_leaf": 2,
+     "max_leaf_nodes": 5000,
+     "n_jobs": 10,
+     "note": "sklearn RF ≠ GEE smileRF（本地筛选器）"
+    },
+    "deadline_s": 1200,
+    "development_ids": "0.25° dev blocks: 426_154,424_153,426_155,424_154,424_155,425_154,427_152,426_153,426_152",
+    "confirmation_ids": "0.25° conf blocks: 425_152,425_153,425_155,427_155,424_152",
+    "target_metrics": [
+     "class4_F1(SC/GD)",
+     "class22/3_F1(NX)",
+     "OA24",
+     "macro9",
+     "source_stratified"
+    ],
+    "expected_effect": "减少园地先验导致的林耕替代；可能漏园地，需回归门",
+    "stop_rules": "TIMEOUT 或 macro9 非劣门/新退化门不过则拒绝采纳，保留基线",
+    "code_hash": {
+     "e1_prep_regions.py": "f0d50a8f99ab473b",
+     "e2_run_unit.py": "271e981567014edb",
+     "e3_driver.py": "412829042f5d30b4"
+    },
+    "registered_at": "2026-10-15 14:08:57",
+    "refn": 410,
+    "n_conf_nonfcs10": 129,
+    "n_conf_cl4": 0,
+    "spatial_holdout": "训练窗内剔除本区全部 0.25° 块（dev+conf）；如剔后 <20000 用实际 N（不偷回）",
+    "n_window_after": 38991,
+    "poskey_overlap_train_ref": 0
+   }
+  },
+  "O-NX_H1_OCAP": {
+   "owner": "orchard",
+   "hypothesis": "H1/H2",
+   "province": "宁",
+   "stage": "A",
+   "status": "done",
+   "seeds": [
+    7,
+    11,
+    23
+   ],
+   "limit_s": 1200,
+   "uses_rf": true,
+   "mem_cap_gb": 10,
+   "n_jobs": 10,
+   "registration": {
+    "experiment_id": "O-NX_H1_OCAP",
+    "region_bbox": [
+     106.0,
+     38.0,
+     107.0,
+     39.0
+    ],
+    "tile_id": "T1610",
+    "training_bbox": [
+     103.0,
+     36.0,
+     109.0,
+     42.0
+    ],
+    "input_identity": "F:/lc_work/prod2nd_2023/data/train2023_v2.parquet",
+    "class_map_hash": "ab1438e8fec4c944",
+    "candidate_rule": "同一 permutation 顺序接受：类 2 园地最多 200（=1%×20000），其余类不设限，补足至 20000；不足 200 保留全部",
+    "seeds": [
+     7,
+     11,
+     23
+    ],
+    "n_train_limit": 20000,
+    "rf_params": {
+     "n_estimators": 100,
+     "min_samples_leaf": 2,
+     "max_leaf_nodes": 5000,
+     "n_jobs": 10,
+     "note": "sklearn RF ≠ GEE smileRF（本地筛选器）"
+    },
+    "deadline_s": 1200,
+    "development_ids": "0.25° dev blocks: 426_154,424_153,426_155,424_154,424_155,425_154,427_152,426_153,426_152",
+    "confirmation_ids": "0.25° conf blocks: 425_152,425_153,425_155,427_155,424_152",
+    "target_metrics": [
+     "class4_F1(SC/GD)",
+     "class22/3_F1(NX)",
+     "OA24",
+     "macro9",
+     "source_stratified"
+    ],
+    "expected_effect": "减少园地先验导致的林耕替代；可能漏园地，需回归门",
+    "stop_rules": "TIMEOUT 或 macro9 非劣门/新退化门不过则拒绝采纳，保留基线",
+    "code_hash": {
+     "e1_prep_regions.py": "f0d50a8f99ab473b",
+     "e2_run_unit.py": "271e981567014edb",
+     "e3_driver.py": "412829042f5d30b4"
+    },
+    "registered_at": "2026-10-15 14:08:57",
+    "refn": 410,
+    "n_conf_nonfcs10": 129,
+    "n_conf_cl4": 0,
+    "spatial_holdout": "训练窗内剔除本区全部 0.25° 块（dev+conf）；如剔后 <20000 用实际 N（不偷回）",
+    "n_window_after": 38991,
+    "poskey_overlap_train_ref": 0
+   }
+  }
+ }
+}

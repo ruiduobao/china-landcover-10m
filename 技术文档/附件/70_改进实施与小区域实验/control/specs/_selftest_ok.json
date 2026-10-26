@@ -1,0 +1,15 @@
+{
+  "schema": "improve_pilot_spec/v1",
+  "exp_id": "_selftest_ok",
+  "owner": "control",
+  "stage": "A",
+  "seeds": [7, 11, 23],
+  "limit_s": 1200,
+  "n_jobs": 10,
+  "stages": {
+    "prepare": {"cmd": ["python", "-c", "import time;time.sleep(1);print('prep ok')"], "timeout_s": 60},
+    "train":   {"cmd": ["python", "-c", "import time;time.sleep(2);print('train ok')"], "timeout_s": 900},
+    "infer":   {"cmd": ["python", "-c", "import time;time.sleep(1);print('infer ok')"], "timeout_s": 300},
+    "eval":    {"cmd": ["python", "-c", "import time;time.sleep(1);print('eval ok')"], "timeout_s": 300}
+  }
+}

@@ -1,0 +1,55 @@
+{
+ "n_total": 248828,
+ "by_leaf_final": {
+  "broad": 126514,
+  "needle": 121446,
+  "mixed": 868
+ },
+ "by_tier": {
+  "TIER_A": 130721,
+  "TIER_C": 51907,
+  "TIER_D": 36123,
+  "TIER_B": 30077
+ },
+ "by_src": {
+  "veg30": 138175,
+  "v2_fcs10": 110653
+ },
+ "tier_x_leaf": {
+  "TIER_A": {
+   "broad": 74967,
+   "needle": 55754
+  },
+  "TIER_B": {
+   "needle": 23090,
+   "broad": 6987
+  },
+  "TIER_C": {
+   "needle": 27326,
+   "broad": 23715,
+   "mixed": 866
+  },
+  "TIER_D": {
+   "broad": 20845,
+   "needle": 15276,
+   "mixed": 2
+  }
+ },
+ "by_reason": {
+  "veg_only": 105867,
+  "no_veg_north_fcs10_only": 43701,
+  "two_source_agree": 24854,
+  "veg_only_ambiguous": 18967,
+  "no_veg_south_unusable": 16124,
+  "veg_only_soft": 13341,
+  "conflict_two_sources_beat_fcs10": 7488,
+  "conflict_south_trust_veg": 5241,
+  "conflict_pft_sides_fcs10": 4487,
+  "agree_but_pft_opposes": 4007,
+  "conflict_no_tiebreak": 3719,
+  "conflict_south_both_weak": 1032
+ },
+ "tiles": 265,
+ "provs": 34,
+ "note": "tier: A=双源一致(或30m无疑义) B=一致但有异议/软歧义 C=冲突 D=疑义大；南方(华东/华中/华南)FCS10 无判别效度故按植被图定；粤/桂针叶标 TIER_D（植被图本身失效，Q3 实证）"
+}

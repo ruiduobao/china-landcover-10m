@@ -1,0 +1,59 @@
+{
+ "exp_id": "G30N_v2_s11",
+ "impl_version": "v1_rawmask",
+ "seed": 11,
+ "account_id": "k3r6ncvd",
+ "region_bbox": [
+  97.97502595708085,
+  29.998160934830473,
+  98.0250621184063,
+  30.006515266972787
+ ],
+ "n_px": 51801,
+ "crsTransform": [
+  8.983152841195215e-05,
+  0.0,
+  97.97502595708085,
+  0.0,
+  -8.983152841195215e-05,
+  30.006515266972787
+ ],
+ "width": 557,
+ "height": 93,
+ "wedge_h_deg": 0.0037790844279044222,
+ "wedge_h_rows": 42.068575417910985,
+ "wedge_lens_px": 23951,
+ "wedge_lens_in_tile_px": 23951,
+ "evm_valid_px": 51801,
+ "evm_in_tile_valid_px": 40661,
+ "legacy_mask0_px": 35091,
+ "legacy_mask_eq_unmask0_px": 51244,
+ "legacy_gap_px": 23394,
+ "planar_gap_px": 0,
+ "restored_px": 23394,
+ "legacy_nodata_px": 23394,
+ "planar_nodata_px": 0,
+ "outside_wedge_both_px": 16710,
+ "outside_wedge_disagree_px": 0,
+ "outside_tile_px": 11140,
+ "outside_tile_evm_valid_px": 11140,
+ "outside_tile_legacy_nonzero_px": 0,
+ "outside_tile_planar_nonzero_px": 0,
+ "legacy_class_hist": {
+  "6": 967,
+  "9": 2037,
+  "10": 1413,
+  "11": 12850
+ },
+ "planar_class_hist": {
+  "6": 1852,
+  "9": 4220,
+  "10": 3087,
+  "11": 31502
+ },
+ "req_s": 37.56,
+ "elapsed_s": 52.8,
+ "code_hash": "ad62033b1aa0a378808d51d767a1882e",
+ "outside_wedge_agree_rate": 1.0,
+ "wedge_restore_rate": 1.0
+}

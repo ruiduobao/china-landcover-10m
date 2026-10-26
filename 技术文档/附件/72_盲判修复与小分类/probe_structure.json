@@ -1,0 +1,36 @@
+{
+ "O": {
+  "n_usable": 35,
+  "n_iso": 44,
+  "ref": "blind structure (circular)",
+  "base": {
+   "acc": 0.686,
+   "f1": 0.0,
+   "pos_pred": 10,
+   "fit_s": 0.2
+  },
+  "iso": {
+   "acc": 0.743,
+   "f1": 0.0,
+   "pos_pred": 8,
+   "fit_s": 0.2
+  }
+ },
+ "F": {
+  "n_usable": 37,
+  "n_iso": 36,
+  "ref": "blind structure (circular)",
+  "base": {
+   "acc": 0.568,
+   "f1": 0.724,
+   "pos_pred": 37,
+   "fit_s": 0.2
+  },
+  "iso": {
+   "acc": 0.568,
+   "f1": 0.724,
+   "pos_pred": 37,
+   "fit_s": 0.2
+  }
+ }
+}

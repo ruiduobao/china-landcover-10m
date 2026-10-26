@@ -1,0 +1,197 @@
+{
+  "prereg": {
+    "label": "2023 针阔（class4 6/7=N，4/5=B）作唯一标签源",
+    "cv": "0.25° 空间块 5 折；模型仅用非留出块训练",
+    "C1": "同折模型对留出点逐年 AEF 预测，统计与 2023 标签一致率",
+    "C2": "逐年用该年池森林点训练（森林上限 12 万，按 N/B 平衡 class_weight），报 OOF AUC",
+    "C3": "相邻年预测翻转率（C1 序列 vs C2 序列 vs 零翻转的纯继承）",
+    "model": "RF 300 trees, min_samples_leaf=2, max_features=sqrt, class_weight=balanced",
+    "seed": 2
+  },
+  "n_points": 156034,
+  "needle_rate_2023": 0.3783,
+  "C1_consistency": {
+    "2017": {
+      "n": 151339,
+      "agree_with_2023_label": 0.9332,
+      "pred_needle_rate": 0.3913,
+      "label_needle_rate": 0.3869,
+      "auc_vs_2023_label": 0.9824,
+      "prob_shift_mean": -0.0081,
+      "prob_shift_absmean": 0.0659
+    },
+    "2018": {
+      "n": 151471,
+      "agree_with_2023_label": 0.9334,
+      "pred_needle_rate": 0.3927,
+      "label_needle_rate": 0.3863,
+      "auc_vs_2023_label": 0.9822,
+      "prob_shift_mean": -0.0055,
+      "prob_shift_absmean": 0.0646
+    },
+    "2019": {
+      "n": 151537,
+      "agree_with_2023_label": 0.9353,
+      "pred_needle_rate": 0.3948,
+      "label_needle_rate": 0.3863,
+      "auc_vs_2023_label": 0.9831,
+      "prob_shift_mean": -0.0046,
+      "prob_shift_absmean": 0.0626
+    },
+    "2020": {
+      "n": 151258,
+      "agree_with_2023_label": 0.9351,
+      "pred_needle_rate": 0.3918,
+      "label_needle_rate": 0.3868,
+      "auc_vs_2023_label": 0.9827,
+      "prob_shift_mean": -0.0071,
+      "prob_shift_absmean": 0.0554
+    },
+    "2021": {
+      "n": 151484,
+      "agree_with_2023_label": 0.9341,
+      "pred_needle_rate": 0.4038,
+      "label_needle_rate": 0.3864,
+      "auc_vs_2023_label": 0.9826,
+      "prob_shift_mean": 0.0038,
+      "prob_shift_absmean": 0.0495
+    },
+    "2022": {
+      "n": 155201,
+      "agree_with_2023_label": 0.9249,
+      "pred_needle_rate": 0.3832,
+      "label_needle_rate": 0.3788,
+      "auc_vs_2023_label": 0.9769,
+      "prob_shift_mean": -0.0145,
+      "prob_shift_absmean": 0.0617
+    },
+    "2023": {
+      "n": 156034,
+      "agree_with_2023_label": 0.9335,
+      "pred_needle_rate": 0.3951,
+      "label_needle_rate": 0.3783,
+      "auc_vs_2023_label": 0.9818,
+      "prob_shift_mean": 0.0,
+      "prob_shift_absmean": 0.0
+    },
+    "2024": {
+      "n": 155108,
+      "agree_with_2023_label": 0.9284,
+      "pred_needle_rate": 0.3876,
+      "label_needle_rate": 0.3792,
+      "auc_vs_2023_label": 0.9785,
+      "prob_shift_mean": -0.0088,
+      "prob_shift_absmean": 0.044
+    }
+  },
+  "C2_year_native": {
+    "2017": {
+      "n": 120000,
+      "needle_rate": 0.4386,
+      "oof_auc": 0.9831,
+      "oof_acc": 0.9353
+    },
+    "2018": {
+      "n": 120000,
+      "needle_rate": 0.4407,
+      "oof_auc": 0.983,
+      "oof_acc": 0.9355
+    },
+    "2019": {
+      "n": 120000,
+      "needle_rate": 0.4393,
+      "oof_auc": 0.9844,
+      "oof_acc": 0.9379
+    },
+    "2020": {
+      "n": 120000,
+      "needle_rate": 0.4371,
+      "oof_auc": 0.9832,
+      "oof_acc": 0.936
+    },
+    "2021": {
+      "n": 120000,
+      "needle_rate": 0.4362,
+      "oof_auc": 0.9824,
+      "oof_acc": 0.933
+    },
+    "2022": {
+      "n": 120000,
+      "needle_rate": 0.4329,
+      "oof_auc": 0.9785,
+      "oof_acc": 0.927
+    },
+    "2023": {
+      "n": 120000,
+      "needle_rate": 0.4361,
+      "oof_auc": 0.9781,
+      "oof_acc": 0.9257
+    },
+    "2024": {
+      "n": 120000,
+      "needle_rate": 0.436,
+      "oof_auc": 0.9776,
+      "oof_acc": 0.9251
+    }
+  },
+  "C3_flips": {
+    "2017_2018": {
+      "n": 151050,
+      "flip_c1_crossyear": 0.0351,
+      "flip_inherit_2023": 0.0,
+      "flip_2023_vs_year": 0.05
+    },
+    "2018_2019": {
+      "n": 151097,
+      "flip_c1_crossyear": 0.0331,
+      "flip_inherit_2023": 0.0,
+      "flip_2023_vs_year": 0.0475
+    },
+    "2019_2020": {
+      "n": 150835,
+      "flip_c1_crossyear": 0.0314,
+      "flip_inherit_2023": 0.0,
+      "flip_2023_vs_year": 0.0406
+    },
+    "2020_2021": {
+      "n": 150788,
+      "flip_c1_crossyear": 0.037,
+      "flip_inherit_2023": 0.0,
+      "flip_2023_vs_year": 0.0409
+    },
+    "2021_2022": {
+      "n": 150798,
+      "flip_c1_crossyear": 0.0421,
+      "flip_inherit_2023": 0.0,
+      "flip_2023_vs_year": 0.0364
+    },
+    "2022_2023": {
+      "n": 155201,
+      "flip_c1_crossyear": 0.0436,
+      "flip_inherit_2023": 0.0,
+      "flip_2023_vs_year": 0.0436
+    },
+    "2023_2024": {
+      "n": 155108,
+      "flip_c1_crossyear": 0.0331,
+      "flip_inherit_2023": 0.0,
+      "flip_2023_vs_year": 0.0
+    },
+    "per_point": {
+      "n_full8": 148875,
+      "flip_count_dist": {
+        "0": 133450,
+        "1": 3536,
+        "2": 6068,
+        "3": 2811,
+        "4": 1948,
+        "5": 784,
+        "6": 235,
+        "7": 43
+      },
+      "flip_once_or_more_frac": 0.1036
+    }
+  },
+  "elapsed_min": 7.9,
+  "note": "C1 的每折模型只用非留出空间块训练；p_2023 同折即该点 2023 的样本外预测"
+}

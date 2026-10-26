@@ -1,0 +1,162 @@
+{
+ "inputs": {
+  "cls2_川": {
+   "path": "F:/lc_work/prod2nd_2023/delivery/成品/分省/四川_2023_10m.tif",
+   "size": 470459366,
+   "mtime": "2026-10-15 09:32:09",
+   "md5": "c2b0ffbd748f681244b372f2db9ef639"
+  },
+  "cls1_川": {
+   "path": "D:/生产_2023五省/成品/分省/四川_2023_10m.tif",
+   "size": 419972806,
+   "mtime": "2026-10-04 18:19:58",
+   "md5": "b7010089e0a1f0b583dcb21357d8c17a"
+  }
+ },
+ "dem": {
+  "T1205": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1205.tif",
+   "size": 19217614,
+   "mtime": "2026-10-09 16:53:46",
+   "md5": "9a02f1f1f4e67cc96c199041a06a0b5b"
+  },
+  "T1206": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1206.tif",
+   "size": 18143132,
+   "mtime": "2026-10-09 16:55:08",
+   "md5": "fd576283dd95f32401d524370fa42ead"
+  },
+  "T1207": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1207.tif",
+   "size": 16064615,
+   "mtime": "2026-10-09 16:55:28",
+   "md5": "f4637dab9931f942de9d08ea7d179cdd"
+  },
+  "T1208": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1208.tif",
+   "size": 12964136,
+   "mtime": "2026-10-09 16:55:45",
+   "md5": "781cf2e69713885ef37ff0a182cc423a"
+  },
+  "T1304": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1304.tif",
+   "size": 18329848,
+   "mtime": "2026-10-09 16:56:01",
+   "md5": "823aab317243eb55171694da9f5f3ff5"
+  },
+  "T1305": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1305.tif",
+   "size": 18493242,
+   "mtime": "2026-10-09 16:56:26",
+   "md5": "4e3284587210812b5e2267e0a490480e"
+  },
+  "T1306": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1306.tif",
+   "size": 18007767,
+   "mtime": "2026-10-09 16:56:57",
+   "md5": "739c51c25ab27b8e343d7f2f211fc774"
+  },
+  "T1307": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1307.tif",
+   "size": 16586104,
+   "mtime": "2026-10-09 16:57:21",
+   "md5": "1f43d4140efbeb574e8bccc22b86e8e9"
+  },
+  "T1404": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1404.tif",
+   "size": 18200419,
+   "mtime": "2026-10-09 16:57:37",
+   "md5": "fe033186257540dd76d1124e829b5b9a"
+  },
+  "T1405": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1405.tif",
+   "size": 19019717,
+   "mtime": "2026-10-09 16:57:52",
+   "md5": "2ab267309bfd97e7aba4b041b8ef8e0a"
+  },
+  "T1406": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1406.tif",
+   "size": 18980270,
+   "mtime": "2026-10-09 16:58:04",
+   "md5": "49f2d5c200c3f024123bd5058ac1bdb3"
+  },
+  "T1407": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1407.tif",
+   "size": 15506287,
+   "mtime": "2026-10-09 16:58:25",
+   "md5": "b6529550ce081d7bb3622e91445bab3d"
+  },
+  "T1408": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1408.tif",
+   "size": 15972114,
+   "mtime": "2026-10-09 16:58:42",
+   "md5": "ab6e08a81a326ec96defe6434c7441c0"
+  },
+  "T1504": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1504.tif",
+   "size": 17368340,
+   "mtime": "2026-10-09 16:59:00",
+   "md5": "c54c1e93870121622f6ad74b546480af"
+  },
+  "T1505": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1505.tif",
+   "size": 15657154,
+   "mtime": "2026-10-09 16:59:20",
+   "md5": "a35b261d0b77c3447f5e1b5f0a086733"
+  },
+  "T1506": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1506.tif",
+   "size": 14267166,
+   "mtime": "2026-10-09 16:59:42",
+   "md5": "1e955f175db9eb11bbc2c586242e51a9"
+  },
+  "T1507": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1507.tif",
+   "size": 18636740,
+   "mtime": "2026-10-09 17:00:09",
+   "md5": "2a8eb4beb38eb351e15188bad287cdc5"
+  },
+  "T1508": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1508.tif",
+   "size": 16459122,
+   "mtime": "2026-10-09 17:00:37",
+   "md5": "e285d6ee340429fbd1bb3aaa3bc0b112"
+  },
+  "T1604": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1604.tif",
+   "size": 16040875,
+   "mtime": "2026-10-09 17:01:04",
+   "md5": "994d3daef0d48f1679b0e93c54be5f86"
+  },
+  "T1605": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1605.tif",
+   "size": 14916995,
+   "mtime": "2026-10-09 17:01:21",
+   "md5": "47cc1fe431812718631a89a7db6ecad5"
+  },
+  "T1606": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1606.tif",
+   "size": 13727348,
+   "mtime": "2026-10-09 17:01:36",
+   "md5": "5d88b4c71c6e644d537e826b4ac72f33"
+  },
+  "T1607": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1607.tif",
+   "size": 17511603,
+   "mtime": "2026-10-09 17:01:52",
+   "md5": "7b50b1e2caa374aec8972df444aedaac"
+  },
+  "T1706": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1706.tif",
+   "size": 16486737,
+   "mtime": "2026-10-09 17:02:08",
+   "md5": "fe85d8447794f68e6427bdf1dbca6f34"
+  },
+  "T1707": {
+   "path": "F:/lc_work/v31_exp/data/eco_gate/_dem\\dem_T1707.tif",
+   "size": 17822361,
+   "mtime": "2026-10-09 17:02:24",
+   "md5": "7c61b411aa003c4c15d1d428c8c52224"
+  }
+ }
+}

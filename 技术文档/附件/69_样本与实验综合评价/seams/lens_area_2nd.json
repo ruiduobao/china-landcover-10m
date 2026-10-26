@@ -1,0 +1,412 @@
+[
+ {
+  "tile": "T1304",
+  "prov": "川",
+  "y0": 26.0,
+  "land_frac": 1.0,
+  "lens_px": 568163,
+  "lens_km2": 50.62,
+  "sag_deg": 0.00343868,
+  "sag_rows": 38.28
+ },
+ {
+  "tile": "T1404",
+  "prov": "川",
+  "y0": 26.0,
+  "land_frac": 1.0,
+  "lens_px": 568163,
+  "lens_km2": 50.62,
+  "sag_deg": 0.00343868,
+  "sag_rows": 38.28
+ },
+ {
+  "tile": "T1504",
+  "prov": "川",
+  "y0": 26.0,
+  "land_frac": 1.0,
+  "lens_px": 568163,
+  "lens_km2": 50.62,
+  "sag_deg": 0.00343868,
+  "sag_rows": 38.28
+ },
+ {
+  "tile": "T1604",
+  "prov": "川",
+  "y0": 26.0,
+  "land_frac": 1.0,
+  "lens_px": 568163,
+  "lens_km2": 50.62,
+  "sag_deg": 0.00343868,
+  "sag_rows": 38.28
+ },
+ {
+  "tile": "T1205",
+  "prov": "川",
+  "y0": 28.0,
+  "land_frac": 0.922,
+  "lens_px": 597742,
+  "lens_km2": 52.28,
+  "sag_deg": 0.0036177,
+  "sag_rows": 40.27
+ },
+ {
+  "tile": "T1305",
+  "prov": "川",
+  "y0": 28.0,
+  "land_frac": 1.0,
+  "lens_px": 597742,
+  "lens_km2": 52.28,
+  "sag_deg": 0.0036177,
+  "sag_rows": 40.27
+ },
+ {
+  "tile": "T1405",
+  "prov": "川",
+  "y0": 28.0,
+  "land_frac": 1.0,
+  "lens_px": 597742,
+  "lens_km2": 52.28,
+  "sag_deg": 0.0036177,
+  "sag_rows": 40.27
+ },
+ {
+  "tile": "T1505",
+  "prov": "川",
+  "y0": 28.0,
+  "land_frac": 1.0,
+  "lens_px": 597742,
+  "lens_km2": 52.28,
+  "sag_deg": 0.0036177,
+  "sag_rows": 40.27
+ },
+ {
+  "tile": "T1605",
+  "prov": "川",
+  "y0": 28.0,
+  "land_frac": 1.0,
+  "lens_px": 597742,
+  "lens_km2": 52.28,
+  "sag_deg": 0.0036177,
+  "sag_rows": 40.27
+ },
+ {
+  "tile": "T1206",
+  "prov": "川",
+  "y0": 30.0,
+  "land_frac": 1.0,
+  "lens_px": 624408,
+  "lens_km2": 53.52,
+  "sag_deg": 0.00377908,
+  "sag_rows": 42.07
+ },
+ {
+  "tile": "T1306",
+  "prov": "川",
+  "y0": 30.0,
+  "land_frac": 1.0,
+  "lens_px": 624408,
+  "lens_km2": 53.52,
+  "sag_deg": 0.00377908,
+  "sag_rows": 42.07
+ },
+ {
+  "tile": "T1406",
+  "prov": "川",
+  "y0": 30.0,
+  "land_frac": 1.0,
+  "lens_px": 624408,
+  "lens_km2": 53.52,
+  "sag_deg": 0.00377908,
+  "sag_rows": 42.07
+ },
+ {
+  "tile": "T1506",
+  "prov": "川",
+  "y0": 30.0,
+  "land_frac": 1.0,
+  "lens_px": 624408,
+  "lens_km2": 53.52,
+  "sag_deg": 0.00377908,
+  "sag_rows": 42.07
+ },
+ {
+  "tile": "T1606",
+  "prov": "川",
+  "y0": 30.0,
+  "land_frac": 1.0,
+  "lens_px": 624408,
+  "lens_km2": 53.52,
+  "sag_deg": 0.00377908,
+  "sag_rows": 42.07
+ },
+ {
+  "tile": "T1706",
+  "prov": "川",
+  "y0": 30.0,
+  "land_frac": 1.0,
+  "lens_px": 624408,
+  "lens_km2": 53.52,
+  "sag_deg": 0.00377908,
+  "sag_rows": 42.07
+ },
+ {
+  "tile": "T1207",
+  "prov": "川",
+  "y0": 32.0,
+  "land_frac": 1.0,
+  "lens_px": 648032,
+  "lens_km2": 54.35,
+  "sag_deg": 0.00392206,
+  "sag_rows": 43.66
+ },
+ {
+  "tile": "T1307",
+  "prov": "川",
+  "y0": 32.0,
+  "land_frac": 1.0,
+  "lens_px": 648032,
+  "lens_km2": 54.35,
+  "sag_deg": 0.00392206,
+  "sag_rows": 43.66
+ },
+ {
+  "tile": "T1407",
+  "prov": "川",
+  "y0": 32.0,
+  "land_frac": 1.0,
+  "lens_px": 648032,
+  "lens_km2": 54.35,
+  "sag_deg": 0.00392206,
+  "sag_rows": 43.66
+ },
+ {
+  "tile": "T1507",
+  "prov": "川",
+  "y0": 32.0,
+  "land_frac": 1.0,
+  "lens_px": 648032,
+  "lens_km2": 54.35,
+  "sag_deg": 0.00392206,
+  "sag_rows": 43.66
+ },
+ {
+  "tile": "T1607",
+  "prov": "川",
+  "y0": 32.0,
+  "land_frac": 1.0,
+  "lens_px": 648032,
+  "lens_km2": 54.35,
+  "sag_deg": 0.00392206,
+  "sag_rows": 43.66
+ },
+ {
+  "tile": "T1707",
+  "prov": "川",
+  "y0": 32.0,
+  "land_frac": 1.0,
+  "lens_px": 648032,
+  "lens_km2": 54.35,
+  "sag_deg": 0.00392206,
+  "sag_rows": 43.66
+ },
+ {
+  "tile": "T1208",
+  "prov": "川",
+  "y0": 34.0,
+  "land_frac": 1.0,
+  "lens_px": 668498,
+  "lens_km2": 54.76,
+  "sag_deg": 0.00404592,
+  "sag_rows": 45.04
+ },
+ {
+  "tile": "T1408",
+  "prov": "川",
+  "y0": 34.0,
+  "land_frac": 1.0,
+  "lens_px": 668498,
+  "lens_km2": 54.76,
+  "sag_deg": 0.00404592,
+  "sag_rows": 45.04
+ },
+ {
+  "tile": "T1508",
+  "prov": "川",
+  "y0": 34.0,
+  "land_frac": 1.0,
+  "lens_px": 668498,
+  "lens_km2": 54.76,
+  "sag_deg": 0.00404592,
+  "sag_rows": 45.04
+ },
+ {
+  "tile": "T1801",
+  "prov": "粤",
+  "y0": 20.0,
+  "land_frac": 0.516,
+  "lens_px": 463460,
+  "lens_km2": 43.27,
+  "sag_deg": 0.002805,
+  "sag_rows": 31.23
+ },
+ {
+  "tile": "T1901",
+  "prov": "粤",
+  "y0": 20.0,
+  "land_frac": 0.203,
+  "lens_px": 463460,
+  "lens_km2": 43.27,
+  "sag_deg": 0.002805,
+  "sag_rows": 31.23
+ },
+ {
+  "tile": "T2001",
+  "prov": "粤",
+  "y0": 20.0,
+  "land_frac": 0.0,
+  "lens_px": 463460,
+  "lens_km2": 43.27,
+  "sag_deg": 0.002805,
+  "sag_rows": 31.23
+ },
+ {
+  "tile": "T1802",
+  "prov": "粤",
+  "y0": 22.0,
+  "land_frac": 1.0,
+  "lens_px": 500858,
+  "lens_km2": 46.1,
+  "sag_deg": 0.00303134,
+  "sag_rows": 33.74
+ },
+ {
+  "tile": "T1902",
+  "prov": "粤",
+  "y0": 22.0,
+  "land_frac": 1.0,
+  "lens_px": 500858,
+  "lens_km2": 46.1,
+  "sag_deg": 0.00303134,
+  "sag_rows": 33.74
+ },
+ {
+  "tile": "T2002",
+  "prov": "粤",
+  "y0": 22.0,
+  "land_frac": 0.844,
+  "lens_px": 500858,
+  "lens_km2": 46.1,
+  "sag_deg": 0.00303134,
+  "sag_rows": 33.74
+ },
+ {
+  "tile": "T2102",
+  "prov": "粤",
+  "y0": 22.0,
+  "land_frac": 0.531,
+  "lens_px": 500858,
+  "lens_km2": 46.1,
+  "sag_deg": 0.00303134,
+  "sag_rows": 33.74
+ },
+ {
+  "tile": "T1903",
+  "prov": "粤",
+  "y0": 24.0,
+  "land_frac": 1.0,
+  "lens_px": 535816,
+  "lens_km2": 48.56,
+  "sag_deg": 0.00324291,
+  "sag_rows": 36.1
+ },
+ {
+  "tile": "T2003",
+  "prov": "粤",
+  "y0": 24.0,
+  "land_frac": 1.0,
+  "lens_px": 535816,
+  "lens_km2": 48.56,
+  "sag_deg": 0.00324291,
+  "sag_rows": 36.1
+ },
+ {
+  "tile": "T2103",
+  "prov": "粤",
+  "y0": 24.0,
+  "land_frac": 1.0,
+  "lens_px": 535816,
+  "lens_km2": 48.56,
+  "sag_deg": 0.00324291,
+  "sag_rows": 36.1
+ },
+ {
+  "tile": "T1608",
+  "prov": "宁",
+  "y0": 34.0,
+  "land_frac": 1.0,
+  "lens_px": 668498,
+  "lens_km2": 54.76,
+  "sag_deg": 0.00404592,
+  "sag_rows": 45.04
+ },
+ {
+  "tile": "T1509",
+  "prov": "宁",
+  "y0": 36.0,
+  "land_frac": 1.0,
+  "lens_px": 685708,
+  "lens_km2": 54.76,
+  "sag_deg": 0.00415008,
+  "sag_rows": 46.2
+ },
+ {
+  "tile": "T1609",
+  "prov": "宁",
+  "y0": 36.0,
+  "land_frac": 1.0,
+  "lens_px": 685708,
+  "lens_km2": 54.76,
+  "sag_deg": 0.00415008,
+  "sag_rows": 46.2
+ },
+ {
+  "tile": "T1709",
+  "prov": "宁",
+  "y0": 36.0,
+  "land_frac": 1.0,
+  "lens_px": 685708,
+  "lens_km2": 54.76,
+  "sag_deg": 0.00415008,
+  "sag_rows": 46.2
+ },
+ {
+  "tile": "T1610",
+  "prov": "宁",
+  "y0": 38.0,
+  "land_frac": 1.0,
+  "lens_px": 699576,
+  "lens_km2": 54.37,
+  "sag_deg": 0.00423401,
+  "sag_rows": 47.13
+ },
+ {
+  "tile": "T1710",
+  "prov": "宁",
+  "y0": 38.0,
+  "land_frac": 1.0,
+  "lens_px": 699576,
+  "lens_km2": 54.37,
+  "sag_deg": 0.00423401,
+  "sag_rows": 47.13
+ },
+ {
+  "tile": "T2202",
+  "prov": "闽",
+  "y0": 22.0,
+  "land_frac": 0.078,
+  "lens_px": 500858,
+  "lens_km2": 46.1,
+  "sag_deg": 0.00303134,
+  "sag_rows": 33.74
+ }
+]

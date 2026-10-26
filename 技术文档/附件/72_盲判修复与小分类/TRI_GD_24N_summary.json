@@ -1,0 +1,61 @@
+{
+ "region": "GD_24N",
+ "tile_id": "T1903",
+ "seed_set": [
+  7,
+  11,
+  23
+ ],
+ "limit_s": 1200.0,
+ "total_elapsed_s": 102.6,
+ "results": [
+  {
+   "exp_id": "TRI_GD_24N_s7",
+   "seed": 7,
+   "evm_in_tile_valid_px": 40661,
+   "legacy_gap_px": 15876,
+   "planar_gap_px": 0,
+   "restored_px": 15876,
+   "common_valid_px": 24785,
+   "common_valid_disagree_px": 0,
+   "outside_wedge_agree_rate": 1.0,
+   "outside_tile_evm_valid_px": 11140,
+   "planar_row_nodata_max": 0,
+   "boundary_continuous": true,
+   "req_s": 25.71,
+   "elapsed_s": 36.2
+  },
+  {
+   "exp_id": "TRI_GD_24N_s11",
+   "seed": 11,
+   "evm_in_tile_valid_px": 40661,
+   "legacy_gap_px": 15876,
+   "planar_gap_px": 0,
+   "restored_px": 15876,
+   "common_valid_px": 24785,
+   "common_valid_disagree_px": 0,
+   "outside_wedge_agree_rate": 1.0,
+   "outside_tile_evm_valid_px": 11140,
+   "planar_row_nodata_max": 0,
+   "boundary_continuous": true,
+   "req_s": 46.98,
+   "elapsed_s": 84.2
+  },
+  {
+   "exp_id": "TRI_GD_24N_s23",
+   "seed": 23,
+   "evm_in_tile_valid_px": 40661,
+   "legacy_gap_px": 15876,
+   "planar_gap_px": 0,
+   "restored_px": 15876,
+   "common_valid_px": 24785,
+   "common_valid_disagree_px": 0,
+   "outside_wedge_agree_rate": 1.0,
+   "outside_tile_evm_valid_px": 11140,
+   "planar_row_nodata_max": 0,
+   "boundary_continuous": true,
+   "req_s": 17.42,
+   "elapsed_s": 102.6
+  }
+ ]
+}

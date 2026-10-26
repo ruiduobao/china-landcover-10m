@@ -1,0 +1,54 @@
+{
+ "geometry": {
+  "GD_24N": {
+   "tile": "T1903",
+   "seeds": [
+    7,
+    11,
+    23
+   ],
+   "total_elapsed_s": 102.6,
+   "evm": 40661,
+   "legacy_gap": 15876,
+   "planar_gap": 0,
+   "restored": 15876,
+   "common_valid": 24785,
+   "disagree": 0
+  },
+  "NX_38N": {
+   "tile": "T1610",
+   "seeds": [
+    7,
+    11,
+    23
+   ],
+   "total_elapsed_s": 141.8,
+   "evm": 40661,
+   "legacy_gap": 21343,
+   "planar_gap": 0,
+   "restored": 21343,
+   "common_valid": 19318,
+   "disagree": 0
+  },
+  "SC_32N": {
+   "tile": "T1207",
+   "seeds": [
+    7,
+    11,
+    23
+   ],
+   "total_elapsed_s": 68.7,
+   "evm": 40661,
+   "legacy_gap": 11692,
+   "planar_gap": 0,
+   "restored": 11692,
+   "common_valid": 28969,
+   "disagree": 0
+  },
+  "TOTAL_restored": 48911
+ },
+ "judging": {
+  "judgeB_20261015.csv": 20
+ },
+ "judging_needed": 200
+}

@@ -1,0 +1,2169 @@
+{
+  "generated": "2026-10-24 21:22:26",
+  "script": "F:\\lc_work\\nb_national_2026\\opt\\code\\q1_veg_qa.py",
+  "inputs": {
+    "veg": "F:/地理所/论文/中国土地覆盖数据_2017-2024\\数据\\外部数据\\2020年中国100万植被图\\vegetation.shp",
+    "v2": "F:/lc_work/nb_national_2026/labels/needle_broad_national_v2_habit.parquet",
+    "prov": "F:/地理所/论文/中国土地覆盖数据_2017-2024\\数据\\边界\\china_100000_full.json"
+  },
+  "basic": {
+    "n_features": 68756,
+    "crs_declared": "GEOGCS[\"GCS_Assumed_Geographic_1 (deprecated)\",DATUM[\"North_American_Datum_1927\",SPHEROID[\"Clarke 1866\",6378206.4,294.978698213898,AUTHORITY[\"EPSG\",\"7008\"]],AUTHORITY[\"EPSG\",\"6267\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST],AUTHORITY[\"ESRI\",\"104000\"]]",
+    "crs_used": "EPSG:4326 (allow_override; 主 agent 实测最优偏移 = (0,0))",
+    "bounds_lonlat": [
+      73.4501,
+      18.1587,
+      135.0,
+      53.5669
+    ],
+    "n_null_geometry": 0,
+    "n_empty_geometry": 0,
+    "n_invalid_geometry": 268,
+    "n_invalid_makevalid_failed": 0,
+    "invalid_area_change_km2": -0.01,
+    "invalid_note": "268 个 invalid 图斑仅占 0.39%；make_valid 后总面积变化 -0.01 km²（相对全国 0.0000%），对统计与 point-in-polygon 无实质影响；sjoin 前已全部 make_valid 并仅保留多边形部分",
+    "area_total_km2": 9516521.4,
+    "area_quantiles_km2": {
+      "0.0": 0.0,
+      "0.05": 2.791,
+      "0.25": 11.378,
+      "0.5": 25.658,
+      "0.75": 61.677,
+      "0.95": 312.855,
+      "1.0": 476038.508
+    },
+    "area_note": "最小图斑面积近 0（1:100 万制图综合的碎屑），中位 25.66 km²；面积按 EPSG:6933 等积投影计算",
+    "habit_x_vegtype": {
+      "10、高山植被": {
+        "<空>": 2587,
+        "常绿针叶": 0,
+        "常绿针叶和常绿阔叶混交": 0,
+        "常绿针叶和落叶阔叶混交": 0,
+        "常绿阔叶": 0,
+        "常绿阔叶和落叶阔叶混交": 0,
+        "竹林": 0,
+        "落叶针叶": 0,
+        "落叶阔叶": 0
+      },
+      "11、栽培植被": {
+        "<空>": 7519,
+        "常绿针叶": 0,
+        "常绿针叶和常绿阔叶混交": 0,
+        "常绿针叶和落叶阔叶混交": 0,
+        "常绿阔叶": 0,
+        "常绿阔叶和落叶阔叶混交": 0,
+        "竹林": 0,
+        "落叶针叶": 0,
+        "落叶阔叶": 0
+      },
+      "12、无植被": {
+        "<空>": 4138,
+        "常绿针叶": 0,
+        "常绿针叶和常绿阔叶混交": 0,
+        "常绿针叶和落叶阔叶混交": 0,
+        "常绿阔叶": 0,
+        "常绿阔叶和落叶阔叶混交": 0,
+        "竹林": 0,
+        "落叶针叶": 0,
+        "落叶阔叶": 0
+      },
+      "1、针叶林": {
+        "<空>": 0,
+        "常绿针叶": 11986,
+        "常绿针叶和常绿阔叶混交": 0,
+        "常绿针叶和落叶阔叶混交": 0,
+        "常绿阔叶": 0,
+        "常绿阔叶和落叶阔叶混交": 0,
+        "竹林": 0,
+        "落叶针叶": 571,
+        "落叶阔叶": 0
+      },
+      "2、针阔叶混交林": {
+        "<空>": 0,
+        "常绿针叶": 0,
+        "常绿针叶和常绿阔叶混交": 84,
+        "常绿针叶和落叶阔叶混交": 183,
+        "常绿阔叶": 0,
+        "常绿阔叶和落叶阔叶混交": 0,
+        "竹林": 0,
+        "落叶针叶": 0,
+        "落叶阔叶": 0
+      },
+      "3、阔叶林": {
+        "<空>": 0,
+        "常绿针叶": 0,
+        "常绿针叶和常绿阔叶混交": 0,
+        "常绿针叶和落叶阔叶混交": 0,
+        "常绿阔叶": 3030,
+        "常绿阔叶和落叶阔叶混交": 680,
+        "竹林": 809,
+        "落叶针叶": 0,
+        "落叶阔叶": 6000
+      },
+      "4、灌丛": {
+        "<空>": 61,
+        "常绿针叶": 267,
+        "常绿针叶和常绿阔叶混交": 0,
+        "常绿针叶和落叶阔叶混交": 0,
+        "常绿阔叶": 6023,
+        "常绿阔叶和落叶阔叶混交": 0,
+        "竹林": 0,
+        "落叶针叶": 0,
+        "落叶阔叶": 4132
+      },
+      "5、荒漠": {
+        "<空>": 3566,
+        "常绿针叶": 0,
+        "常绿针叶和常绿阔叶混交": 0,
+        "常绿针叶和落叶阔叶混交": 0,
+        "常绿阔叶": 0,
+        "常绿阔叶和落叶阔叶混交": 0,
+        "竹林": 0,
+        "落叶针叶": 0,
+        "落叶阔叶": 0
+      },
+      "6、草原": {
+        "<空>": 5174,
+        "常绿针叶": 0,
+        "常绿针叶和常绿阔叶混交": 0,
+        "常绿针叶和落叶阔叶混交": 0,
+        "常绿阔叶": 0,
+        "常绿阔叶和落叶阔叶混交": 0,
+        "竹林": 0,
+        "落叶针叶": 0,
+        "落叶阔叶": 0
+      },
+      "7、草丛": {
+        "<空>": 5539,
+        "常绿针叶": 0,
+        "常绿针叶和常绿阔叶混交": 0,
+        "常绿针叶和落叶阔叶混交": 0,
+        "常绿阔叶": 0,
+        "常绿阔叶和落叶阔叶混交": 0,
+        "竹林": 0,
+        "落叶针叶": 0,
+        "落叶阔叶": 0
+      },
+      "8、草甸": {
+        "<空>": 5860,
+        "常绿针叶": 0,
+        "常绿针叶和常绿阔叶混交": 0,
+        "常绿针叶和落叶阔叶混交": 0,
+        "常绿阔叶": 0,
+        "常绿阔叶和落叶阔叶混交": 0,
+        "竹林": 0,
+        "落叶针叶": 0,
+        "落叶阔叶": 0
+      },
+      "9、沼泽": {
+        "<空>": 547,
+        "常绿针叶": 0,
+        "常绿针叶和常绿阔叶混交": 0,
+        "常绿针叶和落叶阔叶混交": 0,
+        "常绿阔叶": 0,
+        "常绿阔叶和落叶阔叶混交": 0,
+        "竹林": 0,
+        "落叶针叶": 0,
+        "落叶阔叶": 0
+      }
+    },
+    "prov_counts_area": [
+      {
+        "n_patch": 5477,
+        "area_km2": 1635456.194077016,
+        "prov": "新疆维吾尔自治区"
+      },
+      {
+        "n_patch": 5356,
+        "area_km2": 1087442.772622781,
+        "prov": "西藏自治区"
+      },
+      {
+        "n_patch": 5684,
+        "area_km2": 1069931.1156019391,
+        "prov": "内蒙古自治区"
+      },
+      {
+        "n_patch": 2408,
+        "area_km2": 867793.5620003678,
+        "prov": "青海省"
+      },
+      {
+        "n_patch": 586,
+        "area_km2": 513840.8199275999,
+        "prov": "河南省"
+      },
+      {
+        "n_patch": 5694,
+        "area_km2": 499538.172563947,
+        "prov": "四川省"
+      },
+      {
+        "n_patch": 2088,
+        "area_km2": 468418.24774100736,
+        "prov": "黑龙江省"
+      },
+      {
+        "n_patch": 2561,
+        "area_km2": 408884.88201613026,
+        "prov": "甘肃省"
+      },
+      {
+        "n_patch": 5975,
+        "area_km2": 379277.2154506934,
+        "prov": "云南省"
+      },
+      {
+        "n_patch": 1097,
+        "area_km2": 297088.93084765907,
+        "prov": "吉林省"
+      },
+      {
+        "n_patch": 3530,
+        "area_km2": 249024.7546951491,
+        "prov": "广西壮族自治区"
+      },
+      {
+        "n_patch": 1703,
+        "area_km2": 215301.7298366429,
+        "prov": "江西省"
+      },
+      {
+        "n_patch": 2782,
+        "area_km2": 204605.48019756973,
+        "prov": "湖北省"
+      },
+      {
+        "n_patch": 3011,
+        "area_km2": 178452.67548847944,
+        "prov": "湖南省"
+      },
+      {
+        "n_patch": 2856,
+        "area_km2": 173063.82090265054,
+        "prov": "陕西省"
+      },
+      {
+        "n_patch": 2341,
+        "area_km2": 169765.1118799985,
+        "prov": "山西省"
+      },
+      {
+        "n_patch": 1854,
+        "area_km2": 168397.7958850346,
+        "prov": "贵州省"
+      },
+      {
+        "n_patch": 1362,
+        "area_km2": 165478.16886765495,
+        "prov": "广东省"
+      },
+      {
+        "n_patch": 1286,
+        "area_km2": 124892.39978939068,
+        "prov": "福建省"
+      },
+      {
+        "n_patch": 1352,
+        "area_km2": 105780.5023804766,
+        "prov": "辽宁省"
+      },
+      {
+        "n_patch": 972,
+        "area_km2": 100230.10769454826,
+        "prov": "河北省"
+      },
+      {
+        "n_patch": 1723,
+        "area_km2": 88210.76980771872,
+        "prov": "安徽省"
+      },
+      {
+        "n_patch": 2237,
+        "area_km2": 85335.8625521222,
+        "prov": "浙江省"
+      },
+      {
+        "n_patch": 971,
+        "area_km2": 64164.80875579851,
+        "prov": "重庆市"
+      },
+      {
+        "n_patch": 439,
+        "area_km2": 37394.97613172766,
+        "prov": "宁夏回族自治区"
+      },
+      {
+        "n_patch": 358,
+        "area_km2": 36148.91086589322,
+        "prov": "台湾省"
+      },
+      {
+        "n_patch": 332,
+        "area_km2": 34057.17377722673,
+        "prov": "海南省"
+      },
+      {
+        "n_patch": 1447,
+        "area_km2": 33168.96842596076,
+        "prov": "山东省"
+      },
+      {
+        "n_patch": 14,
+        "area_km2": 23948.801527298958,
+        "prov": "上海市"
+      },
+      {
+        "n_patch": 451,
+        "area_km2": 12468.54854457636,
+        "prov": "江苏省"
+      },
+      {
+        "n_patch": 112,
+        "area_km2": 8147.816660731224,
+        "prov": "北京市"
+      },
+      {
+        "n_patch": 628,
+        "area_km2": 6494.347685630081,
+        "prov": "<未匹配>"
+      },
+      {
+        "n_patch": 33,
+        "area_km2": 3277.1551043553077,
+        "prov": "天津市"
+      },
+      {
+        "n_patch": 35,
+        "area_km2": 1020.2629617684541,
+        "prov": "香港特别行政区"
+      },
+      {
+        "n_patch": 1,
+        "area_km2": 18.53139156885478,
+        "prov": "澳门特别行政区"
+      }
+    ],
+    "n_patch_unassigned_prov": 628,
+    "n_prov_features_invalid_repaired": 20,
+    "habit_missing_total": 34991,
+    "habit_missing_in_forest_types": 0,
+    "prov_note": "DataV 省界为 GCJ-02 且含拓扑错误，逐 feature make_valid 后按 representative_point within 归属；未做 unary_union"
+  },
+  "mapping": {
+    "rules": {
+      "needle": [
+        "常绿针叶",
+        "落叶针叶"
+      ],
+      "broad": [
+        "常绿阔叶",
+        "落叶阔叶"
+      ],
+      "mixed": [
+        "常绿针叶和常绿阔叶混交",
+        "常绿针叶和落叶阔叶混交",
+        "常绿阔叶和落叶阔叶混交"
+      ],
+      "bamboo": [
+        "竹林"
+      ],
+      "none": "非森林/未标注（排除）"
+    },
+    "by_habit_all_features": {
+      "bamboo": {
+        "n_patch": 809,
+        "area_km2": 34533.4,
+        "pct_patches": 1.18,
+        "pct_area": 0.36
+      },
+      "broad": {
+        "n_patch": 19185,
+        "area_km2": 1520553.2,
+        "pct_patches": 27.9,
+        "pct_area": 15.98
+      },
+      "mixed": {
+        "n_patch": 947,
+        "area_km2": 38821.8,
+        "pct_patches": 1.38,
+        "pct_area": 0.41
+      },
+      "needle": {
+        "n_patch": 12824,
+        "area_km2": 832458.2,
+        "pct_patches": 18.65,
+        "pct_area": 8.75
+      },
+      "none": {
+        "n_patch": 34991,
+        "area_km2": 7090154.8,
+        "pct_patches": 50.89,
+        "pct_area": 74.5
+      }
+    },
+    "by_habit_forest_only_vegtype_123": {
+      "bamboo": {
+        "n_patch": 809,
+        "area_km2": 34533.4,
+        "pct_patches": 1.18,
+        "pct_area": 0.36
+      },
+      "broad": {
+        "n_patch": 9030,
+        "area_km2": 639363.6,
+        "pct_patches": 13.13,
+        "pct_area": 6.72
+      },
+      "mixed": {
+        "n_patch": 947,
+        "area_km2": 38821.8,
+        "pct_patches": 1.38,
+        "pct_area": 0.41
+      },
+      "needle": {
+        "n_patch": 12557,
+        "area_km2": 812718.3,
+        "pct_patches": 18.26,
+        "pct_area": 8.54
+      },
+      "none": {
+        "n_patch": 45413,
+        "area_km2": 7991084.2,
+        "pct_patches": 66.05,
+        "pct_area": 83.97
+      }
+    },
+    "none_but_vegtype_123": {
+      "n_patch": 0,
+      "n": 0,
+      "kw_needle": 0,
+      "kw_broad": 0,
+      "note": "生活型为空且植被型∈{1,2,3} 的图斑为 0，无需反推"
+    },
+    "keyword_reverse_inference": {
+      "crosstab": {
+        "<无生活型>": {
+          "无关键词": 34135,
+          "竹关键词": 0,
+          "针关键词": 72,
+          "阔关键词": 784
+        },
+        "bamboo": {
+          "无关键词": 0,
+          "竹关键词": 809,
+          "针关键词": 0,
+          "阔关键词": 0
+        },
+        "broad": {
+          "无关键词": 7806,
+          "竹关键词": 140,
+          "针关键词": 340,
+          "阔关键词": 10899
+        },
+        "mixed": {
+          "无关键词": 0,
+          "竹关键词": 0,
+          "针关键词": 267,
+          "阔关键词": 680
+        },
+        "needle": {
+          "无关键词": 143,
+          "竹关键词": 0,
+          "针关键词": 12681,
+          "阔关键词": 0
+        }
+      },
+      "note": "植被类型 关键词与 生活型 高度自洽（见 crosstab）；但因\"生活型为空 且 植被型∈{1,2,3}\"的图斑为 0，不存在需要靠关键词反推的森林图斑。关键词反推在本数据上无增益。",
+      "max_len_note": "植被类型 字段被截断到 10 个字符（shapefile DBF 字段宽度），部分群系名残缺"
+    },
+    "ambiguity_shrub_leak": {
+      "n_patch": 10422,
+      "area_km2": 900929.4,
+      "detail": {
+        "4、灌丛": 10422
+      },
+      "note": "灌丛(植被型=4)里有 267 常绿针叶 / 6,023 常绿阔叶 / 4,132 落叶阔叶 的图斑——这些是**灌木**，按生活型直接映射会被误当成针/阔叶**林**。因此本脚本 V2 主口径限定 植被型∈{1,2,3}，并以 sensitivity_all_habitat_mapping 给不限定口径的对照。"
+    }
+  },
+  "V2": {
+    "n_points": 110653,
+    "n_in_any_polygon": 110295,
+    "pct_in_any_polygon": 99.68,
+    "n_in_forest_polygon": 52873,
+    "pct_in_forest_polygon": 47.78,
+    "n_multi_match_rows": 102,
+    "n_both_conclusive": 49681,
+    "n_agree": 28580,
+    "agreement": 0.5753,
+    "agreement_wilson95": [
+      0.5709,
+      0.5796
+    ],
+    "gate": 0.8,
+    "gate_pass": false,
+    "confusion_vegmap_rows_vs_fcs10_cols": {
+      "broad": {
+        "broad": 14865,
+        "needle": 8510
+      },
+      "needle": {
+        "broad": 12591,
+        "needle": 13715
+      }
+    },
+    "per_leaf": {
+      "needle": {
+        "as_reference_vegmap": {
+          "n_veg": 26306,
+          "precision_fcs10": 0.6171,
+          "recall_fcs10": 0.5214,
+          "f1_fcs10": 0.5652,
+          "tp": 13715,
+          "fp": 8510,
+          "fn": 12591,
+          "tn": 14865
+        },
+        "as_reference_fcs10": {
+          "n_fcs10": 22225,
+          "precision_vegmap": 0.5214,
+          "recall_vegmap": 0.6171,
+          "f1_vegmap": 0.5652
+        }
+      },
+      "broad": {
+        "as_reference_vegmap": {
+          "n_veg": 23375,
+          "precision_fcs10": 0.5414,
+          "recall_fcs10": 0.6359,
+          "f1_fcs10": 0.5849,
+          "tp": 14865,
+          "fp": 12591,
+          "fn": 8510,
+          "tn": 13715
+        },
+        "as_reference_fcs10": {
+          "n_fcs10": 27456,
+          "precision_vegmap": 0.6359,
+          "recall_vegmap": 0.5414,
+          "f1_vegmap": 0.5849
+        }
+      }
+    },
+    "sensitivity_all_habitat_mapping": {
+      "note": "不限制 植被型（含灌丛里的常绿阔叶/落叶阔叶/常绿针叶），仅按 生活型 映射",
+      "n_both": 68003,
+      "agreement": 0.567
+    },
+    "with_mixed_bamboo": {
+      "n": 52873,
+      "exact3_agreement": 0.5425
+    },
+    "conflict_direction": {
+      "needle->broad": 12591,
+      "broad->needle": 8510
+    },
+    "top_conflict_formations": [
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "马尾松林",
+        "n": 4379
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "兴安落叶松林",
+        "n": 2200
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "蒙古栎林",
+        "n": 2194
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "白桦林",
+        "n": 1599
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "椴、槭林",
+        "n": 967
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "油松林",
+        "n": 714
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "杉木林",
+        "n": 698
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "云南松林",
+        "n": 629
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "印栲、刺栲、",
+        "n": 596
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "山杨林",
+        "n": 503
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "赤松林",
+        "n": 483
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "辽东栎林",
+        "n": 391
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "川西云杉林",
+        "n": 326
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "黑松林",
+        "n": 258
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "侧柏林",
+        "n": 229
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "栓皮栎林",
+        "n": 223
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "华山松林",
+        "n": 211
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "高山松林",
+        "n": 198
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "川滇高山栎林",
+        "n": 198
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "云南铁杉林",
+        "n": 186
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "多变石栎、银",
+        "n": 178
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "甜槠、米槠林",
+        "n": 167
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "鱼鳞云杉林",
+        "n": 158
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "鳞皮冷杉林",
+        "n": 146
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "苍山冷杉林",
+        "n": 140
+      }
+    ],
+    "needle_patch_by_formation_top": [
+      {
+        "vegetation_type": "马尾松林",
+        "n": 5975,
+        "fcs10_needle": 1596,
+        "fcs10_broad": 4379,
+        "pct_broad": 73.29
+      },
+      {
+        "vegetation_type": "兴安落叶松林",
+        "n": 4862,
+        "fcs10_needle": 2662,
+        "fcs10_broad": 2200,
+        "pct_broad": 45.25
+      },
+      {
+        "vegetation_type": "油松林",
+        "n": 1442,
+        "fcs10_needle": 728,
+        "fcs10_broad": 714,
+        "pct_broad": 49.51
+      },
+      {
+        "vegetation_type": "云南松林",
+        "n": 1364,
+        "fcs10_needle": 735,
+        "fcs10_broad": 629,
+        "pct_broad": 46.11
+      },
+      {
+        "vegetation_type": "川西云杉林",
+        "n": 1259,
+        "fcs10_needle": 933,
+        "fcs10_broad": 326,
+        "pct_broad": 25.89
+      },
+      {
+        "vegetation_type": "雪岭云杉林",
+        "n": 1171,
+        "fcs10_needle": 1154,
+        "fcs10_broad": 17,
+        "pct_broad": 1.45
+      },
+      {
+        "vegetation_type": "杉木林",
+        "n": 956,
+        "fcs10_needle": 258,
+        "fcs10_broad": 698,
+        "pct_broad": 73.01
+      },
+      {
+        "vegetation_type": "鱼鳞云杉林",
+        "n": 690,
+        "fcs10_needle": 532,
+        "fcs10_broad": 158,
+        "pct_broad": 22.9
+      },
+      {
+        "vegetation_type": "西伯利亚落叶",
+        "n": 630,
+        "fcs10_needle": 517,
+        "fcs10_broad": 113,
+        "pct_broad": 17.94
+      },
+      {
+        "vegetation_type": "云南铁杉林",
+        "n": 579,
+        "fcs10_needle": 393,
+        "fcs10_broad": 186,
+        "pct_broad": 32.12
+      },
+      {
+        "vegetation_type": "赤松林",
+        "n": 543,
+        "fcs10_needle": 60,
+        "fcs10_broad": 483,
+        "pct_broad": 88.95
+      },
+      {
+        "vegetation_type": "华山松林",
+        "n": 477,
+        "fcs10_needle": 266,
+        "fcs10_broad": 211,
+        "pct_broad": 44.23
+      },
+      {
+        "vegetation_type": "高山松林",
+        "n": 402,
+        "fcs10_needle": 204,
+        "fcs10_broad": 198,
+        "pct_broad": 49.25
+      },
+      {
+        "vegetation_type": "紫果云杉林",
+        "n": 384,
+        "fcs10_needle": 251,
+        "fcs10_broad": 133,
+        "pct_broad": 34.64
+      },
+      {
+        "vegetation_type": "林芝云杉林",
+        "n": 383,
+        "fcs10_needle": 286,
+        "fcs10_broad": 97,
+        "pct_broad": 25.33
+      },
+      {
+        "vegetation_type": "侧柏林",
+        "n": 367,
+        "fcs10_needle": 138,
+        "fcs10_broad": 229,
+        "pct_broad": 62.4
+      },
+      {
+        "vegetation_type": "长白落叶松林",
+        "n": 356,
+        "fcs10_needle": 227,
+        "fcs10_broad": 129,
+        "pct_broad": 36.24
+      },
+      {
+        "vegetation_type": "鳞皮冷杉林",
+        "n": 348,
+        "fcs10_needle": 202,
+        "fcs10_broad": 146,
+        "pct_broad": 41.95
+      },
+      {
+        "vegetation_type": "青海云杉林",
+        "n": 327,
+        "fcs10_needle": 277,
+        "fcs10_broad": 50,
+        "pct_broad": 15.29
+      },
+      {
+        "vegetation_type": "苍山冷杉林",
+        "n": 325,
+        "fcs10_needle": 185,
+        "fcs10_broad": 140,
+        "pct_broad": 43.08
+      }
+    ]
+  },
+  "by_prov": [
+    {
+      "key": "黑龙江省",
+      "n_points": 13971,
+      "n_in_forest": 9573,
+      "n_both": 8577,
+      "agreement": 0.5381,
+      "wilson95": [
+        0.5275,
+        0.5486
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 2489,
+      "fcs10_needle_n": 4135,
+      "veg_needle_fcs10_broad": 1158,
+      "veg_broad_fcs10_needle": 2804
+    },
+    {
+      "key": "内蒙古自治区",
+      "n_points": 10283,
+      "n_in_forest": 5628,
+      "n_both": 5586,
+      "agreement": 0.6323,
+      "wilson95": [
+        0.6196,
+        0.6448
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 3027,
+      "fcs10_needle_n": 2677,
+      "veg_needle_fcs10_broad": 1202,
+      "veg_broad_fcs10_needle": 852
+    },
+    {
+      "key": "云南省",
+      "n_points": 9474,
+      "n_in_forest": 3209,
+      "n_both": 3157,
+      "agreement": 0.6145,
+      "wilson95": [
+        0.5974,
+        0.6313
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 1959,
+      "fcs10_needle_n": 1466,
+      "veg_needle_fcs10_broad": 855,
+      "veg_broad_fcs10_needle": 362
+    },
+    {
+      "key": "四川省",
+      "n_points": 8602,
+      "n_in_forest": 3996,
+      "n_both": 3617,
+      "agreement": 0.6077,
+      "wilson95": [
+        0.5917,
+        0.6235
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 2568,
+      "fcs10_needle_n": 1987,
+      "veg_needle_fcs10_broad": 1000,
+      "veg_broad_fcs10_needle": 419
+    },
+    {
+      "key": "西藏自治区",
+      "n_points": 6389,
+      "n_in_forest": 4619,
+      "n_both": 4596,
+      "agreement": 0.6908,
+      "wilson95": [
+        0.6773,
+        0.704
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 2551,
+      "fcs10_needle_n": 2524,
+      "veg_needle_fcs10_broad": 724,
+      "veg_broad_fcs10_needle": 697
+    },
+    {
+      "key": "新疆维吾尔自治区",
+      "n_points": 4946,
+      "n_in_forest": 1857,
+      "n_both": 1852,
+      "agreement": 0.9147,
+      "wilson95": [
+        0.9011,
+        0.9266
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 1802,
+      "fcs10_needle_n": 1700,
+      "veg_needle_fcs10_broad": 130,
+      "veg_broad_fcs10_needle": 28
+    },
+    {
+      "key": "吉林省",
+      "n_points": 4836,
+      "n_in_forest": 3619,
+      "n_both": 2982,
+      "agreement": 0.6499,
+      "wilson95": [
+        0.6326,
+        0.6668
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 670,
+      "fcs10_needle_n": 1364,
+      "veg_needle_fcs10_broad": 175,
+      "veg_broad_fcs10_needle": 869
+    },
+    {
+      "key": "辽宁省",
+      "n_points": 4698,
+      "n_in_forest": 2088,
+      "n_both": 2004,
+      "agreement": 0.6297,
+      "wilson95": [
+        0.6084,
+        0.6506
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 384,
+      "fcs10_needle_n": 848,
+      "veg_needle_fcs10_broad": 139,
+      "veg_broad_fcs10_needle": 603
+    },
+    {
+      "key": "广西壮族自治区",
+      "n_points": 3957,
+      "n_in_forest": 1288,
+      "n_both": 1247,
+      "agreement": 0.3689,
+      "wilson95": [
+        0.3425,
+        0.396
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 782,
+      "fcs10_needle_n": 303,
+      "veg_needle_fcs10_broad": 633,
+      "veg_broad_fcs10_needle": 154
+    },
+    {
+      "key": "山西省",
+      "n_points": 3813,
+      "n_in_forest": 1221,
+      "n_both": 1221,
+      "agreement": 0.5946,
+      "wilson95": [
+        0.5668,
+        0.6218
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 714,
+      "fcs10_needle_n": 595,
+      "veg_needle_fcs10_broad": 307,
+      "veg_broad_fcs10_needle": 188
+    },
+    {
+      "key": "陕西省",
+      "n_points": 3699,
+      "n_in_forest": 1795,
+      "n_both": 1761,
+      "agreement": 0.5599,
+      "wilson95": [
+        0.5366,
+        0.5829
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 575,
+      "fcs10_needle_n": 912,
+      "veg_needle_fcs10_broad": 219,
+      "veg_broad_fcs10_needle": 556
+    },
+    {
+      "key": "甘肃省",
+      "n_points": 3409,
+      "n_in_forest": 1662,
+      "n_both": 1625,
+      "agreement": 0.632,
+      "wilson95": [
+        0.6083,
+        0.6551
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 808,
+      "fcs10_needle_n": 876,
+      "veg_needle_fcs10_broad": 265,
+      "veg_broad_fcs10_needle": 333
+    },
+    {
+      "key": "贵州省",
+      "n_points": 3384,
+      "n_in_forest": 852,
+      "n_both": 833,
+      "agreement": 0.5354,
+      "wilson95": [
+        0.5015,
+        0.569
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 660,
+      "fcs10_needle_n": 435,
+      "veg_needle_fcs10_broad": 306,
+      "veg_broad_fcs10_needle": 81
+    },
+    {
+      "key": "湖南省",
+      "n_points": 3278,
+      "n_in_forest": 1612,
+      "n_both": 1469,
+      "agreement": 0.3867,
+      "wilson95": [
+        0.3621,
+        0.4118
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 1332,
+      "fcs10_needle_n": 545,
+      "veg_needle_fcs10_broad": 844,
+      "veg_broad_fcs10_needle": 57
+    },
+    {
+      "key": "河北省",
+      "n_points": 3134,
+      "n_in_forest": 750,
+      "n_both": 742,
+      "agreement": 0.6146,
+      "wilson95": [
+        0.579,
+        0.6489
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 192,
+      "fcs10_needle_n": 280,
+      "veg_needle_fcs10_broad": 99,
+      "veg_broad_fcs10_needle": 187
+    },
+    {
+      "key": "湖北省",
+      "n_points": 2739,
+      "n_in_forest": 732,
+      "n_both": 652,
+      "agreement": 0.4847,
+      "wilson95": [
+        0.4465,
+        0.523
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 490,
+      "fcs10_needle_n": 234,
+      "veg_needle_fcs10_broad": 296,
+      "veg_broad_fcs10_needle": 40
+    },
+    {
+      "key": "广东省",
+      "n_points": 2559,
+      "n_in_forest": 530,
+      "n_both": 505,
+      "agreement": 0.202,
+      "wilson95": [
+        0.1693,
+        0.2392
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 431,
+      "fcs10_needle_n": 32,
+      "veg_needle_fcs10_broad": 401,
+      "veg_broad_fcs10_needle": 2
+    },
+    {
+      "key": "山东省",
+      "n_points": 2414,
+      "n_in_forest": 1290,
+      "n_both": 1289,
+      "agreement": 0.3165,
+      "wilson95": [
+        0.2917,
+        0.3424
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 1025,
+      "fcs10_needle_n": 180,
+      "veg_needle_fcs10_broad": 863,
+      "veg_broad_fcs10_needle": 18
+    },
+    {
+      "key": "江西省",
+      "n_points": 2098,
+      "n_in_forest": 937,
+      "n_both": 825,
+      "agreement": 0.3818,
+      "wilson95": [
+        0.3493,
+        0.4154
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 662,
+      "fcs10_needle_n": 170,
+      "veg_needle_fcs10_broad": 501,
+      "veg_broad_fcs10_needle": 9
+    },
+    {
+      "key": "福建省",
+      "n_points": 1844,
+      "n_in_forest": 1059,
+      "n_both": 999,
+      "agreement": 0.2012,
+      "wilson95": [
+        0.1775,
+        0.2272
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 840,
+      "fcs10_needle_n": 62,
+      "veg_needle_fcs10_broad": 788,
+      "veg_broad_fcs10_needle": 10
+    },
+    {
+      "key": "浙江省",
+      "n_points": 1802,
+      "n_in_forest": 1112,
+      "n_both": 1017,
+      "agreement": 0.1662,
+      "wilson95": [
+        0.1446,
+        0.1903
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 916,
+      "fcs10_needle_n": 84,
+      "veg_needle_fcs10_broad": 840,
+      "veg_broad_fcs10_needle": 8
+    },
+    {
+      "key": "河南省",
+      "n_points": 1612,
+      "n_in_forest": 760,
+      "n_both": 744,
+      "agreement": 0.6949,
+      "wilson95": [
+        0.6609,
+        0.7269
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 130,
+      "fcs10_needle_n": 153,
+      "veg_needle_fcs10_broad": 102,
+      "veg_broad_fcs10_needle": 125
+    },
+    {
+      "key": "重庆市",
+      "n_points": 1552,
+      "n_in_forest": 319,
+      "n_both": 289,
+      "agreement": 0.5709,
+      "wilson95": [
+        0.5133,
+        0.6267
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 249,
+      "fcs10_needle_n": 167,
+      "veg_needle_fcs10_broad": 103,
+      "veg_broad_fcs10_needle": 21
+    },
+    {
+      "key": "安徽省",
+      "n_points": 1438,
+      "n_in_forest": 567,
+      "n_both": 514,
+      "agreement": 0.3658,
+      "wilson95": [
+        0.3253,
+        0.4082
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 397,
+      "fcs10_needle_n": 105,
+      "veg_needle_fcs10_broad": 309,
+      "veg_broad_fcs10_needle": 17
+    },
+    {
+      "key": "台湾省",
+      "n_points": 1371,
+      "n_in_forest": 688,
+      "n_both": 481,
+      "agreement": 0.817,
+      "wilson95": [
+        0.78,
+        0.849
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 90,
+      "fcs10_needle_n": 2,
+      "veg_needle_fcs10_broad": 88,
+      "veg_broad_fcs10_needle": 0
+    },
+    {
+      "key": "青海省",
+      "n_points": 1237,
+      "n_in_forest": 477,
+      "n_both": 476,
+      "agreement": 0.729,
+      "wilson95": [
+        0.6873,
+        0.767
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 376,
+      "fcs10_needle_n": 327,
+      "veg_needle_fcs10_broad": 89,
+      "veg_broad_fcs10_needle": 40
+    },
+    {
+      "key": "江苏省",
+      "n_points": 723,
+      "n_in_forest": 194,
+      "n_both": 182,
+      "agreement": 0.1923,
+      "wilson95": [
+        0.1416,
+        0.2557
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 152,
+      "fcs10_needle_n": 5,
+      "veg_needle_fcs10_broad": 147,
+      "veg_broad_fcs10_needle": 0
+    },
+    {
+      "key": "海南省",
+      "n_points": 649,
+      "n_in_forest": 347,
+      "n_both": 347,
+      "agreement": 0.9827,
+      "wilson95": [
+        0.9628,
+        0.9921
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 1,
+      "fcs10_needle_n": 5,
+      "veg_needle_fcs10_broad": 1,
+      "veg_broad_fcs10_needle": 5
+    },
+    {
+      "key": "宁夏回族自治区",
+      "n_points": 192,
+      "n_in_forest": 65,
+      "n_both": 65,
+      "agreement": 0.6,
+      "wilson95": [
+        0.4786,
+        0.7103
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 28,
+      "fcs10_needle_n": 52,
+      "veg_needle_fcs10_broad": 1,
+      "veg_broad_fcs10_needle": 25
+    }
+  ],
+  "by_prov_suppressed_n_lt_30": [
+    "北京市",
+    "上海市",
+    "天津市",
+    "香港特别行政区"
+  ],
+  "by_region": [
+    {
+      "key": "东北",
+      "n_points": 23505,
+      "n_in_forest": 15280,
+      "n_both": 13563,
+      "agreement": 0.5762,
+      "wilson95": [
+        0.5679,
+        0.5845
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 3543,
+      "fcs10_needle_n": 6347,
+      "veg_needle_fcs10_broad": 1472,
+      "veg_broad_fcs10_needle": 4276
+    },
+    {
+      "key": "西南",
+      "n_points": 23012,
+      "n_in_forest": 8376,
+      "n_both": 7896,
+      "agreement": 0.6014,
+      "wilson95": [
+        0.5906,
+        0.6122
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 5436,
+      "fcs10_needle_n": 4055,
+      "veg_needle_fcs10_broad": 2264,
+      "veg_broad_fcs10_needle": 883
+    },
+    {
+      "key": "华北",
+      "n_points": 17641,
+      "n_in_forest": 7617,
+      "n_both": 7567,
+      "agreement": 0.6251,
+      "wilson95": [
+        0.6141,
+        0.6359
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 3935,
+      "fcs10_needle_n": 3552,
+      "veg_needle_fcs10_broad": 1610,
+      "veg_broad_fcs10_needle": 1227
+    },
+    {
+      "key": "西北",
+      "n_points": 12246,
+      "n_in_forest": 5379,
+      "n_both": 5303,
+      "agreement": 0.7064,
+      "wilson95": [
+        0.694,
+        0.7185
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 3213,
+      "fcs10_needle_n": 3540,
+      "veg_needle_fcs10_broad": 615,
+      "veg_broad_fcs10_needle": 942
+    },
+    {
+      "key": "华中",
+      "n_points": 11165,
+      "n_in_forest": 4608,
+      "n_both": 4204,
+      "agreement": 0.4529,
+      "wilson95": [
+        0.4379,
+        0.468
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 3011,
+      "fcs10_needle_n": 1207,
+      "veg_needle_fcs10_broad": 2052,
+      "veg_broad_fcs10_needle": 248
+    },
+    {
+      "key": "华东",
+      "n_points": 8256,
+      "n_in_forest": 4343,
+      "n_both": 3968,
+      "agreement": 0.3039,
+      "wilson95": [
+        0.2898,
+        0.3184
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 3023,
+      "fcs10_needle_n": 333,
+      "veg_needle_fcs10_broad": 2726,
+      "veg_broad_fcs10_needle": 36
+    },
+    {
+      "key": "青藏",
+      "n_points": 7626,
+      "n_in_forest": 5096,
+      "n_both": 5072,
+      "agreement": 0.6944,
+      "wilson95": [
+        0.6816,
+        0.7069
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 2927,
+      "fcs10_needle_n": 2851,
+      "veg_needle_fcs10_broad": 813,
+      "veg_broad_fcs10_needle": 737
+    },
+    {
+      "key": "华南",
+      "n_points": 7202,
+      "n_in_forest": 2174,
+      "n_both": 2108,
+      "agreement": 0.4307,
+      "wilson95": [
+        0.4097,
+        0.452
+      ],
+      "suppressed_n_lt_30": false,
+      "veg_needle_n": 1218,
+      "fcs10_needle_n": 340,
+      "veg_needle_fcs10_broad": 1039,
+      "veg_broad_fcs10_needle": 161
+    }
+  ],
+  "south_needle": {
+    "provinces": [
+      "广东省",
+      "福建省",
+      "广西壮族自治区",
+      "浙江省",
+      "湖南省",
+      "江西省"
+    ],
+    "n_patch_needle_forest": 3537,
+    "area_km2_needle_forest": 296350.8,
+    "n_patch_broad_forest": 1705,
+    "area_km2_broad_forest": 61893.7,
+    "by_formation_keyword_in_6prov": {
+      "马尾松": {
+        "n_patch": 2397,
+        "area_km2": 247297.1,
+        "prov_counts": {
+          "浙江省": 657,
+          "广西壮族自治区": 648,
+          "湖南省": 475,
+          "江西省": 289,
+          "福建省": 167,
+          "广东省": 161
+        },
+        "n_v2_points": 4128,
+        "v2_needle": 811,
+        "v2_broad": 3317,
+        "v2_mixed": 0,
+        "veg_needle_fcs10_broad": 3317
+      },
+      "杉木": {
+        "n_patch": 896,
+        "area_km2": 43584.2,
+        "prov_counts": {
+          "湖南省": 308,
+          "江西省": 178,
+          "福建省": 134,
+          "广西壮族自治区": 110,
+          "浙江省": 107,
+          "广东省": 59
+        },
+        "n_v2_points": 657,
+        "v2_needle": 126,
+        "v2_broad": 531,
+        "v2_mixed": 0,
+        "veg_needle_fcs10_broad": 531
+      },
+      "柏木": {
+        "n_patch": 39,
+        "area_km2": 809.0,
+        "prov_counts": {
+          "湖南省": 39
+        },
+        "n_v2_points": 12,
+        "v2_needle": 6,
+        "v2_broad": 6,
+        "v2_mixed": 0,
+        "veg_needle_fcs10_broad": 6
+      },
+      "云南松": {
+        "n_patch": 8,
+        "area_km2": 571.2,
+        "prov_counts": {
+          "广西壮族自治区": 8
+        },
+        "n_v2_points": 6,
+        "v2_needle": 0,
+        "v2_broad": 6,
+        "v2_mixed": 0,
+        "veg_needle_fcs10_broad": 6
+      },
+      "思茅松": {
+        "n_patch": 1,
+        "area_km2": 25.3,
+        "prov_counts": {
+          "湖南省": 1
+        },
+        "n_v2_points": 0,
+        "v2_needle": 0,
+        "v2_broad": 0,
+        "v2_mixed": 0,
+        "veg_needle_fcs10_broad": 0
+      },
+      "黑松": {
+        "n_patch": 136,
+        "area_km2": 1430.0,
+        "prov_counts": {
+          "浙江省": 135,
+          "广西壮族自治区": 1
+        },
+        "n_v2_points": 112,
+        "v2_needle": 10,
+        "v2_broad": 102,
+        "v2_mixed": 0,
+        "veg_needle_fcs10_broad": 102
+      },
+      "竹": {
+        "n_patch": 581,
+        "area_km2": 37362.0,
+        "prov_counts": {
+          "湖南省": 186,
+          "浙江省": 145,
+          "福建省": 117,
+          "江西省": 99,
+          "广西壮族自治区": 19,
+          "广东省": 15
+        },
+        "n_v2_points": 660,
+        "v2_needle": 168,
+        "v2_broad": 492,
+        "v2_mixed": 0,
+        "veg_needle_fcs10_broad": 0
+      }
+    },
+    "v2_points_in_needle_patches": {
+      "n": 4964,
+      "fcs10_needle": 957,
+      "fcs10_broad": 4007,
+      "fcs10_mixed": 0,
+      "pct_fcs10_broad": 80.72,
+      "n_both2": 4964,
+      "agreement": 0.1928,
+      "wilson95": [
+        0.1821,
+        0.204
+      ]
+    }
+  },
+  "V5_preconditions": {
+    "south6_needle_patch_n": 3537,
+    "national_needle_patch_n": 12557,
+    "national_needle_area_km2": 812718.3,
+    "south6_share_of_national_needle_patches": 0.2817,
+    "south6_needle_area_share": 0.3646,
+    "south6_potential_new_needle_points": 4007,
+    "south6_gate": 3000,
+    "south6_gate_note": "V5 门槛 3,000 点为\"最终入库点数\"，需经 L1 腐蚀/L2 PFT 稳定/L3 变化/L4 AEF 森林掩膜/L5 去聚团 逐级损耗；本节只报 L0 前的原始可得点数，不构成 V5 判定。",
+    "south6_points_vegmap_needle_fcs10_broad": 4007,
+    "south6_points_in_needle_patches": 4964
+  },
+  "discriminant": {
+    "by_region": {
+      "东北": {
+        "fcs10_needle_rate_in_vegmap_needle_patch": 58.45,
+        "n_needle_patch": 3543,
+        "fcs10_needle_rate_in_vegmap_broad_patch": 42.67,
+        "n_broad_patch": 10020,
+        "fcs10_needle_rate_in_nonforest": 52.57,
+        "n_nonforest": 7879,
+        "separation_pp": 15.78
+      },
+      "华东": {
+        "fcs10_needle_rate_in_vegmap_needle_patch": 9.82,
+        "n_needle_patch": 3023,
+        "fcs10_needle_rate_in_vegmap_broad_patch": 3.81,
+        "n_broad_patch": 945,
+        "fcs10_needle_rate_in_nonforest": 7.41,
+        "n_nonforest": 3913,
+        "separation_pp": 6.02
+      },
+      "华中": {
+        "fcs10_needle_rate_in_vegmap_needle_patch": 31.85,
+        "n_needle_patch": 3011,
+        "fcs10_needle_rate_in_vegmap_broad_patch": 20.79,
+        "n_broad_patch": 1193,
+        "fcs10_needle_rate_in_nonforest": 31.78,
+        "n_nonforest": 6555,
+        "separation_pp": 11.06
+      },
+      "华北": {
+        "fcs10_needle_rate_in_vegmap_needle_patch": 59.09,
+        "n_needle_patch": 3935,
+        "fcs10_needle_rate_in_vegmap_broad_patch": 33.78,
+        "n_broad_patch": 3632,
+        "fcs10_needle_rate_in_nonforest": 46.72,
+        "n_nonforest": 9937,
+        "separation_pp": 25.3
+      },
+      "华南": {
+        "fcs10_needle_rate_in_vegmap_needle_patch": 14.7,
+        "n_needle_patch": 1218,
+        "fcs10_needle_rate_in_vegmap_broad_patch": 18.09,
+        "n_broad_patch": 890,
+        "fcs10_needle_rate_in_nonforest": 24.18,
+        "n_nonforest": 5028,
+        "separation_pp": -3.39
+      },
+      "西北": {
+        "fcs10_needle_rate_in_vegmap_needle_patch": 80.86,
+        "n_needle_patch": 3213,
+        "fcs10_needle_rate_in_vegmap_broad_patch": 45.07,
+        "n_broad_patch": 2090,
+        "fcs10_needle_rate_in_nonforest": 66.82,
+        "n_nonforest": 6817,
+        "separation_pp": 35.79
+      },
+      "西南": {
+        "fcs10_needle_rate_in_vegmap_needle_patch": 58.35,
+        "n_needle_patch": 5436,
+        "fcs10_needle_rate_in_vegmap_broad_patch": 35.89,
+        "n_broad_patch": 2460,
+        "fcs10_needle_rate_in_nonforest": 49.46,
+        "n_nonforest": 14636,
+        "separation_pp": 22.46
+      },
+      "青藏": {
+        "fcs10_needle_rate_in_vegmap_needle_patch": 72.22,
+        "n_needle_patch": 2927,
+        "fcs10_needle_rate_in_vegmap_broad_patch": 34.36,
+        "n_broad_patch": 2145,
+        "fcs10_needle_rate_in_nonforest": 75.11,
+        "n_nonforest": 2519,
+        "separation_pp": 37.87
+      }
+    },
+    "by_prov_south": {
+      "广东省": {
+        "needle_patch_rate": 6.96,
+        "broad_patch_rate": 2.7,
+        "nonforest_rate": 8.87,
+        "separation_pp": 4.26
+      },
+      "福建省": {
+        "needle_patch_rate": 6.19,
+        "broad_patch_rate": 6.29,
+        "nonforest_rate": 3.69,
+        "separation_pp": -0.1
+      },
+      "广西壮族自治区": {
+        "needle_patch_rate": 19.05,
+        "broad_patch_rate": 33.12,
+        "nonforest_rate": 37.95,
+        "separation_pp": -14.06
+      },
+      "浙江省": {
+        "needle_patch_rate": 8.3,
+        "broad_patch_rate": 7.92,
+        "nonforest_rate": 7.97,
+        "separation_pp": 0.38
+      },
+      "湖南省": {
+        "needle_patch_rate": 36.64,
+        "broad_patch_rate": 41.61,
+        "nonforest_rate": 42.26,
+        "separation_pp": -4.97
+      },
+      "江西省": {
+        "needle_patch_rate": 24.32,
+        "broad_patch_rate": 5.52,
+        "nonforest_rate": 30.92,
+        "separation_pp": 18.8
+      }
+    },
+    "national": {
+      "needle_patch_rate": 52.14,
+      "broad_patch_rate": 36.41,
+      "separation_pp": 15.73
+    },
+    "south6_combined": {
+      "needle_patch_rate": 19.26,
+      "n_needle_patch": 4963,
+      "broad_patch_rate": 21.84,
+      "n_broad_patch": 1099,
+      "nonforest_rate": 26.0,
+      "n_nonforest": 9000,
+      "separation_pp": -2.58,
+      "nonforest_minus_needle_patch_pp": 6.74
+    },
+    "non_south6_combined": {
+      "needle_patch_rate": 59.78,
+      "n_needle_patch": 21343,
+      "broad_patch_rate": 37.13,
+      "n_broad_patch": 22276,
+      "separation_pp": 22.66
+    },
+    "interpretation": "不需要外部真值的内部一致性检验（discriminant validity）：若 FCS10 的针/阔判读有信息量，它在\"植被图针叶林图斑\"内的针叶率必须高于\"植被图阔叶林图斑\"内。分区实测 separation_pp：青藏 +37.9pp；西北 +35.8pp；华北 +25.3pp；西南 +22.5pp；东北 +15.8pp；华中 +11.1pp；华东 +6.0pp；华南 -3.4pp。区分度最强的是 青藏 +37.9pp、西北 +35.8pp、华北 +25.3pp、西南 +22.5pp；区分度弱（<10pp）的是 华南 -3.4pp、华东 +6.0pp。另一关键量是\"针叶图斑内的绝对针叶率\"：北方/西部 西北 80.9%、青藏 72.2%、华北 59.1%、东北 58.5%；而 华东 9.8%、华南 14.7% 均不足 15%。尤其致命的是：南 6 省合并后 separation -2.6pp（针叶图斑内 19.3% vs 阔叶图斑内 21.8%），且其\"非森林区 FCS10 针叶率 26.0%\"反而高于针叶图斑内 19.3%（差 +6.7pp）；逐省看广西 -14.1pp、湖南 -5.0pp、福建 -0.1pp 均反向或为零。对照：非南 6 省 separation +22.7pp。结论：FCS10 的针叶信号在南 6 省与地面调查认定的针叶林位置无关甚至反向。"
+  },
+  "axis_decomposition": {
+    "n": 49681,
+    "leaf_axis_agreement": 0.5753,
+    "season_axis_agreement": 0.7489,
+    "crosstab_season_ok_x_leaf_ok": {
+      "物候同": {
+        "叶形同": 23077,
+        "叶形异": 14130,
+        "All": 37207
+      },
+      "物候异": {
+        "叶形同": 5503,
+        "叶形异": 6971,
+        "All": 12474
+      },
+      "All": {
+        "叶形同": 28580,
+        "叶形异": 21101,
+        "All": 49681
+      }
+    },
+    "leaf_agreement_given_season_ok": 0.6202,
+    "by_vegmap_class": {
+      "needle": {
+        "n": 26306,
+        "season_axis_agreement": 0.6956,
+        "leaf_axis_agreement": 0.5214
+      },
+      "broad": {
+        "n": 23375,
+        "season_axis_agreement": 0.8089,
+        "leaf_axis_agreement": 0.6359
+      }
+    },
+    "note": "物候轴一致率 0.749 明显高于叶形轴 0.575；且\"物候同\"子集里叶形仍只有 0.62 —— 说明分歧不是单纯物候判读误差，叶形轴本身也存在大量系统性分歧（南方尤甚）。该分解用于定位分歧维度，不构成\"谁对\"的单独证据。"
+  },
+  "physical_impossibility": {
+    "云杉": {
+      "n": 4546,
+      "expected": "needle",
+      "fcs10_needle_pct": 80.2,
+      "fcs10_DNF_pct": 51.3,
+      "fcs10_EBF_pct": 8.2,
+      "fcs10_DBF_pct": 11.6
+    },
+    "冷杉": {
+      "n": 2025,
+      "expected": "needle",
+      "fcs10_needle_pct": 66.5,
+      "fcs10_DNF_pct": 30.9,
+      "fcs10_EBF_pct": 23.7,
+      "fcs10_DBF_pct": 9.8
+    },
+    "马尾松": {
+      "n": 5975,
+      "expected": "needle",
+      "fcs10_needle_pct": 26.7,
+      "fcs10_DNF_pct": 2.5,
+      "fcs10_EBF_pct": 62.4,
+      "fcs10_DBF_pct": 10.9
+    },
+    "杉木": {
+      "n": 956,
+      "expected": "needle",
+      "fcs10_needle_pct": 27.0,
+      "fcs10_DNF_pct": 3.5,
+      "fcs10_EBF_pct": 62.4,
+      "fcs10_DBF_pct": 10.6
+    },
+    "油松": {
+      "n": 1442,
+      "expected": "needle",
+      "fcs10_needle_pct": 50.5,
+      "fcs10_DNF_pct": 10.3,
+      "fcs10_EBF_pct": 4.7,
+      "fcs10_DBF_pct": 44.8
+    },
+    "云南松": {
+      "n": 1378,
+      "expected": "needle",
+      "fcs10_needle_pct": 53.6,
+      "fcs10_DNF_pct": 8.6,
+      "fcs10_EBF_pct": 29.4,
+      "fcs10_DBF_pct": 17.0
+    },
+    "华山松": {
+      "n": 477,
+      "expected": "needle",
+      "fcs10_needle_pct": 55.8,
+      "fcs10_DNF_pct": 31.2,
+      "fcs10_EBF_pct": 9.4,
+      "fcs10_DBF_pct": 34.8
+    },
+    "侧柏": {
+      "n": 367,
+      "expected": "needle",
+      "fcs10_needle_pct": 37.6,
+      "fcs10_DNF_pct": 8.7,
+      "fcs10_EBF_pct": 16.6,
+      "fcs10_DBF_pct": 45.8
+    },
+    "落叶松": {
+      "n": 5384,
+      "expected": "needle",
+      "fcs10_needle_pct": 55.5,
+      "fcs10_DNF_pct": 49.7,
+      "fcs10_EBF_pct": 0.0,
+      "fcs10_DBF_pct": 44.5
+    },
+    "note": "云杉/冷杉/松属是**常绿针叶**，物理上不可能被判为落叶阔叶；但它们被判为 DBF(61/62) 的比例见上。云杉 80.2% 判针叶（且 51% 判成\"落叶针叶\"DNF——云杉是常绿，这是 FCS10 在物候轴上的硬错误）；马尾松仅 26.7% 判针叶、62.4% 判成 EBF 常绿阔叶；杉木 27.0% 判针叶。植被图给到\"树种级\"，FCS10 只给\"冠层物候类\"——二者信息层级不同，但\"马尾松被判成常绿阔叶\"在生物学上无法成立。"
+  },
+  "vintage_markers": {
+    "桉": 0,
+    "橡胶": 0,
+    "湿地松": 0,
+    "火炬松": 0,
+    "木麻黄": 0,
+    "泡桐": 0,
+    "杨树": 55,
+    "刺槐": 579,
+    "桑": 356,
+    "茶园": 0,
+    "果园": 0,
+    "杉木": 1481,
+    "马尾松": 4897,
+    "note": "植被图**完全没有**桉/橡胶/湿地松/火炬松/木麻黄/泡桐 等现代南方人工林树种（0 图斑），而有刺槐 579、桑 356、杉木 1,481、马尾松 4,897——树种谱停留在 1980s–1990s 的典型构成（桉树 1990s 后大发展、湿地松/火炬松 1980s 后引种、橡胶 1990s 后西双版纳/海南大规模扩张）。因此植被图的\"2020 年\"是**出版年**，内容主体是 1980s–1990s 调查；推 V2 时应按\"历史基线\"而非\"2020 现状\"理解。"
+  },
+  "area_reconciliation": {
+    "forest_area_km2": 1525437.2,
+    "forest_area_by_type": {
+      "1、针叶林": {
+        "n_patch": 12557,
+        "area_km2": 812718.3
+      },
+      "2、针阔叶混交林": {
+        "n_patch": 267,
+        "area_km2": 21734.6
+      },
+      "3、阔叶林": {
+        "n_patch": 10519,
+        "area_km2": 690984.3
+      }
+    },
+    "needle_area_km2": 812718.3,
+    "broad_area_km2": 639363.6,
+    "whole_map_area_km2": 9516521.4,
+    "note": "植被图森林 152.5 万 km²（1.53 亿 ha），与第九次森林资源清查(2014–2018) 森林面积 2.20 亿 ha 相比偏低约 30%——差在\"森林\"定义（清查含灌木林地与经济林/竹林口径）与 1:100 万制图综合，不能直接当面积真值；但**类别构成**（针叶:阔叶 ≈ 56:44）是有意义的。"
+  },
+  "verdict": {
+    "V2_measured": 0.5753,
+    "V2_gate": 0.8,
+    "V2_verdict": "FAIL",
+    "who_is_right": "分区裁决，不存在全国统一的\"谁对\"。（a）北方/西北/青藏/西南：FCS10 与植被图在针/阔轴上显著自洽（西北 +35.8pp、青藏 +37.9pp、华北 +25.3pp、西南 +22.5pp、东北 +15.8pp），两源互证，植被图可直接用作标签源。（b）南 6 省（粤闽桂浙湘赣，即 V5 目标区）：FCS10 的针/阔与地面调查**零分离甚至反向**（合并 -2.6pp；广西 -14.1pp、湖南 -5.0pp、福建 -0.1pp），且其非森林区针叶率 26.0% 高于针叶图斑内 19.3%；同时把马尾松（62.4% 判成常绿阔叶 EBF）、杉木（62.4% 判成 EBF）——生物学上确定的常绿针叶——判成阔叶。结论：南方应以植被图为准；FCS10 在南方的针叶判读不可信，doc77 §13「南方真针叶仅 1.66%」与 doc80 §3「CGLS vs FCS10 互斥 1.51%」很可能都是 FCS10 口径伪影，而非地表事实——但需 Q4 影像核查确认。",
+    "confidence": "中等偏强（间接证据链：判别效度 + 生物学不可能性 + 年代标记；未用 S2/GEDI 独立仲裁）",
+    "evidence": [
+      "discriminant",
+      "physical_impossibility",
+      "vintage_markers",
+      "axis_decomposition"
+    ],
+    "what_would_overturn_it": "若 Q4 的 S2 双年物候 + GEDI 冠层高度核查显示：南方被植被图判为马尾松/杉木的图斑实际已是常绿阔叶次生林（即 1980s–90s 的松杉人工林在 2000s 后被阔叶化），则\"植被图对\"的结论需改为\"植被图记录的是历史植被，地表已变\"。这是本诊断无法排除的唯一替代解释，也是年代差上界的来源——故 V4 影像核查不可省。"
+  },
+  "conflicts": {
+    "n_conflict": 21101,
+    "pct_of_both": 42.47,
+    "direction_counts": {
+      "needle->broad": 12591,
+      "broad->needle": 8510
+    },
+    "top_formations": [
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "马尾松林",
+        "n": 4379
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "兴安落叶松林",
+        "n": 2200
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "蒙古栎林",
+        "n": 2194
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "白桦林",
+        "n": 1599
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "椴、槭林",
+        "n": 967
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "油松林",
+        "n": 714
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "杉木林",
+        "n": 698
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "云南松林",
+        "n": 629
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "印栲、刺栲、",
+        "n": 596
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "山杨林",
+        "n": 503
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "赤松林",
+        "n": 483
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "辽东栎林",
+        "n": 391
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "川西云杉林",
+        "n": 326
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "黑松林",
+        "n": 258
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "侧柏林",
+        "n": 229
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "栓皮栎林",
+        "n": 223
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "华山松林",
+        "n": 211
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "高山松林",
+        "n": 198
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "川滇高山栎林",
+        "n": 198
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "云南铁杉林",
+        "n": 186
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "多变石栎、银",
+        "n": 178
+      },
+      {
+        "direction": "broad->needle",
+        "vegetation_type": "甜槠、米槠林",
+        "n": 167
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "鱼鳞云杉林",
+        "n": 158
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "鳞皮冷杉林",
+        "n": 146
+      },
+      {
+        "direction": "needle->broad",
+        "vegetation_type": "苍山冷杉林",
+        "n": 140
+      }
+    ],
+    "needle_patch_by_formation_top": [
+      {
+        "vegetation_type": "马尾松林",
+        "n": 5975,
+        "fcs10_needle": 1596,
+        "fcs10_broad": 4379,
+        "pct_broad": 73.29
+      },
+      {
+        "vegetation_type": "兴安落叶松林",
+        "n": 4862,
+        "fcs10_needle": 2662,
+        "fcs10_broad": 2200,
+        "pct_broad": 45.25
+      },
+      {
+        "vegetation_type": "油松林",
+        "n": 1442,
+        "fcs10_needle": 728,
+        "fcs10_broad": 714,
+        "pct_broad": 49.51
+      },
+      {
+        "vegetation_type": "云南松林",
+        "n": 1364,
+        "fcs10_needle": 735,
+        "fcs10_broad": 629,
+        "pct_broad": 46.11
+      },
+      {
+        "vegetation_type": "川西云杉林",
+        "n": 1259,
+        "fcs10_needle": 933,
+        "fcs10_broad": 326,
+        "pct_broad": 25.89
+      },
+      {
+        "vegetation_type": "雪岭云杉林",
+        "n": 1171,
+        "fcs10_needle": 1154,
+        "fcs10_broad": 17,
+        "pct_broad": 1.45
+      },
+      {
+        "vegetation_type": "杉木林",
+        "n": 956,
+        "fcs10_needle": 258,
+        "fcs10_broad": 698,
+        "pct_broad": 73.01
+      },
+      {
+        "vegetation_type": "鱼鳞云杉林",
+        "n": 690,
+        "fcs10_needle": 532,
+        "fcs10_broad": 158,
+        "pct_broad": 22.9
+      },
+      {
+        "vegetation_type": "西伯利亚落叶",
+        "n": 630,
+        "fcs10_needle": 517,
+        "fcs10_broad": 113,
+        "pct_broad": 17.94
+      },
+      {
+        "vegetation_type": "云南铁杉林",
+        "n": 579,
+        "fcs10_needle": 393,
+        "fcs10_broad": 186,
+        "pct_broad": 32.12
+      },
+      {
+        "vegetation_type": "赤松林",
+        "n": 543,
+        "fcs10_needle": 60,
+        "fcs10_broad": 483,
+        "pct_broad": 88.95
+      },
+      {
+        "vegetation_type": "华山松林",
+        "n": 477,
+        "fcs10_needle": 266,
+        "fcs10_broad": 211,
+        "pct_broad": 44.23
+      },
+      {
+        "vegetation_type": "高山松林",
+        "n": 402,
+        "fcs10_needle": 204,
+        "fcs10_broad": 198,
+        "pct_broad": 49.25
+      },
+      {
+        "vegetation_type": "紫果云杉林",
+        "n": 384,
+        "fcs10_needle": 251,
+        "fcs10_broad": 133,
+        "pct_broad": 34.64
+      },
+      {
+        "vegetation_type": "林芝云杉林",
+        "n": 383,
+        "fcs10_needle": 286,
+        "fcs10_broad": 97,
+        "pct_broad": 25.33
+      },
+      {
+        "vegetation_type": "侧柏林",
+        "n": 367,
+        "fcs10_needle": 138,
+        "fcs10_broad": 229,
+        "pct_broad": 62.4
+      },
+      {
+        "vegetation_type": "长白落叶松林",
+        "n": 356,
+        "fcs10_needle": 227,
+        "fcs10_broad": 129,
+        "pct_broad": 36.24
+      },
+      {
+        "vegetation_type": "鳞皮冷杉林",
+        "n": 348,
+        "fcs10_needle": 202,
+        "fcs10_broad": 146,
+        "pct_broad": 41.95
+      },
+      {
+        "vegetation_type": "青海云杉林",
+        "n": 327,
+        "fcs10_needle": 277,
+        "fcs10_broad": 50,
+        "pct_broad": 15.29
+      },
+      {
+        "vegetation_type": "苍山冷杉林",
+        "n": 325,
+        "fcs10_needle": 185,
+        "fcs10_broad": 140,
+        "pct_broad": 43.08
+      }
+    ]
+  },
+  "caveats": [
+    "V1（CRS 偏移）：本脚本按主 agent 实测结论直接用 WGS84（偏移 (0,0)），未重复做地标配准；偏移量结论来自上游，本文件未独立复核。",
+    "植被图年代为\"2020 年前后调查汇总\"，不是单年；与 2017–2024 存在时间差，不能作逐年声明。",
+    "1:100 万图斑边界粗略，落在边界附近的 v2 点可能因 within 判定而落到相邻图斑或判定为\"不在图斑内\"。",
+    "植被图的\"针叶/阔叶\"是**建群种生活型**，与遥感（FCS10）的冠层物候判读口径不同源；灌丛层尤其如此。",
+    "dataV 省界 GCJ-02 有偏移（约数百米），省归属仅作粗略分区；省界附近图斑可能归错省。",
+    "省界按 representative_point 归属，跨省大图斑只计入一个省，故分省面积之和 ≈ 全国面积但非严格相等。",
+    "v2 的 prov/eco 字段为 v2 文件自带（上游已定），本脚本直接沿用，未重新归属。",
+    "多重匹配（一点落入多个图斑）已去重：优先森林图斑、其次面积最大；重叠来源可能是 invalid 几何 make_valid 后的轻微外扩。",
+    "植被图不可能包含 2020 年后新造林/采伐，FCS10 是 2020 年代遥感，二者差异含真实地表变化。",
+    "**【重要】植被图的\"2020 年\"是出版年而非观测年**：树种谱无桉/橡胶/湿地松/火炬松/木麻黄/泡桐（均 0 图斑），却有刺槐 579、桑 356 —— 主体内容来自 1980s–1990s 调查（见 vintage_markers）。因此它与 FCS10（2020 年代遥感）的差异同时包含\"年代差\"与\"口径差\"，本诊断无法把两者分离；所有\"植被图 vs FCS10\"的分歧率都是**年代差 + 口径差的上界**，不是纯粹的判读错误率。",
+    "V2 一致率 0.5753 的低值不能直接读作\"两源各错一半\"：南方的低一致率源于 FCS10 在该区针/阔零分离（见 discriminant），而北方的分歧（如新疆 0.915 一致、华中 0.453）需要按省分别解读，全国汇总值被南方样本机械拉低。",
+    "本诊断未使用独立真值（无人工判读、无影像核查），\"谁对\"的结论建立在**内部一致性 + 生物学不可能性 + 年代标记**三重间接证据上，强度低于 doc81 §4 预注册的 S2 物候 / GEDI 冠层高度仲裁（属 Q4）。"
+  ]
+}

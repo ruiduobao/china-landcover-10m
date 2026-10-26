@@ -1,0 +1,548 @@
+{
+ "acct": "k3r6ncvd",
+ "proj": "curious-helix-508400-e4",
+ "dt_s": 0.52,
+ "shape": [
+  4,
+  93,
+  557
+ ],
+ "names": [
+  "rect_num",
+  "bbox",
+  "rect_geoTrue",
+  "rect_geoFalse"
+ ],
+ "wedge_h_deg": 0.0037790844279044222,
+ "wedge_h_rows": 42.068575417910985,
+ "arc_extra_zero_rows": 0,
+ "arc_row_range": null,
+ "bands_identical": {
+  "rect_num_eq_bbox": false,
+  "rect_num_eq_geoFalse": false,
+  "rect_num_eq_geoTrue": true
+ },
+ "verdict": "四种几何的 clip 掩膜逐行无差异（本窗内均未出现拱）→ 楔形非来自 clip 几何",
+ "rows": [
+  {
+   "row": 0,
+   "lat": 30.0064704,
+   "rect_num": 0,
+   "bbox": 0,
+   "rect_geoTrue": 0,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 1,
+   "lat": 30.0063805,
+   "rect_num": 0,
+   "bbox": 0,
+   "rect_geoTrue": 0,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 2,
+   "lat": 30.0062907,
+   "rect_num": 0,
+   "bbox": 0,
+   "rect_geoTrue": 0,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 3,
+   "lat": 30.0062009,
+   "rect_num": 0,
+   "bbox": 0,
+   "rect_geoTrue": 0,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 4,
+   "lat": 30.006111,
+   "rect_num": 0,
+   "bbox": 0,
+   "rect_geoTrue": 0,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 5,
+   "lat": 30.0060212,
+   "rect_num": 0,
+   "bbox": 0,
+   "rect_geoTrue": 0,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 6,
+   "lat": 30.0059314,
+   "rect_num": 0,
+   "bbox": 0,
+   "rect_geoTrue": 0,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 7,
+   "lat": 30.0058415,
+   "rect_num": 0,
+   "bbox": 0,
+   "rect_geoTrue": 0,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 8,
+   "lat": 30.0057517,
+   "rect_num": 0,
+   "bbox": 0,
+   "rect_geoTrue": 0,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 9,
+   "lat": 30.0056619,
+   "rect_num": 0,
+   "bbox": 0,
+   "rect_geoTrue": 0,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 10,
+   "lat": 30.005572,
+   "rect_num": 0,
+   "bbox": 0,
+   "rect_geoTrue": 0,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 11,
+   "lat": 30.0054822,
+   "rect_num": 0,
+   "bbox": 0,
+   "rect_geoTrue": 0,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 40,
+   "lat": 30.0028771,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 41,
+   "lat": 30.0027873,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 42,
+   "lat": 30.0026974,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 43,
+   "lat": 30.0026076,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 44,
+   "lat": 30.0025178,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 45,
+   "lat": 30.0024279,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 46,
+   "lat": 30.0023381,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 47,
+   "lat": 30.0022483,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 48,
+   "lat": 30.0021584,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 49,
+   "lat": 30.0020686,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 50,
+   "lat": 30.0019788,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 51,
+   "lat": 30.0018889,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 52,
+   "lat": 30.0017991,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 53,
+   "lat": 30.0017093,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 54,
+   "lat": 30.0016194,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 55,
+   "lat": 30.0015296,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 56,
+   "lat": 30.0014398,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 57,
+   "lat": 30.00135,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 58,
+   "lat": 30.0012601,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 59,
+   "lat": 30.0011703,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 60,
+   "lat": 30.0010805,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 61,
+   "lat": 30.0009906,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 62,
+   "lat": 30.0009008,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 63,
+   "lat": 30.000811,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 64,
+   "lat": 30.0007211,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 65,
+   "lat": 30.0006313,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 66,
+   "lat": 30.0005415,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 67,
+   "lat": 30.0004516,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 68,
+   "lat": 30.0003618,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 69,
+   "lat": 30.000272,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 70,
+   "lat": 30.0001821,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 71,
+   "lat": 30.0000923,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 72,
+   "lat": 30.0000025,
+   "rect_num": 557,
+   "bbox": 0,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 0
+  },
+  {
+   "row": 73,
+   "lat": 29.9999126,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  },
+  {
+   "row": 74,
+   "lat": 29.9998228,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  },
+  {
+   "row": 75,
+   "lat": 29.999733,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  },
+  {
+   "row": 76,
+   "lat": 29.9996432,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  },
+  {
+   "row": 77,
+   "lat": 29.9995533,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  },
+  {
+   "row": 78,
+   "lat": 29.9994635,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  },
+  {
+   "row": 79,
+   "lat": 29.9993737,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  },
+  {
+   "row": 80,
+   "lat": 29.9992838,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  },
+  {
+   "row": 81,
+   "lat": 29.999194,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  },
+  {
+   "row": 82,
+   "lat": 29.9991042,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  },
+  {
+   "row": 83,
+   "lat": 29.9990143,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  },
+  {
+   "row": 84,
+   "lat": 29.9989245,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  },
+  {
+   "row": 85,
+   "lat": 29.9988347,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  },
+  {
+   "row": 86,
+   "lat": 29.9987448,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  },
+  {
+   "row": 87,
+   "lat": 29.998655,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  },
+  {
+   "row": 88,
+   "lat": 29.9985652,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  },
+  {
+   "row": 89,
+   "lat": 29.9984753,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  },
+  {
+   "row": 90,
+   "lat": 29.9983855,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  },
+  {
+   "row": 91,
+   "lat": 29.9982957,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  },
+  {
+   "row": 92,
+   "lat": 29.9982059,
+   "rect_num": 557,
+   "bbox": 557,
+   "rect_geoTrue": 557,
+   "rect_geoFalse": 557
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+{
+ "tile": "T2813",
+ "name": "黑 小兴安岭",
+ "n": 16068,
+ "fcs10_cover_pct": 100.0,
+ "n_forest": 10073,
+ "n_relab": 9797,
+ "seeds": [
+  7,
+  11,
+  23
+ ],
+ "arms": {
+  "armA": {
+   "train_label_forest4_macro_f1": 0.6358,
+   "needle_precision_vs_FCS10": 0.8054,
+   "needle_recall_vs_FCS10": 0.9383,
+   "ENF_precision_vs_FCS10": 0.9751,
+   "ENF_recall_vs_FCS10": 0.5991,
+   "enf_share_of_forest_pred": 1.0,
+   "n_ref_enf": 2636.0,
+   "or_enf_ebf_median": null
+  },
+  "armB": {
+   "train_label_forest4_macro_f1": 0.6347,
+   "needle_precision_vs_FCS10": 0.8462,
+   "needle_recall_vs_FCS10": 0.918,
+   "ENF_precision_vs_FCS10": 0.8692,
+   "ENF_recall_vs_FCS10": 0.9168,
+   "enf_share_of_forest_pred": 1.0,
+   "n_ref_enf": 2636.0,
+   "or_enf_ebf_median": null
+  }
+ }
+}

@@ -1,0 +1,105 @@
+{
+ "2017": {
+  "n": 7098,
+  "keep": 3235,
+  "no_ev": 0,
+  "by_fam_keep": {
+   "sparse": 1865,
+   "bare": 1370
+  },
+  "band": {
+   "summer": 6841,
+   "wide": 255,
+   "winter": 2
+  }
+ },
+ "2018": {
+  "n": 7098,
+  "keep": 3161,
+  "no_ev": 2,
+  "by_fam_keep": {
+   "sparse": 1694,
+   "bare": 1467
+  },
+  "band": {
+   "summer": 5415,
+   "wide": 1681,
+   "none": 2
+  }
+ },
+ "2019": {
+  "n": 7098,
+  "keep": 3074,
+  "no_ev": 0,
+  "by_fam_keep": {
+   "sparse": 1703,
+   "bare": 1371
+  },
+  "band": {
+   "summer": 7098
+  }
+ },
+ "2020": {
+  "n": 7098,
+  "keep": 3438,
+  "no_ev": 0,
+  "by_fam_keep": {
+   "sparse": 2283,
+   "bare": 1155
+  },
+  "band": {
+   "summer": 7095,
+   "wide": 3
+  }
+ },
+ "2021": {
+  "n": 7098,
+  "keep": 3040,
+  "no_ev": 0,
+  "by_fam_keep": {
+   "sparse": 1898,
+   "bare": 1142
+  },
+  "band": {
+   "summer": 7096,
+   "wide": 2
+  }
+ },
+ "2022": {
+  "n": 7098,
+  "keep": 2985,
+  "no_ev": 0,
+  "by_fam_keep": {
+   "bare": 1613,
+   "sparse": 1372
+  },
+  "band": {
+   "summer": 7098
+  }
+ },
+ "2023": {
+  "n": 7098,
+  "keep": 4560,
+  "no_ev": 0,
+  "by_fam_keep": {
+   "sparse": 2457,
+   "bare": 2103
+  },
+  "band": {
+   "summer": 7098
+  }
+ },
+ "2024": {
+  "n": 7098,
+  "keep": 3444,
+  "no_ev": 0,
+  "by_fam_keep": {
+   "sparse": 2074,
+   "bare": 1370
+  },
+  "band": {
+   "summer": 7097,
+   "wide": 1
+  }
+ }
+}

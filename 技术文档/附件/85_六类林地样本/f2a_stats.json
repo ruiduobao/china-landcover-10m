@@ -1,0 +1,266 @@
+{
+ "generated": "2026-10-25T17:28:30",
+ "unit": "x1000 (ndvi*1000; amp = abs(gs - djf))",
+ "scale": 20,
+ "cloudy_pct": 60,
+ "windows": {
+  "gs_2023": "2023-06-01/2023-09-01",
+  "djf_2023": "2022-12-01/2023-03-01",
+  "gs_2019": "2019-06-01/2019-09-01",
+  "djf_2019": "2018-12-01/2019-03-01"
+ },
+ "scl_mask": "SCL != 3,8,9（w1_forest_fetch.py 原口径）",
+ "composite": "median(B8,B4) → NDVI → ×1000",
+ "min_obs": 3,
+ "n_input": 6864,
+ "n_attempted": 6864,
+ "status_counts": {
+  "ok": 6693,
+  "ok_pooled_2019_2023": 171
+ },
+ "year_src_counts": {
+  "2023": 6693,
+  "2019+2023": 171
+ },
+ "n_success": 6864,
+ "n_fail": 0,
+ "fail_reasons": {},
+ "success_rate": 1.0,
+ "dist_by_cls6": {
+  "45_amp": {
+   "n": 1913,
+   "median": 697.3,
+   "p25": 598.9,
+   "p75": 776.3,
+   "p10": 510.7,
+   "p90": 855.5,
+   "mean": 679.3
+  },
+  "45_djf": {
+   "n": 1913,
+   "median": 112.4,
+   "p25": 27.3,
+   "p75": 207.8,
+   "p10": -44.2,
+   "p90": 289.4,
+   "mean": 120.2
+  },
+  "46_amp": {
+   "n": 4951,
+   "median": 646.0,
+   "p25": 458.5,
+   "p75": 759.7,
+   "p10": 303.9,
+   "p90": 843.8,
+   "mean": 603.6
+  },
+  "46_djf": {
+   "n": 4951,
+   "median": 170.9,
+   "p25": 66.7,
+   "p75": 356.6,
+   "p10": 0.7,
+   "p90": 501.6,
+   "mean": 217.4
+  }
+ },
+ "n_obs_median": {
+  "gs": 8.0,
+  "djf": 19.0
+ },
+ "by_prov": {
+  "内蒙古自治区": {
+   "n": 153,
+   "ok": 153,
+   "amp_med": 771.0
+  },
+  "北京市": {
+   "n": 5,
+   "ok": 5,
+   "amp_med": 465.9
+  },
+  "吉林省": {
+   "n": 995,
+   "ok": 995,
+   "amp_med": 490.2
+  },
+  "山东省": {
+   "n": 1,
+   "ok": 1,
+   "amp_med": 365.0
+  },
+  "山西省": {
+   "n": 4,
+   "ok": 4,
+   "amp_med": 469.1
+  },
+  "新疆维吾尔自治区": {
+   "n": 41,
+   "ok": 41,
+   "amp_med": 752.9
+  },
+  "河北省": {
+   "n": 28,
+   "ok": 28,
+   "amp_med": 329.7
+  },
+  "河南省": {
+   "n": 4,
+   "ok": 4,
+   "amp_med": 478.3
+  },
+  "甘肃省": {
+   "n": 7,
+   "ok": 7,
+   "amp_med": 592.1
+  },
+  "辽宁省": {
+   "n": 86,
+   "ok": 86,
+   "amp_med": 454.9
+  },
+  "陕西省": {
+   "n": 2,
+   "ok": 2,
+   "amp_med": 405.1
+  },
+  "青海省": {
+   "n": 12,
+   "ok": 12,
+   "amp_med": 360.4
+  },
+  "黑龙江省": {
+   "n": 5526,
+   "ok": 5526,
+   "amp_med": 693.7
+  }
+ },
+ "by_account": {
+  "ybzljyma": {
+   "cells": 81,
+   "points": 3542
+  },
+  "nnjxsn": {
+   "cells": 81,
+   "points": 3322
+  }
+ },
+ "calibration": {
+  "amp": {
+   "n": 592,
+   "median_diff": 0.0,
+   "mae": 8.74,
+   "corr": 0.99155,
+   "old_median": 361.9,
+   "new_median": 353.4
+  },
+  "djf": {
+   "n": 592,
+   "median_diff": 0.0,
+   "mae": 4.46,
+   "corr": 0.99746,
+   "old_median": 406.2,
+   "new_median": 407.3
+  }
+ },
+ "strict_mask_variant": {
+  "w1口径(SCL!=3,8,9) | amp": {
+   "n": 592,
+   "median_diff": 0.0,
+   "mae": 8.74,
+   "corr": 0.99155
+  },
+  "w1口径(SCL!=3,8,9) | djf": {
+   "n": 592,
+   "median_diff": 0.0,
+   "mae": 4.46,
+   "corr": 0.99746
+  },
+  "strict(QA60+雪11+水6) | amp": {
+   "n": 561,
+   "median_diff": 0.0,
+   "mae": 21.85,
+   "corr": 0.98133
+  },
+  "strict(QA60+雪11+水6) | djf": {
+   "n": 561,
+   "median_diff": 0.0,
+   "mae": 16.81,
+   "corr": 0.98923
+  }
+ },
+ "doc84_4_2_rule_applicability": {
+  "rule_evergreen": "amp<350 AND djf>450",
+  "rule_deciduous": "amp>400 OR djf<350",
+  "by_cls6": {
+   "45": {
+    "n": 1913,
+    "evergreen_rule": 11,
+    "deciduous_rule": 1886,
+    "uncertain": 16,
+    "both": 0
+   },
+   "46": {
+    "n": 4951,
+    "evergreen_rule": 552,
+    "deciduous_rule": 4147,
+    "uncertain": 252,
+    "both": 0
+   }
+  },
+  "overall": {
+   "n": 6864,
+   "evergreen_rule": 563,
+   "deciduous_rule": 6033,
+   "uncertain": 268,
+   "both": 0
+  },
+  "note": "若 cls45（本应常绿占优）绝大多数落入落叶规则，说明 amp/djf 单靠物候无法支撑 45/46 拆分"
+ },
+ "amp_by_class_reference": {
+  "41": {
+   "n": 136521,
+   "amp_p25": 49.3,
+   "amp_med": 122.8,
+   "amp_p75": 277.5,
+   "djf_med": 655.4
+  },
+  "42": {
+   "n": 60043,
+   "amp_p25": 424.1,
+   "amp_med": 630.3,
+   "amp_p75": 717.2,
+   "djf_med": 162.7
+  },
+  "43": {
+   "n": 120821,
+   "amp_p25": 40.9,
+   "amp_med": 108.8,
+   "amp_p75": 236.6,
+   "djf_med": 714.0
+  },
+  "44": {
+   "n": 136488,
+   "amp_p25": 395.3,
+   "amp_med": 575.7,
+   "amp_p75": 729.8,
+   "djf_med": 261.8
+  },
+  "45": {
+   "n": 1913,
+   "amp_p25": 598.9,
+   "amp_med": 697.3,
+   "amp_p75": 776.3,
+   "djf_med": 112.4,
+   "source": "newly_fetched"
+  },
+  "46": {
+   "n": 4951,
+   "amp_p25": 458.5,
+   "amp_med": 646.0,
+   "amp_p75": 759.7,
+   "djf_med": 170.9,
+   "source": "newly_fetched"
+  }
+ }
+}

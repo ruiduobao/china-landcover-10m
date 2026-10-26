@@ -1,0 +1,117 @@
+{
+ "vote_strict_with_optional_sources": {
+  "n": 62946,
+  "needle": 6098,
+  "broad": 56848,
+  "sources": [
+   "leaf_modis_s",
+   "leaf_fcs10_s"
+  ]
+ },
+ "A1": {
+  "n": 62946,
+  "pct": 13.5
+ },
+ "A2": {
+  "n": 456017,
+  "pct": 97.83
+ },
+ "A3": {
+  "n": 429422,
+  "pct": 92.12
+ },
+ "A4": {
+  "n": 341444,
+  "pct": 73.25
+ },
+ "anchor": {
+  "n": 36529,
+  "pct": 7.84
+ },
+ "anchor_by_class": {
+  "5": 15559,
+  "4": 15507,
+  "6": 4509,
+  "7": 954
+ },
+ "anchor_by_prov": {
+  "四川省": 5371,
+  "广东省": 5343,
+  "福建省": 4287,
+  "黑龙江省": 4158,
+  "吉林省": 3681,
+  "江西省": 3136,
+  "陕西省": 2257,
+  "云南省": 1927,
+  "甘肃省": 1652,
+  "广西壮族自治区": 1288
+ },
+ "aef_missing": 6684,
+ "n_trainable": 62187,
+ "cv": {
+  "lda": {
+   "auc_folds": [
+    0.9945,
+    0.9856,
+    0.9936,
+    0.9988,
+    0.9958
+   ],
+   "auc_mean": 0.9937
+  },
+  "logit": {
+   "auc_folds": [
+    0.998,
+    0.9981,
+    0.998,
+    0.9997,
+    0.9994
+   ],
+   "auc_mean": 0.9987
+  }
+ },
+ "cv_note": "CV 的 y 来自多产品投票（外部源），不是人工真值；AUC 高说明 AEF 能拟合投票规则，不等于能分真针阔（doc54 独立判读 AUC 0.724）。",
+ "boot": {
+  "n": 358902,
+  "needle": 65771,
+  "broad": 293131,
+  "candidates_unlab": 397264,
+  "conflict_share_pct": 4.73
+ },
+ "aspect_or": {
+  "anchor": {
+   "mh_or": 0.3432,
+   "n_strata": 9,
+   "n_enf": 4509,
+   "n_ebf": 15507,
+   "enf_shade_pct": 20.98,
+   "ebf_shade_pct": 28.68
+  },
+  "boot": {
+   "mh_or": 0.9823,
+   "n_strata": 73,
+   "n_enf": 40487,
+   "n_ebf": 109489,
+   "enf_shade_pct": 30.75,
+   "ebf_shade_pct": 28.18
+  },
+  "anchor+boot": {
+   "mh_or": 0.9516,
+   "n_strata": 78,
+   "n_enf": 44996,
+   "n_ebf": 124996,
+   "enf_shade_pct": 29.77,
+   "ebf_shade_pct": 28.24
+  },
+  "pool_label_6_vs_4": {
+   "mh_or": 4.638,
+   "n_strata": 246
+  }
+ },
+ "file": {
+  "path": "F:/lc_work/nb_national_2026/labels/methods\\anchor_boot.parquet",
+  "n": 395431,
+  "n_anchor": 36529,
+  "n_boot": 358902
+ }
+}

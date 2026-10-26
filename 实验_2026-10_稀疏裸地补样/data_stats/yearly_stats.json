@@ -1,0 +1,186 @@
+{
+ "2017": {
+  "topup_keep": 3235,
+  "sparse": 1865,
+  "bare": 1370,
+  "aef_missing": 0,
+  "by_region": {
+   "NE(113-135,38-54)": {
+    "sparse": 1724,
+    "bare": 1129
+   },
+   "East(107-125,18-38.5)": {
+    "sparse": 117,
+    "bare": 131
+   },
+   "ne130(130-135,41.5-54)": {
+    "sparse": 3,
+    "bare": 1
+   }
+  },
+  "merged_n": 1530048,
+  "merged_class150": 55299,
+  "merged_class201": 218877
+ },
+ "2018": {
+  "topup_keep": 3161,
+  "sparse": 1694,
+  "bare": 1467,
+  "aef_missing": 0,
+  "by_region": {
+   "NE(113-135,38-54)": {
+    "sparse": 1565,
+    "bare": 1242
+   },
+   "East(107-125,18-38.5)": {
+    "sparse": 116,
+    "bare": 123
+   },
+   "ne130(130-135,41.5-54)": {
+    "sparse": 3,
+    "bare": 3
+   }
+  },
+  "merged_n": 1520795,
+  "merged_class150": 54930,
+  "merged_class201": 217968
+ },
+ "2019": {
+  "topup_keep": 3074,
+  "sparse": 1703,
+  "bare": 1371,
+  "aef_missing": 0,
+  "by_region": {
+   "NE(113-135,38-54)": {
+    "sparse": 1586,
+    "bare": 1150
+   },
+   "East(107-125,18-38.5)": {
+    "sparse": 100,
+    "bare": 122
+   },
+   "ne130(130-135,41.5-54)": {
+    "sparse": 2,
+    "bare": 2
+   }
+  },
+  "merged_n": 1546273,
+  "merged_class150": 54802,
+  "merged_class201": 218072
+ },
+ "2020": {
+  "topup_keep": 3438,
+  "sparse": 2283,
+  "bare": 1155,
+  "aef_missing": 0,
+  "by_region": {
+   "NE(113-135,38-54)": {
+    "sparse": 2135,
+    "bare": 903
+   },
+   "East(107-125,18-38.5)": {
+    "sparse": 126,
+    "bare": 139
+   },
+   "ne130(130-135,41.5-54)": {
+    "sparse": 2,
+    "bare": 3
+   }
+  },
+  "merged_n": 1547909,
+  "merged_class150": 56212,
+  "merged_class201": 219522
+ },
+ "2021": {
+  "topup_keep": 3040,
+  "sparse": 1898,
+  "bare": 1142,
+  "aef_missing": 0,
+  "by_region": {
+   "NE(113-135,38-54)": {
+    "sparse": 1778,
+    "bare": 846
+   },
+   "East(107-125,18-38.5)": {
+    "sparse": 108,
+    "bare": 182
+   },
+   "ne130(130-135,41.5-54)": {
+    "sparse": 2,
+    "bare": 4
+   }
+  },
+  "merged_n": 1551801,
+  "merged_class150": 54148,
+  "merged_class201": 217193
+ },
+ "2022": {
+  "topup_keep": 2985,
+  "sparse": 1372,
+  "bare": 1613,
+  "aef_missing": 0,
+  "by_region": {
+   "NE(113-135,38-54)": {
+    "sparse": 1251,
+    "bare": 1253
+   },
+   "East(107-125,18-38.5)": {
+    "sparse": 98,
+    "bare": 237
+   },
+   "ne130(130-135,41.5-54)": {
+    "sparse": 2,
+    "bare": 1
+   }
+  },
+  "merged_n": 2143694,
+  "merged_class150": 54565,
+  "merged_class201": 224736
+ },
+ "2023": {
+  "topup_keep": 4560,
+  "sparse": 2457,
+  "bare": 2103,
+  "aef_missing": 0,
+  "by_region": {
+   "NE(113-135,38-54)": {
+    "sparse": 2330,
+    "bare": 1671
+   },
+   "East(107-125,18-38.5)": {
+    "sparse": 114,
+    "bare": 303
+   },
+   "ne130(130-135,41.5-54)": {
+    "sparse": 3,
+    "bare": 2
+   }
+  },
+  "merged_n": 2123281,
+  "merged_class150": 55930,
+  "merged_class201": 225619
+ },
+ "2024": {
+  "topup_keep": 3444,
+  "sparse": 2074,
+  "bare": 1370,
+  "aef_missing": 0,
+  "by_region": {
+   "NE(113-135,38-54)": {
+    "sparse": 1950,
+    "bare": 1046
+   },
+   "East(107-125,18-38.5)": {
+    "sparse": 106,
+    "bare": 209
+   },
+   "ne130(130-135,41.5-54)": {
+    "sparse": 3,
+    "bare": 0
+   }
+  },
+  "merged_n": 2114906,
+  "merged_class150": 55532,
+  "merged_class201": 224647
+ }
+}

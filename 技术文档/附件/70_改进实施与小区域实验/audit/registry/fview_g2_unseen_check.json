@@ -1,0 +1,38 @@
+{
+  "record_type": "fview_g2_confirmation_unseen_check",
+  "recorded_by": "audit_subagent (独立方法验收)",
+  "recorded_at": "2026-10-15T14:32:00+08:00",
+  "purpose": "独立确认 G2 新框的确认块/点是否真未被此前 6 个 frame 看过；若重叠则拒绝、不换框。",
+  "method": "以 0.25° 全局块 id (floor(lon/0.25), floor(lat/0.25)) 比对：已看块 = orchard SC1/SC2/GD/NX 的 dev+conf 块 ∪ terrain F1/F2 的 dev+conf 块（自各 npz/注册件取真实块）；G2 块自 t4_fview_arms_G2_seed7.npz 的 eval_block/eval_split 取。",
+  "seen_blocks_count": 69,
+  "g2": {
+    "frame_bbox": [106.0, 31.0, 107.0, 32.0],
+    "tile": "T1606",
+    "all_blocks": ["424,126", "424,127", "425,126", "425,127", "426,126", "426,127", "427,126", "427,127"],
+    "conf_blocks": ["425,127", "426,126", "426,127"],
+    "dev_blocks": ["424,126", "424,127", "425,126", "427,126", "427,127"],
+    "n_conf_points": 75,
+    "conf_intersect_seen": [],
+    "all_intersect_seen": [],
+    "verdict": "UNSEEN_CONFIRMED",
+    "note": "G2 全部 8 块与此前 69 个已看块交集为空 → 确认集确未被看过；common 训练 18556（c4 2364→1705、c6 2994→2218、c7 12→3）。"
+  },
+  "g1_for_contrast": {
+    "frame_bbox": [107.0, 32.0, 108.0, 33.0],
+    "conf_blocks": ["428,128", "428,129", "429,130", "430,129"],
+    "conf_intersect_seen": ["428,128", "428,129", "429,130", "430,129"],
+    "verdict": "OVERLAP_REJECT",
+    "note": "G1 确认块 4/4 均与已看块（orchard SC2 conf）重叠 → 正确被否决。"
+  },
+  "status": "G2 已批准；6 fits 结果待出，出后本审计一次复核（主层 conf∩nonFCS10、n/blocks/CI、目标类4/6）",
+  "fits_accounting": "本轮本地 fits = orchard 24 + terrain 12 + FVIEW G2 6 = 42；云端几何 3 seeds。",
+  "pre_run_engineering_fix_2026-10-15T14:45": {
+    "finding": "旧 t4 NPZ 存在全局/局部索引 bug：strict 非森林写 X[pool]（局部索引）而 X 为全局；baseline 用 X[iw][ibc] 正确 → 旧 strict 特征错行 12383 条。",
+    "implication": "**仅 y count 相同不能证明两臂公平**（我此前只核了 bc_y==sc_y 计数，已不足）。",
+    "fix": "新 t4b 仅修 global/local index，并增加 nonforest IDs + X 全值一致 / shape 自检；输出 terrain/out/fview_g2/，**不覆盖旧件**。",
+    "status_of_old_npz": "`terrain/out/t4_fview_arms_G2_*` **不得跑 RF、不得归档为有效**。",
+    "not_selection_bias": "此为预测前工程修复，不引入选择偏差。",
+    "my_required_check": "核实际 train IDs→X 回接（抽少量）：非森林两臂 X 全等、strict 森林匹配 source；不只比 y count。",
+    "n_accounting": "注册 v1 旧 18556 / v2 npz 18588 按实际三 seed N 列明；主文待新数。"
+  }
+}

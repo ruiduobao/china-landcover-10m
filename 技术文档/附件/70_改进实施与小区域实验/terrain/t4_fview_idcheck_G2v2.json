@@ -1,0 +1,36 @@
+{
+ "G2": {
+  "frame_bbox": [
+   106.0,
+   31.0,
+   107.0,
+   32.0
+  ],
+  "tile": "T1606",
+  "conf_blocks": [
+   "425,127",
+   "426,126",
+   "426,127"
+  ],
+  "all_blocks": [
+   "424,126",
+   "424,127",
+   "425,126",
+   "425,127",
+   "426,126",
+   "426,127",
+   "427,126",
+   "427,127"
+  ],
+  "conf_intersect_seen_blocks": [],
+  "conf_rowid_intersect_seen": [],
+  "conf_poskey_intersect_seen": [],
+  "n_conf_points": 75,
+  "n_conf_rowids": 75,
+  "n_conf_poskeys": 75,
+  "seen_n_blocks": 27,
+  "seen_n_rowids": 809,
+  "seen_n_poskeys": 809,
+  "verdict": "UNSEEN_CONFIRMED"
+ }
+}

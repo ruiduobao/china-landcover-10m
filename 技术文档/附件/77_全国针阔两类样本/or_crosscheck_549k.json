@@ -1,0 +1,81 @@
+{
+ "meta": {
+  "input": "exp/two_class_retrain/points_76.parquet",
+  "n": 549789,
+  "tiles": 76,
+  "label_FCS10": "ref_nb: 71/72/81/82->needle, 51/52/61/62->broad, pure forest only",
+  "label_old": "cl_newA: old pool 4/5->32 broad, 6/7->31 needle, 8->33 mixed",
+  "terrain_A": "NASADEM 30m 2x2->60m, terrain_lib Horn/ESRI (t1_prep; same terrain as two-arm CV)",
+  "terrain_B": "SRTM 1km, a0_common Horn (same file as G3 audit)",
+  "rule": "sun 135-225, shade 315-360|0-45, slope>5"
+ },
+ "or": {
+  "FCS10__NASADEM_60m": {
+   "needle_shade": 21756,
+   "needle_sun": 9116,
+   "broad_shade": 28777,
+   "broad_sun": 24839,
+   "or_": 2.0599815198449263,
+   "ci": [
+    1.9995633351709863,
+    2.12222528162117
+   ],
+   "n_used": 84488,
+   "note": "",
+   "mh_or_tile": 2.802223069491385,
+   "n_strata_tile": 74
+  },
+  "FCS10__SRTM_1km": {
+   "needle_shade": 2382,
+   "needle_sun": 1984,
+   "broad_shade": 6148,
+   "broad_sun": 5439,
+   "or_": 1.062148620322371,
+   "ci": [
+    0.9904809341027146,
+    1.1390019260438624
+   ],
+   "n_used": 15953,
+   "note": "",
+   "mh_or_tile": 1.0380689338206723,
+   "n_strata_tile": 55
+  },
+  "old_pool__NASADEM_60m": {
+   "needle_shade": 31474,
+   "needle_sun": 7057,
+   "broad_shade": 20319,
+   "broad_sun": 23327,
+   "or_": 5.120217175417264,
+   "ci": [
+    4.959260874976036,
+    5.28639742581895
+   ],
+   "n_used": 82177,
+   "note": "",
+   "mh_or_tile": 5.765830923300771,
+   "n_strata_tile": 73
+  },
+  "old_pool__SRTM_1km": {
+   "needle_shade": 3491,
+   "needle_sun": 3004,
+   "broad_shade": 3844,
+   "broad_sun": 3305,
+   "or_": 0.9991668237008996,
+   "ci": [
+    0.9340545679112287,
+    1.0688180068719764
+   ],
+   "n_used": 13644,
+   "note": "",
+   "mh_or_tile": 0.9787109367846913,
+   "n_strata_tile": 54
+  }
+ },
+ "band_agreement": 0.5397010703695426,
+ "n_band_both": 299803,
+ "dem1km_defect": {
+  "chengdu_104.07_30.67_dem_m": 4079,
+  "expected_m": 500,
+  "note": "SRTM1km 值与已知城市高程严重不符，非简单平移可修复；高程带除 -100-500 外全空即此因"
+ }
+}

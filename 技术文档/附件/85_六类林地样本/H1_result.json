@@ -1,0 +1,393 @@
+{
+ "generated": "2026-10-25T17:56:22",
+ "prereg": {
+  "hard_zone": [
+   0.35,
+   0.65
+  ],
+  "enrich_thr": 3.0,
+  "criterion": "RR_MH >= 3.0 且 95%CI 下界 > 1.0（分层版为裁决口径）",
+  "model": "AEF64 针阔二分类 RF300，仅纯林 41/42/43/44 训练，10km 块 5 折 OOF",
+  "mixed_scoring": "混交点从不进训练；取自身块所属折的单一模型（与纯林 OOF 方差结构一致）"
+ },
+ "model_qc": {
+  "oof_auc_pure": 0.9808,
+  "fold_auc": [
+   0.9808,
+   0.9806,
+   0.9809,
+   0.981,
+   0.9808
+  ],
+  "n_blocks": 40660,
+  "block_deg": 0.1,
+  "n_pure_train_total": 465443
+ },
+ "hard_zone": {
+  "n_total": 472307,
+  "n_hard": 45119,
+  "share_of_all": 0.09553,
+  "cls6_composition": {
+   "41": 17033,
+   "42": 5391,
+   "43": 11195,
+   "44": 9387,
+   "45": 705,
+   "46": 1408
+  },
+  "mixed_label_share_within_hard": 0.0468,
+  "hard_rate_by_cls6": {
+   "41": {
+    "n": 141933,
+    "hard_rate": 0.12
+   },
+   "42": {
+    "n": 60050,
+    "hard_rate": 0.0898
+   },
+   "43": {
+    "n": 125463,
+    "hard_rate": 0.0892
+   },
+   "44": {
+    "n": 137997,
+    "hard_rate": 0.068
+   },
+   "45": {
+    "n": 1913,
+    "hard_rate": 0.3685
+   },
+   "46": {
+    "n": 4951,
+    "hard_rate": 0.2844
+   }
+  }
+ },
+ "unstratified": {
+  "n_mixed": 6864,
+  "n_pure": 465443,
+  "P_hard_given_mixed": 0.3078,
+  "wilson_ci_mixed": [
+   0.297,
+   0.3189
+  ],
+  "P_hard_given_pure": 0.092398,
+  "wilson_ci_pure": [
+   0.091569,
+   0.093233
+  ],
+  "RR": 3.332,
+  "RR_ci95": [
+   3.212,
+   3.456
+  ]
+ },
+ "secondary_axis": {
+  "P_hard|pure_needle": 0.11102,
+  "P_hard|pure_broad": 0.07812,
+  "RR_mixed_vs_pure_needle": 2.77,
+  "RR_mixed_vs_pure_broad": 3.94
+ },
+ "stratified": {
+  "strata_def_primary": "1°格 × 生态区",
+  "RR_MH": 3.097,
+  "RR_MH_ci95": [
+   2.965,
+   3.235
+  ],
+  "n_strata_used": 161,
+  "n_strata_total": 890,
+  "n_mixed_in_used_strata": 6843,
+  "perm_test_p": 0.004975124378109453,
+  "n_perm": 200,
+  "rr_null_median": 1.003,
+  "sensitivity": {
+   "1°格 only": {
+    "RR_MH": 3.099,
+    "ci": [
+     2.967,
+     3.237
+    ],
+    "n_strata": 154
+   },
+   "生态区 only": {
+    "RR_MH": 3.644,
+    "ci": [
+     3.499,
+     3.795
+    ],
+    "n_strata": 6
+   },
+   "2°格×生态区": {
+    "RR_MH": 3.126,
+    "ci": [
+     2.994,
+     3.265
+    ],
+    "n_strata": 75
+   },
+   "1°格×生态区(混交≥5)": {
+    "RR_MH": 3.104,
+    "ci": [
+     2.969,
+     3.244
+    ],
+    "n_strata": 98,
+    "n_mixed_in_used_strata": 6713
+   }
+  }
+ },
+ "confound": {
+  "mixed_eco_share": {
+   "东北": 0.963,
+   "华北": 0.028,
+   "西北": 0.007,
+   "青藏": 0.002,
+   "华中": 0.001,
+   "华东": 0.0
+  },
+  "pure_eco_share": {
+   "西南": 0.241,
+   "东北": 0.208,
+   "华中": 0.15,
+   "华北": 0.12,
+   "西北": 0.079,
+   "华南": 0.079,
+   "华东": 0.069,
+   "青藏": 0.053
+  },
+  "src_by_group": {
+   "mixed": {
+    "M92": 4951,
+    "M91": 1913
+   },
+   "pure": {
+    "G44.clean": 97043,
+    "G41.clean": 75137,
+    "G43.strict": 72493,
+    "G42.clean": 59772,
+    "G41.strict": 59580
+   }
+  },
+  "within_东北": {
+   "n_mixed": 6607,
+   "n_pure": 96683,
+   "rate_mixed": 0.3051,
+   "rate_pure": 0.08474,
+   "RR": 3.601,
+   "RR_ci95": [
+    3.453,
+    3.755
+   ]
+  },
+  "outside_东北": {
+   "n_mixed": 257,
+   "n_pure": 368760,
+   "rate_mixed": 0.3774,
+   "rate_pure": 0.09441,
+   "RR": 3.998,
+   "RR_ci95": [
+    3.416,
+    4.679
+   ]
+  },
+  "by_eco": {
+   "西北": {
+    "n": 37046,
+    "n_mixed": 50,
+    "hard_rate_mixed": 0.48,
+    "hard_rate_pure": 0.06257
+   },
+   "青藏": {
+    "n": 24913,
+    "n_mixed": 12,
+    "hard_rate_mixed": 0.75,
+    "hard_rate_pure": 0.07353
+   },
+   "西南": {
+    "n": 112029,
+    "n_mixed": 0,
+    "hard_rate_mixed": null,
+    "hard_rate_pure": 0.1013
+   },
+   "华南": {
+    "n": 36792,
+    "n_mixed": 0,
+    "hard_rate_mixed": null,
+    "hard_rate_pure": 0.14297
+   },
+   "华北": {
+    "n": 56213,
+    "n_mixed": 190,
+    "hard_rate_mixed": 0.3368,
+    "hard_rate_pure": 0.08395
+   },
+   "华中": {
+    "n": 69847,
+    "n_mixed": 4,
+    "hard_rate_mixed": 0.0,
+    "hard_rate_pure": 0.09342
+   },
+   "华东": {
+    "n": 32177,
+    "n_mixed": 1,
+    "hard_rate_mixed": 0.0,
+    "hard_rate_pure": 0.08798
+   },
+   "东北": {
+    "n": 103290,
+    "n_mixed": 6607,
+    "hard_rate_mixed": 0.3051,
+    "hard_rate_pure": 0.08474
+   }
+  },
+  "top10_cells_mixed": {
+   "130E45N": 698,
+   "130E43N": 695,
+   "130E44N": 514,
+   "131E46N": 374,
+   "130E48N": 368,
+   "133E46N": 360,
+   "130E46N": 332,
+   "131E45N": 328,
+   "130E47N": 326,
+   "131E43N": 149
+  }
+ },
+ "verdict": {
+  "H1_supported": true,
+  "reason": "RR_MH=3.10 (95%CI 2.97–3.24)，判据 ≥3.0 且下界>1.0",
+  "unstratified_RR_reference": 3.33
+ },
+ "threshold_sensitivity": {
+  "rows": [
+   {
+    "zone": [
+     0.2,
+     0.8
+    ],
+    "share_of_all": 0.22583,
+    "P_hard_given_mixed": 0.5801,
+    "P_hard_given_pure": 0.2206,
+    "RR_unstrat": 2.63,
+    "RR_unstrat_ci": [
+     2.576,
+     2.685
+    ],
+    "RR_MH": 2.553,
+    "RR_MH_ci": [
+     2.49,
+     2.619
+    ],
+    "PPV_mixed_within_hard": 0.5801,
+    "passes_3.0_and_ci_gt1": false
+   },
+   {
+    "zone": [
+     0.25,
+     0.75
+    ],
+    "share_of_all": 0.1751,
+    "P_hard_given_mixed": 0.4904,
+    "P_hard_given_pure": 0.17045,
+    "RR_unstrat": 2.877,
+    "RR_unstrat_ci": [
+     2.806,
+     2.95
+    ],
+    "RR_MH": 2.732,
+    "RR_MH_ci": [
+     2.652,
+     2.815
+    ],
+    "PPV_mixed_within_hard": 0.4904,
+    "passes_3.0_and_ci_gt1": false
+   },
+   {
+    "zone": [
+     0.3,
+     0.7
+    ],
+    "share_of_all": 0.13264,
+    "P_hard_given_mixed": 0.3999,
+    "P_hard_given_pure": 0.12869,
+    "RR_unstrat": 3.107,
+    "RR_unstrat_ci": [
+     3.016,
+     3.202
+    ],
+    "RR_MH": 2.933,
+    "RR_MH_ci": [
+     2.83,
+     3.04
+    ],
+    "PPV_mixed_within_hard": 0.3999,
+    "passes_3.0_and_ci_gt1": false
+   },
+   {
+    "zone": [
+     0.35,
+     0.65
+    ],
+    "share_of_all": 0.09553,
+    "P_hard_given_mixed": 0.3078,
+    "P_hard_given_pure": 0.0924,
+    "RR_unstrat": 3.332,
+    "RR_unstrat_ci": [
+     3.212,
+     3.456
+    ],
+    "RR_MH": 3.097,
+    "RR_MH_ci": [
+     2.965,
+     3.235
+    ],
+    "PPV_mixed_within_hard": 0.3078,
+    "passes_3.0_and_ci_gt1": true
+   },
+   {
+    "zone": [
+     0.4,
+     0.6
+    ],
+    "share_of_all": 0.06198,
+    "P_hard_given_mixed": 0.2064,
+    "P_hard_given_pure": 0.05985,
+    "RR_unstrat": 3.449,
+    "RR_unstrat_ci": [
+     3.289,
+     3.618
+    ],
+    "RR_MH": 3.155,
+    "RR_MH_ci": [
+     2.982,
+     3.338
+    ],
+    "PPV_mixed_within_hard": 0.2064,
+    "passes_3.0_and_ci_gt1": true
+   },
+   {
+    "zone": [
+     0.45,
+     0.55
+    ],
+    "share_of_all": 0.03073,
+    "P_hard_given_mixed": 0.1055,
+    "P_hard_given_pure": 0.02962,
+    "RR_unstrat": 3.561,
+    "RR_unstrat_ci": [
+     3.317,
+     3.822
+    ],
+    "RR_MH": 3.266,
+    "RR_MH_ci": [
+     3.003,
+     3.551
+    ],
+    "PPV_mixed_within_hard": 0.1055,
+    "passes_3.0_and_ci_gt1": true
+   }
+  ],
+  "note": "预注册区 [0.35,0.65] 恰好落在判据线附近：放宽到 0.30–0.70 或 0.25–0.75 时 RR_MH 跌到 2.9/2.7，收窄到 0.40–0.60 或 0.45–0.55 升到 3.16/3.27。→ 结论对阈值敏感，属\"临界通过\"，不应作为强证据引用。"
+ }
+}

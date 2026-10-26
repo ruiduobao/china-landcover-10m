@@ -1,0 +1,203 @@
+{
+ "schema": "fview_g2_preflight/v1",
+ "generated": "2026-10-15 14:44:03",
+ "frame": "G2",
+ "old_v1": {
+  "path": "F:/lc_work/improve_2023_pilot_20261015/terrain/out\\t4_fview_arms_G2_seed7.npz",
+  "status": "INVALID_STRICT_ARM_KEPT_AS_HISTORY",
+  "reason": "v1 strict 臂非森林行 X[pool] 索引 bug；不删、不覆盖、不用于训练"
+ },
+ "strict_source": {
+  "view": "F:/lc_work/v31_exp/data/forest_qc/out/forest_samples_v1_strict.parquet",
+  "what_changes": "只做质量成员筛选（doc65 clean/strict 子集）",
+  "aef_year": "aef_year==2023 单年（非八年并集）",
+  "years_retained": [
+   2023.0
+  ]
+ },
+ "strict_filter_rule": "与 baseline 池同规则：窗内 ∩ 非本框eval块 ∩ 非已看conf块 ∩ 有DEM支持",
+ "strict_window_accounting": {
+  "n_raw_window": 9851,
+  "avail_raw": {
+   "4": 1721,
+   "5": 5858,
+   "6": 2269,
+   "7": 3
+  },
+  "excl_eval_blocks": 67,
+  "excl_seen_conf_blocks": 474,
+  "dropped_no_dem": 882,
+  "avail_after": {
+   "4": 1303,
+   "5": 5393,
+   "6": 1729,
+   "7": 3
+  }
+ },
+ "counts": {
+  "counts_full": {
+   "1": 2611,
+   "2": 2595,
+   "3": 1884,
+   "4": 2329,
+   "5": 2279,
+   "6": 2996,
+   "7": 12,
+   "9": 918,
+   "10": 629,
+   "11": 787,
+   "13": 1,
+   "14": 31,
+   "15": 121,
+   "16": 102,
+   "21": 1705,
+   "23": 991,
+   "24": 8
+  },
+  "counts_common": {
+   "1": 2611,
+   "2": 2595,
+   "3": 1884,
+   "4": 1303,
+   "5": 2279,
+   "6": 1729,
+   "7": 3,
+   "9": 918,
+   "10": 629,
+   "11": 787,
+   "13": 1,
+   "14": 31,
+   "15": 121,
+   "16": 102,
+   "21": 1705,
+   "23": 991,
+   "24": 8
+  },
+  "n_train_full": 19999,
+  "n_train_common": 17697,
+  "forest_reduction": {
+   "4": [
+    2329,
+    1303
+   ],
+   "6": [
+    2996,
+    1729
+   ],
+   "7": [
+    12,
+    3
+   ]
+  },
+  "note": "n_train_common=17697 为本运行产物（Σ counts_common，三 seed 相同）。v1 注册件记 18588、audit 记 18556，差异根因＝v1 对 strict 候选**未**施加与池相同的过滤（v1 只排 eval 块；本轮加排已看 conf 块 + DEM 支持域），故 strict 可用森林下降、共同支持 count 随之下降；这是本轮预注册的过滤口径修正，不是静默改动；以本产物与自检为准。"
+ },
+ "asserts": {
+  "seed7": {
+   "counts_equal": true,
+   "nonforest_same_ids": true,
+   "nonforest_ids_sorted_equal": true,
+   "nonforest_X_values_equal": true,
+   "nonforest_n": 12383,
+   "forest_from_strict": true,
+   "forest_counts_equal": true,
+   "all_features_finite": true,
+   "idx_unique": true,
+   "idx_unique_note": "唯一性按来源分别检查（pool 全局行号 / strict 表行号 属不同索引空间）",
+   "idx_in_window": true,
+   "n_baseline": 17697,
+   "n_strict": 17697,
+   "short": {},
+   "PASS": true
+  },
+  "seed11": {
+   "counts_equal": true,
+   "nonforest_same_ids": true,
+   "nonforest_ids_sorted_equal": true,
+   "nonforest_X_values_equal": true,
+   "nonforest_n": 12383,
+   "forest_from_strict": true,
+   "forest_counts_equal": true,
+   "all_features_finite": true,
+   "idx_unique": true,
+   "idx_unique_note": "唯一性按来源分别检查（pool 全局行号 / strict 表行号 属不同索引空间）",
+   "idx_in_window": true,
+   "n_baseline": 17697,
+   "n_strict": 17697,
+   "short": {},
+   "PASS": true
+  },
+  "seed23": {
+   "counts_equal": true,
+   "nonforest_same_ids": true,
+   "nonforest_ids_sorted_equal": true,
+   "nonforest_X_values_equal": true,
+   "nonforest_n": 12383,
+   "forest_from_strict": true,
+   "forest_counts_equal": true,
+   "all_features_finite": true,
+   "idx_unique": true,
+   "idx_unique_note": "唯一性按来源分别检查（pool 全局行号 / strict 表行号 属不同索引空间）",
+   "idx_in_window": true,
+   "n_baseline": 17697,
+   "n_strict": 17697,
+   "short": {},
+   "PASS": true
+  }
+ },
+ "v1_compare": {
+  "seed7": {
+   "eval_identical": true,
+   "baseline_identical": false,
+   "strict_forest_identical": false,
+   "v1_nonforest_rows_wrong": true
+  },
+  "seed11": {
+   "eval_identical": true,
+   "baseline_identical": false,
+   "strict_forest_identical": false,
+   "v1_nonforest_rows_wrong": true
+  },
+  "seed23": {
+   "eval_identical": true,
+   "baseline_identical": false,
+   "strict_forest_identical": false,
+   "v1_nonforest_rows_wrong": true
+  }
+ },
+ "id_check": {
+  "G2": {
+   "frame_bbox": [
+    106.0,
+    31.0,
+    107.0,
+    32.0
+   ],
+   "tile": "T1606",
+   "conf_blocks": [
+    "425,127",
+    "426,126",
+    "426,127"
+   ],
+   "all_blocks": [
+    "424,126",
+    "424,127",
+    "425,126",
+    "425,127",
+    "426,126",
+    "426,127",
+    "427,126",
+    "427,127"
+   ],
+   "conf_intersect_seen_blocks": [],
+   "conf_rowid_intersect_seen": [],
+   "conf_poskey_intersect_seen": [],
+   "n_conf_points": 75,
+   "n_conf_rowids": 75,
+   "n_conf_poskeys": 75,
+   "seen_n_blocks": 27,
+   "seen_n_rowids": 809,
+   "seen_n_poskeys": 809,
+   "verdict": "UNSEEN_CONFIRMED"
+  }
+ }
+}

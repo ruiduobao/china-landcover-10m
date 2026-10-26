@@ -1,0 +1,1709 @@
+{
+ "schema": "geometry_verify3/v1",
+ "generated_at": "2026-10-15T15:58:56",
+ "geom_dir": "F:/lc_work/label_repair_2023_20261015/geometry",
+ "seeds": [
+  7,
+  11,
+  23
+ ],
+ "units_expected": 9,
+ "units_checked": 9,
+ "missing_units": [],
+ "by_gate": {
+  "PASS": 9,
+  "WARN": 0,
+  "FAIL": 0
+ },
+ "gate": "PASS",
+ "scope_note": "仅覆盖/几何核验：不得换算为地类标签精度；未发起云请求；未读大幅栅格",
+ "units": [
+  {
+   "unit": "TRI_SC_32N_s7",
+   "checks": [
+    {
+     "level": "PASS",
+     "code": "A1_grid_matches_registration",
+     "detail": "557x93 EPSG:4326 uint8 transform==注册"
+    },
+    {
+     "level": "PASS",
+     "code": "A1b_nodata",
+     "detail": "nodata=0.0/0.0（应为 0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A1c_tile_domain_derivation",
+     "detail": "本地推导 tile 外 11140 == eval outside_tile_px 11140（北缘口径自证；中心口径 11140，差 0 px = 0 行，属边界约定）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2_planar_no_gap_intile",
+     "detail": "tile 内 planar 空洞 0 px（门=0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2b_legacy_gap_intile",
+     "detail": "tile 内 legacy 空洞 11692 px（应>0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2c_restored",
+     "detail": "tile 内恢复像元 11692 px"
+    },
+    {
+     "level": "PASS",
+     "code": "A2d_outside_tile_zero",
+     "detail": "tile 外非零：legacy 0 / planar 0（应为 0；eval 声明 0/0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A3_common_valid_agree",
+     "detail": "tile 内两臂共同有效 28969 px，类码分歧 0 px（门=0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A4_eval_arithmetic",
+     "detail": "计数闭合（4 式）"
+    },
+    {
+     "level": "PASS",
+     "code": "A5_eval_vs_local",
+     "detail": "eval 声明与本地复算一致（6 项）"
+    },
+    {
+     "level": "INFO",
+     "code": "A5b_evm_full_intile",
+     "detail": "eval evm_in_tile_valid_px=40661，tile 内像元总数=40661（相等即 EVM 在本窗 tile 内全有效）"
+    },
+    {
+     "level": "PASS",
+     "code": "A6_class_hist",
+     "detail": "类直方图复算一致（legacy 4 类 / planar 4 类）"
+    },
+    {
+     "level": "PASS",
+     "code": "A7_planar_row_gap_intile",
+     "detail": "tile 内 planar 逐行空洞最大 0（门=0）"
+    },
+    {
+     "level": "INFO",
+     "code": "A7b_legacy_wedge_profile",
+     "detail": "tile 内 legacy 空洞 max=557 列/行、非空行 22 行（窗口行 51–72）；满行 19 行；窗口含瓦片中央经线=False（决定带形为中央对称/单侧锚定）；解析楔高 43.66 行（窗口仅含 tile 南缘，被 tile 下界截断属预期）；eval legacy_row_nodata_max=557"
+    },
+    {
+     "level": "PASS",
+     "code": "A7c_wedge_signature",
+     "detail": "tile 内空洞逐行连续且随行加深单调嵌套（单侧锚定带，楔形签名成立）"
+    },
+    {
+     "level": "INFO",
+     "code": "A8_fiveband",
+     "detail": "5band 零值计数 [22832, 11140, 23323, 0, 11140]（诊断件不要求调色板；语义不假设）"
+    },
+    {
+     "level": "PASS",
+     "code": "A9_delivery_palette",
+     "detail": "交付件 2 臂均 PIL photo=3 且含 ColorMap：['TRI_SC_32N_s7_legacy_10m_palette.tif', 'TRI_SC_32N_s7_planar_10m_palette.tif']"
+    },
+    {
+     "level": "PASS",
+     "code": "A9b_delivery_data_identity",
+     "detail": "交付件与 out/ 原件逐像元一致、网格相同（2 臂 × 3 seed 口径）"
+    },
+    {
+     "level": "PASS",
+     "code": "A10_timing",
+     "detail": "elapsed_s=29.7（门≤1200）；req_s=18.75"
+    },
+    {
+     "level": "PASS",
+     "code": "A10b_code_hash_consistent",
+     "detail": "reg/eval code_hash 一致：1d525148315964940b1edbf4669ea0d7"
+    },
+    {
+     "level": "PASS",
+     "code": "A10c_boundary",
+     "detail": "boundary_continuous=True；outside_wedge_agree_rate=1.0；common_valid_agree_rate=1.0"
+    }
+   ],
+   "province": "川",
+   "tile_id": "T1207",
+   "code_hash": "1d525148315964940b1edbf4669ea0d7",
+   "account_id": "k3r6ncvd",
+   "class_codes_observed": [
+    6,
+    9,
+    10,
+    11
+   ],
+   "fiveband": [
+    {
+     "band": 1,
+     "n_zero": 22832,
+     "uniq": [
+      0,
+      6,
+      9,
+      10,
+      11
+     ]
+    },
+    {
+     "band": 2,
+     "n_zero": 11140,
+     "uniq": [
+      0,
+      6,
+      9,
+      10,
+      11
+     ]
+    },
+    {
+     "band": 3,
+     "n_zero": 23323,
+     "uniq": [
+      0,
+      1
+     ]
+    },
+    {
+     "band": 4,
+     "n_zero": 0,
+     "uniq": [
+      1
+     ]
+    },
+    {
+     "band": 5,
+     "n_zero": 11140,
+     "uniq": [
+      0,
+      1
+     ]
+    }
+   ],
+   "delivery": [
+    {
+     "arm": "legacy",
+     "file": "TRI_SC_32N_s7_legacy_10m_palette.tif",
+     "photo": 3,
+     "has_colormap": true,
+     "palette_ok": true,
+     "mode": "P"
+    },
+    {
+     "arm": "planar",
+     "file": "TRI_SC_32N_s7_planar_10m_palette.tif",
+     "photo": 3,
+     "has_colormap": true,
+     "palette_ok": true,
+     "mode": "P"
+    }
+   ],
+   "gate": "PASS"
+  },
+  {
+   "unit": "TRI_SC_32N_s11",
+   "checks": [
+    {
+     "level": "PASS",
+     "code": "A1_grid_matches_registration",
+     "detail": "557x93 EPSG:4326 uint8 transform==注册"
+    },
+    {
+     "level": "PASS",
+     "code": "A1b_nodata",
+     "detail": "nodata=0.0/0.0（应为 0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A1c_tile_domain_derivation",
+     "detail": "本地推导 tile 外 11140 == eval outside_tile_px 11140（北缘口径自证；中心口径 11140，差 0 px = 0 行，属边界约定）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2_planar_no_gap_intile",
+     "detail": "tile 内 planar 空洞 0 px（门=0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2b_legacy_gap_intile",
+     "detail": "tile 内 legacy 空洞 11692 px（应>0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2c_restored",
+     "detail": "tile 内恢复像元 11692 px"
+    },
+    {
+     "level": "PASS",
+     "code": "A2d_outside_tile_zero",
+     "detail": "tile 外非零：legacy 0 / planar 0（应为 0；eval 声明 0/0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A3_common_valid_agree",
+     "detail": "tile 内两臂共同有效 28969 px，类码分歧 0 px（门=0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A4_eval_arithmetic",
+     "detail": "计数闭合（4 式）"
+    },
+    {
+     "level": "PASS",
+     "code": "A5_eval_vs_local",
+     "detail": "eval 声明与本地复算一致（6 项）"
+    },
+    {
+     "level": "INFO",
+     "code": "A5b_evm_full_intile",
+     "detail": "eval evm_in_tile_valid_px=40661，tile 内像元总数=40661（相等即 EVM 在本窗 tile 内全有效）"
+    },
+    {
+     "level": "PASS",
+     "code": "A6_class_hist",
+     "detail": "类直方图复算一致（legacy 4 类 / planar 4 类）"
+    },
+    {
+     "level": "PASS",
+     "code": "A7_planar_row_gap_intile",
+     "detail": "tile 内 planar 逐行空洞最大 0（门=0）"
+    },
+    {
+     "level": "INFO",
+     "code": "A7b_legacy_wedge_profile",
+     "detail": "tile 内 legacy 空洞 max=557 列/行、非空行 22 行（窗口行 51–72）；满行 19 行；窗口含瓦片中央经线=False（决定带形为中央对称/单侧锚定）；解析楔高 43.66 行（窗口仅含 tile 南缘，被 tile 下界截断属预期）；eval legacy_row_nodata_max=557"
+    },
+    {
+     "level": "PASS",
+     "code": "A7c_wedge_signature",
+     "detail": "tile 内空洞逐行连续且随行加深单调嵌套（单侧锚定带，楔形签名成立）"
+    },
+    {
+     "level": "INFO",
+     "code": "A8_fiveband",
+     "detail": "5band 零值计数 [22832, 11140, 23323, 0, 11140]（诊断件不要求调色板；语义不假设）"
+    },
+    {
+     "level": "PASS",
+     "code": "A9_delivery_palette",
+     "detail": "交付件 2 臂均 PIL photo=3 且含 ColorMap：['TRI_SC_32N_s11_legacy_10m_palette.tif', 'TRI_SC_32N_s11_planar_10m_palette.tif']"
+    },
+    {
+     "level": "PASS",
+     "code": "A9b_delivery_data_identity",
+     "detail": "交付件与 out/ 原件逐像元一致、网格相同（2 臂 × 3 seed 口径）"
+    },
+    {
+     "level": "PASS",
+     "code": "A10_timing",
+     "detail": "elapsed_s=52.7（门≤1200）；req_s=21.58"
+    },
+    {
+     "level": "PASS",
+     "code": "A10b_code_hash_consistent",
+     "detail": "reg/eval code_hash 一致：1d525148315964940b1edbf4669ea0d7"
+    },
+    {
+     "level": "PASS",
+     "code": "A10c_boundary",
+     "detail": "boundary_continuous=True；outside_wedge_agree_rate=1.0；common_valid_agree_rate=1.0"
+    }
+   ],
+   "province": "川",
+   "tile_id": "T1207",
+   "code_hash": "1d525148315964940b1edbf4669ea0d7",
+   "account_id": "k3r6ncvd",
+   "class_codes_observed": [
+    6,
+    9,
+    10,
+    11
+   ],
+   "fiveband": [
+    {
+     "band": 1,
+     "n_zero": 22832,
+     "uniq": [
+      0,
+      6,
+      9,
+      10,
+      11
+     ]
+    },
+    {
+     "band": 2,
+     "n_zero": 11140,
+     "uniq": [
+      0,
+      6,
+      9,
+      10,
+      11
+     ]
+    },
+    {
+     "band": 3,
+     "n_zero": 23323,
+     "uniq": [
+      0,
+      1
+     ]
+    },
+    {
+     "band": 4,
+     "n_zero": 0,
+     "uniq": [
+      1
+     ]
+    },
+    {
+     "band": 5,
+     "n_zero": 11140,
+     "uniq": [
+      0,
+      1
+     ]
+    }
+   ],
+   "delivery": [
+    {
+     "arm": "legacy",
+     "file": "TRI_SC_32N_s11_legacy_10m_palette.tif",
+     "photo": 3,
+     "has_colormap": true,
+     "palette_ok": true,
+     "mode": "P"
+    },
+    {
+     "arm": "planar",
+     "file": "TRI_SC_32N_s11_planar_10m_palette.tif",
+     "photo": 3,
+     "has_colormap": true,
+     "palette_ok": true,
+     "mode": "P"
+    }
+   ],
+   "gate": "PASS"
+  },
+  {
+   "unit": "TRI_SC_32N_s23",
+   "checks": [
+    {
+     "level": "PASS",
+     "code": "A1_grid_matches_registration",
+     "detail": "557x93 EPSG:4326 uint8 transform==注册"
+    },
+    {
+     "level": "PASS",
+     "code": "A1b_nodata",
+     "detail": "nodata=0.0/0.0（应为 0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A1c_tile_domain_derivation",
+     "detail": "本地推导 tile 外 11140 == eval outside_tile_px 11140（北缘口径自证；中心口径 11140，差 0 px = 0 行，属边界约定）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2_planar_no_gap_intile",
+     "detail": "tile 内 planar 空洞 0 px（门=0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2b_legacy_gap_intile",
+     "detail": "tile 内 legacy 空洞 11692 px（应>0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2c_restored",
+     "detail": "tile 内恢复像元 11692 px"
+    },
+    {
+     "level": "PASS",
+     "code": "A2d_outside_tile_zero",
+     "detail": "tile 外非零：legacy 0 / planar 0（应为 0；eval 声明 0/0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A3_common_valid_agree",
+     "detail": "tile 内两臂共同有效 28969 px，类码分歧 0 px（门=0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A4_eval_arithmetic",
+     "detail": "计数闭合（4 式）"
+    },
+    {
+     "level": "PASS",
+     "code": "A5_eval_vs_local",
+     "detail": "eval 声明与本地复算一致（6 项）"
+    },
+    {
+     "level": "INFO",
+     "code": "A5b_evm_full_intile",
+     "detail": "eval evm_in_tile_valid_px=40661，tile 内像元总数=40661（相等即 EVM 在本窗 tile 内全有效）"
+    },
+    {
+     "level": "PASS",
+     "code": "A6_class_hist",
+     "detail": "类直方图复算一致（legacy 4 类 / planar 4 类）"
+    },
+    {
+     "level": "PASS",
+     "code": "A7_planar_row_gap_intile",
+     "detail": "tile 内 planar 逐行空洞最大 0（门=0）"
+    },
+    {
+     "level": "INFO",
+     "code": "A7b_legacy_wedge_profile",
+     "detail": "tile 内 legacy 空洞 max=557 列/行、非空行 22 行（窗口行 51–72）；满行 19 行；窗口含瓦片中央经线=False（决定带形为中央对称/单侧锚定）；解析楔高 43.66 行（窗口仅含 tile 南缘，被 tile 下界截断属预期）；eval legacy_row_nodata_max=557"
+    },
+    {
+     "level": "PASS",
+     "code": "A7c_wedge_signature",
+     "detail": "tile 内空洞逐行连续且随行加深单调嵌套（单侧锚定带，楔形签名成立）"
+    },
+    {
+     "level": "INFO",
+     "code": "A8_fiveband",
+     "detail": "5band 零值计数 [22832, 11140, 23323, 0, 11140]（诊断件不要求调色板；语义不假设）"
+    },
+    {
+     "level": "PASS",
+     "code": "A9_delivery_palette",
+     "detail": "交付件 2 臂均 PIL photo=3 且含 ColorMap：['TRI_SC_32N_s23_legacy_10m_palette.tif', 'TRI_SC_32N_s23_planar_10m_palette.tif']"
+    },
+    {
+     "level": "PASS",
+     "code": "A9b_delivery_data_identity",
+     "detail": "交付件与 out/ 原件逐像元一致、网格相同（2 臂 × 3 seed 口径）"
+    },
+    {
+     "level": "PASS",
+     "code": "A10_timing",
+     "detail": "elapsed_s=68.7（门≤1200）；req_s=14.7"
+    },
+    {
+     "level": "PASS",
+     "code": "A10b_code_hash_consistent",
+     "detail": "reg/eval code_hash 一致：1d525148315964940b1edbf4669ea0d7"
+    },
+    {
+     "level": "PASS",
+     "code": "A10c_boundary",
+     "detail": "boundary_continuous=True；outside_wedge_agree_rate=1.0；common_valid_agree_rate=1.0"
+    }
+   ],
+   "province": "川",
+   "tile_id": "T1207",
+   "code_hash": "1d525148315964940b1edbf4669ea0d7",
+   "account_id": "k3r6ncvd",
+   "class_codes_observed": [
+    6,
+    9,
+    10,
+    11
+   ],
+   "fiveband": [
+    {
+     "band": 1,
+     "n_zero": 22832,
+     "uniq": [
+      0,
+      6,
+      9,
+      10,
+      11
+     ]
+    },
+    {
+     "band": 2,
+     "n_zero": 11140,
+     "uniq": [
+      0,
+      6,
+      9,
+      10,
+      11
+     ]
+    },
+    {
+     "band": 3,
+     "n_zero": 23323,
+     "uniq": [
+      0,
+      1
+     ]
+    },
+    {
+     "band": 4,
+     "n_zero": 0,
+     "uniq": [
+      1
+     ]
+    },
+    {
+     "band": 5,
+     "n_zero": 11140,
+     "uniq": [
+      0,
+      1
+     ]
+    }
+   ],
+   "delivery": [
+    {
+     "arm": "legacy",
+     "file": "TRI_SC_32N_s23_legacy_10m_palette.tif",
+     "photo": 3,
+     "has_colormap": true,
+     "palette_ok": true,
+     "mode": "P"
+    },
+    {
+     "arm": "planar",
+     "file": "TRI_SC_32N_s23_planar_10m_palette.tif",
+     "photo": 3,
+     "has_colormap": true,
+     "palette_ok": true,
+     "mode": "P"
+    }
+   ],
+   "gate": "PASS"
+  },
+  {
+   "unit": "TRI_GD_24N_s7",
+   "checks": [
+    {
+     "level": "PASS",
+     "code": "A1_grid_matches_registration",
+     "detail": "557x93 EPSG:4326 uint8 transform==注册"
+    },
+    {
+     "level": "PASS",
+     "code": "A1b_nodata",
+     "detail": "nodata=0.0/0.0（应为 0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A1c_tile_domain_derivation",
+     "detail": "本地推导 tile 外 11140 == eval outside_tile_px 11140（北缘口径自证；中心口径 11697，差 557 px = 1 行，属边界约定）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2_planar_no_gap_intile",
+     "detail": "tile 内 planar 空洞 0 px（门=0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2b_legacy_gap_intile",
+     "detail": "tile 内 legacy 空洞 15876 px（应>0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2c_restored",
+     "detail": "tile 内恢复像元 15876 px"
+    },
+    {
+     "level": "PASS",
+     "code": "A2d_outside_tile_zero",
+     "detail": "tile 外非零：legacy 0 / planar 0（应为 0；eval 声明 0/0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A3_common_valid_agree",
+     "detail": "tile 内两臂共同有效 24785 px，类码分歧 0 px（门=0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A4_eval_arithmetic",
+     "detail": "计数闭合（4 式）"
+    },
+    {
+     "level": "PASS",
+     "code": "A5_eval_vs_local",
+     "detail": "eval 声明与本地复算一致（6 项）"
+    },
+    {
+     "level": "INFO",
+     "code": "A5b_evm_full_intile",
+     "detail": "eval evm_in_tile_valid_px=40661，tile 内像元总数=40661（相等即 EVM 在本窗 tile 内全有效）"
+    },
+    {
+     "level": "PASS",
+     "code": "A6_class_hist",
+     "detail": "类直方图复算一致（legacy 6 类 / planar 7 类）"
+    },
+    {
+     "level": "PASS",
+     "code": "A7_planar_row_gap_intile",
+     "detail": "tile 内 planar 逐行空洞最大 0（门=0）"
+    },
+    {
+     "level": "INFO",
+     "code": "A7b_legacy_wedge_profile",
+     "detail": "tile 内 legacy 空洞 max=557 列/行、非空行 29 行（窗口行 44–72）；满行 28 行；窗口含瓦片中央经线=False（决定带形为中央对称/单侧锚定）；解析楔高 36.10 行（窗口仅含 tile 南缘，被 tile 下界截断属预期）；eval legacy_row_nodata_max=557"
+    },
+    {
+     "level": "PASS",
+     "code": "A7c_wedge_signature",
+     "detail": "tile 内空洞逐行连续且随行加深单调嵌套（单侧锚定带，楔形签名成立）"
+    },
+    {
+     "level": "INFO",
+     "code": "A8_fiveband",
+     "detail": "5band 零值计数 [27016, 11140, 27529, 0, 11140]（诊断件不要求调色板；语义不假设）"
+    },
+    {
+     "level": "PASS",
+     "code": "A9_delivery_palette",
+     "detail": "交付件 2 臂均 PIL photo=3 且含 ColorMap：['TRI_GD_24N_s7_legacy_10m_palette.tif', 'TRI_GD_24N_s7_planar_10m_palette.tif']"
+    },
+    {
+     "level": "PASS",
+     "code": "A9b_delivery_data_identity",
+     "detail": "交付件与 out/ 原件逐像元一致、网格相同（2 臂 × 3 seed 口径）"
+    },
+    {
+     "level": "PASS",
+     "code": "A10_timing",
+     "detail": "elapsed_s=36.2（门≤1200）；req_s=25.71"
+    },
+    {
+     "level": "PASS",
+     "code": "A10b_code_hash_consistent",
+     "detail": "reg/eval code_hash 一致：1d525148315964940b1edbf4669ea0d7"
+    },
+    {
+     "level": "PASS",
+     "code": "A10c_boundary",
+     "detail": "boundary_continuous=True；outside_wedge_agree_rate=1.0；common_valid_agree_rate=1.0"
+    }
+   ],
+   "province": "粤",
+   "tile_id": "T1903",
+   "code_hash": "1d525148315964940b1edbf4669ea0d7",
+   "account_id": "k3r6ncvd",
+   "class_codes_observed": [
+    1,
+    2,
+    4,
+    6,
+    9,
+    14,
+    21
+   ],
+   "fiveband": [
+    {
+     "band": 1,
+     "n_zero": 27016,
+     "uniq": [
+      0,
+      1,
+      2,
+      4,
+      6,
+      9,
+      21
+     ]
+    },
+    {
+     "band": 2,
+     "n_zero": 11140,
+     "uniq": [
+      0,
+      1,
+      2,
+      4,
+      6,
+      9,
+      14,
+      21
+     ]
+    },
+    {
+     "band": 3,
+     "n_zero": 27529,
+     "uniq": [
+      0,
+      1
+     ]
+    },
+    {
+     "band": 4,
+     "n_zero": 0,
+     "uniq": [
+      1
+     ]
+    },
+    {
+     "band": 5,
+     "n_zero": 11140,
+     "uniq": [
+      0,
+      1
+     ]
+    }
+   ],
+   "delivery": [
+    {
+     "arm": "legacy",
+     "file": "TRI_GD_24N_s7_legacy_10m_palette.tif",
+     "photo": 3,
+     "has_colormap": true,
+     "palette_ok": true,
+     "mode": "P"
+    },
+    {
+     "arm": "planar",
+     "file": "TRI_GD_24N_s7_planar_10m_palette.tif",
+     "photo": 3,
+     "has_colormap": true,
+     "palette_ok": true,
+     "mode": "P"
+    }
+   ],
+   "gate": "PASS"
+  },
+  {
+   "unit": "TRI_GD_24N_s11",
+   "checks": [
+    {
+     "level": "PASS",
+     "code": "A1_grid_matches_registration",
+     "detail": "557x93 EPSG:4326 uint8 transform==注册"
+    },
+    {
+     "level": "PASS",
+     "code": "A1b_nodata",
+     "detail": "nodata=0.0/0.0（应为 0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A1c_tile_domain_derivation",
+     "detail": "本地推导 tile 外 11140 == eval outside_tile_px 11140（北缘口径自证；中心口径 11697，差 557 px = 1 行，属边界约定）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2_planar_no_gap_intile",
+     "detail": "tile 内 planar 空洞 0 px（门=0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2b_legacy_gap_intile",
+     "detail": "tile 内 legacy 空洞 15876 px（应>0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2c_restored",
+     "detail": "tile 内恢复像元 15876 px"
+    },
+    {
+     "level": "PASS",
+     "code": "A2d_outside_tile_zero",
+     "detail": "tile 外非零：legacy 0 / planar 0（应为 0；eval 声明 0/0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A3_common_valid_agree",
+     "detail": "tile 内两臂共同有效 24785 px，类码分歧 0 px（门=0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A4_eval_arithmetic",
+     "detail": "计数闭合（4 式）"
+    },
+    {
+     "level": "PASS",
+     "code": "A5_eval_vs_local",
+     "detail": "eval 声明与本地复算一致（6 项）"
+    },
+    {
+     "level": "INFO",
+     "code": "A5b_evm_full_intile",
+     "detail": "eval evm_in_tile_valid_px=40661，tile 内像元总数=40661（相等即 EVM 在本窗 tile 内全有效）"
+    },
+    {
+     "level": "PASS",
+     "code": "A6_class_hist",
+     "detail": "类直方图复算一致（legacy 6 类 / planar 7 类）"
+    },
+    {
+     "level": "PASS",
+     "code": "A7_planar_row_gap_intile",
+     "detail": "tile 内 planar 逐行空洞最大 0（门=0）"
+    },
+    {
+     "level": "INFO",
+     "code": "A7b_legacy_wedge_profile",
+     "detail": "tile 内 legacy 空洞 max=557 列/行、非空行 29 行（窗口行 44–72）；满行 28 行；窗口含瓦片中央经线=False（决定带形为中央对称/单侧锚定）；解析楔高 36.10 行（窗口仅含 tile 南缘，被 tile 下界截断属预期）；eval legacy_row_nodata_max=557"
+    },
+    {
+     "level": "PASS",
+     "code": "A7c_wedge_signature",
+     "detail": "tile 内空洞逐行连续且随行加深单调嵌套（单侧锚定带，楔形签名成立）"
+    },
+    {
+     "level": "INFO",
+     "code": "A8_fiveband",
+     "detail": "5band 零值计数 [27016, 11140, 27529, 0, 11140]（诊断件不要求调色板；语义不假设）"
+    },
+    {
+     "level": "PASS",
+     "code": "A9_delivery_palette",
+     "detail": "交付件 2 臂均 PIL photo=3 且含 ColorMap：['TRI_GD_24N_s11_legacy_10m_palette.tif', 'TRI_GD_24N_s11_planar_10m_palette.tif']"
+    },
+    {
+     "level": "PASS",
+     "code": "A9b_delivery_data_identity",
+     "detail": "交付件与 out/ 原件逐像元一致、网格相同（2 臂 × 3 seed 口径）"
+    },
+    {
+     "level": "PASS",
+     "code": "A10_timing",
+     "detail": "elapsed_s=84.2（门≤1200）；req_s=46.98"
+    },
+    {
+     "level": "PASS",
+     "code": "A10b_code_hash_consistent",
+     "detail": "reg/eval code_hash 一致：1d525148315964940b1edbf4669ea0d7"
+    },
+    {
+     "level": "PASS",
+     "code": "A10c_boundary",
+     "detail": "boundary_continuous=True；outside_wedge_agree_rate=1.0；common_valid_agree_rate=1.0"
+    }
+   ],
+   "province": "粤",
+   "tile_id": "T1903",
+   "code_hash": "1d525148315964940b1edbf4669ea0d7",
+   "account_id": "k3r6ncvd",
+   "class_codes_observed": [
+    1,
+    2,
+    4,
+    6,
+    9,
+    14,
+    21
+   ],
+   "fiveband": [
+    {
+     "band": 1,
+     "n_zero": 27016,
+     "uniq": [
+      0,
+      1,
+      2,
+      4,
+      6,
+      9,
+      21
+     ]
+    },
+    {
+     "band": 2,
+     "n_zero": 11140,
+     "uniq": [
+      0,
+      1,
+      2,
+      4,
+      6,
+      9,
+      14,
+      21
+     ]
+    },
+    {
+     "band": 3,
+     "n_zero": 27529,
+     "uniq": [
+      0,
+      1
+     ]
+    },
+    {
+     "band": 4,
+     "n_zero": 0,
+     "uniq": [
+      1
+     ]
+    },
+    {
+     "band": 5,
+     "n_zero": 11140,
+     "uniq": [
+      0,
+      1
+     ]
+    }
+   ],
+   "delivery": [
+    {
+     "arm": "legacy",
+     "file": "TRI_GD_24N_s11_legacy_10m_palette.tif",
+     "photo": 3,
+     "has_colormap": true,
+     "palette_ok": true,
+     "mode": "P"
+    },
+    {
+     "arm": "planar",
+     "file": "TRI_GD_24N_s11_planar_10m_palette.tif",
+     "photo": 3,
+     "has_colormap": true,
+     "palette_ok": true,
+     "mode": "P"
+    }
+   ],
+   "gate": "PASS"
+  },
+  {
+   "unit": "TRI_GD_24N_s23",
+   "checks": [
+    {
+     "level": "PASS",
+     "code": "A1_grid_matches_registration",
+     "detail": "557x93 EPSG:4326 uint8 transform==注册"
+    },
+    {
+     "level": "PASS",
+     "code": "A1b_nodata",
+     "detail": "nodata=0.0/0.0（应为 0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A1c_tile_domain_derivation",
+     "detail": "本地推导 tile 外 11140 == eval outside_tile_px 11140（北缘口径自证；中心口径 11697，差 557 px = 1 行，属边界约定）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2_planar_no_gap_intile",
+     "detail": "tile 内 planar 空洞 0 px（门=0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2b_legacy_gap_intile",
+     "detail": "tile 内 legacy 空洞 15876 px（应>0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2c_restored",
+     "detail": "tile 内恢复像元 15876 px"
+    },
+    {
+     "level": "PASS",
+     "code": "A2d_outside_tile_zero",
+     "detail": "tile 外非零：legacy 0 / planar 0（应为 0；eval 声明 0/0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A3_common_valid_agree",
+     "detail": "tile 内两臂共同有效 24785 px，类码分歧 0 px（门=0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A4_eval_arithmetic",
+     "detail": "计数闭合（4 式）"
+    },
+    {
+     "level": "PASS",
+     "code": "A5_eval_vs_local",
+     "detail": "eval 声明与本地复算一致（6 项）"
+    },
+    {
+     "level": "INFO",
+     "code": "A5b_evm_full_intile",
+     "detail": "eval evm_in_tile_valid_px=40661，tile 内像元总数=40661（相等即 EVM 在本窗 tile 内全有效）"
+    },
+    {
+     "level": "PASS",
+     "code": "A6_class_hist",
+     "detail": "类直方图复算一致（legacy 6 类 / planar 6 类）"
+    },
+    {
+     "level": "PASS",
+     "code": "A7_planar_row_gap_intile",
+     "detail": "tile 内 planar 逐行空洞最大 0（门=0）"
+    },
+    {
+     "level": "INFO",
+     "code": "A7b_legacy_wedge_profile",
+     "detail": "tile 内 legacy 空洞 max=557 列/行、非空行 29 行（窗口行 44–72）；满行 28 行；窗口含瓦片中央经线=False（决定带形为中央对称/单侧锚定）；解析楔高 36.10 行（窗口仅含 tile 南缘，被 tile 下界截断属预期）；eval legacy_row_nodata_max=557"
+    },
+    {
+     "level": "PASS",
+     "code": "A7c_wedge_signature",
+     "detail": "tile 内空洞逐行连续且随行加深单调嵌套（单侧锚定带，楔形签名成立）"
+    },
+    {
+     "level": "INFO",
+     "code": "A8_fiveband",
+     "detail": "5band 零值计数 [27016, 11140, 27529, 0, 11140]（诊断件不要求调色板；语义不假设）"
+    },
+    {
+     "level": "PASS",
+     "code": "A9_delivery_palette",
+     "detail": "交付件 2 臂均 PIL photo=3 且含 ColorMap：['TRI_GD_24N_s23_legacy_10m_palette.tif', 'TRI_GD_24N_s23_planar_10m_palette.tif']"
+    },
+    {
+     "level": "PASS",
+     "code": "A9b_delivery_data_identity",
+     "detail": "交付件与 out/ 原件逐像元一致、网格相同（2 臂 × 3 seed 口径）"
+    },
+    {
+     "level": "PASS",
+     "code": "A10_timing",
+     "detail": "elapsed_s=102.6（门≤1200）；req_s=17.42"
+    },
+    {
+     "level": "PASS",
+     "code": "A10b_code_hash_consistent",
+     "detail": "reg/eval code_hash 一致：1d525148315964940b1edbf4669ea0d7"
+    },
+    {
+     "level": "PASS",
+     "code": "A10c_boundary",
+     "detail": "boundary_continuous=True；outside_wedge_agree_rate=1.0；common_valid_agree_rate=1.0"
+    }
+   ],
+   "province": "粤",
+   "tile_id": "T1903",
+   "code_hash": "1d525148315964940b1edbf4669ea0d7",
+   "account_id": "k3r6ncvd",
+   "class_codes_observed": [
+    1,
+    2,
+    4,
+    6,
+    9,
+    21
+   ],
+   "fiveband": [
+    {
+     "band": 1,
+     "n_zero": 27016,
+     "uniq": [
+      0,
+      1,
+      2,
+      4,
+      6,
+      9,
+      21
+     ]
+    },
+    {
+     "band": 2,
+     "n_zero": 11140,
+     "uniq": [
+      0,
+      1,
+      2,
+      4,
+      6,
+      9,
+      21
+     ]
+    },
+    {
+     "band": 3,
+     "n_zero": 27529,
+     "uniq": [
+      0,
+      1
+     ]
+    },
+    {
+     "band": 4,
+     "n_zero": 0,
+     "uniq": [
+      1
+     ]
+    },
+    {
+     "band": 5,
+     "n_zero": 11140,
+     "uniq": [
+      0,
+      1
+     ]
+    }
+   ],
+   "delivery": [
+    {
+     "arm": "legacy",
+     "file": "TRI_GD_24N_s23_legacy_10m_palette.tif",
+     "photo": 3,
+     "has_colormap": true,
+     "palette_ok": true,
+     "mode": "P"
+    },
+    {
+     "arm": "planar",
+     "file": "TRI_GD_24N_s23_planar_10m_palette.tif",
+     "photo": 3,
+     "has_colormap": true,
+     "palette_ok": true,
+     "mode": "P"
+    }
+   ],
+   "gate": "PASS"
+  },
+  {
+   "unit": "TRI_NX_38N_s7",
+   "checks": [
+    {
+     "level": "PASS",
+     "code": "A1_grid_matches_registration",
+     "detail": "557x93 EPSG:4326 uint8 transform==注册"
+    },
+    {
+     "level": "PASS",
+     "code": "A1b_nodata",
+     "detail": "nodata=0.0/0.0（应为 0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A1c_tile_domain_derivation",
+     "detail": "本地推导 tile 外 11140 == eval outside_tile_px 11140（北缘口径自证；中心口径 11140，差 0 px = 0 行，属边界约定）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2_planar_no_gap_intile",
+     "detail": "tile 内 planar 空洞 0 px（门=0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2b_legacy_gap_intile",
+     "detail": "tile 内 legacy 空洞 21343 px（应>0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2c_restored",
+     "detail": "tile 内恢复像元 21343 px"
+    },
+    {
+     "level": "PASS",
+     "code": "A2d_outside_tile_zero",
+     "detail": "tile 外非零：legacy 0 / planar 0（应为 0；eval 声明 0/0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A3_common_valid_agree",
+     "detail": "tile 内两臂共同有效 19318 px，类码分歧 0 px（门=0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A4_eval_arithmetic",
+     "detail": "计数闭合（4 式）"
+    },
+    {
+     "level": "PASS",
+     "code": "A5_eval_vs_local",
+     "detail": "eval 声明与本地复算一致（6 项）"
+    },
+    {
+     "level": "INFO",
+     "code": "A5b_evm_full_intile",
+     "detail": "eval evm_in_tile_valid_px=40661，tile 内像元总数=40661（相等即 EVM 在本窗 tile 内全有效）"
+    },
+    {
+     "level": "PASS",
+     "code": "A6_class_hist",
+     "detail": "类直方图复算一致（legacy 3 类 / planar 3 类）"
+    },
+    {
+     "level": "PASS",
+     "code": "A7_planar_row_gap_intile",
+     "detail": "tile 内 planar 逐行空洞最大 0（门=0）"
+    },
+    {
+     "level": "INFO",
+     "code": "A7b_legacy_wedge_profile",
+     "detail": "tile 内 legacy 空洞 max=557 列/行、非空行 39 行（窗口行 34–72）；满行 37 行；窗口含瓦片中央经线=False（决定带形为中央对称/单侧锚定）；解析楔高 47.13 行（窗口仅含 tile 南缘，被 tile 下界截断属预期）；eval legacy_row_nodata_max=557"
+    },
+    {
+     "level": "PASS",
+     "code": "A7c_wedge_signature",
+     "detail": "tile 内空洞逐行连续且随行加深单调嵌套（单侧锚定带，楔形签名成立）"
+    },
+    {
+     "level": "INFO",
+     "code": "A8_fiveband",
+     "detail": "5band 零值计数 [32483, 11140, 32974, 0, 11140]（诊断件不要求调色板；语义不假设）"
+    },
+    {
+     "level": "PASS",
+     "code": "A9_delivery_palette",
+     "detail": "交付件 2 臂均 PIL photo=3 且含 ColorMap：['TRI_NX_38N_s7_legacy_10m_palette.tif', 'TRI_NX_38N_s7_planar_10m_palette.tif']"
+    },
+    {
+     "level": "PASS",
+     "code": "A9b_delivery_data_identity",
+     "detail": "交付件与 out/ 原件逐像元一致、网格相同（2 臂 × 3 seed 口径）"
+    },
+    {
+     "level": "PASS",
+     "code": "A10_timing",
+     "detail": "elapsed_s=98.2（门≤1200）；req_s=18.86"
+    },
+    {
+     "level": "PASS",
+     "code": "A10b_code_hash_consistent",
+     "detail": "reg/eval code_hash 一致：1d525148315964940b1edbf4669ea0d7"
+    },
+    {
+     "level": "PASS",
+     "code": "A10c_boundary",
+     "detail": "boundary_continuous=True；outside_wedge_agree_rate=1.0；common_valid_agree_rate=1.0"
+    }
+   ],
+   "province": "宁",
+   "tile_id": "T1610",
+   "code_hash": "1d525148315964940b1edbf4669ea0d7",
+   "account_id": "k3r6ncvd",
+   "class_codes_observed": [
+    10,
+    11,
+    22
+   ],
+   "fiveband": [
+    {
+     "band": 1,
+     "n_zero": 32483,
+     "uniq": [
+      0,
+      10,
+      11,
+      22
+     ]
+    },
+    {
+     "band": 2,
+     "n_zero": 11140,
+     "uniq": [
+      0,
+      10,
+      11,
+      22
+     ]
+    },
+    {
+     "band": 3,
+     "n_zero": 32974,
+     "uniq": [
+      0,
+      1
+     ]
+    },
+    {
+     "band": 4,
+     "n_zero": 0,
+     "uniq": [
+      1
+     ]
+    },
+    {
+     "band": 5,
+     "n_zero": 11140,
+     "uniq": [
+      0,
+      1
+     ]
+    }
+   ],
+   "delivery": [
+    {
+     "arm": "legacy",
+     "file": "TRI_NX_38N_s7_legacy_10m_palette.tif",
+     "photo": 3,
+     "has_colormap": true,
+     "palette_ok": true,
+     "mode": "P"
+    },
+    {
+     "arm": "planar",
+     "file": "TRI_NX_38N_s7_planar_10m_palette.tif",
+     "photo": 3,
+     "has_colormap": true,
+     "palette_ok": true,
+     "mode": "P"
+    }
+   ],
+   "gate": "PASS"
+  },
+  {
+   "unit": "TRI_NX_38N_s11",
+   "checks": [
+    {
+     "level": "PASS",
+     "code": "A1_grid_matches_registration",
+     "detail": "557x93 EPSG:4326 uint8 transform==注册"
+    },
+    {
+     "level": "PASS",
+     "code": "A1b_nodata",
+     "detail": "nodata=0.0/0.0（应为 0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A1c_tile_domain_derivation",
+     "detail": "本地推导 tile 外 11140 == eval outside_tile_px 11140（北缘口径自证；中心口径 11140，差 0 px = 0 行，属边界约定）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2_planar_no_gap_intile",
+     "detail": "tile 内 planar 空洞 0 px（门=0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2b_legacy_gap_intile",
+     "detail": "tile 内 legacy 空洞 21343 px（应>0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2c_restored",
+     "detail": "tile 内恢复像元 21343 px"
+    },
+    {
+     "level": "PASS",
+     "code": "A2d_outside_tile_zero",
+     "detail": "tile 外非零：legacy 0 / planar 0（应为 0；eval 声明 0/0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A3_common_valid_agree",
+     "detail": "tile 内两臂共同有效 19318 px，类码分歧 0 px（门=0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A4_eval_arithmetic",
+     "detail": "计数闭合（4 式）"
+    },
+    {
+     "level": "PASS",
+     "code": "A5_eval_vs_local",
+     "detail": "eval 声明与本地复算一致（6 项）"
+    },
+    {
+     "level": "INFO",
+     "code": "A5b_evm_full_intile",
+     "detail": "eval evm_in_tile_valid_px=40661，tile 内像元总数=40661（相等即 EVM 在本窗 tile 内全有效）"
+    },
+    {
+     "level": "PASS",
+     "code": "A6_class_hist",
+     "detail": "类直方图复算一致（legacy 3 类 / planar 3 类）"
+    },
+    {
+     "level": "PASS",
+     "code": "A7_planar_row_gap_intile",
+     "detail": "tile 内 planar 逐行空洞最大 0（门=0）"
+    },
+    {
+     "level": "INFO",
+     "code": "A7b_legacy_wedge_profile",
+     "detail": "tile 内 legacy 空洞 max=557 列/行、非空行 39 行（窗口行 34–72）；满行 37 行；窗口含瓦片中央经线=False（决定带形为中央对称/单侧锚定）；解析楔高 47.13 行（窗口仅含 tile 南缘，被 tile 下界截断属预期）；eval legacy_row_nodata_max=557"
+    },
+    {
+     "level": "PASS",
+     "code": "A7c_wedge_signature",
+     "detail": "tile 内空洞逐行连续且随行加深单调嵌套（单侧锚定带，楔形签名成立）"
+    },
+    {
+     "level": "INFO",
+     "code": "A8_fiveband",
+     "detail": "5band 零值计数 [32483, 11140, 32974, 0, 11140]（诊断件不要求调色板；语义不假设）"
+    },
+    {
+     "level": "PASS",
+     "code": "A9_delivery_palette",
+     "detail": "交付件 2 臂均 PIL photo=3 且含 ColorMap：['TRI_NX_38N_s11_legacy_10m_palette.tif', 'TRI_NX_38N_s11_planar_10m_palette.tif']"
+    },
+    {
+     "level": "PASS",
+     "code": "A9b_delivery_data_identity",
+     "detail": "交付件与 out/ 原件逐像元一致、网格相同（2 臂 × 3 seed 口径）"
+    },
+    {
+     "level": "PASS",
+     "code": "A10_timing",
+     "detail": "elapsed_s=115.0（门≤1200）；req_s=15.09"
+    },
+    {
+     "level": "PASS",
+     "code": "A10b_code_hash_consistent",
+     "detail": "reg/eval code_hash 一致：1d525148315964940b1edbf4669ea0d7"
+    },
+    {
+     "level": "PASS",
+     "code": "A10c_boundary",
+     "detail": "boundary_continuous=True；outside_wedge_agree_rate=1.0；common_valid_agree_rate=1.0"
+    }
+   ],
+   "province": "宁",
+   "tile_id": "T1610",
+   "code_hash": "1d525148315964940b1edbf4669ea0d7",
+   "account_id": "k3r6ncvd",
+   "class_codes_observed": [
+    10,
+    11,
+    22
+   ],
+   "fiveband": [
+    {
+     "band": 1,
+     "n_zero": 32483,
+     "uniq": [
+      0,
+      10,
+      11,
+      22
+     ]
+    },
+    {
+     "band": 2,
+     "n_zero": 11140,
+     "uniq": [
+      0,
+      10,
+      11,
+      22
+     ]
+    },
+    {
+     "band": 3,
+     "n_zero": 32974,
+     "uniq": [
+      0,
+      1
+     ]
+    },
+    {
+     "band": 4,
+     "n_zero": 0,
+     "uniq": [
+      1
+     ]
+    },
+    {
+     "band": 5,
+     "n_zero": 11140,
+     "uniq": [
+      0,
+      1
+     ]
+    }
+   ],
+   "delivery": [
+    {
+     "arm": "legacy",
+     "file": "TRI_NX_38N_s11_legacy_10m_palette.tif",
+     "photo": 3,
+     "has_colormap": true,
+     "palette_ok": true,
+     "mode": "P"
+    },
+    {
+     "arm": "planar",
+     "file": "TRI_NX_38N_s11_planar_10m_palette.tif",
+     "photo": 3,
+     "has_colormap": true,
+     "palette_ok": true,
+     "mode": "P"
+    }
+   ],
+   "gate": "PASS"
+  },
+  {
+   "unit": "TRI_NX_38N_s23",
+   "checks": [
+    {
+     "level": "PASS",
+     "code": "A1_grid_matches_registration",
+     "detail": "557x93 EPSG:4326 uint8 transform==注册"
+    },
+    {
+     "level": "PASS",
+     "code": "A1b_nodata",
+     "detail": "nodata=0.0/0.0（应为 0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A1c_tile_domain_derivation",
+     "detail": "本地推导 tile 外 11140 == eval outside_tile_px 11140（北缘口径自证；中心口径 11140，差 0 px = 0 行，属边界约定）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2_planar_no_gap_intile",
+     "detail": "tile 内 planar 空洞 0 px（门=0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2b_legacy_gap_intile",
+     "detail": "tile 内 legacy 空洞 21343 px（应>0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A2c_restored",
+     "detail": "tile 内恢复像元 21343 px"
+    },
+    {
+     "level": "PASS",
+     "code": "A2d_outside_tile_zero",
+     "detail": "tile 外非零：legacy 0 / planar 0（应为 0；eval 声明 0/0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A3_common_valid_agree",
+     "detail": "tile 内两臂共同有效 19318 px，类码分歧 0 px（门=0）"
+    },
+    {
+     "level": "PASS",
+     "code": "A4_eval_arithmetic",
+     "detail": "计数闭合（4 式）"
+    },
+    {
+     "level": "PASS",
+     "code": "A5_eval_vs_local",
+     "detail": "eval 声明与本地复算一致（6 项）"
+    },
+    {
+     "level": "INFO",
+     "code": "A5b_evm_full_intile",
+     "detail": "eval evm_in_tile_valid_px=40661，tile 内像元总数=40661（相等即 EVM 在本窗 tile 内全有效）"
+    },
+    {
+     "level": "PASS",
+     "code": "A6_class_hist",
+     "detail": "类直方图复算一致（legacy 3 类 / planar 3 类）"
+    },
+    {
+     "level": "PASS",
+     "code": "A7_planar_row_gap_intile",
+     "detail": "tile 内 planar 逐行空洞最大 0（门=0）"
+    },
+    {
+     "level": "INFO",
+     "code": "A7b_legacy_wedge_profile",
+     "detail": "tile 内 legacy 空洞 max=557 列/行、非空行 39 行（窗口行 34–72）；满行 37 行；窗口含瓦片中央经线=False（决定带形为中央对称/单侧锚定）；解析楔高 47.13 行（窗口仅含 tile 南缘，被 tile 下界截断属预期）；eval legacy_row_nodata_max=557"
+    },
+    {
+     "level": "PASS",
+     "code": "A7c_wedge_signature",
+     "detail": "tile 内空洞逐行连续且随行加深单调嵌套（单侧锚定带，楔形签名成立）"
+    },
+    {
+     "level": "INFO",
+     "code": "A8_fiveband",
+     "detail": "5band 零值计数 [32483, 11140, 32974, 0, 11140]（诊断件不要求调色板；语义不假设）"
+    },
+    {
+     "level": "PASS",
+     "code": "A9_delivery_palette",
+     "detail": "交付件 2 臂均 PIL photo=3 且含 ColorMap：['TRI_NX_38N_s23_legacy_10m_palette.tif', 'TRI_NX_38N_s23_planar_10m_palette.tif']"
+    },
+    {
+     "level": "PASS",
+     "code": "A9b_delivery_data_identity",
+     "detail": "交付件与 out/ 原件逐像元一致、网格相同（2 臂 × 3 seed 口径）"
+    },
+    {
+     "level": "PASS",
+     "code": "A10_timing",
+     "detail": "elapsed_s=141.8（门≤1200）；req_s=25.01"
+    },
+    {
+     "level": "PASS",
+     "code": "A10b_code_hash_consistent",
+     "detail": "reg/eval code_hash 一致：1d525148315964940b1edbf4669ea0d7"
+    },
+    {
+     "level": "PASS",
+     "code": "A10c_boundary",
+     "detail": "boundary_continuous=True；outside_wedge_agree_rate=1.0；common_valid_agree_rate=1.0"
+    }
+   ],
+   "province": "宁",
+   "tile_id": "T1610",
+   "code_hash": "1d525148315964940b1edbf4669ea0d7",
+   "account_id": "k3r6ncvd",
+   "class_codes_observed": [
+    10,
+    11,
+    22
+   ],
+   "fiveband": [
+    {
+     "band": 1,
+     "n_zero": 32483,
+     "uniq": [
+      0,
+      10,
+      11,
+      22
+     ]
+    },
+    {
+     "band": 2,
+     "n_zero": 11140,
+     "uniq": [
+      0,
+      10,
+      11,
+      22
+     ]
+    },
+    {
+     "band": 3,
+     "n_zero": 32974,
+     "uniq": [
+      0,
+      1
+     ]
+    },
+    {
+     "band": 4,
+     "n_zero": 0,
+     "uniq": [
+      1
+     ]
+    },
+    {
+     "band": 5,
+     "n_zero": 11140,
+     "uniq": [
+      0,
+      1
+     ]
+    }
+   ],
+   "delivery": [
+    {
+     "arm": "legacy",
+     "file": "TRI_NX_38N_s23_legacy_10m_palette.tif",
+     "photo": 3,
+     "has_colormap": true,
+     "palette_ok": true,
+     "mode": "P"
+    },
+    {
+     "arm": "planar",
+     "file": "TRI_NX_38N_s23_planar_10m_palette.tif",
+     "photo": 3,
+     "has_colormap": true,
+     "palette_ok": true,
+     "mode": "P"
+    }
+   ],
+   "gate": "PASS"
+  }
+ ]
+}

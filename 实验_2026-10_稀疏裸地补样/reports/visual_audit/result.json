@@ -1,0 +1,114 @@
+{
+ "protocol": "最终护栏层（CLCD 不透水 + 稀疏 crops≥0.35 + 裸地 DW bare≥0.25）；每年每类 12 点；S2 当年 4–11 月中值真彩色；1 km 视场 + 中心十字（16 px）；判读三档：符合/模糊(镶嵌或跨类)/不符合",
+ "years": {
+  "2018": {
+   "sparse": {
+    "clear": 9,
+    "ambiguous": 0,
+    "unclear": 3,
+    "unclear_ids": [
+     6,
+     7,
+     9
+    ],
+    "note": "6=围院/场院, 7=农田, 9=灌区农田"
+   },
+   "bare": {
+    "clear": 9,
+    "ambiguous": 2,
+    "unclear": 1,
+    "unclear_ids": [
+     8
+    ],
+    "note": "8=黑块(2018 该处无有效 S2)"
+   }
+  },
+  "2021": {
+   "sparse": {
+    "clear": 5,
+    "ambiguous": 2,
+    "unclear": 5,
+    "unclear_ids": [
+     4,
+     6,
+     7,
+     10,
+     11
+    ],
+    "note": "4=河岸密植被, 6/7/11=村庄农田, 10=密植被"
+   },
+   "bare": {
+    "clear": 6,
+    "ambiguous": 1,
+    "unclear": 5,
+    "unclear_ids": [
+     2,
+     4,
+     6,
+     8,
+     9
+    ],
+    "note": "2/9=梯田, 4/6=光伏/大棚, 8=村矿"
+   }
+  },
+  "2023": {
+   "sparse": {
+    "clear": 11,
+    "ambiguous": 0,
+    "unclear": 1,
+    "unclear_ids": [
+     5
+    ],
+    "note": "5=村庄道路"
+   },
+   "bare": {
+    "clear": 8,
+    "ambiguous": 3,
+    "unclear": 1,
+    "unclear_ids": [
+     2
+    ],
+    "note": "2=设施; 5/8/9=林内裸斑/裸田/村边(模糊)"
+   }
+  },
+  "2024": {
+   "sparse": {
+    "clear": 6,
+    "ambiguous": 3,
+    "unclear": 3,
+    "unclear_ids": [
+     7,
+     10,
+     11
+    ],
+    "note": "7=采石场, 10=机场跑道, 11=大棚/厂房"
+   },
+   "bare": {
+    "clear": 6,
+    "ambiguous": 6,
+    "unclear": 0,
+    "unclear_ids": [],
+    "note": "模糊多为田块间裸斑/河滩/盐碱边"
+   }
+  }
+ },
+ "aggregate": {
+  "sparse": {
+   "clear": 31,
+   "ambiguous": 5,
+   "unclear": 12,
+   "n": 48,
+   "clear_pct": 64.6,
+   "clear_plus_amb_pct": 75.0
+  },
+  "bare": {
+   "clear": 29,
+   "ambiguous": 12,
+   "unclear": 7,
+   "n": 48,
+   "clear_pct": 60.4,
+   "clear_plus_amb_pct": 85.4
+  }
+ },
+ "caveat": "1 km 视场判读对\"大景观中的小区块\"天然偏严（样本 9×9 同类≥0.70 只保证 90 m 邻域）；像素级正确性以 h1d/h5 的 3×3 全纯 100% + 9×9≥0.70 为准。判读者为 AI，非人工真值。"
+}

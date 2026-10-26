@@ -1,0 +1,39 @@
+{
+ "tile": "T1505",
+ "name": "川 川南",
+ "n": 8975,
+ "fcs10_cover_pct": 100.0,
+ "n_forest": 3193,
+ "n_relab": 3109,
+ "seeds": [
+  7,
+  11,
+  23
+ ],
+ "arms": {
+  "armA": {
+   "train_label_forest4_macro_f1": 0.6046,
+   "needle_precision_vs_FCS10": 0.3692,
+   "needle_recall_vs_FCS10": 0.5934,
+   "ENF_precision_vs_FCS10": 0.237,
+   "ENF_recall_vs_FCS10": 0.6478,
+   "EBF_precision_vs_FCS10": 0.7427,
+   "EBF_recall_vs_FCS10": 0.3681,
+   "enf_share_of_forest_pred": 0.4467,
+   "n_ref_enf": 425.0,
+   "or_enf_ebf_median": 0.918
+  },
+  "armB": {
+   "train_label_forest4_macro_f1": 0.4984,
+   "needle_precision_vs_FCS10": 0.7766,
+   "needle_recall_vs_FCS10": 0.3476,
+   "ENF_precision_vs_FCS10": 0.5459,
+   "ENF_recall_vs_FCS10": 0.298,
+   "EBF_precision_vs_FCS10": 0.7127,
+   "EBF_recall_vs_FCS10": 0.6616,
+   "enf_share_of_forest_pred": 0.0792,
+   "n_ref_enf": 425.0,
+   "or_enf_ebf_median": 1.299
+  }
+ }
+}

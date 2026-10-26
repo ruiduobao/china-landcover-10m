@@ -1,0 +1,15 @@
+{
+  "pool_path": "F:\\lc_work\\prod2nd_2023\\data\\train2023_v2.parquet",
+  "n_rows": 1764020,
+  "n_unique_point_id": 1642028,
+  "bare_id_is_unique": false,
+  "cross_class_point_id_collisions": 121992,
+  "cross_class_collision_rows": 243984,
+  "cross_class_duplicate_positions": 3,
+  "doc69_reference": {
+    "point_id_collisions": 121992,
+    "yuandi_uid_false_removal": 4238,
+    "yuandi_note": "园地 uid 与留出 row_id 数值相同被剔除，逐点未见坐标重合，两套位置中位距离约 1,224 km；属保守误剔，不得跳过空间排除自动回填"
+  },
+  "verdict": "裸 point_id 非全局主键（存在跨类数字碰撞）→ 排除必须命名空间化；namespace-safe 方案：位置键无条件 + id 键仅在同命名空间生效"
+}

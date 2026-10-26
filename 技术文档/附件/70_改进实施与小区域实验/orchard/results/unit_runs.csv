@@ -1,0 +1,9 @@
+﻿region,arm,state,wall_s,log
+SC1,baseline,DONE,5.1,F:\lc_work\improve_2023_pilot_20261015\orchard\control\logs\SC1_baseline.log
+SC1,OCAP,DONE,4.8,F:\lc_work\improve_2023_pilot_20261015\orchard\control\logs\SC1_OCAP.log
+SC2,baseline,DONE,4.6,F:\lc_work\improve_2023_pilot_20261015\orchard\control\logs\SC2_baseline.log
+SC2,OCAP,DONE,4.8,F:\lc_work\improve_2023_pilot_20261015\orchard\control\logs\SC2_OCAP.log
+GD,baseline,DONE,4.8,F:\lc_work\improve_2023_pilot_20261015\orchard\control\logs\GD_baseline.log
+GD,OCAP,DONE,4.9,F:\lc_work\improve_2023_pilot_20261015\orchard\control\logs\GD_OCAP.log
+NX,baseline,DONE,4.7,F:\lc_work\improve_2023_pilot_20261015\orchard\control\logs\NX_baseline.log
+NX,OCAP,DONE,4.5,F:\lc_work\improve_2023_pilot_20261015\orchard\control\logs\NX_OCAP.log

@@ -1,0 +1,116 @@
+{
+ "generated": "2026-10-15 14:22:56",
+ "evidence": "08 报告判读真园率：OSM 27.6% / 柑橘 13.8% / 茶 6.2% / GLC 5.9% / 苹果 0%；doc69 §7.2：不把其他区域源质量等级迁移；C_专题产品(存疑) 即柑橘。",
+ "note": "以下为**建议规则，待主 agent 批准**；本脚本不训练、不预测。",
+ "rules": {
+  "Q1_minimal": {
+   "desc": "排除 grade == 'C_专题产品(存疑)'（柑橘 2020；08 报告判读真园率 13.8%，源标'存疑'）",
+   "exclude_grades": [
+    "C_专题产品(存疑)"
+   ],
+   "exclude_srcset": [
+    "citrus"
+   ]
+  },
+  "Q2_strict": {
+   "desc": "排除全部 C_* 与单产品 B（C_专题产品(存疑)/C_单产品/B(专题产品)/B(单产品)）——仅留 A_* 与多源 B",
+   "exclude_grades": [
+    "C_专题产品(存疑)",
+    "C_单产品",
+    "B(专题产品)",
+    "B(单产品)"
+   ],
+   "exclude_srcset": []
+  }
+ },
+ "recommended": "Q1_minimal",
+ "national_grade_counts": {
+  "A_官方地块": 37733,
+  "B(专题产品)": 28170,
+  "C_专题产品(存疑)": 27512,
+  "B_产品+面积校准": 20560,
+  "A_三源": 13024,
+  "B_双源": 11003,
+  "C_单产品": 5792,
+  "B(模型中)": 1224,
+  "B(模型中+GEM)": 429,
+  "A(模型强)": 265,
+  "A(模型强+GEM)": 174,
+  "A_目视": 40
+ },
+ "window_availability": [
+  {
+   "region": "SC1",
+   "tile": "T1607",
+   "training_bbox": [
+    103.0,
+    30.0,
+    109.0,
+    36.0
+   ],
+   "n_orchard_in_window": 9206,
+   "grade::B_产品+面积校准": 4002,
+   "grade::C_专题产品(存疑)": 2905,
+   "grade::B(专题产品)": 2291,
+   "grade::A_目视": 6,
+   "grade::B(模型中+GEM)": 2,
+   "avail_Q1_minimal": 6301,
+   "avail_Q2_strict": 4010
+  },
+  {
+   "region": "SC2",
+   "tile": "T1707",
+   "training_bbox": [
+    105.0,
+    30.0,
+    111.0,
+    36.0
+   ],
+   "n_orchard_in_window": 11689,
+   "grade::B_产品+面积校准": 5755,
+   "grade::B(专题产品)": 3311,
+   "grade::C_专题产品(存疑)": 2617,
+   "grade::A_目视": 4,
+   "grade::B(模型中+GEM)": 2,
+   "avail_Q1_minimal": 9072,
+   "avail_Q2_strict": 5761
+  },
+  {
+   "region": "GD",
+   "tile": "T1902",
+   "training_bbox": [
+    109.0,
+    20.0,
+    115.0,
+    26.0
+   ],
+   "n_orchard_in_window": 7838,
+   "grade::C_专题产品(存疑)": 6113,
+   "grade::B(专题产品)": 1161,
+   "grade::B(模型中)": 406,
+   "grade::B(模型中+GEM)": 93,
+   "grade::A(模型强)": 33,
+   "grade::A_官方地块": 14,
+   "grade::A(模型强+GEM)": 12,
+   "grade::A_目视": 5,
+   "grade::B_双源": 1,
+   "avail_Q1_minimal": 1725,
+   "avail_Q2_strict": 564
+  },
+  {
+   "region": "NX",
+   "tile": "T1610",
+   "training_bbox": [
+    103.0,
+    36.0,
+    109.0,
+    42.0
+   ],
+   "n_orchard_in_window": 741,
+   "grade::B_产品+面积校准": 741,
+   "avail_Q1_minimal": 741,
+   "avail_Q2_strict": 741
+  }
+ ],
+ "pool_cl2_gpkg_uid_hit": 1.0
+}

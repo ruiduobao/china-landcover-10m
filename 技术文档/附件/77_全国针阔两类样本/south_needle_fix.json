@@ -1,0 +1,557 @@
+{
+ "prereg": {
+  "arm": "B（旧池非森林原样；森林点去向按 FCS10-2023）",
+  "reference": "cl_fcs10 ∈ {31 针, 32 阔}（33 混交只在 22 类 argmax 体系里保留，二分类评估剔除）",
+  "south_region": "province ∈ 粤/闽/桂",
+  "rf": {
+   "n_estimators": 100,
+   "min_samples_leaf": 2,
+   "max_leaf_nodes": 5000
+  },
+  "cv": "10 km 空间块 5 折，块种子 20261017（与 t2_train 同折）",
+  "S1_weights": [
+   2.0,
+   3.0
+  ],
+  "S2_thresholds": [
+   0.5,
+   0.3,
+   0.2,
+   0.1
+  ],
+  "S3_south_train": "仅南方省训练 + 南方省内部 5 折 OOF",
+  "gate": "南方针叶 recall ≥ 0.30 且 precision ≥ 0.50"
+ },
+ "meta": {
+  "n": 548474,
+  "n_south": 85504,
+  "n_south_needle_ref": 666,
+  "n_south_broad_ref": 39484,
+  "seeds": [
+   7
+  ],
+  "n_jobs": 8,
+  "note": "单种子结果；doc77 已证三种子 sd ≤ 0.0002，故单种子足以判 P/R 量级"
+ },
+ "variants": {
+  "S0_baseline": {
+   "all": {
+    "tag": "",
+    "n": 548474,
+    "n_ref_pure": 222761,
+    "needle": {
+     "precision": 0.8816,
+     "recall": 0.8148,
+     "f1": 0.8469,
+     "n_pred": 73180,
+     "n_ref": 79185,
+     "tp": 64517
+    },
+    "broad": {
+     "precision": 0.9242,
+     "recall": 0.8034,
+     "f1": 0.8596,
+     "n_pred": 124819,
+     "n_ref": 143576,
+     "tp": 115352
+    },
+    "macro_f1_2": 0.8533,
+    "pred_needle_share_of_forest": 0.3689,
+    "ref_needle_share_of_forest": 0.3555
+   },
+   "south": {
+    "tag": "",
+    "n": 85504,
+    "n_ref_pure": 40150,
+    "needle": {
+     "precision": 0.4,
+     "recall": 0.003,
+     "f1": 0.006,
+     "n_pred": 5,
+     "n_ref": 666,
+     "tp": 2
+    },
+    "broad": {
+     "precision": 0.9867,
+     "recall": 0.815,
+     "f1": 0.8927,
+     "n_pred": 32613,
+     "n_ref": 39484,
+     "tp": 32180
+    },
+    "macro_f1_2": 0.4494,
+    "pred_needle_share_of_forest": 0.0002,
+    "ref_needle_share_of_forest": 0.0166
+   },
+   "gate_south": {
+    "recall": 0.003,
+    "precision": 0.4,
+    "pass": false,
+    "why": "未达判据：recall 0.003 < 0.30；precision 0.4 < 0.50"
+   }
+  },
+  "S1_w2": {
+   "weight_needle": 2.0,
+   "all": {
+    "tag": "",
+    "n": 548474,
+    "n_ref_pure": 222761,
+    "needle": {
+     "precision": 0.8309,
+     "recall": 0.8848,
+     "f1": 0.857,
+     "n_pred": 84316,
+     "n_ref": 79185,
+     "tp": 70060
+    },
+    "broad": {
+     "precision": 0.9523,
+     "recall": 0.7677,
+     "f1": 0.8501,
+     "n_pred": 115748,
+     "n_ref": 143576,
+     "tp": 110223
+    },
+    "macro_f1_2": 0.8536,
+    "pred_needle_share_of_forest": 0.4212,
+    "ref_needle_share_of_forest": 0.3555
+   },
+   "south": {
+    "tag": "",
+    "n": 85504,
+    "n_ref_pure": 40150,
+    "needle": {
+     "precision": 0.2609,
+     "recall": 0.009,
+     "f1": 0.0174,
+     "n_pred": 23,
+     "n_ref": 666,
+     "tp": 6
+    },
+    "broad": {
+     "precision": 0.9868,
+     "recall": 0.8158,
+     "f1": 0.8932,
+     "n_pred": 32643,
+     "n_ref": 39484,
+     "tp": 32212
+    },
+    "macro_f1_2": 0.4553,
+    "pred_needle_share_of_forest": 0.0007,
+    "ref_needle_share_of_forest": 0.0166
+   },
+   "gate_south": {
+    "recall": 0.009,
+    "precision": 0.2609,
+    "pass": false,
+    "why": "未达判据：recall 0.009 < 0.30；precision 0.2609 < 0.50"
+   }
+  },
+  "S1_w3": {
+   "weight_needle": 3.0,
+   "all": {
+    "tag": "",
+    "n": 548474,
+    "n_ref_pure": 222761,
+    "needle": {
+     "precision": 0.8037,
+     "recall": 0.9099,
+     "f1": 0.8535,
+     "n_pred": 89647,
+     "n_ref": 79185,
+     "tp": 72052
+    },
+    "broad": {
+     "precision": 0.9628,
+     "recall": 0.7472,
+     "f1": 0.8414,
+     "n_pred": 111432,
+     "n_ref": 143576,
+     "tp": 107287
+    },
+    "macro_f1_2": 0.8475,
+    "pred_needle_share_of_forest": 0.4457,
+    "ref_needle_share_of_forest": 0.3555
+   },
+   "south": {
+    "tag": "",
+    "n": 85504,
+    "n_ref_pure": 40150,
+    "needle": {
+     "precision": 0.1837,
+     "recall": 0.0135,
+     "f1": 0.0252,
+     "n_pred": 49,
+     "n_ref": 666,
+     "tp": 9
+    },
+    "broad": {
+     "precision": 0.987,
+     "recall": 0.8159,
+     "f1": 0.8933,
+     "n_pred": 32640,
+     "n_ref": 39484,
+     "tp": 32215
+    },
+    "macro_f1_2": 0.4592,
+    "pred_needle_share_of_forest": 0.0015,
+    "ref_needle_share_of_forest": 0.0166
+   },
+   "gate_south": {
+    "recall": 0.0135,
+    "precision": 0.1837,
+    "pass": false,
+    "why": "未达判据：recall 0.0135 < 0.30；precision 0.1837 < 0.50"
+   }
+  },
+  "S2_threshold": {
+   "thresholds": {
+    "0.5": {
+     "all": {
+      "tag": "",
+      "n": 548474,
+      "n_ref_pure": 222761,
+      "needle": {
+       "precision": 0.904,
+       "recall": 0.7418,
+       "f1": 0.8149,
+       "n_pred": 64974,
+       "n_ref": 79185,
+       "tp": 58739
+      },
+      "broad": {
+       "precision": 0.8854,
+       "recall": 0.8203,
+       "f1": 0.8516,
+       "n_pred": 133025,
+       "n_ref": 143576,
+       "tp": 117780
+      },
+      "macro_f1_2": 0.8333,
+      "pred_needle_share_of_forest": 0.3275,
+      "ref_needle_share_of_forest": 0.3555
+     },
+     "south": {
+      "tag": "",
+      "n": 85504,
+      "n_ref_pure": 40150,
+      "needle": {
+       "precision": 0.6667,
+       "recall": 0.003,
+       "f1": 0.006,
+       "n_pred": 3,
+       "n_ref": 666,
+       "tp": 2
+      },
+      "broad": {
+       "precision": 0.9867,
+       "recall": 0.8151,
+       "f1": 0.8927,
+       "n_pred": 32615,
+       "n_ref": 39484,
+       "tp": 32182
+      },
+      "macro_f1_2": 0.4494,
+      "pred_needle_share_of_forest": 0.0001,
+      "ref_needle_share_of_forest": 0.0166
+     },
+     "gate_south": {
+      "recall": 0.003,
+      "precision": 0.6667,
+      "pass": false,
+      "why": "未达判据：recall 0.003 < 0.30"
+     },
+     "n_changed_vs_argmax": 10660,
+     "south_pred_needle_n": 3
+    },
+    "0.3": {
+     "all": {
+      "tag": "",
+      "n": 548474,
+      "n_ref_pure": 222761,
+      "needle": {
+       "precision": 0.8311,
+       "recall": 0.8573,
+       "f1": 0.844,
+       "n_pred": 81685,
+       "n_ref": 79185,
+       "tp": 67885
+      },
+      "broad": {
+       "precision": 0.9476,
+       "recall": 0.7676,
+       "f1": 0.8482,
+       "n_pred": 116314,
+       "n_ref": 143576,
+       "tp": 110215
+      },
+      "macro_f1_2": 0.8461,
+      "pred_needle_share_of_forest": 0.4117,
+      "ref_needle_share_of_forest": 0.3555
+     },
+     "south": {
+      "tag": "",
+      "n": 85504,
+      "n_ref_pure": 40150,
+      "needle": {
+       "precision": 0.1905,
+       "recall": 0.006,
+       "f1": 0.0116,
+       "n_pred": 21,
+       "n_ref": 666,
+       "tp": 4
+      },
+      "broad": {
+       "precision": 0.9868,
+       "recall": 0.8147,
+       "f1": 0.8925,
+       "n_pred": 32597,
+       "n_ref": 39484,
+       "tp": 32166
+      },
+      "macro_f1_2": 0.452,
+      "pred_needle_share_of_forest": 0.0006,
+      "ref_needle_share_of_forest": 0.0166
+     },
+     "gate_south": {
+      "recall": 0.006,
+      "precision": 0.1905,
+      "pass": false,
+      "why": "未达判据：recall 0.006 < 0.30；precision 0.1905 < 0.50"
+     },
+     "n_changed_vs_argmax": 9542,
+     "south_pred_needle_n": 21
+    },
+    "0.2": {
+     "all": {
+      "tag": "",
+      "n": 548474,
+      "n_ref_pure": 222761,
+      "needle": {
+       "precision": 0.7787,
+       "recall": 0.8891,
+       "f1": 0.8303,
+       "n_pred": 90404,
+       "n_ref": 79185,
+       "tp": 70401
+      },
+      "broad": {
+       "precision": 0.9667,
+       "recall": 0.7244,
+       "f1": 0.8282,
+       "n_pred": 107595,
+       "n_ref": 143576,
+       "tp": 104012
+      },
+      "macro_f1_2": 0.8293,
+      "pred_needle_share_of_forest": 0.4557,
+      "ref_needle_share_of_forest": 0.3555
+     },
+     "south": {
+      "tag": "",
+      "n": 85504,
+      "n_ref_pure": 40150,
+      "needle": {
+       "precision": 0.1625,
+       "recall": 0.0195,
+       "f1": 0.0349,
+       "n_pred": 80,
+       "n_ref": 666,
+       "tp": 13
+      },
+      "broad": {
+       "precision": 0.987,
+       "recall": 0.8134,
+       "f1": 0.8918,
+       "n_pred": 32538,
+       "n_ref": 39484,
+       "tp": 32116
+      },
+      "macro_f1_2": 0.4634,
+      "pred_needle_share_of_forest": 0.0025,
+      "ref_needle_share_of_forest": 0.0166
+     },
+     "gate_south": {
+      "recall": 0.0195,
+      "precision": 0.1625,
+      "pass": false,
+      "why": "未达判据：recall 0.0195 < 0.30；precision 0.1625 < 0.50"
+     },
+     "n_changed_vs_argmax": 18152,
+     "south_pred_needle_n": 80
+    },
+    "0.1": {
+     "all": {
+      "tag": "",
+      "n": 548474,
+      "n_ref_pure": 222761,
+      "needle": {
+       "precision": 0.6857,
+       "recall": 0.9155,
+       "f1": 0.7841,
+       "n_pred": 105721,
+       "n_ref": 79185,
+       "tp": 72495
+      },
+      "broad": {
+       "precision": 0.9839,
+       "recall": 0.6323,
+       "f1": 0.7699,
+       "n_pred": 92278,
+       "n_ref": 143576,
+       "tp": 90789
+      },
+      "macro_f1_2": 0.777,
+      "pred_needle_share_of_forest": 0.5329,
+      "ref_needle_share_of_forest": 0.3555
+     },
+     "south": {
+      "tag": "",
+      "n": 85504,
+      "n_ref_pure": 40150,
+      "needle": {
+       "precision": 0.1366,
+       "recall": 0.1306,
+       "f1": 0.1335,
+       "n_pred": 637,
+       "n_ref": 666,
+       "tp": 87
+      },
+      "broad": {
+       "precision": 0.9891,
+       "recall": 0.8012,
+       "f1": 0.8853,
+       "n_pred": 31981,
+       "n_ref": 39484,
+       "tp": 31633
+      },
+      "macro_f1_2": 0.5094,
+      "pred_needle_share_of_forest": 0.0195,
+      "ref_needle_share_of_forest": 0.0166
+     },
+     "gate_south": {
+      "recall": 0.1306,
+      "precision": 0.1366,
+      "pass": false,
+      "why": "未达判据：recall 0.1306 < 0.30；precision 0.1366 < 0.50"
+     },
+     "n_changed_vs_argmax": 35066,
+     "south_pred_needle_n": 646
+    }
+   },
+   "rule": "只在 argmax ∈ {31,32} 的森林点上按 P(needle) 绝对阈值改判；33 混交与非森林预测原样保留（避免阈值把混交一并清掉）",
+   "p_needle_ref_descriptive": {
+    "south_needle_mean": 0.0504,
+    "south_broad_mean": 0.0206,
+    "all_needle_mean": 0.667,
+    "all_broad_mean": 0.0976
+   }
+  },
+  "S3_south_only_model": {
+   "all_south": {
+    "tag": "",
+    "n": 85504,
+    "n_ref_pure": 40150,
+    "needle": {
+     "precision": null,
+     "recall": 0.0,
+     "f1": null,
+     "n_pred": 0,
+     "n_ref": 666,
+     "tp": 0
+    },
+    "broad": {
+     "precision": 0.9868,
+     "recall": 0.8016,
+     "f1": 0.8846,
+     "n_pred": 32076,
+     "n_ref": 39484,
+     "tp": 31651
+    },
+    "macro_f1_2": 0.8846,
+    "pred_needle_share_of_forest": 0.0,
+    "ref_needle_share_of_forest": 0.0166
+   },
+   "gate_south": {
+    "recall": 0.0,
+    "precision": null,
+    "pass": false,
+    "why": "未达判据：recall 0.0 < 0.30；precision None < 0.50"
+   },
+   "south_only_model": true,
+   "train_needle_n": 408,
+   "note": "南方内部 5 折 OOF；北方针叶不参与该模型",
+   "secs": 13.0,
+   "threshold_0.3": {
+    "all_south": {
+     "tag": "",
+     "n": 85504,
+     "n_ref_pure": 40150,
+     "needle": {
+      "precision": 1.0,
+      "recall": 0.0015,
+      "f1": 0.003,
+      "n_pred": 1,
+      "n_ref": 666,
+      "tp": 1
+     },
+     "broad": {
+      "precision": 0.9868,
+      "recall": 0.8016,
+      "f1": 0.8846,
+      "n_pred": 32075,
+      "n_ref": 39484,
+      "tp": 31651
+     },
+     "macro_f1_2": 0.4438,
+     "pred_needle_share_of_forest": 0.0,
+     "ref_needle_share_of_forest": 0.0166
+    },
+    "gate_south": {
+     "recall": 0.0015,
+     "precision": 1.0,
+     "pass": false,
+     "why": "未达判据：recall 0.0015 < 0.30"
+    }
+   },
+   "threshold_0.2": {
+    "all_south": {
+     "tag": "",
+     "n": 85504,
+     "n_ref_pure": 40150,
+     "needle": {
+      "precision": 0.25,
+      "recall": 0.0105,
+      "f1": 0.0202,
+      "n_pred": 28,
+      "n_ref": 666,
+      "tp": 7
+     },
+     "broad": {
+      "precision": 0.987,
+      "recall": 0.8011,
+      "f1": 0.8844,
+      "n_pred": 32048,
+      "n_ref": 39484,
+      "tp": 31630
+     },
+     "macro_f1_2": 0.4523,
+     "pred_needle_share_of_forest": 0.0009,
+     "ref_needle_share_of_forest": 0.0166
+    },
+    "gate_south": {
+     "recall": 0.0105,
+     "precision": 0.25,
+     "pass": false,
+     "why": "未达判据：recall 0.0105 < 0.30；precision 0.25 < 0.50"
+    }
+   }
+  }
+ },
+ "recommendation": {
+  "recommended": null,
+  "basis": "三方案均未满足 [recall≥0.30 且 precision≥0.50]",
+  "diagnosis": "南方真针叶绝对量 666（占南方纯林参考 1.66%）；FCS10 在南方的针叶是稀疏且与阔叶光谱高度重叠的小类，样本量与可分性双重不足"
+ },
+ "elapsed_min": 4.8
+}

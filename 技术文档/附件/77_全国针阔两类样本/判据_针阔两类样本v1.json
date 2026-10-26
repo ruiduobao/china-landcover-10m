@@ -1,0 +1,70 @@
+{
+  "name": "全国针叶/阔叶两类样本 v1（FCS10 主源，五省 76 瓦先行版）",
+  "version": "v1",
+  "frozen_at": "2026-10-17",
+  "spec_source": "技术文档/76_全国针阔两类样本生产实施规范.md（G1–G10）；技术文档/75（坡向伪影与 FCS10 纠偏）",
+  "frozen_before_run": true,
+  "coverage": "five_province_76tiles",
+  "inputs": {
+    "fcs10_tiles": "F:/lc_work/prod5p_2023/xcomp/ext_tiles/fcs10/{TILE}_fcs10.tif（76 瓦：川24/黑29/粤10/宁6/闽7；2°×2° / 22265² / EPSG:4326 / 原生 10m / nodata=0）",
+    "aef_2023": "F:/lc_work/年度子集_含稀有类/r7_train_2023.parquet（2,118,721 点，含 A00–A63）",
+    "aef_panel": "F:/lc_work/年度子集_含稀有类/r7_train_{2017..2024}.parquet",
+    "dem_1km": "F:/lc_work/v31_exp/data/eco_gate/_dem/srtm1000_chn.tif",
+    "dem_60m_tiles": "F:/lc_work/v31_exp/data/eco_gate/_dem/dem_{TILE}.tif（仅 24 川瓦，用作高分辨率坡向 OR 复核）",
+    "province": "F:/地理所/论文/中国土地覆盖数据_2017-2024/数据/边界/china_100000_full.json"
+  },
+  "label_rule": {
+    "needle_codes": [71, 72, 81, 82],
+    "broad_codes": [51, 52, 61, 62],
+    "mixed_codes": [91, 92],
+    "class2": {"31": "needle", "32": "broad", "33": "mixed"},
+    "fcs10_raw_kept": true,
+    "no_evergreen_deciduous_split": "按用户指令：只分针叶/阔叶；常绿/落叶仅保留 FCS10 原始码供后期回溯",
+    "no_fcs30d_cross_mapping": "禁止对 FCS10 套用 FCS30D 的奇偶交叉映射；51/52 同属 EBF，61/62 同属 DBF，71/72 同属 ENF，81/82 同属 DNF"
+  },
+  "sampling": {
+    "frame": "现有全国训练池 2023 年度子集（r7_train_2023）中落在 76 瓦内的点（694,985 点）——即采样框受训练池空间设计约束，非 FCS10 面积加权",
+    "stratification": "瓦片 × 类别（needle / broad / mixed 分别抽）",
+    "target_per_tile_per_class": 500,
+    "hard_cap_per_tile_per_class": 800,
+    "mixed_cap_per_tile": 100,
+    "declutter": "同一 0.01°×0.01° 格内每类最多 1 点（needle 与 broad 可同格，上限 2 点/格）",
+    "seed": 20261017,
+    "no_aspect_balancing": "抽样不做坡向配平（TRIM 式配平会使 G2 的 OR 检验变成循环论证）；坡向 OR 是抽样后测得的属性"
+  },
+  "exclusions": {
+    "non_forest": "FCS10 非针/阔/混交码（耕地/草地/灌丛/湿地/水体/不透水/裸地/冰雪）不进入样本",
+    "fcs10_missing": "code==0 或读取失败",
+    "mixed": "91/92 单列 mixed，不并入 needle/broad，不参与二分类训练",
+    "leakage": [
+      "validation_pool_v2.parquet 位置命中",
+      "五窗留出 eval_{2017..2024}_w{1..5}.parquet 位置命中",
+      "错位样本剔除清单.parquet（11,076 点）位置命中"
+    ],
+    "leakage_key": "位置键 round(lon,6),round(lat,6)（id 键跨命名空间会数字碰撞，禁用裸 id）"
+  },
+  "criteria": {
+    "G1_label_consistency": {"metric": "独立重读 FCS10（rasterio.sample 逐点，与瓦片窗口读不同代码路径）1000 审计点与已存 fcs10_raw 一致率", "threshold": ">=0.98"},
+    "G2_aspect_or": {"metric": "needle vs broad 阴阳坡 OR（阳=135–225°，阴=315–360∪0–45°，slope>5°，1 km DEM；另报 60 m DEM 川瓦与栅格口径复核）", "threshold": "[0.8, 1.25]"},
+    "G3_national_coverage": {"v1_actual": "76/76 瓦（五省）", "threshold_national": ">=90% 中国陆域 2°瓦（v2 全国版验收）"},
+    "G4_both_classes": {"metric": "省级单元同时含 needle 与 broad 的省数", "threshold_national": ">=28/34"},
+    "G5_panel_availability": {"metric": "每年可用样本点 / 2023 主样本", "threshold": ">=0.70 每年"},
+    "G6_panel_consistency": {"metric": "同一点在各森林年 needle/broad 标签一致率（非森林年除外）", "threshold": ">=0.98", "note": "v1 采用 2023 继承标签，一致率按构造=1.0；实际变异体现在 forest→nonforest 年"},
+    "G7_no_leakage": {"metric": "样本 ∩（validation_pool_v2 ∪ 五窗留出 ∪ 错位清单）", "threshold": "=0"},
+    "G8_hygiene": {"metric": "重复位置 / NaN / 越界坐标", "threshold": "=0"},
+    "G9_retrain_correction": {"note": "重训两臂对比由重训 agent 执行；本样本只提供标签"},
+    "G10_south_needle": {"metric": "粤/闽 针叶样本数与非零瓦数", "threshold": "须 >0（保留南方针叶可检出能力）"}
+  },
+  "tier_rule": {
+    "strong": "FCS10 森林码明确（needle/broad）+ 2023 AEF64 完整 + 8 年全部为森林（年度子集 class_new ∈ 森林码）",
+    "weak": "FCS10 森林码明确，但 ≥1 年非森林或 ≥1 年缺 AEF",
+    "mixed": "FCS10 91/92，单列，不并入两类"
+  },
+  "outputs": {
+    "master_2023": "labels/needle_broad_v1_2023.parquet",
+    "panel": "labels/needle_broad_v1_panel.parquet",
+    "class_map": "exp/two_class_retrain/needle_broad_map.json",
+    "stats": "labels/stats_v1.json",
+    "report": "labels/样本统计报告_v1.md"
+  }
+}

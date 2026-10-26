@@ -1,0 +1,157 @@
+{
+ "version": "v1-2026-10-14",
+ "arid_provs": [
+  "新疆维吾尔自治区",
+  "甘肃省",
+  "宁夏回族自治区",
+  "青海省",
+  "内蒙古自治区",
+  "西藏自治区"
+ ],
+ "classes": {
+  "草本沼泽": {
+   "n_delivered": 38360,
+   "n_del": 2225,
+   "rules": [
+    {
+     "reason": "BARE_LIKE_FLAT",
+     "expr": "(s2_ndvi_xia < 200) & (dw_bare >= 0.30)"
+    },
+    {
+     "reason": "WOODY_LIKE",
+     "expr": "(dw_trees_150 >= 0.30) | ((dw_trees_150 >= 0.15) & (s1_vh_djf >= -19.0))"
+    }
+   ]
+  },
+  "木本沼泽": {
+   "n_delivered": 10656,
+   "n_del": 1206,
+   "rules": [
+    {
+     "reason": "HERB_LIKE",
+     "expr": "(dw_trees_150 < 0.06) & ((s1_vh_djf.isna()) | (s1_vh_djf < -23.5))"
+    }
+   ]
+  },
+  "湖河滩地": {
+   "n_delivered": 26507,
+   "n_del": 1894,
+   "rules": [
+    {
+     "reason": "VEGETATED_LIKE",
+     "expr": "(s2_ndvi_xia >= 250) & ((dw_grass + dw_trees + dw_shrub) >= 0.15)"
+    },
+    {
+     "reason": "PERMANENT_WATER",
+     "expr": "(max_extent == 1) & (seasonality >= 10) & (dw_water >= 0.60)"
+    }
+   ]
+  },
+  "灌木_常绿": {
+   "n_delivered": 61751,
+   "n_del": 12486,
+   "rules": [
+    {
+     "reason": "FOREST_LIKE",
+     "expr": "(dw_trees >= 0.65)"
+    },
+    {
+     "reason": "GRASS_LIKE",
+     "expr": "(dw_grass >= 0.25) & (dw_trees < 0.20)"
+    }
+   ]
+  },
+  "灌木_落叶": {
+   "n_delivered": 113761,
+   "n_del": 7047,
+   "rules": [
+    {
+     "reason": "FOREST_LIKE",
+     "expr": "(dw_trees >= 0.50)"
+    },
+    {
+     "reason": "GRASS_LIKE",
+     "expr": "(dw_grass >= 0.30) & (dw_trees < 0.15)"
+    }
+   ]
+  },
+  "草地": {
+   "n_delivered": 170653,
+   "n_del": 585,
+   "rules": [
+    {
+     "reason": "SHRUB_FOREST_LIKE",
+     "expr": "(dw_trees >= 0.40) & (dw_grass < 0.15)"
+    },
+    {
+     "reason": "SHRUB_LIKE",
+     "expr": "(dw_shrub >= 0.45) & (dw_trees >= 0.25)"
+    }
+   ]
+  },
+  "乔灌园地": {
+   "n_delivered": 160931,
+   "n_del": 15005,
+   "rules": [
+    {
+     "reason": "CROP_LIKE",
+     "expr": "(dw_crops >= 0.40) & (dw_trees < 0.25)"
+    },
+    {
+     "reason": "NON_TREE_BARE_LIKE",
+     "expr": "(dw_trees < 0.15) & (s2_ndvi_xia < 400)"
+    }
+   ]
+  },
+  "裸地": {
+   "n_delivered": 222514,
+   "n_del": 33,
+   "rules": [
+    {
+     "reason": "VEGETATED_LIKE",
+     "expr": "(s2_ndvi_xia >= 250) & ((dw_grass + dw_shrub + dw_trees) >= 0.30)"
+    }
+   ]
+  },
+  "稀疏植被": {
+   "n_delivered": 47177,
+   "n_del": 3456,
+   "rules": [
+    {
+     "reason": "BARE_LIKE",
+     "expr": "(s2_ndvi_xia < 50) & (dw_bare >= 0.55) & (dw_shrub < 0.12)"
+    }
+   ]
+  },
+  "水体": {
+   "n_delivered": 67879,
+   "n_del": 0,
+   "rules": [
+    {
+     "reason": "NO_WATER_EVIDENCE",
+     "expr": "(max_extent == 0) & (dw_water < 0.30) & (seasonality <= 1)"
+    }
+   ]
+  },
+  "灌溉耕地": {
+   "n_delivered": 124533,
+   "n_del": 638,
+   "rules": [
+    {
+     "reason": "ARID_BARE_ANOMALY",
+     "expr": "(s2_ndvi_xia < 250) & (ct_prov in @ARID) & (@ARIDLON)"
+    }
+   ]
+  },
+  "草本旱地": {
+   "n_delivered": 203096,
+   "n_del": 5859,
+   "rules": [
+    {
+     "reason": "ARID_OASIS_ANOMALY",
+     "expr": "(s2_ndvi_xia >= 700) & (ct_prov in @ARID) & (@ARIDLON)"
+    }
+   ]
+  }
+ }
+}

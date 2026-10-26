@@ -1,0 +1,56 @@
+{
+ "exp_id": "G30N_seed7",
+ "seed": 7,
+ "account_id": "k3r6ncvd",
+ "region_bbox": [
+  97.97502595708085,
+  29.998160934830473,
+  98.0250621184063,
+  30.006515266972787
+ ],
+ "n_px": 51801,
+ "crsTransform": [
+  8.983152841195215e-05,
+  0.0,
+  97.97502595708085,
+  0.0,
+  -8.983152841195215e-05,
+  30.006515266972787
+ ],
+ "width": 557,
+ "height": 93,
+ "wedge_h_deg": 0.0037790844279044222,
+ "wedge_h_rows": 42.068575417910985,
+ "wedge_lens_px": 23951,
+ "wedge_lens_in_tile_px": 23951,
+ "evm_valid_px": 51801,
+ "evm_in_tile_valid_px": 40661,
+ "legacy_gap_px": 0,
+ "planar_gap_px": 0,
+ "restored_px": 0,
+ "legacy_nodata_px": 0,
+ "planar_nodata_px": 0,
+ "outside_wedge_both_px": 16710,
+ "outside_wedge_disagree_px": 0,
+ "outside_tile_px": 11140,
+ "outside_tile_evm_valid_px": 11140,
+ "outside_tile_legacy_nonzero_px": 11140,
+ "outside_tile_planar_nonzero_px": 11140,
+ "legacy_class_hist": {
+  "6": 1885,
+  "9": 5131,
+  "10": 3012,
+  "11": 30633
+ },
+ "planar_class_hist": {
+  "6": 1885,
+  "9": 5131,
+  "10": 3012,
+  "11": 30633
+ },
+ "req_s": 19.65,
+ "elapsed_s": 33.0,
+ "code_hash": "4ab897bdbe6544050ea932b34f0f80aa",
+ "outside_wedge_agree_rate": 1.0,
+ "wedge_restore_rate": 0.0
+}

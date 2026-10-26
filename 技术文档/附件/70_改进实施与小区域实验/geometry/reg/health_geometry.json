@@ -1,0 +1,41 @@
+{
+ "time": "2026-10-15 14:08:25",
+ "n": 3,
+ "rows": [
+  {
+   "acct": "eib2z5bs",
+   "ok": false,
+   "reason": "restricted-mode（非商业配额受限）",
+   "qdepth": null,
+   "n_assets": 69,
+   "dt_s": 25.6
+  },
+  {
+   "acct": "k3r6ncvd",
+   "ok": true,
+   "reason": "OK（50 资产 / 队列 0）",
+   "qdepth": 0,
+   "n_assets": 50,
+   "dt_s": 10.4,
+   "pool_readable": true,
+   "pool_reason": "type=TABLE"
+  },
+  {
+   "acct": "p2vlkaia",
+   "ok": true,
+   "reason": "OK（49 资产 / 队列 0）",
+   "qdepth": 0,
+   "n_assets": 49,
+   "dt_s": 8.9,
+   "pool_readable": true,
+   "pool_reason": "type=TABLE"
+  }
+ ],
+ "healthy": [
+  "k3r6ncvd",
+  "p2vlkaia"
+ ],
+ "chosen": "k3r6ncvd",
+ "pool_asset": "projects/leafy-environs-509005-n1/assets/prod2nd/smp2023v2_merged",
+ "note": "chosen 需 ok=true 且池资产可读；ID 记录不含任何密钥"
+}

@@ -1,0 +1,48 @@
+{
+ "schema": "label_repair_geom_registry/v1",
+ "experiments": {
+  "TRI_SC_32N": {
+   "exp_id": "TRI_SC_32N",
+   "owner": "geometry",
+   "stage": "doc72-8",
+   "limit_s": 1200.0,
+   "status": "done",
+   "rc": 0,
+   "timed_out": false,
+   "wall_s": 69.1,
+   "started_at": "2026-10-15T15:45:22",
+   "finished_at": "2026-10-15T15:46:31",
+   "log": "F:\\地理所\\论文\\中国土地覆盖数据_2017-2024\\代码\\12.盲判修复与小分类\\geometry\\logs\\TRI_SC_32N\\run.log",
+   "budget_ok": true
+  },
+  "TRI_GD_24N": {
+   "exp_id": "TRI_GD_24N",
+   "owner": "geometry",
+   "stage": "doc72-8",
+   "limit_s": 1200.0,
+   "status": "done",
+   "rc": 0,
+   "timed_out": false,
+   "wall_s": 102.9,
+   "started_at": "2026-10-15T15:49:34",
+   "finished_at": "2026-10-15T15:51:17",
+   "log": "F:\\地理所\\论文\\中国土地覆盖数据_2017-2024\\代码\\12.盲判修复与小分类\\geometry\\logs\\TRI_GD_24N\\run.log",
+   "budget_ok": true
+  },
+  "TRI_NX_38N": {
+   "exp_id": "TRI_NX_38N",
+   "owner": "geometry",
+   "stage": "doc72-8",
+   "limit_s": 1200.0,
+   "status": "done",
+   "rc": 0,
+   "timed_out": false,
+   "wall_s": 142.0,
+   "started_at": "2026-10-15T15:51:30",
+   "finished_at": "2026-10-15T15:53:52",
+   "log": "F:\\地理所\\论文\\中国土地覆盖数据_2017-2024\\代码\\12.盲判修复与小分类\\geometry\\logs\\TRI_NX_38N\\run.log",
+   "budget_ok": true
+  }
+ },
+ "updated_at": "2026-10-15T15:53:52"
+}

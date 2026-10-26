@@ -1,0 +1,81 @@
+{
+  "schema": "improve_pilot_selfcheck/v1",
+  "at": "2026-10-15T14:16:17",
+  "workspace": "F:\\lc_work\\improve_2023_pilot_20261015",
+  "checks": {
+    "prereg": {
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "n_errors": 0,
+      "n_warnings": 0
+    },
+    "atomic_write": {
+      "ok": true,
+      "path": "F:\\lc_work\\improve_2023_pilot_20261015\\control\\run_results\\_atomic_probe.json"
+    },
+    "single_instance_lock": {
+      "ok": true,
+      "acquire": true,
+      "contend_rejected": true,
+      "reacquire": true
+    },
+    "timeout_kill_tree": {
+      "ok": true,
+      "timed_out": true,
+      "duration_s": 3.48,
+      "killed_pids": [
+        22772
+      ],
+      "child_dead": true,
+      "only_own_child_killed": true,
+      "preexisting_python_pids": [
+        39132
+      ],
+      "preexisting_vanished_info_only": [],
+      "python_before": 1,
+      "python_after": 1,
+      "note": "硬判据=只终止自己的子进程（killed_pids 仅含该子进程）；preexisting_vanished_info_only 仅为参考，并发代理的短命进程可能自然退出"
+    },
+    "memory_guard": {
+      "ok": true,
+      "mem_killed": true,
+      "peak_rss_gb": 0.547,
+      "killed_pids": [
+        39648
+      ],
+      "child_dead": true,
+      "preexisting_now_dead": [],
+      "note": "只杀超内存的本实验子进程树"
+    },
+    "resources": {
+      "ok": true,
+      "cpu_count": 32,
+      "mem_total_gb": 68.46,
+      "mem_available_gb": 41.89,
+      "psutil_available": true,
+      "note": "全局 CPU≤15 / 内存≤10GB 为 runner 侧约束（n_jobs=10 + mem_cap_gb）"
+    },
+    "ns_exclude_synthetic": {
+      "ok": true,
+      "diff_ns_same_number_preserved": true,
+      "diff_ns_same_number_flagged": true,
+      "same_coordinate_still_excluded": true,
+      "note": "命名空间数值撞号保留 + 同坐标依旧排除（doc69 记录 4,238 个园地 uid）"
+    },
+    "runner_spec": {
+      "ok": true,
+      "errors": [],
+      "spec": "F:\\地理所\\论文\\中国土地覆盖数据_2017-2024\\代码\\11.改进实施与小区域实验\\control\\spec_template.json"
+    },
+    "deadline_reserve": {
+      "ok": true,
+      "status": "timeout",
+      "train_duration_s": 10.391,
+      "limit_s": 20,
+      "trigger_margin_s": 10,
+      "note": "train 在 limit−margin 前被终止，为终止+日志预留清理时间"
+    }
+  },
+  "all_ok": true
+}

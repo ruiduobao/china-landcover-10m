@@ -1,0 +1,50 @@
+{
+ "seed_set": [
+  7,
+  11,
+  23
+ ],
+ "limit_s": 1200.0,
+ "total_elapsed_s": 55.8,
+ "results": [
+  {
+   "exp_id": "G30N_v2_s7",
+   "seed": 7,
+   "evm_in_tile_valid_px": 40661,
+   "legacy_gap_px": 23394,
+   "planar_gap_px": 0,
+   "restored_px": 23394,
+   "wedge_restore_rate": 1.0,
+   "outside_wedge_agree_rate": 1.0,
+   "outside_tile_evm_valid_px": 11140,
+   "req_s": 3.52,
+   "elapsed_s": 13.2
+  },
+  {
+   "exp_id": "G30N_v2_s11",
+   "seed": 11,
+   "evm_in_tile_valid_px": 40661,
+   "legacy_gap_px": 23394,
+   "planar_gap_px": 0,
+   "restored_px": 23394,
+   "wedge_restore_rate": 1.0,
+   "outside_wedge_agree_rate": 1.0,
+   "outside_tile_evm_valid_px": 11140,
+   "req_s": 37.56,
+   "elapsed_s": 52.8
+  },
+  {
+   "exp_id": "G30N_v2_s23",
+   "seed": 23,
+   "evm_in_tile_valid_px": 40661,
+   "legacy_gap_px": 23394,
+   "planar_gap_px": 0,
+   "restored_px": 23394,
+   "wedge_restore_rate": 1.0,
+   "outside_wedge_agree_rate": 1.0,
+   "outside_tile_evm_valid_px": 11140,
+   "req_s": 1.99,
+   "elapsed_s": 55.8
+  }
+ ]
+}

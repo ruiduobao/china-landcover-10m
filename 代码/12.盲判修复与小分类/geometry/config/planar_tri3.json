@@ -1,0 +1,136 @@
+{
+  "schema": "planar_geom_config/v1",
+  "config_id": "planar_tri3",
+  "status": "REGISTERED_PRE_RUN (doc72 §8 几何协议冻结；真实请求前登记)",
+  "note": "三省南缘小幅几何扩大复验的可执行配置：川 T1207 32N / 粤 T1903 24N / 宁 T1610 38N 各 1 窗。由 g3_tri.py --config 实际读取。默认生产 c3 保持冻结，不改写；原训练池/资产只读。",
+  "based_on": {
+    "doc": "技术文档/72_盲判证据驱动样本修复与小分类实施协议.md",
+    "section": "§8 三省几何扩大验证",
+    "doc69_section": "§6.4 修复方案与验收门（边缘确定性扫描 ≥128 行/列带）",
+    "doc70_section": "§4.4 几何与连续制图 / §7 几何覆盖门",
+    "prior_evidence": "技术文档/71 §7（G-30N 平面几何工程覆盖修复 ACCEPT_EXPERIMENTAL, engineering only）",
+    "window_pick": "F:/lc_work/label_repair_2023_20261015/geometry/probe/window_pick.json"
+  },
+
+  "grid_rule": {
+    "tile_naming": "T<ix><iy>: x0_deg = 2*ix + 73, y0_deg = 2*iy + 18",
+    "crs": "EPSG:4326",
+    "px_deg": 8.983152841195215e-05,
+    "py_deg": 8.983152841195215e-05,
+    "align_to": "production asset affine (read per tile from ref_tif_for_grid header)",
+    "use_explicit_crsTransform": true,
+    "scale_must_be_null_when_crsTransform_set": true
+  },
+
+  "geometry": {
+    "plane_clip": true,
+    "plane_region": true,
+    "clip_style": "bbox",
+    "legacy_arm_for_contrast": "ee.Geometry.Rectangle([4 numbers]) -> GeometryConstructors.Polygon(numeric) -> server geodesic=true",
+    "planar_arm": "ee.Geometry.BBox(w,s,e,n) -> Polygon geodesic=false (client-side)",
+    "region_must_be_geometry_object": true,
+    "region_never_four_number_list": true,
+    "train_filter_bounds_geometry_unchanged": true,
+    "train_geometry_note": "训练 filterBounds 保持生产原几何（legacy）；改它属重训动作，须另立模型版本 —— 本配置**不改**"
+  },
+
+  "materialize_mask": true,
+  "materialize_mask_note": "ee.data.computePixels(GEO_TIFF) 不传递图像掩膜（G-30N 探针实测）→ 类别波段必须 .unmask(0, False) 显式填 0，并另出 legacy_mask 波段交叉核对；EVM 取 AEF64 共同 mask，不先错误裁剪",
+
+  "model": {
+    "fixed": "v2_train_original_geometry",
+    "pool_asset": "projects/leafy-environs-509005-n1/assets/prod2nd/smp2023v2_merged",
+    "aef_collection": "GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL",
+    "year": 2023,
+    "features": 64,
+    "n_train_limit": 20000,
+    "train_window_expand_deg": 2.0,
+    "sampler": "randomColumn('rc', seed).sort('rc').limit(20000)",
+    "rf": {"numberOfTrees": 100, "minLeafPopulation": 2, "maxNodes": 5000},
+    "class_map": "24 类紧凑码空间（第二轮池实际 23 类，缺类 8）"
+  },
+
+  "seeds": [7, 11, 23],
+  "deadline_s": 1200.0,
+  "deadline_note": "每 region 单元（3 seed 串行）≤1200s；父进程在首个 cloud 请求前起算，含等待/网络/下载/eval",
+  "request_timeout_s": 60.0,
+  "request_timeout_clip": "min(60, remaining-5) 秒；剩余<30s 放弃；setMaxRetries(0)+自管重试",
+  "no_batch": true,
+
+  "regions": [
+    {
+      "region": "SC_32N",
+      "prov": "川",
+      "tile_id": "T1207",
+      "tile_box": [97.0, 32.0, 99.0, 34.0],
+      "south_edge_lat": 32.0,
+      "ref_tif_for_grid": "F:/lc_work/prod2nd_2023/rasters_batch/T1207_10m.tif",
+      "train_window_box": [95.0, 30.0, 101.0, 36.0],
+      "c0": 18839, "r0": 22192, "ncol": 557, "nrow": 93,
+      "rows_in_tile": 73, "rows_outside_tile": 20,
+      "edge_row": 22264.13,
+      "region_bbox_deg": [98.69233071, 31.99817008, 98.74236687, 32.00652442],
+      "in_province_window_frac": 1.0,
+      "tile_nonzero_colfrac_mean": 1.0
+    },
+    {
+      "region": "GD_24N",
+      "prov": "粤",
+      "tile_id": "T1903",
+      "tile_box": [111.0, 24.0, 113.0, 26.0],
+      "south_edge_lat": 24.0,
+      "ref_tif_for_grid": "F:/lc_work/prod2nd_2023/rasters_batch/T1903_10m.tif",
+      "train_window_box": [109.0, 22.0, 115.0, 28.0],
+      "c0": 16036, "r0": 22192, "ncol": 557, "nrow": 93,
+      "rows_in_tile": 73, "rows_outside_tile": 20,
+      "edge_row": 22263.72,
+      "region_bbox_deg": [112.44050715, 23.99813349, 112.49054331, 24.00648782],
+      "in_province_window_frac": 1.0,
+      "tile_nonzero_colfrac_mean": 1.0
+    },
+    {
+      "region": "NX_38N",
+      "prov": "宁",
+      "tile_id": "T1610",
+      "tile_box": [105.0, 38.0, 107.0, 40.0],
+      "south_edge_lat": 38.0,
+      "ref_tif_for_grid": "F:/lc_work/prod2nd_2023/rasters_batch/T1610_10m.tif",
+      "train_window_box": [103.0, 36.0, 109.0, 42.0],
+      "c0": 15515, "r0": 22191, "ncol": 557, "nrow": 93,
+      "rows_in_tile": 73, "rows_outside_tile": 20,
+      "edge_row": 22263.44,
+      "region_bbox_deg": [106.39367747, 37.99819753, 106.44371364, 38.00655186],
+      "in_province_window_frac": 1.0,
+      "tile_nonzero_colfrac_mean": 1.0
+    }
+  ],
+
+  "target_metrics": [
+    "evm_in_tile_valid_px",
+    "legacy_gap_px",
+    "planar_gap_px",
+    "restored_px",
+    "wedge_restore_rate",
+    "common_valid_px",
+    "common_valid_disagree_px",
+    "outside_wedge_agree_rate",
+    "outside_tile_evm_valid_px",
+    "outside_tile_nonzero_px",
+    "planar_row_nodata_max",
+    "boundary_continuous"
+  ],
+  "expected_effect": "平面 clip 消除测地楔形 nodata（planar_gap_px=0）；共同有效域类码分歧=0；楔外/共同有效域类码一致率=1.0；瓦外对照行两臂均 nodata（EVM 有效单列）；自然缺测保留",
+
+  "NOT_ENABLED": {
+    "O_CAP_orchard_cap": false,
+    "F_VIEW_forest_filter": false,
+    "T_STRATA_terrain_strata": false,
+    "reason": "本配置仅启用平面几何工程；园地数量上限、森林 strict 视图、地形分层均未过改善门（doc71 §9.2），不得写入本配置。"
+  },
+
+  "deliverables": {
+    "palette_note": "单波段 legacy/planar 交付件写 photometric=PALETTE（g3_tri 直接写；g2_deliver_palette 再出一份修正件并逐像元校验）",
+    "multiband_note": "TRI_*_5band.tif 为 5 波段分析件（legacy/planar/legacy_mask/evm/expmask），不含调色板",
+    "no_overview_note": "小图无需概览；不调用 build_overviews"
+  }
+}

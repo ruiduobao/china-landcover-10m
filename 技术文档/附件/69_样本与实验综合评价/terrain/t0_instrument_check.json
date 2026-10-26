@@ -1,0 +1,47 @@
+{
+ "dem": "F:/lc_work/v31_exp/data/eco_gate/_dem/dem_T1508.tif",
+ "dem_shape_win": [
+  167,
+  167
+ ],
+ "win": [
+  103.8232,
+  34.146,
+  103.9132,
+  34.236
+ ],
+ "dem_res_deg": 0.0005389891704717129,
+ "lat_range": [
+  34.14631142230919,
+  34.2357836246075
+ ],
+ "sunny_shady_meter_correct": {
+  "sunny": 7453,
+  "shady": 6602,
+  "ratio_sunny_shady": 1.1289
+ },
+ "sunny_shady_unit_unconverted": {
+  "sunny": 8388,
+  "shady": 7369,
+  "ratio_sunny_shady": 1.1383
+ },
+ "sunny_shady_ref_gee30m": {
+  "sunny": 267939,
+  "shady": 246588,
+  "ratio_sunny_shady": 1.0866
+ },
+ "vs_gee_ref_10m": {
+  "n": 991871,
+  "median_abs_deg_diff": 9.13897705078125,
+  "frac_within_22.5deg": 0.8277326386193365,
+  "frac_within_45deg": 0.9479045158090115,
+  "mean_slope_deg_mine": 32.831004585444376,
+  "mean_slope_deg_unconverted": 89.99893188476562,
+  "note": "参考为 GEE 30m aspect 重采样10m（nearest）；本机为 60m 高程本地计算（米制换算），两者分辨率不同，一致性为量级校验而非逐像元等价"
+ },
+ "meter_vs_unconverted_same_grid": {
+  "median_abs_deg_diff": 3.699191738595374,
+  "frac_within_22.5deg": 1.0,
+  "note": "同一高程下，是否按纬度米制换算经纬格距对坡向角的敏感性"
+ }
+}

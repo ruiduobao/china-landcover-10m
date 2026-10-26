@@ -1,0 +1,113 @@
+{
+ "note": "分母对账（纯 numpy，无云端）；domain 差异 = 1 行(557px) 解析弧 vs 实际栅格化边界（像元中心约定 ~0.5px）",
+ "per_seed": {
+  "v2_s7": {
+   "denom_evm_in_tile": 40661,
+   "analytic_lens_in_tile": 23951,
+   "legacy_nodata_in_tile": 23394,
+   "planar_nodata_in_tile": 0,
+   "analytic_minus_actual_px": 557,
+   "common_both_positive": 17267,
+   "outside_wedge_denom": 16710,
+   "boundary_row_px": 557,
+   "disagree_outside_wedge": 0,
+   "disagree_boundary_row": 0,
+   "disagree_total": 0,
+   "analytic_lens_rows": [
+    22222,
+    22264
+   ],
+   "legacy_nodata_rows": [
+    22223,
+    22264
+   ],
+   "boundary_rows": [
+    22222
+   ],
+   "legacy_class_hist": {
+    "6": 1095,
+    "9": 2333,
+    "10": 1193,
+    "11": 12646
+   },
+   "planar_class_hist": {
+    "6": 1885,
+    "9": 5131,
+    "10": 3012,
+    "11": 30633
+   }
+  },
+  "v2_s11": {
+   "denom_evm_in_tile": 40661,
+   "analytic_lens_in_tile": 23951,
+   "legacy_nodata_in_tile": 23394,
+   "planar_nodata_in_tile": 0,
+   "analytic_minus_actual_px": 557,
+   "common_both_positive": 17267,
+   "outside_wedge_denom": 16710,
+   "boundary_row_px": 557,
+   "disagree_outside_wedge": 0,
+   "disagree_boundary_row": 0,
+   "disagree_total": 0,
+   "analytic_lens_rows": [
+    22222,
+    22264
+   ],
+   "legacy_nodata_rows": [
+    22223,
+    22264
+   ],
+   "boundary_rows": [
+    22222
+   ],
+   "legacy_class_hist": {
+    "6": 967,
+    "9": 2037,
+    "10": 1413,
+    "11": 12850
+   },
+   "planar_class_hist": {
+    "6": 1852,
+    "9": 4220,
+    "10": 3087,
+    "11": 31502
+   }
+  },
+  "v2_s23": {
+   "denom_evm_in_tile": 40661,
+   "analytic_lens_in_tile": 23951,
+   "legacy_nodata_in_tile": 23394,
+   "planar_nodata_in_tile": 0,
+   "analytic_minus_actual_px": 557,
+   "common_both_positive": 17267,
+   "outside_wedge_denom": 16710,
+   "boundary_row_px": 557,
+   "disagree_outside_wedge": 0,
+   "disagree_boundary_row": 0,
+   "disagree_total": 0,
+   "analytic_lens_rows": [
+    22222,
+    22264
+   ],
+   "legacy_nodata_rows": [
+    22223,
+    22264
+   ],
+   "boundary_rows": [
+    22222
+   ],
+   "legacy_class_hist": {
+    "6": 1028,
+    "9": 2391,
+    "10": 767,
+    "11": 13081
+   },
+   "planar_class_hist": {
+    "6": 2002,
+    "9": 4997,
+    "10": 2024,
+    "11": 31638
+   }
+  }
+ }
+}

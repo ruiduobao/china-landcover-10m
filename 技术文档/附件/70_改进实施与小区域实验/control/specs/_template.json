@@ -1,0 +1,57 @@
+{
+  "schema": "improve_pilot_spec/v1",
+  "exp_id": "O-SC1_H1_yuandi_cap_w2_s7",
+  "owner": "orchard",
+  "hypothesis": "H1",
+  "province": "四川",
+  "stage": "A",
+  "uses_rf": true,
+  "slot_wait_s": 1800,
+  "mem_cap_gb": 10,
+  "cpu_cap": 15,
+  "seeds": [7, 11, 23],
+  "limit_s": 1200,
+  "prep_cap_s": 1200,
+  "n_jobs": 10,
+  "arms": ["baseline_v2", "arm_O-CAP"],
+
+  "experiment_id": "O-SC1_H1_yuandi_cap_w2_s7",
+  "region_bbox": [105.9, 31.9, 106.4, 32.4],
+  "tile_id": "T1206",
+  "training_bbox": [103.9, 29.9, 108.4, 34.4],
+  "input_identity": "F:/lc_work/prod2nd_2023/data/train2023_v2.parquet",
+  "class_map_hash": "<v31_map.json sha256 前16位，注册时填>",
+  "candidate_rule": "O-CAP class2<=1%max200",
+  "n_train_limit": 20000,
+  "rf_params": {"n_trees": 100, "min_leaf": 2, "max_nodes": 5000, "seed": 7},
+  "deadline_s": 1200,
+  "development_ids": "<dev 空间块哈希清单路径>",
+  "confirmation_ids": "<confirmation 空间块哈希清单路径>",
+  "target_metrics": ["class4_F1", "class2_UA", "class2_PA", "OA24", "macro9", "source_stratified"],
+  "expected_effect": "减少园地先验导致的林耕替代；可能漏园地，需回归门",
+  "stop_rules": "TIMEOUT 或 macro9 非劣门/新退化门不过则拒绝采纳，保留基线",
+  "registered_at": "2026-10-15T00:00:00",
+
+  "note": "单次 invoke 只跑 1 个 (region,seed,arm) 组合；不要把一次实验拆成多次 invoke 规避 1200s",
+  "stages": {
+    "prepare": {
+      "cmd": ["python", "F:/lc_work/improve_2023_pilot_20261015/orchard/prep_view.py", "--tile", "T1206", "--seed", "7"],
+      "timeout_s": 1200,
+      "note": "数据准备：构建新实验视图/抽样，独立计时上报，不并入 1200s 窗口"
+    },
+    "train": {
+      "cmd": ["python", "F:/lc_work/improve_2023_pilot_20261015/orchard/train_rf.py", "--tile", "T1206", "--seed", "7", "--n-jobs", "10"],
+      "timeout_s": 900,
+      "note": "训练调用开始 = 1200s 窗口零点"
+    },
+    "infer": {
+      "cmd": ["python", "F:/lc_work/improve_2023_pilot_20261015/orchard/infer.py", "--tile", "T1206", "--seed", "7"],
+      "timeout_s": 600
+    },
+    "eval": {
+      "cmd": ["python", "F:/lc_work/improve_2023_pilot_20261015/orchard/eval.py", "--tile", "T1206", "--seed", "7"],
+      "timeout_s": 600,
+      "note": "eval 完成 = 1200s 窗口终点；deadline_window_s 必须 ≤ limit_s"
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "schema": "improve_pilot_prereg/v1",
+  "stage": "A",
+  "spec_doc": "技术文档/70_样本与分类改进实施方案及20分钟小区域实验规范.md",
+  "frozen_at": "2026-10-15",
+  "design": "local_single_factor",
+  "year": 2023,
+  "class_space": {
+    "code_space": "24类紧凑码空间",
+    "pool_classes_present": 23,
+    "missing_codes": [8],
+    "note": "第二轮池缺类8针阔混交林；所有评价用一致类别表，不再对新池套 30→24 映射"
+  },
+  "provinces": ["四川", "广东", "宁夏"],
+  "regions_planned": {
+    "O-SC1": "四川 w2 小区①",
+    "O-SC2": "四川 w2 小区②",
+    "O-GD": "广东 w3 小区",
+    "O-NX": "宁夏 w4 小区",
+    "T-SC": "四川有细DEM小区",
+    "G-30N": "四川约30°N南缘楔形小幅连续制图区"
+  },
+  "seeds": [7, 11, 23],
+  "limit_s": 1200,
+  "prep_cap_s": 1200,
+  "n_jobs": 10,
+  "cpu_cap": 15,
+  "mem_cap_gb": 10,
+  "n_train_limit": 20000,
+  "model": {
+    "type": "RandomForest",
+    "n_trees": 100,
+    "min_leaf": 2,
+    "max_nodes": 5000,
+    "features": "AEF64",
+    "class_weight": null,
+    "note": "sklearn RF 为本地筛选器，语义核对后使用；不声称与 GEE smileRF 等价"
+  },
+  "sampling": {
+    "max_points_per_window": 20000,
+    "window_expand_deg": 2.0,
+    "small_box_deg": [0.5, 1.0],
+    "geometry_box_deg": [0.02, 0.05],
+    "rng": "每臂每 seed 相同空间框、相同预测点集；本地固定 RNG 仅统计复现抽样机制，不是复现 GEE randomColumn 逐点选择",
+    "record": ["选中点ID", "候选池类别计数", "每类实际训练数", "来源回接率", "空间块分布"]
+  },
+  "candidate_rules": {
+    "O-CAP": {
+      "class_code": 2,
+      "fraction": 0.01,
+      "max_points": 200,
+      "rule": "局部 20000 点中类2上限 1%（最多200点），不足则保留全部；非园地按同一空间框与冻结种子补足总量",
+      "note": "有意改变类别先验；须评价园地遗漏与森林/耕地收益，不得声称只提高标签质量；不搜索多比例挑高分"
+    },
+    "F-VIEW": {
+      "rule": "森林 clean/strict 或旧全量视图保持每类相同抽样数，非森林不变；strict 不足时记录不足并停止该臂"
+    },
+    "T-STRATA": {
+      "rule": "同每类 count，在可用 DEM 支持域内按高程带与坡向分层；不以 OR 下降当改善，不强制阴阳坡比=1"
+    }
+  },
+  "holdout": {
+    "spatial_pool": "validation_pool_v2.parquet (25 km 块留出)",
+    "fixed_windows": ["eval_w1", "eval_w2", "eval_w3", "eval_w4", "eval_w5"],
+    "split": {
+      "method": "0.25°或0.5°空间块按稳定哈希固定分组",
+      "target": "约60%开发 / 40%确认",
+      "rule": "不为凑比例打散同块；不复制稀少确认点；样本不足则报告支持不足"
+    },
+    "namespace_rule": "统一 sample_uid=(dataset_namespace, original_id, year) + 原生像元/坐标 + 保留空间块；园地自有 uid 不得因数字相同当同一母库点",
+    "eval_point_set": "各臂参考ID、类表、无数据规则完全一致",
+    "source_stratified": ["全点", "fcs10系", "非fcs10系"],
+    "note": "五窗为多轮使用的教师标签开发集，非新独立真值；确认集不用于调阈值或挑臂，但不称恢复为最终盲测"
+  },
+  "decision_rules": {
+    "timing": {"window_s": 1200, "rule": "训练开始至评价与本实验结果落盘 ≤1200s；有监督进程日志", "fail": "标 TIMEOUT 拒绝采纳；缩规模需新注册"},
+    "leakage_gate": {"rule": "ID命名空间、位置/像元、保留块排除检查通过", "fail": "停评价，修bug留痕重跑"},
+    "same_point": {"rule": "各臂参考ID、类别表一致；miss 分开", "fail": "分母不一致先分解或重算，不报表面增益"},
+    "group_non_inferiority": {
+      "metric": "macro9",
+      "point_estimate_pp": -1.0,
+      "ci_lower_pp": -2.0,
+      "method": "配对预测差空间块 bootstrap 95% 区间（0.5°块起步，另作块尺度敏感性）",
+      "fail_action": "不以单类增益补偿整体回归；省间差值>2pp亮异质性警旗"
+    },
+    "target_class_improvement": {
+      "delta_f1": 0.03,
+      "require_ci_supports_direction": true,
+      "fail_action": "不宣称达到改善，保留为线索或拒绝；不降低门槛"
+    },
+    "class_level_min_n": 30,
+    "class_level_rule": "有效参考 n<30 的类只作诊断，不作类级达标声明",
+    "new_regression": {
+      "delta_f1": -0.05,
+      "rule": "有充分参考的其他类不得出现可确认的 ΔF1 ≤ -0.05 退化",
+      "fail_action": "拒绝该区域/配置采纳，定位机制，不以总OA对冲"
+    },
+    "multi_seed": {
+      "min_paired_seeds": 3,
+      "critical_seeds": 5,
+      "rule": "每臂相同 seed、相同预测点；跨种子波动与空间抽样CI分别报告，不混为同一统计量"
+    },
+    "uncertainty": {
+      "block_bootstrap": true,
+      "record": ["有效块数", "重采样次数", "三种子均值", "三种子离散度"],
+      "rule": "少于30个有效空间块时 CI 仅作该框描述，不称省域泛化"
+    }
+  },
+  "acceptance_grades": ["ACCEPT_EXPERIMENTAL", "PROMISING", "REJECT", "TIMEOUT", "BLOCKED"],
+  "dev_not_independent": true,
+  "holdout_frozen": true,
+  "confirmation_single_use": true,
+  "acceptance_discipline": "只采纳达到预注册改善门且未引入明显退化的方案；未过门保持基线；所有失败与超时保留；不强改数据、不删不利参考点、不反复窥视确认集",
+  "engineering_scope": {
+    "no_gee_fullscale": true,
+    "no_motherlib_change": true,
+    "no_overwrite_delivery": true,
+    "original_outputs_readonly": true
+  },
+  "notes": [
+    "首轮约 ≤54 次局部 RF 拟合；不为试高总分无限新增阈值",
+    "工程覆盖改善与分类标签一致率改善分别验收，均不外推为独立省域真实精度",
+    "GEE 仅由几何实验子 agent 独占一个健康账号；RF 本地一次只跑一个重活"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+ "S1_real_overlap_1px": {
+  "zero_rows": [],
+  "overlap_row_value": 7,
+  "note": "1 像元重叠 + round：重叠行由先布放（北瓦 7）胜；无零覆盖行"
+ },
+ "S2_floor_offby1": {
+  "zero_rows": [
+   59
+  ],
+  "note": "若布放用 floor 而非 round（或相位非整）→ 恰好 1 行零覆盖；c5 build_placements 用 round+exact 门 + qa_identity 回归拦截（L167-185/L291-313）"
+ },
+ "S3_source_nodata_edge": {
+  "zero_rows": [
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58
+  ],
+  "lost_px": 1440,
+  "note": "重叠仅 1 行 → 拼接只能补 1 行，源端 25 行 nodata 中 24 行永久为空；证明必须源端重导，不能邻行填"
+ },
+ "S4_order_reversed": {
+  "zero_rows": [],
+  "overlap_row_value": 3,
+  "note": "覆盖与顺序无关；仅重叠行归属变化（先布放者胜 → 接缝带类值随布放顺序）"
+ },
+ "_summary": {
+  "S1_pass": true,
+  "S2_reproduces_1row_bug": true,
+  "S3_mosaic_cannot_heal": true,
+  "S4_coverage_order_invariant": true
+ }
+}

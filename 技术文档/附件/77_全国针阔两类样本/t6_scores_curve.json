@@ -1,0 +1,44 @@
+{
+ "auc_south": 0.6992,
+ "auc_all": 0.9495,
+ "quantile_curve": [
+  {
+   "recall_target": 0.05,
+   "thr": 0.1493,
+   "precision": 0.1589,
+   "n_pred": 214
+  },
+  {
+   "recall_target": 0.1,
+   "thr": 0.1154,
+   "precision": 0.1466,
+   "n_pred": 457
+  },
+  {
+   "recall_target": 0.2,
+   "thr": 0.0798,
+   "precision": 0.1245,
+   "n_pred": 1076
+  },
+  {
+   "recall_target": 0.3,
+   "thr": 0.0597,
+   "precision": 0.1008,
+   "n_pred": 1984
+  },
+  {
+   "recall_target": 0.5,
+   "thr": 0.0319,
+   "precision": 0.0542,
+   "n_pred": 6140
+  },
+  {
+   "recall_target": 0.7,
+   "thr": 0.0164,
+   "precision": 0.0274,
+   "n_pred": 16984
+  }
+ ],
+ "p_mean_south_needle": 0.0504,
+ "p_mean_south_broad": 0.0206
+}

@@ -1,0 +1,255 @@
+{
+ "pairwise_leaf_agreement": {
+  "label__modis": {
+   "n_pairs": 153391,
+   "agree_rate": 0.6542,
+   "both_needle": 10347,
+   "both_broad": 90008
+  },
+  "label__fcs10": {
+   "n_pairs": 217218,
+   "agree_rate": 0.8025,
+   "both_needle": 69115,
+   "both_broad": 105204
+  },
+  "modis__fcs10": {
+   "n_pairs": 84976,
+   "agree_rate": 0.7408,
+   "both_needle": 6098,
+   "both_broad": 56848
+  }
+ },
+ "vote_strict": {
+  "n_decided": 62946,
+  "needle": 6098,
+  "broad": 56848,
+  "pct_of_all": 13.5
+ },
+ "vote_clean": {
+  "n_decided": 263603,
+  "needle": 70495,
+  "broad": 193108,
+  "pct_of_all": 56.55
+ },
+ "fcs10_only": {
+  "n_decided": 217218,
+  "needle": 80099,
+  "broad": 137119,
+  "pct_of_all": 46.6
+ },
+ "vote_strict_vs_pool_label": {
+  "n": 62946,
+  "agree": 0.9956
+ },
+ "vote_clean_vs_pool_label": {
+  "n": 263603,
+  "agree": 0.813
+ },
+ "fcs10_only_vs_pool_label": {
+  "n": 217218,
+  "agree": 0.8585
+ },
+ "by_climate_zone": {
+  "vote_strict": {
+   "z1": {
+    "n": 14935,
+    "needle": 16,
+    "needle_pct": 0.11
+   },
+   "z2": {
+    "n": 7509,
+    "needle": 110,
+    "needle_pct": 1.46
+   },
+   "z3": {
+    "n": 7436,
+    "needle": 966,
+    "needle_pct": 12.99
+   },
+   "z4": {
+    "n": 5526,
+    "needle": 1601,
+    "needle_pct": 28.97
+   },
+   "z5": {
+    "n": 27528,
+    "needle": 3405,
+    "needle_pct": 12.37
+   },
+   "z9": {
+    "n": 12,
+    "needle": 0,
+    "needle_pct": 0.0
+   }
+  },
+  "vote_clean": {
+   "z1": {
+    "n": 52630,
+    "needle": 1575,
+    "needle_pct": 2.99
+   },
+   "z2": {
+    "n": 40527,
+    "needle": 4637,
+    "needle_pct": 11.44
+   },
+   "z3": {
+    "n": 37480,
+    "needle": 10194,
+    "needle_pct": 27.2
+   },
+   "z4": {
+    "n": 20775,
+    "needle": 7430,
+    "needle_pct": 35.76
+   },
+   "z5": {
+    "n": 112098,
+    "needle": 46654,
+    "needle_pct": 41.62
+   },
+   "z9": {
+    "n": 93,
+    "needle": 5,
+    "needle_pct": 5.38
+   }
+  },
+  "fcs10_only": {
+   "z1": {
+    "n": 36320,
+    "needle": 1645,
+    "needle_pct": 4.53
+   },
+   "z2": {
+    "n": 30587,
+    "needle": 4349,
+    "needle_pct": 14.22
+   },
+   "z3": {
+    "n": 27288,
+    "needle": 6343,
+    "needle_pct": 23.24
+   },
+   "z4": {
+    "n": 14445,
+    "needle": 6565,
+    "needle_pct": 45.45
+   },
+   "z5": {
+    "n": 108492,
+    "needle": 61192,
+    "needle_pct": 56.4
+   },
+   "z9": {
+    "n": 86,
+    "needle": 5,
+    "needle_pct": 5.81
+   }
+  }
+ },
+ "aspect_or": {
+  "pool_ENF_vs_EBF": {
+   "n": 228844,
+   "n_a": 49722,
+   "n_b": 61824,
+   "a_shade": 39380,
+   "a_sun": 10342,
+   "b_shade": 33527,
+   "b_sun": 28297,
+   "or_raw": 3.2138,
+   "mh_or": 4.638,
+   "n_strata": 246
+  },
+  "vote_strict_N_vs_B": {
+   "n": 228844,
+   "n_a": 3170,
+   "n_b": 26168,
+   "a_shade": 1420,
+   "a_sun": 1750,
+   "b_shade": 14723,
+   "b_sun": 11445,
+   "or_raw": 0.6308,
+   "mh_or": 1.0777,
+   "n_strata": 20
+  },
+  "vote_strict_ENF_vs_EBF_phenoE": {
+   "n": 90791,
+   "n_a": 2652,
+   "n_b": 9535,
+   "a_shade": 1033,
+   "a_sun": 1619,
+   "b_shade": 6114,
+   "b_sun": 3421,
+   "or_raw": 0.357,
+   "mh_or": 0.3805,
+   "n_strata": 10
+  },
+  "vote_clean_N_vs_B": {
+   "n": 228844,
+   "n_a": 35345,
+   "n_b": 91540,
+   "a_shade": 23410,
+   "a_sun": 11935,
+   "b_shade": 55275,
+   "b_sun": 36265,
+   "or_raw": 1.2869,
+   "mh_or": 1.9243,
+   "n_strata": 207
+  },
+  "vote_clean_ENF_vs_EBF_phenoE": {
+   "n": 90791,
+   "n_a": 15484,
+   "n_b": 37330,
+   "a_shade": 8204,
+   "a_sun": 7280,
+   "b_shade": 23100,
+   "b_sun": 14230,
+   "or_raw": 0.6942,
+   "mh_or": 1.0791,
+   "n_strata": 133
+  },
+  "fcs10_only_N_vs_B": {
+   "n": 228844,
+   "n_a": 40121,
+   "n_b": 63254,
+   "a_shade": 28167,
+   "a_sun": 11954,
+   "b_shade": 35953,
+   "b_sun": 27301,
+   "or_raw": 1.7892,
+   "mh_or": 2.4877,
+   "n_strata": 146
+  },
+  "fcs10_only_ENF_vs_EBF_phenoE": {
+   "n": 90791,
+   "n_a": 13044,
+   "n_b": 25507,
+   "a_shade": 7295,
+   "a_sun": 5749,
+   "b_shade": 15020,
+   "b_sun": 10487,
+   "or_raw": 0.886,
+   "mh_or": 1.4679,
+   "n_strata": 84
+  }
+ },
+ "strict_minus_fcs10": {
+  "n_both": 62946,
+  "same": 62946,
+  "same_pct": 100.0,
+  "strict_only_n": 0
+ },
+ "strict_fcs10_missing_share": 0.0,
+ "strict_vote_file": {
+  "path": "F:/lc_work/nb_national_2026/labels/methods\\strict_vote.parquet",
+  "n": 62946
+ },
+ "strict_class_counts": {
+  "0": 1220,
+  "4": 21785,
+  "5": 33991,
+  "6": 5040,
+  "7": 910
+ },
+ "n_total": 466135
+}

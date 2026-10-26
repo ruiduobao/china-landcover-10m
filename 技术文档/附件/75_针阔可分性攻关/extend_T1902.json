@@ -1,0 +1,39 @@
+{
+ "tile": "T1902",
+ "name": "粤 粤北",
+ "n": 9328,
+ "fcs10_cover_pct": 100.0,
+ "n_forest": 3159,
+ "n_relab": 3138,
+ "seeds": [
+  7,
+  11,
+  23
+ ],
+ "arms": {
+  "armA": {
+   "train_label_forest4_macro_f1": 0.4395,
+   "needle_precision_vs_FCS10": 0.093,
+   "needle_recall_vs_FCS10": 0.8006,
+   "ENF_precision_vs_FCS10": 0.093,
+   "ENF_recall_vs_FCS10": 0.8167,
+   "EBF_precision_vs_FCS10": 0.9598,
+   "EBF_recall_vs_FCS10": 0.5744,
+   "enf_share_of_forest_pred": 0.2596,
+   "n_ref_enf": 100.0,
+   "or_enf_ebf_median": 0.689
+  },
+  "armB": {
+   "train_label_forest4_macro_f1": 0.2627,
+   "needle_precision_vs_FCS10": 0.5,
+   "needle_recall_vs_FCS10": 0.0065,
+   "ENF_precision_vs_FCS10": 0.5,
+   "ENF_recall_vs_FCS10": 0.0067,
+   "EBF_precision_vs_FCS10": 0.9451,
+   "EBF_recall_vs_FCS10": 0.7729,
+   "enf_share_of_forest_pred": 0.0004,
+   "n_ref_enf": 100.0,
+   "or_enf_ebf_median": null
+  }
+ }
+}

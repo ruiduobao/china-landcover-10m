@@ -1,0 +1,37 @@
+{
+ "tile": "T1609",
+ "name": "宁 贺兰山南",
+ "n": 4054,
+ "fcs10_cover_pct": 100.0,
+ "n_forest": 90,
+ "n_relab": 65,
+ "seeds": [
+  7,
+  11,
+  23
+ ],
+ "arms": {
+  "armA": {
+   "train_label_forest4_macro_f1": 0.3964,
+   "needle_precision_vs_FCS10": 1.0,
+   "needle_recall_vs_FCS10": 0.3333,
+   "ENF_precision_vs_FCS10": 0.6321,
+   "ENF_recall_vs_FCS10": 0.5333,
+   "EBF_recall_vs_FCS10": 0.0,
+   "enf_share_of_forest_pred": 1.0,
+   "n_ref_enf": 10.0,
+   "or_enf_ebf_median": null
+  },
+  "armB": {
+   "train_label_forest4_macro_f1": 0.3761,
+   "needle_precision_vs_FCS10": 0.9445,
+   "needle_recall_vs_FCS10": 0.4267,
+   "ENF_precision_vs_FCS10": 0.7214,
+   "ENF_recall_vs_FCS10": 0.6,
+   "EBF_recall_vs_FCS10": 0.0,
+   "enf_share_of_forest_pred": 1.0,
+   "n_ref_enf": 10.0,
+   "or_enf_ebf_median": null
+  }
+ }
+}

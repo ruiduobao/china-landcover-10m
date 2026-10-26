@@ -1,0 +1,11 @@
+{
+ "conclusion": "QC_GATE_IMPOSSIBLE_TO_PASS",
+ "n_planned": 149,
+ "n_completed": 87,
+ "same": 28,
+ "diff": 32,
+ "three_state_rate": 0.4667,
+ "gate": 0.9,
+ "best_case_rate": 0.7377,
+ "note": "两位独立判读者（与首判无上下文关联、互不可见）对同一批 10m 无日期影像的结构判读一致率仅 0.467；按此速率，即使剩余点全部一致总上限 0.738 < 0.90 → 判读证据不可复现，不能生成合格修复标签"
+}

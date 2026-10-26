@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-15T14:48:29",
+  "backups": [
+    {
+      "dest": "F:/地理所/论文/中国土地覆盖数据_2017-2024/技术文档/附件/70_改进实施与小区域实验/terrain/RESULTS_FVIEW_G2.md",
+      "old_sha256": "5ce6f0bd9fe7f7a39a3830847ee1a47a8bb0f391b9314e3e7fbdf5c81eb5a485",
+      "backup": "F:\\lc_work\\improve_2023_pilot_20261015\\audit\\previous_version\\RESULTS_FVIEW_G2_prev.md"
+    },
+    {
+      "dest": "F:/地理所/论文/中国土地覆盖数据_2017-2024/代码/11.改进实施与小区域实验/terrain/t4_fview_prep.py",
+      "old_sha256": "24f234d31143f224841e944f4d2e7cf6e512d97cbf0718dd4e82e6e5a09c5443",
+      "backup": "F:\\lc_work\\improve_2023_pilot_20261015\\audit\\previous_version\\t4_fview_prep_prev.py"
+    }
+  ]
+}

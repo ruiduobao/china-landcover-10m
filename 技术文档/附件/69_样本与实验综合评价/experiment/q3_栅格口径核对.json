@@ -1,0 +1,119 @@
+{
+ "川": {
+  "agree_full_recalc": 0.744914,
+  "agree_full_json": 0.744914,
+  "core_agree": 0.9527,
+  "core_cover": 0.7078,
+  "s_region_cover": 0.2922,
+  "s_region_agree": 0.2417,
+  "changed_share_involving_S": 0.8687,
+  "changed_share_not_involving_S": 0.1313,
+  "nons_changed_share_of_common": 0.0335,
+  "nons_top5": [
+   [
+    "4 常绿阔叶林→6 常绿针叶林",
+    39908887
+   ],
+   [
+    "4 常绿阔叶林→5 落叶阔叶林",
+    39823274
+   ],
+   [
+    "3 灌溉耕地→1 草本旱地",
+    20466276
+   ],
+   [
+    "6 常绿针叶林→4 常绿阔叶林",
+    17376788
+   ],
+   [
+    "5 落叶阔叶林→4 常绿阔叶林",
+    14937123
+   ]
+  ],
+  "rep_core": 0.9527,
+  "rep_share": 0.8687,
+  "core_dev": -0.0,
+  "share_dev": -0.0,
+  "km2_per_px": 8.573e-05,
+  "mask_note": "core=两侧均∉{2,9,10}（占共同域 core_cover）；S 区=任一侧∈{2,9,10}；核心区数字只说明剩余类别稳定，不等于全图变化均为标签口径置换（选择性条件化）"
+ },
+ "粤": {
+  "agree_full_recalc": 0.669903,
+  "agree_full_json": 0.669903,
+  "core_agree": 0.9454,
+  "core_cover": 0.6927,
+  "s_region_cover": 0.3073,
+  "s_region_agree": 0.0489,
+  "changed_share_involving_S": 0.8853,
+  "changed_share_not_involving_S": 0.1147,
+  "nons_changed_share_of_common": 0.0378,
+  "nons_top5": [
+   [
+    "4 常绿阔叶林→6 常绿针叶林",
+    11156403
+   ],
+   [
+    "3 灌溉耕地→1 草本旱地",
+    10918642
+   ],
+   [
+    "6 常绿针叶林→4 常绿阔叶林",
+    9518267
+   ],
+   [
+    "1 草本旱地→3 灌溉耕地",
+    6072989
+   ],
+   [
+    "19 海岸盐沼→15 草本沼泽",
+    4723241
+   ]
+  ],
+  "rep_core": 0.9454,
+  "rep_share": 0.8853,
+  "core_dev": -0.0,
+  "share_dev": 0.0,
+  "km2_per_px": 9.139e-05,
+  "mask_note": "core=两侧均∉{2,9,10}（占共同域 core_cover）；S 区=任一侧∈{2,9,10}；核心区数字只说明剩余类别稳定，不等于全图变化均为标签口径置换（选择性条件化）"
+ },
+ "宁": {
+  "agree_full_recalc": 0.665838,
+  "agree_full_json": 0.665838,
+  "core_agree": 0.9807,
+  "core_cover": 0.5651,
+  "s_region_cover": 0.4349,
+  "s_region_agree": 0.2567,
+  "changed_share_involving_S": 0.9674,
+  "changed_share_not_involving_S": 0.0326,
+  "nons_changed_share_of_common": 0.0109,
+  "nons_top5": [
+   [
+    "11 草地→1 草本旱地",
+    1593453
+   ],
+   [
+    "11 草地→22 裸地",
+    1173805
+   ],
+   [
+    "1 草本旱地→11 草地",
+    922251
+   ],
+   [
+    "1 草本旱地→21 不透水面",
+    790019
+   ],
+   [
+    "1 草本旱地→3 灌溉耕地",
+    560401
+   ]
+  ],
+  "rep_core": 0.9807,
+  "rep_share": 0.9674,
+  "core_dev": 0.0,
+  "share_dev": 0.0,
+  "km2_per_px": 7.942e-05,
+  "mask_note": "core=两侧均∉{2,9,10}（占共同域 core_cover）；S 区=任一侧∈{2,9,10}；核心区数字只说明剩余类别稳定，不等于全图变化均为标签口径置换（选择性条件化）"
+ }
+}

@@ -1,0 +1,1376 @@
+{
+ "generated_at": "2026-10-25 23:03:07",
+ "script": "F:\\lc_work\\nb_national_2026\\forest6\\code\\f7_final.py",
+ "rule_source": "技术文档/84 §4.2/§4.4 + 任务书 B1–B5",
+ "aef_fetch": {
+  "parts": 87,
+  "rows": 70000,
+  "aef_complete": 70000,
+  "aef_missing": 0,
+  "success_rate": 1.0
+ },
+ "mixed_tiers": {
+  "counts": {
+   "C": 26893,
+   "A": 22938,
+   "B": 20169
+  },
+  "convention": "A=[0.25,0.75) B=[0.10,0.25)∪[0.75,0.90) C=<0.10∪>=0.90（半开；复现任务书 22,938/20,169/26,893。恰在 0.75 的 19 点归 B，恰在 0.25 的 10 点归 A）",
+  "by_class": {
+   "45": {
+    "A": 12080,
+    "B": 10346,
+    "C": 12574
+   },
+   "46": {
+    "A": 10858,
+    "B": 9823,
+    "C": 14319
+   }
+  },
+  "has_mixedcode": 222,
+  "v30_is_mixed": 670,
+  "by_tier_flags": {
+   "A": {
+    "n": 22938,
+    "has_mixedcode": 102,
+    "v30_is_mixed": 246
+   },
+   "B": {
+    "n": 20169,
+    "has_mixedcode": 75,
+    "v30_is_mixed": 168
+   },
+   "C": {
+    "n": 26893,
+    "has_mixedcode": 45,
+    "v30_is_mixed": 256
+   }
+  }
+ },
+ "pure_tiers": {
+  "total": 456765,
+  "P_A": 327086,
+  "P_B": 129679,
+  "south_needle_41_42": 14484,
+  "high_elev_enf": 12155,
+  "by_class": {
+   "41": {
+    "total": 138841,
+    "P_A": 103246,
+    "P_B": 35595,
+    "south_needle": 14484
+   },
+   "42": {
+    "total": 58277,
+    "P_A": 34593,
+    "P_B": 23684,
+    "south_needle": 0
+   },
+   "43": {
+    "total": 123796,
+    "P_A": 103395,
+    "P_B": 20401,
+    "south_needle": 0
+   },
+   "44": {
+    "total": 135851,
+    "P_A": 85852,
+    "P_B": 49999,
+    "south_needle": 0
+   }
+  }
+ },
+ "legacy_mixed_500m": {
+  "n": 9301,
+  "na": 0,
+  "counts": {
+   "A": 3907,
+   "B": 3152,
+   "C": 2242
+  },
+  "note": "forest6_v1 无 v30_group 列 → 这些点 v30_is_mixed 置 0（缺列，非真值 0）；has_mixedcode 用 legacy_mixed（母库 91/92 码）代替"
+ },
+ "core": {
+  "rows": 96845,
+  "by_class": {
+   "41": 20000,
+   "42": 15000,
+   "43": 15000,
+   "44": 20000,
+   "45": 13776,
+   "46": 13069
+  },
+  "by_tier": {
+   "A": 96845
+  },
+  "by_class_tier": {
+   "41": {
+    "A": 20000
+   },
+   "42": {
+    "A": 15000
+   },
+   "43": {
+    "A": 15000
+   },
+   "44": {
+    "A": 20000
+   },
+   "45": {
+    "A": 13776
+   },
+   "46": {
+    "A": 13069
+   }
+  },
+  "by_eco": {
+   "东北": {
+    "41": 4714,
+    "42": 7553,
+    "43": 0,
+    "44": 5113,
+    "45": 2882,
+    "46": 3667
+   },
+   "华北": {
+    "41": 3009,
+    "42": 5003,
+    "43": 0,
+    "44": 3119,
+    "45": 2710,
+    "46": 3122
+   },
+   "西北": {
+    "41": 2028,
+    "42": 2444,
+    "43": 241,
+    "44": 2072,
+    "45": 1915,
+    "46": 1967
+   },
+   "青藏": {
+    "41": 2028,
+    "42": 0,
+    "43": 160,
+    "44": 11,
+    "45": 866,
+    "46": 730
+   },
+   "西南": {
+    "41": 3141,
+    "42": 0,
+    "43": 4317,
+    "44": 3064,
+    "45": 3947,
+    "46": 2663
+   },
+   "华中": {
+    "41": 3071,
+    "42": 0,
+    "43": 4524,
+    "44": 3069,
+    "45": 644,
+    "46": 465
+   },
+   "华东": {
+    "41": 2009,
+    "42": 0,
+    "43": 2770,
+    "44": 2005,
+    "45": 498,
+    "46": 295
+   },
+   "华南": {
+    "41": 0,
+    "42": 0,
+    "43": 2988,
+    "44": 1547,
+    "45": 314,
+    "46": 160
+   }
+  },
+  "by_prov": {
+   "黑龙江省": 14805,
+   "内蒙古自治区": 11576,
+   "四川省": 6761,
+   "云南省": 6214,
+   "吉林省": 6002,
+   "新疆维吾尔自治区": 4435,
+   "湖南省": 3452,
+   "浙江省": 3404,
+   "陕西省": 3334,
+   "西藏自治区": 3185,
+   "湖北省": 3167,
+   "山西省": 3152,
+   "辽宁省": 3122,
+   "广西壮族自治区": 3017,
+   "贵州省": 2789,
+   "甘肃省": 2622,
+   "江西省": 2577,
+   "河北省": 2017,
+   "广东省": 1649,
+   "山东省": 1630,
+   "福建省": 1490,
+   "安徽省": 1389,
+   "重庆市": 1368,
+   "河南省": 1188,
+   "青海省": 610,
+   "江苏省": 545,
+   "台湾省": 411,
+   "海南省": 320,
+   "宁夏回族自治区": 276,
+   "北京市": 192,
+   "上海市": 97,
+   "天津市": 26,
+   "香港特别行政区": 23
+  },
+  "quota_rows": [
+   {
+    "version": "core",
+    "eco": "东北",
+    "cls6": 41,
+    "n": 4714,
+    "quota": 5000,
+    "pass_": false
+   },
+   {
+    "version": "core",
+    "eco": "东北",
+    "cls6": 42,
+    "n": 7553,
+    "quota": 5000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "东北",
+    "cls6": 44,
+    "n": 5113,
+    "quota": 5000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "东北",
+    "cls6": 45,
+    "n": 2882,
+    "quota": 5000,
+    "pass_": false
+   },
+   {
+    "version": "core",
+    "eco": "东北",
+    "cls6": 46,
+    "n": 3667,
+    "quota": 5000,
+    "pass_": false
+   },
+   {
+    "version": "core",
+    "eco": "华北",
+    "cls6": 41,
+    "n": 3009,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "华北",
+    "cls6": 42,
+    "n": 5003,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "华北",
+    "cls6": 44,
+    "n": 3119,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "华北",
+    "cls6": 45,
+    "n": 2710,
+    "quota": 3000,
+    "pass_": false
+   },
+   {
+    "version": "core",
+    "eco": "华北",
+    "cls6": 46,
+    "n": 3122,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "西北",
+    "cls6": 41,
+    "n": 2028,
+    "quota": 2000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "西北",
+    "cls6": 42,
+    "n": 2444,
+    "quota": 2000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "西北",
+    "cls6": 44,
+    "n": 2072,
+    "quota": 2000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "青藏",
+    "cls6": 41,
+    "n": 2028,
+    "quota": 2000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "青藏",
+    "cls6": 42,
+    "n": 0,
+    "quota": 2000,
+    "pass_": false
+   },
+   {
+    "version": "core",
+    "eco": "西南",
+    "cls6": 41,
+    "n": 3141,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "西南",
+    "cls6": 42,
+    "n": 0,
+    "quota": 3000,
+    "pass_": false
+   },
+   {
+    "version": "core",
+    "eco": "西南",
+    "cls6": 43,
+    "n": 4317,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "西南",
+    "cls6": 44,
+    "n": 3064,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "西南",
+    "cls6": 45,
+    "n": 3947,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "华中",
+    "cls6": 41,
+    "n": 3071,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "华中",
+    "cls6": 43,
+    "n": 4524,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "华中",
+    "cls6": 44,
+    "n": 3069,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "华中",
+    "cls6": 45,
+    "n": 644,
+    "quota": 3000,
+    "pass_": false
+   },
+   {
+    "version": "core",
+    "eco": "华中",
+    "cls6": 46,
+    "n": 465,
+    "quota": 3000,
+    "pass_": false
+   },
+   {
+    "version": "core",
+    "eco": "华东",
+    "cls6": 41,
+    "n": 2009,
+    "quota": 2000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "华东",
+    "cls6": 43,
+    "n": 2770,
+    "quota": 2000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "华东",
+    "cls6": 44,
+    "n": 2005,
+    "quota": 2000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "华东",
+    "cls6": 45,
+    "n": 498,
+    "quota": 2000,
+    "pass_": false
+   },
+   {
+    "version": "core",
+    "eco": "华南",
+    "cls6": 43,
+    "n": 2988,
+    "quota": 2000,
+    "pass_": true
+   },
+   {
+    "version": "core",
+    "eco": "华南",
+    "cls6": 44,
+    "n": 1547,
+    "quota": 2000,
+    "pass_": false
+   },
+   {
+    "version": "core",
+    "eco": "华南",
+    "cls6": 45,
+    "n": 314,
+    "quota": 2000,
+    "pass_": false
+   },
+   {
+    "version": "core",
+    "eco": "华南",
+    "cls6": 46,
+    "n": 160,
+    "quota": 2000,
+    "pass_": false
+   }
+  ],
+  "quota_unmet": [
+   {
+    "eco": "东北",
+    "cls6": 41,
+    "n": 4714,
+    "quota": 5000,
+    "gap": 286
+   },
+   {
+    "eco": "东北",
+    "cls6": 45,
+    "n": 2882,
+    "quota": 5000,
+    "gap": 2118
+   },
+   {
+    "eco": "东北",
+    "cls6": 46,
+    "n": 3667,
+    "quota": 5000,
+    "gap": 1333
+   },
+   {
+    "eco": "华北",
+    "cls6": 45,
+    "n": 2710,
+    "quota": 3000,
+    "gap": 290
+   },
+   {
+    "eco": "青藏",
+    "cls6": 42,
+    "n": 0,
+    "quota": 2000,
+    "gap": 2000
+   },
+   {
+    "eco": "西南",
+    "cls6": 42,
+    "n": 0,
+    "quota": 3000,
+    "gap": 3000
+   },
+   {
+    "eco": "华中",
+    "cls6": 45,
+    "n": 644,
+    "quota": 3000,
+    "gap": 2356
+   },
+   {
+    "eco": "华中",
+    "cls6": 46,
+    "n": 465,
+    "quota": 3000,
+    "gap": 2535
+   },
+   {
+    "eco": "华东",
+    "cls6": 45,
+    "n": 498,
+    "quota": 2000,
+    "gap": 1502
+   },
+   {
+    "eco": "华南",
+    "cls6": 44,
+    "n": 1547,
+    "quota": 2000,
+    "gap": 453
+   },
+   {
+    "eco": "华南",
+    "cls6": 45,
+    "n": 314,
+    "quota": 2000,
+    "gap": 1686
+   },
+   {
+    "eco": "华南",
+    "cls6": 46,
+    "n": 160,
+    "quota": 2000,
+    "gap": 1840
+   }
+  ],
+  "quota_pass": false,
+  "mixed_quality": {
+   "45": {
+    "n": 13776,
+    "from_expanded": 12080,
+    "from_legacy": 1696,
+    "M_A": 13776,
+    "M_B": 0,
+    "M_C": 0,
+    "A_from_expanded": 12080,
+    "has_mixedcode": 100,
+    "v30_is_mixed": 147
+   },
+   "46": {
+    "n": 13069,
+    "from_expanded": 10858,
+    "from_legacy": 2211,
+    "M_A": 13069,
+    "M_B": 0,
+    "M_C": 0,
+    "A_from_expanded": 10858,
+    "has_mixedcode": 290,
+    "v30_is_mixed": 99
+   }
+  },
+  "hygiene": {
+   "rows": 96845,
+   "dup_coord_6dp": 0,
+   "dup_uid": 0,
+   "nan_cells": 0,
+   "nan_rows": 0,
+   "coord_out_of_bbox": 0,
+   "coord_range": {
+    "lon": [
+     74.68031825117127,
+     134.8770542607193
+    ],
+    "lat": [
+     18.196409142417647,
+     53.547361
+    ]
+   },
+   "aef_missing_rows": 0,
+   "aef_min": -0.5320415496826172,
+   "aef_max": 0.5787927508354187,
+   "aef_out_of_-1_1": 0,
+   "pass": true
+  },
+  "overlap": {
+   "v2": {
+    "ref_rows": 110653,
+    "hit_6dp": 18422,
+    "pct_of_delivered": 19.0221,
+    "hit_5dp": 16690,
+    "pct_of_delivered_5dp": 17.2337,
+    "pct_of_ref": 16.6484
+   },
+   "v30": {
+    "ref_rows": 138175,
+    "hit_6dp": 0,
+    "pct_of_delivered": 0.0,
+    "hit_5dp": 0,
+    "pct_of_delivered_5dp": 0.0,
+    "pct_of_ref": 0.0
+   },
+   "opt_v1": {
+    "ref_rows": 248828,
+    "hit_6dp": 18422,
+    "pct_of_delivered": 19.0221,
+    "hit_5dp": 16690,
+    "pct_of_delivered_5dp": 17.2337,
+    "pct_of_ref": 7.4035
+   }
+  }
+ },
+ "core_selection_log": {
+  "41": {
+   "P_A_available": 89744,
+   "P_A_used": 20000,
+   "P_B_topup": 0,
+   "quota_floor": 20000,
+   "target": 20000,
+   "capped": true,
+   "all_A": true
+  },
+  "42": {
+   "P_A_available": 34593,
+   "P_A_used": 15000,
+   "P_B_topup": 0,
+   "quota_floor": 15000,
+   "target": 15000,
+   "capped": true,
+   "all_A": true
+  },
+  "43": {
+   "P_A_available": 103395,
+   "P_A_used": 15000,
+   "P_B_topup": 0,
+   "quota_floor": 10000,
+   "target": 15000,
+   "capped": true,
+   "all_A": true
+  },
+  "44": {
+   "P_A_available": 85852,
+   "P_A_used": 20000,
+   "P_B_topup": 0,
+   "quota_floor": 20000,
+   "target": 20000,
+   "capped": true,
+   "all_A": true
+  },
+  "45": {
+   "M_A": 12080,
+   "legacy_available": 4597,
+   "legacy_used": 1696,
+   "legacy_mode": "A",
+   "legacy_by_tier": {
+    "A": 1696,
+    "B": 1666,
+    "C": 1235
+   },
+   "legacy_B_C_in_full_only": 2901
+  },
+  "46": {
+   "M_A": 10858,
+   "legacy_available": 4704,
+   "legacy_used": 2211,
+   "legacy_mode": "A",
+   "legacy_by_tier": {
+    "A": 2211,
+    "B": 1486,
+    "C": 1007
+   },
+   "legacy_B_C_in_full_only": 2493
+  }
+ },
+ "full": {
+  "rows": 212406,
+  "by_class": {
+   "41": 40000,
+   "42": 40000,
+   "43": 40000,
+   "44": 39998,
+   "45": 27023,
+   "46": 25385
+  },
+  "by_tier": {
+   "A": 137874,
+   "B": 72290,
+   "C": 2242
+  },
+  "by_class_tier": {
+   "41": {
+    "A": 28043,
+    "B": 11957,
+    "C": 0
+   },
+   "42": {
+    "A": 23866,
+    "B": 16134,
+    "C": 0
+   },
+   "43": {
+    "A": 33592,
+    "B": 6408,
+    "C": 0
+   },
+   "44": {
+    "A": 25528,
+    "B": 14470,
+    "C": 0
+   },
+   "45": {
+    "A": 13776,
+    "B": 12012,
+    "C": 1235
+   },
+   "46": {
+    "A": 13069,
+    "B": 11309,
+    "C": 1007
+   }
+  },
+  "by_eco": {
+   "东北": {
+    "41": 6400,
+    "42": 25099,
+    "43": 0,
+    "44": 11793,
+    "45": 4738,
+    "46": 6750
+   },
+   "华北": {
+    "41": 4366,
+    "42": 9917,
+    "43": 9,
+    "44": 7771,
+    "45": 4350,
+    "46": 5394
+   },
+   "西北": {
+    "41": 3529,
+    "42": 4891,
+    "43": 1266,
+    "44": 4254,
+    "45": 3620,
+    "46": 3727
+   },
+   "青藏": {
+    "41": 4611,
+    "42": 25,
+    "43": 1531,
+    "44": 540,
+    "45": 1635,
+    "46": 1419
+   },
+   "西南": {
+    "41": 12271,
+    "42": 68,
+    "43": 11927,
+    "44": 6125,
+    "45": 7125,
+    "46": 4732
+   },
+   "华中": {
+    "41": 6413,
+    "42": 0,
+    "43": 10990,
+    "44": 5067,
+    "45": 2552,
+    "46": 1501
+   },
+   "华东": {
+    "41": 2410,
+    "42": 0,
+    "43": 6431,
+    "44": 2300,
+    "45": 1615,
+    "46": 1149
+   },
+   "华南": {
+    "41": 0,
+    "42": 0,
+    "43": 7846,
+    "44": 2148,
+    "45": 1388,
+    "46": 713
+   }
+  },
+  "by_prov": {
+   "黑龙江省": 38311,
+   "内蒙古自治区": 21243,
+   "云南省": 15829,
+   "四川省": 15539,
+   "吉林省": 10485,
+   "新疆维吾尔自治区": 8735,
+   "西藏自治区": 8585,
+   "湖南省": 8280,
+   "贵州省": 7631,
+   "广西壮族自治区": 7523,
+   "湖北省": 6824,
+   "陕西省": 6823,
+   "辽宁省": 5984,
+   "江西省": 5841,
+   "浙江省": 5274,
+   "甘肃省": 5249,
+   "山西省": 5103,
+   "河北省": 4839,
+   "广东省": 3870,
+   "福建省": 3330,
+   "重庆市": 3249,
+   "安徽省": 3098,
+   "山东省": 2759,
+   "河南省": 2480,
+   "江苏省": 1216,
+   "青海省": 1176,
+   "台湾省": 1076,
+   "海南省": 647,
+   "北京市": 542,
+   "宁夏回族自治区": 480,
+   "上海市": 250,
+   "天津市": 80,
+   "香港特别行政区": 54,
+   "澳门特别行政区": 1
+  },
+  "quota_rows": [
+   {
+    "version": "full",
+    "eco": "东北",
+    "cls6": 41,
+    "n": 6400,
+    "quota": 5000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "东北",
+    "cls6": 42,
+    "n": 25099,
+    "quota": 5000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "东北",
+    "cls6": 44,
+    "n": 11793,
+    "quota": 5000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "东北",
+    "cls6": 45,
+    "n": 4738,
+    "quota": 5000,
+    "pass_": false
+   },
+   {
+    "version": "full",
+    "eco": "东北",
+    "cls6": 46,
+    "n": 6750,
+    "quota": 5000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "华北",
+    "cls6": 41,
+    "n": 4366,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "华北",
+    "cls6": 42,
+    "n": 9917,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "华北",
+    "cls6": 44,
+    "n": 7771,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "华北",
+    "cls6": 45,
+    "n": 4350,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "华北",
+    "cls6": 46,
+    "n": 5394,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "西北",
+    "cls6": 41,
+    "n": 3529,
+    "quota": 2000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "西北",
+    "cls6": 42,
+    "n": 4891,
+    "quota": 2000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "西北",
+    "cls6": 44,
+    "n": 4254,
+    "quota": 2000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "青藏",
+    "cls6": 41,
+    "n": 4611,
+    "quota": 2000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "青藏",
+    "cls6": 42,
+    "n": 25,
+    "quota": 2000,
+    "pass_": false
+   },
+   {
+    "version": "full",
+    "eco": "西南",
+    "cls6": 41,
+    "n": 12271,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "西南",
+    "cls6": 42,
+    "n": 68,
+    "quota": 3000,
+    "pass_": false
+   },
+   {
+    "version": "full",
+    "eco": "西南",
+    "cls6": 43,
+    "n": 11927,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "西南",
+    "cls6": 44,
+    "n": 6125,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "西南",
+    "cls6": 45,
+    "n": 7125,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "华中",
+    "cls6": 41,
+    "n": 6413,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "华中",
+    "cls6": 43,
+    "n": 10990,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "华中",
+    "cls6": 44,
+    "n": 5067,
+    "quota": 3000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "华中",
+    "cls6": 45,
+    "n": 2552,
+    "quota": 3000,
+    "pass_": false
+   },
+   {
+    "version": "full",
+    "eco": "华中",
+    "cls6": 46,
+    "n": 1501,
+    "quota": 3000,
+    "pass_": false
+   },
+   {
+    "version": "full",
+    "eco": "华东",
+    "cls6": 41,
+    "n": 2410,
+    "quota": 2000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "华东",
+    "cls6": 43,
+    "n": 6431,
+    "quota": 2000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "华东",
+    "cls6": 44,
+    "n": 2300,
+    "quota": 2000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "华东",
+    "cls6": 45,
+    "n": 1615,
+    "quota": 2000,
+    "pass_": false
+   },
+   {
+    "version": "full",
+    "eco": "华南",
+    "cls6": 43,
+    "n": 7846,
+    "quota": 2000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "华南",
+    "cls6": 44,
+    "n": 2148,
+    "quota": 2000,
+    "pass_": true
+   },
+   {
+    "version": "full",
+    "eco": "华南",
+    "cls6": 45,
+    "n": 1388,
+    "quota": 2000,
+    "pass_": false
+   },
+   {
+    "version": "full",
+    "eco": "华南",
+    "cls6": 46,
+    "n": 713,
+    "quota": 2000,
+    "pass_": false
+   }
+  ],
+  "quota_unmet": [
+   {
+    "eco": "东北",
+    "cls6": 45,
+    "n": 4738,
+    "quota": 5000,
+    "gap": 262
+   },
+   {
+    "eco": "青藏",
+    "cls6": 42,
+    "n": 25,
+    "quota": 2000,
+    "gap": 1975
+   },
+   {
+    "eco": "西南",
+    "cls6": 42,
+    "n": 68,
+    "quota": 3000,
+    "gap": 2932
+   },
+   {
+    "eco": "华中",
+    "cls6": 45,
+    "n": 2552,
+    "quota": 3000,
+    "gap": 448
+   },
+   {
+    "eco": "华中",
+    "cls6": 46,
+    "n": 1501,
+    "quota": 3000,
+    "gap": 1499
+   },
+   {
+    "eco": "华东",
+    "cls6": 45,
+    "n": 1615,
+    "quota": 2000,
+    "gap": 385
+   },
+   {
+    "eco": "华南",
+    "cls6": 45,
+    "n": 1388,
+    "quota": 2000,
+    "gap": 612
+   },
+   {
+    "eco": "华南",
+    "cls6": 46,
+    "n": 713,
+    "quota": 2000,
+    "gap": 1287
+   }
+  ],
+  "quota_pass": false,
+  "mixed_quality": {
+   "45": {
+    "n": 27023,
+    "from_expanded": 22426,
+    "from_legacy": 4597,
+    "M_A": 13776,
+    "M_B": 12012,
+    "M_C": 1235,
+    "A_from_expanded": 12080,
+    "has_mixedcode": 215,
+    "v30_is_mixed": 259
+   },
+   "46": {
+    "n": 25385,
+    "from_expanded": 20681,
+    "from_legacy": 4704,
+    "M_A": 13069,
+    "M_B": 11309,
+    "M_C": 1007,
+    "A_from_expanded": 10858,
+    "has_mixedcode": 668,
+    "v30_is_mixed": 155
+   }
+  },
+  "hygiene": {
+   "rows": 212406,
+   "dup_coord_6dp": 0,
+   "dup_uid": 0,
+   "nan_cells": 0,
+   "nan_rows": 0,
+   "coord_out_of_bbox": 0,
+   "coord_range": {
+    "lon": [
+     74.00927673393399,
+     134.987861
+    ],
+    "lat": [
+     18.18536,
+     53.547361
+    ]
+   },
+   "aef_missing_rows": 0,
+   "aef_min": -0.5435447692871094,
+   "aef_max": 0.5907881855964661,
+   "aef_out_of_-1_1": 0,
+   "pass": true
+  },
+  "overlap": {
+   "v2": {
+    "ref_rows": 110653,
+    "hit_6dp": 39948,
+    "pct_of_delivered": 18.8074,
+    "hit_5dp": 36295,
+    "pct_of_delivered_5dp": 17.0876,
+    "pct_of_ref": 36.102
+   },
+   "v30": {
+    "ref_rows": 138175,
+    "hit_6dp": 0,
+    "pct_of_delivered": 0.0,
+    "hit_5dp": 0,
+    "pct_of_delivered_5dp": 0.0,
+    "pct_of_ref": 0.0
+   },
+   "opt_v1": {
+    "ref_rows": 248828,
+    "hit_6dp": 39948,
+    "pct_of_delivered": 18.8074,
+    "hit_5dp": 36295,
+    "pct_of_delivered_5dp": 17.0876,
+    "pct_of_ref": 16.0545
+   }
+  }
+ },
+ "full_selection_log": {
+  "41": {
+   "pool": 124357,
+   "taken": 40000,
+   "by_tier": {
+    "A": 28043,
+    "B": 11957
+   }
+  },
+  "42": {
+   "pool": 58277,
+   "taken": 40000,
+   "by_tier": {
+    "A": 23866,
+    "B": 16134
+   }
+  },
+  "43": {
+   "pool": 123796,
+   "taken": 40000,
+   "by_tier": {
+    "A": 33592,
+    "B": 6408
+   }
+  },
+  "44": {
+   "pool": 135851,
+   "taken": 39998,
+   "by_tier": {
+    "A": 25528,
+    "B": 14470
+   }
+  },
+  "45": {
+   "pool": 27023,
+   "taken": 27023,
+   "by_tier": {
+    "A": 13776,
+    "B": 12012,
+    "C": 1235
+   }
+  },
+  "46": {
+   "pool": 25385,
+   "taken": 25385,
+   "by_tier": {
+    "A": 13069,
+    "B": 11309,
+    "C": 1007
+   }
+  }
+ },
+ "quota_rules": {
+  "东北": {
+   "41": 5000,
+   "42": 5000,
+   "44": 5000,
+   "45": 5000,
+   "46": 5000
+  },
+  "华北": {
+   "41": 3000,
+   "42": 3000,
+   "44": 3000,
+   "45": 3000,
+   "46": 3000
+  },
+  "西北": {
+   "41": 2000,
+   "42": 2000,
+   "44": 2000
+  },
+  "青藏": {
+   "41": 2000,
+   "42": 2000
+  },
+  "西南": {
+   "41": 3000,
+   "42": 3000,
+   "43": 3000,
+   "44": 3000,
+   "45": 3000
+  },
+  "华中": {
+   "41": 3000,
+   "43": 3000,
+   "44": 3000,
+   "45": 3000,
+   "46": 3000
+  },
+  "华东": {
+   "41": 2000,
+   "43": 2000,
+   "44": 2000,
+   "45": 2000
+  },
+  "华南": {
+   "43": 2000,
+   "44": 2000,
+   "45": 2000,
+   "46": 2000
+  }
+ },
+ "outputs": {
+  "mixed": "F:/lc_work/nb_national_2026/forest6\\mixed_expanded_aef.parquet",
+  "core": "F:/lc_work/nb_national_2026/forest6\\forest6_core.parquet",
+  "full": "F:/lc_work/nb_national_2026/forest6\\forest6_full.parquet",
+  "south_needle": "F:/lc_work/nb_national_2026/forest6\\forest6_south_needle_excluded.parquet",
+  "stats": "F:/lc_work/nb_national_2026/forest6\\f7_stats.json"
+ },
+ "elapsed_min": 0.1
+}

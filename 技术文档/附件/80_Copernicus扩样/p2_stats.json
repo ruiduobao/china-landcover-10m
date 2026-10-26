@@ -1,0 +1,1588 @@
+{
+ "n": 107892,
+ "by_leaf": {
+  "broad": 57074,
+  "needle": 50818
+ },
+ "tiles": 227,
+ "raw_before_declutter": 142583,
+ "params": {
+  "per_tile": 400,
+  "cap": 60000,
+  "seed": 20261018,
+  "declutter_deg": 0.01,
+  "jitter_m": 20
+ },
+ "C4_overlap_vs_v2": {
+  "n_overlap": 6849,
+  "rate": 0.0635
+ },
+ "per_tile": [
+  {
+   "tile": "T2814",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2813",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2105",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1904",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2205",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2004",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2305",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2613",
+   "needle": 55,
+   "broad": 400
+  },
+  {
+   "tile": "T2612",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2104",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1905",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1903",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2005",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2106",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1403",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2306",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2206",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2103",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2512",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2204",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1503",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2714",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2003",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2513",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1702",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1804",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1902",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1805",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2713",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1704",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1703",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1802",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1803",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1303",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2006",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1404",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1506",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1906",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1705",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1806",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1607",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1807",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1707",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2614",
+   "needle": 125,
+   "broad": 400
+  },
+  {
+   "tile": "T2412",
+   "needle": 295,
+   "broad": 1
+  },
+  {
+   "tile": "T1808",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2514",
+   "needle": 400,
+   "broad": 41
+  },
+  {
+   "tile": "T1005",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2211",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1406",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1405",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1505",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1604",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1507",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1907",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2209",
+   "needle": 400,
+   "broad": 311
+  },
+  {
+   "tile": "T2208",
+   "needle": 400,
+   "broad": 120
+  },
+  {
+   "tile": "T2207",
+   "needle": 10,
+   "broad": 400
+  },
+  {
+   "tile": "T1304",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1908",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2414",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2110",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1706",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2007",
+   "needle": 95,
+   "broad": 400
+  },
+  {
+   "tile": "T2712",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1504",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1708",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2615",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1603",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1606",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2109",
+   "needle": 357,
+   "broad": 3
+  },
+  {
+   "tile": "T2008",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2413",
+   "needle": 0,
+   "broad": 400
+  },
+  {
+   "tile": "T2107",
+   "needle": 47,
+   "broad": 237
+  },
+  {
+   "tile": "T2010",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2515",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1605",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2009",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1305",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2108",
+   "needle": 0,
+   "broad": 2
+  },
+  {
+   "tile": "T2415",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1909",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2111",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2312",
+   "needle": 276,
+   "broad": 38
+  },
+  {
+   "tile": "T1409",
+   "needle": 400,
+   "broad": 75
+  },
+  {
+   "tile": "T1608",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2212",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1508",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2313",
+   "needle": 23,
+   "broad": 400
+  },
+  {
+   "tile": "T1006",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1910",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2516",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1809",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1810",
+   "needle": 236,
+   "broad": 400
+  },
+  {
+   "tile": "T1106",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2315",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2416",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1709",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1306",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1206",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2011",
+   "needle": 65,
+   "broad": 61
+  },
+  {
+   "tile": "T1911",
+   "needle": 14,
+   "broad": 400
+  },
+  {
+   "tile": "T1310",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T1407",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1109",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1509",
+   "needle": 10,
+   "broad": 0
+  },
+  {
+   "tile": "T1711",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1710",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1408",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1609",
+   "needle": 3,
+   "broad": 0
+  },
+  {
+   "tile": "T1009",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1309",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1410",
+   "needle": 14,
+   "broad": 0
+  },
+  {
+   "tile": "T0905",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1811",
+   "needle": 0,
+   "broad": 47
+  },
+  {
+   "tile": "T1210",
+   "needle": 5,
+   "broad": 0
+  },
+  {
+   "tile": "T1610",
+   "needle": 18,
+   "broad": 0
+  },
+  {
+   "tile": "T1110",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1209",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0506",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0209",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0309",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0706",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0806",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0705",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T0606",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1012",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T0508",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1308",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T0210",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0906",
+   "needle": 175,
+   "broad": 2
+  },
+  {
+   "tile": "T1307",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T0412",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T1107",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T1207",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T1007",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0609",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0110",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0709",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0408",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0909",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0608",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T2112",
+   "needle": 74,
+   "broad": 400
+  },
+  {
+   "tile": "T1010",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1208",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1111",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1510",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0409",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0509",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1008",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1211",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T2213",
+   "needle": 111,
+   "broad": 400
+  },
+  {
+   "tile": "T1108",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0810",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0708",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0607",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0907",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0308",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0809",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0910",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0512",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T0912",
+   "needle": 119,
+   "broad": 0
+  },
+  {
+   "tile": "T0714",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T0611",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0812",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T1011",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0707",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1311",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0507",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0710",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0808",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0513",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T0310",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0411",
+   "needle": 2,
+   "broad": 0
+  },
+  {
+   "tile": "T0610",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0911",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0612",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T0510",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0407",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0711",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1411",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0410",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0807",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0712",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T2012",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0908",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0511",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0613",
+   "needle": 1,
+   "broad": 0
+  },
+  {
+   "tile": "T0811",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0713",
+   "needle": 12,
+   "broad": 0
+  },
+  {
+   "tile": "T1611",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1105",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2511",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2616",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T0311",
+   "needle": 105,
+   "broad": 0
+  },
+  {
+   "tile": "T0805",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T0307",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0813",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1302",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1205",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T0605",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T0406",
+   "needle": 203,
+   "broad": 0
+  },
+  {
+   "tile": "T2311",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2307",
+   "needle": 0,
+   "broad": 400
+  },
+  {
+   "tile": "T1511",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T2914",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2215",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1912",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0614",
+   "needle": 75,
+   "broad": 0
+  },
+  {
+   "tile": "T2113",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T2002",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2203",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2715",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T0814",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T1402",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2314",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2411",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T0109",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0413",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T2210",
+   "needle": 125,
+   "broad": 29
+  },
+  {
+   "tile": "T2309",
+   "needle": 400,
+   "broad": 132
+  },
+  {
+   "tile": "T2417",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1800",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2517",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2812",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2316",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T0306",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1112",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T2304",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1502",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T0211",
+   "needle": 8,
+   "broad": 0
+  },
+  {
+   "tile": "T3014",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1602",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2102",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T0514",
+   "needle": 4,
+   "broad": 0
+  },
+  {
+   "tile": "T2013",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1801",
+   "needle": 0,
+   "broad": 400
+  },
+  {
+   "tile": "T0913",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T2913",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1203",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T0208",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T2815",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2611",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T0505",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T0010",
+   "needle": 11,
+   "broad": 0
+  },
+  {
+   "tile": "T2405",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2115",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T2308",
+   "needle": 10,
+   "broad": 248
+  },
+  {
+   "tile": "T2302",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1812",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T2406",
+   "needle": 264,
+   "broad": 400
+  },
+  {
+   "tile": "T1212",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1013",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0904",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2214",
+   "needle": 1,
+   "broad": 0
+  },
+  {
+   "tile": "T0715",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T1913",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1004",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1312",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T2410",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2617",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2409",
+   "needle": 400,
+   "broad": 151
+  },
+  {
+   "tile": "T0111",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T2403",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T0312",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T1712",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1204",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2303",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1901",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1701",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T0615",
+   "needle": 400,
+   "broad": 80
+  },
+  {
+   "tile": "T0313",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T1412",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T2711",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2317",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T3015",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2402",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1401",
+   "needle": 92,
+   "broad": 400
+  },
+  {
+   "tile": "T0207",
+   "needle": 400,
+   "broad": 187
+  },
+  {
+   "tile": "T1700",
+   "needle": 7,
+   "broad": 400
+  },
+  {
+   "tile": "T1301",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T0704",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2114",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T3013",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2510",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2202",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2716",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2912",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2407",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T2310",
+   "needle": 87,
+   "broad": 16
+  },
+  {
+   "tile": "T0414",
+   "needle": 7,
+   "broad": 0
+  },
+  {
+   "tile": "T0108",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T0011",
+   "needle": 400,
+   "broad": 0
+  },
+  {
+   "tile": "T0804",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T0206",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1612",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1202",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T0009",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T0405",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1104",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T2404",
+   "needle": 53,
+   "broad": 27
+  },
+  {
+   "tile": "T1113",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T2001",
+   "needle": 20,
+   "broad": 400
+  },
+  {
+   "tile": "T1601",
+   "needle": 5,
+   "broad": 400
+  },
+  {
+   "tile": "T2301",
+   "needle": 0,
+   "broad": 400
+  },
+  {
+   "tile": "T0604",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T0914",
+   "needle": 0,
+   "broad": 0
+  },
+  {
+   "tile": "T1600",
+   "needle": 284,
+   "broad": 400
+  },
+  {
+   "tile": "T1900",
+   "needle": 0,
+   "broad": 400
+  },
+  {
+   "tile": "T2915",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T0815",
+   "needle": 72,
+   "broad": 0
+  },
+  {
+   "tile": "T2503",
+   "needle": 400,
+   "broad": 400
+  },
+  {
+   "tile": "T1512",
+   "needle": 0,
+   "broad": 0
+  }
+ ],
+ "elapsed_min": 0.24
+}

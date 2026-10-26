@@ -1,0 +1,14 @@
+{
+ "exp_id": "G30N_tiny",
+ "owner": "geometry",
+ "stage": "S4",
+ "limit_s": 300.0,
+ "status": "done",
+ "rc": 0,
+ "timed_out": false,
+ "wall_s": 9.7,
+ "started_at": "2026-10-15T14:14:05",
+ "finished_at": "2026-10-15T14:14:15",
+ "log": "F:\\lc_work\\improve_2023_pilot_20261015\\geometry\\logs\\G30N_tiny\\run.log",
+ "budget_ok": true
+}

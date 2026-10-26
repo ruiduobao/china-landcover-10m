@@ -1,0 +1,95 @@
+{
+ "schema": "improve_pilot_spec/v1",
+ "exp_id": "G30N_v2_s11",
+ "impl_version": "v1_rawmask",
+ "owner": "geometry",
+ "stage": "S4",
+ "hypothesis": "H6 几何修复仅恢复覆盖、不改变模型（planar clip 消除测地楔形 nodata，楔外类码一致）",
+ "province": "川",
+ "region_bbox": [
+  97.97502595708085,
+  29.998160934830473,
+  98.0250621184063,
+  30.006515266972787
+ ],
+ "region_tile_rc": {
+  "c0": 10854,
+  "r0": 22192,
+  "ncol": 557,
+  "nrow": 93
+ },
+ "tile_id": "T1206",
+ "tile_box": [
+  97.0,
+  30.0,
+  99.0,
+  32.0
+ ],
+ "training_bbox": [
+  95.0,
+  28.0,
+  101.0,
+  34.0
+ ],
+ "input_identity": {
+  "pool": "projects/leafy-environs-509005-n1/assets/prod2nd/smp2023v2_merged",
+  "aef": "GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL",
+  "year": 2023,
+  "grid": {
+   "px": 8.983152841195215e-05,
+   "py": 8.983152841195215e-05,
+   "x0": 96.99999454769751,
+   "y_top": 32.00005654549083
+  },
+  "crsTransform": [
+   8.983152841195215e-05,
+   0.0,
+   97.97502595708085,
+   0.0,
+   -8.983152841195215e-05,
+   30.006515266972787
+  ],
+  "width": 557,
+  "height": 93
+ },
+ "class_map_hash": "6c801136be672d7cb5afaa7e449ca1cb",
+ "candidate_rule": "clip 几何：legacy=ee.Geometry.Rectangle(box)（测地默认）vs planar=ee.Geometry.BBox(box)（平面）",
+ "arms": [
+  "legacy",
+  "planar"
+ ],
+ "seeds": [
+  11
+ ],
+ "seed_set_registered": [
+  7,
+  11,
+  23
+ ],
+ "n_train_limit": 20000,
+ "rf_params": {
+  "numberOfTrees": 100,
+  "minLeafPopulation": 2,
+  "maxNodes": 5000,
+  "seed": 11
+ },
+ "deadline_s": 1200.0,
+ "request_timeout_s": 60.0,
+ "target_metrics": [
+  "evm_in_tile_valid_px",
+  "legacy_gap_px",
+  "planar_gap_px",
+  "restored_px",
+  "outside_tile_consistent",
+  "wedge_outside_class_agree_rate"
+ ],
+ "expected_effect": "楔内(planar box 内、测地 arc 外) EVM==1 而 legacy==0 的像元数 >0（工程缺口）；planar 恢复该区；楔外(非楔区) legacy==planar 类码一致率=1.0；楔高解析预测 0.0038° (42.1 行)",
+ "stop_rules": [
+  "单请求 >60s 无响应即按剩余时间重试，剩余 <30s 放弃",
+  "父进程 1200s 硬截止 → 记 TIMEOUT 并终止子进程",
+  "若 20k 训练交互失败 → 写 FAIL，另注册 2k 工程对照（不伪称原生产精度）"
+ ],
+ "code_hash": "ad62033b1aa0a378808d51d767a1882e",
+ "account_id": "k3r6ncvd",
+ "registered_at": "2026-10-15T14:25:22"
+}

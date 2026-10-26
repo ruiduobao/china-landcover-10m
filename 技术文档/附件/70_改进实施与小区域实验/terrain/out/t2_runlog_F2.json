@@ -1,0 +1,20 @@
+{
+ "frame": "F2",
+ "cmd": [
+  "F:\\anaconda\\python.exe",
+  "F:\\lc_work\\improve_2023_pilot_20261015\\terrain\\t2_rf_eval.py",
+  "--frame",
+  "F2",
+  "--arms",
+  "main",
+  "--seeds",
+  "7,11,23",
+  "--n-jobs",
+  "10"
+ ],
+ "deadline_s": 1200,
+ "wall_seconds": 6.7,
+ "returncode": 0,
+ "timed_out": false,
+ "generated": "2026-10-15 14:20:19"
+}

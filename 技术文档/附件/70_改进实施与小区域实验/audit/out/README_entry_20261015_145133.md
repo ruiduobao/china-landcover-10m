@@ -1,0 +1,24 @@
+# 附件：70 改进实施与小区域实验（audit 生成）
+
+> 由 audit 子 agent 于 20261015_145133 生成。原始产物不删；大件不复制，主文给绝对链接。
+
+## 分组
+- `control/` 运行器自检与注册（超时只本树、mem guard、namespace）
+- `orchard/` 园地先验实验（O-CAP）
+- `terrain/` 地形分层与 F-VIEW（T-STRATA / strict common）
+- `geometry/` G-30N 几何覆盖修复（v1 VALIDITY_FAIL 保留；v2 engineering PASS）
+- `audit/` 独立复算脚本、判定与 manifest
+
+## 归档动作统计
+```
+{"SKIP_SAME": 204, "SKIP_BIG": 52, "SKIP_EXT": 7, "COPY": 4}
+```
+
+## 判定（三字段）
+见 `audit/out/verdicts_2026-10-15.json`：园地/地形 adoption=REJECT；H2 metadata=BLOCKED；几何 ACCEPT_EXPERIMENTAL(engineering only)。
+
+## 入口
+- 冻结：`audit/registry/doc70_freeze.json`（v1.0 最终 md5 749017cb73ba7e66b5816b1bbd7486bf）
+- 结论：`audit/review/最终审计结论_2026-10-15.md`
+- 计时：`audit/out/timing_all_*.csv`
+- 主层简表：`audit/out/main_layer_summary_*.csv`

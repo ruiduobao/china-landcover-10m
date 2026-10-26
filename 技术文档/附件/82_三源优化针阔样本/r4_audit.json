@@ -1,0 +1,1990 @@
+{
+ "generated": "2026-10-25T01:39:31",
+ "accounts_used": "ybzljyma",
+ "thresholds": {
+  "ndvi_djf_hi": 0.45,
+  "ndvi_djf_lo": 0.35,
+  "ndvi_evg": 0.55,
+  "amp_hi": 250.0,
+  "amp_lo": 400.0,
+  "vh_hi": -16.0,
+  "vh_lo": -17.0,
+  "min_gs": 0.3,
+  "min_obs": 3
+ },
+ "amp_unit": "amp_m = 1000*(ndvi_gs-ndvi_djf)；判据 250/400 即 0.250/0.400 NDVI",
+ "windows": {
+  "s2": "2019-06-01/2024-09-30 (CLOUDY_PIXEL_PERCENTAGE<40, QA60+SCL)",
+  "s1": "2019-01-01/2025-01-01, IW VH, DJF mean"
+ },
+ "n_total": 240,
+ "by_group": {
+  "G1": {
+   "n": 70,
+   "n_decided": 32,
+   "n_needle": 23,
+   "n_broad": 9,
+   "n_broad_decid": 0,
+   "n_broad_everg": 9,
+   "n_undecided": 38,
+   "decided_pct": 45.7,
+   "needle_rate": 0.7188,
+   "needle_rate_pct": 71.9,
+   "wilson95_pct": [
+    54.6,
+    84.4
+   ],
+   "group_name": "南方马尾松（30m 说针叶）",
+   "says": "针叶",
+   "agreement": 0.7188,
+   "agreement_wilson95_pct": [
+    54.6,
+    84.4
+   ],
+   "conf": {
+    "低": 38,
+    "高": 32
+   }
+  },
+  "G2": {
+   "n": 60,
+   "n_decided": 37,
+   "n_needle": 25,
+   "n_broad": 12,
+   "n_broad_decid": 1,
+   "n_broad_everg": 11,
+   "n_undecided": 23,
+   "decided_pct": 61.7,
+   "needle_rate": 0.6757,
+   "needle_rate_pct": 67.6,
+   "wilson95_pct": [
+    51.5,
+    80.4
+   ],
+   "group_name": "南方杉木（30m 说针叶）",
+   "says": "针叶",
+   "agreement": 0.6757,
+   "agreement_wilson95_pct": [
+    51.5,
+    80.4
+   ],
+   "conf": {
+    "高": 37,
+    "低": 23
+   }
+  },
+  "G3": {
+   "n": 40,
+   "n_decided": 27,
+   "n_needle": 12,
+   "n_broad": 15,
+   "n_broad_decid": 0,
+   "n_broad_everg": 15,
+   "n_undecided": 13,
+   "decided_pct": 67.5,
+   "needle_rate": 0.4444,
+   "needle_rate_pct": 44.4,
+   "wilson95_pct": [
+    27.6,
+    62.7
+   ],
+   "group_name": "南方其他针叶（30m 说针叶）",
+   "says": "针叶",
+   "agreement": 0.4444,
+   "agreement_wilson95_pct": [
+    27.6,
+    62.7
+   ],
+   "conf": {
+    "高": 27,
+    "低": 13
+   }
+  },
+  "G4": {
+   "n": 30,
+   "n_decided": 22,
+   "n_needle": 13,
+   "n_broad": 9,
+   "n_broad_decid": 0,
+   "n_broad_everg": 9,
+   "n_undecided": 8,
+   "decided_pct": 73.3,
+   "needle_rate": 0.5909,
+   "needle_rate_pct": 59.1,
+   "wilson95_pct": [
+    38.7,
+    76.7
+   ],
+   "group_name": "南方阔叶对照（30m 说阔叶）",
+   "says": "阔叶",
+   "agreement": 0.4091,
+   "agreement_wilson95_pct": [
+    23.3,
+    61.3
+   ],
+   "conf": {
+    "高": 22,
+    "低": 8
+   }
+  },
+  "G5": {
+   "n": 40,
+   "n_decided": 11,
+   "n_needle": 0,
+   "n_broad": 11,
+   "n_broad_decid": 11,
+   "n_broad_everg": 0,
+   "n_undecided": 29,
+   "decided_pct": 27.5,
+   "needle_rate": 0.0,
+   "needle_rate_pct": 0.0,
+   "wilson95_pct": [
+    0.0,
+    25.9
+   ],
+   "group_name": "北方针叶对照（30m 说针叶）",
+   "says": "针叶",
+   "agreement": 0.0,
+   "agreement_wilson95_pct": [
+    0.0,
+    25.9
+   ],
+   "conf": {
+    "低": 29,
+    "高": 11
+   }
+  }
+ },
+ "overall": {
+  "south_30m_needle": {
+   "n": 170,
+   "n_decided": 96,
+   "n_needle": 60,
+   "n_broad": 36,
+   "n_broad_decid": 1,
+   "n_broad_everg": 35,
+   "n_undecided": 74,
+   "decided_pct": 56.5,
+   "needle_rate": 0.625,
+   "needle_rate_pct": 62.5,
+   "wilson95_pct": [
+    52.5,
+    71.5
+   ],
+   "scope": "南方 6 省 30m 说针叶的点（G1+G2+G3）"
+  },
+  "all_30m_needle": {
+   "n": 210,
+   "n_decided": 107,
+   "n_needle": 60,
+   "n_broad": 47,
+   "n_broad_decid": 12,
+   "n_broad_everg": 35,
+   "n_undecided": 103,
+   "decided_pct": 51.0,
+   "needle_rate": 0.5607,
+   "needle_rate_pct": 56.1,
+   "wilson95_pct": [
+    46.6,
+    65.1
+   ],
+   "scope": "全部 30m 说针叶的点（G1+G2+G3+G5）"
+  },
+  "all_30m_broad_G4": {
+   "n": 30,
+   "n_decided": 22,
+   "n_needle": 13,
+   "n_broad": 9,
+   "n_broad_decid": 0,
+   "n_broad_everg": 9,
+   "n_undecided": 8,
+   "decided_pct": 73.3,
+   "needle_rate": 0.5909,
+   "needle_rate_pct": 59.1,
+   "wilson95_pct": [
+    38.7,
+    76.7
+   ],
+   "scope": "30m 说阔叶对照（G4）"
+  }
+ },
+ "by_prov": {
+  "广东省": {
+   "n": 18,
+   "n_decided": 11,
+   "n_needle": 8,
+   "n_broad": 3,
+   "n_broad_decid": 1,
+   "n_broad_everg": 2,
+   "n_undecided": 7,
+   "decided_pct": 61.1,
+   "needle_rate": 0.7273,
+   "needle_rate_pct": 72.7,
+   "wilson95_pct": [
+    43.4,
+    90.3
+   ]
+  },
+  "广西壮族自治区": {
+   "n": 22,
+   "n_decided": 13,
+   "n_needle": 9,
+   "n_broad": 4,
+   "n_broad_decid": 0,
+   "n_broad_everg": 4,
+   "n_undecided": 9,
+   "decided_pct": 59.1,
+   "needle_rate": 0.6923,
+   "needle_rate_pct": 69.2,
+   "wilson95_pct": [
+    42.4,
+    87.3
+   ]
+  },
+  "江西省": {
+   "n": 38,
+   "n_decided": 17,
+   "n_needle": 10,
+   "n_broad": 7,
+   "n_broad_decid": 0,
+   "n_broad_everg": 7,
+   "n_undecided": 21,
+   "decided_pct": 44.7,
+   "needle_rate": 0.5882,
+   "needle_rate_pct": 58.8,
+   "wilson95_pct": [
+    36.0,
+    78.4
+   ]
+  },
+  "浙江省": {
+   "n": 26,
+   "n_decided": 13,
+   "n_needle": 5,
+   "n_broad": 8,
+   "n_broad_decid": 0,
+   "n_broad_everg": 8,
+   "n_undecided": 13,
+   "decided_pct": 50.0,
+   "needle_rate": 0.3846,
+   "needle_rate_pct": 38.5,
+   "wilson95_pct": [
+    17.7,
+    64.5
+   ]
+  },
+  "湖南省": {
+   "n": 42,
+   "n_decided": 24,
+   "n_needle": 18,
+   "n_broad": 6,
+   "n_broad_decid": 0,
+   "n_broad_everg": 6,
+   "n_undecided": 18,
+   "decided_pct": 57.1,
+   "needle_rate": 0.75,
+   "needle_rate_pct": 75.0,
+   "wilson95_pct": [
+    55.1,
+    88.0
+   ]
+  },
+  "福建省": {
+   "n": 24,
+   "n_decided": 18,
+   "n_needle": 10,
+   "n_broad": 8,
+   "n_broad_decid": 0,
+   "n_broad_everg": 8,
+   "n_undecided": 6,
+   "decided_pct": 75.0,
+   "needle_rate": 0.5556,
+   "needle_rate_pct": 55.6,
+   "wilson95_pct": [
+    33.7,
+    75.4
+   ]
+  },
+  "_all_south": {
+   "n": 170,
+   "n_decided": 96,
+   "n_needle": 60,
+   "n_broad": 36,
+   "n_broad_decid": 1,
+   "n_broad_everg": 35,
+   "n_undecided": 74,
+   "decided_pct": 56.5,
+   "needle_rate": 0.625,
+   "needle_rate_pct": 62.5,
+   "wilson95_pct": [
+    52.5,
+    71.5
+   ]
+  }
+ },
+ "sensitivity": {
+  "primary": {
+   "n": 240,
+   "n_decided": 129,
+   "n_needle": 73,
+   "n_broad": 56,
+   "n_broad_decid": 12,
+   "n_broad_everg": 44,
+   "n_undecided": 111,
+   "decided_pct": 53.8,
+   "needle_rate": 0.5659,
+   "needle_rate_pct": 56.6,
+   "wilson95_pct": [
+    48.0,
+    64.8
+   ],
+   "flip_vs_primary_pct": 0.0,
+   "common_decided": 129,
+   "params": {
+    "amp_hi": 250.0,
+    "amp_lo": 400.0,
+    "vh_hi": -16.0,
+    "vh_lo": -17.0,
+    "use_vh": true
+   },
+   "south_needle_only": {
+    "n": 170,
+    "n_decided": 96,
+    "n_needle": 60,
+    "n_broad": 36,
+    "n_broad_decid": 1,
+    "n_broad_everg": 35,
+    "n_undecided": 74,
+    "decided_pct": 56.5,
+    "needle_rate": 0.625,
+    "needle_rate_pct": 62.5,
+    "wilson95_pct": [
+     52.5,
+     71.5
+    ]
+   }
+  },
+  "amp300": {
+   "n": 240,
+   "n_decided": 135,
+   "n_needle": 75,
+   "n_broad": 60,
+   "n_broad_decid": 16,
+   "n_broad_everg": 44,
+   "n_undecided": 105,
+   "decided_pct": 56.2,
+   "needle_rate": 0.5556,
+   "needle_rate_pct": 55.6,
+   "wilson95_pct": [
+    47.1,
+    63.7
+   ],
+   "flip_vs_primary_pct": 0.0,
+   "common_decided": 129,
+   "params": {
+    "amp_hi": 300.0,
+    "amp_lo": 300.0,
+    "vh_hi": -16.0,
+    "vh_lo": -17.0,
+    "use_vh": true
+   },
+   "south_needle_only": {
+    "n": 170,
+    "n_decided": 101,
+    "n_needle": 62,
+    "n_broad": 39,
+    "n_broad_decid": 4,
+    "n_broad_everg": 35,
+    "n_undecided": 69,
+    "decided_pct": 59.4,
+    "needle_rate": 0.6139,
+    "needle_rate_pct": 61.4,
+    "wilson95_pct": [
+     51.6,
+     70.3
+    ]
+   }
+  },
+  "vh18": {
+   "n": 240,
+   "n_decided": 150,
+   "n_needle": 108,
+   "n_broad": 42,
+   "n_broad_decid": 12,
+   "n_broad_everg": 30,
+   "n_undecided": 90,
+   "decided_pct": 62.5,
+   "needle_rate": 0.72,
+   "needle_rate_pct": 72.0,
+   "wilson95_pct": [
+    64.3,
+    78.6
+   ],
+   "flip_vs_primary_pct": 10.9,
+   "common_decided": 129,
+   "params": {
+    "amp_hi": 250.0,
+    "amp_lo": 400.0,
+    "vh_hi": -18.0,
+    "vh_lo": -18.0,
+    "use_vh": true
+   },
+   "south_needle_only": {
+    "n": 170,
+    "n_decided": 114,
+    "n_needle": 90,
+    "n_broad": 24,
+    "n_broad_decid": 1,
+    "n_broad_everg": 23,
+    "n_undecided": 56,
+    "decided_pct": 67.1,
+    "needle_rate": 0.7895,
+    "needle_rate_pct": 78.9,
+    "wilson95_pct": [
+     70.6,
+     85.4
+    ]
+   }
+  },
+  "amp300_vh18": {
+   "n": 240,
+   "n_decided": 157,
+   "n_needle": 111,
+   "n_broad": 46,
+   "n_broad_decid": 16,
+   "n_broad_everg": 30,
+   "n_undecided": 83,
+   "decided_pct": 65.4,
+   "needle_rate": 0.707,
+   "needle_rate_pct": 70.7,
+   "wilson95_pct": [
+    63.2,
+    77.3
+   ],
+   "flip_vs_primary_pct": 10.9,
+   "common_decided": 129,
+   "params": {
+    "amp_hi": 300.0,
+    "amp_lo": 300.0,
+    "vh_hi": -18.0,
+    "vh_lo": -18.0,
+    "use_vh": true
+   },
+   "south_needle_only": {
+    "n": 170,
+    "n_decided": 120,
+    "n_needle": 93,
+    "n_broad": 27,
+    "n_broad_decid": 4,
+    "n_broad_everg": 23,
+    "n_undecided": 50,
+    "decided_pct": 70.6,
+    "needle_rate": 0.775,
+    "needle_rate_pct": 77.5,
+    "wilson95_pct": [
+     69.2,
+     84.1
+    ]
+   }
+  },
+  "no_vh": {
+   "n": 240,
+   "n_decided": 31,
+   "n_needle": 19,
+   "n_broad": 12,
+   "n_broad_decid": 12,
+   "n_broad_everg": 0,
+   "n_undecided": 209,
+   "decided_pct": 12.9,
+   "needle_rate": 0.6129,
+   "needle_rate_pct": 61.3,
+   "wilson95_pct": [
+    43.8,
+    76.3
+   ],
+   "flip_vs_primary_pct": 0.0,
+   "common_decided": 22,
+   "params": {
+    "amp_hi": 250.0,
+    "amp_lo": 400.0,
+    "vh_hi": -16.0,
+    "vh_lo": -17.0,
+    "use_vh": false
+   },
+   "south_needle_only": {
+    "n": 170,
+    "n_decided": 17,
+    "n_needle": 16,
+    "n_broad": 1,
+    "n_broad_decid": 1,
+    "n_broad_everg": 0,
+    "n_undecided": 153,
+    "decided_pct": 10.0,
+    "needle_rate": 0.9412,
+    "needle_rate_pct": 94.1,
+    "wilson95_pct": [
+     73.0,
+     99.0
+    ]
+   }
+  }
+ },
+ "tristate": {
+  "无法判读": 111,
+  "针叶": 73,
+  "阔叶(常绿)": 44,
+  "阔叶(落叶)": 12
+ },
+ "conf_dist": {
+  "高": 129,
+  "低": 111
+ },
+ "by_prov_group": {
+  "广东省|G1": {
+   "n": 7,
+   "n_decided": 5,
+   "n_needle": 5,
+   "n_broad": 0,
+   "n_broad_decid": 0,
+   "n_broad_everg": 0,
+   "n_undecided": 2,
+   "decided_pct": 71.4,
+   "needle_rate": 1.0,
+   "needle_rate_pct": 100.0,
+   "wilson95_pct": [
+    56.6,
+    100.0
+   ]
+  },
+  "广东省|G2": {
+   "n": 11,
+   "n_decided": 6,
+   "n_needle": 3,
+   "n_broad": 3,
+   "n_broad_decid": 1,
+   "n_broad_everg": 2,
+   "n_undecided": 5,
+   "decided_pct": 54.5,
+   "needle_rate": 0.5,
+   "needle_rate_pct": 50.0,
+   "wilson95_pct": [
+    18.8,
+    81.2
+   ]
+  },
+  "广西壮族自治区|G1": {
+   "n": 12,
+   "n_decided": 7,
+   "n_needle": 4,
+   "n_broad": 3,
+   "n_broad_decid": 0,
+   "n_broad_everg": 3,
+   "n_undecided": 5,
+   "decided_pct": 58.3,
+   "needle_rate": 0.5714,
+   "needle_rate_pct": 57.1,
+   "wilson95_pct": [
+    25.0,
+    84.2
+   ]
+  },
+  "广西壮族自治区|G2": {
+   "n": 4,
+   "n_decided": 1,
+   "n_needle": 1,
+   "n_broad": 0,
+   "n_broad_decid": 0,
+   "n_broad_everg": 0,
+   "n_undecided": 3,
+   "decided_pct": 25.0,
+   "needle_rate": 1.0,
+   "needle_rate_pct": 100.0,
+   "wilson95_pct": [
+    20.7,
+    100.0
+   ]
+  },
+  "广西壮族自治区|G3": {
+   "n": 6,
+   "n_decided": 5,
+   "n_needle": 4,
+   "n_broad": 1,
+   "n_broad_decid": 0,
+   "n_broad_everg": 1,
+   "n_undecided": 1,
+   "decided_pct": 83.3,
+   "needle_rate": 0.8,
+   "needle_rate_pct": 80.0,
+   "wilson95_pct": [
+    37.6,
+    96.4
+   ]
+  },
+  "江西省|G1": {
+   "n": 14,
+   "n_decided": 3,
+   "n_needle": 3,
+   "n_broad": 0,
+   "n_broad_decid": 0,
+   "n_broad_everg": 0,
+   "n_undecided": 11,
+   "decided_pct": 21.4,
+   "needle_rate": 1.0,
+   "needle_rate_pct": 100.0,
+   "wilson95_pct": [
+    43.8,
+    100.0
+   ]
+  },
+  "江西省|G2": {
+   "n": 20,
+   "n_decided": 10,
+   "n_needle": 6,
+   "n_broad": 4,
+   "n_broad_decid": 0,
+   "n_broad_everg": 4,
+   "n_undecided": 10,
+   "decided_pct": 50.0,
+   "needle_rate": 0.6,
+   "needle_rate_pct": 60.0,
+   "wilson95_pct": [
+    31.3,
+    83.2
+   ]
+  },
+  "江西省|G3": {
+   "n": 4,
+   "n_decided": 4,
+   "n_needle": 1,
+   "n_broad": 3,
+   "n_broad_decid": 0,
+   "n_broad_everg": 3,
+   "n_undecided": 0,
+   "decided_pct": 100.0,
+   "needle_rate": 0.25,
+   "needle_rate_pct": 25.0,
+   "wilson95_pct": [
+    4.6,
+    69.9
+   ]
+  },
+  "浙江省|G1": {
+   "n": 8,
+   "n_decided": 5,
+   "n_needle": 3,
+   "n_broad": 2,
+   "n_broad_decid": 0,
+   "n_broad_everg": 2,
+   "n_undecided": 3,
+   "decided_pct": 62.5,
+   "needle_rate": 0.6,
+   "needle_rate_pct": 60.0,
+   "wilson95_pct": [
+    23.1,
+    88.2
+   ]
+  },
+  "浙江省|G2": {
+   "n": 3,
+   "n_decided": 3,
+   "n_needle": 2,
+   "n_broad": 1,
+   "n_broad_decid": 0,
+   "n_broad_everg": 1,
+   "n_undecided": 0,
+   "decided_pct": 100.0,
+   "needle_rate": 0.6667,
+   "needle_rate_pct": 66.7,
+   "wilson95_pct": [
+    20.8,
+    93.9
+   ]
+  },
+  "浙江省|G3": {
+   "n": 15,
+   "n_decided": 5,
+   "n_needle": 0,
+   "n_broad": 5,
+   "n_broad_decid": 0,
+   "n_broad_everg": 5,
+   "n_undecided": 10,
+   "decided_pct": 33.3,
+   "needle_rate": 0.0,
+   "needle_rate_pct": 0.0,
+   "wilson95_pct": [
+    0.0,
+    43.4
+   ]
+  },
+  "湖南省|G1": {
+   "n": 18,
+   "n_decided": 6,
+   "n_needle": 5,
+   "n_broad": 1,
+   "n_broad_decid": 0,
+   "n_broad_everg": 1,
+   "n_undecided": 12,
+   "decided_pct": 33.3,
+   "needle_rate": 0.8333,
+   "needle_rate_pct": 83.3,
+   "wilson95_pct": [
+    43.6,
+    97.0
+   ]
+  },
+  "湖南省|G2": {
+   "n": 15,
+   "n_decided": 11,
+   "n_needle": 8,
+   "n_broad": 3,
+   "n_broad_decid": 0,
+   "n_broad_everg": 3,
+   "n_undecided": 4,
+   "decided_pct": 73.3,
+   "needle_rate": 0.7273,
+   "needle_rate_pct": 72.7,
+   "wilson95_pct": [
+    43.4,
+    90.3
+   ]
+  },
+  "湖南省|G3": {
+   "n": 9,
+   "n_decided": 7,
+   "n_needle": 5,
+   "n_broad": 2,
+   "n_broad_decid": 0,
+   "n_broad_everg": 2,
+   "n_undecided": 2,
+   "decided_pct": 77.8,
+   "needle_rate": 0.7143,
+   "needle_rate_pct": 71.4,
+   "wilson95_pct": [
+    35.9,
+    91.8
+   ]
+  },
+  "福建省|G1": {
+   "n": 11,
+   "n_decided": 6,
+   "n_needle": 3,
+   "n_broad": 3,
+   "n_broad_decid": 0,
+   "n_broad_everg": 3,
+   "n_undecided": 5,
+   "decided_pct": 54.5,
+   "needle_rate": 0.5,
+   "needle_rate_pct": 50.0,
+   "wilson95_pct": [
+    18.8,
+    81.2
+   ]
+  },
+  "福建省|G2": {
+   "n": 7,
+   "n_decided": 6,
+   "n_needle": 5,
+   "n_broad": 1,
+   "n_broad_decid": 0,
+   "n_broad_everg": 1,
+   "n_undecided": 1,
+   "decided_pct": 85.7,
+   "needle_rate": 0.8333,
+   "needle_rate_pct": 83.3,
+   "wilson95_pct": [
+    43.6,
+    97.0
+   ]
+  },
+  "福建省|G3": {
+   "n": 6,
+   "n_decided": 6,
+   "n_needle": 2,
+   "n_broad": 4,
+   "n_broad_decid": 0,
+   "n_broad_everg": 4,
+   "n_undecided": 0,
+   "decided_pct": 100.0,
+   "needle_rate": 0.3333,
+   "needle_rate_pct": 33.3,
+   "wilson95_pct": [
+    9.7,
+    70.0
+   ]
+  }
+ },
+ "G5_north_by_sub": {
+  "云杉/冷杉(常绿针叶)": {
+   "n": 1,
+   "n_decided": 1,
+   "n_needle": 0,
+   "n_broad": 1,
+   "n_broad_decid": 1,
+   "n_broad_everg": 0,
+   "n_undecided": 0,
+   "decided_pct": 100.0,
+   "needle_rate": 0.0,
+   "needle_rate_pct": 0.0,
+   "wilson95_pct": [
+    0.0,
+    79.3
+   ]
+  },
+  "其他常绿针叶(松类)": {
+   "n": 23,
+   "n_decided": 4,
+   "n_needle": 0,
+   "n_broad": 4,
+   "n_broad_decid": 4,
+   "n_broad_everg": 0,
+   "n_undecided": 19,
+   "decided_pct": 17.4,
+   "needle_rate": 0.0,
+   "needle_rate_pct": 0.0,
+   "wilson95_pct": [
+    0.0,
+    49.0
+   ]
+  },
+  "落叶松(落叶针叶)": {
+   "n": 16,
+   "n_decided": 6,
+   "n_needle": 0,
+   "n_broad": 6,
+   "n_broad_decid": 6,
+   "n_broad_everg": 0,
+   "n_undecided": 10,
+   "decided_pct": 37.5,
+   "needle_rate": 0.0,
+   "needle_rate_pct": 0.0,
+   "wilson95_pct": [
+    0.0,
+    39.0
+   ]
+  }
+ },
+ "G5_north_by_prov": {
+  "内蒙古自治区": {
+   "n": 19,
+   "n_decided": 3,
+   "n_needle": 0,
+   "n_broad": 3,
+   "n_broad_decid": 3,
+   "n_broad_everg": 0,
+   "n_undecided": 16,
+   "decided_pct": 15.8,
+   "needle_rate": 0.0,
+   "needle_rate_pct": 0.0,
+   "wilson95_pct": [
+    0.0,
+    56.2
+   ]
+  },
+  "吉林省": {
+   "n": 4,
+   "n_decided": 2,
+   "n_needle": 0,
+   "n_broad": 2,
+   "n_broad_decid": 2,
+   "n_broad_everg": 0,
+   "n_undecided": 2,
+   "decided_pct": 50.0,
+   "needle_rate": 0.0,
+   "needle_rate_pct": 0.0,
+   "wilson95_pct": [
+    0.0,
+    65.8
+   ]
+  },
+  "辽宁省": {
+   "n": 7,
+   "n_decided": 5,
+   "n_needle": 0,
+   "n_broad": 5,
+   "n_broad_decid": 5,
+   "n_broad_everg": 0,
+   "n_undecided": 2,
+   "decided_pct": 71.4,
+   "needle_rate": 0.0,
+   "needle_rate_pct": 0.0,
+   "wilson95_pct": [
+    0.0,
+    43.4
+   ]
+  },
+  "黑龙江省": {
+   "n": 10,
+   "n_decided": 1,
+   "n_needle": 0,
+   "n_broad": 1,
+   "n_broad_decid": 1,
+   "n_broad_everg": 0,
+   "n_undecided": 9,
+   "decided_pct": 10.0,
+   "needle_rate": 0.0,
+   "needle_rate_pct": 0.0,
+   "wilson95_pct": [
+    0.0,
+    79.3
+   ]
+  }
+ },
+ "G5_north_detail": {
+  "云杉/冷杉(常绿针叶)": {
+   "n": 1,
+   "gen": {
+    "鱼鳞云杉林": 1
+   }
+  },
+  "其他常绿针叶(松类)": {
+   "n": 23,
+   "gen": {
+    "油松林": 18,
+    "樟子松疏林": 3,
+    "樟子松林": 1,
+    "杜松林": 1
+   }
+  },
+  "落叶松(落叶针叶)": {
+   "n": 16,
+   "gen": {
+    "兴安落叶松林": 9,
+    "长白落叶松林": 6,
+    "兴安落叶松、白桦林": 1
+   }
+  }
+ },
+ "false_positive_ref": {
+  "G4_needle_pct": 59.1,
+  "note": "常绿阔叶与常绿针叶在 NDVI 季节曲线/振幅上高度相似，主要靠 VH 分离；G4 被判\"针叶\"的比例即本判据的假阳性量级。"
+ },
+ "sensitivity_by_group": {
+  "primary": {
+   "G1": {
+    "n": 70,
+    "n_decided": 32,
+    "n_needle": 23,
+    "n_broad": 9,
+    "n_broad_decid": 0,
+    "n_broad_everg": 9,
+    "n_undecided": 38,
+    "decided_pct": 45.7,
+    "needle_rate": 0.7188,
+    "needle_rate_pct": 71.9,
+    "wilson95_pct": [
+     54.6,
+     84.4
+    ]
+   },
+   "G2": {
+    "n": 60,
+    "n_decided": 37,
+    "n_needle": 25,
+    "n_broad": 12,
+    "n_broad_decid": 1,
+    "n_broad_everg": 11,
+    "n_undecided": 23,
+    "decided_pct": 61.7,
+    "needle_rate": 0.6757,
+    "needle_rate_pct": 67.6,
+    "wilson95_pct": [
+     51.5,
+     80.4
+    ]
+   },
+   "G3": {
+    "n": 40,
+    "n_decided": 27,
+    "n_needle": 12,
+    "n_broad": 15,
+    "n_broad_decid": 0,
+    "n_broad_everg": 15,
+    "n_undecided": 13,
+    "decided_pct": 67.5,
+    "needle_rate": 0.4444,
+    "needle_rate_pct": 44.4,
+    "wilson95_pct": [
+     27.6,
+     62.7
+    ]
+   },
+   "G4": {
+    "n": 30,
+    "n_decided": 22,
+    "n_needle": 13,
+    "n_broad": 9,
+    "n_broad_decid": 0,
+    "n_broad_everg": 9,
+    "n_undecided": 8,
+    "decided_pct": 73.3,
+    "needle_rate": 0.5909,
+    "needle_rate_pct": 59.1,
+    "wilson95_pct": [
+     38.7,
+     76.7
+    ]
+   },
+   "G5": {
+    "n": 40,
+    "n_decided": 11,
+    "n_needle": 0,
+    "n_broad": 11,
+    "n_broad_decid": 11,
+    "n_broad_everg": 0,
+    "n_undecided": 29,
+    "decided_pct": 27.5,
+    "needle_rate": 0.0,
+    "needle_rate_pct": 0.0,
+    "wilson95_pct": [
+     0.0,
+     25.9
+    ]
+   }
+  },
+  "amp300": {
+   "G1": {
+    "n": 70,
+    "n_decided": 35,
+    "n_needle": 23,
+    "n_broad": 12,
+    "n_broad_decid": 3,
+    "n_broad_everg": 9,
+    "n_undecided": 35,
+    "decided_pct": 50.0,
+    "needle_rate": 0.6571,
+    "needle_rate_pct": 65.7,
+    "wilson95_pct": [
+     49.2,
+     79.2
+    ]
+   },
+   "G2": {
+    "n": 60,
+    "n_decided": 37,
+    "n_needle": 25,
+    "n_broad": 12,
+    "n_broad_decid": 1,
+    "n_broad_everg": 11,
+    "n_undecided": 23,
+    "decided_pct": 61.7,
+    "needle_rate": 0.6757,
+    "needle_rate_pct": 67.6,
+    "wilson95_pct": [
+     51.5,
+     80.4
+    ]
+   },
+   "G3": {
+    "n": 40,
+    "n_decided": 29,
+    "n_needle": 14,
+    "n_broad": 15,
+    "n_broad_decid": 0,
+    "n_broad_everg": 15,
+    "n_undecided": 11,
+    "decided_pct": 72.5,
+    "needle_rate": 0.4828,
+    "needle_rate_pct": 48.3,
+    "wilson95_pct": [
+     31.4,
+     65.6
+    ]
+   },
+   "G4": {
+    "n": 30,
+    "n_decided": 22,
+    "n_needle": 13,
+    "n_broad": 9,
+    "n_broad_decid": 0,
+    "n_broad_everg": 9,
+    "n_undecided": 8,
+    "decided_pct": 73.3,
+    "needle_rate": 0.5909,
+    "needle_rate_pct": 59.1,
+    "wilson95_pct": [
+     38.7,
+     76.7
+    ]
+   },
+   "G5": {
+    "n": 40,
+    "n_decided": 12,
+    "n_needle": 0,
+    "n_broad": 12,
+    "n_broad_decid": 12,
+    "n_broad_everg": 0,
+    "n_undecided": 28,
+    "decided_pct": 30.0,
+    "needle_rate": 0.0,
+    "needle_rate_pct": 0.0,
+    "wilson95_pct": [
+     0.0,
+     24.3
+    ]
+   }
+  },
+  "vh18": {
+   "G1": {
+    "n": 70,
+    "n_decided": 38,
+    "n_needle": 31,
+    "n_broad": 7,
+    "n_broad_decid": 0,
+    "n_broad_everg": 7,
+    "n_undecided": 32,
+    "decided_pct": 54.3,
+    "needle_rate": 0.8158,
+    "needle_rate_pct": 81.6,
+    "wilson95_pct": [
+     66.6,
+     90.8
+    ]
+   },
+   "G2": {
+    "n": 60,
+    "n_decided": 47,
+    "n_needle": 41,
+    "n_broad": 6,
+    "n_broad_decid": 1,
+    "n_broad_everg": 5,
+    "n_undecided": 13,
+    "decided_pct": 78.3,
+    "needle_rate": 0.8723,
+    "needle_rate_pct": 87.2,
+    "wilson95_pct": [
+     74.8,
+     94.0
+    ]
+   },
+   "G3": {
+    "n": 40,
+    "n_decided": 29,
+    "n_needle": 18,
+    "n_broad": 11,
+    "n_broad_decid": 0,
+    "n_broad_everg": 11,
+    "n_undecided": 11,
+    "decided_pct": 72.5,
+    "needle_rate": 0.6207,
+    "needle_rate_pct": 62.1,
+    "wilson95_pct": [
+     44.0,
+     77.3
+    ]
+   },
+   "G4": {
+    "n": 30,
+    "n_decided": 25,
+    "n_needle": 18,
+    "n_broad": 7,
+    "n_broad_decid": 0,
+    "n_broad_everg": 7,
+    "n_undecided": 5,
+    "decided_pct": 83.3,
+    "needle_rate": 0.72,
+    "needle_rate_pct": 72.0,
+    "wilson95_pct": [
+     52.4,
+     85.7
+    ]
+   },
+   "G5": {
+    "n": 40,
+    "n_decided": 11,
+    "n_needle": 0,
+    "n_broad": 11,
+    "n_broad_decid": 11,
+    "n_broad_everg": 0,
+    "n_undecided": 29,
+    "decided_pct": 27.5,
+    "needle_rate": 0.0,
+    "needle_rate_pct": 0.0,
+    "wilson95_pct": [
+     0.0,
+     25.9
+    ]
+   }
+  },
+  "amp300_vh18": {
+   "G1": {
+    "n": 70,
+    "n_decided": 42,
+    "n_needle": 32,
+    "n_broad": 10,
+    "n_broad_decid": 3,
+    "n_broad_everg": 7,
+    "n_undecided": 28,
+    "decided_pct": 60.0,
+    "needle_rate": 0.7619,
+    "needle_rate_pct": 76.2,
+    "wilson95_pct": [
+     61.5,
+     86.5
+    ]
+   },
+   "G2": {
+    "n": 60,
+    "n_decided": 47,
+    "n_needle": 41,
+    "n_broad": 6,
+    "n_broad_decid": 1,
+    "n_broad_everg": 5,
+    "n_undecided": 13,
+    "decided_pct": 78.3,
+    "needle_rate": 0.8723,
+    "needle_rate_pct": 87.2,
+    "wilson95_pct": [
+     74.8,
+     94.0
+    ]
+   },
+   "G3": {
+    "n": 40,
+    "n_decided": 31,
+    "n_needle": 20,
+    "n_broad": 11,
+    "n_broad_decid": 0,
+    "n_broad_everg": 11,
+    "n_undecided": 9,
+    "decided_pct": 77.5,
+    "needle_rate": 0.6452,
+    "needle_rate_pct": 64.5,
+    "wilson95_pct": [
+     46.9,
+     78.9
+    ]
+   },
+   "G4": {
+    "n": 30,
+    "n_decided": 25,
+    "n_needle": 18,
+    "n_broad": 7,
+    "n_broad_decid": 0,
+    "n_broad_everg": 7,
+    "n_undecided": 5,
+    "decided_pct": 83.3,
+    "needle_rate": 0.72,
+    "needle_rate_pct": 72.0,
+    "wilson95_pct": [
+     52.4,
+     85.7
+    ]
+   },
+   "G5": {
+    "n": 40,
+    "n_decided": 12,
+    "n_needle": 0,
+    "n_broad": 12,
+    "n_broad_decid": 12,
+    "n_broad_everg": 0,
+    "n_undecided": 28,
+    "decided_pct": 30.0,
+    "needle_rate": 0.0,
+    "needle_rate_pct": 0.0,
+    "wilson95_pct": [
+     0.0,
+     24.3
+    ]
+   }
+  },
+  "no_vh": {
+   "G1": {
+    "n": 70,
+    "n_decided": 10,
+    "n_needle": 10,
+    "n_broad": 0,
+    "n_broad_decid": 0,
+    "n_broad_everg": 0,
+    "n_undecided": 60,
+    "decided_pct": 14.3,
+    "needle_rate": 1.0,
+    "needle_rate_pct": 100.0,
+    "wilson95_pct": [
+     72.2,
+     100.0
+    ]
+   },
+   "G2": {
+    "n": 60,
+    "n_decided": 7,
+    "n_needle": 6,
+    "n_broad": 1,
+    "n_broad_decid": 1,
+    "n_broad_everg": 0,
+    "n_undecided": 53,
+    "decided_pct": 11.7,
+    "needle_rate": 0.8571,
+    "needle_rate_pct": 85.7,
+    "wilson95_pct": [
+     48.7,
+     97.4
+    ]
+   },
+   "G3": {
+    "n": 40,
+    "n_decided": 0,
+    "n_needle": 0,
+    "n_broad": 0,
+    "n_broad_decid": 0,
+    "n_broad_everg": 0,
+    "n_undecided": 40,
+    "decided_pct": 0.0,
+    "needle_rate": null,
+    "needle_rate_pct": null,
+    "wilson95_pct": null
+   },
+   "G4": {
+    "n": 30,
+    "n_decided": 2,
+    "n_needle": 2,
+    "n_broad": 0,
+    "n_broad_decid": 0,
+    "n_broad_everg": 0,
+    "n_undecided": 28,
+    "decided_pct": 6.7,
+    "needle_rate": 1.0,
+    "needle_rate_pct": 100.0,
+    "wilson95_pct": [
+     34.2,
+     100.0
+    ]
+   },
+   "G5": {
+    "n": 40,
+    "n_decided": 12,
+    "n_needle": 1,
+    "n_broad": 11,
+    "n_broad_decid": 11,
+    "n_broad_everg": 0,
+    "n_undecided": 28,
+    "decided_pct": 30.0,
+    "needle_rate": 0.0833,
+    "needle_rate_pct": 8.3,
+    "wilson95_pct": [
+     1.5,
+     35.4
+    ]
+   }
+  }
+ },
+ "aux": {
+  "ndvi_djf_median_by_group": {
+   "G1": 0.509,
+   "G2": 0.64,
+   "G3": 0.662,
+   "G4": 0.699,
+   "G5": 0.15
+  },
+  "amp_median_by_group": {
+   "G1": 0.098,
+   "G2": 0.09,
+   "G3": 0.091,
+   "G4": 0.064,
+   "G5": 0.277
+  },
+  "vh_djf_median_by_group": {
+   "G1": -16.305,
+   "G2": -16.52,
+   "G3": -16.785,
+   "G4": -15.97,
+   "G5": -25.57
+  },
+  "vh_coverage_pct": 100.0,
+  "s2_djf_obs_median": 30.0,
+  "s1_djf_obs_median": 45.0,
+  "score_dist": {
+   "-3": 13,
+   "-2": 13,
+   "-1": 37,
+   "0": 15,
+   "1": 68,
+   "2": 21,
+   "3": 73
+  },
+  "undecided_pct": 46.2
+ },
+ "verdict": {
+  "headline_south": "30m 说针叶的南方 6 省点，2019–2024 实测针叶率 62.5%（n=96/170，95%CI [np.float64(52.5), np.float64(71.5)]）",
+  "headline_all": "全部 30m 针叶样本点实测针叶率 56.1%（n=107/210，95%CI [np.float64(46.6), np.float64(65.1)]）",
+  "masson_pct": 71.9,
+  "fir_pct": 67.6,
+  "other_south_needle_pct": 44.4,
+  "guangdong_pct": 72.7,
+  "G4_broad_control_needle_pct": 59.1,
+  "G5_north_pct": 0.0,
+  "G5_north_evergreen_pct": 0.0,
+  "G5_north_spruce_pct": 0.0,
+  "G5_north_larch_pct": 0.0
+ },
+ "typical_cases": [
+  {
+   "point_id": 89513,
+   "group": "G1",
+   "prov": "江西省",
+   "gen": "含白栎、短柄树的马尾松林",
+   "lon": 117.387,
+   "lat": 29.822,
+   "ndvi_gs": 0.807,
+   "ndvi_djf": 0.71,
+   "amp": 0.097,
+   "amp_m": 97.0,
+   "vh_djf": -10.0,
+   "verdict30m": "针叶",
+   "verdict_now": "针叶",
+   "conf": "高",
+   "why": "判据有效的一侧：马尾松(江西)冬 NDVI 0.71 五年稳定(19:0.76/20:0.70/21:0.71/22:0.69/23:0.72)、振幅仅 0.097、冬 VH -10.0 dB 为全部 240 点中最强 —— 三项同向指向常绿针叶，30m 标签在此点成立。证明判据不是一味把东西判成阔叶。",
+   "evidence": "冬NDVI 0.71; 夏NDVI 0.81; 振幅 0.10(97); 冬VH -10.0dB; 冬NDVI逐年 19:0.76/20:0.70/21:0.71/22:0.69/23:0.72; 冬VH逐年 19:-10.8/20:-8.7/21:-9.3/22:-9.9/23:-9.7/24:-10.1; 冬70景; VH43景"
+  },
+  {
+   "point_id": 97716,
+   "group": "G1",
+   "prov": "福建省",
+   "gen": "含木、映山红的马尾松林",
+   "lon": 119.564,
+   "lat": 27.597,
+   "ndvi_gs": 0.799,
+   "ndvi_djf": 0.833,
+   "amp": -0.034,
+   "amp_m": -34.0,
+   "vh_djf": -21.5,
+   "verdict30m": "针叶",
+   "verdict_now": "阔叶(常绿)",
+   "conf": "高",
+   "why": "30m 说马尾松(福建)，现代三项全部指向常绿阔叶：冬 NDVI 0.833 高于夏 NDVI 0.799（振幅 -0.034，常年满绿）、冬 VH -21.5 dB 比同省真松林弱 10 dB 以上。松林冠层结构已不存在。",
+   "evidence": "冬NDVI 0.83; 夏NDVI 0.80; 振幅 -0.03(-34); 冬VH -21.5dB; 冬NDVI逐年 19:0.86/20:0.84/21:0.85/22:0.85/23:0.80; 冬VH逐年 19:-22.2/20:-21.1/21:-20.8/22:-20.5/23:-21.9/24:-21.0; 冬21景; VH92景"
+  },
+  {
+   "point_id": 89508,
+   "group": "G2",
+   "prov": "江西省",
+   "gen": "杉木林",
+   "lon": 117.366,
+   "lat": 29.112,
+   "ndvi_gs": 0.815,
+   "ndvi_djf": 0.734,
+   "amp": 0.082,
+   "amp_m": 82.0,
+   "vh_djf": -18.6,
+   "verdict30m": "针叶",
+   "verdict_now": "阔叶(常绿)",
+   "conf": "高",
+   "why": "30m 说杉木(江西)，判为常绿阔叶：冬 NDVI 0.734、振幅 0.082、冬 VH -18.6 dB。杉木是 20-25 年短轮伐人工林，1980s-90s 图斑到 2019-2024 已过 1-2 个轮伐期，采伐后改种或撂荒演替为阔叶是最合理的机制。",
+   "evidence": "冬NDVI 0.73; 夏NDVI 0.82; 振幅 0.08(82); 冬VH -18.6dB; 冬NDVI逐年 19:0.81/20:0.76/21:0.69/22:0.72/23:0.74; 冬VH逐年 19:-18.2/20:-18.8/21:-20.0/22:-18.4/23:-18.5/24:-21.4; 冬33景; VH43景"
+  },
+  {
+   "point_id": 55641,
+   "group": "G4",
+   "prov": "广西壮族自治区",
+   "gen": "甜槠、米槠林",
+   "lon": 110.111,
+   "lat": 25.832,
+   "ndvi_gs": 0.702,
+   "ndvi_djf": 0.535,
+   "amp": 0.167,
+   "amp_m": 167.0,
+   "vh_djf": -5.3,
+   "verdict30m": "阔叶",
+   "verdict_now": "针叶",
+   "conf": "高",
+   "why": "假阳性直接证据：30m 明确说阔叶(甜槠、米槠林，广西)，判据却判成针叶 —— 冬 NDVI 0.535、振幅 0.167、冬 VH -5.3 dB（异常强，可能为地形/含水量/建筑物混入）。VH 极端值能把常绿阔叶推过「针叶」阈值，这说明 VH>-16 这个条件本身不可靠。",
+   "evidence": "冬NDVI 0.54; 夏NDVI 0.70; 振幅 0.17(167); 冬VH -5.3dB; 冬NDVI逐年 19:0.62/20:0.50/21:0.62/22:0.39/23:0.53; 冬VH逐年 19:-5.0/20:-6.0/21:-5.9/22:-5.9/23:-5.3/24:-4.5; 冬26景; VH44景"
+  },
+  {
+   "point_id": 134674,
+   "group": "G5",
+   "prov": "黑龙江省",
+   "gen": "鱼鳞云杉林",
+   "lon": 130.816,
+   "lat": 47.349,
+   "ndvi_gs": 0.68,
+   "ndvi_djf": 0.149,
+   "amp": 0.53,
+   "amp_m": 530.0,
+   "vh_djf": -24.2,
+   "verdict30m": "针叶",
+   "verdict_now": "阔叶(落叶)",
+   "conf": "高",
+   "why": "判据在北方失效的证据：30m 说鱼鳞云杉(黑龙江，常绿针叶)，判据判成落叶阔叶 —— 冬 NDVI 仅 0.149、振幅 0.53、冬 VH -24.2 dB。积雪+冻土抹平了常绿针叶的冬季信号，NDVI 掉到落叶水平。这是判据局限，不是北方标签错误。",
+   "evidence": "冬NDVI 0.15; 夏NDVI 0.68; 振幅 0.53(531); 冬VH -24.2dB; 冬NDVI逐年 20:0.15; 冬VH逐年 19:-24.4/20:-24.0/21:-23.4; 冬3景; VH44景"
+  }
+ ],
+ "discriminability": {
+  "features": {
+   "ndvi_gs": {
+    "auc": 0.393,
+    "n_needle": 170,
+    "n_broad": 30,
+    "med_needle": 0.751,
+    "med_broad": 0.779
+   },
+   "ndvi_djf": {
+    "auc": 0.379,
+    "n_needle": 170,
+    "n_broad": 30,
+    "med_needle": 0.613,
+    "med_broad": 0.699
+   },
+   "amp": {
+    "auc": 0.564,
+    "n_needle": 170,
+    "n_broad": 30,
+    "med_needle": 0.095,
+    "med_broad": 0.064
+   },
+   "vh_djf": {
+    "auc": 0.447,
+    "n_needle": 170,
+    "n_broad": 30,
+    "med_needle": -16.545,
+    "med_broad": -15.97
+   },
+   "vv_djf": {
+    "auc": 0.448,
+    "n_needle": 170,
+    "n_broad": 30,
+    "med_needle": -9.902,
+    "med_broad": -9.16
+   },
+   "ang_djf": {
+    "auc": 0.485,
+    "n_needle": 170,
+    "n_broad": 30,
+    "med_needle": 38.377,
+    "med_broad": 38.543
+   },
+   "vh_vv": {
+    "auc": 0.52,
+    "n_needle": 170,
+    "n_broad": 30,
+    "med_needle": -6.377,
+    "med_broad": -6.5
+   }
+  },
+  "note": "",
+  "cv_best": [
+   {
+    "cv_auc": 0.64,
+    "cv_auc_sd": 0.096,
+    "n": 200,
+    "cols": [
+     "ndvi_gs",
+     "vh_vv"
+    ]
+   },
+   {
+    "cv_auc": 0.63,
+    "cv_auc_sd": 0.08,
+    "n": 200,
+    "cols": [
+     "ndvi_djf",
+     "vh_vv"
+    ]
+   },
+   {
+    "cv_auc": 0.625,
+    "cv_auc_sd": 0.116,
+    "n": 200,
+    "cols": [
+     "ndvi_djf",
+     "vv_djf"
+    ]
+   },
+   {
+    "cv_auc": 0.625,
+    "cv_auc_sd": 0.08,
+    "n": 200,
+    "cols": [
+     "ndvi_gs",
+     "ndvi_djf",
+     "vh_vv"
+    ]
+   },
+   {
+    "cv_auc": 0.624,
+    "cv_auc_sd": 0.083,
+    "n": 200,
+    "cols": [
+     "ndvi_djf"
+    ]
+   },
+   {
+    "cv_auc": 0.622,
+    "cv_auc_sd": 0.116,
+    "n": 200,
+    "cols": [
+     "ndvi_djf",
+     "vh_djf",
+     "vv_djf"
+    ]
+   }
+  ],
+  "score": {
+   "med_needle": 1.0,
+   "med_broad": 1.5,
+   "needle_ge2_pct": 46.5,
+   "broad_ge2_pct": 50.0,
+   "needle_le_minus2_pct": 3.5,
+   "broad_le_minus2_pct": 0.0
+  },
+  "by_prov_pair": {
+   "广东省": {
+    "n_needle": 18,
+    "n_broad": 3,
+    "ndvi_djf_med": [
+     0.688,
+     0.772
+    ],
+    "amp_med": [
+     0.024,
+     -0.0
+    ],
+    "vh_med": [
+     -16.11,
+     -14.74
+    ],
+    "auc_vh": NaN,
+    "auc_amp": NaN
+   },
+   "广西壮族自治区": {
+    "n_needle": 22,
+    "n_broad": 11,
+    "ndvi_djf_med": [
+     0.64,
+     0.739
+    ],
+    "amp_med": [
+     0.086,
+     0.056
+    ],
+    "vh_med": [
+     -16.0,
+     -15.92
+    ],
+    "auc_vh": 0.521,
+    "auc_amp": 0.665
+   },
+   "福建省": {
+    "n_needle": 24,
+    "n_broad": 4,
+    "ndvi_djf_med": [
+     0.776,
+     0.664
+    ],
+    "amp_med": [
+     0.021,
+     0.009
+    ],
+    "vh_med": [
+     -16.88,
+     -17.29
+    ],
+    "auc_vh": NaN,
+    "auc_amp": NaN
+   },
+   "江西省": {
+    "n_needle": 38,
+    "n_broad": 7,
+    "ndvi_djf_med": [
+     0.656,
+     0.701
+    ],
+    "amp_med": [
+     0.077,
+     0.064
+    ],
+    "vh_med": [
+     -16.87,
+     -12.22
+    ],
+    "auc_vh": 0.365,
+    "auc_amp": 0.455
+   },
+   "湖南省": {
+    "n_needle": 42,
+    "n_broad": 4,
+    "ndvi_djf_med": [
+     0.516,
+     0.451
+    ],
+    "amp_med": [
+     0.178,
+     0.123
+    ],
+    "vh_med": [
+     -16.3,
+     -16.16
+    ],
+    "auc_vh": NaN,
+    "auc_amp": NaN
+   }
+  },
+  "counterfactual_vh_flipped": {
+   "G1": {
+    "n": 70,
+    "n_dec": 29,
+    "needle": 12.0,
+    "needle_pct": 41.4
+   },
+   "G2": {
+    "n": 60,
+    "n_dec": 42,
+    "needle": 19.0,
+    "needle_pct": 45.2
+   },
+   "G3": {
+    "n": 40,
+    "n_dec": 29,
+    "needle": 17.0,
+    "needle_pct": 58.6
+   },
+   "G4": {
+    "n": 30,
+    "n_dec": 23,
+    "needle": 11.0,
+    "needle_pct": 47.8
+   },
+   "G5": {
+    "n": 40,
+    "n_dec": 13,
+    "needle": 0.0,
+    "needle_pct": 0.0
+   }
+  }
+ },
+ "supplementary_modis_pft": {
+  "source": "MODIS/061/MCD12Q1 LC_Type5 2019-2023 逐年众数，500 m（非预注册判据，仅旁证）",
+  "caveat": "500 m 像素远大于 30 m 样本点，且 MCD12Q1 PFT 在华南以常绿阔叶/混交为主，分辨率不足以定位小面积人工松林图斑；只作方向性旁证。",
+  "by_group": {
+   "G1|针叶": 2,
+   "G1|阔叶": 59,
+   "G2|针叶": 3,
+   "G2|阔叶": 53,
+   "G3|针叶": 2,
+   "G3|阔叶": 31,
+   "G4|阔叶": 30,
+   "G5|针叶": 1,
+   "G5|阔叶": 6
+  },
+  "needle_pct_by_group": {
+   "G1": 3.3,
+   "G2": 5.4,
+   "G3": 6.1,
+   "G4": 0.0,
+   "G5": 14.3
+  },
+  "broad_pct_by_group": {
+   "G1": 96.7,
+   "G2": 94.6,
+   "G3": 93.9,
+   "G4": 100.0,
+   "G5": 85.7
+  }
+ },
+ "validity_test": {
+  "needle_group": {
+   "k": 60,
+   "n": 96,
+   "pct": 62.5
+  },
+  "broad_control_G4": {
+   "k": 13,
+   "n": 22,
+   "pct": 59.1
+  },
+  "fisher_exact_p": 0.8104,
+  "bootstrap_diff_pct": {
+   "point": -8.0,
+   "ci95": [
+    -27.3,
+    11.2
+   ],
+   "p_diff_le0": 0.801
+  },
+  "G5_north": {
+   "k": 0,
+   "n": 11,
+   "pct": 0.0
+  },
+  "conclusion": "判据效度不成立：30m 说阔叶的南方对照(G4)被判「针叶」的比例 59.1%，与 30m 说针叶的南方组(62.5%)统计上无法区分（Fisher p=0.81；bootstrap 差值 95%CI 跨 0）。北方常绿针叶对照实测针叶率 0%。因此 62.5% 不是「南方针叶真实存活率」，它等于本判据的噪声水平。",
+  "rogan_gladen": {
+   "Se=1.0": 8.3,
+   "Se=0.9": 11.0,
+   "Se=0.8": 16.3
+  },
+  "rogan_gladen_note": "假设判据对真针叶灵敏度 Se、对真阔叶假阳性 FP 取 G4 实测值 0.591，反解南方针叶组真实针叶率。FP 已接近甚至超过任何合理 Se，分母 (Se−FP) 极小 → 反解值 8–16% 极不稳定；它只能支持「真实针叶率很可能远低于 62.5%」，不可当作点估计。"
+ },
+ "G5_failure_diagnosis": {
+  "vh_djf_p10_p50_p90": [
+   -31.3,
+   -25.6,
+   -19.1
+  ],
+  "ndvi_djf_p10_p50_p90": [
+   0.07,
+   0.15,
+   0.28
+  ],
+  "ndvi_gs_p10_p50_p90": [
+   0.24,
+   0.58,
+   0.79
+  ],
+  "snow_masked_points": 7,
+  "snow_check": "7 个 S2 缺失点在 DJF 的 SCL 直方图 100% 为类别 11（雪）→ 冬季 NDVI 无定义，非提取失败。预注册的 SCL 掩膜把积雪全掩掉，北方针叶的冬季信号被系统性抹除。",
+  "dry_cold_deciduous_confound": "落叶松 Larix 是落叶针叶，冬季无叶，与落叶阔叶的 NDVI 季节曲线不可分 —— 这是判据的固有局限（跑前已在 docstring 声明），不是标签错误；G5 中 16/40 是落叶松。",
+  "evergreen_confound": "北方常绿针叶（油松/樟子松/云杉）冬季 VH 中位 −25.6 dB，远低于判据阈值 −16 dB：积雪与冻土使 C 波段后向散射大幅衰减，判据「针叶 VH 更强」的前提在北方冬季不成立。"
+ },
+ "direction_analysis": {
+  "note": "预注册绝对阈值失效后的补充方向检验；不改变预注册结论，只说明残余信号强度",
+  "direction_tests": {
+   "ndvi_djf": {
+    "alt": "less",
+    "why": "常绿松林 LAI 低于常绿阔叶 → 冬季 NDVI 应更低",
+    "med_needle": 0.613,
+    "med_broad": 0.699,
+    "u": 1930.5,
+    "p_one_sided": 0.01709,
+    "direction_as_expected": true,
+    "n": [
+     170,
+     30
+    ]
+   },
+   "ndvi_gs": {
+    "alt": "less",
+    "why": "同上，生长季也应略低",
+    "med_needle": 0.751,
+    "med_broad": 0.779,
+    "u": 2005.5,
+    "p_one_sided": 0.03135,
+    "direction_as_expected": true,
+    "n": [
+     170,
+     30
+    ]
+   },
+   "vh_djf": {
+    "alt": "less",
+    "why": "冠层密度/生物量更低 → VH 更弱",
+    "med_needle": -16.545,
+    "med_broad": -15.97,
+    "u": 2281.0,
+    "p_one_sided": 0.1791,
+    "direction_as_expected": false,
+    "n": [
+     170,
+     30
+    ]
+   },
+   "amp": {
+    "alt": "greater",
+    "why": "松林季节动态强于常绿阔叶 → 振幅应更大",
+    "med_needle": 0.095,
+    "med_broad": 0.064,
+    "u": 2878.5,
+    "p_one_sided": 0.1309,
+    "direction_as_expected": false,
+    "n": [
+     170,
+     30
+    ]
+   }
+  },
+  "cv_auc_by_combo": [
+   {
+    "cols": [
+     "ndvi_djf"
+    ],
+    "cv_auc": 0.613,
+    "sd": 0.114,
+    "n": 200
+   },
+   {
+    "cols": [
+     "vh_djf"
+    ],
+    "cv_auc": 0.558,
+    "sd": 0.088,
+    "n": 200
+   },
+   {
+    "cols": [
+     "amp"
+    ],
+    "cv_auc": 0.572,
+    "sd": 0.042,
+    "n": 200
+   },
+   {
+    "cols": [
+     "ndvi_djf",
+     "vh_djf"
+    ],
+    "cv_auc": 0.598,
+    "sd": 0.077,
+    "n": 200
+   },
+   {
+    "cols": [
+     "ndvi_djf",
+     "amp"
+    ],
+    "cv_auc": 0.608,
+    "sd": 0.108,
+    "n": 200
+   },
+   {
+    "cols": [
+     "ndvi_djf",
+     "vh_djf",
+     "amp"
+    ],
+    "cv_auc": 0.585,
+    "sd": 0.075,
+    "n": 200
+   },
+   {
+    "cols": [
+     "ndvi_gs",
+     "ndvi_djf",
+     "vh_djf",
+     "amp"
+    ],
+    "cv_auc": 0.584,
+    "sd": 0.076,
+    "n": 200
+   }
+  ],
+  "excess_below_broad_p10": {
+   "ndvi_djf": {
+    "cut": 0.533,
+    "needle_below_pct": 40.6,
+    "expected_if_same_dist_pct": 20
+   },
+   "vh_djf": {
+    "cut": -18.302,
+    "needle_below_pct": 24.1,
+    "expected_if_same_dist_pct": 20
+   }
+  },
+  "interpretation": "方向全部如预期（松林冬季 NDVI 更低、VH 更弱、振幅更大），但效应量小：多指标 CV AUC 仅约 0.62–0.66，即两组分布高度重叠，无法给出单点判决。结论：30m 标签在华南对应的现代针叶信号确实存在但极其微弱，这更符合「大量松林图斑已被改造/演替为阔叶」而非「标签完全无关」；但残余信号弱到不足以支撑逐点判定，任何逐点针叶率都必须报为不可判读。"
+ },
+ "typical_cases_note": "案例 1 证明判据在「确实仍有松林」的点上有效；案例 2、3 是主结论的机制；案例 4 与 5 是判据失效的两个方向（假阳性 & 北方针叶漏判）。正因为 4/5 存在，案例 1 的正确判读不能被推广成总体针叶率。",
+ "sensitivity_attribution": {
+  "primary": "amp 阈值在两组几乎不区分（南方针叶 90.6% 过 amp<250，G4 阔叶 93.3% 也过）→ amp 是冗余条件",
+  "amp300": "amp 放宽到 300 后针叶率仅 -1 pp（56.6→55.6），结论不依赖 amp 阈值",
+  "vh18": "VH 阈值从 -16 松到 -18 后针叶率 +15.4 pp（56.6→72.0），且 G4 对照从 59.1% 升到 72.0% —— 两组同步上升，判别力没有改善，说明 VH 绝对阈值只是整体平移判决宽松度，不产生信息",
+  "no_vh": "去掉 VH 后仅 31/240 点可判（常绿针叶与常绿阔叶在 NDVI/振幅上完全重叠），证明 VH 是常绿类唯一的候选分离量；但它方向不稳定（分省 AUC 0.37-0.52）",
+  "overall": "阈值敏感性测试不改变结论：无论怎样调阈值，南方针叶组与阔叶对照的判决率始终同步移动，Fisher 检验始终不显著。结论对阈值不敏感 = 失效是系统性的，不是参数没调好。"
+ },
+ "final_verdict": {
+  "south_30m_needle_rate_point": "62.5%（n=96/170，95%CI 52.5–71.5）—— 但见 validity_test，此值等于噪声",
+  "south_effective_answer": "不可判读：判据无判别力，无法给出南方针叶率的有效估计。可用下界型旁证：MODIS PFT(2019-2023) 在 G1/G2/G3 的针叶占比仅 3.3%/5.4%/6.1%",
+  "masson": "G1 点判决针叶 71.9%（n=32），与 G4 阔叶对照 59.1% 无统计差异",
+  "fir": "G2 点判决针叶 67.6%（n=37），与 G4 无统计差异",
+  "guangdong": "广东 72.7%（n=11/18，95%CI 43.4–90.3），样本量与判据双重不足，不可用于决策",
+  "north_control": "G5 北方针叶对照实测针叶率 0%（n=0/11 可判），判据在北方明确失效",
+  "usability_south": "29. 30m 针叶标签在南方不可直接用于 2017–2024 分类：1980s-90s 的松/杉图斑到影像期已过 1-2 个杉木轮伐期或经历松材线虫/阔叶化演替，逐点针叶身份不可靠。可用于「历史上曾是针叶林」的先验，不可作为逐点标签。",
+  "usability_north": "30m 针叶标签在北方同样不可用 —— 但原因不同：不是标签错，是本轮光学/SAR 判据在积雪+落叶松条件下失效，未能完成检验。北方针叶标签的有效性仍是开放问题，需换判据（如生长季多时相 + 落叶松物候 + 更高分辨率影像目视）另测。"
+ }
+}

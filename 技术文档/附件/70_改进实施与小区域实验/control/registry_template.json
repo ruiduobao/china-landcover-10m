@@ -1,0 +1,52 @@
+{
+  "schema": "improve_pilot_registry/v1",
+  "_template": true,
+  "_spec_doc": "技术文档/70_样本与分类改进实施方案及20分钟小区域实验规范.md",
+  "_registration_fields_doc70_section_4_1": [
+    "experiment_id", "region_bbox", "tile_id", "training_bbox", "input_identity",
+    "class_map_hash", "candidate_rule", "seeds", "n_train_limit", "rf_params",
+    "deadline_s", "development_ids", "confirmation_ids", "target_metrics",
+    "expected_effect", "stop_rules", "code_hash", "registered_at"
+  ],
+  "updated_at": null,
+  "experiments": {
+    "<exp_id>": {
+      "owner": "<control|orchard|terrain|geometry|audit>",
+      "hypothesis": "H1|H2|H3|H4|H5|H6",
+      "province": "四川|广东|宁夏",
+      "stage": "A",
+      "status": "registered|running|done|failed|failed_prepare|timeout|blocked_slot|blocked_mem|dry_run",
+      "seeds": [7, 11, 23],
+      "limit_s": 1200,
+      "uses_rf": true,
+      "mem_cap_gb": 10,
+      "stage_times_s": {"prepare": null, "train": null, "infer": null, "eval": null},
+      "stage_peak_rss_gb": {"prepare": null, "train": null, "infer": null, "eval": null},
+      "deadline_window_s": null,
+      "budget_ok": null,
+      "registration": {
+        "experiment_id": null,
+        "region_bbox": null,
+        "tile_id": null,
+        "training_bbox": null,
+        "input_identity": null,
+        "class_map_hash": null,
+        "candidate_rule": null,
+        "seeds": [7, 11, 23],
+        "n_train_limit": 20000,
+        "rf_params": {"n_trees": 100, "min_leaf": 2, "max_nodes": 5000},
+        "deadline_s": 1200,
+        "development_ids": null,
+        "confirmation_ids": null,
+        "target_metrics": null,
+        "expected_effect": null,
+        "stop_rules": null,
+        "code_hash": null,
+        "registered_at": null
+      },
+      "code_hash": null,
+      "started_at": null,
+      "finished_at": null
+    }
+  }
+}

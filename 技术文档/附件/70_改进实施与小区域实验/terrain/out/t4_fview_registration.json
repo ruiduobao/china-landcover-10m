@@ -1,0 +1,236 @@
+{
+ "experiment": "F-VIEW (new frame)",
+ "generated": "2026-10-15 14:31:19",
+ "script": "F:\\lc_work\\improve_2023_pilot_20261015\\terrain\\t4_fview_prep.py",
+ "spec": "doc70 §4.3 F-VIEW / §6.1 独立 confirm",
+ "seeds": [
+  7,
+  11,
+  23
+ ],
+ "n_train_limit": 20000,
+ "block_deg": 0.25,
+ "dev_frac": 0.6,
+ "arms": [
+  "baseline_common",
+  "strict_common"
+ ],
+ "rules": {
+  "count": "min(v2池类count, strict视图类count)（共同支持，森林类降幅如实报）",
+  "nonforest": "两臂共用同一非森林点（完全同选择）",
+  "strict_view": "forest_samples_v1_strict.parquet（doc65 clean/strict；来源固定，不依预测挑规则）",
+  "new_frame": "F1(T1607)/F2(T1706) 以外；confirm 块未看过"
+ },
+ "inputs": {
+  "pool2": {
+   "path": "F:/lc_work/prod2nd_2023/data/train2023_v2.parquet",
+   "size": 141556681,
+   "mtime": "2026-10-14 03:17:11",
+   "md5": "8bbed86a3b931f5519f42dcf4db75e79"
+  },
+  "strict": {
+   "path": "F:/lc_work/v31_exp/data/forest_qc/out/forest_samples_v1_strict.parquet",
+   "size": 28034565,
+   "mtime": "2026-10-13 01:15:48",
+   "md5": "506537148e80f21a4f572b49c50cd9dc"
+  },
+  "eval_w2": {
+   "path": "F:/lc_work/v31_exp/data/yearly/eval_2023_w2.parquet",
+   "size": 962354,
+   "mtime": "2026-09-27 16:20:30",
+   "md5": "772946a6c066021b93aa60b0c87e81fa"
+  },
+  "tiles": {
+   "path": "F:/lc_work/prod2nd_2023/plan/tiles_secondrun.csv",
+   "size": 2082,
+   "mtime": "2026-10-15 06:51:06",
+   "md5": "00c01b40697b8556fbe9eb789fcd2fca"
+  }
+ },
+ "strict_field_evidence": {
+  "file": "F:/lc_work/v31_exp/data/forest_qc/out/forest_samples_v1_strict.parquet",
+  "n_total_after_year2023": 156034,
+  "n_non2023_dropped": 3313,
+  "class4_counts": {
+   "4": 69833,
+   "5": 27172,
+   "6": 59019,
+   "7": 10
+  },
+  "src_top": {
+   "v2_glc_fcs30d2020_7yr_stable": 152220,
+   "glc_fcs10_2023": 3646,
+   "glc_fcs10_2023_band130": 168
+  },
+  "tier_counts": {
+   "gold": 96617,
+   "silver": 32691,
+   "bronze": 22912,
+   "external": 3814
+  },
+  "note": "class4=24码（4/5/6/7）；src 为旧教师来源目录名；tier=质量层；已按 aef_year==2023 对齐；不含针/阔真值（doc54 AUC0.724）"
+ },
+ "seen_conf_blocks_registered": {
+  "422,129": "terrain_F1",
+  "422,131": "terrain_F1",
+  "423,131": "terrain_F1",
+  "424,128": "terrain_F1",
+  "424,152": "orchard_NX",
+  "425,128": "terrain_F1",
+  "425,129": "terrain_F1",
+  "425,130": "orchard_SC1",
+  "425,152": "orchard_NX",
+  "425,153": "orchard_NX",
+  "425,155": "orchard_NX",
+  "426,128": "orchard_SC1",
+  "426,129": "orchard_SC1",
+  "427,130": "orchard_SC1",
+  "427,155": "orchard_NX",
+  "428,127": "terrain_F2",
+  "428,128": "orchard_SC2",
+  "429,129": "orchard_SC2",
+  "430,127": "terrain_F2",
+  "431,126": "terrain_F2",
+  "431,129": "orchard_SC2",
+  "448,93": "orchard_GD",
+  "449,92": "orchard_GD",
+  "449,95": "orchard_GD",
+  "450,92": "orchard_GD",
+  "451,94": "orchard_GD",
+  "451,95": "orchard_GD"
+ },
+ "frames": [
+  {
+   "frame": "G2",
+   "tile": "T1606",
+   "frame_bbox": [
+    106.0,
+    31.0,
+    107.0,
+    32.0
+   ],
+   "train_bbox": [
+    103.0,
+    28.0,
+    109.0,
+    34.0
+   ],
+   "n_eval": 194,
+   "n_eval_forest": 82,
+   "n_eval_dev": 119,
+   "n_eval_conf": 75,
+   "n_eval_blocks": 8,
+   "n_eval_fcs10": 51,
+   "n_eval_nonfcs10": 143,
+   "n_eval_conf_nonfcs10": 56,
+   "n_conf_class4": 15,
+   "n_eval_class": {
+    "6": 51,
+    "10": 48,
+    "4": 29,
+    "1": 23,
+    "21": 16,
+    "23": 13,
+    "3": 9,
+    "2": 3,
+    "5": 2
+   },
+   "strict_avail_window": {
+    "4": 1705,
+    "5": 5858,
+    "6": 2218,
+    "7": 3
+   },
+   "pool_avail_window": {
+    "4": 7501,
+    "5": 7340,
+    "6": 9648,
+    "7": 38
+   },
+   "counts_full": {
+    "1": 2611,
+    "2": 2595,
+    "3": 1884,
+    "4": 2329,
+    "5": 2279,
+    "6": 2996,
+    "7": 12,
+    "9": 918,
+    "10": 629,
+    "11": 787,
+    "13": 1,
+    "14": 31,
+    "15": 121,
+    "16": 102,
+    "21": 1705,
+    "23": 991,
+    "24": 8
+   },
+   "n_train_full": 19999,
+   "counts_common": {
+    "1": 2611,
+    "2": 2595,
+    "3": 1884,
+    "4": 1705,
+    "5": 2279,
+    "6": 2218,
+    "7": 3,
+    "9": 918,
+    "10": 629,
+    "11": 787,
+    "13": 1,
+    "14": 31,
+    "15": 121,
+    "16": 102,
+    "21": 1705,
+    "23": 991,
+    "24": 8
+   },
+   "n_train_common": 18588,
+   "forest_reduction": {
+    "4": [
+     2329,
+     1705
+    ],
+    "6": [
+     2996,
+     2218
+    ],
+    "7": [
+     12,
+     3
+    ]
+   },
+   "n_pool_window_raw": 66769,
+   "n_leak_excl_self_evalblock": 825,
+   "n_leak_excl_seen_confblock": 1535,
+   "n_train_candidates": 64409,
+   "eval_blocks_list": [
+    "424,126",
+    "424,127",
+    "425,126",
+    "425,127",
+    "426,126",
+    "426,127",
+    "427,126",
+    "427,127"
+   ],
+   "conf_blocks_list": [
+    "425,127",
+    "426,126",
+    "426,127"
+   ],
+   "confirm_independence": {
+    "overlap_blocks_with_seen": [],
+    "n_overlap_points": 0,
+    "seen_src": {},
+    "verdict": "PASS(0)"
+   },
+   "strict_short": {
+    "seed7": {},
+    "seed11": {},
+    "seed23": {}
+   }
+  }
+ ]
+}

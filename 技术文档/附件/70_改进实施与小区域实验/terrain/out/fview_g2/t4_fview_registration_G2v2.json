@@ -1,0 +1,456 @@
+{
+ "experiment": "F-VIEW (new frame, G2) — prep v2 (bug-fixed)",
+ "generated": "2026-10-15 14:43:58",
+ "script": "F:\\lc_work\\improve_2023_pilot_20261015\\terrain\\t4b_fview_prep_g2.py",
+ "spec": "doc70 §4.3 F-VIEW / §6.1 独立 confirm / §4.1 bug 修复留痕",
+ "supersedes": "F:/lc_work/improve_2023_pilot_20261015/terrain/out\\t4_fview_registration.json",
+ "bugfix_vs_v1": {
+  "file": "t4_fview_prep.py",
+  "defect": "strict 臂非森林行写 X[pool]（pool=窗内相对下标，X=全局池矩阵）→ 取错行；正确 X[iw][pool]",
+  "affected_rows_v1": "strict_common 非森林 12383 行/seed（森林行 Xs[pick] 本身正确）",
+  "why_blocking": "违反冻结规则\"非森林两臂完全同选择\"；strict 臂训练样本无效",
+  "v1_kept": "out/ 下 v1 npz/注册件原样保留，未覆盖"
+ },
+ "seeds": [
+  7,
+  11,
+  23
+ ],
+ "n_train_limit": 20000,
+ "block_deg": 0.25,
+ "dev_frac": 0.6,
+ "arms": [
+  "baseline_common",
+  "strict_common"
+ ],
+ "rules": {
+  "count": "min(v2池类count, strict视图类count)（共同支持，森林类降幅如实报）",
+  "nonforest": "两臂共用同一非森林点（同 pool 行号；v2 已按 X[iw][pool] 修复并断言）",
+  "strict_view": "forest_samples_v1_strict.parquet（doc65 clean/strict；来源固定，不依预测挑规则）",
+  "new_frame": "F1(T1607)/F2(T1706) 以外；confirm 块未看过"
+ },
+ "inputs": {
+  "pool2": {
+   "path": "F:/lc_work/prod2nd_2023/data/train2023_v2.parquet",
+   "size": 141556681,
+   "mtime": "2026-10-14 03:17:11",
+   "md5": "8bbed86a3b931f5519f42dcf4db75e79"
+  },
+  "strict": {
+   "path": "F:/lc_work/v31_exp/data/forest_qc/out/forest_samples_v1_strict.parquet",
+   "size": 28034565,
+   "mtime": "2026-10-13 01:15:48",
+   "md5": "506537148e80f21a4f572b49c50cd9dc"
+  },
+  "eval_w2": {
+   "path": "F:/lc_work/v31_exp/data/yearly/eval_2023_w2.parquet",
+   "size": 962354,
+   "mtime": "2026-09-27 16:20:30",
+   "md5": "772946a6c066021b93aa60b0c87e81fa"
+  },
+  "tiles": {
+   "path": "F:/lc_work/prod2nd_2023/plan/tiles_secondrun.csv",
+   "size": 2082,
+   "mtime": "2026-10-15 06:51:06",
+   "md5": "00c01b40697b8556fbe9eb789fcd2fca"
+  }
+ },
+ "strict_year_evidence": {
+  "rule": "只保留 aef_year==2023（非八年并集）；AEF64 取该点 2023 年特征",
+  "years_present_before": [
+   2017.0,
+   2018.0,
+   2019.0,
+   2020.0,
+   2021.0,
+   2022.0,
+   2023.0,
+   2024.0
+  ],
+  "years_retained": [
+   2023.0
+  ],
+  "n_retained": 156034,
+  "n_dropped_non2023": 3313,
+  "assert_all_2023": true
+ },
+ "strict_field_evidence": {
+  "file": "F:/lc_work/v31_exp/data/forest_qc/out/forest_samples_v1_strict.parquet",
+  "n_total_after_year2023": 156034,
+  "n_non2023_dropped": 3313,
+  "class4_counts": {
+   "4": 69833,
+   "5": 27172,
+   "6": 59019,
+   "7": 10
+  },
+  "src_top": {
+   "v2_glc_fcs30d2020_7yr_stable": 152220,
+   "glc_fcs10_2023": 3646,
+   "glc_fcs10_2023_band130": 168
+  },
+  "tier_counts": {
+   "gold": 96617,
+   "silver": 32691,
+   "bronze": 22912,
+   "external": 3814
+  },
+  "note": "class4=24码（4/5/6/7）；已按 aef_year==2023 对齐；不含针/阔真值（doc54 AUC0.724）"
+ },
+ "seen_conf_blocks_registered": {
+  "422,129": "terrain_F1",
+  "422,131": "terrain_F1",
+  "423,131": "terrain_F1",
+  "424,128": "terrain_F1",
+  "424,152": "orchard_NX",
+  "425,128": "terrain_F1",
+  "425,129": "terrain_F1",
+  "425,130": "orchard_SC1",
+  "425,152": "orchard_NX",
+  "425,153": "orchard_NX",
+  "425,155": "orchard_NX",
+  "426,128": "orchard_SC1",
+  "426,129": "orchard_SC1",
+  "427,130": "orchard_SC1",
+  "427,155": "orchard_NX",
+  "428,127": "terrain_F2",
+  "428,128": "orchard_SC2",
+  "429,129": "orchard_SC2",
+  "430,127": "terrain_F2",
+  "431,126": "terrain_F2",
+  "431,129": "orchard_SC2",
+  "448,93": "orchard_GD",
+  "449,92": "orchard_GD",
+  "449,95": "orchard_GD",
+  "450,92": "orchard_GD",
+  "451,94": "orchard_GD",
+  "451,95": "orchard_GD"
+ },
+ "seen_conf_points_registered": {
+  "n_rowids": 809,
+  "n_poskeys": 809,
+  "detail": {
+   "GD": {
+    "n_conf": 714,
+    "id_src": "pred_csv"
+   },
+   "NX": {
+    "n_conf": 492,
+    "id_src": "pred_csv"
+   },
+   "SC1": {
+    "n_conf": 417,
+    "id_src": "pred_csv"
+   },
+   "SC2": {
+    "n_conf": 192,
+    "id_src": "pred_csv"
+   },
+   "terrain_F1": {
+    "n_conf": 152,
+    "id_src": "t1 npz lon/lat→eval_w2 row_id"
+   },
+   "terrain_F2": {
+    "n_conf": 85,
+    "id_src": "t1 npz lon/lat→eval_w2 row_id"
+   }
+  }
+ },
+ "frames": [
+  {
+   "frame": "G2",
+   "tile": "T1606",
+   "frame_bbox": [
+    106.0,
+    31.0,
+    107.0,
+    32.0
+   ],
+   "train_bbox": [
+    103.0,
+    28.0,
+    109.0,
+    34.0
+   ],
+   "n_eval": 194,
+   "n_eval_forest": 82,
+   "n_eval_dev": 119,
+   "n_eval_conf": 75,
+   "n_eval_blocks": 8,
+   "n_eval_fcs10": 51,
+   "n_eval_nonfcs10": 143,
+   "n_eval_conf_nonfcs10": 56,
+   "n_conf_class4": 15,
+   "n_conf_class4_any": 15,
+   "n_conf_class6_any": 21,
+   "n_eval_class": {
+    "6": 51,
+    "10": 48,
+    "4": 29,
+    "1": 23,
+    "21": 16,
+    "23": 13,
+    "3": 9,
+    "2": 3,
+    "5": 2
+   },
+   "strict_avail_window": {
+    "4": 1303,
+    "5": 5393,
+    "6": 1729,
+    "7": 3
+   },
+   "pool_avail_window": {
+    "4": 7501,
+    "5": 7340,
+    "6": 9648,
+    "7": 38
+   },
+   "strict_avail_window_raw": {
+    "4": 1721,
+    "5": 5858,
+    "6": 2269,
+    "7": 3
+   },
+   "n_strict_window_raw": 9851,
+   "n_strict_excl_evalblock": 67,
+   "n_strict_excl_seenblock": 474,
+   "n_strict_dem_dropped": 882,
+   "strict_filter_rule": "与 baseline 池同规则：窗内 ∩ 非本框eval块 ∩ 非已看conf块 ∩ 有DEM支持",
+   "counts_full": {
+    "1": 2611,
+    "2": 2595,
+    "3": 1884,
+    "4": 2329,
+    "5": 2279,
+    "6": 2996,
+    "7": 12,
+    "9": 918,
+    "10": 629,
+    "11": 787,
+    "13": 1,
+    "14": 31,
+    "15": 121,
+    "16": 102,
+    "21": 1705,
+    "23": 991,
+    "24": 8
+   },
+   "n_train_full": 19999,
+   "counts_common": {
+    "1": 2611,
+    "2": 2595,
+    "3": 1884,
+    "4": 1303,
+    "5": 2279,
+    "6": 1729,
+    "7": 3,
+    "9": 918,
+    "10": 629,
+    "11": 787,
+    "13": 1,
+    "14": 31,
+    "15": 121,
+    "16": 102,
+    "21": 1705,
+    "23": 991,
+    "24": 8
+   },
+   "n_train_common": 17697,
+   "forest_reduction": {
+    "4": [
+     2329,
+     1303
+    ],
+    "6": [
+     2996,
+     1729
+    ],
+    "7": [
+     12,
+     3
+    ]
+   },
+   "n_pool_window_raw": 66769,
+   "n_leak_excl_self_evalblock": 825,
+   "n_leak_excl_seen_confblock": 1535,
+   "n_train_candidates": 64409,
+   "eval_blocks_list": [
+    "424,126",
+    "424,127",
+    "425,126",
+    "425,127",
+    "426,126",
+    "426,127",
+    "427,126",
+    "427,127"
+   ],
+   "conf_blocks_list": [
+    "425,127",
+    "426,126",
+    "426,127"
+   ],
+   "confirm_independence": {
+    "overlap_blocks_with_seen": [],
+    "n_overlap_points": 0,
+    "seen_src": {},
+    "verdict": "PASS(0)"
+   },
+   "strict_short": {
+    "seed7": {},
+    "seed11": {},
+    "seed23": {}
+   },
+   "arm_selfcheck": {
+    "seed7": {
+     "counts_equal": true,
+     "nonforest_same_ids": true,
+     "nonforest_ids_sorted_equal": true,
+     "nonforest_X_values_equal": true,
+     "nonforest_n": 12383,
+     "forest_from_strict": true,
+     "forest_counts_equal": true,
+     "all_features_finite": true,
+     "idx_unique": true,
+     "idx_unique_note": "唯一性按来源分别检查（pool 全局行号 / strict 表行号 属不同索引空间）",
+     "idx_in_window": true,
+     "n_baseline": 17697,
+     "n_strict": 17697,
+     "short": {},
+     "PASS": true
+    },
+    "seed11": {
+     "counts_equal": true,
+     "nonforest_same_ids": true,
+     "nonforest_ids_sorted_equal": true,
+     "nonforest_X_values_equal": true,
+     "nonforest_n": 12383,
+     "forest_from_strict": true,
+     "forest_counts_equal": true,
+     "all_features_finite": true,
+     "idx_unique": true,
+     "idx_unique_note": "唯一性按来源分别检查（pool 全局行号 / strict 表行号 属不同索引空间）",
+     "idx_in_window": true,
+     "n_baseline": 17697,
+     "n_strict": 17697,
+     "short": {},
+     "PASS": true
+    },
+    "seed23": {
+     "counts_equal": true,
+     "nonforest_same_ids": true,
+     "nonforest_ids_sorted_equal": true,
+     "nonforest_X_values_equal": true,
+     "nonforest_n": 12383,
+     "forest_from_strict": true,
+     "forest_counts_equal": true,
+     "all_features_finite": true,
+     "idx_unique": true,
+     "idx_unique_note": "唯一性按来源分别检查（pool 全局行号 / strict 表行号 属不同索引空间）",
+     "idx_in_window": true,
+     "n_baseline": 17697,
+     "n_strict": 17697,
+     "short": {},
+     "PASS": true
+    }
+   },
+   "v1_compare": {
+    "seed7": {
+     "eval_identical": true,
+     "baseline_identical": false,
+     "strict_forest_identical": false,
+     "v1_nonforest_rows_wrong": true
+    },
+    "seed11": {
+     "eval_identical": true,
+     "baseline_identical": false,
+     "strict_forest_identical": false,
+     "v1_nonforest_rows_wrong": true
+    },
+    "seed23": {
+     "eval_identical": true,
+     "baseline_identical": false,
+     "strict_forest_identical": false,
+     "v1_nonforest_rows_wrong": true
+    }
+   },
+   "arm_hash": {
+    "seed7": {
+     "bc": "23d8df8fc049592d",
+     "sc": "0635552886d053ef",
+     "bc_idx": "1f36999440b4dca6",
+     "sc_idx_pool": "d70e5e23e6625616",
+     "sc_idx_strict": "5e59b94770cb0b10",
+     "n": {
+      "bc": 17697,
+      "sc": 17697,
+      "sc_pool": 12383,
+      "sc_strict": 5314
+     }
+    },
+    "seed11": {
+     "bc": "130c098e1b1c5a55",
+     "sc": "c4fbdf1d96d6a865",
+     "bc_idx": "993c9d24d9a95369",
+     "sc_idx_pool": "4a029f85415c910d",
+     "sc_idx_strict": "591a4f6ca4eb7298",
+     "n": {
+      "bc": 17697,
+      "sc": 17697,
+      "sc_pool": 12383,
+      "sc_strict": 5314
+     }
+    },
+    "seed23": {
+     "bc": "9489846392789d6f",
+     "sc": "51033eaf3b9e4b17",
+     "bc_idx": "bb3edc98db228c5a",
+     "sc_idx_pool": "d542b3bf55027ef4",
+     "sc_idx_strict": "d5d4074055cb813e",
+     "n": {
+      "bc": 17697,
+      "sc": 17697,
+      "sc_pool": 12383,
+      "sc_strict": 5314
+     }
+    }
+   }
+  }
+ ],
+ "idcheck": {
+  "G2": {
+   "frame_bbox": [
+    106.0,
+    31.0,
+    107.0,
+    32.0
+   ],
+   "tile": "T1606",
+   "conf_blocks": [
+    "425,127",
+    "426,126",
+    "426,127"
+   ],
+   "all_blocks": [
+    "424,126",
+    "424,127",
+    "425,126",
+    "425,127",
+    "426,126",
+    "426,127",
+    "427,126",
+    "427,127"
+   ],
+   "conf_intersect_seen_blocks": [],
+   "conf_rowid_intersect_seen": [],
+   "conf_poskey_intersect_seen": [],
+   "n_conf_points": 75,
+   "n_conf_rowids": 75,
+   "n_conf_poskeys": 75,
+   "seen_n_blocks": 27,
+   "seen_n_rowids": 809,
+   "seen_n_poskeys": 809,
+   "verdict": "UNSEEN_CONFIRMED"
+  }
+ }
+}

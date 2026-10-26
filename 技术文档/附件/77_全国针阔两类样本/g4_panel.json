@@ -1,0 +1,126 @@
+{
+ "input": "F:/lc_work/nb_national_2026/annual/年度配方_strict.parquet",
+ "n_rows": 1274776,
+ "columns": [
+  "row_id",
+  "year",
+  "lon",
+  "lat",
+  "prov",
+  "leaf2",
+  "class4",
+  "usable",
+  "label_state",
+  "weight",
+  "train_weight_final",
+  "p_forest",
+  "verdict",
+  "s2_grade",
+  "s2_rate",
+  "no_pheno_evidence",
+  "p_type_year",
+  "pred_leaf_year",
+  "type_conflict",
+  "unusable_reason"
+ ],
+ "counts_by_year": {
+  "2017": {
+   "broad": 99754,
+   "needle": 59593
+  },
+  "2018": {
+   "broad": 99754,
+   "needle": 59593
+  },
+  "2019": {
+   "broad": 99754,
+   "needle": 59593
+  },
+  "2020": {
+   "broad": 99754,
+   "needle": 59593
+  },
+  "2021": {
+   "broad": 99754,
+   "needle": 59593
+  },
+  "2022": {
+   "broad": 99754,
+   "needle": 59593
+  },
+  "2023": {
+   "broad": 99754,
+   "needle": 59593
+  },
+  "2024": {
+   "broad": 99754,
+   "needle": 59593
+  }
+ },
+ "year_availability": {
+  "2017": {
+   "n_labeled": 159347,
+   "n_two_class": 159347,
+   "ratio_label_vs_2023": 1.0,
+   "n_usable": 152078,
+   "usable_rate": 0.9543825738796463
+  },
+  "2018": {
+   "n_labeled": 159347,
+   "n_two_class": 159347,
+   "ratio_label_vs_2023": 1.0,
+   "n_usable": 152226,
+   "usable_rate": 0.9553113645063918
+  },
+  "2019": {
+   "n_labeled": 159347,
+   "n_two_class": 159347,
+   "ratio_label_vs_2023": 1.0,
+   "n_usable": 152350,
+   "usable_rate": 0.9560895404369081
+  },
+  "2020": {
+   "n_labeled": 159347,
+   "n_two_class": 159347,
+   "ratio_label_vs_2023": 1.0,
+   "n_usable": 153414,
+   "usable_rate": 0.9627667919697265
+  },
+  "2021": {
+   "n_labeled": 159347,
+   "n_two_class": 159347,
+   "ratio_label_vs_2023": 1.0,
+   "n_usable": 153481,
+   "usable_rate": 0.963187257996699
+  },
+  "2022": {
+   "n_labeled": 159347,
+   "n_two_class": 159347,
+   "ratio_label_vs_2023": 1.0,
+   "n_usable": 157442,
+   "usable_rate": 0.9880449584868244
+  },
+  "2023": {
+   "n_labeled": 159347,
+   "n_two_class": 159347,
+   "ratio_label_vs_2023": 1.0,
+   "n_usable": 155335,
+   "usable_rate": 0.9748222432803881
+  },
+  "2024": {
+   "n_labeled": 159347,
+   "n_two_class": 159347,
+   "ratio_label_vs_2023": 1.0,
+   "n_usable": 154889,
+   "usable_rate": 0.9720233201754661
+  }
+ },
+ "panel_consistency": {
+  "n_points": 159347,
+  "n_inconsistent": 0,
+  "consistency_rate": 1.0,
+  "example_inconsistent": []
+ },
+ "verdict_G5_years": "PASS",
+ "verdict_G6_consistency": "PASS"
+}

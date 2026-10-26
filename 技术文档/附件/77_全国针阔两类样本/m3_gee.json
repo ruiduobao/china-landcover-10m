@@ -1,0 +1,16 @@
+{
+ "acct": "zitwwufh",
+ "n": 20000,
+ "path": "F:/lc_work/nb_national_2026/labels/methods\\gee_struct_sample.parquet",
+ "cgls_ft_counts": {
+  "2.0": 6251,
+  "nan": 4034,
+  "4.0": 3445,
+  "0.0": 2713,
+  "1.0": 2582,
+  "3.0": 949,
+  "5.0": 26
+ },
+ "cgls_decided": 13227,
+ "hansen_nonnull": 485
+}

@@ -1,0 +1,100 @@
+{
+  "schema": "audit_verdict/v1",
+  "recorded_by": "audit_subagent (独立方法验收)",
+  "recorded_at": "2026-10-15T14:47:00+08:00",
+  "final": true,
+  "verdict_semantics": {
+    "execution": "DONE | TIMEOUT | BLOCKED | FAILED — 运行/证据是否齐全；BLOCKED 不计为已完成分类单元",
+    "adoption": "ADOPT | REJECT — 是否达预注册改善门；目标类 NOT_IMPROVED 或 INSUFFICIENT_SUPPORT 一律 REJECT",
+    "exploration": "自由文本 — 组级/机制方向，不得作为采纳依据",
+    "metadata": "OK | BLOCKED — 样本质量元数据/独立来源是否可用",
+    "rule": "不得用 PROMISING/HOLD 充当正结论；组级方向偏正只写 exploration；负结果不称改善。"
+  },
+  "experiments": {
+    "orchard_SC1": {
+      "execution": "DONE",
+      "adoption": "REJECT",
+      "metadata": "OK",
+      "target_status": "NOT_IMPROVED",
+      "exploration": "组级非劣过(dm9 +0.0062, CI[-0.0056,0.0213], 5块<30仅描述)；目标类4 dF1 -0.0253 未过 +0.03；园地预测归零=显式回归风险"
+    },
+    "orchard_SC2": {
+      "execution": "DONE",
+      "adoption": "REJECT",
+      "metadata": "OK",
+      "target_status": "INSUFFICIENT_SUPPORT",
+      "exploration": "组级非劣过(dm9 +0.0071)；目标类4 确认 n=14<30；园地预测归零"
+    },
+    "orchard_GD": {
+      "execution": "DONE",
+      "adoption": "REJECT",
+      "metadata": "OK",
+      "target_status": "NOT_IMPROVED",
+      "exploration": "组级非劣过(dm9 +0.0082)；目标类4 dF1 -0.0175 未过门；园地预测 161→0"
+    },
+    "orchard_NX": {
+      "execution": "DONE",
+      "adoption": "REJECT",
+      "metadata": "OK",
+      "target_status": "INSUFFICIENT_SUPPORT",
+      "exploration": "组级 dm9 -0.0026(<=0)；目标类22 n=5/类3 n=15 支持不足；园地 19→1"
+    },
+    "orchard_SC1_SC2_joint": {
+      "execution": "DONE",
+      "adoption": "REJECT",
+      "metadata": "OK",
+      "target_status": "NOT_IMPROVED",
+      "exploration": "首预测后登记→仅描述；主层类4 n=51 dF1 -0.0223 未过门"
+    },
+    "orchard_H2_quality_metadata": {
+      "execution": "BLOCKED",
+      "adoption": "REJECT",
+      "metadata": "BLOCKED",
+      "reason": "BLOCKED_no_trusted_local_source：全国 grade 145926 来源现交付非池 141686；A 官方多海南橡胶不可迁川粤；Q1 存疑柑橘不足同 count 且剩余未经本地独立标签确认 → 不假造高证据臂；不计为已完成分类单元"
+    },
+    "orchard_GD2": {
+      "execution": "BLOCKED",
+      "adoption": "REJECT",
+      "metadata": "OK",
+      "reason": "仅按参考 n 准备（113–114,23–24），无预测、未跑；不计为已完成分类单元"
+    },
+    "terrain_TSC": {
+      "execution": "DONE",
+      "adoption": "REJECT",
+      "metadata": "OK",
+      "target_status": "INSUFFICIENT_SUPPORT",
+      "exploration": "T-STRATA 主层(conf∩nonFCS10)负向：F1 n=121 blocks=5 dm9 -0.0303 CI[-0.0596,-0.0029]（点估<-0.01 且下界<-0.02 不过门）；F2 n=63 blocks=3 dm9 +0.0053 CI[-0.0392,0.0323]（下界<-0.02 不过门）；目标类4 F1 n=27 dF1 -0.0147 / F2 n=29 dF1 +0.0026，均 n<30 支持不足；块<30 → CI 仅框内描述；无独立针/阔真值 → 只能称教师结构退化，不得称证实抹真实生态"
+    },
+    "geometry_G30N": {
+      "execution": "DONE",
+      "adoption": "ACCEPT_EXPERIMENTAL",
+      "metadata": "OK",
+      "scope": "engineering_only",
+      "exploration": "v2 unmask0 3 seeds(s7/s11/s23)+s7b 独立栅格核验全 PASS：legacy 缺 23394px、planar 缺 0、恢复 23394px、共同有效域一致率 1.0、planar 无丢失；与 eval.json 逐项一致。**仅覆盖/几何改善，不得换算为标签精度**。v1 VALIDITY_FAIL 保留。",
+      "note": "楔外理论 16710 vs 实际共同有效 17267 差一行 557，agent 待核齐（不影响覆盖结论）"
+    },
+    "fview_G2_strict_common": {
+      "execution": "DONE",
+      "adoption": "REJECT",
+      "metadata": "OK",
+      "target_status": "INSUFFICIENT_SUPPORT",
+      "exploration": "strict 共同支持（非森林同点、森林 strict 子集）主层 conf∩nonFCS10 n=56 blocks=3：dm9 **-0.1667**（CI 退化 [-0.1667,-0.1667]，仅 3 块不得细读）、dOA24 -0.1429；目标类4 n=15 dF1 **-0.1521**、类6 n=21 dF1 -0.1525（均 n<30 支持不足）；组级非劣 **FAIL**。独立复算与 t5_report_G2 逐格一致。",
+      "n_train_common_actual": 17697,
+      "forest_common": {
+        "c4": 1303,
+        "c6": 1729,
+        "c7": 3
+      },
+      "fairness_verified": "独立核：非森林 12383 行两臂 idx 集合相同且 X 逐位相同（按 idx 对齐后 True）；森林 5314 行来自 strict（sc_src 标记），两臂 idx 无交集（设计如此）。旧 v1 npz 索引 bug 件已作废不参与。",
+      "unseen_verified": "conf 块(425,127/426,126/426,127)、rowid、poskey 与已看集合交集均为 ∅（agent idcheck 与我的独立块核一致）",
+      "pred_order_note": "两臂行顺序不同（nonforest idx 数组顺序不等），按 idx 对齐后一致 —— 直接行序比较会误判为不等"
+    }
+  },
+  "round_summary": "本轮 42 本地 fits（orchard 24 + terrain 12 + FVIEW G2 6）+ 3 云端几何 seeds。**precision 目标全部未过门**：园地、地形、F-VIEW 均 adoption=REJECT；唯一工程候选为几何覆盖修复（ACCEPT_EXPERIMENTAL, engineering only）。",
+  "pending": [
+    "geometry：楔外 16710 vs 17267 差一行 557 待 agent 核齐（不影响恢复结论）",
+    "geometry/config/planar_g30n.json 勘误：doc_md5 9d635870→749017cb（最终冻结）、note 旧 hash superseded、gate_result '556/557' 笔误改 '557像元=1行'、NOT_ENABLED 原因改写；离线 --selfcheck 复验",
+    "doc71 §6 用 actual N=17697（非 18588/18556）与本次 FVIEW 新值回填"
+  ],
+  "archive_note": "orchard 代理已被 provider 停止，其结果保留；本审计不改原预测，仅在最终结论限定 adoption=REJECT + metadata=BLOCKED。"
+}

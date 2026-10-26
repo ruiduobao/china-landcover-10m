@@ -1,0 +1,107 @@
+{
+  "exp_id": "_selftest_reserve",
+  "owner": "control",
+  "hypothesis": null,
+  "province": null,
+  "stage": "A",
+  "seeds": [
+    7,
+    11,
+    23
+  ],
+  "arms": null,
+  "limit_s": 20.0,
+  "prep_cap_s": 1200.0,
+  "trigger_margin_s": 10.0,
+  "n_jobs": 10,
+  "uses_rf": false,
+  "mem_cap_gb": 10.0,
+  "cpu_cap": 15,
+  "dry_run": false,
+  "started_at": "2026-10-15T14:16:25",
+  "system_mem_at_start_gb": {
+    "total": 68.46,
+    "available": 41.83
+  },
+  "stage_times_s": {
+    "prepare": 0.032,
+    "train": 10.391
+  },
+  "stage_rc": {
+    "prepare": 0,
+    "train": 1
+  },
+  "stage_timed_out": {
+    "prepare": false,
+    "train": true
+  },
+  "stage_mem_killed": {
+    "prepare": false,
+    "train": false
+  },
+  "stage_peak_rss_gb": {
+    "prepare": null,
+    "train": 0.023
+  },
+  "killed_pids": {
+    "train": [
+      38284
+    ]
+  },
+  "deadline_window_s": null,
+  "budget_ok": null,
+  "status": "timeout",
+  "registration": {
+    "experiment_id": null,
+    "region_bbox": null,
+    "tile_id": null,
+    "training_bbox": null,
+    "input_identity": null,
+    "class_map_hash": null,
+    "candidate_rule": null,
+    "seeds": [
+      7,
+      11,
+      23
+    ],
+    "n_train_limit": null,
+    "rf_params": null,
+    "deadline_s": null,
+    "development_ids": null,
+    "confirmation_ids": null,
+    "target_metrics": null,
+    "expected_effect": null,
+    "stop_rules": null,
+    "code_hash": null,
+    "registered_at": null
+  },
+  "code_hash": "ef778ccc5538cebc",
+  "mem_preflight": {
+    "ok": true,
+    "available_gb": 41.82,
+    "need_gb": 12.0,
+    "mem_cap_gb": 10.0,
+    "reason": ""
+  },
+  "train_start_iso": "2026-10-15T14:16:25",
+  "fail_reason": "阶段 train 触发截止（窗口剩余 20.0s，预留 10s 清理）",
+  "finished_at": "2026-10-15T14:16:36",
+  "stage_tails": {
+    "prepare": {
+      "rc": 0,
+      "timed_out": false,
+      "mem_killed": false,
+      "peak_rss_gb": null,
+      "log": "F:\\lc_work\\improve_2023_pilot_20261015\\control\\logs\\_selftest_reserve\\prepare.log",
+      "stderr_tail": ""
+    },
+    "train": {
+      "rc": 1,
+      "timed_out": true,
+      "mem_killed": false,
+      "peak_rss_gb": 0.023,
+      "log": "F:\\lc_work\\improve_2023_pilot_20261015\\control\\logs\\_selftest_reserve\\train.log",
+      "stderr_tail": ""
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-10-15T14:44:08",
+  "frame": "G2",
+  "npz_source": "F:/lc_work/improve_2023_pilot_20261015/terrain\\out\\t4_fview_arms_G2_seed11.npz",
+  "arms": [
+    "baseline_common",
+    "strict_common"
+  ],
+  "n_eval": 194,
+  "n_conf": 75,
+  "missing": [
+    "baseline_common/seed7",
+    "baseline_common/seed11",
+    "baseline_common/seed23",
+    "strict_common/seed7",
+    "strict_common/seed11",
+    "strict_common/seed23"
+  ],
+  "layers": {},
+  "target_f1": {}
+}

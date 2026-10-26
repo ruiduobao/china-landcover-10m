@@ -1,0 +1,87 @@
+{
+ "acct": "k3r6ncvd",
+ "proj": "curious-helix-508400-e4",
+ "dt_s": 0.51,
+ "shape": [
+  4,
+  93,
+  557
+ ],
+ "names": [
+  null,
+  null,
+  null,
+  null
+ ],
+ "band_uniq": [
+  [
+   1
+  ],
+  [
+   0,
+   1
+  ],
+  [
+   0
+  ],
+  [
+   0,
+   1
+  ]
+ ],
+ "band_zero_count": [
+  0,
+  31285,
+  51801,
+  31285
+ ],
+ "rows_sample": [
+  {
+   "row": 0,
+   "lat": 30.0064704,
+   "c1_0": 0,
+   "clip_planar_0": 557,
+   "updmask0_0": 557,
+   "clip_legacy_0": 557
+  },
+  {
+   "row": 20,
+   "lat": 30.0046737,
+   "c1_0": 0,
+   "clip_planar_0": 111,
+   "updmask0_0": 557,
+   "clip_legacy_0": 111
+  },
+  {
+   "row": 45,
+   "lat": 30.0024279,
+   "c1_0": 0,
+   "clip_planar_0": 111,
+   "updmask0_0": 557,
+   "clip_legacy_0": 111
+  },
+  {
+   "row": 70,
+   "lat": 30.0001821,
+   "c1_0": 0,
+   "clip_planar_0": 557,
+   "updmask0_0": 557,
+   "clip_legacy_0": 557
+  },
+  {
+   "row": 92,
+   "lat": 29.9982059,
+   "c1_0": 0,
+   "clip_planar_0": 557,
+   "updmask0_0": 557,
+   "clip_legacy_0": 557
+  }
+ ],
+ "verdict": {
+  "constant_ok": true,
+  "clip_planar_masks": true,
+  "updmask_masks": true,
+  "clip_legacy_masks": true,
+  "computePixels_keeps_mask": true
+ }
+}
